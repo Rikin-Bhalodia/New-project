@@ -235,12 +235,12 @@ footer {
 
 /* @font-face {
   font-family: "Beatlys";
-  src: url("../fonts/Beatlys.eot");
-  src: url("../fonts/Beatlys.eot") format("embedded-opentype"),
-    url("../fonts/Beatlys.woff2") format("woff2"),
-    url("../fonts/Beatlys.woff") format("woff"),
-    url("../fonts/Beatlys.ttf") format("truetype"),
-    url("../fonts/Beatlys.svg#Beatlys") format("svg");
+  src: url("../src/assets/fonts/Beatlys.eot");
+  src: url("../src/assets/fonts/.eot") format("embedded-opentype"),
+    url("../src/assets/fonts/.woff2") format("woff2"),
+    url("../src/assets/fonts/.woff") format("woff"),
+    url("../src/assets/fonts/f") format("truetype"),
+    url("../src/assets/fonts/Beatlys.svg#Beatlys") format("svg");
 }
 
 @font-face {

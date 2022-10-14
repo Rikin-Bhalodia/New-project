@@ -1,5 +1,37 @@
 import React from "react";
-import MuteIcon from "/public/img/muteIcon.png";
+import MuteIcon from "./../assets/images/img/muteIcon.png";
+import SearchIconFill from "./../assets/images/img/searchIconFill.png";
+import RoyClanLogoWhite from "./../assets/images/img/roy clan logo white.png";
+import Profile from "./../assets/images/img/profile.png";
+import CartIcon from "./../assets/images/img/cartIcon.png";
+import HeartIcon from "./../assets/images/img/heartIcon.png";
+import studioInner5 from "./../assets/images/img/studioInner-1.jpg";
+import studioInner1 from "./../assets/images/img/studioInner-1.jpg";
+import studioInner2 from "./../assets/images/img/studioInner-2.jpg";
+import studioInner3 from "./../assets/images/img/studioInner-3.jpg";
+import studioInner4 from "./../assets/images/img/studioInner-4.jpg";
+import aboutlogo from "./../assets/images/img/about-logo.png";
+import aboutSlider from "./../assets/images/img/about-slider.jpg";
+import studio2 from "./../assets/images/img/studio-1.jpg";
+import studio1 from "./../assets/images/img/studio-2.jpg";
+import studio3 from "./../assets/images/img/studio-3.jpg";
+import avenue1 from "./../assets/images/img/avenue1.png";
+import avenue from "./../assets/images/img/avenue.png";
+import avenue2 from "./../assets/images/img/avenue2.png";
+import liveTv from "./../assets/images/img/live-tv.png";
+import secain1 from "./../assets/images/img/secain-1.jpg";
+import secain2 from "./../assets/images/img/secain-2.jpg";
+import secain3 from "./../assets/images/img/secain-3.png";
+import secain4 from "./../assets/images/img/secain-4.png";
+import secain5 from "./../assets/images/img/secain-5.jpg";
+import secain6 from "./../assets/images/img/secain-6.jpg";
+import follow1 from "./../assets/images/img/follow1.png";
+import follow2 from "./../assets/images/img/follow2.png";
+import follow3 from "./../assets/images/img/follow3.png";
+import follow4 from "./../assets/images/img/follow4.png";
+import follow5 from "./../assets/images/img/follow5.png";
+import follow6 from "./../assets/images/img/follow6.png";
+import follow7 from "./../assets/images/img/follow7.png";
 
 export default function Home() {
   return (
@@ -15,7 +47,7 @@ export default function Home() {
                       <span>
                         <img
                           src={MuteIcon}
-                          className="img-fluid smallHeaderIcon"
+                          className=" smallHeaderIcon"
                           alt="img"
                         />
                       </span>
@@ -28,7 +60,7 @@ export default function Home() {
                         <button>
                           <span>
                             <img
-                              src="assets/img/searchIconFill.png"
+                              src={SearchIconFill}
                               className="img-fluid smallHeaderIcon"
                               alt=""
                             />
@@ -43,11 +75,7 @@ export default function Home() {
             <div className="col-md-4">
               <div className="logoImage text-center">
                 <a href="/">
-                  <img
-                    src="assets/img/roy clan logo white.png"
-                    className="img-fluid"
-                    alt="img"
-                  />
+                  <img src={RoyClanLogoWhite} className="img-fluid" alt="img" />
                 </a>
               </div>
             </div>
@@ -58,7 +86,7 @@ export default function Home() {
                     <a href="/">
                       <span>
                         <img
-                          src="assets/img/profile.png"
+                          src={Profile}
                           className="img-fluid smallHeaderIcon"
                           alt=""
                         />
@@ -69,7 +97,7 @@ export default function Home() {
                     <a href="/">
                       <span>
                         <img
-                          src="assets/img/cartIcon.png"
+                          src={CartIcon}
                           className="img-fluid smallHeaderIcon"
                           alt=""
                         />
@@ -80,7 +108,7 @@ export default function Home() {
                     <a href="/">
                       <span>
                         <img
-                          src="assets/img/heartIcon.png"
+                          src={HeartIcon}
                           className="img-fluid smallHeaderIcon"
                           alt=""
                         />
@@ -111,7 +139,7 @@ export default function Home() {
                               <div className="imgWrap">
                                 <img
                                   className="wow backInLeft"
-                                  src="./assets/img/studioInner-5.jpg"
+                                  src={studioInner5}
                                   alt=""
                                 />
                               </div>
@@ -127,7 +155,7 @@ export default function Home() {
                               <div className="imgWrap">
                                 <img
                                   className="wow backInUp"
-                                  src="./assets/img/studioInner-2.jpg"
+                                  src={studioInner2}
                                   alt=""
                                 />
                               </div>
@@ -143,7 +171,7 @@ export default function Home() {
                               <div className="imgWrap">
                                 <img
                                   className="wow backInLeft"
-                                  src="./assets/img/studioInner-1.jpg"
+                                  src={studioInner1}
                                   alt=""
                                 />
                               </div>
@@ -159,7 +187,7 @@ export default function Home() {
                               <div className="imgWrap">
                                 <img
                                   className="wow backInUp"
-                                  src="./assets/img/studioInner-2.jpg"
+                                  src={studioInner2}
                                   alt=""
                                 />
                               </div>
@@ -175,7 +203,7 @@ export default function Home() {
                               <div className="imgWrap">
                                 <img
                                   className="wow backInLeft"
-                                  src="./assets/img/studioInner-3.jpg"
+                                  src={studioInner3}
                                   alt=""
                                 />
                               </div>
@@ -192,7 +220,7 @@ export default function Home() {
                               <div className="imgWrap">
                                 <img
                                   className="wow backInUpt"
-                                  src="./assets/img/studioInner-2.jpg"
+                                  src={studioInner2}
                                   alt=""
                                 />
                               </div>
@@ -208,7 +236,7 @@ export default function Home() {
                               <div className="imgWrap">
                                 <img
                                   className="wow backInLeft"
-                                  src="./assets/img/studioInner-4.jpg"
+                                  src={studioInner4}
                                   alt=""
                                 />
                               </div>
@@ -224,7 +252,7 @@ export default function Home() {
                               <div className="imgWrap">
                                 <img
                                   className="wow backInUp"
-                                  src="./assets/img/studioInner-5.jpg"
+                                  src={studioInner5}
                                   alt=""
                                 />
                               </div>
@@ -240,7 +268,7 @@ export default function Home() {
                               <div className="imgWrap">
                                 <img
                                   className="wow backInLeft"
-                                  src="./assets/img/studioInner-4.jpg"
+                                  src={studioInner4}
                                   alt=""
                                 />
                               </div>
@@ -250,7 +278,7 @@ export default function Home() {
                               <div className="imgWrap">
                                 <img
                                   className="wow backInUp"
-                                  src="./assets/img/studioInner-5.jpg"
+                                  src={studioInner5}
                                   alt=""
                                 />
                               </div>
@@ -583,11 +611,7 @@ export default function Home() {
                 <div className="c-about-slider-in">
                   <div className="c-about-slider-con">
                     <span>
-                      <img
-                        src="assets/img/about-logo.png"
-                        alt=""
-                        className="wow fadeInDown"
-                      />
+                      <img src={aboutlogo} alt="" className="wow fadeInDown" />
                     </span>
                     <h3 className="wow fadeInDown">
                       EXCEPTIONAL <span>READY-TO-WEAR</span>
@@ -596,7 +620,7 @@ export default function Home() {
                   <img src="assets/img/about-slider.jpg" alt="img" />
                 </div>
                 <div className="c-about-slider-in">
-                  <img src="assets/img/about-slider.jpg" alt="img" />
+                  <img src={aboutSlider} alt="img" />
                 </div>
               </div>
             </div>
@@ -793,35 +817,29 @@ export default function Home() {
                 <div className="row mt-4">
                   <div className="col-sm-4 px-5">
                     <div className="studioImg wow fadeInLeft">
-                      <figure>
-                        <img
-                          src="assets/img/studio-1.jpg"
-                          alt="img"
-                          className="img-fluid per_studio_img cursouPointer"
-                        />
-                      </figure>
+                      <img
+                        src={studio1}
+                        alt="img"
+                        className="img-fluid per_studio_img cursouPointer"
+                      />
                     </div>
                   </div>
                   <div className="col-sm-4 px-5">
                     <div className="studioImg wow fadeInLeft">
-                      <figure>
-                        <img
-                          src="assets/img/studio-2.jpg"
-                          alt="img"
-                          className="img-fluid per_studio_img cursouPointer"
-                        />
-                      </figure>
+                      <img
+                        src={studio2}
+                        alt="img"
+                        className="img-fluid per_studio_img cursouPointer"
+                      />
                     </div>
                   </div>
                   <div className="col-sm-4 px-5">
                     <div className="studioImg wow fadeInLeft">
-                      <figure>
-                        <img
-                          src="assets/img/studio-3.jpg"
-                          alt="img"
-                          className="img-fluid per_studio_img cursouPointer"
-                        />
-                      </figure>
+                      <img
+                        src={studio3}
+                        alt="img"
+                        className="img-fluid per_studio_img cursouPointer"
+                      />
                     </div>
                   </div>
                 </div>
@@ -917,46 +935,22 @@ export default function Home() {
                     <div className="owl-carousel owl-theme" id="avenueImage">
                       <div className="item">
                         <div className="avenueSliderImageSec">
-                          <figure>
-                            <img
-                              src="assets/img/avenue.png"
-                              className="img-fluid"
-                              alt="img"
-                            />
-                          </figure>
+                          <img src={avenue} className="img-fluid" alt="img" />
                         </div>
                       </div>
                       <div className="item">
                         <div className="avenueSliderImageSec">
-                          <figure>
-                            <img
-                              src="assets/img/avenue1.png"
-                              className="img-fluid"
-                              alt="img"
-                            />
-                          </figure>
+                          <img src={avenue1} className="img-fluid" alt="img" />
                         </div>
                       </div>
                       <div className="item">
                         <div className="avenueSliderImageSec">
-                          <figure>
-                            <img
-                              src="assets/img/avenue2.png"
-                              className="img-fluid"
-                              alt="img"
-                            />
-                          </figure>
+                          <img src={avenue2} className="img-fluid" alt="img" />
                         </div>
                       </div>
                       <div className="item">
-                        <div className="avenueSliderImageSec">
-                          <figure>
-                            <img
-                              src="assets/img/avenue1.png"
-                              className="img-fluid"
-                              alt="img"
-                            />
-                          </figure>
+                        <div className="item">
+                          <img src={avenue1} className="img-fluid" alt="img" />
                         </div>
                       </div>
                     </div>
@@ -969,46 +963,22 @@ export default function Home() {
                     <div className="owl-carousel owl-theme" id="services">
                       <div className="item">
                         <div className="avenueSliderImageSec">
-                          <figure>
-                            <img
-                              src="assets/img/avenue.png"
-                              className="img-fluid"
-                              alt="img"
-                            />
-                          </figure>
+                          <img src={avenue} className="img-fluid" alt="img" />
                         </div>
                       </div>
                       <div className="item">
                         <div className="avenueSliderImageSec">
-                          <figure>
-                            <img
-                              src="assets/img/avenue1.png"
-                              className="img-fluid"
-                              alt="img"
-                            />
-                          </figure>
+                          <img src={avenue1} className="img-fluid" alt="img" />
                         </div>
                       </div>
                       <div className="item">
                         <div className="avenueSliderImageSec">
-                          <figure>
-                            <img
-                              src="assets/img/avenue2.png"
-                              className="img-fluid"
-                              alt="img"
-                            />
-                          </figure>
+                          <img src={avenue2} className="img-fluid" alt="img" />
                         </div>
                       </div>
                       <div className="item">
                         <div className="avenueSliderImageSec">
-                          <figure>
-                            <img
-                              src="assets/img/avenue1.png"
-                              className="img-fluid"
-                              alt="img"
-                            />
-                          </figure>
+                          <img src={avenue1} className="img-fluid" alt="img" />
                         </div>
                       </div>
                     </div>
@@ -1147,7 +1117,7 @@ export default function Home() {
                     className="c-rent-img-1 wow fadeIn"
                     data-wow-delay="0.5s"
                   >
-                    <img src="assets/img/studio-1.jpg" alt="" />
+                    <img src={studio1} alt="" />
                   </div>
                 </div>
                 <div className="col-md-7 ml-auto">
@@ -1155,7 +1125,7 @@ export default function Home() {
                     className="c-rent-img-2 wow fadeIn "
                     data-wow-delay="1.5s"
                   >
-                    <img src="assets/img/studio-3.jpg" alt="" />
+                    <img src={studio3} alt="" />
                   </div>
                   <div className="c-rent-hading c-rent-hading-2">
                     <div className="roundBtn">
@@ -1284,7 +1254,7 @@ export default function Home() {
                     <div className="live-tv-box" id="live-tv">
                       <img
                         id="tv-image"
-                        src="assets/img/live-tv.png"
+                        src={liveTv}
                         alt=""
                         height="auto"
                         width="500"
@@ -1393,7 +1363,7 @@ export default function Home() {
                   <div className="col-md-4 wow fadeInUp">
                     <div className="c-secian-box">
                       <div className="c-secian-img innerContainer">
-                        <img alt="img" src="assets/img/secain-1.jpg" />
+                        <img alt="img" src={secain1} />
                       </div>
                       <h3>GUCCI</h3>
                       {/* <a href="/"></a> */}
@@ -1402,7 +1372,7 @@ export default function Home() {
                   <div className="col-md-4 wow fadeInUp">
                     <div className="c-secian-box">
                       <div className="c-secian-img innerContainer">
-                        <img alt="img" src="assets/img/secain-2.jpg" />
+                        <img alt="img" src={secain2} />
                       </div>
                       <h3>louis vuitton</h3>
                       {/* <a href="/"></a> */}
@@ -1411,7 +1381,7 @@ export default function Home() {
                   <div className="col-md-4 wow fadeInUp">
                     <div className="c-secian-box">
                       <div className="c-secian-img innerContainer">
-                        <img alt="img" src="assets/img/secain-3.png" />
+                        <img alt="img" src={secain3} />
                       </div>
                       <h3>CHANEL</h3>
                       {/* <a href="/"></a> */}
@@ -1420,7 +1390,7 @@ export default function Home() {
                   <div className="col-md-4 wow fadeInUp">
                     <div className="c-secian-box">
                       <div className="c-secian-img innerContainer">
-                        <img alt="img" src="assets/img/secain-4.png" />
+                        <img alt="img" src={secain4} />
                       </div>
                       <h3>CHRISTIAN DIOR</h3>
                       {/* <a href="/"></a> */}
@@ -1429,7 +1399,7 @@ export default function Home() {
                   <div className="col-md-4 wow fadeInUp">
                     <div className="c-secian-box">
                       <div className="c-secian-img innerContainer">
-                        <img alt="img" src="assets/img/secain-5.jpg" />
+                        <img alt="img" src={secain5} />
                       </div>
                       <h3>VERSACE</h3>
                       {/* <a href="/"></a> */}
@@ -1438,7 +1408,7 @@ export default function Home() {
                   <div className="col-md-4 wow fadeInUp">
                     <div className="c-secian-box">
                       <div className="c-secian-img innerContainer">
-                        <img alt="img" src="assets/img/secain-6.jpg" />
+                        <img alt="img" src={secain6} />
                       </div>
                       <h3>SAINT LAURENT</h3>
                       {/* <a href="/"></a> */}
@@ -1520,7 +1490,7 @@ export default function Home() {
                       <div className="wow fadeIn float-right">
                         <img
                           alt="img"
-                          src="assets/img/follow1.png"
+                          src={follow1}
                           className="img-fluid w-100"
                         />
                       </div>
@@ -1532,11 +1502,7 @@ export default function Home() {
                   data-scrub="0.5"
                 >
                   <div className="wow fadeIn innerContainer delayed-section">
-                    <img
-                      alt="img"
-                      src="assets/img/follow2.png"
-                      className="img-fluid w-100"
-                    />
+                    <img alt="img" src={follow2} className="img-fluid w-100" />
                   </div>
                 </div>
                 <div
@@ -1544,50 +1510,22 @@ export default function Home() {
                   data-scrub="0.5"
                 >
                   <div className="wow fadeIn innerContainer ">
-                    <img
-                      alt="img"
-                      src="assets/img/follow3.png"
-                      className="img-fluid w-100"
-                    />
+                    <img alt="img" src={follow3} className="img-fluid w-100" />
                   </div>
                 </div>
               </div>
               <div className="row align-items-top">
                 <div className="width20 px-3 mt-3 wow fadeInUp delayed-section">
-                  <figure className="innerContainer">
-                    <img
-                      alt="img"
-                      src="assets/img/follow4.png"
-                      className="img-fluid w-100"
-                    />
-                  </figure>
+                  <img alt="img" src={follow4} className="img-fluid w-100" />
                 </div>
                 <div className="width30 px-3 mt-3 wow fadeInUp  delayed-section">
-                  <figure className="innerContainer">
-                    <img
-                      alt="img"
-                      src="assets/img/follow5.png"
-                      className="img-fluid w-100"
-                    />
-                  </figure>
+                  <img alt="img" src={follow5} className="img-fluid w-100" />
                 </div>
                 <div className="width20 px-3 mt-3 wow fadeInUp  delayed-section">
-                  <figure className="innerContainer">
-                    <img
-                      alt="img"
-                      src="assets/img/follow6.png"
-                      className="img-fluid w-100"
-                    />
-                  </figure>
+                  <img alt="img" src={follow6} className="img-fluid w-100" />
                 </div>
                 <div className="width30 px-3 mt-3 wow fadeInUp  delayed-section">
-                  <figure className="innerContainer">
-                    <img
-                      alt="img"
-                      src="assets/img/follow2.png"
-                      className="img-fluid w-100"
-                    />
-                  </figure>
+                  <img alt="img" src={follow7} className="img-fluid w-100" />
                 </div>
               </div>
             </div>

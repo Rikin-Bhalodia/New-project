@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Beatlys';
+    src: url('fonts/Beatlys.eot');
+    src: url('fonts/Beatlys.eot') format('embedded-opentype'),
+         url('fonts/Beatlys.woff2') format('woff2'),
+         url('fonts/Beatlys.woff') format('woff'),
+         url('fonts/Beatlys.ttf') format('truetype'),
+         url('fonts/Beatlys.svg#Beatlys') format('svg');
+}
