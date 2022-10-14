@@ -1,4 +1,5 @@
 import React from "react";
+import MuteIcon from "/public/img/muteIcon.png";
 
 export default function Home() {
   return (
@@ -13,9 +14,9 @@ export default function Home() {
                     <a href="/">
                       <span>
                         <img
-                          src="assets/img/muteIcon.png"
+                          src={MuteIcon}
                           className="img-fluid smallHeaderIcon"
-                          alt=""
+                          alt="img"
                         />
                       </span>
                     </a>
