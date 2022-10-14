@@ -32,6 +32,7 @@ import follow4 from "./../assets/images/img/follow4.png";
 import follow5 from "./../assets/images/img/follow5.png";
 import follow6 from "./../assets/images/img/follow6.png";
 import follow7 from "./../assets/images/img/follow7.png";
+// import MuteIcon from "/public/img/muteIcon.png";
 
 export default function Home() {
   return (

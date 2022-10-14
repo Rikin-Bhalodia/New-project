@@ -18,7 +18,7 @@ const HeaderWrapper = styled.div`
     border: 1px solid rgba(0, 0, 0, 0.09);
     border-radius: 136px;
     height: 30px;
-    width: 250px;
+    width: 200px;
     padding: 0 20px;
   }
   .search-icon {
@@ -31,19 +31,23 @@ const HeaderWrapper = styled.div`
   .mic {
     height: 20px;
     width: 20px;
+    position: relative;
+    top: 5px;
   }
   .left-part {
+    width: 350px;
   }
   .center-part {
+    width: 350px;
   }
   .right-part {
-    width: 200px;
+    width: 350px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
   }
   .right-image {
-    height: 20px;
-    width: 20px;
+    height: 15px;
+    width: 15px;
   }
 `;
 
@@ -53,7 +57,6 @@ const Header = () => {
       <div className="left-part">
         <input placeholder="Search Items" className="search" />
         <img src={Search} alt="search" className="search-icon" />
-
         <img src={Mic} alt="mic" className="mic" />
       </div>
       <div className="center-part">
@@ -62,7 +65,6 @@ const Header = () => {
       <div className="right-part">
         <img src={Profile} alt="mic" className="right-image" />
         <img src={Heart} alt="search" className="right-image" />
-
         <img src={Cart} alt="search" className="right-image" />
       </div>
     </HeaderWrapper>
