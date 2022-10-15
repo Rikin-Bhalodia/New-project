@@ -54,9 +54,9 @@ import L from "../assets/images/studio/royclan/L.svg";
 import C from "../assets/images/studio/royclan/C.svg";
 import Leaf from "../assets/images/studio/royclan/leaf.svg";
 import styled from "styled-components";
-import { gsap } from "gsap-trial";
-import ScrollTrigger from "gsap-trial/ScrollTrigger";
-import ScrollSmoother from "gsap-trial/ScrollSmoother";
+import { gsap } from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import ScrollSmoother from "gsap/ScrollSmoother";
 
 const HomeWrapper = styled.div`
   .connect-image {
