@@ -26,6 +26,9 @@ import N from "./assets/images/studio/royclan/N.svg";
 import L from "./assets/images/studio/royclan/L.svg";
 import C from "./assets/images/studio/royclan/C.svg";
 import Leaf from "./assets/images/studio/royclan/leaf.svg";
+import { gsap } from "gsap-trial";
+import ScrollTrigger from "gsap-trial/ScrollTrigger";
+import ScrollSmoother from "gsap-trial/ScrollSmoother";
 
 import FirstImage from "./assets/images/studio/blog/first.svg";
 import Slider from "./slider";
@@ -154,6 +157,7 @@ const StudioWrapper = styled.div`
 const Studio = () => {
   const wrapper = useRef();
   const [scrollHeader, setScrollHeader] = useState(false);
+  gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -164,22 +168,20 @@ const Studio = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  //   useLayoutEffect(() => {
-  //     const ctx = gsap.context(() => {
-  //       // Target the two specific elements we have asigned the animate class
-  //       gsap.to(".animate", {
-  //         x: 100,
-  //         repeat: -1,
-  //         repeatDelay: 1,
-  //         yoyo: true,
-  //       });
-  //     }, wrapper); // <- Scope!
 
-  //     return () => ctx.revert();
-  //   }, []);
+  useLayoutEffect(() => {
+    let smoother = ScrollSmoother.create({
+      smooth: 3, // how long (in seconds) it takes to "catch up" to the native scroll position
+      effects: true, // looks for data-speed and data-lag attributes on elements
+    });
+    return () => {
+      smoother.kill();
+    };
+  }, []);
+
   return (
-    <StudioWrapper>
-      <div className="smooth-wrapper" ref={wrapper}>
+    <StudioWrapper id="smooth-wrapper">
+      <div ref={wrapper} id="smooth-content">
         <div className="MainImage">
           <section
             className={`topHeaderPart py-3 ${
