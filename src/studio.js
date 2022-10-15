@@ -153,6 +153,18 @@ const StudioWrapper = styled.div`
     height: 18px;
     top: 2px;
   }
+  .image h4 {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    color: white;
+    display: none;
+    opacity: 0;
+  }
+  .image:hover h4 {
+    display: block;
+    opacity: 1;
+  }
 `;
 
 const Studio = () => {
@@ -304,6 +316,7 @@ const Studio = () => {
               >
                 <div className="image">
                   <img src={CenterLeft} alt="studiob-02" />
+                  <h4>hello World</h4>
                 </div>
               </div>
               <div
@@ -350,6 +363,7 @@ const Studio = () => {
               >
                 <div className="image">
                   <img src={CenterRight} alt="studiob-4" />
+                  <h4>hello World</h4>
                 </div>
               </div>
               <div className="col-md-2 level2 wow fadeInUp">

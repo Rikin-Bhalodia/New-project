@@ -76,7 +76,7 @@
 
 .img-fluid {
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   object-fit: cover;
 }
 
@@ -2778,7 +2778,7 @@ footer {
 .c-about-w h2, h2.f-heading-m {
   font-family: "coralSerif", sans-serif;
   font-size: 4vw;
-  margin-bottom: 24px;
+  /* margin-bottom: 24px; */
 }
 
 .c-about-w h2 .type-1 {
@@ -2859,7 +2859,7 @@ footer {
 
 .c-about-slider-con {
   position: absolute;
-  bottom: 60px;
+  bottom: -60px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 3;
@@ -2895,7 +2895,7 @@ footer {
 
 .c-about-con .roundBtn {
   position: absolute;
-  top: -16px;
+  top: 70px;
   right: 0;
 }
 
@@ -2976,7 +2976,7 @@ footer {
 
 .c-drive-con .roundBtn {
   position: absolute;
-  right: -150px;
+  right: -320px;
   top: 50px;
 }
 
@@ -2984,10 +2984,7 @@ footer {
   font-size: 12px;
 }
 
-.c-drive-img img {
-  height: 280px;
-  object-fit: cover;
-}
+
 
 .c-drive-w {
   position: relative;
@@ -3046,7 +3043,7 @@ c-service-w {
 }
 
 .c-rent-img-1 img {
-  height: 250px;
+  height: 350px;
   object-fit: cover;
   border-radius: 100px 0 0 0;
   max-width: 100%;
@@ -3094,7 +3091,7 @@ c-service-w {
 }
 
 .live-tv-box img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
 }
 
@@ -3105,7 +3102,7 @@ c-service-w {
 .live-tv-box .roundBtn {
 	position: absolute;
 	bottom: -60px;
-	right: -40px;
+	right: -20px;
 }
 
 .c-secian-w {

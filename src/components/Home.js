@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef, useState } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import MuteIcon from "./../assets/images/img/muteIcon.png";
 import SearchIconFill from "./../assets/images/img/searchIconFill.png";
 import RoyClanLogoWhite from "./../assets/images/img/roy clan logo white.png";
@@ -144,6 +144,25 @@ const HomeWrapper = styled.div`
   .about {
     flex-direction: column;
   }
+  @media (max-width: 767px) {
+    .studioImg.wow.fadeInLeft {
+      margin-bottom: 57px;
+    }
+    .membership-title {
+      font-size: 45px;
+    }
+    .explore-title {
+      font-size: 35px;
+    }
+    .c-member-w a {
+      padding: 12px 25px;
+    }
+  }
+  .c-drive-img img {
+    height: 300px;
+    object-fit: cover;
+    width: 100%;
+  }
 `;
 
 export default function Home() {
@@ -264,7 +283,7 @@ export default function Home() {
           <div id="smooth-content" ref={wrapper}>
             {/* <!-- home page banner part --> */}
             <section className="homeBanner overflow-hidden minHeightSec minBannerHeight ">
-              <div className="container-fluid">
+              <div className="">
                 <div className="row">
                   <div className="col-12 px-0">
                     <div className="homePageBanerImageSec position-relative">
@@ -557,7 +576,7 @@ export default function Home() {
             {/* <!-- about --> */}
             <section className="ss c-about-w minHeightSec minBannerHeight d-flex align-items-center ">
               <div className="container-fluid">
-                <div className="container">
+                <div className="container-fluid">
                   <h4 className="">OPULENCE</h4>
                   <div className="c-about-con d-flex about">
                     <h2 className="">
@@ -609,7 +628,7 @@ export default function Home() {
                     }
               }
             >
-              <div className="container">
+              <div className="container-fluid">
                 <div className="c-drive-con">
                   <h4 className="">STUDIO</h4>
                   <h2 className="">
@@ -731,7 +750,7 @@ export default function Home() {
 
             {/* <!-- rent and resale sec --> */}
             <section className="c-rent-w minHeightSec minBannerHeight d-flex align-items-center rent-resale">
-              <div className="container">
+              <div className="container-fluid">
                 <div className="row">
                   <div className="col-md-5">
                     <div className="c-rent-hading">
@@ -755,10 +774,10 @@ export default function Home() {
                       className="c-rent-img-1 wow fadeIn"
                       data-wow-delay="0.5s"
                     >
-                      <img src={studio1} alt="" />
+                      <img src={studio2} alt="" />
                     </div>
                   </div>
-                  <div className="col-md-7 ml-auto">
+                  <div className="col-md-7 ml-auto mt-4">
                     <div
                       className="c-rent-img-2 wow fadeIn "
                       data-wow-delay="1.5s"
@@ -789,7 +808,7 @@ export default function Home() {
 
             {/* <!-- live tv sec --> */}
             <section className="c-live-tv minHeightSec minBannerHeight d-flex align-items-center ">
-              <div className="container">
+              <div className="container-fluid">
                 <div className="row">
                   <div className="col-md-12">
                     <h2>
@@ -827,7 +846,7 @@ export default function Home() {
 
             {/* <!-- season sec --> */}
             <section className="c-secian-w minHeightSec minBannerHeight d-flex align-items-center delayed-section">
-              <div className="container">
+              <div className="container-fluid">
                 <div className="c-secian-heading">
                   <div className="roundBtn rightDestinationbtn">
                     <span
@@ -908,7 +927,7 @@ export default function Home() {
 
             {/* <!-- Follow us sec --> */}
             <section className="paddingSec minHeightSec minBannerHeight d-flex align-items-center followSec ">
-              <div className="container">
+              <div className="container-fluid">
                 <div className="row align-items-end">
                   <div className="col-md-6 position-relative">
                     <h2 className="">
@@ -984,7 +1003,7 @@ export default function Home() {
 
             {/* <!-- Membership --> */}
             <section className="c-member-w paddingSec d-flex align-items-center membership">
-              <div className="container">
+              <div className="container-fluid">
                 <h2 className="">
                   <div className="explore-title">MEMBERSHIP</div>
                 </h2>

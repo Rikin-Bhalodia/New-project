@@ -104,7 +104,7 @@ export function MainSlider() {
     <Swiper
       slidesPerView={1}
       className="mySwiper"
-      style={{ height: "400px" }}
+      style={{ height: "400px", borderRadius: "30px" }}
       // autoplay={{
       //   delay: 1500,
       //   disableOnInteraction: false,
@@ -116,7 +116,13 @@ export function MainSlider() {
     >
       {[1, 2, 3, 4, 5, 6].map((_) => {
         return (
-          <SwiperSlide style={{ backgroundImage: `url(${aboutSlider})` }}>
+          <SwiperSlide
+            style={{
+              backgroundImage: `url(${aboutSlider})`,
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+            }}
+          >
             <div className="c-about-slider-in">
               <div className="c-about-slider-con">
                 <span>
