@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import Banner from "./Banner";
 import Header from "./header";
@@ -31,6 +31,7 @@ import FirstImage from "./assets/images/studio/blog/first.svg";
 import Slider from "./slider";
 
 const StudioWrapper = styled.div`
+  overflow: hidden;
   .studioBlogMenu {
     display: flex;
     text-transform: uppercase;
@@ -50,8 +51,21 @@ const StudioWrapper = styled.div`
     font-size: 110px;
   }
   .MainImage {
-    background-image: url(${BannerImage});
-    object-fit: cover;
+    background-image: linear-gradient(
+        135.17deg,
+        #a65a40 1.41%,
+        rgba(167, 149, 134, 0) 90.8%
+      ),
+      url(${BannerImage});
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 100vh;
+    height: 200vh;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center right;
+    position: relative;
   }
   .connect-image {
     width: 500px;
@@ -81,10 +95,75 @@ const StudioWrapper = styled.div`
       margin-top: 20px;
     }
   }
+  .scroll-effect {
+    background: rgb(102 94 47);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 999999;
+    justify-content: center;
+    max-width: 100%;
+    padding-top: 0px !important;
+  }
+  .container {
+    padding-top: 20px;
+  }
+  .main-logo {
+    height: 40px;
+    position: relative;
+    right: 90px;
+  }
+  .data {
+    font-family: "Coral Blush";
+    font-style: normal;
+    font-weight: 400;
+    position: relative;
+    letter-spacing: 3px !important;
+    font-size: 70px !important;
+  }
+  .atilier {
+    position: relative;
+    top: -50px;
+  }
+  .search {
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(0, 0, 0, 0.09);
+    border-radius: 136px;
+    height: 30px;
+    width: 200px;
+    padding: 0 20px;
+    font-size: 15px;
+  }
+  .search-icon {
+    position: relative;
+    right: 25px;
+    height: 15px;
+    top: 2px;
+    opacity: 0.5;
+  }
+  .mic-icon {
+    position: relative;
+    right: 20px;
+    height: 18px;
+    top: 2px;
+  }
 `;
 
 const Studio = () => {
   const wrapper = useRef();
+  const [scrollHeader, setScrollHeader] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollHeader(window.scrollY > 0);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   //   useLayoutEffect(() => {
   //     const ctx = gsap.context(() => {
   //       // Target the two specific elements we have asigned the animate class
@@ -102,7 +181,11 @@ const Studio = () => {
     <StudioWrapper>
       <div className="smooth-wrapper" ref={wrapper}>
         <div className="MainImage">
-          <section className="topHeaderPart py-4">
+          <section
+            className={`topHeaderPart py-3 ${
+              scrollHeader ? "scroll-effect" : ""
+            }`}
+          >
             <div className="container">
               <div className="row align-items-center justify-content-between">
                 <div className="menuleftIcon">
@@ -110,10 +193,14 @@ const Studio = () => {
                     <li>
                       <a href="javascript:void(0)">
                         <span>
+                          <input
+                            placeholder="Search Items"
+                            className="search"
+                          />
                           <img
-                            src={Mic}
-                            className="img-fluid smallHeaderIcon"
-                            alt=""
+                            src={Search}
+                            alt="search"
+                            className="search-icon"
                           />
                         </span>
                       </a>
@@ -121,11 +208,7 @@ const Studio = () => {
                     <li>
                       <a href="javascript:void(0)">
                         <span>
-                          <img
-                            src={Search}
-                            className="img-fluid smallHeaderIcon"
-                            alt=""
-                          />
+                          <img src={Mic} className="mic-icon" alt="" />
                         </span>
                       </a>
                     </li>
@@ -134,7 +217,7 @@ const Studio = () => {
 
                 <div className="logoImage text-center">
                   <a href="">
-                    <img src={MainLogo} className="img-fluid" />
+                    <img src={MainLogo} className="main-logo" />
                   </a>
                 </div>
 
@@ -181,132 +264,26 @@ const Studio = () => {
           <section className="studio-s1">
             <div className="sc">
               <p className="text-light">STUDIO</p>
-              <h1 className="f-heading-m studio">
+              <h1 className="f-heading-m studio data">
+                <div className="f-line">STYLE</div>
+                <div className="f-line">OPULENCE</div>
                 <div className="f-line">
-                  <div>
-                    <div className="perspective">
-                      <div className="cube">
-                        <div>S</div>
-                      </div>
-                    </div>
-                    <div className="perspective">
-                      <div className="cube">
-                        <div>T</div>
-                      </div>
-                    </div>
-                    <div className="perspective">
-                      <div className="cube">
-                        <div>Y</div>
-                      </div>
-                    </div>
-                    <div className="perspective">
-                      <div className="cube">
-                        <div>L</div>
-                      </div>
-                    </div>
-                    <div className="perspective">
-                      <div className="cube">
-                        <div>E</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="f-line">
-                  <div>
-                    <div className="perspective">
-                      <div className="cube">
-                        <div>O</div>
-                      </div>
-                    </div>
-                    <div className="perspective">
-                      <div className="cube">
-                        <div>P</div>
-                      </div>
-                    </div>
-                    <div className="perspective">
-                      <div className="cube">
-                        <div>U</div>
-                      </div>
-                    </div>
-                    <div className="perspective">
-                      <div className="cube">
-                        <div>L</div>
-                      </div>
-                    </div>
-                    <div className="perspective">
-                      <div className="cube">
-                        <div>E</div>
-                      </div>
-                    </div>
-                    <div className="perspective">
-                      <div className="cube">
-                        <div>N</div>
-                      </div>
-                    </div>
-                    <div className="perspective">
-                      <div className="cube">
-                        <div>C</div>
-                      </div>
-                    </div>
-                    <div className="perspective">
-                      <div className="cube">
-                        <div>E</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="f-line">
-                  <div>
-                    <div className="perspective">
-                      <div className="cube">
-                        <div>G</div>
-                      </div>
-                    </div>
-                    <div className="perspective">
-                      <div className="cube">
-                        <div>R</div>
-                      </div>
-                    </div>
-                    <div className="perspective">
-                      <div className="cube">
-                        <div>A</div>
-                      </div>
-                    </div>
-                    <div className="perspective">
-                      <div className="cube">
-                        <div>N</div>
-                      </div>
-                    </div>
-                    <div className="perspective">
-                      <div className="cube">
-                        <div>D</div>
-                      </div>
-                    </div>
-                    <div className="perspective">
-                      <div className="cube">
-                        <div>E</div>
-                      </div>
-                    </div>
-                    <div className="perspective">
-                      <div className="cube">
-                        <div>U</div>
-                      </div>
-                    </div>
-                    <div className="perspective">
-                      <div className="cube">
-                        <div>R</div>
-                      </div>
-                    </div>
-                  </div>
+                  <div>GRANDEUR</div>
                 </div>
               </h1>
-              <img src={Atilier} alt="atilier" />
+              <img src={Atilier} alt="atilier" className="atilier" />
               <p>
                 Lorem Ipsum has been the industry's standard dummy text ever
                 since the 1500s, when an unknown printer took a galley of type
                 and scrambled it to make a type specimen book. It has survived
                 not only five centuries.
               </p>
+              <a
+                style={{ zIndex: 99999 }}
+                className="homeMenuDesign d-inline-block colorWhite text-center pt-3 coralScript font-40 position-absolute"
+              >
+                Menu
+              </a>
             </div>
           </section>
         </div>

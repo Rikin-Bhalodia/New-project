@@ -185,9 +185,8 @@ footer {
   min-height: 100vh;
 }
 .backgroundSec {
-  background-size: cover !important;
   background-repeat: no-repeat !important;
-  background-position: center !important;
+  background-position: right !important;
 }
 
 .ywlowBoredrSec {

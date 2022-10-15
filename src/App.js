@@ -5,12 +5,15 @@ import Studio from "./studio";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/bundle";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <Studio />
-      <Home />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/studio" element={<Studio />} />
+      </Routes>
     </div>
   );
 }
