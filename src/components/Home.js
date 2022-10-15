@@ -164,8 +164,8 @@ export default function Home() {
     };
   }, []);
   return (
-    <HomeWrapper id="smooth-wrapper">
-      <div ref={wrapper} id="smooth-content">
+    <HomeWrapper>
+      <div>
         <section className="topHeaderPart py-2">
           <div className="container">
             <div className="row align-items-center justify-content-between">
@@ -261,7 +261,7 @@ export default function Home() {
         </section>
 
         <div id="smooth-wrapper">
-          <div id="smooth-content">
+          <div id="smooth-content" ref={wrapper}>
             {/* <!-- home page banner part --> */}
             <section className="homeBanner overflow-hidden minHeightSec minBannerHeight ">
               <div className="container-fluid">
