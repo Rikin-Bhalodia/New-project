@@ -1,10 +1,11 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
-import MuteIcon from "./../assets/images/img/muteIcon.png";
-import SearchIconFill from "./../assets/images/img/searchIconFill.png";
-import RoyClanLogoWhite from "./../assets/images/img/roy clan logo white.png";
-import Profile from "./../assets/images/img/profile.png";
-import CartIcon from "./../assets/images/img/cartIcon.png";
-import HeartIcon from "./../assets/images/img/heartIcon.png";
+
+import Mic from "../assets/images/studio/header/mic.svg";
+import Search from "../assets/images/studio/header/search.svg";
+import MainLogo from "../assets/images/studio/header/main-logo.svg";
+import Heart from "../assets/images/studio/header/heart.svg";
+import Cart from "../assets/images/studio/header/cart.svg";
+import Profile from "../assets/images/studio/header/profile.svg";
 import studioInner5 from "./../assets/images/img/studioInner-1.jpg";
 import studioInner1 from "./../assets/images/img/studioInner-1.jpg";
 import studioInner2 from "./../assets/images/img/studioInner-2.jpg";
@@ -54,11 +55,11 @@ import L from "../assets/images/studio/royclan/L.svg";
 import C from "../assets/images/studio/royclan/C.svg";
 import Leaf from "../assets/images/studio/royclan/leaf.svg";
 import styled from "styled-components";
-import { gsap } from "gsap";
+import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import ScrollSmoother from "gsap/ScrollSmoother";
 
 const HomeWrapper = styled.div`
+  scroll-behavior: smooth;
   .connect-image {
     width: 500px;
     position: relative;
@@ -144,6 +145,45 @@ const HomeWrapper = styled.div`
   .about {
     flex-direction: column;
   }
+  .scroll-effect {
+    background: rgb(102 94 47);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 999999;
+    justify-content: center;
+    max-width: 100%;
+    padding-top: 0px !important;
+  }
+  .search {
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(0, 0, 0, 0.09);
+    border-radius: 136px;
+    height: 30px;
+    width: 200px;
+    padding: 0 20px;
+    font-size: 15px;
+  }
+  .search-icon {
+    position: relative;
+    right: 25px;
+    height: 15px;
+    top: 2px;
+    opacity: 0.5;
+  }
+  .mic-icon {
+    position: relative;
+    right: 20px;
+    height: 18px;
+    top: 2px;
+  }
+  .main-logo {
+    height: 40px;
+    position: relative;
+    right: 90px;
+  }
   @media (max-width: 767px) {
     .studioImg.wow.fadeInLeft {
       margin-bottom: 57px;
@@ -163,117 +203,118 @@ const HomeWrapper = styled.div`
     object-fit: cover;
     width: 100%;
   }
+  .content {
+    font-size: 46px;
+  }
 `;
 
 export default function Home() {
   const [image, setImage] = useState(studio);
-  // console.log(image, "image");
+  const [scrollHeader, setScrollHeader] = useState(false);
+
   const wrapper = useRef();
-  gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+  gsap.registerPlugin(ScrollTrigger);
   const handleImage = (studioImage) => {
     setImage(studioImage);
   };
-  useLayoutEffect(() => {
-    let smoother = ScrollSmoother.create({
-      smooth: 3, // how long (in seconds) it takes to "catch up" to the native scroll position
-      effects: true, // looks for data-speed and data-lag attributes on elements
-    });
+  // useLayoutEffect(() => {
+  //   let smoother = ScrollTrigger.create({
+  //     smooth: 3, // how long (in seconds) it takes to "catch up" to the native scroll position
+  //     effects: true, // looks for data-speed and data-lag attributes on elements
+  //   });
+  //   return () => {
+  //     smoother.kill();
+  //   };
+  // }, []);
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollHeader(window.scrollY > 0);
+      // setTransitionText(window.scrollY === 0 || window.scrollY > 0);
+      // setTransitionForLuxury(window.scrollY > 1600);
+      // setTransitionForBlogs(window.scrollY > 2800);
+      // setTransitionForMore(window.scrollY > 3900);
+    };
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      smoother.kill();
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
   return (
     <HomeWrapper>
       <div>
-        <section className="topHeaderPart py-2">
+        <section
+          className={`topHeaderPart py-3 ${
+            scrollHeader ? "scroll-effect" : ""
+          }`}
+        >
           <div className="container">
             <div className="row align-items-center justify-content-between">
-              <div className="col-md-4">
-                <div className="menuleftIcon">
-                  <ul>
-                    <li>
-                      <a href="/">
-                        <span>
-                          <img
-                            src={MuteIcon}
-                            className=" smallHeaderIcon"
-                            alt="img"
-                          />
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <div className="c-search-w">
-                        <form>
-                          <input
-                            type="text"
-                            name=""
-                            placeholder="Search Items"
-                          />
-                          <button>
-                            <span>
-                              <img
-                                src={SearchIconFill}
-                                className="img-fluid smallHeaderIcon"
-                                alt=""
-                              />
-                            </span>
-                          </button>
-                        </form>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
+              <div className="menuleftIcon">
+                <ul>
+                  <li>
+                    <a href="javascript:void(0)">
+                      <span>
+                        <input placeholder="Search Items" className="search" />
+                        <img
+                          src={Search}
+                          alt="search"
+                          className="search-icon"
+                        />
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0)">
+                      <span>
+                        <img src={Mic} className="mic-icon" alt="" />
+                      </span>
+                    </a>
+                  </li>
+                </ul>
               </div>
-              <div className="col-md-4">
-                <div className="logoImage text-center">
-                  <a href="/">
-                    <img
-                      src={RoyClanLogoWhite}
-                      className="img-fluid"
-                      alt="img"
-                    />
-                  </a>
-                </div>
+
+              <div className="logoImage text-center">
+                <a href="">
+                  <img src={MainLogo} className="main-logo" />
+                </a>
               </div>
-              <div className="col-md-4">
-                <div className="menuleftIcon text-right">
-                  <ul>
-                    <li>
-                      <a href="/">
-                        <span>
-                          <img
-                            src={Profile}
-                            className="img-fluid smallHeaderIcon"
-                            alt=""
-                          />
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="/">
-                        <span>
-                          <img
-                            src={CartIcon}
-                            className="img-fluid smallHeaderIcon"
-                            alt=""
-                          />
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="/">
-                        <span>
-                          <img
-                            src={HeartIcon}
-                            className="img-fluid smallHeaderIcon"
-                            alt=""
-                          />
-                        </span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
+
+              <div className="menuleftIcon text-right">
+                <ul>
+                  <li>
+                    <a href="javascript:void(0)">
+                      <span>
+                        <img
+                          src={Profile}
+                          className="img-fluid smallHeaderIcon"
+                          alt=""
+                        />
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0)">
+                      <span>
+                        <img
+                          src={Heart}
+                          className="img-fluid smallHeaderIcon"
+                          alt=""
+                        />
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0)">
+                      <span>
+                        <img
+                          src={Cart}
+                          className="img-fluid smallHeaderIcon"
+                          alt=""
+                        />
+                      </span>
+                    </a>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
@@ -318,7 +359,7 @@ export default function Home() {
                                 </div>
                               </div>
                               <h3 className="mb-2 coralScript mainColor text-center font-80 font-weight-bold minWidth600 letterSpacingBig banner-one-line shadowText textH3">
-                                <span className="bannertyping d-block">
+                                <span className="bannertyping d-block content">
                                   Studio Content
                                 </span>
                               </h3>
@@ -350,7 +391,7 @@ export default function Home() {
                                 </div>
                               </div>
                               <h3 className="mb-2 coralScript mainColor text-center font-80 font-weight-bold minWidth600 letterSpacingBig banner-one-line shadowText textH3">
-                                <span className="bannertyping d-block">
+                                <span className="bannertyping d-block content">
                                   Lorem ipsum dolor sit amet.
                                 </span>
                               </h3>
@@ -383,7 +424,7 @@ export default function Home() {
                                 </div>
                               </div>
                               <h3 className="mb-2 coralScript mainColor text-center font-80 font-weight-bold minWidth600 letterSpacingBig banner-one-line shadowText textH3">
-                                <span className="bannertyping d-block">
+                                <span className="bannertyping d-block content">
                                   Know the world of luxary
                                 </span>
                               </h3>
@@ -415,7 +456,7 @@ export default function Home() {
                                 </div>
                               </div>
                               <h3 className="mb-2 coralScript mainColor text-center font-80 font-weight-bold minWidth600 letterSpacingBig banner-one-line shadowText textH3">
-                                <span className="bannertyping d-block">
+                                <span className="bannertyping d-block content">
                                   Lorem ipsum dolor sit amet.
                                 </span>
                               </h3>
@@ -441,7 +482,7 @@ export default function Home() {
                                 </div>
                               </div>
                               <h3 className="mb-2 coralScript mainColor text-center font-80 font-weight-bold minWidth600 letterSpacingBig banner-one-line shadowText textH3">
-                                <span className="bannertyping d-block">
+                                <span className="bannertyping d-block content">
                                   Lorem ipsum dolor sit amet.
                                 </span>
                               </h3>

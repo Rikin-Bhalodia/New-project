@@ -5,7 +5,6 @@ const Atilier = () => {
   gsap.registerPlugin();
   let tl = gsap.timeline({ repeat: -1, delay: 1, repeatDelay: 1, yoyo: true });
   const pathId = useRef(null);
-  console.log(pathId.current, "pathId.current");
   useEffect(() => {
     tl.fromTo(
       pathId.current,
