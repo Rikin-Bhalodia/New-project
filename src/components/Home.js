@@ -1,25 +1,16 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 
-import Mic from "../assets/images/studio/header/mic.svg";
-import Search from "../assets/images/studio/header/search.svg";
-import MainLogo from "../assets/images/studio/header/main-logo.svg";
-import Heart from "../assets/images/studio/header/heart.svg";
-import Cart from "../assets/images/studio/header/cart.svg";
-import Profile from "../assets/images/studio/header/profile.svg";
 import studioInner5 from "./../assets/images/img/studioInner-1.jpg";
 import studioInner1 from "./../assets/images/img/studioInner-1.jpg";
 import studioInner2 from "./../assets/images/img/studioInner-2.jpg";
 import studioInner3 from "./../assets/images/img/studioInner-3.jpg";
 import studioInner4 from "./../assets/images/img/studioInner-4.jpg";
-import aboutSlider from "./../assets/images/img/about-slider.jpg";
 import studio2 from "./../assets/images/img/studio-1.jpg";
 import studio1 from "./../assets/images/img/studio-2.jpg";
 import studio3 from "./../assets/images/img/studio-3.jpg";
 import studio from "./../assets/images/img/Studio-bg.png";
 import { MainSlider } from "../slider";
-import avenue1 from "./../assets/images/img/avenue1.png";
-import avenue from "./../assets/images/img/avenue.png";
-import avenue2 from "./../assets/images/img/avenue2.png";
+
 import liveTv from "./../assets/images/img/live-tv.png";
 import secain1 from "./../assets/images/img/secain-1.jpg";
 import secain2 from "./../assets/images/img/secain-2.jpg";
@@ -44,19 +35,15 @@ import TakeTour from "../assets/images/homepage/take-tour.svg";
 
 import ShopNow from "../assets/images/homepage/dark-shownow.svg";
 
-import Connect from "../assets/images/studio/connect.svg";
-import WithusText from "../assets/images/studio/withus.svg";
-import A from "../assets/images/studio/royclan/A.svg";
-import R from "../assets/images/studio/royclan/R.svg";
-import O from "../assets/images/studio/royclan/O.svg";
-import Y from "../assets/images/studio/royclan/Y.svg";
-import N from "../assets/images/studio/royclan/N.svg";
-import L from "../assets/images/studio/royclan/L.svg";
-import C from "../assets/images/studio/royclan/C.svg";
-import Leaf from "../assets/images/studio/royclan/leaf.svg";
 import styled from "styled-components";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import Icon from "../Luxury";
+import Elegance from "../elegance";
+import Avenue from "../avenue";
+import Service from "../service";
+import Footer from "../commonComponents/Footer";
+import Header from "../commonComponents/Header";
 
 const HomeWrapper = styled.div`
   scroll-behavior: smooth;
@@ -210,7 +197,6 @@ const HomeWrapper = styled.div`
 
 export default function Home() {
   const [image, setImage] = useState(studio);
-  const [scrollHeader, setScrollHeader] = useState(false);
 
   const wrapper = useRef();
   gsap.registerPlugin(ScrollTrigger);
@@ -226,100 +212,11 @@ export default function Home() {
   //     smoother.kill();
   //   };
   // }, []);
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollHeader(window.scrollY > 0);
-      // setTransitionText(window.scrollY === 0 || window.scrollY > 0);
-      // setTransitionForLuxury(window.scrollY > 1600);
-      // setTransitionForBlogs(window.scrollY > 2800);
-      // setTransitionForMore(window.scrollY > 3900);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+
   return (
     <HomeWrapper>
       <div>
-        <section
-          className={`topHeaderPart py-3 ${
-            scrollHeader ? "scroll-effect" : ""
-          }`}
-        >
-          <div className="container">
-            <div className="row align-items-center justify-content-between">
-              <div className="menuleftIcon">
-                <ul>
-                  <li>
-                    <a href="javascript:void(0)">
-                      <span>
-                        <input placeholder="Search Items" className="search" />
-                        <img
-                          src={Search}
-                          alt="search"
-                          className="search-icon"
-                        />
-                      </span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="javascript:void(0)">
-                      <span>
-                        <img src={Mic} className="mic-icon" alt="" />
-                      </span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="logoImage text-center">
-                <a href="">
-                  <img src={MainLogo} className="main-logo" />
-                </a>
-              </div>
-
-              <div className="menuleftIcon text-right">
-                <ul>
-                  <li>
-                    <a href="javascript:void(0)">
-                      <span>
-                        <img
-                          src={Profile}
-                          className="img-fluid smallHeaderIcon"
-                          alt=""
-                        />
-                      </span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="javascript:void(0)">
-                      <span>
-                        <img
-                          src={Heart}
-                          className="img-fluid smallHeaderIcon"
-                          alt=""
-                        />
-                      </span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="javascript:void(0)">
-                      <span>
-                        <img
-                          src={Cart}
-                          className="img-fluid smallHeaderIcon"
-                          alt=""
-                        />
-                      </span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
+        <Header />
         <div id="smooth-wrapper">
           <div id="smooth-content" ref={wrapper}>
             {/* <!-- home page banner part --> */}
@@ -629,8 +526,10 @@ export default function Home() {
                     <h2 className="">
                       <div className="about-title">WORLD OF</div>
                     </h2>
-                    <span></span>
                     <div className="roundBtn text-center mt-2">
+                      <span style={{ position: "relative" }}>
+                        <Elegance />
+                      </span>
                       <span
                         id="roundText8"
                         className="btnText strong colorYellow font-13 letterSpacingmedium"
@@ -682,7 +581,9 @@ export default function Home() {
                     <div className="studio-title">OF</div>
                   </h2>
 
-                  <span></span>
+                  <span style={{ position: "relative" }}>
+                    <Icon />
+                  </span>
                   {/* <!-- <span className="">luxury</span> --> */}
                   <div className="roundBtn text-center mt-2">
                     <span
@@ -746,7 +647,9 @@ export default function Home() {
                   <div className="col-md-5">
                     <div className="headerAvenueSec">
                       <h2 className="brwonColor font-100 ParisienneFont wow text-center">
-                        <span className=""></span>
+                        <span className="">
+                          <Avenue />
+                        </span>
                       </h2>
                       <div className="roundBtn">
                         <span
@@ -771,7 +674,9 @@ export default function Home() {
                     <ServiceSlider />
                   </div>
                   <div className="col-md-5 text-center">
-                    <span className=""></span>
+                    <span className="relative">
+                      <Service />
+                    </span>
                     <div className="roundBtn rightDestinationbtn text-right">
                       <span
                         id="roundText8"
@@ -1059,145 +964,7 @@ export default function Home() {
             </section>
 
             {/* <!-- Follow us sec --> */}
-            <footer
-              className="c-footer-w minHeightSec minBannerHeight d-flex align-items-center"
-              style={{ backgroundColor: "#fff", position: "relative" }}
-            >
-              <div className="container">
-                <h5>GET IN TOUCH</h5>
-                <div className="footer-in">
-                  <div className="c-footer-box">
-                    <h2>
-                      <span>
-                        <img
-                          src={Connect}
-                          alt="footer-image"
-                          className="connect-image"
-                        />
-                        <img src={WithusText} className="with-us" />
-                      </span>
-                    </h2>
-                    <h2
-                      className="f-heading-m contact"
-                      style={{ display: "flex", flexDirection: "column" }}
-                    >
-                      <div className="f-line">
-                        <div>
-                          <div className="perspective">
-                            <div className="cube">
-                              <div>W</div>
-                            </div>
-                          </div>
-                          <div className="perspective">
-                            <div className="cube">
-                              <div>I</div>
-                            </div>
-                          </div>
-                          <div className="perspective">
-                            <div className="cube">
-                              <div>T</div>
-                            </div>
-                          </div>
-                          <div className="perspective">
-                            <div className="cube">
-                              <div>H</div>
-                            </div>
-                          </div>
-                          <div
-                            className="perspective"
-                            style={{ marginLeft: "1rem" }}
-                          >
-                            <div className="cube">
-                              <div>U</div>
-                            </div>
-                          </div>
-                          <div className="perspective">
-                            <div className="cube">
-                              <div>S</div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </h2>
-                    <ul className="c-footer-social-w">
-                      <li>
-                        <a href="#">
-                          <i className="fa fa-facebook"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i className="fa fa-instagram"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i className="fa fa-linkedin"></i>
-                        </a>
-                      </li>
-                    </ul>
-                    <ul className="c-footer-info">
-                      <li>
-                        <a href="#"> SEND US A MESSAGE </a>
-                      </li>
-                      <li>
-                        <a href="tel:+91 9876543210">CALL +91 9876543210</a>
-                      </li>
-                      <li>
-                        FIND US AT :
-                        <span>ABC StressT 981 Building Delhi-110088</span>
-                      </li>
-                      <li>
-                        MAIL US AT :{" "}
-                        <span>
-                          <a href="#">abcd@royclan.com </a>
-                        </span>
-                      </li>
-                    </ul>
-                    <div className="c-footer-info-other">
-                      <p>
-                        KNOW THE WORLD OF LUXURY
-                        <span>
-                          ROYCLAN IS THE PLACE WHERE YOU CAN BUY/RENT LUXURY
-                          PRODUCTS.
-                        </span>
-                      </p>
-                      <ul>
-                        <li>
-                          <a href="#">TERMS & CONDITIONS </a>
-                        </li>
-                        <li>
-                          <a href="#">FAQs </a>
-                        </li>
-                        <li>
-                          <a href="#">NEWSLETTER </a>
-                        </li>
-                        <li>
-                          <a href="#">SHIPPING & RETURNS </a>
-                        </li>
-                        <li>
-                          <a href="#">ABOUT US </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="royclan">
-                <div>
-                  <img src={R} />
-                  <img src={O} />
-                  <img src={Y} />
-                  <img src={Leaf} />
-                </div>
-                <div>
-                  <img src={C} />
-                  <img src={L} />
-                  <img src={A} />
-                  <img src={N} />
-                </div>
-              </div>
-            </footer>
+            <Footer />
           </div>
         </div>
       </div>

@@ -1,7 +1,6 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import Banner from "./Banner";
-import Header from "./header";
 import BannerImage from "./assets/images/studio/banner.svg";
 import useWindowSize from "./components/useWindowSize";
 
@@ -30,6 +29,8 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import FirstImage from "./assets/images/studio/blog/first.svg";
 import Slider from "./slider";
 import Atilier from "./atilier";
+import Header from "./commonComponents/Header";
+import Footer from "./commonComponents/Footer";
 
 const StudioWrapper = styled.div`
   overflow: hidden;
@@ -206,6 +207,16 @@ const Studio = () => {
   const [transitionForLuxury, setTransitionForLuxury] = useState(false);
   const [transitionForBlogs, setTransitionForBlogs] = useState(false);
   const [transitionForMore, setTransitionForMore] = useState(false);
+  let imgRef = useRef(null);
+
+  // useEffect(() => {
+  //   setAnimation(
+  //     TweenMax.to(imgRef, 10, {
+  //       rotation: 360,
+  //       repeat: -1,
+  //     }).pause()
+  //   );
+  // }, []);
 
   gsap.registerPlugin(ScrollTrigger);
   const windowSize = useWindowSize();
@@ -268,83 +279,7 @@ const Studio = () => {
   return (
     <StudioWrapper>
       <div className="mainImage">
-        <section
-          className={`topHeaderPart py-3 ${
-            scrollHeader ? "scroll-effect" : ""
-          }`}
-        >
-          <div className="container">
-            <div className="row align-items-center justify-content-between">
-              <div className="menuleftIcon">
-                <ul>
-                  <li>
-                    <a href="javascript:void(0)">
-                      <span>
-                        <input placeholder="Search Items" className="search" />
-                        <img
-                          src={Search}
-                          alt="search"
-                          className="search-icon"
-                        />
-                      </span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="javascript:void(0)">
-                      <span>
-                        <img src={Mic} className="mic-icon" alt="" />
-                      </span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="logoImage text-center">
-                <a href="">
-                  <img src={MainLogo} className="main-logo" />
-                </a>
-              </div>
-
-              <div className="menuleftIcon text-right">
-                <ul>
-                  <li>
-                    <a href="javascript:void(0)">
-                      <span>
-                        <img
-                          src={Profile}
-                          className="img-fluid smallHeaderIcon"
-                          alt=""
-                        />
-                      </span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="javascript:void(0)">
-                      <span>
-                        <img
-                          src={Heart}
-                          className="img-fluid smallHeaderIcon"
-                          alt=""
-                        />
-                      </span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="javascript:void(0)">
-                      <span>
-                        <img
-                          src={Cart}
-                          className="img-fluid smallHeaderIcon"
-                          alt=""
-                        />
-                      </span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
+        <Header />
       </div>
       <div ref={wrapper}>
         <section className="studio-s1">
@@ -902,145 +837,7 @@ const Studio = () => {
             </a>
           </div>
         </section>
-        <footer
-          className="c-footer-w minHeightSec minBannerHeight d-flex align-items-center"
-          style={{ backgroundColor: "#fff", position: "relative" }}
-        >
-          <div className="container">
-            <h5>GET IN TOUCH</h5>
-            <div className="footer-in">
-              <div className="c-footer-box">
-                <h2>
-                  <span>
-                    <img
-                      src={Connect}
-                      alt="footer-image"
-                      className="connect-image"
-                    />
-                    <img src={WithusText} className="with-us" />
-                  </span>
-                </h2>
-                <h2
-                  className="f-heading-m contact"
-                  style={{ display: "flex", flexDirection: "column" }}
-                >
-                  <div className="f-line">
-                    <div>
-                      <div className="perspective">
-                        <div className={`cube ${transitionText ? "flip" : ""}`}>
-                          <div>W</div>
-                        </div>
-                      </div>
-                      <div className="perspective">
-                        <div className="cube">
-                          <div>I</div>
-                        </div>
-                      </div>
-                      <div className="perspective">
-                        <div className="cube">
-                          <div>T</div>
-                        </div>
-                      </div>
-                      <div className="perspective">
-                        <div className="cube">
-                          <div>H</div>
-                        </div>
-                      </div>
-                      <div
-                        className="perspective"
-                        style={{ marginLeft: "1rem" }}
-                      >
-                        <div className="cube">
-                          <div>U</div>
-                        </div>
-                      </div>
-                      <div className="perspective">
-                        <div className="cube">
-                          <div>S</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </h2>
-                <ul className="c-footer-social-w">
-                  <li>
-                    <a href="#">
-                      <i className="fa fa-facebook"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i className="fa fa-instagram"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i className="fa fa-linkedin"></i>
-                    </a>
-                  </li>
-                </ul>
-                <ul className="c-footer-info">
-                  <li>
-                    <a href="#"> SEND US A MESSAGE </a>
-                  </li>
-                  <li>
-                    <a href="tel:+91 9876543210">CALL +91 9876543210</a>
-                  </li>
-                  <li>
-                    FIND US AT :
-                    <span>ABC StressT 981 Building Delhi-110088</span>
-                  </li>
-                  <li>
-                    MAIL US AT :{" "}
-                    <span>
-                      <a href="#">abcd@royclan.com </a>
-                    </span>
-                  </li>
-                </ul>
-                <div className="c-footer-info-other">
-                  <p>
-                    KNOW THE WORLD OF LUXURY
-                    <span>
-                      ROYCLAN IS THE PLACE WHERE YOU CAN BUY/RENT LUXURY
-                      PRODUCTS.
-                    </span>
-                  </p>
-                  <ul>
-                    <li>
-                      <a href="#">TERMS & CONDITIONS </a>
-                    </li>
-                    <li>
-                      <a href="#">FAQs </a>
-                    </li>
-                    <li>
-                      <a href="#">NEWSLETTER </a>
-                    </li>
-                    <li>
-                      <a href="#">SHIPPING & RETURNS </a>
-                    </li>
-                    <li>
-                      <a href="#">ABOUT US </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="royclan">
-            <div>
-              <img src={R} />
-              <img src={O} />
-              <img src={Y} />
-              <img src={Leaf} />
-            </div>
-            <div>
-              <img src={C} />
-              <img src={L} />
-              <img src={A} />
-              <img src={N} />
-            </div>
-          </div>
-        </footer>
+        <Footer />
       </div>
     </StudioWrapper>
   );
