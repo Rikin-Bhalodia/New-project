@@ -190,10 +190,12 @@ const StudioWrapper = styled.div`
     opacity: 0;
     width: 100%;
     display: flex;
-    line-height: 4.5vw !important;
     backface-visibility: hidden;
     transform: rotateY(0deg) translateZ(3vw);
     transition: opacity 1300ms cubic-bezier(0.425, 0.005, 0, 1);
+    font-weight: 400;
+    font-size: 108px;
+    line-height: 112px !important;
   }
 
   .cube.flip div {
@@ -482,7 +484,7 @@ const Studio = () => {
           </div>
         </section>
         <section className="studio-s3">
-          <div className="container">
+          <div className="container-fluid">
             <p>STUDIO</p>
             <h2
               className="f-heading-m explore"
@@ -604,7 +606,7 @@ const Studio = () => {
           </div>
         </section>
         <section className="studio-s4">
-          <div className="container">
+          <div className="container-fluid">
             <h2
               className="f-heading-m explore"
               style={{
@@ -658,7 +660,7 @@ const Studio = () => {
               </div>
             </div>
           </div>
-          <div className="container blogs">
+          <div className="container-fluid blogs">
             <div className="row">
               <div className="col-md-4  wow fadeInUp">
                 <div className="image">
@@ -735,7 +737,7 @@ const Studio = () => {
               </div>
             </div>
           </div>
-          <div className="explore-more container">
+          <div className="explore-more container-fluid">
             <a href="#">
               <h3
                 className="f-heading-m explore-2"
