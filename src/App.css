@@ -810,8 +810,7 @@ footer {
   line-height: 70px;
 }
 .homeMenuDesign:hover,
-.homeMenuDesign:active,
-.homeMenuDesign:focus > .centermenu {
+.homeMenuDesign:active .centermenu {
   opacity: 1 !important;
   visibility: visible !important;
   /* background: white; */
@@ -820,7 +819,10 @@ footer {
 .homeMenuDesign:hover {
   transform: scale(1);
 }
-
+.inenFixedBtn {
+  width: 50px;
+  height: 50px;
+}
 .centerMenu {
   position: absolute;
   bottom: 30px;
