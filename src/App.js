@@ -6,6 +6,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/bundle";
 import { Route, Routes } from "react-router-dom";
+import "antd/dist/antd.variable.min.css";
 
 function App() {
   return (

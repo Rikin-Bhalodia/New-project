@@ -44,6 +44,8 @@ import Avenue from "../avenue";
 import Service from "../service";
 import Footer from "../commonComponents/Footer";
 import Header from "../commonComponents/Header";
+import Menu from "../commonComponents/Menu";
+import MenuIcon from "../assets/images/studio/menu.svg";
 
 const HomeWrapper = styled.div`
   scroll-behavior: smooth;
@@ -171,6 +173,7 @@ const HomeWrapper = styled.div`
     position: relative;
     right: 90px;
   }
+
   @media (max-width: 767px) {
     .studioImg.wow.fadeInLeft {
       margin-bottom: 57px;
@@ -197,6 +200,7 @@ const HomeWrapper = styled.div`
 
 export default function Home() {
   const [image, setImage] = useState(studio);
+  const [menuOpenModal, setMenuOpenModal] = useState(false);
 
   const wrapper = useRef();
   gsap.registerPlugin(ScrollTrigger);
@@ -407,110 +411,25 @@ export default function Home() {
                         </video>
                       </div>
 
-                      <div className="homePageButtonSection">
-                        <div className="inenFixedBtn">
-                          <a
-                            href="/"
-                            //   style="z-index: 99999;"
-                            className="homeMenuDesign d-inline-block colorWhite text-center pt-3 coralScript font-60 position-absolute"
-                          >
-                            Menu
-                          </a>
-                          {/* <!-- menu close icon --> */}
-                          <div className="menuCloseSec"></div>
-                          {/* <!-- display menu sec --> */}
-                          <div
-                            className="centerMenu c-menu-w home d-flex align-items-center flex-column justify-content-between"
-                            //   style="z-index: 999999;"
-                          >
-                            <div className="searchSecbanner position-relative w-100">
-                              <form className="d-flex w-100 align-items-center my-4 menuSearch">
-                                <a href="/" className="menurightBtn colorWhite">
-                                  <i className="fa fa-microphone"></i>
-                                </a>
-                                <input
-                                  type="text"
-                                  className="w-100 coralFont brightMainColor font-13"
-                                  placeholder="Search for products..."
-                                />
-                                <a href="/" className="menuleftBtn colorWhite">
-                                  <i className="fa fa-search"></i>
-                                </a>
-                              </form>
-                            </div>
-                            {/* <!-- inner menu design --> */}
-                            <div className="dragbale-menu">
-                              <ul className="list-unstyled text-center w-100 menuListBaner">
-                                <li className="wow fadeInUp">
-                                  <a href="/">Our story </a>
-                                </li>
-                                <li className="wow fadeInUp">
-                                  <a href="/">Studio </a>
-                                </li>
-                                <li className="wow fadeInUp">
-                                  <a href="/">Avenue </a>
-                                </li>
-                                <li className="wow fadeInUp">
-                                  <a href="/">Services </a>
-                                </li>
-                                <li className="wow fadeInUp">
-                                  <a href="/">Rent </a>
-                                </li>
-                                <li className="wow fadeInUp">
-                                  <a href="/">Preowned </a>
-                                </li>
-                                <li className="wow fadeInUp">
-                                  <a href="/">Live </a>
-                                </li>
-                                <li className="wow fadeInUp">
-                                  <a href="/">BLOG </a>
-                                </li>
-                                <li className="wow fadeInUp">
-                                  <a href="/">Log in/Profile </a>
-                                </li>
-                                <li className="wow fadeInUp">
-                                  <a href="/">Home </a>
-                                </li>
-                                <li className="wow fadeInUp">
-                                  <a href="/">Contact </a>
-                                </li>
-                              </ul>
-                              <ul className="c-social-w">
-                                <li>
-                                  <a href="/">
-                                    <i
-                                      className="fa fa-pinterest"
-                                      aria-hidden="true"
-                                    ></i>
-                                  </a>
-                                </li>
-                                <li>
-                                  <a href="/">
-                                    <i
-                                      className="fa fa-instagram"
-                                      aria-hidden="true"
-                                    ></i>
-                                  </a>
-                                </li>
-                                <li>
-                                  <a href="/">
-                                    <i
-                                      className="fa fa-linkedin-square"
-                                      aria-hidden="true"
-                                    ></i>
-                                  </a>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
+                      <div
+                        className="menu-icon"
+                        onClick={() => setMenuOpenModal(!menuOpenModal)}
+                      >
+                        <Menu
+                          menuOpenModal={menuOpenModal}
+                          onClick={(e) => e.stopPropagation()}
+                        />
+                        {menuOpenModal ? (
+                          <img src={MenuIcon} alt="menu" height={45} />
+                        ) : (
+                          <img src={MenuIcon} alt="menu" height={45} />
+                        )}
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </section>
-
             {/* <!-- about --> */}
             <section className="ss c-about-w minHeightSec minBannerHeight d-flex align-items-center ">
               <div className="container-fluid">
