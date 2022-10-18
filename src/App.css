@@ -4570,20 +4570,20 @@ c-service-w {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-<<<<<<< HEAD
-.curved-text{
-  position:relative;
-  display:inline-block;
-  margin:0 auto;
-  font-size:32px;
- }.curved-text span{
-  min-width:0.5em;
-  text-align:center;
-  padding:30px;
-  margin:0px;
- }
+.curved-text {
+  position: relative;
+  display: inline-block;
+  margin: 0 auto;
+  font-size: 32px;
+}
+.curved-text span {
+  min-width: 0.5em;
+  text-align: center;
+  padding: 30px;
+  margin: 0px;
+}
 
- .scroll-effect {
+.scroll-effect {
   background: rgb(102 94 47);
   position: fixed;
   top: 0;
@@ -4642,16 +4642,15 @@ c-service-w {
   position: absolute;
   right: 50px;
   bottom: 0;
-  div {
-    display: flex;
-  }
-  img {
-    height: 200px;
-    margin-left: 40px;
-    margin-top: 20px;
-  }
 }
-=======
+.royclan div {
+  display: flex;
+}
+.royclan img {
+  height: 200px;
+  margin-left: 40px;
+  margin-top: 20px;
+}
 .curved-text {
   position: relative;
   display: inline-block;
@@ -4699,4 +4698,3 @@ c-service-w {
   transform: scale(1.1);
   transition: all 0.8s ease-in-out;
 }
->>>>>>> 1d0f7c9de7742bf6e564188b5b1724b12bd69ab1

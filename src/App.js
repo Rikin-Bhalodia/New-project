@@ -9,6 +9,7 @@ import "swiper/css/bundle";
 import { Route, Routes } from "react-router-dom";
 import StudioProductMaterial from "./components/studio-material";
 import "antd/dist/antd.variable.min.css";
+import StudioSecVideo from "./components/studio-sec-video";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/studio" element={<Studio />} />
         <Route path="/studio-product" element={<StudioProduct />} />
         <Route path="/studio-material" element={<StudioProductMaterial />} />
+        <Route path="/studio-sec-video" element={<StudioSecVideo />} />
       </Routes>
     </div>
   );

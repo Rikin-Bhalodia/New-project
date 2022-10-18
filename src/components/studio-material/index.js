@@ -4,6 +4,7 @@ import Video from "../../assets/images/studio-material/video.svg";
 import Polygon from "../../assets/images/polygon-left.svg";
 import SimillerVideo from "./SimillerVideo";
 import ProductImgSlider from "./ProductSlider";
+import { useLocation } from "react-router-dom";
 const StudioProductMaterialWrapper = styled.div`
   position: relative;
   .polygon-left {
@@ -40,10 +41,12 @@ const StudioProductMaterialWrapper = styled.div`
 `;
 
 export default function StudioProductMaterial() {
+  const { pathname } = useLocation();
   return (
     <StudioProductMaterialWrapper>
-      <img src={Polygon} alt="" className="polygon-left" />
-
+      {pathname === "/studio-material" && (
+        <img src={Polygon} alt="" className="polygon-left" />
+      )}
       <div className="container-fluid">
         <div className="studio-material-head">
           <div className="leftside-area">
@@ -60,8 +63,12 @@ export default function StudioProductMaterial() {
           <img src={Video} alt="" />
         </div>
       </div>
-      <SimillerVideo />
-      <ProductImgSlider />
+      {pathname === "/studio-material" && (
+        <>
+          <SimillerVideo />
+          <ProductImgSlider />
+        </>
+      )}
     </StudioProductMaterialWrapper>
   );
 }
