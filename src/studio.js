@@ -1,29 +1,12 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import Banner from "./Banner";
 import BannerImage from "./assets/images/studio/banner.svg";
 import useWindowSize from "./components/useWindowSize";
-
-import Mic from "./assets/images/studio/header/mic.svg";
-import Search from "./assets/images/studio/header/search.svg";
-import MainLogo from "./assets/images/studio/header/main-logo.svg";
-import Heart from "./assets/images/studio/header/heart.svg";
-import Cart from "./assets/images/studio/header/cart.svg";
-import Profile from "./assets/images/studio/header/profile.svg";
 
 import CenterLeft from "./assets/images/studio/center-left.svg";
 import CenterRight from "./assets/images/studio/center-right.svg";
 import CenterImage from "./assets/images/studio/center-image.svg";
-import Connect from "./assets/images/studio/connect.svg";
-import WithusText from "./assets/images/studio/withus.svg";
-import A from "./assets/images/studio/royclan/A.svg";
-import R from "./assets/images/studio/royclan/R.svg";
-import O from "./assets/images/studio/royclan/O.svg";
-import Y from "./assets/images/studio/royclan/Y.svg";
-import N from "./assets/images/studio/royclan/N.svg";
-import L from "./assets/images/studio/royclan/L.svg";
-import C from "./assets/images/studio/royclan/C.svg";
-import Leaf from "./assets/images/studio/royclan/leaf.svg";
+
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import FirstImage from "./assets/images/studio/blog/first.svg";
@@ -31,6 +14,8 @@ import Slider from "./slider";
 import Atilier from "./atilier";
 import Header from "./commonComponents/Header";
 import Footer from "./commonComponents/Footer";
+import Menu from "./commonComponents/Menu";
+import MenuIcon from "./assets/images/studio/menu.svg";
 
 const StudioWrapper = styled.div`
   overflow: hidden;
@@ -209,7 +194,7 @@ const Studio = () => {
   const [transitionForLuxury, setTransitionForLuxury] = useState(false);
   const [transitionForBlogs, setTransitionForBlogs] = useState(false);
   const [transitionForMore, setTransitionForMore] = useState(false);
-  let imgRef = useRef(null);
+  const [menuOpenModal, setMenuOpenModal] = useState(false);
 
   // useEffect(() => {
   //   setAnimation(
@@ -414,12 +399,20 @@ const Studio = () => {
               scrambled it to make a type specimen book. It has survived not
               only five centuries.
             </p>
-            <a
-              style={{ zIndex: 99999 }}
-              className="homeMenuDesign d-inline-block colorWhite text-center pt-3 coralScript font-40 position-absolute"
+            <div
+              className="menu-icon"
+              onClick={() => setMenuOpenModal(!menuOpenModal)}
             >
-              Menu
-            </a>
+              <Menu
+                menuOpenModal={menuOpenModal}
+                onClick={(e) => e.stopPropagation()}
+              />
+              {menuOpenModal ? (
+                <img src={MenuIcon} alt="menu" height={45} />
+              ) : (
+                <img src={MenuIcon} alt="menu" height={45} />
+              )}
+            </div>
           </div>
         </section>
         <section className="studio-s2">

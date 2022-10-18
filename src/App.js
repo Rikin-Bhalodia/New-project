@@ -8,6 +8,7 @@ import "swiper/css/pagination";
 import "swiper/css/bundle";
 import { Route, Routes } from "react-router-dom";
 import StudioProductMaterial from "./components/studio-material";
+import "antd/dist/antd.variable.min.css";
 
 function App() {
   return (
