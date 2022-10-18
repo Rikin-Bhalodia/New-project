@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import FirstImage from "./assets/images/studio/fifteensecslider/first-image.svg";
+// import FirstImage from "./assets/images/studio/fifteensecslider/first-image.svg";
 import { Autoplay, Pagination, Navigation } from "swiper";
 import aboutSlider from "./assets/images/img/about-slider.jpg";
 import aboutlogo from "./assets/images/img/about-logo.png";
