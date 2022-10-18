@@ -4,13 +4,21 @@ import smallProduct from "../../assets/images/studio-product/small-product.svg";
 import bigProduct from "../../assets/images/studio-product/big-product.svg";
 import productHead from "../../assets/images/studio-product/product-head.svg";
 import SP from "../../assets/images/studio-product/s-p.svg";
+import Polygon from "../../assets/images/polygon-right.svg";
 
 const SimillerProductWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin: 100px 0;
-  padding: 0 50px 0 150px;
+  margin: 150px 0;
+  padding: 0 0 0 100px;
+  position: relative;
+  .polygon-right {
+    position: absolute;
+    height: 1000px;
+    z-index: -1;
+    right: 0;
+  }
   .simillier-leftpart {
     display: flex;
     flex-direction: column;
@@ -132,6 +140,7 @@ const SimillerProductWrapper = styled.div`
 export default function SimillerProduct() {
   return (
     <SimillerProductWrapper>
+      <img src={Polygon} alt="" className="polygon-right" />
       <div className="simillier-leftpart">
         <div className="simillier-img">
           <div>

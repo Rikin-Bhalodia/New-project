@@ -7,6 +7,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/bundle";
 import { Route, Routes } from "react-router-dom";
+import StudioProductMaterial from "./components/studio-material";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/studio" element={<Studio />} />
         <Route path="/studio-product" element={<StudioProduct />} />
+        <Route path="/studio-material" element={<StudioProductMaterial />} />
       </Routes>
     </div>
   );

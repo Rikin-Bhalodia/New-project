@@ -4,8 +4,17 @@ import Video from "../../assets/images/studio-product/video.svg";
 import ReletedServices from "./RelatedSrevices";
 import SimillerProduct from "./SimillierProduct";
 import WatchMoreSlider from "./WatchMoreSlider";
-
+import Polygon from "../../assets/images/polygon-left.svg";
+import Header from "../../commonComponents/Header";
+import Footer from "../../commonComponents/Footer";
 const StudioProductWrapper = styled.div`
+  position: relative;
+  margin-top: 60px;
+  .polygon-left {
+    position: absolute;
+    height: 1000px;
+    z-index: -1;
+  }
   .studio-product-head {
     display: flex;
     position: relative;
@@ -42,8 +51,8 @@ const StudioProductWrapper = styled.div`
     height: 100%;
     .studio-product-video {
       img {
-        width: 1100px;
-        height: 600px;
+        width: 100%;
+        height: 650px;
         object-fit: cover;
       }
     }
@@ -72,117 +81,20 @@ const StudioProductWrapper = styled.div`
 export default function StudioProduct() {
   return (
     <>
+      <Header />
       <StudioProductWrapper>
+        <img src={Polygon} alt="" className="polygon-left" />
         <div className="container-fluid">
           <div className="studio-product-head">
             <div className="leftside-area">
               <div className="goback-link">
-                <a href="/">Gp Back</a>
+                <a href="/">Go Back</a>
               </div>
               <div className="product-head">
                 <p>STUDIO / CHANEL’S MOST EXPENSIVE PRODUCTS</p>
               </div>
             </div>
-            <div className="rightside-area">
-              <div className="homePageButtonSection">
-                <div className="inenFixedBtn">
-                  <a
-                    href="/"
-                    //   style="z-index: 99999;"
-                    className="homeMenuDesign d-inline-block colorWhite text-center pt-3 coralScript font-60 position-absolute"
-                  >
-                    Menu
-                  </a>
-                  {/* <!-- menu close icon --> */}
-                  <div className="menuCloseSec"></div>
-                  {/* <!-- display menu sec --> */}
-                  <div
-                    className="centerMenu c-menu-w home d-flex align-items-center flex-column justify-content-between"
-                    //   style="z-index: 999999;"
-                  >
-                    <div className="searchSecbanner position-relative w-100">
-                      <form className="d-flex w-100 align-items-center my-4 menuSearch">
-                        <a href="/" className="menurightBtn colorWhite">
-                          <i className="fa fa-microphone"></i>
-                        </a>
-                        <input
-                          type="text"
-                          className="w-100 coralFont brightMainColor font-13"
-                          placeholder="Search for products..."
-                        />
-                        <a href="/" className="menuleftBtn colorWhite">
-                          <i className="fa fa-search"></i>
-                        </a>
-                      </form>
-                    </div>
-                    {/* <!-- inner menu design --> */}
-                    <div className="dragbale-menu">
-                      <ul className="list-unstyled text-center w-100 menuListBaner">
-                        <li className="wow fadeInUp">
-                          <a href="/">Our story </a>
-                        </li>
-                        <li className="wow fadeInUp">
-                          <a href="/">Studio </a>
-                        </li>
-                        <li className="wow fadeInUp">
-                          <a href="/">Avenue </a>
-                        </li>
-                        <li className="wow fadeInUp">
-                          <a href="/">Services </a>
-                        </li>
-                        <li className="wow fadeInUp">
-                          <a href="/">Rent </a>
-                        </li>
-                        <li className="wow fadeInUp">
-                          <a href="/">Preowned </a>
-                        </li>
-                        <li className="wow fadeInUp">
-                          <a href="/">Live </a>
-                        </li>
-                        <li className="wow fadeInUp">
-                          <a href="/">BLOG </a>
-                        </li>
-                        <li className="wow fadeInUp">
-                          <a href="/">Log in/Profile </a>
-                        </li>
-                        <li className="wow fadeInUp">
-                          <a href="/">Home </a>
-                        </li>
-                        <li className="wow fadeInUp">
-                          <a href="/">Contact </a>
-                        </li>
-                      </ul>
-                      <ul className="c-social-w">
-                        <li>
-                          <a href="/">
-                            <i
-                              className="fa fa-pinterest"
-                              aria-hidden="true"
-                            ></i>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="/">
-                            <i
-                              className="fa fa-instagram"
-                              aria-hidden="true"
-                            ></i>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="/">
-                            <i
-                              className="fa fa-linkedin-square"
-                              aria-hidden="true"
-                            ></i>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <div className="rightside-area"></div>
           </div>
           <div className="studio-product-body">
             <div className="studio-product-video">
@@ -208,6 +120,7 @@ export default function StudioProduct() {
       <SimillerProduct />
       <WatchMoreSlider />
       <ReletedServices />
+      <Footer />
     </>
   );
 }
