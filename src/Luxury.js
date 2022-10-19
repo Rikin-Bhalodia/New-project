@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
-import gsap from "gsap-trial";
-import { DrawSVGPlugin } from "gsap-trial/DrawSVGPlugin";
+import gsap from "gsap";
+// import { DrawSVGPlugin } from "gsap-trial/DrawSVGPlugin";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
 function Luxury() {
-  gsap.registerPlugin(DrawSVGPlugin, ScrollTrigger);
+  gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
