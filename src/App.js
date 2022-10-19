@@ -18,7 +18,7 @@ function App() {
   const { pathname } = useLocation();
   return (
     <div className="App">
-      {pathname !== "studio" && <Header />}
+      {pathname !== "/studio" && <Header />}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/studio" element={<Studio />} />
