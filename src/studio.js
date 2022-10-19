@@ -13,7 +13,6 @@ import FirstImage from "./assets/images/studio/blog/first.svg";
 import Slider from "./slider";
 import Atilier from "./atilier";
 import Header from "./commonComponents/Header";
-import Footer from "./commonComponents/Footer";
 import Menu from "./commonComponents/Menu";
 import MenuIcon from "./assets/images/studio/menu.svg";
 
@@ -832,7 +831,6 @@ const Studio = () => {
             </a>
           </div>
         </section>
-        <Footer />
       </div>
     </StudioWrapper>
   );

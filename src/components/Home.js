@@ -32,9 +32,7 @@ import ExploreNow from "../assets/images/homepage/explorenow.svg";
 import DarkExploreNow from "../assets/images/homepage/DarkExploreNow.png";
 import DarkLeafExploreNow from "../assets/images/homepage/dark-explorenow.svg";
 import TakeTour from "../assets/images/homepage/take-tour.svg";
-
 import ShopNow from "../assets/images/homepage/dark-shownow.svg";
-
 import styled from "styled-components";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -42,8 +40,6 @@ import Icon from "../Luxury";
 import Elegance from "../elegance";
 import Avenue from "../avenue";
 import Service from "../service";
-import Footer from "../commonComponents/Footer";
-import Header from "../commonComponents/Header";
 import Menu from "../commonComponents/Menu";
 import MenuIcon from "../assets/images/studio/menu.svg";
 
@@ -220,7 +216,6 @@ export default function Home() {
   return (
     <HomeWrapper>
       <div>
-        <Header />
         <div id="smooth-wrapper">
           <div id="smooth-content" ref={wrapper}>
             {/* <!-- home page banner part --> */}
@@ -881,9 +876,6 @@ export default function Home() {
                 </a>
               </div>
             </section>
-
-            {/* <!-- Follow us sec --> */}
-            <Footer />
           </div>
         </div>
       </div>
