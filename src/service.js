@@ -1,6 +1,6 @@
 import gsap from "gsap";
 // import { DrawSVGPlugin } from "DrawSVGPlugin";
-import ScrollTrigger from "ScrollTrigger";
+import ScrollTrigger from "gsap/ScrollTrigger";
 import { useEffect } from "react";
 
 function Service() {
