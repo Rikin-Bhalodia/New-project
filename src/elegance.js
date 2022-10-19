@@ -4,7 +4,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
 function Elegance() {
-  gsap.registerPlugin(DrawSVGPlugin, ScrollTrigger);
+  gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
