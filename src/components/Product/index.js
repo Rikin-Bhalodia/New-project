@@ -9,7 +9,7 @@ import Product4 from "../../assets/images/product/product4.svg";
 import Product5 from "../../assets/images/product/product5.svg";
 import Star from "../../assets/images/product/star.svg";
 import FooterImage from "../../assets/images/product/footer.svg";
-
+import DownArrow from "../../assets/images/product/down-arrow.svg";
 import styled from "styled-components";
 import Menu from "../../commonComponents/Menu";
 import MenuIcon from "../../assets/images/studio/menu.svg";
@@ -89,7 +89,7 @@ const ProductWrapper = styled.div`
     position: absolute;
     right: 0;
   }
-  select {
+  /* select {
     width: 210px;
     background: transparent;
     border-bottom: 1px solid #fff !important;
@@ -97,7 +97,7 @@ const ProductWrapper = styled.div`
     font-style: italic;
     border: none;
     font-size: 33px !important;
-  }
+  } */
   .product {
     display: flex;
     flex-wrap: wrap;
@@ -224,6 +224,108 @@ const ProductWrapper = styled.div`
     gap: 15px;
     margin-top: 20px;
   }
+  .sort-by {
+    background: #a75b41;
+    border: 1px solid #a75b41;
+    border-radius: 50px;
+    width: 160px;
+    font-size: 14px;
+    height: 23px;
+    color: #fff;
+    padding-left: 15px;
+    display: flex;
+    align-items: center;
+  }
+  select:focus {
+    outline-offset: 0px;
+    outline: none;
+  }
+  .select-items {
+    border: 1px solid #000000;
+    border-radius: 0px 50px 50px 50px;
+  }
+  .arrow {
+    position: relative;
+    right: 35px;
+  }
+  .drop-down {
+    display: flex;
+  }
+  .option-box {
+    margin-top: 20px;
+    height: 130px;
+    border: 1px solid #000000;
+    border-radius: 0px 40px 40px 40px;
+    width: 230px;
+  }
+  .option-box-right {
+    margin-top: 20px;
+    width: 270px;
+    height: 152px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border: 1px solid #000000;
+    border-radius: 50px 0px 50px 50px;
+    padding: 20px;
+    position: absolute;
+    right: 420px;
+    background: #fff;
+    z-index: 99;
+  }
+  .option-box-right2 {
+    margin-top: 20px;
+    width: 350px;
+    height: 152px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border: 1px solid #000000;
+    border-radius: 50px 0px 50px 50px;
+    padding: 20px;
+    position: absolute;
+    right: 40px;
+    background: #fff;
+    z-index: 99;
+  }
+  .filter {
+    margin-top: 30px;
+    margin-left: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .single-option {
+    border-bottom: 1px solid #000000;
+    width: 100%;
+    height: 25px;
+    padding-left: 20px;
+    font-family: "Arial";
+    font-style: normal;
+    font-weight: 400;
+
+    font-size: 13px;
+  }
+  .mood {
+    border: 1px solid #d0d0d0;
+    border-radius: 33px;
+    width: 156px;
+    height: 52px;
+    font-size: 14px;
+    color: #fff;
+    padding-left: 15px;
+    display: flex;
+    align-items: center;
+    background: #a75b41;
+  }
+  .single-option-right {
+    width: 100%;
+    height: 25px;
+    padding-left: 20px;
+    font-family: "Arial";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+  }
 `;
 
 const images = [
@@ -322,6 +424,12 @@ const images = [
 ];
 
 const data = ["halter dress", "strapless dress", "versace dress"];
+const options = [
+  "Featured",
+  "Bestsellers",
+  "Price : Low to High",
+  "Price : High to Low",
+];
 
 const Product = () => {
   const [menuOpenModal, setMenuOpenModal] = useState(false);
@@ -517,6 +625,96 @@ const Product = () => {
           </div>
         </div>
         <img src={RightFilter} alt="right" className="image2" />
+      </div>
+      <div className="filter">
+        <div>
+          <div className="drop-down">
+            <div className="sort-by">Sort By</div>
+            <img src={DownArrow} alt="arrow" className="arrow" />
+          </div>
+          <div className="option-box">
+            {options.map((option) => {
+              return <div className="single-option">{option}</div>;
+            })}
+          </div>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            position: "relative",
+            width: "800px",
+            justifyContent: "space-evenly",
+          }}
+        >
+          <div className="drop-down-right">
+            <div className="drop-down">
+              <div className="mood">MOOD</div>
+              <img src={DownArrow} alt="arrow" className="arrow" />
+            </div>
+            {/* <div className="option-box">
+              {options.map((option) => {
+                return <div className="single-option">{option}</div>;
+              })}
+            </div> */}
+          </div>
+          <div className="drop-down-right">
+            <div className="drop-down">
+              <div className="mood">FRAGRANCE</div>
+              <img src={DownArrow} alt="arrow" className="arrow" />
+            </div>
+            <div className="option-box-right">
+              {options.map((option) => {
+                return (
+                  <div style={{ display: "flex" }}>
+                    <input
+                      type="checkbox"
+                      id={option}
+                      name="vehicle1"
+                      value="Bike"
+                    ></input>
+                    <div className="single-option-right" for={option}>
+                      {option}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+          <div className="drop-down-right">
+            <div className="drop-down">
+              <div className="mood">PURPOSE</div>
+              <img src={DownArrow} alt="arrow" className="arrow" />
+            </div>
+            {/* <div className="option-box">
+              {options.map((option) => {
+                return <div className="single-option">{option}</div>;
+              })}
+            </div> */}
+          </div>
+          <div className="drop-down-right">
+            <div className="drop-down">
+              <div className="mood">TYPE</div>
+              <img src={DownArrow} alt="arrow" className="arrow" />
+            </div>
+            <div className="option-box-right2">
+              {options.map((option) => {
+                return (
+                  <div style={{ display: "flex" }}>
+                    <input
+                      type="checkbox"
+                      id={option}
+                      name="vehicle1"
+                      value="Bike"
+                    ></input>
+                    <div className="single-option-right" for={option}>
+                      {option}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
       </div>
       <div className="product">
         {images.map((ele) => {
