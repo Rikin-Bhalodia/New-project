@@ -150,7 +150,7 @@ const Menu = ({ menuOpenModal }) => {
         placement="top"
         content={content}
         open={menuOpenModal}
-      ></Popover>
+      />
     </>
   );
 };
