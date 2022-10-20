@@ -13,6 +13,10 @@ import StudioSecVideo from "./components/studio-sec-video";
 import Product from "./components/Product";
 import Header from "./commonComponents/Header";
 import Footer from "./commonComponents/Footer";
+import ShopHover from "./components/shop-hover";
+import ServiceHover from "./components/service-hover";
+import SubMenu1 from "./components/sub-category-1";
+import SubMenu2 from "./components/sub-category-2";
 
 function App() {
   const { pathname } = useLocation();
@@ -26,6 +30,10 @@ function App() {
         <Route path="/studio-material" element={<StudioProductMaterial />} />
         <Route path="/studio-sec-video" element={<StudioSecVideo />} />
         <Route path="/product" element={<Product />} />
+        <Route path="/shop-hover" element={<ShopHover />} />
+        <Route path="/service-hover" element={<ServiceHover />} />
+        <Route path="/sub-menu1" element={<SubMenu1 />} />
+        <Route path="/sub-menu2" element={<SubMenu2 />} />
       </Routes>
       <Footer />
     </div>
