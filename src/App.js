@@ -17,6 +17,7 @@ import ShopHover from "./components/shop-hover";
 import ServiceHover from "./components/service-hover";
 import SubMenu1 from "./components/sub-category-1";
 import SubMenu2 from "./components/sub-category-2";
+import About from "./components/About";
 
 function App() {
   const { pathname } = useLocation();
@@ -25,6 +26,7 @@ function App() {
       {pathname !== "/studio" && <Header />}
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
         <Route path="/studio" element={<Studio />} />
         <Route path="/studio-product" element={<StudioProduct />} />
         <Route path="/studio-material" element={<StudioProductMaterial />} />
