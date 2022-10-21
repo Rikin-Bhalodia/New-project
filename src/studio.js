@@ -178,7 +178,7 @@ const StudioWrapper = styled.div`
     transform: rotateY(0deg) translateZ(3vw);
     transition: opacity 1300ms cubic-bezier(0.425, 0.005, 0, 1);
     font-weight: 400;
-    font-size: 108px;
+    font-size: 95px;
     line-height: 112px !important;
   }
 
@@ -486,7 +486,9 @@ const Studio = () => {
                 margin: "2rem 0",
               }}
             >
-              <div className="f-line">
+              EXPLORE
+              {/* <div className="f-line">
+
                 <div>
                   <div className="perspective">
                     <div
@@ -538,7 +540,7 @@ const Studio = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </h2>
 
             <div className="studioBlogMenu">
@@ -607,7 +609,8 @@ const Studio = () => {
                 margin: "2rem 0",
               }}
             >
-              <div className="f-line">
+              BLOGS
+              {/* <div className="f-line">
                 <div>
                   <div className="perspective">
                     <div className={`cube ${transitionForBlogs ? "flip" : ""}`}>
@@ -635,7 +638,7 @@ const Studio = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </h2>
 
             <div className="studioBlogMenu">
@@ -739,7 +742,8 @@ const Studio = () => {
                   margin: "1rem 0",
                 }}
               >
-                <div className="f-line">
+                EXPLORE MORE
+                {/* <div className="f-line">
                   <div>
                     <div className="perspective">
                       <div
@@ -826,7 +830,7 @@ const Studio = () => {
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> */}
               </h3>
             </a>
           </div>

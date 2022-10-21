@@ -23,9 +23,14 @@ const SubMenu1Wrapper = styled.div`
     padding: 50px 80px;
   }
   .menu-area {
-    background-image: url(${submenu});
-    /* background: rgba(0, 0, 0, 0); */
     background-repeat: no-repeat;
+    background-image: linear-gradient(
+        135.17deg,
+        #000 1.41%,
+        rgba(0, 0, 0, 0.7) 90.8%
+      ),
+      url(${submenu});
+    background-size: cover;
   }
   .body h6 {
     color: white;

@@ -28,7 +28,7 @@ const MenuWrapper = styled.div`
     border-radius: 136px;
     width: 370px;
     text-align: center;
-    color: rgba(255, 255, 255, 0.5);
+    /* color: rgba(255, 255, 255, 0.5); */
   }
   .top-left {
     width: 300px;
@@ -94,6 +94,12 @@ const MenuWrapper = styled.div`
   .icon {
     width: 30px;
   }
+  .search-1 {
+    position: absolute;
+    right: 16px;
+    top: 12px;
+    font-size: 20px;
+  }
 `;
 
 const data = [
@@ -115,7 +121,7 @@ const content = (
     <div className="search-part">
       <img src={Mic} alt="mic" height={20} className="mic" />
       <input placeholder="Search Menu" className="search-input" />
-      <img src={Search} alt="search" height={20} className="search" />
+      <img src={Search} alt="search" height={20} className="search-1" />
       <div className="menu-parts">
         {data.map((ele) => {
           return <div>{ele}</div>;
