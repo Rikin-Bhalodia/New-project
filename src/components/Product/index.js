@@ -627,10 +627,8 @@ const Product = () => {
         </div>
         <img src={RightFilter} alt="right" className="image2" />
       </div>
-<<<<<<< Updated upstream
       <ProductPoP />
-=======
-      <div className="product">
+      {/* <div className="product">
         {images.map((ele) => {
           return (
             <>
@@ -660,8 +658,7 @@ const Product = () => {
           className="footer"
           style={{ width: "98vw" }}
         />
-      </div>
->>>>>>> Stashed changes
+      </div> */}
     </ProductWrapper>
   );
 };
