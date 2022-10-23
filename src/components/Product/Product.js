@@ -1,22 +1,14 @@
 import React, { useState } from "react";
-import BackArrow from "../../assets/images/product/back-arrow.svg";
-import LeftFilter from "../../assets/images/product/left-filter.svg";
-import RightFilter from "../../assets/images/product/right-filter.svg";
 import Product1 from "../../assets/images/product/product1.svg";
 import Product2 from "../../assets/images/product/product2.svg";
 import Product3 from "../../assets/images/product/product3.svg";
 import Product4 from "../../assets/images/product/product4.svg";
 import Product5 from "../../assets/images/product/product5.svg";
-import Star from "../../assets/images/product/star.svg";
 import FooterImage from "../../assets/images/product/footer.svg";
 import DownArrow from "../../assets/images/product/down-arrow.svg";
 import styled from "styled-components";
-import Menu from "../../commonComponents/Menu";
-import MenuIcon from "../../assets/images/studio/menu.svg";
-import { Slider } from "antd";
-import ProductPoP from "./Product";
 
-const ProductWrapper = styled.div`
+const ProductPoPWrapper = styled.div`
   margin-top: 100px;
   .goback {
     margin-left: 40px;
@@ -424,7 +416,7 @@ const images = [
   },
 ];
 
-const data = ["halter dress", "strapless dress", "versace dress"];
+// const data = ["halter dress", "strapless dress", "versace dress"];
 const options = [
   "Featured",
   "Bestsellers",
@@ -432,204 +424,104 @@ const options = [
   "Price : High to Low",
 ];
 
-const Product = () => {
-  const [menuOpenModal, setMenuOpenModal] = useState(false);
-  const [background, setBackground] = useState(false);
-  const [backgroundBrand, setBackgroundBrand] = useState(false);
-  const [backgroundColor, setBackgroundColor] = useState(false);
-  console.log(backgroundColor);
-  const [backgroundPriceRange, setBackgroundPriceRange] = useState(false);
-
+const ProductPoP = () => {
   const [productId, setProductId] = useState("");
 
   const handleClick = (id) => {
     setProductId(id);
   };
   return (
-    <ProductWrapper>
-      <div className="goback">
-        <img src={BackArrow} alt="back-arrow" />
-        <div>Go Back</div>
-      </div>
-      <div
-        className="menu-icon"
-        onClick={() => setMenuOpenModal(!menuOpenModal)}
-      >
-        <Menu
-          menuOpenModal={menuOpenModal}
-          onClick={(e) => e.stopPropagation()}
-        />
-        {menuOpenModal ? (
-          <img src={MenuIcon} alt="menu" height={45} />
-        ) : (
-          <img src={MenuIcon} alt="menu" height={45} />
-        )}
-      </div>
-      <div className="middle-part">
-        <div className="heading">I WANNA SHOP</div>
-        <div className={background && "search-part"}>
-          <div className={background && "search-box"}>
-            {background && <div className="head">search</div>}
-            <div className="search-logo">
-              <input
-                placeholder="search here"
-                alt="search"
-                type="text"
-                className="search-input"
-                onClick={() => setBackground(true)}
-              />
-              <div className="close" onClick={() => setBackground(false)}>
-                X
-              </div>
+    <ProductPoPWrapper>
+      <div className="filter">
+        <div>
+          <div className="drop-down">
+            <div className="sort-by">Sort By</div>
+            <img src={DownArrow} alt="arrow" className="arrow" />
+          </div>
+          <div className="option-box">
+            {options.map((option) => {
+              return <div className="single-option">{option}</div>;
+            })}
+          </div>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            position: "relative",
+            width: "800px",
+            justifyContent: "space-evenly",
+          }}
+        >
+          <div className="drop-down-right">
+            <div className="drop-down">
+              <div className="mood">MOOD</div>
+              <img src={DownArrow} alt="arrow" className="arrow" />
             </div>
-            {background && (
-              <div className="contents">
-                {data.map((data) => (
-                  <div className="content"> {data}</div>
-                ))}
-              </div>
-            )}
+            {/* <div className="option-box">
+              {options.map((option) => {
+                return <div className="single-option">{option}</div>;
+              })}
+            </div> */}
+          </div>
+          <div className="drop-down-right">
+            <div className="drop-down">
+              <div className="mood">FRAGRANCE</div>
+              <img src={DownArrow} alt="arrow" className="arrow" />
+            </div>
+            <div className="option-box-right">
+              {options.map((option) => {
+                return (
+                  <div style={{ display: "flex" }}>
+                    <input
+                      type="checkbox"
+                      id={option}
+                      name="vehicle1"
+                      value="Bike"
+                    ></input>
+                    <div className="single-option-right" for={option}>
+                      {option}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+          <div className="drop-down-right">
+            <div className="drop-down">
+              <div className="mood">PURPOSE</div>
+              <img src={DownArrow} alt="arrow" className="arrow" />
+            </div>
+            {/* <div className="option-box">
+              {options.map((option) => {
+                return <div className="single-option">{option}</div>;
+              })}
+            </div> */}
+          </div>
+          <div className="drop-down-right">
+            <div className="drop-down">
+              <div className="mood">TYPE</div>
+              <img src={DownArrow} alt="arrow" className="arrow" />
+            </div>
+            <div className="option-box-right2">
+              {options.map((option) => {
+                return (
+                  <div style={{ display: "flex" }}>
+                    <input
+                      type="checkbox"
+                      id={option}
+                      name="vehicle1"
+                      value="Bike"
+                    ></input>
+                    <div className="single-option-right" for={option}>
+                      {option}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>
-      <div className="des">OR If you know what you want to shop</div>
-      <div className="filter-section">
-        <img src={LeftFilter} alt="left" className="image" />
-        <div className="filter-part">
-          <span>I’m looking for</span>
-          <div
-            className={` ${backgroundBrand ? "search-part" : "maintain-width"}`}
-          >
-            <div className={backgroundBrand && "search-box"}>
-              {backgroundBrand && <div className="head">search</div>}
-              <div className="search-logo">
-                <input
-                  placeholder="Brand"
-                  alt="search"
-                  type="text"
-                  className={`search-input-brand ${
-                    !backgroundBrand && "input"
-                  }`}
-                  onClick={() => setBackgroundBrand(true)}
-                />
-                <div
-                  className="close"
-                  onClick={() => setBackgroundBrand(false)}
-                >
-                  X
-                </div>
-              </div>
-              {backgroundBrand && (
-                <div className="contents">
-                  {data.map((data) => (
-                    <div className="content"> {data}</div>
-                  ))}
-                </div>
-              )}
-            </div>
-          </div>
-          <span style={{ margin: "0 0 0 20px" }}>with</span>
-          <select>
-            <option>Type</option>
-            <option>1</option>
-            <option>1</option>
-          </select>
-          <span>of</span>
-          <div
-            className={` ${backgroundColor ? "search-part" : "maintain-width"}`}
-          >
-            <div className={backgroundColor && "search-box"}>
-              {backgroundColor && <div className="head">search</div>}
-              <div className="search-logo">
-                <input
-                  placeholder="Color"
-                  alt="search"
-                  type="text"
-                  className={`search-input-brand ${
-                    !backgroundColor && "input"
-                  }`}
-                  onClick={() => setBackgroundColor(true)}
-                />
-                <div
-                  className="close"
-                  onClick={() => setBackgroundColor(false)}
-                >
-                  X
-                </div>
-              </div>
-              {backgroundColor && (
-                <div>
-                  <input
-                    placeholder="Enter HEX Code            #000000"
-                    type="text"
-                    className="color-input"
-                  />
-                  <div className="color-collection">
-                    {[1, 2, 3, 3, 4, , 5, 6, 7, 7, 8, 8, 9, 9, , 0, 0].map(
-                      (_) => {
-                        return (
-                          <div
-                            style={{
-                              background: "black",
-                              height: "20px",
-                              width: "20px",
-                            }}
-                          ></div>
-                        );
-                      }
-                    )}
-                  </div>
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-        <div style={{ display: "flex" }}>
-          <span>with a</span>
-          <div
-            className={` ${
-              backgroundPriceRange ? "search-part" : "maintain-width"
-            }`}
-          >
-            <div className={backgroundPriceRange && "range-box"}>
-              {backgroundPriceRange && <div className="head">set</div>}
-              <div className="search-logo">
-                <input
-                  placeholder="Price Range"
-                  alt="search"
-                  type="text"
-                  className={`search-input-brand ${
-                    !backgroundPriceRange && "input"
-                  }`}
-                  onClick={() => setBackgroundPriceRange(true)}
-                />
-                <div
-                  className="close"
-                  onClick={() => setBackgroundPriceRange(false)}
-                >
-                  X
-                </div>
-              </div>
-              {backgroundPriceRange && (
-                <div className="range">
-                  <div>SET RANGE</div>
-                  <div className="range-shower">
-                    <div>Rs. 100</div>
-                    <div>Rs. 10,00,000</div>
-                  </div>
-                  <div>
-                    <Slider defaultValue={30} min={100} max={10000} />
-                  </div>
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-        <img src={RightFilter} alt="right" className="image2" />
-      </div>
-<<<<<<< Updated upstream
-      <ProductPoP />
-=======
       <div className="product">
         {images.map((ele) => {
           return (
@@ -661,9 +553,8 @@ const Product = () => {
           style={{ width: "98vw" }}
         />
       </div>
->>>>>>> Stashed changes
-    </ProductWrapper>
+    </ProductPoPWrapper>
   );
 };
 
-export default Product;
+export default ProductPoP;

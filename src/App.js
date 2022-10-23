@@ -17,6 +17,7 @@ import ShopHover from "./components/shop-hover";
 import ServiceHover from "./components/service-hover";
 import SubMenu1 from "./components/sub-category-1";
 import SubMenu2 from "./components/sub-category-2";
+import Brand from "./components/brand";
 import About from "./components/About";
 import ProductSection from "./components/product-section";
 
@@ -38,6 +39,7 @@ function App() {
         <Route path="/sub-menu1" element={<SubMenu1 />} />
         <Route path="/sub-menu2" element={<SubMenu2 />} />
         <Route path="/product-section" element={<ProductSection />} />
+        <Route path="/brand" element={<Brand />} />
       </Routes>
       <Footer />
     </div>
