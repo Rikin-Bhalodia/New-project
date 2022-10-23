@@ -627,7 +627,41 @@ const Product = () => {
         </div>
         <img src={RightFilter} alt="right" className="image2" />
       </div>
+<<<<<<< Updated upstream
       <ProductPoP />
+=======
+      <div className="product">
+        {images.map((ele) => {
+          return (
+            <>
+              <img
+                src={ele.img}
+                alt="img"
+                className={ele.class}
+                height={ele.height}
+                width={ele.width}
+                onClick={() => handleClick(ele.id)}
+                style={
+                  productId
+                    ? productId === ele.id
+                      ? { opacity: 1 }
+                      : { opacity: 0.5 }
+                    : { opacity: 1 }
+                }
+              />
+            </>
+          );
+        })}
+      </div>
+      <div>
+        <img
+          src={FooterImage}
+          alt="image"
+          className="footer"
+          style={{ width: "98vw" }}
+        />
+      </div>
+>>>>>>> Stashed changes
     </ProductWrapper>
   );
 };
