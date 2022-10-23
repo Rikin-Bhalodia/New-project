@@ -8,7 +8,7 @@ const SecVideoWrapper = styled.div`
   .cards {
     display: flex;
     flex-wrap: wrap;
-    gap: 170px;
+    gap: 89px;
   }
   .card {
     display: flex;

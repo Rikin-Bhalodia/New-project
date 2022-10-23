@@ -140,7 +140,7 @@ h5,
 h6,
 figure,
 figcaption {
-  margin: 0px;
+  margin: 0px !important;
 }
 
 button,
@@ -420,9 +420,9 @@ footer {
 }
 
 .btnText {
-  left: -2px;
-  position: relative;
-  top: 3px;
+  left: -880px;
+  /* position: absolute; */
+  top: 50px;
 }
 
 .dragbale-menu ul li a {
@@ -638,7 +638,7 @@ footer {
 }
 
 .bannerSection .bannerMenus {
-  margin-bottom: 90px;
+  margin: 90px 0;
 }
 
 .bannerSection .bannerMenus .menuItem {
@@ -709,7 +709,7 @@ footer {
 }
 
 .bannerSection .bannerMenus .menuItem .menuLink {
-  font-size: 48px;
+  font-size: 40px;
   color: white;
   text-transform: uppercase;
   letter-spacing: 3px;
@@ -786,7 +786,7 @@ footer {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: -84px;
+  bottom: -10px;
   font-family: Beatlys, Normal;
 }
 
@@ -2869,7 +2869,7 @@ h2.f-heading-m {
 
 .c-about-slider-con {
   position: absolute;
-  bottom: -60px;
+  bottom: -130px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 3;
@@ -2881,10 +2881,10 @@ h2.f-heading-m {
 }
 
 .c-about-slider-con span img {
-  height: 45px;
+  height: 70px;
   width: auto;
   border-radius: 0;
-  margin: 0 auto;
+  margin: 0 auto 30px;
 }
 
 .c-about-slider-con h3 {
@@ -2892,7 +2892,9 @@ h2.f-heading-m {
   color: #fff;
   color: #fff;
   margin-top: 10px;
-  font-size: 24px;
+  font-size: 35px;
+  line-height: 50px;
+  width: 500px;
 }
 
 .c-about-slider-con h3 span {
@@ -2905,8 +2907,8 @@ h2.f-heading-m {
 
 .c-about-con .roundBtn {
   position: absolute;
-  top: 70px;
-  right: 0;
+  top: 130px;
+  right: 0px;
 }
 
 .c-about-con .roundBtn .btnClassDesign {
@@ -2953,13 +2955,13 @@ h2.f-heading-m {
 
 /*drive*/
 .c-drive-con {
-  max-width: 500px;
+  max-width: 100%;
   position: relative;
 }
 
 .c-drive-con h4 {
   font-size: 12px;
-  margin-bottom: 10px;
+  margin-bottom: 20px !important;
   color: #fff;
 }
 
@@ -2968,7 +2970,7 @@ h2.f-heading-m {
   font-size: 40px;
   margin-bottom: 24px;
   color: #000;
-  line-height: 150%;
+  line-height: 60px;
 }
 
 .ParisienneFont {
@@ -2986,7 +2988,7 @@ h2.f-heading-m {
 
 .c-drive-con .roundBtn {
   position: absolute;
-  right: -320px;
+  right: 0px;
   top: 50px;
 }
 
@@ -3160,7 +3162,7 @@ c-service-w {
 .c-secian-box h3 {
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 19px;
   margin-top: 10px;
 }
 
@@ -3989,7 +3991,7 @@ c-service-w {
 
 .studio-s1 .sc {
   margin-top: 10rem;
-  padding-right: 2.5rem;
+  padding-right: 0rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -4057,6 +4059,8 @@ c-service-w {
   flex-direction: column;
   justify-content: space-between;
   z-index: 99;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 30px;
 }
 
 .viewmore {
@@ -4116,7 +4120,7 @@ c-service-w {
   text-transform: uppercase;
   font-weight: 600;
   font-size: 1.8rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2.5rem !important; 
 }
 
 .studio-s3 .font-13.active::after,

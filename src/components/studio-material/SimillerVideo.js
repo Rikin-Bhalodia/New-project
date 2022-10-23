@@ -37,7 +37,7 @@ const SimillerVideoWrapper = styled.div`
   .simillier-video-area {
     display: flex;
     justify-content: space-between;
-    gap: 400px;
+    gap: 200px;
     .right-side-area {
       border-bottom: 3px solid #a75b41;
       .head-box {

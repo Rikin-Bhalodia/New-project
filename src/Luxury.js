@@ -31,10 +31,10 @@ function Luxury() {
     <svg
       viewBox="0 0 319.5 209.33"
       style={{
-        width: "200px",
+        width: "300px",
         position: "absolute",
-        left: "80px",
-        top: "-130px",
+        left: "100px",
+        top: "-160px",
       }}
     >
       <path

@@ -119,13 +119,14 @@ const HomeWrapper = styled.div`
     font-family: "Coral Blush";
     letter-spacing: 4px;
     font-style: normal;
-    font-size: 50px;
+    font-size: 80px;
+    line-height: 100px;
   }
   .about-title {
     font-family: "Coral Blush";
     letter-spacing: 8px;
     font-style: normal;
-    font-size: 80px;
+    font-size: 100px;
   }
   .about {
     flex-direction: column;
@@ -233,17 +234,17 @@ export default function Home() {
                                 <div className="imgWrap">
                                   <img
                                     className="wow backInLeft"
-                                    src={studioInner5}
+                                    src={studioInner1}
                                     alt=""
                                   />
                                 </div>
                               </div>
                               <a
-                                href="/luxary_studio"
+                                href="/avenue"
                                 className="menuLink coralFont wow fadeInUp"
+                                data-wow-delay=".1s"
                               >
                                 Studio
-                                <p id="typewriter"></p>
                               </a>
                               <div className="rightSideImg">
                                 <div className="imgWrap">
@@ -256,7 +257,7 @@ export default function Home() {
                               </div>
                               <h3 className="mb-2 coralScript mainColor text-center font-80 font-weight-bold minWidth600 letterSpacingBig banner-one-line shadowText textH3">
                                 <span className="bannertyping d-block content">
-                                  Studio Content
+                                  Lorem ipsum dolor sit amet.
                                 </span>
                               </h3>
                             </li>
@@ -441,9 +442,6 @@ export default function Home() {
                       <div className="about-title">WORLD OF</div>
                     </h2>
                     <div className="roundBtn text-center mt-2">
-                      <span style={{ position: "relative" }}>
-                        <Elegance />
-                      </span>
                       <span
                         id="roundText8"
                         className="btnText strong colorYellow font-13 letterSpacingmedium"
@@ -453,6 +451,9 @@ export default function Home() {
                           alt="explore-now"
                           className="rent-now"
                         />
+                      </span>
+                      <span style={{ position: "relative" }}>
+                        <Elegance />
                       </span>
                     </div>
                   </div>

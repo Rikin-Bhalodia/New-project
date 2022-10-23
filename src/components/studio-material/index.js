@@ -5,6 +5,7 @@ import Polygon from "../../assets/images/polygon-left.svg";
 import SimillerVideo from "./SimillerVideo";
 import ProductImgSlider from "./ProductSlider";
 import { useLocation } from "react-router-dom";
+import Menu from "../../commonComponents/Menu";
 const StudioProductMaterialWrapper = styled.div`
   position: relative;
   .polygon-left {
@@ -48,7 +49,7 @@ export default function StudioProductMaterial() {
         <img src={Polygon} alt="" className="polygon-left" />
       )}
       <div className="container-fluid">
-        <div className="studio-material-head">
+        <div className="studio-material-head mt-5">
           <div className="leftside-area">
             <div className="goback-link">
               <a href="/">Go Back</a>
@@ -57,7 +58,9 @@ export default function StudioProductMaterial() {
               <p>STUDIO / VERSACE BAG / LEATHER</p>
             </div>
           </div>
-          <div className="rightside-area"></div>
+          <div className="rightside-area">
+            <Menu />
+          </div>
         </div>
         <div className="studio-material-body">
           <img src={Video} alt="" />

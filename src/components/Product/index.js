@@ -740,7 +740,12 @@ const Product = () => {
         })}
       </div>
       <div>
-        <img src={FooterImage} alt="image" className="footer" />
+        <img
+          src={FooterImage}
+          alt="image"
+          className="footer"
+          style={{ width: "98vw" }}
+        />
       </div>
     </ProductWrapper>
   );
