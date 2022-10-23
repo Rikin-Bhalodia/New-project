@@ -18,6 +18,7 @@ import ServiceHover from "./components/service-hover";
 import SubMenu1 from "./components/sub-category-1";
 import SubMenu2 from "./components/sub-category-2";
 import About from "./components/About";
+import ProductSection from "./components/product-section";
 
 function App() {
   const { pathname } = useLocation();
@@ -36,6 +37,7 @@ function App() {
         <Route path="/service-hover" element={<ServiceHover />} />
         <Route path="/sub-menu1" element={<SubMenu1 />} />
         <Route path="/sub-menu2" element={<SubMenu2 />} />
+        <Route path="/product-section" element={<ProductSection />} />
       </Routes>
       <Footer />
     </div>
