@@ -628,7 +628,7 @@ const Product = () => {
         <img src={RightFilter} alt="right" className="image2" />
       </div>
       <ProductPoP />
-      <div className="product">
+      {/* <div className="product">
         {images.map((ele) => {
           return (
             <>
@@ -658,7 +658,7 @@ const Product = () => {
           className="footer"
           style={{ width: "98vw" }}
         />
-      </div>
+      </div> */}
     </ProductWrapper>
   );
 };

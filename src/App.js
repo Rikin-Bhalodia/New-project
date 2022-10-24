@@ -20,6 +20,9 @@ import SubMenu2 from "./components/sub-category-2";
 import Brand from "./components/brand";
 import About from "./components/About";
 import ProductSection from "./components/product-section";
+import BrandProduct from "./components/brand-product";
+import BrandProductSection from "./components/brand-product-selection";
+import BrandProductLanding from "./components/brand-product-landing";
 
 function App() {
   const { pathname } = useLocation();
@@ -40,6 +43,9 @@ function App() {
         <Route path="/sub-menu2" element={<SubMenu2 />} />
         <Route path="/product-selection" element={<ProductSection />} />
         <Route path="/brand" element={<Brand />} />
+        <Route path="/brand-product" element={<BrandProduct />} />
+        <Route path="/brand-product-sec" element={<BrandProductSection />} />
+        <Route path="/brand-product-lan" element={<BrandProductLanding />} />
       </Routes>
       <Footer />
     </div>
