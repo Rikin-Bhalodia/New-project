@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import backarrow from "../../assets/images/product-section/backarrow.svg";
 import MenuIcon from "../../assets/images/product-section/menuIcon.svg";
@@ -103,7 +103,6 @@ const ProductSectionWrapper = styled.div`
   .size-title img {
     transform: rotate(90deg);
     height: 7px;
-    transform: rotate(90deg);
     height: 15px;
     margin-left: 5px;
     margin-top: 2px;
@@ -437,7 +436,7 @@ const ProductSectionWrapper = styled.div`
   .insta--card {
     margin: 20px 80px 40px;
   }
-  .delivary-status{
+  .delivary-status {
     right: -35px;
     top: 25px;
   }
@@ -457,15 +456,23 @@ const ProductSectionWrapper = styled.div`
     letter-spacing: 0.092px;
     color: #000000;
   }
-  .blank-line{
+  .blank-line {
     align-self: center;
     height: 1px;
     background: #000000;
-    width:100%;
+    width: 100%;
+  }
+  .cur-pointer {
+    cursor: pointer;
+  }
+  .rotate-90 {
+    transform: rotate(270deg) !important;
+    margin-bottom: 25px;
   }
 `;
 
 const ProductSection = () => {
+  const [selectedState, setSelectedState] = useState("");
   return (
     <ProductSectionWrapper>
       <section className="product-main-container">
@@ -484,7 +491,7 @@ const ProductSection = () => {
           <div>
             <div className="detail1 position-relative">
               <div className="position-absolute product-logo">
-                <img src={productLogo} alt="" /> 
+                <img src={productLogo} alt="" />
               </div>
               <div className="detail-sub1">VERSACE</div>
               <div className="detail-sub2">
@@ -500,29 +507,67 @@ const ProductSection = () => {
             <div className="size-container border-bottom">
               <div className="size-title d-flex">
                 <div>size</div>
-                <img src={backarrow} alt="" />
+                {selectedState === "!size" ? (
+                  <img
+                    src={backarrow}
+                    alt=""
+                    className="cur-pointer rotate-90"
+                    onClick={() => setSelectedState("")}
+                  />
+                ) : (
+                  <img
+                    src={backarrow}
+                    alt=""
+                    className="cur-pointer"
+                    onClick={() => setSelectedState("!size")}
+                  />
+                )}
               </div>
-              <div className="size--div d-flex">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-              </div>
-              <div className="size-guide">View Size Guide</div>
+              {selectedState === "!size" ? (
+                ""
+              ) : (
+                <>
+                  <div className="size--div d-flex">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                  </div>
+                  <div className="size-guide">View Size Guide</div>
+                </>
+              )}
             </div>
             <div className="size-container border-bottom">
               <div className="size-title d-flex">
                 <div>color</div>
-                <img src={backarrow} alt="" />
+                {selectedState === "!color" ? (
+                  <img
+                    src={backarrow}
+                    alt=""
+                    className="cur-pointer rotate-90"
+                    onClick={() => setSelectedState("")}
+                  />
+                ) : (
+                  <img
+                    src={backarrow}
+                    alt=""
+                    className="cur-pointer"
+                    onClick={() => setSelectedState("!color")}
+                  />
+                )}
               </div>
-              <div className="size--div d-flex">
-                <div style={{ background: "#FFE600" }}></div>
-                <div style={{ background: "#FF4E4E" }}></div>
-                <div style={{ background: "#63FA4B" }}></div>
-                <div style={{ background: "#1DA7F5" }}></div>
-                <div style={{ background: "#CF0CE0" }}></div>
-              </div>
+              {selectedState === "!color" ? (
+                ""
+              ) : (
+                <div className="size--div d-flex">
+                  <div style={{ background: "#FFE600" }}></div>
+                  <div style={{ background: "#FF4E4E" }}></div>
+                  <div style={{ background: "#63FA4B" }}></div>
+                  <div style={{ background: "#1DA7F5" }}></div>
+                  <div style={{ background: "#CF0CE0" }}></div>
+                </div>
+              )}
             </div>
             <div className="icon--container d-flex">
               <img src={like} alt="" />

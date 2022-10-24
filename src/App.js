@@ -38,7 +38,7 @@ function App() {
         <Route path="/service-hover" element={<ServiceHover />} />
         <Route path="/sub-menu1" element={<SubMenu1 />} />
         <Route path="/sub-menu2" element={<SubMenu2 />} />
-        <Route path="/product-section" element={<ProductSection />} />
+        <Route path="/product-selection" element={<ProductSection />} />
         <Route path="/brand" element={<Brand />} />
       </Routes>
       <Footer />
