@@ -9,6 +9,7 @@ import "swiper/css/bundle";
 import { Route, Routes, useLocation } from "react-router-dom";
 import StudioProductMaterial from "./components/studio-material";
 import "antd/dist/antd.variable.min.css";
+import 'antd/dist/antd.css';
 import StudioSecVideo from "./components/studio-sec-video";
 import Product from "./components/Product";
 import Header from "./commonComponents/Header";

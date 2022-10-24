@@ -4120,7 +4120,7 @@ c-service-w {
   text-transform: uppercase;
   font-weight: 600;
   font-size: 1.8rem;
-  margin-bottom: 2.5rem !important; 
+  margin-bottom: 2.5rem !important;
 }
 
 .studio-s3 .font-13.active::after,
@@ -4701,4 +4701,78 @@ c-service-w {
 .menu-icon:hover {
   transform: scale(1.1);
   transition: all 0.8s ease-in-out;
+}
+.ant-modal-wrap {
+  top: -25px !important;
+  right: -300px !important;
+}
+.ant-modal-header {
+  display: none;
+}
+.ant-modal-footer {
+  display: none;
+}
+.ant-modal-body {
+  width: 778px;
+  background: #fcf9f2;
+  border: 3px solid #665e2f;
+  border-radius: 20px;
+  padding: 0 !important;
+}
+.ant-modal-content {
+  border-radius: 20px !important;
+}
+.modal-left--container {
+  padding: 59px 52px 49px 43px;
+  flex-direction: column;
+  gap: 21px;
+}
+.modal-right--container {
+  padding: 86px 52px 30px 0;
+}
+.modal-right--container .title {
+  font-family: "Coral Blush";
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 34px;
+}
+.modal-right--container .detail {
+  font-family: "Coral Blush";
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15px;
+  padding-top: 17px;
+  padding-bottom: 44px;
+  text-transform: uppercase;
+}
+.price-btn--container {
+  text-transform: uppercase;
+  text-align-last: right;
+  padding-left: 120px;
+}
+.price-btn--container .price {
+  font-family: "Arial";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  color: #000000;
+}
+.price-btn--container .price span {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 34.5px;
+}
+.btn--container{
+  padding-top: 27px;
+  gap: 30px;
+}
+.btn--container div{
+  cursor: pointer;
+  border: 1px solid #000000;
+  border-radius: 0px 20px 20px 0px;
+  padding: 14px 37px;
+}
+.ant-modal-close{
+  top: 54px;
+  right: -211px;
 }

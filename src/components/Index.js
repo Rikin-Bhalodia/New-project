@@ -1,6 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
+import { Modal } from 'antd';
+import productCartImg from "../assets/images/product-section/modal-img1.svg";
+import modalText from "../assets/images/product-section/modal--text.svg";
 
 export default function Index() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <>
       <section className="topHeaderPart py-2">
@@ -64,8 +78,8 @@ export default function Index() {
                     </a>
                   </li>
                   <li>
-                    <a href="javascript:void(0)">
-                      <span>
+                    <a href="">
+                      <span onClick={showModal}>
                         <img
                           src="assets/img/cartIcon.png"
                           className="img-fluid smallHeaderIcon"
@@ -91,7 +105,29 @@ export default function Index() {
           </div>
         </div>
       </section>
-
+      <Modal title="Basic Modal" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
+        <div className="modal--content d-flex">
+          <div className="modal-left--container d-flex">
+            <div className="img1"><img src={productCartImg} alt="" /></div>
+            <div className="img2"><img src={modalText} alt="" /></div>
+          </div>
+          <div className="modal-right--container">
+            <div className="title">VERSACE DRESS</div>
+            <div className="detail">
+              <div>Size: M</div>
+              <div>Color: Gold</div>
+              <div>Quantity: 01</div>
+            </div>
+            <div className="price-btn--container">
+              <div className="price">subtotal : <span>₹3,56,367.34</span></div>
+              <div className="btn--container d-flex">
+                <div>view bag</div>
+                <div>checkout</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Modal>
       <div id="smooth-wrapper">
         <div id="smooth-content">
           {/* <!-- home page banner part --> */}
