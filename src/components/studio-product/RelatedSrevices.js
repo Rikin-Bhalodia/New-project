@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper";
 import { sliderImage } from "../../utils";
 import Releted from "../../assets/images/studio-product/releted-product.svg";
+import { motion } from "framer-motion";
 
 const ReletedServicesWrapper = styled.div`
   padding: 0px 50px 100px;
@@ -13,10 +14,15 @@ const ReletedServicesWrapper = styled.div`
   .img-box {
     position: relative;
     height: 200px;
+    width: 100%;
     background: #fefaf1;
     border-radius: 20px;
+    object-fit: cover;
+    overflow: hidden;
     img {
       border-radius: 20px;
+      width: 100%;
+      object-fit: fill;
     }
   }
 
@@ -50,37 +56,52 @@ export default function ReletedServices() {
       <div className="head">
         <img src={Releted} alt="" />
       </div>
-      <Swiper
-        slidesPerView={5}
-        spaceBetween={50}
-        className="mySwiper"
-        style={{ height: "" }}
-        autoplay={{
-          delay: 1000,
-          disableOnInteraction: false,
-        }}
-        loop={true}
-        loopFillGroupWithBlank={true}
-        speed={2500}
-        modules={[Autoplay, Pagination, Navigation]}
+      <motion.div
+        initial={{ y: "200vh" }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.8 }}
       >
-        {sliderImage.map((image) => {
-          return (
-            <SwiperSlide style={{ background: "#fefaf1" }}>
-              <div className="slider-box">
-                <div className="img-box">
-                  <img src={image} alt="image" height="100px" width="100px" />
-                  <div className="para">hair spa</div>
+        <Swiper
+          slidesPerView={5}
+          spaceBetween={50}
+          className="mySwiper"
+          style={{ height: "" }}
+          autoplay={{
+            delay: 1000,
+            disableOnInteraction: false,
+          }}
+          loop={true}
+          loopFillGroupWithBlank={true}
+          speed={2500}
+          modules={[Autoplay, Pagination, Navigation]}
+        >
+          {sliderImage.map((image) => {
+            return (
+              <SwiperSlide style={{ background: "#fefaf1" }}>
+                <div className="slider-box">
+                  <div className="img-box">
+                    <motion.img
+                      src={image}
+                      alt="image"
+                      whileHover={{
+                        scale: 1.1,
+                      }}
+                      transition={{
+                        duration: 0.4,
+                      }}
+                    />
+                    <div className="para">hair spa</div>
+                  </div>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Gravida tortor eu, et aliqu
+                  </p>
                 </div>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Gravida tortor eu, et aliqu
-                </p>
-              </div>
-            </SwiperSlide>
-          );
-        })}
-      </Swiper>
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
+      </motion.div>
     </ReletedServicesWrapper>
   );
 }

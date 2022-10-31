@@ -8,8 +8,12 @@ import MainLogo from "../../assets/images/studio/header/main-logo.svg";
 import Heart from "../../assets/images/studio/header/heart.svg";
 import Cart from "../../assets/images/studio/header/cart.svg";
 import Profile from "../../assets/images/studio/header/profile.svg";
+<<<<<<< Updated upstream
 import productCartImg from "../../assets/images/product-section/modal-img1.svg";
 import modalText from "../../assets/images/product-section/modal--text.svg";
+=======
+import { motion } from "framer-motion";
+>>>>>>> Stashed changes
 
 const Headerwrapper = styled.div``;
 
@@ -43,7 +47,10 @@ const Header = () => {
   return (
     <Headerwrapper>
       {" "}
-      <section
+      <motion.section
+        initial={{ y: "100vh", opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.1 }}
         className={`topHeaderPart py-3 ${scrollHeader ? "scroll-effect" : ""}`}
       >
         <div className="container">
@@ -113,6 +120,7 @@ const Header = () => {
             </div>
           </div>
         </div>
+<<<<<<< Updated upstream
       </section>
       <Modal title="Basic Modal" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
         <div className="modal--content d-flex">
@@ -137,6 +145,9 @@ const Header = () => {
           </div>
         </div>
       </Modal>
+=======
+      </motion.section>
+>>>>>>> Stashed changes
     </Headerwrapper>
   );
 };
