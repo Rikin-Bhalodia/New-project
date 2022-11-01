@@ -252,21 +252,22 @@ const Studio = () => {
     };
   }, []);
 
-  // useLayoutEffect(() => {
-  //   let smoother = ScrollTrigger.create({
-  //     smooth: 2, // how long (in seconds) it takes to "catch up" to the native scroll position
-  //     effects: true, // looks for data-speed and data-lag attributes on elements
-  //   });
-  //   return () => {
-  //     smoother.kill();
-  //   };
-  // }, []);
+  useLayoutEffect(() => {
+    let smoother = ScrollTrigger.create({
+      smooth: 2, // how long (in seconds) it takes to "catch up" to the native scroll position
+      effects: true, // looks for data-speed and data-lag attributes on elements
+    });
+    return () => {
+      smoother.kill();
+    };
+  }, []);
 
   return (
     <StudioWrapper>
       <div className="mainImage">
         <Header />
       </div>
+      <div></div>
       <div ref={wrapper}>
         <section className="studio-s1">
           <div className="sc">
