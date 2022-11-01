@@ -1,5 +1,5 @@
 import "./App.css";
-import React from "react";
+import React, { Suspense } from "react";
 import Home from "./components/Home";
 import Studio from "./studio";
 import StudioProduct from "../src/components/studio-product/StudioProduct";
@@ -9,7 +9,7 @@ import "swiper/css/bundle";
 import { Route, Routes, useLocation } from "react-router-dom";
 import StudioProductMaterial from "./components/studio-material";
 import "antd/dist/antd.variable.min.css";
-import 'antd/dist/antd.css';
+import "antd/dist/antd.css";
 import StudioSecVideo from "./components/studio-sec-video";
 import Product from "./components/Product";
 import Header from "./commonComponents/Header";
@@ -24,6 +24,9 @@ import ProductSection from "./components/product-section";
 import BrandProduct from "./components/brand-product";
 import BrandProductSection from "./components/brand-product-selection";
 import BrandProductLanding from "./components/brand-product-landing";
+const ServiceLuxuryGifting = React.lazy(() =>
+  import("./components/service/ServiceLuxuryGifting")
+);
 
 function App() {
   const { pathname } = useLocation();
@@ -47,6 +50,14 @@ function App() {
         <Route path="/brand-product" element={<BrandProduct />} />
         <Route path="/brand-product-sec" element={<BrandProductSection />} />
         <Route path="/brand-product-lan" element={<BrandProductLanding />} />
+        <Route
+          path="/service-luxury-gifting"
+          element={
+            <Suspense fallback={<div>Loading...</div>}>
+              <ServiceLuxuryGifting />{" "}
+            </Suspense>
+          }
+        />
       </Routes>
       <Footer />
     </div>
