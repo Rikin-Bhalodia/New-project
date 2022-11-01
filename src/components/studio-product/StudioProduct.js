@@ -7,6 +7,9 @@ import WatchMoreSlider from "./WatchMoreSlider";
 import Polygon from "../../assets/images/polygon-left.svg";
 import Header from "../../commonComponents/Header";
 import Footer from "../../commonComponents/Footer";
+import { motion } from "framer-motion";
+import Menu from "../../commonComponents/Menu";
+
 const StudioProductWrapper = styled.div`
   position: relative;
   margin-top: 60px;
@@ -84,17 +87,31 @@ export default function StudioProduct() {
       <Header />
       <StudioProductWrapper>
         <img src={Polygon} alt="" className="polygon-left" />
-        <div className="container-fluid">
+        <motion.div
+          className="container-fluid px-5"
+          initial={{ y: "200vh" }}
+          animate={{ y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
           <div className="studio-product-head">
             <div className="leftside-area">
               <div className="goback-link">
                 <a href="/">Go Back</a>
               </div>
-              <div className="product-head">
+              <motion.div
+                className="product-head"
+                initial={{ x: "-100vw" }}
+                animate={{ x: 0 }}
+                transition={{ duration: 0.6 }}
+              >
                 <p>STUDIO / CHANEL’S MOST EXPENSIVE PRODUCTS</p>
+              </motion.div>
+            </div>
+            <div className="rightside-area">
+              <div className="homePageButtonSection">
+                <Menu />
               </div>
             </div>
-            <div className="rightside-area"></div>
           </div>
           <div className="studio-product-body">
             <div className="studio-product-video">
@@ -115,12 +132,11 @@ export default function StudioProduct() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </StudioProductWrapper>
       <SimillerProduct />
       <WatchMoreSlider />
       <ReletedServices />
-      <Footer />
     </>
   );
 }
