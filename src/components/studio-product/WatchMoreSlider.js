@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper";
@@ -14,15 +14,26 @@ const WatchMoreSliderWrapper = styled.div`
 `;
 
 export default function WatchMoreSlider() {
+  const [isInView, setIsInView] = useState(false);
+
   return (
     <WatchMoreSliderWrapper>
       <div className="head">
-        <img src={WatchMore} alt="" />
+        <img src={WatchMore} alt="watch-head" loading="lazy" />
       </div>
       <motion.div
-        initial={{ y: "200vh" }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.8 }}
+        whileInView={() => {
+          setIsInView(true);
+        }}
+        initial={{ y: "20vh" }}
+        animate={
+          isInView && {
+            y: 0,
+            transition: {
+              duration: 0.3,
+            },
+          }
+        }
       >
         <Swiper
           slidesPerView={4.5}
@@ -32,6 +43,7 @@ export default function WatchMoreSlider() {
           autoplay={{
             delay: 1000,
             disableOnInteraction: false,
+            pauseOnMouseEnter: true,
           }}
           loop={true}
           loopFillGroupWithBlank={true}
@@ -43,6 +55,7 @@ export default function WatchMoreSlider() {
               <SwiperSlide style={{ overflow: "hidden" }}>
                 <motion.img
                   src={image}
+                  loading="lazy"
                   alt="image"
                   height="100px"
                   width="100px"

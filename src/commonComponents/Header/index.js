@@ -47,7 +47,7 @@ const Header = () => {
       <motion.section
         initial={{ y: "100vh", opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.1 }}
+        transition={{ duration: 0.3 }}
         className={`topHeaderPart py-3 ${scrollHeader ? "scroll-effect" : ""}`}
       >
         <div className="container">
@@ -117,6 +117,41 @@ const Header = () => {
             </div>
           </div>
         </div>
+        {/* </section> */}
+        <Modal
+          title="Basic Modal"
+          open={isModalOpen}
+          onOk={handleOk}
+          onCancel={handleCancel}
+        >
+          <div className="modal--content d-flex">
+            <div className="modal-left--container d-flex">
+              <div className="img1">
+                <img src={productCartImg} alt="" />
+              </div>
+              <div className="img2">
+                <img src={modalText} alt="" />
+              </div>
+            </div>
+            <div className="modal-right--container">
+              <div className="title">VERSACE DRESS</div>
+              <div className="detail">
+                <div>Size: M</div>
+                <div>Color: Gold</div>
+                <div>Quantity: 01</div>
+              </div>
+              <div className="price-btn--container">
+                <div className="price">
+                  subtotal : <span>₹3,56,367.34</span>
+                </div>
+                <div className="btn--container d-flex">
+                  <div>view bag</div>
+                  <div>checkout</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Modal>
       </motion.section>
     </Headerwrapper>
   );

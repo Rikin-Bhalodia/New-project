@@ -1,35 +1,66 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 // import FirstImage from "./assets/images/studio/fifteensecslider/first-image.svg";
 import { Autoplay, Pagination, Navigation } from "swiper";
 import aboutSlider from "./assets/images/img/about-slider.jpg";
 import aboutlogo from "./assets/images/img/about-logo.png";
 import { studio2Images, sliderImage, avenues } from "./utils";
+import { motion } from "framer-motion";
 
 export default function Slider() {
+  const [isInView, setIsInView] = useState(false);
+
   return (
-    <Swiper
-      slidesPerView={4}
-      spaceBetween={30}
-      className="mySwiper"
-      style={{ height: "150px" }}
-      autoplay={{
-        delay: 1000,
-        disableOnInteraction: false,
+    <motion.div
+      whileInView={() => {
+        setIsInView(true);
       }}
-      loop={true}
-      loopFillGroupWithBlank={true}
-      speed={2500}
-      modules={[Autoplay, Pagination, Navigation]}
+      initial={{ y: "20vh" }}
+      animate={
+        isInView && {
+          y: 0,
+          transition: {
+            duration: 0.3,
+          },
+        }
+      }
     >
-      {sliderImage.map((image) => {
-        return (
-          <SwiperSlide>
-            <img src={image} alt="image" height="100px" width="100px" />
-          </SwiperSlide>
-        );
-      })}
-    </Swiper>
+      <Swiper
+        slidesPerView={4}
+        spaceBetween={30}
+        className="mySwiper"
+        style={{ height: "150px" }}
+        autoplay={{
+          delay: 1000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        }}
+        loop={true}
+        loopFillGroupWithBlank={true}
+        speed={2500}
+        modules={[Autoplay, Pagination, Navigation]}
+      >
+        {sliderImage.map((image) => {
+          return (
+            <SwiperSlide style={{ overflow: "hidden" }}>
+              <motion.img
+                src={image}
+                loading="lazy"
+                alt="image"
+                height="100px"
+                width="100px"
+                whileHover={{
+                  scale: 1.1,
+                }}
+                transition={{
+                  duration: 0.4,
+                }}
+              />
+            </SwiperSlide>
+          );
+        })}
+      </Swiper>
+    </motion.div>
   );
 }
 
@@ -55,6 +86,7 @@ export function ServiceSlider() {
           <SwiperSlide>
             <img
               src={img}
+              loading="lazy"
               alt="image"
               height="100px"
               width="100px"
@@ -88,6 +120,7 @@ export function RentSlider() {
           <SwiperSlide>
             <img
               src={img}
+              loading="lazy"
               alt="image"
               height="100px"
               width="100px"
@@ -127,7 +160,12 @@ export function MainSlider() {
             <div className="c-about-slider-in">
               <div className="c-about-slider-con">
                 <span>
-                  <img src={aboutlogo} alt="" className="wow fadeInDown" />
+                  <img
+                    src={aboutlogo}
+                    loading="lazy"
+                    alt="aboutlogo"
+                    className="wow fadeInDown"
+                  />
                 </span>
                 <h3 className="wow fadeInDown">
                   EXCEPTIONAL <span>READY-TO-WEAR</span>
@@ -174,7 +212,7 @@ export function StudioS2() {
               slideview1 || slideview2 || slideview3 || slideview4 || slideview5
             }
           >
-            <img src={data.img} alt="studiob-01" />
+            <img src={data.img} loading="lazy" alt="studiob-01" />
             <div>{data.content}</div>
           </SwiperSlide>
         );

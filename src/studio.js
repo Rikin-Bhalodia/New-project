@@ -15,6 +15,7 @@ import Atilier from "./atilier";
 import Header from "./commonComponents/Header";
 import Menu from "./commonComponents/Menu";
 import MenuIcon from "./assets/images/studio/menu.svg";
+import { motion } from "framer-motion";
 
 const StudioWrapper = styled.div`
   overflow: hidden;
@@ -54,6 +55,7 @@ const StudioWrapper = styled.div`
     background-position: center right;
     position: fixed;
     width: 100%;
+    z-index: -1;
   }
   .connect-image {
     width: 500px;
@@ -178,7 +180,7 @@ const StudioWrapper = styled.div`
     transform: rotateY(0deg) translateZ(3vw);
     transition: opacity 1300ms cubic-bezier(0.425, 0.005, 0, 1);
     font-weight: 400;
-    font-size: 95px;
+    font-size: 75px;
     line-height: 112px !important;
   }
 
@@ -194,6 +196,7 @@ const Studio = () => {
   const [transitionForBlogs, setTransitionForBlogs] = useState(false);
   const [transitionForMore, setTransitionForMore] = useState(false);
   const [menuOpenModal, setMenuOpenModal] = useState(false);
+  const [isInView, setIsInView] = useState(false);
 
   // useEffect(() => {
   //   setAnimation(
@@ -214,9 +217,9 @@ const Studio = () => {
   };
 
   // 5.
-  useEffect(() => {
-    requestAnimationFrame(() => smoothScrollingHandler());
-  }, []);
+  // useEffect(() => {
+  //   requestAnimationFrame(() => smoothScrollingHandler());
+  // }, []);
 
   const data = {
     ease: 0.9,
@@ -224,14 +227,14 @@ const Studio = () => {
     previous: 0,
     rounded: 0,
   };
-  const smoothScrollingHandler = () => {
-    data.current = window.scrollY;
-    data.previous += (data.current - data.previous) * data.ease;
-    data.rounded = Math.round(data.previous * 100) / 100;
+  // const smoothScrollingHandler = () => {
+  //   data.current = window.scrollY;
+  //   data.previous += (data.current - data.previous) * data.ease;
+  //   data.rounded = Math.round(data.previous * 100) / 100;
 
-    wrapper.current.style.transform = `translateY(-${data.previous}px)`;
-    requestAnimationFrame(() => smoothScrollingHandler());
-  };
+  //   wrapper.current.style.transform = `translateY(-${data.previous}px)`;
+  //   requestAnimationFrame(() => smoothScrollingHandler());
+  // };
 
   // 4.
   useEffect(() => {
@@ -264,11 +267,19 @@ const Studio = () => {
 
   return (
     <StudioWrapper>
-      <div className="mainImage">
-        <Header />
-      </div>
-      <div></div>
-      <div ref={wrapper}>
+      <Header />
+      <motion.div
+        initial={{ y: "200vh" }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="mainImage"
+      ></motion.div>
+      <motion.div
+        initial={{ y: "200vh" }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.6 }}
+        ref={wrapper}
+      >
         <section className="studio-s1">
           <div className="sc">
             <p className="text-light">STUDIO</p>
@@ -408,29 +419,71 @@ const Studio = () => {
                 onClick={(e) => e.stopPropagation()}
               />
               {menuOpenModal ? (
-                <img src={MenuIcon} alt="menu" height={45} />
+                <img src={MenuIcon} loading="lazy" alt="menu" height={45} />
               ) : (
-                <img src={MenuIcon} alt="menu" height={45} />
+                <img src={MenuIcon} loading="lazy" alt="menu" height={45} />
               )}
             </div>
           </div>
         </section>
         <section className="studio-s2">
           <div className="row" id="bannerSliderProduct">
-            <div className="col-md-2 level1 wow fadeInUp">
+            <motion.div
+              whileInView={() => {
+                setIsInView(true);
+              }}
+              initial={{ y: "60vh" }}
+              animate={
+                isInView && {
+                  y: 0,
+                  transition: {
+                    duration: 0.7,
+                  },
+                }
+              }
+              className="col-md-2 level1 wow fadeInUp"
+            >
               <div className="image">
-                <img src={CenterLeft} alt="studiob-01" />
+                <img src={CenterLeft} loading="lazy" alt="studiob-01" />
               </div>
-            </div>
-            <div className="col-md-2 level3 wow fadeInUp" data-wow-delay="0.5">
+            </motion.div>
+            <motion.div
+              whileInView={() => {
+                setIsInView(true);
+              }}
+              initial={{ y: "80vh" }}
+              animate={
+                isInView && {
+                  y: 0,
+                  transition: {
+                    duration: 1,
+                  },
+                }
+              }
+              className="col-md-2 level3 wow fadeInUp"
+            >
               <div className="image">
-                <img src={CenterLeft} alt="studiob-02" />
+                <img src={CenterLeft} loading="lazy" alt="studiob-02" />
                 <h4>hello World</h4>
               </div>
-            </div>
-            <div className="col-md-4 level5 wow fadeInUp" data-wow-delay="0.5">
+            </motion.div>
+            <motion.div
+              whileInView={() => {
+                setIsInView(true);
+              }}
+              initial={{ y: "95vh" }}
+              animate={
+                isInView && {
+                  y: 0,
+                  transition: {
+                    duration: 1.2,
+                  },
+                }
+              }
+              className="col-md-4 level5 wow fadeInUp"
+            >
               <div className="image">
-                <img src={CenterImage} alt="studiob-03" />
+                <img src={CenterImage} loading="lazy" alt="studiob-03" />
                 <div className="info">
                   <span className="mt-5">
                     <svg
@@ -462,18 +515,46 @@ const Studio = () => {
                   </a>
                 </div>
               </div>
-            </div>
-            <div className="col-md-2 level4 wow fadeInUp" data-wow-delay="0.5">
+            </motion.div>
+            <motion.div
+              whileInView={() => {
+                setIsInView(true);
+              }}
+              initial={{ y: "80vh" }}
+              animate={
+                isInView && {
+                  y: 0,
+                  transition: {
+                    duration: 1,
+                  },
+                }
+              }
+              className="col-md-2 level4 wow fadeInUp"
+            >
               <div className="image">
-                <img src={CenterRight} alt="studiob-4" />
+                <img src={CenterRight} loading="lazy" alt="studiob-4" />
                 <h4>hello World</h4>
               </div>
-            </div>
-            <div className="col-md-2 level2 wow fadeInUp">
+            </motion.div>
+            <motion.div
+              whileInView={() => {
+                setIsInView(true);
+              }}
+              initial={{ y: "60vh" }}
+              animate={
+                isInView && {
+                  y: 0,
+                  transition: {
+                    duration: 0.7,
+                  },
+                }
+              }
+              className="col-md-2 level2 wow fadeInUp"
+            >
               <div className="image">
-                <img src={CenterRight} alt="studiob-05" />
+                <img src={CenterRight} loading="lazy" alt="studiob-05" />
               </div>
-            </div>
+            </motion.div>
           </div>
         </section>
         <section className="studio-s3">
@@ -658,9 +739,9 @@ const Studio = () => {
           </div>
           <div className="container-fluid blogs">
             <div className="row">
-              <div className="col-md-4  wow fadeInUp">
+              <div className="col-md-4 wow fadeInUp">
                 <div className="image">
-                  <img src={FirstImage} alt="first-image" />
+                  <img src={FirstImage} loading="lazy" alt="first-image" />
                 </div>
                 <div className="info">
                   <h3>LOREM IPSUM SET</h3>
@@ -672,7 +753,7 @@ const Studio = () => {
               </div>
               <div className="col-md-4  wow fadeInUp">
                 <div className="image">
-                  <img src={FirstImage} />
+                  <img src={FirstImage} loading="lazy" alt="image1" />
                 </div>
                 <div className="info">
                   <h3>LOREM IPSUM SET</h3>
@@ -684,7 +765,7 @@ const Studio = () => {
               </div>
               <div className="col-md-4  wow fadeInUp">
                 <div className="image">
-                  <img src={FirstImage} />
+                  <img src={FirstImage} loading="lazy" alt="image1" />
                 </div>
                 <div className="info">
                   <h3>LOREM IPSUM SET</h3>
@@ -697,7 +778,7 @@ const Studio = () => {
 
               <div className="col-md-4  wow fadeInUp">
                 <div className="image">
-                  <img src={FirstImage} />
+                  <img src={FirstImage} loading="lazy" alt="image1" />
                 </div>
                 <div className="info">
                   <h3>LOREM IPSUM SET</h3>
@@ -709,7 +790,7 @@ const Studio = () => {
               </div>
               <div className="col-md-4  wow fadeInUp">
                 <div className="image">
-                  <img src={FirstImage} />
+                  <img src={FirstImage} loading="lazy" alt="image1" />
                 </div>
                 <div className="info">
                   <h3>LOREM IPSUM SET</h3>
@@ -721,7 +802,7 @@ const Studio = () => {
               </div>
               <div className="col-md-4  wow fadeInUp">
                 <div className="image">
-                  <img src={FirstImage} />
+                  <img src={FirstImage} loading="lazy" alt="image1" />
                 </div>
                 <div className="info">
                   <h3>LOREM IPSUM SET</h3>
@@ -836,7 +917,7 @@ const Studio = () => {
             </a>
           </div>
         </section>
-      </div>
+      </motion.div>
     </StudioWrapper>
   );
 };

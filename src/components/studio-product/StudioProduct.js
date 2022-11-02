@@ -5,8 +5,7 @@ import ReletedServices from "./RelatedSrevices";
 import SimillerProduct from "./SimillierProduct";
 import WatchMoreSlider from "./WatchMoreSlider";
 import Polygon from "../../assets/images/polygon-left.svg";
-import Header from "../../commonComponents/Header";
-import Footer from "../../commonComponents/Footer";
+// import Header from "../../commonComponents/Header";
 import { motion } from "framer-motion";
 import Menu from "../../commonComponents/Menu";
 
@@ -55,7 +54,7 @@ const StudioProductWrapper = styled.div`
     .studio-product-video {
       img {
         width: 100%;
-        height: 650px;
+        height: 550px;
         object-fit: cover;
       }
     }
@@ -84,14 +83,19 @@ const StudioProductWrapper = styled.div`
 export default function StudioProduct() {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <StudioProductWrapper>
-        <img src={Polygon} alt="" className="polygon-left" />
+        <img
+          src={Polygon}
+          alt="triangle-lr"
+          className="polygon-left"
+          loading="lazy"
+        />
         <motion.div
           className="container-fluid px-5"
           initial={{ y: "200vh" }}
           animate={{ y: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.6 }}
         >
           <div className="studio-product-head">
             <div className="leftside-area">
@@ -102,7 +106,7 @@ export default function StudioProduct() {
                 className="product-head"
                 initial={{ x: "-100vw" }}
                 animate={{ x: 0 }}
-                transition={{ duration: 0.6 }}
+                transition={{ duration: 0.7 }}
               >
                 <p>STUDIO / CHANEL’S MOST EXPENSIVE PRODUCTS</p>
               </motion.div>
@@ -115,7 +119,7 @@ export default function StudioProduct() {
           </div>
           <div className="studio-product-body">
             <div className="studio-product-video">
-              <img src={Video} alt="" width={"500px"} />
+              <img src={Video} alt="videoImg" width={"500px"} loading="lazy" />
             </div>
             <div className="box-area">
               <div className="product-box">

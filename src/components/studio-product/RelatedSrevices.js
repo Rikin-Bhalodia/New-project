@@ -5,6 +5,7 @@ import { Autoplay, Pagination, Navigation } from "swiper";
 import { sliderImage } from "../../utils";
 import Releted from "../../assets/images/studio-product/releted-product.svg";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const ReletedServicesWrapper = styled.div`
   padding: 0px 50px 100px;
@@ -51,15 +52,26 @@ const ReletedServicesWrapper = styled.div`
 `;
 
 export default function ReletedServices() {
+  const [isInView, setIsInView] = useState(false);
+
   return (
     <ReletedServicesWrapper>
       <div className="head">
-        <img src={Releted} alt="" />
+        <img src={Releted} alt="releted-head" loading="lazy" />
       </div>
       <motion.div
-        initial={{ y: "200vh" }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.8 }}
+        whileInView={() => {
+          setIsInView(true);
+        }}
+        initial={{ y: "20vh" }}
+        animate={
+          isInView && {
+            y: 0,
+            transition: {
+              duration: 0.3,
+            },
+          }
+        }
       >
         <Swiper
           slidesPerView={5}
@@ -69,6 +81,7 @@ export default function ReletedServices() {
           autoplay={{
             delay: 1000,
             disableOnInteraction: false,
+            pauseOnMouseEnter: true,
           }}
           loop={true}
           loopFillGroupWithBlank={true}
@@ -83,6 +96,7 @@ export default function ReletedServices() {
                     <motion.img
                       src={image}
                       alt="image"
+                      loading="lazy"
                       whileHover={{
                         scale: 1.1,
                       }}
