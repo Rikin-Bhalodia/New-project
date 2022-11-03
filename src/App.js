@@ -1,29 +1,40 @@
 import "./App.css";
 import React, { Suspense } from "react";
-import Home from "./components/Home";
-import Studio from "./studio";
-import StudioProduct from "../src/components/studio-product/StudioProduct";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/bundle";
-import { Route, Routes, useLocation } from "react-router-dom";
-import StudioProductMaterial from "./components/studio-material";
 import "antd/dist/antd.variable.min.css";
 import "antd/dist/antd.css";
-import StudioSecVideo from "./components/studio-sec-video";
-import Product from "./components/Product";
-import Header from "./commonComponents/Header";
-import Footer from "./commonComponents/Footer";
-import ShopHover from "./components/shop-hover";
-import ServiceHover from "./components/service-hover";
-import SubMenu1 from "./components/sub-category-1";
-import SubMenu2 from "./components/sub-category-2";
-import Brand from "./components/brand";
-import About from "./components/About";
-import ProductSection from "./components/product-section";
-import BrandProduct from "./components/brand-product";
-import BrandProductSection from "./components/brand-product-selection";
-import BrandProductLanding from "./components/brand-product-landing";
+import { Route, Routes, useLocation } from "react-router-dom";
+
+const Home = React.lazy(() => import("./components/index/Home"));
+const Studio = React.lazy(() => import("./studio"));
+const StudioProduct = React.lazy(() =>
+  import("../src/components/studio-product/StudioProduct")
+);
+const StudioProductMaterial = React.lazy(() =>
+  import("./components/studio-material")
+);
+const StudioSecVideo = React.lazy(() =>
+  import("./components/studio-sec-video")
+);
+const Product = React.lazy(() => import("./components/Product"));
+const Header = React.lazy(() => import("./commonComponents/Header"));
+const Footer = React.lazy(() => import("./commonComponents/Footer"));
+const ShopHover = React.lazy(() => import("./components/shop-hover"));
+const ServiceHover = React.lazy(() => import("./components/service-hover"));
+const SubMenu1 = React.lazy(() => import("./components/sub-category-1"));
+const SubMenu2 = React.lazy(() => import("./components/sub-category-2"));
+const Brand = React.lazy(() => import("./components/brand"));
+const About = React.lazy(() => import("./components/About"));
+const ProductSection = React.lazy(() => import("./components/product-section"));
+const BrandProduct = React.lazy(() => import("./components/brand-product"));
+const BrandProductSection = React.lazy(() =>
+  import("./components/brand-product-selection")
+);
+const BrandProductLanding = React.lazy(() =>
+  import("./components/brand-product-landing")
+);
 const ServiceLuxuryGifting = React.lazy(() =>
   import("./components/service/ServiceLuxuryGifting")
 );

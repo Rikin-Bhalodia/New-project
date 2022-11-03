@@ -1,47 +1,40 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
-
-import studioInner5 from "./../assets/images/img/studioInner-1.jpg";
-import studioInner1 from "./../assets/images/img/studioInner-1.jpg";
-import studioInner2 from "./../assets/images/img/studioInner-2.jpg";
-import studioInner3 from "./../assets/images/img/studioInner-3.jpg";
-import studioInner4 from "./../assets/images/img/studioInner-4.jpg";
-import studio2 from "./../assets/images/img/studio-1.jpg";
-import studio1 from "./../assets/images/img/studio-2.jpg";
-import studio3 from "./../assets/images/img/studio-3.jpg";
-import studio from "./../assets/images/img/Studio-bg.png";
-import { MainSlider } from "../slider";
-
-import liveTv from "./../assets/images/img/live-tv.png";
-import secain1 from "./../assets/images/img/secain-1.jpg";
-import secain2 from "./../assets/images/img/secain-2.jpg";
-import secain3 from "./../assets/images/img/secain-3.png";
-import secain4 from "./../assets/images/img/secain-4.png";
-import secain5 from "./../assets/images/img/secain-5.jpg";
-import secain6 from "./../assets/images/img/secain-6.jpg";
-import follow1 from "./../assets/images/img/follow1.png";
-import follow2 from "./../assets/images/img/follow2.png";
-import follow3 from "./../assets/images/img/follow3.png";
-import follow4 from "./../assets/images/img/follow4.png";
-import follow5 from "./../assets/images/img/follow5.png";
-import follow6 from "./../assets/images/img/follow6.png";
-import follow7 from "./../assets/images/img/follow7.png";
-import Membership from "./../assets/images/img/watch-bg.jpg";
-import Rent from "./../assets/images/img/rent-bg.jpg";
-import { RentSlider, ServiceSlider } from "../slider";
-import ExploreNow from "../assets/images/homepage/explorenow.svg";
-import DarkExploreNow from "../assets/images/homepage/DarkExploreNow.png";
-import DarkLeafExploreNow from "../assets/images/homepage/dark-explorenow.svg";
-import TakeTour from "../assets/images/homepage/take-tour.svg";
-import ShopNow from "../assets/images/homepage/dark-shownow.svg";
+import studioInner5 from "./../../assets/images/img/studioInner-1.jpg";
+import studioInner1 from "./../../assets/images/img/studioInner-1.jpg";
+import studioInner2 from "./../../assets/images/img/studioInner-2.jpg";
+import studioInner3 from "./../../assets/images/img/studioInner-3.jpg";
+import studioInner4 from "./../../assets/images/img/studioInner-4.jpg";
+import studio2 from "./../../assets/images/img/studio-1.jpg";
+import studio3 from "./../../assets/images/img/studio-3.jpg";
+import liveTv from "./../../assets/images/img/live-tv.png";
+import secain1 from "./../../assets/images/img/secain-1.jpg";
+import secain2 from "./../../assets/images/img/secain-2.jpg";
+import secain3 from "./../../assets/images/img/secain-3.png";
+import secain4 from "./../../assets/images/img/secain-4.png";
+import secain5 from "./../../assets/images/img/secain-5.jpg";
+import secain6 from "./../../assets/images/img/secain-6.jpg";
+import follow1 from "./../../assets/images/img/follow1.png";
+import follow2 from "./../../assets/images/img/follow2.png";
+import follow3 from "./../../assets/images/img/follow3.png";
+import follow4 from "./../../assets/images/img/follow4.png";
+import follow5 from "./../../assets/images/img/follow5.png";
+import follow6 from "./../../assets/images/img/follow6.png";
+import follow7 from "./../../assets/images/img/follow7.png";
+import Membership from "./../../assets/images/img/watch-bg.jpg";
+import Rent from "./../../assets/images/img/rent-bg.jpg";
+import { RentSlider, ServiceSlider } from "../../slider";
+import ExploreNow from "../../assets/images/homepage/explorenow.svg";
+import DarkExploreNow from "../../assets/images/homepage/DarkExploreNow.png";
+import ShopNow from "../../assets/images/homepage/dark-shownow.svg";
 import styled from "styled-components";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import Icon from "../Luxury";
-import Elegance from "../elegance";
-import Avenue from "../avenue";
-import Service from "../service";
-import Menu from "../commonComponents/Menu";
-import MenuIcon from "../assets/images/studio/menu.svg";
+import Avenue from "../../avenue";
+import Service from "../../service";
+import Menu from "../../commonComponents/Menu";
+import MenuIcon from "../../assets/images/studio/menu.svg";
+import Welcome from "./Welcome";
+import StudioImg from "./StudioImg";
 
 const HomeWrapper = styled.div`
   scroll-behavior: smooth;
@@ -122,14 +115,14 @@ const HomeWrapper = styled.div`
     font-size: 80px;
     line-height: 100px;
   }
+  .about {
+    flex-direction: column;
+  }
   .about-title {
     font-family: "Coral Blush";
     letter-spacing: 8px;
     font-style: normal;
     font-size: 100px;
-  }
-  .about {
-    flex-direction: column;
   }
   .scroll-effect {
     background: rgb(102 94 47);
@@ -196,14 +189,11 @@ const HomeWrapper = styled.div`
 `;
 
 export default function Home() {
-  const [image, setImage] = useState(studio);
   const [menuOpenModal, setMenuOpenModal] = useState(false);
 
   const wrapper = useRef();
   gsap.registerPlugin(ScrollTrigger);
-  const handleImage = (studioImage) => {
-    setImage(studioImage);
-  };
+
   // useLayoutEffect(() => {
   //   let smoother = ScrollTrigger.create({
   //     smooth: 3, // how long (in seconds) it takes to "catch up" to the native scroll position
@@ -427,132 +417,9 @@ export default function Home() {
               </div>
             </section>
             {/* <!-- about --> */}
-            <section className="ss c-about-w minHeightSec minBannerHeight d-flex align-items-center ">
-              <div className="container-fluid">
-                <div className="container-fluid">
-                  <h4 className="">OPULENCE</h4>
-                  <div className="c-about-con d-flex about">
-                    <h2 className="">
-                      <div className="about-title">WELCOME</div>
-                    </h2>
-                    <h2 className="">
-                      <div className="about-title"> TO THE </div>
-                    </h2>
-                    <h2 className="">
-                      <div className="about-title">WORLD OF</div>
-                    </h2>
-                    <div className="roundBtn text-center mt-2">
-                      <span
-                        id="roundText8"
-                        className="btnText strong colorYellow font-13 letterSpacingmedium"
-                      >
-                        <img
-                          src={DarkLeafExploreNow}
-                          alt="explore-now"
-                          className="rent-now"
-                        />
-                      </span>
-                      <span style={{ position: "relative" }}>
-                        <Elegance />
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <MainSlider />
-              </div>
-            </section>
-
+            <Welcome />
             {/* <!-- third sec --> */}
-            <section
-              className="paddingSec minHeightSec backgroundSec d-flex align-items-center c-drive-w "
-              id="luxary_studio"
-              style={
-                image !== studio
-                  ? {
-                      backgroundSize: "cover",
-                      backgroundImage: `url(${image})`,
-                      backgroundRepeat: "no-repeat",
-                      backgroundPosition: "right",
-                      background: "#665E2F",
-                    }
-                  : {
-                      backgroundImage: `url(${image})`,
-                      backgroundRepeat: "no-repeat",
-                      backgroundPosition: "right",
-                      background: "#665E2F",
-                    }
-              }
-            >
-              <div className="container-fluid">
-                <div className="c-drive-con">
-                  <h4 className="">STUDIO</h4>
-                  <h2 className="">
-                    <div className="studio-title">DIVEINTO</div>
-                  </h2>
-                  <h2 className="">
-                    <div className="studio-title">THE WORLD</div>
-                  </h2>
-                  <h2 className="">
-                    <div className="studio-title">OF</div>
-                  </h2>
-
-                  <span style={{ position: "relative" }}>
-                    <Icon />
-                  </span>
-                  {/* <!-- <span className="">luxury</span> --> */}
-                  <div className="roundBtn text-center mt-2">
-                    <span
-                      id="roundText8"
-                      className="btnText strong colorYellow font-13 letterSpacingmedium"
-                    >
-                      <img
-                        src={TakeTour}
-                        alt="explore-now"
-                        className="rent-now"
-                      />
-                    </span>
-                  </div>
-                </div>
-                <div className="c-drive-img ">
-                  <div className="row mt-4">
-                    <div className="col-sm-4 px-5">
-                      <div className="studioImg wow fadeInLeft">
-                        <img
-                          src={studio1}
-                          alt="img"
-                          className="img-fluid per_studio_img cursouPointer"
-                          onMouseEnter={() => handleImage(studio1)}
-                          onMouseLeave={() => handleImage(studio)}
-                        />
-                      </div>
-                    </div>
-                    <div className="col-sm-4 px-5">
-                      <div className="studioImg wow fadeInLeft">
-                        <img
-                          src={studio2}
-                          alt="img"
-                          className="img-fluid per_studio_img cursouPointer"
-                          onMouseEnter={() => handleImage(studio2)}
-                          onMouseLeave={() => handleImage(studio)}
-                        />
-                      </div>
-                    </div>
-                    <div className="col-sm-4 px-5">
-                      <div className="studioImg wow fadeInLeft">
-                        <img
-                          src={studio3}
-                          alt="img"
-                          className="img-fluid per_studio_img cursouPointer"
-                          onMouseEnter={() => handleImage(studio3)}
-                          onMouseLeave={() => handleImage(studio)}
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-
+            <StudioImg />
             <section
               className="paddingSec minHeightSec d-flex align-items-center c-service-w pt-5 pb-3 "
               id="avenue"

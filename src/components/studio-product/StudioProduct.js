@@ -1,13 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 import Video from "../../assets/images/studio-product/video.svg";
-import ReletedServices from "./RelatedSrevices";
-import SimillerProduct from "./SimillierProduct";
-import WatchMoreSlider from "./WatchMoreSlider";
 import Polygon from "../../assets/images/polygon-left.svg";
 // import Header from "../../commonComponents/Header";
 import { motion } from "framer-motion";
 import Menu from "../../commonComponents/Menu";
+
+const ReletedServices = React.lazy(() => import("./RelatedSrevices"));
+const SimillerProduct = React.lazy(() => import("./SimillierProduct"));
+const WatchMoreSlider = React.lazy(() => import("./WatchMoreSlider"));
 
 const StudioProductWrapper = styled.div`
   position: relative;
