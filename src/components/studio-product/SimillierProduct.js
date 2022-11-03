@@ -183,7 +183,7 @@ const SimillerProductWrapper = styled.div`
 //   },
 // };
 
-export default function SimillerProduct() {
+const SimillerProduct = () => {
   const [isInView, setIsInView] = useState(false);
 
   return (
@@ -354,4 +354,6 @@ export default function SimillerProduct() {
       </div>
     </SimillerProductWrapper>
   );
-}
+};
+
+export default SimillerProduct;
