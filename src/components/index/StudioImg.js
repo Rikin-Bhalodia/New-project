@@ -7,6 +7,9 @@ import studio3 from "./../../assets/images/img/studio-3.jpg";
 import TakeTour from "../../assets/images/homepage/take-tour.svg";
 import Icon from "../../Luxury";
 import { motion } from "framer-motion";
+const AnimatedTextWord = React.lazy(() =>
+  import("../../commonComponents/Animation/FlipAnimation")
+);
 
 const StudioImgWrapper = styled.div``;
 
@@ -43,13 +46,19 @@ export default function StudioImg() {
           <div className="c-drive-con">
             <h4 className="">STUDIO</h4>
             <h2 className="">
-              <div className="studio-title">DIVEINTO</div>
+              <div className="studio-title">
+                <AnimatedTextWord text="DIVEINTO" />
+              </div>
             </h2>
             <h2 className="">
-              <div className="studio-title">THE WORLD</div>
+              <div className="studio-title">
+                <AnimatedTextWord text="THE WORLD" />
+              </div>
             </h2>
             <h2 className="">
-              <div className="studio-title">OF</div>
+              <div className="studio-title">
+                <AnimatedTextWord text="OF" />
+              </div>
             </h2>
 
             <span style={{ position: "relative" }}>
