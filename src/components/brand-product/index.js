@@ -260,11 +260,11 @@ const BrandProduct = () => {
                     <div className="sort-by">Sort By</div>
                     <img src={DownArrow} alt="arrow" className="arrow" />
                   </div>
-                  {/* <div className="option-box">
+                  <div className="option-box">
                     {options.map((option) => {
                       return <div className="single-option">{option}</div>;
                     })}
-                  </div> */}
+                  </div>
                 </div>
                 <div
                   style={{

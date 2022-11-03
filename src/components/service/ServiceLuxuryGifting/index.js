@@ -1,30 +1,20 @@
 import React from "react";
 import styled from "styled-components";
-import BackArrow from "../../../assets/images/product/back-arrow.svg";
 import Luxury from "../../../assets/images/service/luxury.svg";
 import Left from "../../../assets/images/service/left.svg";
 import Right from "../../../assets/images/service/right.svg";
 import {
   GiftsByClients,
   OccasionGifts,
-  PersonalAssitance,
   ServiceLuxuryGiftingPage,
 } from "../../../utils";
 import ServiceYellowBar from "../../../commonComponents/ServiceYellowBar";
+import GoBackpart from "../Common/gobachpart";
+import YellowBarContent from "../Common/YellowBarContent";
 
 const ServiceLuxuryGiftingWrapper = styled.div`
   margin: 100px 150px 0px 150px;
-  .goback {
-    margin-left: 40px;
-    display: flex;
-  }
-  .des {
-    text-align: center;
-    font-family: "Arial";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 14px;
-  }
+
   .gifting {
     font-family: "Coral Blush";
     font-style: normal;
@@ -137,48 +127,13 @@ const HalfWrapper = styled.div`
     font-size: 30px;
     color: #665e2f;
   }
-  .border-width {
-    display: flex;
-    justify-content: center;
-  }
-  .border {
-    border-bottom: 2px solid rgba(0, 0, 0, 0.27);
-    width: 90%;
-    margin: 70px 0px;
-  }
-  .icons {
-    display: flex;
-    column-gap: 15px;
-    opacity: 0.6;
-    font-family: "Arial";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    margin-bottom: 50px;
-    justify-content: center;
-  }
-  .icon {
-    text-align: center;
-  }
-  .icon-name {
-    padding-top: 5px;
-  }
 `;
 
 const ServiceLuxuryGifting = () => {
   return (
     <>
       <ServiceLuxuryGiftingWrapper>
-        <div className="goback">
-          <img src={BackArrow} alt="back-arrow" />
-          <div>Go Back</div>
-        </div>
-        <div className="des">
-          <div>KNOW THE WORLD OF LUXURY</div>
-          <div>
-            ROYCLAN IS THE PLACE WHERE YOU CAN BUY/RENT LUXURY PRODUCTS.
-          </div>
-        </div>
+        <GoBackpart />
         <div>
           <div className="name">
             <img src={Luxury} alt="luxury" height={260} className="luxury" />
@@ -236,30 +191,7 @@ const ServiceLuxuryGifting = () => {
         <div className="border-width">
           <div className="border"></div>
         </div>
-        <ServiceYellowBar
-          content={"GET PERSONAL ASSISTANCE"}
-          note={"FIND THE RIGHT GIFT FOR THEM!"}
-        />
-        <div className="border-width">
-          <div className="border"></div>
-        </div>
-        <div className="icons">
-          {PersonalAssitance.map((value) => {
-            return (
-              <div className="icon">
-                <img src={value.img} alt="img" height={40} width={60} />
-                <div className="icon-name">{value.name}</div>
-              </div>
-            );
-          })}
-        </div>
-        <ServiceYellowBar
-          content={"REQUEST ANY SERVICES!"}
-          note={"PROVIDE THE BEST FOR THEM!"}
-        />
-        <div className="border-width">
-          <div className="border"></div>
-        </div>
+        <YellowBarContent />
       </HalfWrapper>
     </>
   );

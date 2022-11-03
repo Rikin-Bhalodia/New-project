@@ -38,6 +38,7 @@ const BrandProductLanding = React.lazy(() =>
 const ServiceLuxuryGifting = React.lazy(() =>
   import("./components/service/ServiceLuxuryGifting")
 );
+const GiftForHim = React.lazy(() => import("./components/service/GiftForHim"));
 
 function App() {
   const { pathname } = useLocation();
@@ -66,6 +67,14 @@ function App() {
           element={
             <Suspense fallback={<div>Loading...</div>}>
               <ServiceLuxuryGifting />{" "}
+            </Suspense>
+          }
+        />
+        <Route
+          path="/gift-for-him"
+          element={
+            <Suspense fallback={<div>Loading...</div>}>
+              <GiftForHim />
             </Suspense>
           }
         />
