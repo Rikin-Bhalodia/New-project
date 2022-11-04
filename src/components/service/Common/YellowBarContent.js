@@ -22,7 +22,7 @@ const YellowBarContentWrapper = styled.div`
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
-    margin-bottom: 50px;
+    margin: 50px 0px;
     justify-content: center;
   }
   .icon {

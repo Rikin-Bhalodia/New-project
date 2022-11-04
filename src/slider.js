@@ -324,3 +324,32 @@ export function TopTrandingSlider() {
     </Swiper>
   );
 }
+
+export function BlankSlider() {
+  return (
+    <Swiper
+      slidesPerView={4.9}
+      className="mySwiper"
+      centeredSlides={true}
+      style={{ height: "200px", margin: "0 0 0 30%" }}
+      autoplay={{
+        delay: 1500,
+        disableOnInteraction: false,
+      }}
+      loop={true}
+      loopFillGroupWithBlank={true}
+      speed={2500}
+      modules={[Autoplay, Pagination, Navigation]}
+    >
+      {[1, 2, , 4, , 56, , 7].map((_) => {
+        return (
+          <SwiperSlide style={{ width: "250px", height: "200px" }}>
+            <div
+              style={{ background: "#D9D9D9", width: "250px", height: "250px" }}
+            ></div>
+          </SwiperSlide>
+        );
+      })}
+    </Swiper>
+  );
+}
