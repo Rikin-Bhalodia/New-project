@@ -53,7 +53,7 @@ const ExploreShop = () => {
           return (
             <div className="card-label">
               <div className="label-name">FOOD</div>
-              <img src={Photo} alt="photo" />
+              <img src={Photo} alt="photo" loading="lazy" />
             </div>
           );
         })}

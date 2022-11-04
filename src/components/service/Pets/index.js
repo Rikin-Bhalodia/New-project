@@ -9,9 +9,10 @@ import RightMiddle from "../../../assets/images/service/pets/right-middle.svg";
 import LuxuryLife from "../../../assets/images/service/pets/luxury-life.svg";
 import WannaShop from "../../../commonComponents/WannaShop";
 import { ExploreMoreIcons, PetsIcons } from "../../../utils";
-import TopTranding from "../Common/TopTranding";
-import ExploreShop from "../Common/ExploreShop";
-import YellowBarContent from "../Common/YellowBarContent";
+
+const TopTranding = React.lazy(() => import("../Common/TopTranding"));
+const ExploreShop = React.lazy(() => import("../Common/ExploreShop"));
+const YellowBarContent = React.lazy(() => import("../Common/YellowBarContent"));
 
 const PetsWrapper = styled.div`
   width: 100%;
