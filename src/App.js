@@ -64,6 +64,7 @@ function App() {
         <Route path="/sub-menu1" element={<SubMenu1 />} />
         <Route path="/sub-menu2" element={<SubMenu2 />} />
         <Route path="/product-selection" element={<ProductSection />} />
+        <Route path="/gift-product-selection" element={<ProductSection />} />
         <Route path="/brand" element={<Brand />} />
         <Route path="/brand-product" element={<BrandProduct />} />
         <Route path="/brand-product-sec" element={<BrandProductSection />} />
