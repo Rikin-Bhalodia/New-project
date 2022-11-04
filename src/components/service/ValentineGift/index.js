@@ -204,20 +204,21 @@ const ValentineGift = () => {
           onClick={(e) => e.stopPropagation()}
         />
         {menuOpenModal ? (
-          <img src={MenuIcon} alt="menu" height={45} />
+          <img loading="lazy" src={MenuIcon} alt="menu" height={45} />
         ) : (
-          <img src={MenuIcon} alt="menu" height={45} />
+          <img loading="lazy" src={MenuIcon} alt="menu" height={45} />
         )}
       </div>
       <div className="middle-part">
-        <img src={LeftMiddle} alt="left-middle" height={450} />
+        <img loading="lazy" src={LeftMiddle} alt="left-middle" height={450} />
         <div className="new-head">
           <span>GIVE YOUR</span>
           <span>LOVED ONES</span>
           <span>THE BEST</span>
-          <img src={Gift} alt="gift" height={200} />
+          <img loading="lazy" src={Gift} alt="gift" height={200} />
         </div>
         <img
+          loading="lazy"
           src={RightMiddle}
           alt="left-middle"
           height={450}
@@ -232,7 +233,13 @@ const ValentineGift = () => {
         {valentineGiftsIcons.map((data) => {
           return (
             <div className="icon">
-              <img src={data.img} alt="img" height={40} width={60} />
+              <img
+                loading="lazy"
+                src={data.img}
+                alt="img"
+                height={40}
+                width={60}
+              />
               <div className="icon-name">{data.name}</div>
             </div>
           );
@@ -245,7 +252,7 @@ const ValentineGift = () => {
         <div className="sort-by-drop-down">
           <div className="drop-down">
             <div className="sort-by">Sort By</div>
-            <img src={DownArrow} alt="arrow" className="arrow" />
+            <img loading="lazy" src={DownArrow} alt="arrow" className="arrow" />
           </div>
           <div className="option-box">
             {options.map((option) => {
@@ -259,12 +266,22 @@ const ValentineGift = () => {
               <div>
                 <div className="drop-down right" onClick={() => setId(i)}>
                   <div className="mood">FRAGRANCE</div>
-                  <img src={DownArrow} alt="arrow" className="arrow" />
+                  <img
+                    loading="lazy"
+                    src={DownArrow}
+                    alt="arrow"
+                    className="arrow"
+                  />
                 </div>
                 {i === id && (
                   <div className="option-box-right">
                     <div className="search-part">
-                      <img src={Search} alt="search" className="search-img" />
+                      <img
+                        loading="lazy"
+                        src={Search}
+                        alt="search"
+                        className="search-img"
+                      />
                       <input
                         placeholder="Search Categories"
                         className="search-bar"
