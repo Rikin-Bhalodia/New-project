@@ -284,7 +284,7 @@ const GiftForHim = () => {
           </div>
           <div className="line"></div>
         </div>
-        <YellowBarContent />
+        <YellowBarContent requiredPersonalAssistance={true} />
       </FullScreenWrapper>
     </>
   );

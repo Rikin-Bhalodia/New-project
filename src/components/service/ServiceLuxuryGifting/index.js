@@ -191,7 +191,7 @@ const ServiceLuxuryGifting = () => {
         <div className="border-width">
           <div className="border"></div>
         </div>
-        <YellowBarContent />
+        <YellowBarContent requiredPersonalAssistance={true} />
       </HalfWrapper>
     </>
   );

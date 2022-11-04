@@ -33,13 +33,15 @@ const YellowBarContentWrapper = styled.div`
   }
 `;
 
-const YellowBarContent = () => {
+const YellowBarContent = ({ requiredPersonalAssistance }) => {
   return (
     <YellowBarContentWrapper>
-      <ServiceYellowBar
-        content={"GET PERSONAL ASSISTANCE"}
-        note={"FIND THE RIGHT GIFT FOR THEM!"}
-      />
+      {requiredPersonalAssistance && (
+        <ServiceYellowBar
+          content={"GET PERSONAL ASSISTANCE"}
+          note={"FIND THE RIGHT GIFT FOR THEM!"}
+        />
+      )}
       <div className="border-width">
         <div className="border"></div>
       </div>

@@ -56,6 +56,10 @@ import Sale from "./assets/images/service/personal-assitance/sale.svg";
 import Transpotation from "./assets/images/service/personal-assitance/transpotation.svg";
 import Travel from "./assets/images/service/personal-assitance/travel.svg";
 
+import Top from "./assets/images/service/valentine-gift/top.svg";
+import Bottom from "./assets/images/service/valentine-gift/bottom.svg";
+import Suits from "./assets/images/service/valentine-gift/suits.svg";
+
 export const images = [studio1, studio2, studio3];
 export const avenues = [avenue, avenue1, avenue2];
 
@@ -139,4 +143,16 @@ export const PersonalAssitance = [
   { img: Parties, name: "Parties" },
   { img: Design, name: "Design Consultation" },
   { img: Nfts, name: "NFT & Metaverse" },
+];
+
+export const valentineGiftsIcons = [
+  { img: Top, name: "Top" },
+  { img: Bottom, name: "Bottom" },
+  { img: Fashion, name: "Dress" },
+  { img: Suits, name: "Suits" },
+  { img: FootWear, name: "Shoes" },
+  { img: Accessories, name: "Accessories" },
+  { img: Jewellery, name: "Jewelery" },
+  { img: Fragrance, name: "Fragrance" },
+  { img: Bags, name: "Bags" },
 ];

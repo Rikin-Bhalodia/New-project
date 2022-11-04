@@ -42,6 +42,9 @@ const GiftForHim = React.lazy(() => import("./components/service/GiftForHim"));
 const LuxuryProduct = React.lazy(() =>
   import("./components/service/ServiceLuxuryGifting/LuxuryProduct")
 );
+const ValentineGift = React.lazy(() =>
+  import("./components/service/ValentineGift")
+);
 
 function App() {
   const { pathname } = useLocation();
@@ -82,6 +85,7 @@ function App() {
           }
         />
         <Route path="/luxury-forhim-product" element={<LuxuryProduct />} />
+        <Route path="/valentine-gift" element={<ValentineGift />} />
       </Routes>
       <Footer />
     </div>

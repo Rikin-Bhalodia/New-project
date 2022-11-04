@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import studioInner5 from "./../../assets/images/img/studioInner-1.jpg";
 import studioInner1 from "./../../assets/images/img/studioInner-1.jpg";
 import studioInner2 from "./../../assets/images/img/studioInner-2.jpg";
