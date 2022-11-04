@@ -31,6 +31,16 @@ const YellowBarContentWrapper = styled.div`
   .icon-name {
     padding-top: 5px;
   }
+  .line {
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+  }
+  .border-line {
+    width: 90%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.27);
+  }
 `;
 
 const YellowBarContent = ({ requiredPersonalAssistance }) => {
@@ -42,8 +52,8 @@ const YellowBarContent = ({ requiredPersonalAssistance }) => {
           note={"FIND THE RIGHT GIFT FOR THEM!"}
         />
       )}
-      <div className="border-width">
-        <div className="border"></div>
+      <div className="line">
+        <div className="border-line"></div>
       </div>
       <div className="icons">
         {PersonalAssitance.map((value) => {
@@ -59,8 +69,8 @@ const YellowBarContent = ({ requiredPersonalAssistance }) => {
         content={"REQUEST ANY SERVICES!"}
         note={"PROVIDE THE BEST FOR THEM!"}
       />
-      <div className="border-width">
-        <div className="border"></div>
+      <div className="line">
+        <div className="border-line"></div>
       </div>
     </YellowBarContentWrapper>
   );

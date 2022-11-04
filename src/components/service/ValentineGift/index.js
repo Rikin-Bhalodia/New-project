@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import BannerImage from "../../../assets/images/service/valentine-gift/banner.svg";
-import LeftMiddle from "../../../assets/images/service/valentine-gift/left-middle.svg";
-import RightMiddle from "../../../assets/images/service/valentine-gift/right-middle.svg";
-import Gift from "../../../assets/images/service/valentine-gift/gift.svg";
 import DownArrow from "../../../assets/images/product/down-arrow.svg";
 import Search from "../../../assets/images/service/gift-for-him/seach-icon.svg";
 import Menu from "../../../commonComponents/Menu";
@@ -12,6 +9,10 @@ import WannaShop from "../../../commonComponents/WannaShop";
 import { valentineGiftsIcons } from "../../../utils";
 import ShoppingListCard from "../ShopingListCard";
 import YellowBarContent from "../Common/YellowBarContent";
+import MiddlePart from "../MiddlePart";
+import LeftMiddle from "../../../assets/images/service/valentine-gift/left-middle.svg";
+import RightMiddle from "../../../assets/images/service/valentine-gift/right-middle.svg";
+import Gift from "../../../assets/images/service/valentine-gift/gift.svg";
 
 const ValentineGiftWrapper = styled.div`
   width: 100%;
@@ -27,25 +28,7 @@ const ValentineGiftWrapper = styled.div`
     align-items: center;
     background: url(${BannerImage});
   }
-  .right-middle {
-    position: absolute;
-    right: 0;
-  }
-  .middle-part {
-    width: 100%;
-    display: flex;
-    text-align: center;
-  }
-  .new-head {
-    width: 83%;
-    font-family: "Coral Blush";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 60px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }
+
   .line {
     width: 100%;
     margin-top: 30px;
@@ -209,25 +192,15 @@ const ValentineGift = () => {
           <img loading="lazy" src={MenuIcon} alt="menu" height={45} />
         )}
       </div>
-      <div className="middle-part">
-        <img loading="lazy" src={LeftMiddle} alt="left-middle" height={450} />
-        <div className="new-head">
-          <span>GIVE YOUR</span>
-          <span>LOVED ONES</span>
-          <span>THE BEST</span>
-          <img loading="lazy" src={Gift} alt="gift" height={200} />
-        </div>
-        <img
-          loading="lazy"
-          src={RightMiddle}
-          alt="left-middle"
-          height={450}
-          className="right-middle"
-        />
-      </div>
-      <div className="line">
-        <div className="border-line"></div>
-      </div>
+      <MiddlePart
+        LeftMiddle={LeftMiddle}
+        RightMiddle={RightMiddle}
+        Text={Gift}
+        first="GIVE YOUR"
+        second="LOVED ONES"
+        third="THE BEST"
+      />
+
       <WannaShop />
       <div className="icons">
         {valentineGiftsIcons.map((data) => {

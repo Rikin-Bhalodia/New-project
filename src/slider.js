@@ -6,6 +6,7 @@ import aboutSlider from "./assets/images/img/about-slider.jpg";
 import aboutlogo from "./assets/images/img/about-logo.png";
 import { studio2Images, sliderImage, avenues } from "./utils";
 import { motion } from "framer-motion";
+import TopTrandingImage from "./assets/images/service/pets/top-tranding.svg";
 
 export default function Slider() {
   const [isInView, setIsInView] = useState(false);
@@ -214,6 +215,109 @@ export function StudioS2() {
           >
             <img src={data.img} loading="lazy" alt="studiob-01" />
             <div>{data.content}</div>
+          </SwiperSlide>
+        );
+      })}
+    </Swiper>
+  );
+}
+
+export function TopTrandingSlider() {
+  return (
+    <Swiper
+      slidesPerView={2.6}
+      spaceBetween={100}
+      className="mySwiper"
+      style={{ height: "500px", margin: "50px 0 0 0" }}
+      autoplay={{
+        delay: 1500,
+        disableOnInteraction: false,
+      }}
+      loop={true}
+      loopFillGroupWithBlank={true}
+      speed={2500}
+      modules={[Autoplay, Pagination, Navigation]}
+    >
+      {[1, 2, 4, 56, 7, 89, 9].map((_) => {
+        return (
+          <SwiperSlide
+            style={{
+              borderRadius: "40px",
+              display: "flex",
+              flexDirection: "column",
+              background: "#FCF9F2",
+            }}
+          >
+            <img
+              src={TopTrandingImage}
+              loading="lazy"
+              alt="image"
+              width="100%"
+              style={{
+                borderRadius: "40px 40px 0px 0px",
+                height: "300px",
+                position: "relative",
+                top: "-5px",
+              }}
+            />
+            <div style={{ color: " #A79586" }}>
+              <div
+                style={{
+                  textAlign: "left",
+                  padding: "0 0 0 10px",
+                  fontSize: "18px",
+                }}
+              >
+                Goa, India
+              </div>
+              <div
+                style={{
+                  color: "#665E2F",
+                  textTransform: "uppercase",
+                  textAlign: "left",
+                  fontSize: "24px",
+                  fontWeight: "400",
+                  padding: "0 0 10px 10px",
+                }}
+              >
+                leela palace, goa
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "flex-start",
+                  width: "100%",
+                }}
+              >
+                <div
+                  style={{
+                    textAlign: "left",
+                    width: "100%",
+                    padding: "0 0 0 10px",
+                    fontSize: "18px",
+                  }}
+                >
+                  <div>luxury stay in goa with daily breakfast and dinner</div>
+                  <div style={{ color: "#665E2F", textTransform: "uppercase" }}>
+                    travel until 31 march 2023
+                  </div>
+                  <div>2, 3, 4, 6 nights from</div>
+                  <div>including taxes and fees</div>
+                </div>
+                <div
+                  style={{
+                    border: "3px solid #665E2F",
+                    borderRadius: "50%",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    marginRight: "10px",
+                  }}
+                >
+                  Request To Book
+                </div>
+              </div>
+            </div>
           </SwiperSlide>
         );
       })}

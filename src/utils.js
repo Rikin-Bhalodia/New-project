@@ -60,6 +60,24 @@ import Top from "./assets/images/service/valentine-gift/top.svg";
 import Bottom from "./assets/images/service/valentine-gift/bottom.svg";
 import Suits from "./assets/images/service/valentine-gift/suits.svg";
 
+import Clothes from "./assets/images/service/pets/clothes.svg";
+import Food from "./assets/images/service/pets/food.svg";
+import Collars from "./assets/images/service/pets/collars.svg";
+import Blows from "./assets/images/service/pets/blows.svg";
+import Harness from "./assets/images/service/pets/harnes.svg";
+import Cleaning from "./assets/images/service/pets/cleaning.svg";
+import EarCare from "./assets/images/service/pets/ear-care.svg";
+import Eye from "./assets/images/service/pets/eye.svg";
+import AntiTick from "./assets/images/service/pets/anti-tick.svg";
+import Dental from "./assets/images/service/pets/dental.svg";
+import Services from "./assets/images/service/pets/services.svg";
+
+import Dogs from "./assets/images/service/pets/dogs.svg";
+import Cats from "./assets/images/service/pets/cats.svg";
+import Fish from "./assets/images/service/pets/fish.svg";
+import Other from "./assets/images/service/pets/other.svg";
+import Service from "./assets/images/service/pets/service.svg";
+
 export const images = [studio1, studio2, studio3];
 export const avenues = [avenue, avenue1, avenue2];
 
@@ -155,4 +173,26 @@ export const valentineGiftsIcons = [
   { img: Jewellery, name: "Jewelery" },
   { img: Fragrance, name: "Fragrance" },
   { img: Bags, name: "Bags" },
+];
+
+export const PetsIcons = [
+  { img: Clothes, name: "Clothes" },
+  { img: Food, name: "Food" },
+  { img: Collars, name: "Collars" },
+  { img: Blows, name: "Blows" },
+  { img: Harness, name: "Harness" },
+  { img: Cleaning, name: "Cleaning" },
+  { img: EarCare, name: "Ear Care" },
+  { img: Eye, name: "Eye Care" },
+  { img: AntiTick, name: "Anti Tick" },
+  { img: Dental, name: "Dental Care" },
+  { img: Services, name: "Services" },
+];
+
+export const ExploreMoreIcons = [
+  { img: Dogs, name: "DOGS" },
+  { img: Cats, name: "CATS" },
+  { img: Fish, name: "FISH" },
+  { img: Other, name: "OTHER" },
+  { img: Service, name: "Service" },
 ];

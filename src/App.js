@@ -45,6 +45,7 @@ const LuxuryProduct = React.lazy(() =>
 const ValentineGift = React.lazy(() =>
   import("./components/service/ValentineGift")
 );
+const Pets = React.lazy(() => import("./components/service/Pets"));
 
 function App() {
   const { pathname } = useLocation();
@@ -71,22 +72,12 @@ function App() {
         <Route path="/brand-product-lan" element={<BrandProductLanding />} />
         <Route
           path="/service-luxury-gifting"
-          element={
-            <Suspense fallback={<div>Loading...</div>}>
-              <ServiceLuxuryGifting />{" "}
-            </Suspense>
-          }
+          element={<ServiceLuxuryGifting />}
         />
-        <Route
-          path="/gift-for-him"
-          element={
-            <Suspense fallback={<div>Loading...</div>}>
-              <GiftForHim />
-            </Suspense>
-          }
-        />
+        <Route path="/gift-for-him" element={<GiftForHim />} />
         <Route path="/luxury-forhim-product" element={<LuxuryProduct />} />
         <Route path="/valentine-gift" element={<ValentineGift />} />
+        <Route path="/pets" element={<Pets />} />
       </Routes>
       <Footer />
     </div>
