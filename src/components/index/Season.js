@@ -94,7 +94,7 @@ export default function Season() {
                 isInView && {
                   y: 0,
                   transition: {
-                    duration: 2.2,
+                    duration: 2,
                   },
                 }
               }
