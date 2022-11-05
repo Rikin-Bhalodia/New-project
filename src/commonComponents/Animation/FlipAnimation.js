@@ -17,7 +17,7 @@ const AnimatedTextWord = ({ text }) => {
       style={{
         overflow: "hidden",
         display: "flex",
-        fontSize: "2rem",
+        // fontSize: "2rem",
         margin: "0px 30px",
       }}
       variants={container}
@@ -38,10 +38,12 @@ const AnimatedTextWord = ({ text }) => {
                 type: "spring",
                 damping: 12,
                 stiffness: 100,
+                delay: 1,
+                duration: 2,
               },
             }
           }
-          style={{ marginRight: "2px", fontSize: "70px" }}
+          style={text.style}
           key={index}
         >
           {letter === " " ? "\u00A0" : letter}

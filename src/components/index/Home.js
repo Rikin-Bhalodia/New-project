@@ -59,6 +59,8 @@ const HomeWrapper = styled.div`
     letter-spacing: 8px;
     font-style: normal;
     font-size: 110px;
+    display: flex;
+    justify-content: center;
   }
   .membership {
     background-image: url(${Membership});
@@ -178,7 +180,7 @@ const HomeWrapper = styled.div`
 
 export default function Home() {
   const [menuOpenModal, setMenuOpenModal] = useState(false);
-
+  const [isInView, setIsInView] = useState(false);
   const wrapper = useRef();
   gsap.registerPlugin(ScrollTrigger);
 
@@ -213,7 +215,8 @@ export default function Home() {
                                   <img
                                     className="wow backInLeft"
                                     src={studioInner1}
-                                    alt=""
+                                    alt="studioInner"
+                                    loading="lazy"
                                   />
                                 </div>
                               </div>
@@ -232,7 +235,8 @@ export default function Home() {
                                   <img
                                     className="wow backInUp"
                                     src={studioInner2}
-                                    alt=""
+                                    alt="studioInner"
+                                    loading="lazy"
                                   />
                                 </div>
                               </div>
@@ -249,7 +253,8 @@ export default function Home() {
                                   <img
                                     className="wow backInLeft"
                                     src={studioInner1}
-                                    alt=""
+                                    alt="studioInner"
+                                    loading="lazy"
                                   />
                                 </div>
                               </div>
@@ -268,7 +273,8 @@ export default function Home() {
                                   <img
                                     className="wow backInUp"
                                     src={studioInner2}
-                                    alt=""
+                                    alt="studioInner"
+                                    loading="lazy"
                                   />
                                 </div>
                               </div>
@@ -285,7 +291,8 @@ export default function Home() {
                                   <img
                                     className="wow backInLeft"
                                     src={studioInner3}
-                                    alt=""
+                                    alt="studioInner"
+                                    loading="lazy"
                                   />
                                 </div>
                               </div>
@@ -305,7 +312,8 @@ export default function Home() {
                                   <img
                                     className="wow backInUpt"
                                     src={studioInner2}
-                                    alt=""
+                                    alt="studioInner"
+                                    loading="lazy"
                                   />
                                 </div>
                               </div>
@@ -322,7 +330,8 @@ export default function Home() {
                                   <img
                                     className="wow backInLeft"
                                     src={studioInner4}
-                                    alt=""
+                                    alt="studioInner"
+                                    loading="lazy"
                                   />
                                 </div>
                               </div>
@@ -341,7 +350,8 @@ export default function Home() {
                                   <img
                                     className="wow backInUp"
                                     src={studioInner5}
-                                    alt=""
+                                    alt="studioInner"
+                                    loading="lazy"
                                   />
                                 </div>
                               </div>
@@ -358,7 +368,8 @@ export default function Home() {
                                   <img
                                     className="wow backInLeft"
                                     src={studioInner4}
-                                    alt=""
+                                    alt="studioInner"
+                                    loading="lazy"
                                   />
                                 </div>
                               </div>
@@ -368,7 +379,8 @@ export default function Home() {
                                   <img
                                     className="wow backInUp"
                                     src={studioInner5}
-                                    alt=""
+                                    alt="studioInner"
+                                    loading="lazy"
                                   />
                                 </div>
                               </div>
@@ -397,6 +409,7 @@ export default function Home() {
                           <source
                             src="assets/img/mob banner.mp4"
                             type="video/mp4"
+                            loading="lazy"
                           />
                         </video>
                       </div>
@@ -410,9 +423,19 @@ export default function Home() {
                           onClick={(e) => e.stopPropagation()}
                         />
                         {menuOpenModal ? (
-                          <img src={MenuIcon} alt="menu" height={45} />
+                          <img
+                            src={MenuIcon}
+                            alt="menu"
+                            height={45}
+                            loading="lazy"
+                          />
                         ) : (
-                          <img src={MenuIcon} alt="menu" height={45} />
+                          <img
+                            src={MenuIcon}
+                            alt="menu"
+                            height={45}
+                            loading="lazy"
+                          />
                         )}
                       </div>
                     </div>
@@ -445,6 +468,7 @@ export default function Home() {
                           alt=""
                           height="auto"
                           width="500"
+                          loading="lazy"
                         />
                         <div className="roundBtn rightDestinationbtn mt-5">
                           <span
@@ -455,6 +479,7 @@ export default function Home() {
                               src={ExploreNow}
                               alt="explore-now"
                               className="explore-now"
+                              loading="lazy"
                             />
                           </span>
                         </div>
@@ -476,16 +501,35 @@ export default function Home() {
               <div className="container-fluid">
                 <h2 className="text-center">
                   <div className="explore-title ">
-                    <AnimatedTextWord text="MEMBERSHIP" />
+                    <AnimatedTextWord
+                      text="MEMBERSHIP"
+                      style="font-size:10px"
+                    />
                   </div>
                 </h2>
 
                 <p className="wow flipInX" data-wow-delay="0.8s">
                   Only on Invitation Basis
                 </p>
-                <a className="wow fadeInUp" data-wow-delay="1.2s" href="/">
+                <motion.a
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "10vh" }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      transition: {
+                        duration: 0.5,
+                      },
+                    }
+                  }
+                  className="wow fadeInUp"
+                  data-wow-delay="1.2s"
+                  href="/"
+                >
                   KNOW MORE
-                </a>
+                </motion.a>
               </div>
             </section>
           </div>
