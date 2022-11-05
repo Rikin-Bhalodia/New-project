@@ -7,7 +7,6 @@ import MenuIcon from "../../../assets/images/studio/menu.svg";
 import BackArrow from "../../../assets/images/product/back-arrow.svg";
 import { BlankSlider } from "../../../slider";
 import { ReviewSlider } from "./ReviewSlider";
-import ShoppingListCard from "../ShopingListCard";
 import YellowBarContent from "../Common/YellowBarContent";
 import ExploreShop from "../Common/ExploreShop";
 
@@ -120,7 +119,11 @@ const Grooming = () => {
       <img src={Text} alt="text" loading="lazy" className="text" />
       <BlankSlider />
       <div className="review">REVIEWS</div>
-      <ReviewSlider />
+      <ReviewSlider
+        background="rgba(0, 0, 0, 0.43)"
+        color="white"
+        des="white"
+      />
       <div className="btn">
         <button className="button-review">Request the service</button>
       </div>

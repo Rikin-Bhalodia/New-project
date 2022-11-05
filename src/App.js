@@ -6,6 +6,8 @@ import "swiper/css/bundle";
 import "antd/dist/antd.variable.min.css";
 import "antd/dist/antd.css";
 import { Route, Routes, useLocation } from "react-router-dom";
+import ScrollContainer from "./commonComponents/SmoothScrollingComponent";
+import PetsProductSelection from "./components/service/Pets/PetsProductSelection";
 
 const Home = React.lazy(() => import("./components/index/Home"));
 const Studio = React.lazy(() => import("./studio"));
@@ -47,12 +49,16 @@ const ValentineGift = React.lazy(() =>
 );
 const Pets = React.lazy(() => import("./components/service/Pets"));
 const Grooming = React.lazy(() => import("./components/service/Grooming"));
+const Dogs = React.lazy(() => import("./components/service/Dogs"));
 
 function App() {
   const { pathname } = useLocation();
+  const scrollIntertia = 70;
+
   return (
     <div className="App">
       {pathname !== "/studio" && <Header />}
+      {/* <ScrollContainer scrollIntertia={scrollIntertia}> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -80,8 +86,14 @@ function App() {
         <Route path="/valentine-gift" element={<ValentineGift />} />
         <Route path="/pets" element={<Pets />} />
         <Route path="/grooming" element={<Grooming />} />
+        <Route path="/dogs" element={<Dogs />} />
+        <Route
+          path="/pets-product-selection"
+          element={<PetsProductSelection />}
+        />
       </Routes>
       <Footer />
+      {/* </ScrollContainer> */}
     </div>
   );
 }

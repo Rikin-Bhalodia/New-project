@@ -4,9 +4,8 @@ import { EffectCoverflow, Pagination, Navigation, Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
-import Review from "../../../assets/images/service/grooming/review.svg";
 
-export function ReviewSlider() {
+export function ReviewSlider({ color, background, des, border }) {
   return (
     <Swiper
       effect={"coverflow"}
@@ -31,9 +30,10 @@ export function ReviewSlider() {
         return (
           <SwiperSlide
             style={{
-              backgroundImage: `url(${Review})`,
+              background: background,
               height: "300px",
               width: "900px",
+              border: border || "",
             }}
           >
             <div
@@ -42,7 +42,7 @@ export function ReviewSlider() {
                 flexDirection: "column",
                 justifyContent: "center",
                 alignItems: "center",
-                color: "white",
+                color: color,
                 fontFamily: "Mulish",
                 fontStyle: "normal",
                 fontWeight: "400",
@@ -61,7 +61,7 @@ export function ReviewSlider() {
               ></div>
               <div>Name</div>
               <div>Designation</div>
-              <div style={{ padding: "15px 0 0px 0" }}>
+              <div style={{ padding: "15px 0 0px 0", color: des }}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Vestibulum ipsum cursus interdum commodo, senectus dignissim.
               </div>
