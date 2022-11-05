@@ -10,15 +10,15 @@ const SubMenu2Wrapper = styled.div`
     justify-content: space-around;
     margin-top: 100px;
     align-items: center;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
   .center {
     border: 1px solid black;
     border-radius: 50%;
-    padding: 30px;
+    padding: 20px;
   }
   .body {
-    padding: 50px 80px;
+    padding: 10px 80px 10px 80px;
   }
   .menu-area {
     background-repeat: no-repeat;
@@ -45,7 +45,7 @@ const SubMenu2Wrapper = styled.div`
     font-size: 22px;
   }
   .footer {
-    padding: 50px 80px;
+    padding: 10px 80px 10px 80px;
   }
   .footer h4 {
     font-size: 25px;

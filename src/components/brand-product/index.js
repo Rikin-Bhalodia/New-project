@@ -5,6 +5,7 @@ import Banner1 from "../../assets/images/brand-product/banner1.svg";
 import Banner2 from "../../assets/images/brand-product/banner2.svg";
 import ProductImg from "../../assets/images/brand/productImg.svg";
 import FooterImage from "../../assets/images/product/footer.svg";
+import Filters from "../../commonComponents/Filters";
 
 const BrandProductWrapper = styled.div`
   background: #fcf9f2;
@@ -22,100 +23,6 @@ const BrandProductWrapper = styled.div`
       color: white;
       opacity: 1;
     }
-  }
-  .sort-by {
-    background: #a75b41;
-    border: 1px solid #a75b41;
-    border-radius: 50px;
-    width: 160px;
-    font-size: 14px;
-    height: 23px;
-    color: #fff;
-    padding-left: 15px;
-    display: flex;
-    align-items: center;
-  }
-  .arrow {
-    position: relative;
-    right: 35px;
-  }
-  .drop-down {
-    display: flex;
-  }
-  .option-box {
-    margin-top: 20px;
-    height: 130px;
-    border: 1px solid #000000;
-    border-radius: 0px 40px 40px 40px;
-    width: 230px;
-  }
-  .option-box-right {
-    margin-top: 20px;
-    width: 270px;
-    height: 152px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    border: 1px solid #000000;
-    border-radius: 50px 0px 50px 50px;
-    padding: 20px;
-    position: absolute;
-    right: 420px;
-    background: #fff;
-    z-index: 99;
-  }
-  .option-box-right2 {
-    margin-top: 20px;
-    width: 350px;
-    height: 152px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    border: 1px solid #000000;
-    border-radius: 50px 0px 50px 50px;
-    padding: 20px;
-    position: absolute;
-    right: 40px;
-    background: #fff;
-    z-index: 99;
-  }
-  .filter {
-    margin-top: 30px;
-    margin-left: 20px;
-    display: flex;
-    justify-content: space-between;
-  }
-  .single-option {
-    border-bottom: 1px solid #000000;
-    width: 100%;
-    height: 25px;
-    padding-left: 20px;
-    font-family: "Arial";
-    font-style: normal;
-    font-weight: 400;
-
-    font-size: 13px;
-  }
-  .mood {
-    border: 1px solid #d0d0d0;
-    border-radius: 33px;
-    width: 156px;
-    height: 52px;
-    font-size: 14px;
-    color: #fff;
-    padding-left: 15px;
-    display: flex;
-    align-items: center;
-    background: #a75b41;
-  }
-  .single-option-right {
-    width: 100%;
-    height: 25px;
-    padding-left: 20px;
-    font-family: "Arial";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 13px;
   }
   .banner-section {
     .banner {
@@ -235,11 +142,23 @@ const BrandProductWrapper = styled.div`
     }
   }
 `;
-const options = [
-  "Featured",
-  "Bestsellers",
-  "Price : Low to High",
-  "Price : High to Low",
+const FiltersName = [
+  { name: "COLLECTION NAME", option: ["Dry Food", "Wet Food"] },
+  {
+    name: "CATEGORY",
+    option: [
+      "Acana",
+      "Arden Grange",
+      "BRUNO'S WILD Essentials",
+      "Canine Creek",
+      "Chappi",
+      "Cesar",
+      "Drools",
+      "Farmina",
+      "Fish4Dogs",
+    ],
+  },
+  { name: "COLOR", option: ["Puppy", "Adult Dog", "Senior Dog"] },
 ];
 const BrandProduct = () => {
   return (
@@ -254,96 +173,7 @@ const BrandProduct = () => {
               <h2>FENDI</h2>
             </div>
             <div className="footer">
-              <div className="filter">
-                <div>
-                  <div className="drop-down">
-                    <div className="sort-by">Sort By</div>
-                    <img src={DownArrow} alt="arrow" className="arrow" />
-                  </div>
-                  <div className="option-box">
-                    {options.map((option) => {
-                      return <div className="single-option">{option}</div>;
-                    })}
-                  </div>
-                </div>
-                <div
-                  style={{
-                    display: "flex",
-                    position: "relative",
-                    width: "800px",
-                    justifyContent: "space-evenly",
-                  }}
-                >
-                  <div className="drop-down-right">
-                    <div className="drop-down">
-                      <div className="mood">MOOD</div>
-                      <img src={DownArrow} alt="arrow" className="arrow" />
-                    </div>
-                    {/* <div className="option-box">
-              {options.map((option) => {
-                return <div className="single-option">{option}</div>;
-              })}
-            </div> */}
-                  </div>
-                  <div className="drop-down-right">
-                    <div className="drop-down">
-                      <div className="mood">FRAGRANCE</div>
-                      <img src={DownArrow} alt="arrow" className="arrow" />
-                    </div>
-                    <div className="option-box-right">
-                      {options.map((option) => {
-                        return (
-                          <div style={{ display: "flex" }}>
-                            <input
-                              type="checkbox"
-                              id={option}
-                              name="vehicle1"
-                              value="Bike"
-                            ></input>
-                            <div className="single-option-right" for={option}>
-                              {option}
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
-                  <div className="drop-down-right">
-                    <div className="drop-down">
-                      <div className="mood">PURPOSE</div>
-                      <img src={DownArrow} alt="arrow" className="arrow" />
-                    </div>
-                    {/* <div className="option-box">
-              {options.map((option) => {
-                return <div className="single-option">{option}</div>;
-              })}
-            </div> */}
-                  </div>
-                  <div className="drop-down-right">
-                    <div className="drop-down">
-                      <div className="mood">TYPE</div>
-                      <img src={DownArrow} alt="arrow" className="arrow" />
-                    </div>
-                    <div className="option-box-right2">
-                      {options.map((option) => {
-                        return (
-                          <div style={{ display: "flex" }}>
-                            <input
-                              type="checkbox"
-                              id={option}
-                              name="vehicle1"
-                              value="Bike"
-                            ></input>
-                            <div className="single-option-right" for={option}>
-                              {option}
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <Filters FiltersName={FiltersName} />
             </div>
           </div>
         </div>

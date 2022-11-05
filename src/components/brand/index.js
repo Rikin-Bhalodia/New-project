@@ -24,7 +24,7 @@ const BrandWrapper = styled.div`
     .fendi-section {
       position: relative;
       .img2 {
-        /* height: 100vh; */
+        height: 100vh;
         width: 100vw;
         object-fit: cover;
       }
@@ -38,8 +38,7 @@ const BrandWrapper = styled.div`
           padding-left: 50px;
           h2 {
             font-weight: 400;
-            font-size: 160px;
-            line-height: 179px;
+            font-size: 100px;
             color: #ffffff;
             font-family: Coral-Blush;
           }
@@ -63,12 +62,14 @@ const BrandWrapper = styled.div`
             .fimg {
               z-index: 1;
               padding-right: 30px;
+              height: 300px;
             }
           }
         }
         .right-area {
           img {
             width: 550px;
+            height: 600px;
           }
         }
       }
@@ -108,7 +109,7 @@ const Brand = () => {
           <div className="fendi-area">
             <div className="left-area">
               <h2>FENDI</h2>
-              <div style={{ marginBottom: "50px" }}>
+              <div style={{ marginBottom: "30px" }}>
                 <a href="#">Visit Official Link</a>
               </div>
               <p>

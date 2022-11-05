@@ -40,9 +40,6 @@ const ProductSelectionCommonWrapper = styled.div`
   .border-bottom {
     border-bottom: 0.5px solid #000000;
   }
-  .detail1 {
-    padding-top: 38px;
-  }
   .product-logo {
     right: -70px;
     top: 67px;
@@ -67,7 +64,7 @@ const ProductSelectionCommonWrapper = styled.div`
   }
   .detail-sub3 {
     padding-top: 18px;
-    padding-bottom: 31px;
+    padding-bottom: 20px;
     max-width: 264px;
     font-family: "Arial";
     font-weight: 400;
@@ -97,7 +94,7 @@ const ProductSelectionCommonWrapper = styled.div`
   }
   .size--div {
     gap: 10px;
-    padding: 15px 0 25px 0;
+    padding: 15px 0 15px 0;
   }
   .size--div div {
     width: 30px;
@@ -117,8 +114,8 @@ const ProductSelectionCommonWrapper = styled.div`
     padding-bottom: 25px;
   }
   .icon--container {
-    gap: 27px;
-    margin: 20px 0 40px 0;
+    gap: 20px;
+    margin: 20px 0 20px 0;
   }
   .icon--container img {
     cursor: pointer;
@@ -150,7 +147,7 @@ const ProductSelectionCommonWrapper = styled.div`
     letter-spacing: 7.092px;
     text-transform: uppercase;
     color: #9d9d9d;
-    padding: 16px 26px;
+    padding: 10px 26px;
     padding-right: 0px !important;
   }
   .submit--section {
@@ -159,14 +156,14 @@ const ProductSelectionCommonWrapper = styled.div`
     cursor: pointer;
   }
   .submit--section img {
-    padding: 19px 21.05px 15px 18px;
+    padding: 19px 19px 15px 21px;
   }
   .section--right-container {
     align-self: center;
     margin-right: 31px;
   }
   .sampleimg1 {
-    padding-bottom: 37px;
+    padding-bottom: 20px;
   }
   .section--right {
     max-width: 368px;
@@ -176,9 +173,9 @@ const ProductSelectionCommonWrapper = styled.div`
   .section--right .title {
     font-family: "Coral Blush";
     font-weight: 400;
-    font-size: 36px;
+    font-size: 30px;
     line-height: 40px;
-    padding-bottom: 29px;
+    padding-bottom: 15px;
     text-transform: uppercase;
     text-align-last: center;
   }
@@ -188,16 +185,16 @@ const ProductSelectionCommonWrapper = styled.div`
     font-size: 15px;
     line-height: 17px;
     text-align: center;
-    padding-bottom: 41px;
+    padding-bottom: 20px;
   }
   .button--container {
     font-family: "Arial";
     font-weight: 700;
-    font-size: 36px;
+    font-size: 30px;
     line-height: 22px;
     align-items: center;
     text-align: center;
-    padding: 33px 48px;
+    padding: 17px 30px;
     cursor: pointer;
     margin-top: 40px;
     color: #a75b41;
@@ -360,8 +357,8 @@ const ProductSelectionCommon = () => {
               )}
             </div>
             <div className="icon--container d-flex">
-              <img src={like} alt="" />
-              <img src={share} alt="" />
+              <img src={like} alt="" height={20} />
+              <img src={share} alt="" height={20} />
             </div>
             <div className="pin-code--section">
               <div className="text">ENTER PIN CODE</div>
@@ -380,7 +377,7 @@ const ProductSelectionCommon = () => {
             </div>
           </div>
           <div className="center--container position-relative">
-            <img src={productSample} alt="" />
+            <img src={productSample} alt="" height={600} width={400} />
             <div className="price--item-section">
               <div className="price--title">₹3,56,367.34</div>
               <div className="quantity--title">Quantity</div>
@@ -398,16 +395,16 @@ const ProductSelectionCommon = () => {
                 Dictum turpis lobortis{" "}
               </div>
               <div className="d-flex sampleimg1 justify-content-between">
-                <img src={sampleimage1} alt="" />
-                <img src={sampleimage1} alt="" />
-                <img src={sampleimage1} alt="" />
-                <img src={sampleimage1} alt="" />
+                <img src={sampleimage1} alt="" height={80} />
+                <img src={sampleimage1} alt="" height={80} />
+                <img src={sampleimage1} alt="" height={80} />
+                <img src={sampleimage1} alt="" height={80} />
               </div>
               <div className="d-flex sampleimg2 justify-content-between">
-                <img src={sampleimage2} alt="" />
-                <img src={sampleimage2} alt="" />
-                <img src={sampleimage2} alt="" />
-                <img src={sampleimage2} alt="" />
+                <img src={sampleimage2} alt="" height={50} />
+                <img src={sampleimage2} alt="" height={50} />
+                <img src={sampleimage2} alt="" height={50} />
+                <img src={sampleimage2} alt="" height={50} />
               </div>
             </div>
             <div className="button--container">ADD TO CART</div>

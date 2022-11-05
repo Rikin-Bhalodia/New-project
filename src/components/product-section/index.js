@@ -39,7 +39,7 @@ const ProductSectionWrapper = styled.div`
     border-radius: 37px;
   }
   .cards--section {
-    margin: 24px 46px 0;
+    margin: 15px 46px 0;
     display: grid;
     grid-template-columns: auto auto;
     column-gap: 87px;
@@ -51,7 +51,7 @@ const ProductSectionWrapper = styled.div`
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 25px;
     width: 257px;
-    height: 338.61px;
+    height: 300px;
   }
   .card .card-like {
     margin-right: 20px;
@@ -125,12 +125,12 @@ const ProductSectionWrapper = styled.div`
   }
   .delivary-status {
     right: -35px;
-    top: 25px;
+    top: 18px;
   }
   .delivary-status .text {
     font-family: "Arial";
     font-weight: 700;
-    font-size: 17px;
+    font-size: 15px;
     line-height: 22px;
     letter-spacing: 0.092px;
     text-transform: uppercase;
@@ -138,7 +138,7 @@ const ProductSectionWrapper = styled.div`
   .delivary-status .date {
     font-family: "Arial";
     font-weight: 400;
-    font-size: 15px;
+    font-size: 13px;
     line-height: 22px;
     letter-spacing: 0.092px;
     color: #000000;
@@ -170,7 +170,7 @@ const ProductSection = () => {
                 <img src={postLike} alt="" />
               </div>
               <div className="product--image">
-                <img src={sandal} alt="" />
+                <img src={sandal} alt="" height={180} />
               </div>
               <div className="card--detail">
                 <div className="text">VERSACE</div>
@@ -230,7 +230,7 @@ const ProductSection = () => {
             </div>
           </div>
           <div className="insta--card">
-            <img src={instapost} alt="" />
+            <img src={instapost} alt="" height={600} />
           </div>
         </div>
       </section>

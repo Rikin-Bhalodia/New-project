@@ -11,6 +11,7 @@ import ExploreShop from "../Common/ExploreShop";
 import YellowBarContent from "../Common/YellowBarContent";
 import ServiceYellowBar from "../../../commonComponents/ServiceYellowBar";
 import ShoppingListCard from "../ShopingListCard";
+import Filters from "../../../commonComponents/Filters";
 
 const DogsWrapper = styled.div`
   width: 100%;
@@ -128,6 +129,39 @@ const DogsWrapper = styled.div`
   }
 `;
 
+const FiltersName = [
+  { name: "PRODUCT TYPE", option: ["Dry Food", "Wet Food"] },
+  { name: "VEG, NON-VEG", option: ["Veg", "Non-veg"] },
+  { name: "PRICE RANGE", option: [], range: "SET RANGE" },
+  {
+    name: "BRANDS",
+    option: [
+      "Acana",
+      "Arden Grange",
+      "BRUNO'S WILD Essentials",
+      "Canine Creek",
+      "Chappi",
+      "Cesar",
+      "Drools",
+      "Farmina",
+      "Fish4Dogs",
+    ],
+  },
+  { name: "SHOP BY", option: ["Cat", "Dog", "Others"] },
+  { name: "LIFE STAGE", option: ["Puppy", "Adult Dog", "Senior Dog"] },
+  {
+    name: "SPECIAL DIET",
+    option: [
+      "Grain Free",
+      "Hypoallergenic",
+      "Weight Control",
+      "Chicken Free",
+      "Skin & Coat Care",
+    ],
+  },
+  { name: "BREED SIZE", option: ["Mini Breed", "Medium Breed", "Maxi Breed"] },
+];
+
 const Dogs = () => {
   const [menuOpenModal, setMenuOpenModal] = useState(false);
 
@@ -174,6 +208,7 @@ const Dogs = () => {
       <div className="line">
         <div className="border-line"></div>
       </div>
+      <Filters FiltersName={FiltersName} />
       <ShoppingListCard />
       <div className="load-more">
         <div className="load-line"></div>

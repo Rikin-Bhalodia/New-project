@@ -5,6 +5,7 @@ import Price from "../../../assets/images/service/gift-for-him/price.svg";
 import YellowBarContent from "../Common/YellowBarContent";
 import DownArrow from "../../../assets/images/product/down-arrow.svg";
 import Search from "../../../assets/images/service/gift-for-him/seach-icon.svg";
+import Filters from "../../../commonComponents/Filters";
 
 const GiftForHimWrapper = styled.div`
   margin: 100px 150px 0px 150px;
@@ -49,110 +50,6 @@ const GiftForHimWrapper = styled.div`
     row-gap: 50px;
     margin: 80px 50px;
   }
-  .drop-down {
-    display: flex;
-    margin-top: 20px;
-  }
-  .right {
-    justify-content: center;
-  }
-
-  .sort-by {
-    background: #a75b41;
-    border: 1px solid #a75b41;
-    border-radius: 50px;
-    width: 160px;
-    font-size: 14px;
-    height: 25px;
-    color: #fff;
-    padding-left: 15px;
-    display: flex;
-    align-items: center;
-  }
-  .arrow {
-    position: relative;
-    right: 35px;
-  }
-  .option-box {
-    margin-top: 20px;
-    height: 130px;
-    border: 1px solid #000000;
-    border-radius: 0px 40px 40px 40px;
-    width: 230px;
-  }
-  .single-option {
-    border-bottom: 1px solid #000000;
-    width: 100%;
-    height: 25px;
-    padding-left: 20px;
-    font-family: "Arial";
-    font-style: normal;
-    font-weight: 400;
-    padding-top: 3px;
-    font-size: 13px;
-  }
-  .filter {
-    display: flex;
-  }
-  .mood {
-    border: 1px solid #d0d0d0;
-    border-radius: 33px;
-    width: 156px;
-    height: 52px;
-    font-size: 14px;
-    color: #fff;
-    padding-left: 15px;
-    display: flex;
-    align-items: center;
-    background: #a75b41;
-  }
-  .single-option-right {
-    width: 100%;
-    height: fit-content;
-    padding-left: 20px;
-    font-family: "Arial";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 13px;
-  }
-  .option-box-right {
-    margin-top: 20px;
-    width: 330px;
-    height: 280px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    border: 1px solid #000000;
-    border-radius: 50px;
-    padding: 0px 30px;
-    background: #fff;
-    z-index: 99;
-  }
-  .search-bar {
-    display: flex;
-    align-items: center;
-    letter-spacing: -0.408px;
-    font-family: "Arial";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 13px;
-    color: #000000;
-    opacity: 0.4;
-    height: 46px;
-    border: none;
-    margin-left: 20px;
-    width: 270px;
-  }
-  .search-bar:focus {
-    outline: none;
-  }
-  .search-part {
-    display: flex;
-  }
-  .drop-down-right {
-    margin-left: 30px;
-    display: flex;
-  }
 `;
 
 const FullScreenWrapper = styled.div`
@@ -192,76 +89,35 @@ const FullScreenWrapper = styled.div`
   }
 `;
 
-const options = [
-  "Featured",
-  "Bestsellers",
-  "Price : Low to High",
-  "Price : High to Low",
+const FiltersName = [
+  { name: "GIFT CARDS", option: ["Dry Food", "Wet Food"] },
+  { name: "BY OCCASION", option: ["Veg", "Non-veg"] },
+  {
+    name: "CATEGORY",
+    option: [
+      "Acana",
+      "Arden Grange",
+      "BRUNO'S WILD Essentials",
+      "Canine Creek",
+      "Chappi",
+      "Cesar",
+      "Drools",
+      "Farmina",
+      "Fish4Dogs",
+    ],
+  },
+  { name: "BY RECIPIENT", option: ["Cat", "Dog", "Others"] },
+  { name: "PRICE RANGE", option: [], range: "SET RANGE" },
+  { name: "COLOR", option: ["Puppy", "Adult Dog", "Senior Dog"] },
 ];
 
 const GiftForHim = () => {
-  const [id, setId] = useState("");
-  const [flag, setFlag] = useState(false);
   return (
     <>
       <GiftForHimWrapper>
         <GoBackpart />
         <div className="heading">GIFTS FOR HIM</div>
-        <div className="filter">
-          <div>
-            <div className="drop-down" onClick={() => setFlag(!flag)}>
-              <div className="sort-by">Sort By</div>
-              <img src={DownArrow} alt="arrow" className="arrow" />
-            </div>
-            {flag && (
-              <div className="option-box">
-                {options.map((option) => {
-                  return <div className="single-option">{option}</div>;
-                })}
-              </div>
-            )}
-          </div>
-          <div className="drop-down-right">
-            {[1, 2, 3, 4, 5].map((_, i) => {
-              return (
-                <div>
-                  <div className="drop-down right" onClick={() => setId(i)}>
-                    <div className="mood">FRAGRANCE</div>
-                    <img src={DownArrow} alt="arrow" className="arrow" />
-                  </div>
-                  {i === id && (
-                    <div className="option-box-right">
-                      <div className="search-part">
-                        <img src={Search} alt="search" className="search-img" />
-                        <input
-                          placeholder="Search Categories"
-                          className="search-bar"
-                        />
-                      </div>
-                      {options.map((option) => {
-                        return (
-                          <>
-                            <div style={{ display: "flex" }}>
-                              <input
-                                type="checkbox"
-                                id={option}
-                                name="vehicle1"
-                                value="Bike"
-                              ></input>
-                              <div className="single-option-right" for={option}>
-                                {option}
-                              </div>
-                            </div>
-                          </>
-                        );
-                      })}
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-        </div>
+        <Filters FiltersName={FiltersName} />
         <div className="products">
           {[1, 1, 11, 1, 11, 1, 1, 1, 1].map((_) => {
             return (

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 // import Menu from "../../commonComponents/Menu";
 // import MenuIcon from "../../assets/images/studio/menu.svg";
@@ -10,17 +10,17 @@ const SubMenu1Wrapper = styled.div`
     justify-content: space-around;
     margin-top: 100px;
     align-items: center;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
   .center {
     border: 1px solid black;
     border-radius: 50%;
-    padding: 30px;
+    padding: 20px;
   }
   .body {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    padding: 50px 80px;
+    padding: 10px 80px 10px 80px;
   }
   .menu-area {
     background-repeat: no-repeat;
@@ -47,7 +47,7 @@ const SubMenu1Wrapper = styled.div`
     font-size: 22px;
   }
   .footer {
-    padding: 50px 80px;
+    padding: 10px 80px 10px 80px;
   }
   .footer h4 {
     font-size: 25px;
@@ -61,8 +61,6 @@ const SubMenu1Wrapper = styled.div`
 `;
 
 export default function SubMenu1() {
-  //   const [menuOpenModal, setMenuOpenModal] = useState(false);
-
   return (
     <SubMenu1Wrapper>
       <div className="head">

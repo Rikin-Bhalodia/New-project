@@ -92,7 +92,7 @@ function App() {
           element={<PetsProductSelection />}
         />
       </Routes>
-      <Footer />
+      {pathname !== "/sub-menu1" || (pathname !== "/sub-menu2" && <Footer />)}
       {/* </ScrollContainer> */}
     </div>
   );
