@@ -182,6 +182,7 @@ const ProductPoP = () => {
           return (
             <>
               <img
+                loading="lazy"
                 src={ele.img}
                 alt="img"
                 className={ele.class}
@@ -202,6 +203,7 @@ const ProductPoP = () => {
       </div>
       <div>
         <img
+          loading="lazy"
           src={FooterImage}
           alt="image"
           className="footer"

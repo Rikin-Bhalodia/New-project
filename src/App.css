@@ -2905,11 +2905,7 @@ h2.f-heading-m {
   position: relative;
 }
 
-.c-about-con .roundBtn {
-  position: absolute;
-  top: 130px;
-  right: 0px;
-}
+
 
 .c-about-con .roundBtn .btnClassDesign {
   background-color: #a75b41;
@@ -2979,7 +2975,7 @@ h2.f-heading-m {
 
 .c-drive-con h2 span {
   font-family: "Beatlys";
-  font-size: 150px;
+  font-size: 85px;
   color: #fff;
   position: relative;
   top: -6px;

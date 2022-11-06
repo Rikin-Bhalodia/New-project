@@ -9,6 +9,7 @@ import Menu from "../../commonComponents/Menu";
 import MenuIcon from "../../assets/images/studio/menu.svg";
 import img1 from "../../assets/images/shop-hover/img1.svg";
 import img2 from "../../assets/images/shop-hover/img2.svg";
+import { motion } from "framer-motion";
 
 const ServiceHoverWrapper = styled.div`
   .menuItem {
@@ -60,19 +61,29 @@ export default function ServiceHover() {
 
   return (
     <ServiceHoverWrapper>
-      <section className="homeBanner overflow-hidden minHeightSec minBannerHeight ">
+      <motion.section
+        initial={{ y: "200vh" }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="homeBanner overflow-hidden minHeightSec minBannerHeight "
+      >
         <div className="">
           <div className="row">
             <div className="col-12 px-0">
               <div className="homePageBanerImageSec position-relative">
-                {/* <!-- <img src="assets/img/home-page.gif" className="img-fluid bannerImage" alt="home Page Banner"> --> */}
+                {/* <!-- <img loading="lazy" src="assets/img/home-page.gif" className="img-fluid bannerImage" alt="home Page Banner"> --> */}
                 <div className="bannerSection paddingSec minBannerHeight d-flex justify-content-center align-items-center">
                   <div className="bannerMenus">
                     <ul>
                       <li className="menuItem">
                         <div className="leftSideImg">
                           <div className="imgWrap">
-                            <img className="wow backInLeft" src={img1} alt="" />
+                            <img
+                              className="wow backInLeft"
+                              loading="lazy"
+                              src={img1}
+                              alt=""
+                            />
                           </div>
                         </div>
                         <a
@@ -84,7 +95,12 @@ export default function ServiceHover() {
                         </a>
                         <div className="rightSideImg">
                           <div className="imgWrap">
-                            <img className="wow backInUp" src={img2} alt="" />
+                            <img
+                              className="wow backInUp"
+                              loading="lazy"
+                              src={img2}
+                              alt=""
+                            />
                           </div>
                         </div>
                       </li>
@@ -93,6 +109,7 @@ export default function ServiceHover() {
                           <div className="imgWrap">
                             <img
                               className="wow backInLeft"
+                              loading="lazy"
                               src={studioInner1}
                               alt=""
                             />
@@ -109,6 +126,7 @@ export default function ServiceHover() {
                           <div className="imgWrap">
                             <img
                               className="wow backInUp"
+                              loading="lazy"
                               src={studioInner2}
                               alt=""
                             />
@@ -120,6 +138,7 @@ export default function ServiceHover() {
                           <div className="imgWrap">
                             <img
                               className="wow backInLeft"
+                              loading="lazy"
                               src={studioInner3}
                               alt=""
                             />
@@ -136,6 +155,7 @@ export default function ServiceHover() {
                           <div className="imgWrap">
                             <img
                               className="wow backInUp"
+                              loading="lazy"
                               src={studioInner2}
                               alt=""
                             />
@@ -147,6 +167,7 @@ export default function ServiceHover() {
                           <div className="imgWrap">
                             <img
                               className="wow backInLeft"
+                              loading="lazy"
                               src={studioInner4}
                               alt=""
                             />
@@ -163,6 +184,7 @@ export default function ServiceHover() {
                           <div className="imgWrap">
                             <img
                               className="wow backInUp"
+                              loading="lazy"
                               src={studioInner5}
                               alt=""
                             />
@@ -174,6 +196,7 @@ export default function ServiceHover() {
                           <div className="imgWrap">
                             <img
                               className="wow backInLeft"
+                              loading="lazy"
                               src={studioInner4}
                               alt=""
                             />
@@ -190,6 +213,7 @@ export default function ServiceHover() {
                           <div className="imgWrap">
                             <img
                               className="wow backInUp"
+                              loading="lazy"
                               src={studioInner5}
                               alt=""
                             />
@@ -201,6 +225,7 @@ export default function ServiceHover() {
                           <div className="imgWrap">
                             <img
                               className="wow backInLeft"
+                              loading="lazy"
                               src={studioInner4}
                               alt=""
                             />
@@ -217,6 +242,7 @@ export default function ServiceHover() {
                           <div className="imgWrap">
                             <img
                               className="wow backInUp"
+                              loading="lazy"
                               src={studioInner5}
                               alt=""
                             />
@@ -229,6 +255,7 @@ export default function ServiceHover() {
                           <div className="imgWrap">
                             <img
                               className="wow backInLeft"
+                              loading="lazy"
                               src={studioInner1}
                               alt=""
                             />
@@ -245,6 +272,7 @@ export default function ServiceHover() {
                           <div className="imgWrap">
                             <img
                               className="wow backInUp"
+                              loading="lazy"
                               src={studioInner2}
                               alt=""
                             />
@@ -256,6 +284,7 @@ export default function ServiceHover() {
                           <div className="imgWrap">
                             <img
                               className="wow backInLeft"
+                              loading="lazy"
                               src={studioInner3}
                               alt=""
                             />
@@ -272,6 +301,7 @@ export default function ServiceHover() {
                           <div className="imgWrap">
                             <img
                               className="wow backInUp"
+                              loading="lazy"
                               src={studioInner2}
                               alt=""
                             />
@@ -283,6 +313,7 @@ export default function ServiceHover() {
                           <div className="imgWrap">
                             <img
                               className="wow backInLeft"
+                              loading="lazy"
                               src={studioInner4}
                               alt=""
                             />
@@ -299,6 +330,7 @@ export default function ServiceHover() {
                           <div className="imgWrap">
                             <img
                               className="wow backInUp"
+                              loading="lazy"
                               src={studioInner5}
                               alt=""
                             />
@@ -311,6 +343,7 @@ export default function ServiceHover() {
                           <div className="imgWrap">
                             <img
                               className="wow backInLeft"
+                              loading="lazy"
                               src={studioInner4}
                               alt=""
                             />
@@ -327,6 +360,7 @@ export default function ServiceHover() {
                           <div className="imgWrap">
                             <img
                               className="wow backInUp"
+                              loading="lazy"
                               src={studioInner5}
                               alt=""
                             />
@@ -338,6 +372,7 @@ export default function ServiceHover() {
                           <div className="imgWrap">
                             <img
                               className="wow backInLeft"
+                              loading="lazy"
                               src={studioInner4}
                               alt=""
                             />
@@ -354,6 +389,7 @@ export default function ServiceHover() {
                           <div className="imgWrap">
                             <img
                               className="wow backInUp"
+                              loading="lazy"
                               src={studioInner5}
                               alt=""
                             />
@@ -368,11 +404,25 @@ export default function ServiceHover() {
                     <p>+91 987654321</p>
                   </div>
                 </div>
+                <div
+                  className="menu-icon"
+                  onClick={() => setMenuOpenModal(!menuOpenModal)}
+                >
+                  <Menu
+                    menuOpenModal={menuOpenModal}
+                    onClick={(e) => e.stopPropagation()}
+                  />
+                  {menuOpenModal ? (
+                    <img loading="lazy" src={MenuIcon} alt="menu" height={45} />
+                  ) : (
+                    <img loading="lazy" src={MenuIcon} alt="menu" height={45} />
+                  )}
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
     </ServiceHoverWrapper>
   );
 }

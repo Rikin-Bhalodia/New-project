@@ -106,7 +106,8 @@ const HomeWrapper = styled.div`
     line-height: 100px;
   }
   .about {
-    flex-direction: column;
+    /* flex-direction: column; */
+    justify-content: space-between;
   }
   .about-title {
     font-family: "Coral Blush";

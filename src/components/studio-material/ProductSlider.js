@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper";
 import { sliderImage } from "../../utils";
 import PImg from "../../assets/images/studio-material/product-img.svg";
+import { motion } from "framer-motion";
 
 const ProductImgSliderWrapper = styled.div`
   padding: 0px 50px;
@@ -39,39 +40,70 @@ const ProductImgSliderWrapper = styled.div`
 `;
 
 export default function ProductImgSlider() {
+  const [isInView, setIsInView] = useState(false);
+
   return (
     <ProductImgSliderWrapper>
-      <Swiper
-        slidesPerView={3}
-        spaceBetween={30}
-        className="mySwiper"
-        style={{ height: "100%" }}
-        autoplay={{
-          delay: 1000,
-          disableOnInteraction: false,
+      <motion.div
+        whileInView={() => {
+          setIsInView(true);
         }}
-        loop={true}
-        loopFillGroupWithBlank={true}
-        speed={2500}
-        modules={[Autoplay, Pagination, Navigation]}
+        initial={{ y: "20vh" }}
+        animate={
+          isInView && {
+            y: 0,
+            transition: {
+              duration: 0.3,
+            },
+          }
+        }
       >
-        {sliderImage.map((image) => {
-          return (
-            <SwiperSlide style={{ background: "inherit" }}>
-              <div className="slider-box">
-                <img src={PImg} alt="" />
-                <div className="details">
-                  <h4>Product 1</h4>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  </p>
-                  <h4>Rs. 1890</h4>
+        <Swiper
+          slidesPerView={3}
+          spaceBetween={30}
+          className="mySwiper"
+          style={{ height: "100%" }}
+          autoplay={{
+            delay: 1000,
+            disableOnInteraction: false,
+          }}
+          loop={true}
+          loopFillGroupWithBlank={true}
+          speed={2500}
+          modules={[Autoplay, Pagination, Navigation]}
+        >
+          {sliderImage.map((image) => {
+            return (
+              <SwiperSlide style={{ background: "inherit" }}>
+                <div className="slider-box">
+                  <motion.div
+                    style={{ overflow: "hidden", borderRadius: "50%" }}
+                  >
+                    <motion.img
+                      whileHover={{
+                        scale: 1.1,
+                      }}
+                      transition={{
+                        duration: 0.4,
+                      }}
+                      src={PImg}
+                      alt="PImg"
+                      loading="lazy"
+                    />
+                  </motion.div>
+                  <div className="details">
+                    <h4>Product 1</h4>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </p>
+                    <h4>Rs. 1890</h4>
+                  </div>
                 </div>
-              </div>
-            </SwiperSlide>
-          );
-        })}
-      </Swiper>
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
+      </motion.div>
     </ProductImgSliderWrapper>
   );
 }

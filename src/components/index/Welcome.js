@@ -24,21 +24,23 @@ export default function Welcome() {
           <div className="container-fluid">
             <h4 className="">OPULENCE</h4>
             <div className="c-about-con d-flex about">
-              <h2 className="">
-                <div className="about-title">
-                  <AnimatedTextWord text="WELCOME" />
-                </div>
-              </h2>
-              <h2 className="">
-                <div className="about-title">
-                  <AnimatedTextWord text="TO THE" />
-                </div>
-              </h2>
-              <h2 className="">
-                <div className="about-title">
-                  <AnimatedTextWord text="WORLD OF" />
-                </div>
-              </h2>
+              <div className="">
+                <h2 className="">
+                  <div className="about-title">
+                    <AnimatedTextWord text="WELCOME" />
+                  </div>
+                </h2>
+                <h2 className="">
+                  <div className="about-title">
+                    <AnimatedTextWord text="TO THE" />
+                  </div>
+                </h2>
+                <h2 className="">
+                  <div className="about-title">
+                    <AnimatedTextWord text="WORLD OF" />
+                  </div>
+                </h2>
+              </div>
               <div className="roundBtn text-center mt-2">
                 <span
                   id="roundText8"

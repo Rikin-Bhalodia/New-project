@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Topproduct from "../../assets/images/brand/top-product.svg";
 import ProductImg from "../../assets/images/brand/productImg.svg";
-
+import { motion } from "framer-motion";
 const TopProductWrapper = styled.div`
   .grid {
     display: grid;
@@ -18,6 +18,7 @@ const TopProductWrapper = styled.div`
         flex-direction: column;
         gap: 30px;
         text-align: center;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         .cad-head {
           display: flex;
           justify-content: space-between;
@@ -77,16 +78,32 @@ const TopProductWrapper = styled.div`
 `;
 
 const TopProduct = () => {
+  const [isInView, setIsInView] = useState(false);
   return (
     <TopProductWrapper>
       <div className="head text-center">
-        <img src={Topproduct} alt="" />
+        <img loading="lazy" src={Topproduct} alt="" />
       </div>
-      <div className="grid">
+      <motion.div className="grid">
         {[1, 2, 3, 4, 5, 6].map((_) => {
           return (
             <div className="body">
-              <div className="cad">
+              <motion.div
+                whileInView={() => {
+                  setIsInView(true);
+                }}
+                initial={{ rotateY: "90deg" }}
+                animate={
+                  isInView && {
+                    y: 0,
+                    rotateY: "0deg",
+                    transition: {
+                      duration: 1,
+                    },
+                  }
+                }
+                className="cad"
+              >
                 <div className="cad-head">
                   <div className="new">NEW!</div>
                   <a href="">
@@ -94,7 +111,17 @@ const TopProduct = () => {
                   </a>
                 </div>
                 <div className="cad-body">
-                  <img src={ProductImg} alt="" />
+                  <motion.img
+                    whileHover={{
+                      scale: 1.1,
+                    }}
+                    transition={{
+                      duration: 0.4,
+                    }}
+                    loading="lazy"
+                    src={ProductImg}
+                    alt=""
+                  />
                 </div>
                 <div className="cad-footer">
                   <small>FENDI</small>
@@ -103,11 +130,11 @@ const TopProduct = () => {
                     <b>MRP</b> &nbsp; ₹87,950.00
                   </p>
                 </div>
-              </div>
+              </motion.div>
             </div>
           );
         })}
-      </div>
+      </motion.div>
     </TopProductWrapper>
   );
 };

@@ -2,10 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import Video from "../../assets/images/studio-material/video.svg";
 import Polygon from "../../assets/images/polygon-left.svg";
-import SimillerVideo from "./SimillerVideo";
-import ProductImgSlider from "./ProductSlider";
 import { useLocation } from "react-router-dom";
 import Menu from "../../commonComponents/Menu";
+import { motion } from "framer-motion";
+const SimillerVideo = React.lazy(() => import("./SimillerVideo"));
+const ProductImgSlider = React.lazy(() => import("./ProductSlider"));
+
 const StudioProductMaterialWrapper = styled.div`
   position: relative;
   .polygon-left {
@@ -45,33 +47,50 @@ export default function StudioProductMaterial() {
   const { pathname } = useLocation();
   return (
     <StudioProductMaterialWrapper>
-      {pathname === "/studio-material" && (
-        <img src={Polygon} alt="" className="polygon-left" />
-      )}
-      <div className="container-fluid">
-        <div className="studio-material-head mt-5">
-          <div className="leftside-area">
-            <div className="goback-link">
-              <a href="/">Go Back</a>
+      <motion.div
+        initial={{ y: "200vh" }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        {pathname === "/studio-material" && (
+          <img
+            src={Polygon}
+            alt="polygon-left"
+            className="polygon-left"
+            loading="lazy"
+          />
+        )}
+        <div className="container-fluid">
+          <div className="studio-material-head mt-5">
+            <div className="leftside-area">
+              <div className="goback-link">
+                <a href="/">Go Back</a>
+              </div>
+              <div className="product-head">
+                <motion.p
+                  initial={{ x: "-100vw" }}
+                  animate={{ x: 0 }}
+                  transition={{ duration: 0.7 }}
+                >
+                  STUDIO / VERSACE BAG / LEATHER
+                </motion.p>
+              </div>
             </div>
-            <div className="product-head">
-              <p>STUDIO / VERSACE BAG / LEATHER</p>
+            <div className="rightside-area">
+              <Menu />
             </div>
           </div>
-          <div className="rightside-area">
-            <Menu />
+          <div className="studio-material-body">
+            <img src={Video} alt="video" loading="lazy" />
           </div>
         </div>
-        <div className="studio-material-body">
-          <img src={Video} alt="" />
-        </div>
-      </div>
-      {pathname === "/studio-material" && (
-        <>
-          <SimillerVideo />
-          <ProductImgSlider />
-        </>
-      )}
+        {pathname === "/studio-material" && (
+          <>
+            <SimillerVideo />
+            <ProductImgSlider />
+          </>
+        )}
+      </motion.div>
     </StudioProductMaterialWrapper>
   );
 }

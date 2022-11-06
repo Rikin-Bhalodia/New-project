@@ -1,15 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Header from "../../commonComponents/Header";
 import BrandBanner from "../../assets/images/brand/banner.svg";
 import FendiBanner from "../../assets/images/brand/fendi-banner.svg";
 import Fendi from "../../assets/images/brand/fendi.svg";
 import FImg from "../../assets/images/brand/f-small.svg";
-import Menu from "../../commonComponents/Menu";
 import Loved from "../../assets/images/brand/text-love.svg";
 import Ranttxt from "../../assets/images/brand/ranttxt.svg";
-import ProductPoP from "../Product/Product";
-import TopProduct from "./TopProduct";
+import { motion } from "framer-motion";
+import AnimatedTextWord from "../../commonComponents/Animation/FlipAnimation";
+const Menu = React.lazy(() => import("../../commonComponents/Menu"));
+const ProductPoP = React.lazy(() => import("../Product/Product"));
+const TopProduct = React.lazy(() => import("./TopProduct"));
 
 const BrandWrapper = styled.div`
   background: #fcf9f2;
@@ -96,20 +98,42 @@ const BrandWrapper = styled.div`
 `;
 
 const Brand = () => {
+  const [isInView, setIsInView] = useState(false);
   return (
     <BrandWrapper>
       <Header />
-      <div className="brand-section">
-        <img src={BrandBanner} alt="" className="img1" />
+      <motion.div
+        initial={{ y: "200vh" }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="brand-section"
+      >
+        <img loading="lazy" src={BrandBanner} alt="" className="img1" />
         <div className="menu-box">
           <Menu />
         </div>
         <div className="fendi-section">
-          <img src={FendiBanner} alt="" className="img2" />
+          <img loading="lazy" src={FendiBanner} alt="" className="img2" />
           <div className="fendi-area">
-            <div className="left-area">
-              <h2>FENDI</h2>
-              <div style={{ marginBottom: "30px" }}>
+            <motion.div
+              initial={{ x: "-50vw" }}
+              whileInView={() => {
+                setIsInView(true);
+              }}
+              animate={
+                isInView && {
+                  x: 0,
+                  transition: {
+                    duration: 1,
+                  },
+                }
+              }
+              className="left-area"
+            >
+              <h2>
+                <AnimatedTextWord text="FENDI" />
+              </h2>
+              <div style={{ marginBottom: "50px" }}>
                 <a href="#">Visit Official Link</a>
               </div>
               <p>
@@ -125,24 +149,53 @@ const Brand = () => {
                 qui officia deserunt mollit anim id est laborum.
               </p>
               <div className="imgs">
-                {[1, 2, 3].map((_) => {
-                  return <img src={FImg} alt="" className="fimg" />;
-                })}
+                <div className="d-flex" style={{ overflow: "hidden" }}>
+                  {[1, 2, 3].map((_) => {
+                    return (
+                      <motion.img
+                        loading="lazy"
+                        src={FImg}
+                        alt=""
+                        className="fimg"
+                        whileHover={{
+                          scale: 1.1,
+                        }}
+                        transition={{
+                          duration: 0.4,
+                        }}
+                      />
+                    );
+                  })}
+                </div>
               </div>
-            </div>
-            <div className="right-area">
-              <img src={Fendi} alt="" />
-            </div>
+            </motion.div>
+            <motion.div
+              initial={{ x: "50vw" }}
+              whileInView={() => {
+                setIsInView(true);
+              }}
+              animate={
+                isInView && {
+                  x: 0,
+                  transition: {
+                    duration: 1,
+                  },
+                }
+              }
+              className="right-area"
+            >
+              <img loading="lazy" src={Fendi} alt="Fendi" />
+            </motion.div>
           </div>
         </div>
-      </div>
+      </motion.div>
       <div className="love-product text-center">
-        <img src={Loved} alt="" />
+        <img loading="lazy" src={Loved} alt="" />
       </div>
       <ProductPoP />
       <div className="think-section">
         <h4>thinking of buying for an occassion?</h4>
-        <img src={Ranttxt} alt="" />
+        <img loading="lazy" src={Ranttxt} alt="" />
       </div>
       <TopProduct />
     </BrandWrapper>
