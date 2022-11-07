@@ -7,6 +7,7 @@ import Fendi from "../../assets/images/brand/fendi.svg";
 import FImg from "../../assets/images/brand/f-small.svg";
 import Loved from "../../assets/images/brand/text-love.svg";
 import Ranttxt from "../../assets/images/brand/ranttxt.svg";
+import Topproduct from "../../assets/images/brand/top-product.svg";
 import { motion } from "framer-motion";
 import AnimatedTextWord from "../../commonComponents/Animation/FlipAnimation";
 const Menu = React.lazy(() => import("../../commonComponents/Menu"));
@@ -33,21 +34,21 @@ const BrandWrapper = styled.div`
       .fendi-area {
         position: absolute;
         z-index: 100;
-        top: 50px;
+        top: 30px;
         display: flex;
         gap: 50px;
         .left-area {
           padding-left: 50px;
           h2 {
             font-weight: 400;
-            font-size: 100px;
+            font-size: 90px;
             color: #ffffff;
             font-family: Coral-Blush;
           }
           a {
             font-style: italic;
             font-weight: 400;
-            font-size: 14px;
+            font-size: 12px;
             line-height: 16px;
             text-decoration-line: underline;
             color: #ffffff;
@@ -55,23 +56,23 @@ const BrandWrapper = styled.div`
           p {
             font-family: "Arial";
             font-weight: 400;
-            font-size: 20px;
-            line-height: 23px;
+            font-size: 16px;
+            line-height: 20px;
             color: #ffffff;
           }
           .imgs {
-            margin-top: 80px;
+            margin-top: 30px;
             .fimg {
               z-index: 1;
               padding-right: 30px;
-              height: 300px;
+              height: 270px;
             }
           }
         }
         .right-area {
           img {
             width: 550px;
-            height: 600px;
+            height: 560px;
           }
         }
       }
@@ -133,7 +134,7 @@ const Brand = () => {
               <h2>
                 <AnimatedTextWord text="FENDI" />
               </h2>
-              <div style={{ marginBottom: "50px" }}>
+              <div style={{ marginBottom: "10px" }}>
                 <a href="#">Visit Official Link</a>
               </div>
               <p>
@@ -197,6 +198,10 @@ const Brand = () => {
         <h4>thinking of buying for an occassion?</h4>
         <img loading="lazy" src={Ranttxt} alt="" />
       </div>
+      <div className="head text-center">
+        <img loading="lazy" src={Topproduct} alt="" />
+      </div>
+      <TopProduct />
       <TopProduct />
     </BrandWrapper>
   );

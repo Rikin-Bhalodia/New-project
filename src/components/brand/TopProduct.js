@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Topproduct from "../../assets/images/brand/top-product.svg";
 import ProductImg from "../../assets/images/brand/productImg.svg";
 import { motion } from "framer-motion";
 const TopProductWrapper = styled.div`
@@ -81,11 +80,8 @@ const TopProduct = () => {
   const [isInView, setIsInView] = useState(false);
   return (
     <TopProductWrapper>
-      <div className="head text-center">
-        <img loading="lazy" src={Topproduct} alt="" />
-      </div>
       <motion.div className="grid">
-        {[1, 2, 3, 4, 5, 6].map((_) => {
+        {[1, 2, 3].map((_) => {
           return (
             <div className="body">
               <motion.div

@@ -8,6 +8,7 @@ import CenterRight from "./assets/images/studio/center-right.svg";
 import CenterImage from "./assets/images/studio/center-image.svg";
 
 import gsap from "gsap";
+import { motion } from "framer-motion";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import FirstImage from "./assets/images/studio/blog/first.svg";
 import Slider from "./slider";
@@ -15,7 +16,7 @@ import Atilier from "./atilier";
 import Header from "./commonComponents/Header";
 import Menu from "./commonComponents/Menu";
 import MenuIcon from "./assets/images/studio/menu.svg";
-import { motion } from "framer-motion";
+import AnimatedTextWord from "./commonComponents/Animation/FlipAnimation";
 
 const StudioWrapper = styled.div`
   overflow: hidden;
@@ -111,7 +112,8 @@ const StudioWrapper = styled.div`
     font-weight: 400;
     position: relative;
     letter-spacing: 3px !important;
-    font-size: 70px !important;
+    font-size: 90px !important;
+    display: contents;
   }
   .atilier {
     position: relative;
@@ -186,6 +188,13 @@ const StudioWrapper = styled.div`
 
   .cube.flip div {
     opacity: 1;
+  }
+
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 0 30px;
   }
 `;
 
@@ -284,123 +293,9 @@ const Studio = () => {
           <div className="sc">
             <p className="text-light">STUDIO</p>
             <h1 className="f-heading-m studio data">
-              <div className="f-line">
-                <div>
-                  <div className="perspective">
-                    <div className={`cube ${transitionText ? "flip" : ""}`}>
-                      <div>S</div>
-                    </div>
-                  </div>
-                  <div className="perspective">
-                    <div className={`cube ${transitionText ? "flip" : ""}`}>
-                      <div>T</div>
-                    </div>
-                  </div>
-                  <div className="perspective">
-                    <div className={`cube ${transitionText ? "flip" : ""}`}>
-                      <div>Y</div>
-                    </div>
-                  </div>
-                  <div className="perspective">
-                    <div className={`cube ${transitionText ? "flip" : ""}`}>
-                      <div>L</div>
-                    </div>
-                  </div>
-                  <div className="perspective">
-                    <div className={`cube ${transitionText ? "flip" : ""}`}>
-                      <div>E</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="f-line">
-                <div>
-                  <div className="perspective">
-                    <div className={`cube ${transitionText ? "flip" : ""}`}>
-                      <div>O</div>
-                    </div>
-                  </div>
-                  <div className="perspective">
-                    <div className={`cube ${transitionText ? "flip" : ""}`}>
-                      <div>P</div>
-                    </div>
-                  </div>
-                  <div className="perspective">
-                    <div className={`cube ${transitionText ? "flip" : ""}`}>
-                      <div>U</div>
-                    </div>
-                  </div>
-                  <div className="perspective">
-                    <div className={`cube ${transitionText ? "flip" : ""}`}>
-                      <div>L</div>
-                    </div>
-                  </div>
-                  <div className="perspective">
-                    <div className={`cube ${transitionText ? "flip" : ""}`}>
-                      <div>E</div>
-                    </div>
-                  </div>
-                  <div className="perspective">
-                    <div className={`cube ${transitionText ? "flip" : ""}`}>
-                      <div>N</div>
-                    </div>
-                  </div>
-                  <div className="perspective">
-                    <div className={`cube ${transitionText ? "flip" : ""}`}>
-                      <div>C</div>
-                    </div>
-                  </div>
-                  <div className="perspective">
-                    <div className={`cube ${transitionText ? "flip" : ""}`}>
-                      <div>E</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="f-line">
-                <div>
-                  <div className="perspective">
-                    <div className={`cube ${transitionText ? "flip" : ""}`}>
-                      <div>G</div>
-                    </div>
-                  </div>
-                  <div className="perspective">
-                    <div className={`cube ${transitionText ? "flip" : ""}`}>
-                      <div>R</div>
-                    </div>
-                  </div>
-                  <div className="perspective">
-                    <div className={`cube ${transitionText ? "flip" : ""}`}>
-                      <div>A</div>
-                    </div>
-                  </div>
-                  <div className="perspective">
-                    <div className={`cube ${transitionText ? "flip" : ""}`}>
-                      <div>N</div>
-                    </div>
-                  </div>
-                  <div className="perspective">
-                    <div className={`cube ${transitionText ? "flip" : ""}`}>
-                      <div>D</div>
-                    </div>
-                  </div>
-                  <div className="perspective">
-                    <div className={`cube ${transitionText ? "flip" : ""}`}>
-                      <div>E</div>
-                    </div>
-                  </div>
-                  <div className="perspective">
-                    <div className={`cube ${transitionText ? "flip" : ""}`}>
-                      <div>U</div>
-                    </div>
-                  </div>
-                  <div className="perspective">
-                    <div className={`cube ${transitionText ? "flip" : ""}`}>
-                      <div>R</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <AnimatedTextWord text="STYLE" />
+              <AnimatedTextWord text="OPULENCE" />
+              <AnimatedTextWord text="GRANDEUR" />
             </h1>
 
             <Atilier />
@@ -568,61 +463,7 @@ const Studio = () => {
                 margin: "2rem 0",
               }}
             >
-              EXPLORE
-              {/* <div className="f-line">
-
-                <div>
-                  <div className="perspective">
-                    <div
-                      className={`cube ${transitionForLuxury ? "flip" : ""}`}
-                    >
-                      <div>E</div>
-                    </div>
-                  </div>
-                  <div className="perspective">
-                    <div
-                      className={`cube ${transitionForLuxury ? "flip" : ""}`}
-                    >
-                      <div>X</div>
-                    </div>
-                  </div>
-                  <div className="perspective">
-                    <div
-                      className={`cube ${transitionForLuxury ? "flip" : ""}`}
-                    >
-                      <div>P</div>
-                    </div>
-                  </div>
-                  <div className="perspective">
-                    <div
-                      className={`cube ${transitionForLuxury ? "flip" : ""}`}
-                    >
-                      <div>L</div>
-                    </div>
-                  </div>
-                  <div className="perspective">
-                    <div
-                      className={`cube ${transitionForLuxury ? "flip" : ""}`}
-                    >
-                      <div>O</div>
-                    </div>
-                  </div>
-                  <div className="perspective">
-                    <div
-                      className={`cube ${transitionForLuxury ? "flip" : ""}`}
-                    >
-                      <div>R</div>
-                    </div>
-                  </div>
-                  <div className="perspective">
-                    <div
-                      className={`cube ${transitionForLuxury ? "flip" : ""}`}
-                    >
-                      <div>E</div>
-                    </div>
-                  </div>
-                </div>
-              </div> */}
+              <AnimatedTextWord text="EXPLORE" />
             </h2>
 
             <div className="studioBlogMenu">
@@ -691,36 +532,7 @@ const Studio = () => {
                 margin: "2rem 0",
               }}
             >
-              BLOGS
-              {/* <div className="f-line">
-                <div>
-                  <div className="perspective">
-                    <div className={`cube ${transitionForBlogs ? "flip" : ""}`}>
-                      <div>B</div>
-                    </div>
-                  </div>
-                  <div className="perspective">
-                    <div className={`cube ${transitionForBlogs ? "flip" : ""}`}>
-                      <div>L</div>
-                    </div>
-                  </div>
-                  <div className="perspective">
-                    <div className={`cube ${transitionForBlogs ? "flip" : ""}`}>
-                      <div>O</div>
-                    </div>
-                  </div>
-                  <div className="perspective">
-                    <div className={`cube ${transitionForBlogs ? "flip" : ""}`}>
-                      <div>G</div>
-                    </div>
-                  </div>
-                  <div className="perspective">
-                    <div className={`cube ${transitionForBlogs ? "flip" : ""}`}>
-                      <div>S</div>
-                    </div>
-                  </div>
-                </div>
-              </div> */}
+              <AnimatedTextWord text="BLOGS" />
             </h2>
 
             <div className="studioBlogMenu">
@@ -737,7 +549,39 @@ const Studio = () => {
               </div>
             </div>
           </div>
-          <div className="container-fluid blogs">
+          <div className="blog-grid">
+            {[1, 2, 3, 4, 5, 6].map((_) => {
+              return (
+                <motion.div
+                  initial={{ y: "50vh" }}
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                  className="blog-box"
+                >
+                  <div className="image-1">
+                    <img src={FirstImage} loading="lazy" alt="first-image" />
+                  </div>
+                  <div className="info-1">
+                    <h3>LOREM IPSUM SET</h3>
+                    <p>
+                      Lorem Ipsum has been the industry's standard dummy text
+                      ever... <a href="#">Read More</a>
+                    </p>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+          {/* <div className="container-fluid blogs">
             <div className="row">
               <div className="col-md-4 wow fadeInUp">
                 <div className="image">
@@ -813,7 +657,7 @@ const Studio = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
           <div className="explore-more container-fluid">
             <a href="#">
               <h3
@@ -824,95 +668,7 @@ const Studio = () => {
                   margin: "1rem 0",
                 }}
               >
-                EXPLORE MORE
-                {/* <div className="f-line">
-                  <div>
-                    <div className="perspective">
-                      <div
-                        className={`cube ${transitionForMore ? "flip" : ""}`}
-                      >
-                        <div>E</div>
-                      </div>
-                    </div>
-                    <div className="perspective">
-                      <div
-                        className={`cube ${transitionForMore ? "flip" : ""}`}
-                      >
-                        <div>X</div>
-                      </div>
-                    </div>
-                    <div className="perspective">
-                      <div
-                        className={`cube ${transitionForMore ? "flip" : ""}`}
-                      >
-                        <div>P</div>
-                      </div>
-                    </div>
-                    <div className="perspective">
-                      <div
-                        className={`cube ${transitionForMore ? "flip" : ""}`}
-                      >
-                        <div>L</div>
-                      </div>
-                    </div>
-                    <div className="perspective">
-                      <div
-                        className={`cube ${transitionForMore ? "flip" : ""}`}
-                      >
-                        <div>O</div>
-                      </div>
-                    </div>
-                    <div className="perspective">
-                      <div
-                        className={`cube ${transitionForMore ? "flip" : ""}`}
-                      >
-                        <div>R</div>
-                      </div>
-                    </div>
-                    <div className="perspective">
-                      <div
-                        className={`cube ${transitionForMore ? "flip" : ""}`}
-                      >
-                        <div>E</div>
-                      </div>
-                    </div>
-                    <div className="perspective">
-                      <div
-                        className={`cube ${transitionForMore ? "flip" : ""}`}
-                      >
-                        <div> </div>
-                      </div>
-                    </div>
-                    <div className="perspective">
-                      <div
-                        className={`cube ${transitionForMore ? "flip" : ""}`}
-                      >
-                        <div>M</div>
-                      </div>
-                    </div>
-                    <div className="perspective">
-                      <div
-                        className={`cube ${transitionForMore ? "flip" : ""}`}
-                      >
-                        <div>O</div>
-                      </div>
-                    </div>
-                    <div className="perspective">
-                      <div
-                        className={`cube ${transitionForMore ? "flip" : ""}`}
-                      >
-                        <div>R</div>
-                      </div>
-                    </div>
-                    <div className="perspective">
-                      <div
-                        className={`cube ${transitionForMore ? "flip" : ""}`}
-                      >
-                        <div>E</div>
-                      </div>
-                    </div>
-                  </div>
-                </div> */}
+                <AnimatedTextWord text="EXPLORE MORE" />
               </h3>
             </a>
           </div>

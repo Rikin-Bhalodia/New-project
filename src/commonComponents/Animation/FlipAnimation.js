@@ -18,7 +18,7 @@ const AnimatedTextWord = ({ text }) => {
         overflow: "hidden",
         display: "flex",
         // fontSize: "2rem",
-        margin: "0px 30px",
+        // margin: "0px 30px",
       }}
       variants={container}
       initial="hidden"
