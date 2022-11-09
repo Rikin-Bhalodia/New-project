@@ -28,6 +28,8 @@ const ServiceYellowBarWrapper = styled.div`
     font-weight: 400;
     font-size: 56px;
     text-transform: uppercase;
+    position: relative;
+    z-index: 9;
   }
   .note {
     position: absolute;
@@ -39,6 +41,7 @@ const ServiceYellowBarWrapper = styled.div`
     font-size: 13px;
     opacity: 2;
     text-transform: uppercase;
+    z-index: 9;
   }
 `;
 

@@ -78,6 +78,15 @@ import Fish from "./assets/images/service/pets/fish.svg";
 import Other from "./assets/images/service/pets/other.svg";
 import Service from "./assets/images/service/pets/service.svg";
 
+import Image1 from "./assets/images/service/travel/image1.svg";
+import Image2 from "./assets/images/service/travel/image2.svg";
+import Image3 from "./assets/images/service/travel/image3.svg";
+
+import Music from "./assets/images/service/travel/music.svg";
+import Music1 from "./assets/images/service/travel/music1.svg";
+import GraduationTravel from "./assets/images/service/travel/graduation.svg";
+import BirthdayParty from "./assets/images/service/travel/birthday-party.svg";
+
 export const images = [studio1, studio2, studio3];
 export const avenues = [avenue, avenue1, avenue2];
 
@@ -210,4 +219,43 @@ export const Feelings = [
   "CONCERT",
   "INDULGE",
   "LEARN",
+];
+
+export const Cards = [
+  {
+    img: Image1,
+    content: "Read about Selena Gomez’s Rare Beauty!",
+    time: "18 June 2022        5:38 AM",
+  },
+  {
+    img: Image2,
+    content:
+      "Spring Summer 2023 Paris Men’s Fashion Week : Trending Accessories",
+    time: "18 June 2022        5:38 AM",
+  },
+  {
+    img: Image3,
+    content:
+      "Spring Summer 2023 Paris Men’s Fashion Week : Trending Accessories",
+    time: "18 June 2022        5:38 AM",
+  },
+];
+
+export const EventNearAndTopThings = [
+  {
+    img: Music,
+    name: "Music Concert",
+  },
+  {
+    img: Music1,
+    name: "Music Concert",
+  },
+  {
+    img: GraduationTravel,
+    name: "Graduation Show",
+  },
+  {
+    img: BirthdayParty,
+    name: "Birthday Party",
+  },
 ];
