@@ -50,6 +50,9 @@ const ValentineGift = React.lazy(() =>
 const Pets = React.lazy(() => import("./components/service/Pets"));
 const Grooming = React.lazy(() => import("./components/service/Grooming"));
 const Dogs = React.lazy(() => import("./components/service/Dogs"));
+const ServiceTravelCategory = React.lazy(() =>
+  import("./components/service/Travel/TravelCategory")
+);
 const ServiceTravel = React.lazy(() => import("./components/service/Travel"));
 
 function App() {
@@ -94,12 +97,13 @@ function App() {
         />
         <Route
           path="/service-travel-destination"
-          element={<ServiceTravel name="DESTINATIONS" />}
+          element={<ServiceTravelCategory name="DESTINATIONS" />}
         />
         <Route
           path="/service-travel-stays"
-          element={<ServiceTravel name="STAYS" />}
+          element={<ServiceTravelCategory name="STAYS" />}
         />
+        <Route path="/service-travel" element={<ServiceTravel />} />
       </Routes>
       {(pathname !== "/sub-menu1" || pathname !== "/sub-menu2") && <Footer />}
       {/* </ScrollContainer> */}

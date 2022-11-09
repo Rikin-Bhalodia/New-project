@@ -196,3 +196,18 @@ export const ExploreMoreIcons = [
   { img: Other, name: "OTHER" },
   { img: Service, name: "Service" },
 ];
+
+export const Feelings = [
+  "RELAX",
+  "CHILL",
+  "CELEBRATION",
+  "PARTY",
+  "INDULGE",
+  "LEARN",
+  "YATCH",
+  "TREK",
+  "HERITAGE",
+  "CONCERT",
+  "INDULGE",
+  "LEARN",
+];

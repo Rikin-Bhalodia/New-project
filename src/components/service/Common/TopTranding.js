@@ -3,25 +3,43 @@ import styled from "styled-components";
 import { TopTrandingSlider } from "../../../slider";
 
 const TopTrandingWrapper = styled.div`
-  background: #665e2f;
   width: 100%;
-  height: 800px;
+  height: 850px;
   margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   .top {
     font-family: "Coral Blush";
     font-style: normal;
     font-weight: 400;
     font-size: 70px;
     text-align: center;
-    color: #ffffff;
     text-transform: uppercase;
   }
 `;
-const TopTranding = () => {
+const TopTranding = ({ name, isRequiredBackground }) => {
   return (
-    <TopTrandingWrapper>
-      <div className="top">top trending</div>
+    <TopTrandingWrapper
+      style={
+        isRequiredBackground
+          ? {
+              background: "#665e2f",
+            }
+          : {}
+      }
+    >
+      <div
+        className="top"
+        style={isRequiredBackground ? { color: "#fff" } : { color: "#000" }}
+      >
+        {name}
+      </div>
       <TopTrandingSlider />
+      <button className="btn" style={{ marginBottom: "20px" }}>
+        KNOW MORE
+      </button>
     </TopTrandingWrapper>
   );
 };

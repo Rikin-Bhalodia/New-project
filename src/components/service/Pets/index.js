@@ -151,7 +151,7 @@ const Pets = () => {
           );
         })}
       </div>
-      <TopTranding />
+      <TopTranding name="top tranding" isRequiredBackground={true} />
       <ExploreShop />
       <YellowBarContent requiredPersonalAssistance={false} />
     </PetsWrapper>

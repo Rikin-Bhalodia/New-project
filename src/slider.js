@@ -245,6 +245,7 @@ export function TopTrandingSlider() {
               height: "fit-content",
               width: "fit-content",
               borderRadius: "40px",
+              background: "transparent",
             }}
           >
             <TopTrandingCard />
