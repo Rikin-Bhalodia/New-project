@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Video from "../../assets/images/studio-product/video.svg";
 import Polygon from "../../assets/images/polygon-left.svg";
 // import Header from "../../commonComponents/Header";
 import { motion } from "framer-motion";
 import Menu from "../../commonComponents/Menu";
+import MenuIcon from "../../assets/images/product-section/menuIcon.svg";
 
 const ReletedServices = React.lazy(() => import("./RelatedSrevices"));
 const SimillerProduct = React.lazy(() => import("./SimillierProduct"));
@@ -42,8 +43,10 @@ const StudioProductWrapper = styled.div`
     .rightside-area {
       .homePageButtonSection {
         position: relative;
-        right: 200px;
-        bottom: -100px;
+        right: 140px;
+        .menu-icon {
+          top: 0 !important;
+        }
       }
     }
   }
@@ -82,6 +85,8 @@ const StudioProductWrapper = styled.div`
 `;
 
 export default function StudioProduct() {
+  const [menuOpenModal, setMenuOpenModal] = useState(false);
+
   return (
     <>
       {/* <Header /> */}
@@ -114,7 +119,30 @@ export default function StudioProduct() {
             </div>
             <div className="rightside-area">
               <div className="homePageButtonSection">
-                <Menu />
+                <div
+                  className="menu-icon"
+                  onClick={() => setMenuOpenModal(!menuOpenModal)}
+                >
+                  <Menu
+                    menuOpenModal={menuOpenModal}
+                    onClick={(e) => e.stopPropagation()}
+                  />
+                  {menuOpenModal ? (
+                    <img
+                      src={MenuIcon}
+                      loading="lazy"
+                      alt="menu"
+                      height={100}
+                    />
+                  ) : (
+                    <img
+                      src={MenuIcon}
+                      loading="lazy"
+                      alt="menu"
+                      height={100}
+                    />
+                  )}
+                </div>
               </div>
             </div>
           </div>

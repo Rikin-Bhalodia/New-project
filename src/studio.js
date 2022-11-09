@@ -8,7 +8,7 @@ import CenterRight from "./assets/images/studio/center-right.svg";
 import CenterImage from "./assets/images/studio/center-image.svg";
 
 import gsap from "gsap";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import FirstImage from "./assets/images/studio/blog/first.svg";
 import Slider from "./slider";
@@ -207,6 +207,9 @@ const Studio = () => {
   const [menuOpenModal, setMenuOpenModal] = useState(false);
   const [isInView, setIsInView] = useState(false);
 
+  let { scrollYProgress } = useScroll();
+  let y = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+
   // useEffect(() => {
   //   setAnimation(
   //     TweenMax.to(imgRef, 10, {
@@ -292,11 +295,11 @@ const Studio = () => {
         <section className="studio-s1">
           <div className="sc">
             <p className="text-light">STUDIO</p>
-            <h1 className="f-heading-m studio data">
+            <motion.h1 style={{ y }} className="f-heading-m studio data">
               <AnimatedTextWord text="STYLE" />
               <AnimatedTextWord text="OPULENCE" />
               <AnimatedTextWord text="GRANDEUR" />
-            </h1>
+            </motion.h1>
 
             <Atilier />
             <p>

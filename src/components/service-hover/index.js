@@ -12,47 +12,73 @@ import img2 from "../../assets/images/shop-hover/img2.svg";
 import { motion } from "framer-motion";
 
 const ServiceHoverWrapper = styled.div`
-  .menuItem {
+  .hover-show-img {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    /* padding: 100px 0; */
+    width: 100vw;
+    position: relative;
+  }
+  .menu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 90vw;
+    height: 100vh;
+    overflow: auto;
+    padding: 100px 0;
+  }
+  .menu-list::-webkit-scrollbar {
+    display: none;
+  }
+  .menu-list div {
+    border-bottom: 1px solid #fff;
+    position: relative;
+    display: flex;
     justify-content: center;
   }
-  .backInLeft,
-  .backInUp {
-    border-radius: 50%;
+  .menu-list div h3 {
+    font-family: "Coral Blush";
+    font-weight: 400;
+    font-size: 37px;
+    letter-spacing: -0.408px;
+    color: #000000;
+    text-transform: uppercase;
+    position: relative;
+    top: 24px;
+    background: #fff;
+    width: 100%;
+    background: none;
+    width: max-content;
+    padding: 0 10px;
   }
-  .bannerSection .bannerMenus .menuItem .leftSideImg img {
-    width: 225px;
-    height: 280px;
-    object-fit: cover;
+  .menu-list div:hover {
+    border-bottom: 1px solid #665e2f;
   }
-  .bannerSection .bannerMenus .menuItem .rightSideImg img {
-    width: 225px;
-    height: 280px;
-    object-fit: cover;
+  .menu-list div:hover h3 {
+    color: #665e2f;
+    background: #fff;
   }
-  .menuLink {
-    font-size: 20px;
+  .leftImg {
+    position: absolute;
+    left: 50px;
+    top: 20%;
+    img {
+      width: 270px;
+      height: 350px;
+      object-fit: cover;
+    }
   }
-  .bannerSection .bannerMenus .menuItem .menuLink {
-    font-size: 30px;
-    color: black;
-  }
-  .bannerSection .bannerMenus .menuItem:nth-child(even) {
-    margin-left: 0px;
-  }
-  .bannerSection .bannerMenus .menuItem + .menuItem {
-    margin-top: 8px;
-  }
-  .bannerSection .bannerMenus .menuItem .leftSideImg {
-    top: 170px;
-  }
-  .bannerSection .bannerMenus .menuItem .rightSideImg {
-    top: 170px;
-  }
-  .bannerSection {
-    background: white;
-  }
-  .contact {
-    text-align: center;
+  .rightImg {
+    position: absolute;
+    right: 50px;
+    top: 20%;
+    img {
+      width: 270px;
+      height: 350px;
+      object-fit: cover;
+    }
   }
 `;
 
@@ -67,359 +93,93 @@ export default function ServiceHover() {
         transition={{ duration: 0.6 }}
         className="homeBanner overflow-hidden minHeightSec minBannerHeight "
       >
-        <div className="">
-          <div className="row">
-            <div className="col-12 px-0">
-              <div className="homePageBanerImageSec position-relative">
-                {/* <!-- <img loading="lazy" src="assets/img/home-page.gif" className="img-fluid bannerImage" alt="home Page Banner"> --> */}
-                <div className="bannerSection paddingSec minBannerHeight d-flex justify-content-center align-items-center">
-                  <div className="bannerMenus">
-                    <ul>
-                      <li className="menuItem">
-                        <div className="leftSideImg">
-                          <div className="imgWrap">
-                            <img
-                              className="wow backInLeft"
-                              loading="lazy"
-                              src={img1}
-                              alt=""
-                            />
-                          </div>
-                        </div>
-                        <a
-                          href="/avenue"
-                          className="menuLink coralFont wow fadeInUp"
-                          data-wow-delay=".1s"
-                        >
-                          BEAUTY & WELLNESS
-                        </a>
-                        <div className="rightSideImg">
-                          <div className="imgWrap">
-                            <img
-                              className="wow backInUp"
-                              loading="lazy"
-                              src={img2}
-                              alt=""
-                            />
-                          </div>
-                        </div>
-                      </li>
-                      <li className="menuItem">
-                        <div className="leftSideImg">
-                          <div className="imgWrap">
-                            <img
-                              className="wow backInLeft"
-                              loading="lazy"
-                              src={studioInner1}
-                              alt=""
-                            />
-                          </div>
-                        </div>
-                        <a
-                          href="/avenue"
-                          className="menuLink coralFont wow fadeInUp"
-                          data-wow-delay=".1s"
-                        >
-                          Culture
-                        </a>
-                        <div className="rightSideImg">
-                          <div className="imgWrap">
-                            <img
-                              className="wow backInUp"
-                              loading="lazy"
-                              src={studioInner2}
-                              alt=""
-                            />
-                          </div>
-                        </div>
-                      </li>
-                      <li className="menuItem">
-                        <div className="leftSideImg">
-                          <div className="imgWrap">
-                            <img
-                              className="wow backInLeft"
-                              loading="lazy"
-                              src={studioInner3}
-                              alt=""
-                            />
-                          </div>
-                        </div>
-                        <a
-                          href="/rent"
-                          className="menuLink coralFont wow fadeInUp"
-                          data-wow-delay=".2s"
-                        >
-                          DESIGN CONSULTATION
-                        </a>
-                        <div className="rightSideImg">
-                          <div className="imgWrap">
-                            <img
-                              className="wow backInUp"
-                              loading="lazy"
-                              src={studioInner2}
-                              alt=""
-                            />
-                          </div>
-                        </div>
-                      </li>
-                      <li className="menuItem">
-                        <div className="leftSideImg">
-                          <div className="imgWrap">
-                            <img
-                              className="wow backInLeft"
-                              loading="lazy"
-                              src={studioInner4}
-                              alt=""
-                            />
-                          </div>
-                        </div>
-                        <a
-                          href="/liveShop"
-                          className="menuLink coralFont wow fadeInUp"
-                          data-wow-delay=".3s"
-                        >
-                          Fine Dine
-                        </a>
-                        <div className="rightSideImg">
-                          <div className="imgWrap">
-                            <img
-                              className="wow backInUp"
-                              loading="lazy"
-                              src={studioInner5}
-                              alt=""
-                            />
-                          </div>
-                        </div>
-                      </li>
-                      <li className="menuItem">
-                        <div className="leftSideImg">
-                          <div className="imgWrap">
-                            <img
-                              className="wow backInLeft"
-                              loading="lazy"
-                              src={studioInner4}
-                              alt=""
-                            />
-                          </div>
-                        </div>
-                        <a
-                          href="/liveShop"
-                          className="menuLink coralFont wow fadeInUp"
-                          data-wow-delay=".3s"
-                        >
-                          Lifestyle Management
-                        </a>
-                        <div className="rightSideImg">
-                          <div className="imgWrap">
-                            <img
-                              className="wow backInUp"
-                              loading="lazy"
-                              src={studioInner5}
-                              alt=""
-                            />
-                          </div>
-                        </div>
-                      </li>
-                      <li className="menuItem">
-                        <div className="leftSideImg">
-                          <div className="imgWrap">
-                            <img
-                              className="wow backInLeft"
-                              loading="lazy"
-                              src={studioInner4}
-                              alt=""
-                            />
-                          </div>
-                        </div>
-                        <a
-                          href="/liveShop"
-                          className="menuLink coralFont wow fadeInUp"
-                          data-wow-delay=".3s"
-                        >
-                          NFT & METAVERSE
-                        </a>
-                        <div className="rightSideImg">
-                          <div className="imgWrap">
-                            <img
-                              className="wow backInUp"
-                              loading="lazy"
-                              src={studioInner5}
-                              alt=""
-                            />
-                          </div>
-                        </div>
-                      </li>
-
-                      <li className="menuItem">
-                        <div className="leftSideImg">
-                          <div className="imgWrap">
-                            <img
-                              className="wow backInLeft"
-                              loading="lazy"
-                              src={studioInner1}
-                              alt=""
-                            />
-                          </div>
-                        </div>
-                        <a
-                          href="/avenue"
-                          className="menuLink coralFont wow fadeInUp"
-                          data-wow-delay=".1s"
-                        >
-                          Pets
-                        </a>
-                        <div className="rightSideImg">
-                          <div className="imgWrap">
-                            <img
-                              className="wow backInUp"
-                              loading="lazy"
-                              src={studioInner2}
-                              alt=""
-                            />
-                          </div>
-                        </div>
-                      </li>
-                      <li className="menuItem">
-                        <div className="leftSideImg">
-                          <div className="imgWrap">
-                            <img
-                              className="wow backInLeft"
-                              loading="lazy"
-                              src={studioInner3}
-                              alt=""
-                            />
-                          </div>
-                        </div>
-                        <a
-                          href="/rent"
-                          className="menuLink coralFont wow fadeInUp"
-                          data-wow-delay=".2s"
-                        >
-                          Private Parties, Kitty Parties, Weddings & Celebration
-                        </a>
-                        <div className="rightSideImg">
-                          <div className="imgWrap">
-                            <img
-                              className="wow backInUp"
-                              loading="lazy"
-                              src={studioInner2}
-                              alt=""
-                            />
-                          </div>
-                        </div>
-                      </li>
-                      <li className="menuItem">
-                        <div className="leftSideImg">
-                          <div className="imgWrap">
-                            <img
-                              className="wow backInLeft"
-                              loading="lazy"
-                              src={studioInner4}
-                              alt=""
-                            />
-                          </div>
-                        </div>
-                        <a
-                          href="/liveShop"
-                          className="menuLink coralFont wow fadeInUp"
-                          data-wow-delay=".3s"
-                        >
-                          Real Estate
-                        </a>
-                        <div className="rightSideImg">
-                          <div className="imgWrap">
-                            <img
-                              className="wow backInUp"
-                              loading="lazy"
-                              src={studioInner5}
-                              alt=""
-                            />
-                          </div>
-                        </div>
-                      </li>
-
-                      <li className="menuItem">
-                        <div className="leftSideImg">
-                          <div className="imgWrap">
-                            <img
-                              className="wow backInLeft"
-                              loading="lazy"
-                              src={studioInner4}
-                              alt=""
-                            />
-                          </div>
-                        </div>
-                        <a
-                          href="/liveShop"
-                          className="menuLink coralFont wow fadeInUp"
-                          data-wow-delay=".3s"
-                        >
-                          Transportation
-                        </a>
-                        <div className="rightSideImg">
-                          <div className="imgWrap">
-                            <img
-                              className="wow backInUp"
-                              loading="lazy"
-                              src={studioInner5}
-                              alt=""
-                            />
-                          </div>
-                        </div>
-                      </li>
-                      <li className="menuItem">
-                        <div className="leftSideImg">
-                          <div className="imgWrap">
-                            <img
-                              className="wow backInLeft"
-                              loading="lazy"
-                              src={studioInner4}
-                              alt=""
-                            />
-                          </div>
-                        </div>
-                        <a
-                          href="/liveShop"
-                          className="menuLink coralFont wow fadeInUp"
-                          data-wow-delay=".3s"
-                        >
-                          TRAVEL & LEISURE
-                        </a>
-                        <div className="rightSideImg">
-                          <div className="imgWrap">
-                            <img
-                              className="wow backInUp"
-                              loading="lazy"
-                              src={studioInner5}
-                              alt=""
-                            />
-                          </div>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="contact">
-                    <h6>NEED HELP?</h6>
-                    <p>customercare@royclan.in</p>
-                    <p>+91 987654321</p>
-                  </div>
-                </div>
-                <div
-                  className="menu-icon"
-                  onClick={() => setMenuOpenModal(!menuOpenModal)}
-                >
-                  <Menu
-                    menuOpenModal={menuOpenModal}
-                    onClick={(e) => e.stopPropagation()}
-                  />
-                  {menuOpenModal ? (
-                    <img loading="lazy" src={MenuIcon} alt="menu" height={45} />
-                  ) : (
-                    <img loading="lazy" src={MenuIcon} alt="menu" height={45} />
-                  )}
-                </div>
-              </div>
+        <div className="hover-show-img">
+          <div className="grid">
+            <div className="menu-list">
+              <motion.div
+                initial={{ y: "30vh", opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 1 }}
+              >
+                <h3>BEAUTY & WELLNESS</h3>
+              </motion.div>
+              <motion.div
+                initial={{ y: "30vh", opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 1.2 }}
+              >
+                <h3>Culture</h3>
+              </motion.div>
+              <motion.div
+                initial={{ y: "30vh", opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 1.4 }}
+              >
+                <h3>DESIGN CONSULTATION</h3>
+              </motion.div>
+              <motion.div
+                initial={{ y: "30vh", opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 1.6 }}
+              >
+                <h3>Fine Dine</h3>
+              </motion.div>
+              <motion.div
+                initial={{ y: "30vh", opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 1.8 }}
+              >
+                <h3>Lifestyle Management</h3>
+              </motion.div>
+              <motion.div
+                initial={{ y: "30vh", opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 2 }}
+              >
+                <h3>NFT & METAVERSE</h3>
+              </motion.div>
+              <motion.div
+                initial={{ y: "30vh", opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 2.2 }}
+              >
+                <h3>Pets</h3>
+              </motion.div>
+              <motion.div
+                initial={{ y: "30vh", opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 2.4 }}
+              >
+                <h3>Private Parties, Kitty Parties, Weddings & Celebration </h3>
+              </motion.div>
+              <motion.div
+                initial={{ y: "30vh", opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 2.6 }}
+              >
+                <h3>Real Estate</h3>
+              </motion.div>
+              <motion.div
+                initial={{ y: "30vh", opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 2.8 }}
+              >
+                <h3>Transportation</h3>
+              </motion.div>
+              <motion.div
+                initial={{ y: "30vh", opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 3 }}
+              >
+                <h3>TRAVEL & LEISURE</h3>
+              </motion.div>
             </div>
+          </div>
+          <div className="leftImg">
+            <img src={studioInner3} alt="" loading="lazy" />
+          </div>
+          <div className="rightImg">
+            <img src={studioInner5} alt="" loading="lazy" />
           </div>
         </div>
       </motion.section>

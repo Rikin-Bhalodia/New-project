@@ -37,13 +37,12 @@ const ProductSectionWrapper = styled.div`
   .complete-bottom--container {
     border: 1px solid #000000;
     border-radius: 37px;
+    padding: 40px;
   }
   .cards--section {
-    margin: 15px 46px 0;
     display: grid;
     grid-template-columns: auto auto;
-    column-gap: 87px;
-    row-gap: 28px;
+    gap: 30px;
   }
   .cards--section .card {
     border: none;
@@ -121,7 +120,7 @@ const ProductSectionWrapper = styled.div`
     color: #000000;
   }
   .insta--card {
-    margin: 20px 80px 40px;
+    /* margin: 20px 80px 40px; */
   }
   .delivary-status {
     right: -35px;
@@ -160,17 +159,17 @@ const ProductSection = () => {
       <AboutProduct />
       <section className="complete-look-section">
         <div className="text-svg">
-          <img src={completeLookText} alt="" />
+          <img loading="lazy" src={completeLookText} alt="" />
         </div>
         <div className="complete-bottom--container d-flex justify-content-between">
           <div className="cards--section d-grid">
             <div className="card">
               <div className="d-flex justify-content-between card-like">
                 <div className="label">NEW!</div>
-                <img src={postLike} alt="" />
+                <img loading="lazy" src={postLike} alt="" />
               </div>
               <div className="product--image">
-                <img src={sandal} alt="" height={180} />
+                <img loading="lazy" src={sandal} alt="" height={180} />
               </div>
               <div className="card--detail">
                 <div className="text">VERSACE</div>
@@ -183,10 +182,10 @@ const ProductSection = () => {
             <div className="card">
               <div className="d-flex justify-content-between card-like">
                 <div></div>
-                <img src={postLike} alt="" />
+                <img loading="lazy" src={postLike} alt="" />
               </div>
               <div className="product--image">
-                <img src={lipstick} alt="" />
+                <img loading="lazy" src={lipstick} alt="" />
               </div>
               <div className="card--detail">
                 <div className="text">M.A.C.</div>
@@ -199,10 +198,10 @@ const ProductSection = () => {
             <div className="card">
               <div className="d-flex justify-content-between card-like">
                 <div className=""></div>
-                <img src={postLike} alt="" />
+                <img loading="lazy" src={postLike} alt="" />
               </div>
               <div className="product--image">
-                <img src={ring} alt="" />
+                <img loading="lazy" src={ring} alt="" />
               </div>
               <div className="card--detail">
                 <div className="text">BVLGARI</div>
@@ -215,10 +214,10 @@ const ProductSection = () => {
             <div className="card">
               <div className="d-flex justify-content-between card-like">
                 <div className="label">NEW!</div>
-                <img src={postLike} alt="" />
+                <img loading="lazy" src={postLike} alt="" />
               </div>
               <div className="product--image">
-                <img src={makeupbox} alt="" />
+                <img loading="lazy" src={makeupbox} alt="" />
               </div>
               <div className="card--detail">
                 <div className="text">M.A.C.</div>
@@ -230,7 +229,7 @@ const ProductSection = () => {
             </div>
           </div>
           <div className="insta--card">
-            <img src={instapost} alt="" height={600} />
+            <img loading="lazy" src={instapost} alt="" height={650} />
           </div>
         </div>
       </section>
@@ -238,7 +237,7 @@ const ProductSection = () => {
       <ReletedServices />
       <div className="last--text d-flex justify-content-center">
         <div>thinking of buying for an occassion?</div>
-        <img src={rentItText} alt="" />
+        <img loading="lazy" src={rentItText} alt="" />
       </div>
     </ProductSectionWrapper>
   );

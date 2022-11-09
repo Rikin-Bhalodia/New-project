@@ -12,7 +12,7 @@ import styled from "styled-components";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import MenuIcon from "../../assets/images/studio/menu.svg";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 const AnimatedTextWord = React.lazy(() =>
   import("../../commonComponents/Animation/FlipAnimation")
 );
@@ -197,7 +197,7 @@ export default function Home() {
 
   return (
     <HomeWrapper>
-      <div>
+      <motion.div>
         <div id="smooth-wrapper">
           <div id="smooth-content" ref={wrapper}>
             {/* <!-- home page banner part --> */}
@@ -535,7 +535,7 @@ export default function Home() {
             </section>
           </div>
         </div>
-      </div>
+      </motion.div>
     </HomeWrapper>
   );
 }

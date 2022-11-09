@@ -50,10 +50,6 @@ const ValentineGift = React.lazy(() =>
 const Pets = React.lazy(() => import("./components/service/Pets"));
 const Grooming = React.lazy(() => import("./components/service/Grooming"));
 const Dogs = React.lazy(() => import("./components/service/Dogs"));
-const ServiceTravelCategory = React.lazy(() =>
-  import("./components/service/Travel/TravelCategory")
-);
-const ServiceTravel = React.lazy(() => import("./components/service/Travel"));
 
 function App() {
   const { pathname } = useLocation();
@@ -95,15 +91,6 @@ function App() {
           path="/pets-product-selection"
           element={<PetsProductSelection />}
         />
-        <Route
-          path="/service-travel-destination"
-          element={<ServiceTravelCategory name="DESTINATIONS" />}
-        />
-        <Route
-          path="/service-travel-stays"
-          element={<ServiceTravelCategory name="STAYS" />}
-        />
-        <Route path="/service-travel" element={<ServiceTravel />} />
       </Routes>
       {(pathname !== "/sub-menu1" || pathname !== "/sub-menu2") && <Footer />}
       {/* </ScrollContainer> */}

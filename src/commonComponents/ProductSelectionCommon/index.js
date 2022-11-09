@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import backarrow from "../../assets/images/product-section/backarrow.svg";
 import MenuIcon from "../../assets/images/product-section/menuIcon.svg";
+import Menu from "../Menu";
 import like from "../../assets/images/product-section/like.svg";
 import share from "../../assets/images/product-section/share.svg";
 import checkicon from "../../assets/images/product-section/checkicon.png";
@@ -13,8 +14,7 @@ import productLogo from "../../assets/images/product-section/product-logo.svg";
 
 const ProductSelectionCommonWrapper = styled.div`
   .product-main-container {
-    margin-top: 117px;
-    margin-left: 73px;
+    padding: 100px 60px;
   }
   .go-back-text {
     font-family: "Arial";
@@ -160,7 +160,6 @@ const ProductSelectionCommonWrapper = styled.div`
   }
   .section--right-container {
     align-self: center;
-    margin-right: 31px;
   }
   .sampleimg1 {
     padding-bottom: 20px;
@@ -255,10 +254,16 @@ const ProductSelectionCommonWrapper = styled.div`
     align-items: center;
     text-align: center;
   }
+
+  .menu-icon {
+    margin: 0 !important;
+    top: -80px !important;
+  }
 `;
 
 const ProductSelectionCommon = () => {
   const [selectedState, setSelectedState] = useState("");
+  const [menuOpenModal, setMenuOpenModal] = useState(false);
 
   return (
     <ProductSelectionCommonWrapper>
@@ -272,7 +277,20 @@ const ProductSelectionCommon = () => {
             SHOP / CLOTHING / WOMEN / DRESSES /{" "}
             <span>VERSACE BAROCCO GODDESS SLASH SILK DRESS</span>
           </div>
-          <img src={MenuIcon} alt="menu" />
+          <div
+            className="menu-icon"
+            onClick={() => setMenuOpenModal(!menuOpenModal)}
+          >
+            <Menu
+              menuOpenModal={menuOpenModal}
+              onClick={(e) => e.stopPropagation()}
+            />
+            {menuOpenModal ? (
+              <img src={MenuIcon} loading="lazy" alt="menu" height={100} />
+            ) : (
+              <img src={MenuIcon} loading="lazy" alt="menu" height={100} />
+            )}
+          </div>
         </div>
         <div className="product--container d-flex justify-content-between">
           <div>
