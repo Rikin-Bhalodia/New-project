@@ -1,11 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import DownArrow from "../../assets/images/product/down-arrow.svg";
 import Banner1 from "../../assets/images/brand-product/banner1.svg";
 import Banner2 from "../../assets/images/brand-product/banner2.svg";
-import ProductImg from "../../assets/images/brand/productImg.svg";
 import FooterImage from "../../assets/images/product/footer.svg";
 import Filters from "../../commonComponents/Filters";
+import { motion } from "framer-motion";
+import TopProduct from "../brand/TopProduct";
+import AnimatedTextWord from "../../commonComponents/Animation/FlipAnimation";
 
 const BrandProductWrapper = styled.div`
   background: #fcf9f2;
@@ -39,7 +40,7 @@ const BrandProductWrapper = styled.div`
           justify-content: center;
           width: 98vw;
           position: relative;
-          padding-top: 80px;
+          padding-top: 40px;
           a {
             position: absolute;
             left: 50px;
@@ -50,14 +51,13 @@ const BrandProductWrapper = styled.div`
             text-decoration: underline;
             color: #ffffff;
           }
-          h2 {
+          h3 {
             margin: auto;
-            width: 50%;
             text-align: center;
             color: white;
             font-family: Coral-Blush;
             font-weight: 400;
-            font-size: 160px;
+            font-size: 130px;
             line-height: 179px;
             text-align: center;
             color: #ffffff;
@@ -72,10 +72,10 @@ const BrandProductWrapper = styled.div`
     }
   }
   .grid {
-    display: grid;
+    /* display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    margin: 50px 100px;
+    gap: 30px; */
+    /* margin: 50px 100px; */
     .body {
       .cad {
         padding: 20px 30px;
@@ -163,55 +163,49 @@ const FiltersName = [
 const BrandProduct = () => {
   return (
     <BrandProductWrapper>
-      <div className="banner-section">
-        <img src={Banner1} alt="" className="banner" />
-        <div className="img">
-          <img src={Banner2} alt="" className="banner" />
-          <div className="inside-data">
-            <div className="body">
-              <a href="">Go Back</a>
-              <h2>FENDI</h2>
-            </div>
-            <div className="footer">
-              <Filters FiltersName={FiltersName} />
+      <motion.div
+        initial={{ y: "200vh" }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <div className="banner-section">
+          <img loading="lazy" src={Banner1} alt="" className="banner" />
+          <div className="img">
+            <img loading="lazy" src={Banner2} alt="" className="banner" />
+            <div className="inside-data">
+              <div className="body">
+                <a href="">Go Back</a>
+                <h3>
+                  <AnimatedTextWord text="FENDI" />
+                </h3>
+              </div>
+              <motion.div
+                initial={{ y: "-60vh", opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.8 }}
+                className="footer"
+              >
+                <Filters FiltersName={FiltersName} />
+              </motion.div>
             </div>
           </div>
         </div>
-      </div>
-      <div className="grid">
-        {[1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6].map((_) => {
-          return (
-            <div className="body">
-              <div className="cad">
-                <div className="cad-head">
-                  <div className="new">NEW!</div>
-                  <a href="">
-                    <i class="fa fa-heart-o" aria-hidden="true"></i>
-                  </a>
-                </div>
-                <div className="cad-body">
-                  <img src={ProductImg} alt="" />
-                </div>
-                <div className="cad-footer">
-                  <small>FENDI</small>
-                  <h6>PADLOCK WOOL BLAZER</h6>
-                  <p>
-                    <b>MRP</b> &nbsp; ₹87,950.00
-                  </p>
-                </div>
-              </div>
-            </div>
-          );
-        })}
-      </div>
-      <div>
-        <img
-          src={FooterImage}
-          alt="image"
-          className="footer"
-          style={{ width: "98vw" }}
-        />
-      </div>
+        <div className="grid">
+          <TopProduct />
+          <TopProduct />
+          <TopProduct />
+          <TopProduct />
+        </div>
+        <div>
+          <img
+            loading="lazy"
+            src={FooterImage}
+            alt="image"
+            className="footer"
+            style={{ width: "98vw" }}
+          />
+        </div>
+      </motion.div>
     </BrandProductWrapper>
   );
 };
