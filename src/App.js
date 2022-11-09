@@ -57,6 +57,12 @@ const ServiceTravel = React.lazy(() => import("./components/service/Travel"));
 const TravelDestination = React.lazy(() =>
   import("./components/service/Travel/TravelDestination")
 );
+const CelebrationUdaipur = React.lazy(() =>
+  import("./components/service/Travel/CelebrationUdaipur")
+);
+const TravelCelebration = React.lazy(() =>
+  import("./components/service/Travel/TravelCelebration")
+);
 
 function App() {
   const { pathname } = useLocation();
@@ -111,7 +117,14 @@ function App() {
           path="/service-travel-celebration-destination"
           element={<TravelDestination />}
         />
-        TravelDestination
+        <Route
+          path="/service-travel-celebration-udaipur"
+          element={<CelebrationUdaipur />}
+        />
+        <Route
+          path="/service-travel-celebration"
+          element={<TravelCelebration />}
+        />
       </Routes>
       {(pathname !== "/sub-menu1" || pathname !== "/sub-menu2") && <Footer />}
       {/* </ScrollContainer> */}

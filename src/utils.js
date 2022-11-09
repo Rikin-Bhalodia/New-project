@@ -87,6 +87,13 @@ import Music1 from "./assets/images/service/travel/music1.svg";
 import GraduationTravel from "./assets/images/service/travel/graduation.svg";
 import BirthdayParty from "./assets/images/service/travel/birthday-party.svg";
 
+import Place1 from "./assets/images/service/travel/place1.svg";
+import Place2 from "./assets/images/service/travel/place2.svg";
+import Place3 from "./assets/images/service/travel/place3.svg";
+import Place4 from "./assets/images/service/travel/place4.svg";
+import Place5 from "./assets/images/service/travel/place5.svg";
+import Place6 from "./assets/images/service/travel/place6.svg";
+
 export const images = [studio1, studio2, studio3];
 export const avenues = [avenue, avenue1, avenue2];
 
@@ -258,4 +265,13 @@ export const EventNearAndTopThings = [
     img: BirthdayParty,
     name: "Birthday Party",
   },
+];
+
+export const Places = [
+  { img: Place1, name: "PLACE NAME", width: "55%" },
+  { img: Place2, name: "PLACE NAME", width: "45%" },
+  { img: Place3, name: "PLACE NAME", width: "45%" },
+  { img: Place4, name: "PLACE NAME", width: "55%" },
+  { img: Place5, name: "PLACE NAME", width: "60%" },
+  { img: Place6, name: "PLACE NAME", width: "40%" },
 ];
