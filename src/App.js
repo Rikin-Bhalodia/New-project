@@ -69,6 +69,7 @@ const TheLeelaPalace = React.lazy(() =>
 const NFTProductSelection = React.lazy(() =>
   import("./components/service/NFT/NFTProductSelection")
 );
+const BuyNFTs = React.lazy(() => import("./components/service/NFT/BuyNFTs"));
 
 function App() {
   const { pathname } = useLocation();
@@ -139,6 +140,7 @@ function App() {
           path="/nft-product-selection"
           element={<NFTProductSelection />}
         />
+        <Route path="/buy-nfts" element={<BuyNFTs />} />
       </Routes>
       {(pathname !== "/sub-menu1" || pathname !== "/sub-menu2") && <Footer />}
       {/* </ScrollContainer> */}

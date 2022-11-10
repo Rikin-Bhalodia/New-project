@@ -94,6 +94,15 @@ import Place4 from "./assets/images/service/travel/place4.svg";
 import Place5 from "./assets/images/service/travel/place5.svg";
 import Place6 from "./assets/images/service/travel/place6.svg";
 
+import Art from "./assets/images/nfts/art.svg";
+import MusicNft from "./assets/images/nfts/music.svg";
+import VideoGames from "./assets/images/nfts/video-games.svg";
+import TradingCards from "./assets/images/nfts/trading-cards.svg";
+import Collectibles from "./assets/images/nfts/collectibles.svg";
+import Meme from "./assets/images/nfts/meme.svg";
+import FashionNft from "./assets/images/nfts/fashion.svg";
+import Misc from "./assets/images/nfts/misc.svg";
+
 export const images = [studio1, studio2, studio3];
 export const avenues = [avenue, avenue1, avenue2];
 
@@ -274,4 +283,15 @@ export const Places = [
   { img: Place4, name: "PLACE NAME", width: "55%" },
   { img: Place5, name: "PLACE NAME", width: "60%" },
   { img: Place6, name: "PLACE NAME", width: "40%" },
+];
+
+export const NftIcons = [
+  { img: Art, name: "Art" },
+  { img: MusicNft, name: "Music" },
+  { img: VideoGames, name: "Video Game Items" },
+  { img: TradingCards, name: "Trading Cards" },
+  { img: Collectibles, name: "Collectibles" },
+  { img: Meme, name: "Memes" },
+  { img: FashionNft, name: "Virtual Fashion" },
+  { img: Misc, name: "Misc" },
 ];
