@@ -54,7 +54,7 @@ const EventNearWrapper = styled.div`
   }
 `;
 
-const EventNear = () => {
+const EventNear = ({ isRequiredTopThings }) => {
   return (
     <EventNearWrapper>
       <div className="inspire-head">Events near the date</div>
@@ -68,17 +68,21 @@ const EventNear = () => {
           );
         })}
       </div>
-      <div className="inspire-head">top things to do</div>
-      <div className="feelings">
-        {Feelings.slice(0, 4).map((feeling) => {
-          return (
-            <div className="wrapper">
-              <div className="background"></div>
-              <div className="feeling">{feeling}</div>
-            </div>
-          );
-        })}
-      </div>
+      {isRequiredTopThings && (
+        <>
+          <div className="inspire-head">top things to do</div>
+          <div className="feelings">
+            {Feelings.slice(0, 4).map((feeling) => {
+              return (
+                <div className="wrapper">
+                  <div className="background"></div>
+                  <div className="feeling">{feeling}</div>
+                </div>
+              );
+            })}
+          </div>
+        </>
+      )}
     </EventNearWrapper>
   );
 };

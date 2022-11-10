@@ -14,7 +14,7 @@ const TravelDestination = () => {
       <CommonHeaderPart />
       <TopTrandingDiffBackground name="Top booked Hotel options" />
       <Inspire />
-      <EventNear />
+      <EventNear isRequiredTopThings={true} />
       <YellowBarContent requiredPersonalAssistance={false} />
     </TravelDestinationWrapper>
   );

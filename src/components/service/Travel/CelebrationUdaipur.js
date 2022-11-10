@@ -15,7 +15,7 @@ const CelebrationUdaipur = () => {
   return (
     <CelebrationUdaipurWrapper>
       <CommonHeaderPart />
-      <EventNear />
+      <EventNear isRequiredTopThings={true} />
       <div className="top-tranding">
         <TopTrandingDiffBackground name="Top booked Hotel options" />
       </div>

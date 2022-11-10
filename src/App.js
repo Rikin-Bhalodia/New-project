@@ -63,6 +63,9 @@ const CelebrationUdaipur = React.lazy(() =>
 const TravelCelebration = React.lazy(() =>
   import("./components/service/Travel/TravelCelebration")
 );
+const TheLeelaPalace = React.lazy(() =>
+  import("./components/service/Travel/TheLeelaPalace")
+);
 
 function App() {
   const { pathname } = useLocation();
@@ -124,6 +127,10 @@ function App() {
         <Route
           path="/service-travel-celebration"
           element={<TravelCelebration />}
+        />
+        <Route
+          path="/service-travel-the-leela-place"
+          element={<TheLeelaPalace />}
         />
       </Routes>
       {(pathname !== "/sub-menu1" || pathname !== "/sub-menu2") && <Footer />}

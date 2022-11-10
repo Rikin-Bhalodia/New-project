@@ -72,3 +72,40 @@ export function ReviewSlider({ color, background, des, border }) {
     </Swiper>
   );
 }
+
+export function BlankBackgroundSlider() {
+  return (
+    <Swiper
+      effect={"coverflow"}
+      slidesPerView={2}
+      grabCursor={true}
+      centeredSlides={true}
+      coverflowEffect={{
+        scale: 0.5,
+        modifier: 1,
+      }}
+      className="mySwiper"
+      autoplay={{
+        delay: 1500,
+        disableOnInteraction: false,
+      }}
+      loop={true}
+      loopFillGroupWithBlank={true}
+      speed={2500}
+      modules={[Autoplay, Pagination, Navigation, EffectCoverflow]}
+    >
+      {[1, 2, 4, 4, 5, 6, 7].map((_) => {
+        return (
+          <SwiperSlide
+            style={{
+              background: "#D9D9D9",
+              height: "300px",
+              width: "900px",
+              // border: border || "",
+            }}
+          ></SwiperSlide>
+        );
+      })}
+    </Swiper>
+  );
+}
