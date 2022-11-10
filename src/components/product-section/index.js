@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 import rentItText from "../../assets/images/product-section/rent-it-text.svg";
@@ -9,8 +9,12 @@ import ring from "../../assets/images/product-section/ring.svg";
 import lipstick from "../../assets/images/product-section/lipstick.svg";
 import makeupbox from "../../assets/images/product-section/makeupbox.svg";
 import instapost from "../../assets/images/product-section/instapost.svg";
-import ReletedServices from "../studio-product/RelatedSrevices";
-import AboutProduct from "./AboutProduct";
+import { motion } from "framer-motion";
+
+const ReletedServices = React.lazy(() =>
+  import("../studio-product/RelatedSrevices")
+);
+const AboutProduct = React.lazy(() => import("./AboutProduct"));
 const ProductSelectionCommon = React.lazy(() =>
   import("../../commonComponents/ProductSelectionCommon")
 );
@@ -153,92 +157,215 @@ const ProductSectionWrapper = styled.div`
 `;
 
 const ProductSection = () => {
+  const [isInView, setIsInView] = useState(false);
   return (
     <ProductSectionWrapper>
-      <ProductSelectionCommon />
-      <AboutProduct />
-      <section className="complete-look-section">
-        <div className="text-svg">
-          <img loading="lazy" src={completeLookText} alt="" />
-        </div>
-        <div className="complete-bottom--container d-flex justify-content-between">
-          <div className="cards--section d-grid">
-            <div className="card">
-              <div className="d-flex justify-content-between card-like">
-                <div className="label">NEW!</div>
-                <img loading="lazy" src={postLike} alt="" />
-              </div>
-              <div className="product--image">
-                <img loading="lazy" src={sandal} alt="" height={180} />
-              </div>
-              <div className="card--detail">
-                <div className="text">VERSACE</div>
-                <div className="title">FENDANCE SANDALS</div>
-                <div className="price">
-                  <span>MRP</span> ₹87,950.00
-                </div>
-              </div>
-            </div>
-            <div className="card">
-              <div className="d-flex justify-content-between card-like">
-                <div></div>
-                <img loading="lazy" src={postLike} alt="" />
-              </div>
-              <div className="product--image">
-                <img loading="lazy" src={lipstick} alt="" />
-              </div>
-              <div className="card--detail">
-                <div className="text">M.A.C.</div>
-                <div className="title">deep brown lipstick</div>
-                <div className="price">
-                  <span>MRP</span> ₹87,950.00
-                </div>
-              </div>
-            </div>
-            <div className="card">
-              <div className="d-flex justify-content-between card-like">
-                <div className=""></div>
-                <img loading="lazy" src={postLike} alt="" />
-              </div>
-              <div className="product--image">
-                <img loading="lazy" src={ring} alt="" />
-              </div>
-              <div className="card--detail">
-                <div className="text">BVLGARI</div>
-                <div className="title">SERPENTI VIPER BRACELET</div>
-                <div className="price">
-                  <span>MRP</span> ₹87,950.00
-                </div>
-              </div>
-            </div>
-            <div className="card">
-              <div className="d-flex justify-content-between card-like">
-                <div className="label">NEW!</div>
-                <img loading="lazy" src={postLike} alt="" />
-              </div>
-              <div className="product--image">
-                <img loading="lazy" src={makeupbox} alt="" />
-              </div>
-              <div className="card--detail">
-                <div className="text">M.A.C.</div>
-                <div className="title">EYE SHADOW X 9: BURGUNDY</div>
-                <div className="price">
-                  <span>MRP</span> ₹87,950.00
-                </div>
-              </div>
-            </div>
+      <motion.div
+        initial={{ y: "200vh" }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <ProductSelectionCommon />
+        <AboutProduct />
+        <section className="complete-look-section">
+          <div className="text-svg">
+            <img loading="lazy" src={completeLookText} alt="" />
           </div>
-          <div className="insta--card">
-            <img loading="lazy" src={instapost} alt="" height={650} />
+          <div className="complete-bottom--container d-flex justify-content-between">
+            <div className="cards--section d-grid">
+              <motion.div
+                whileInView={() => {
+                  setIsInView(true);
+                }}
+                initial={{ rotateY: "90deg" }}
+                animate={
+                  isInView && {
+                    y: 0,
+                    rotateY: "0deg",
+                    transition: {
+                      duration: 1,
+                    },
+                  }
+                }
+                className="card"
+              >
+                <div className="d-flex justify-content-between card-like">
+                  <div className="label">NEW!</div>
+                  <img loading="lazy" src={postLike} alt="" />
+                </div>
+                <div className="product--image" style={{ overflow: "hidden" }}>
+                  <motion.img
+                    whileHover={{
+                      scale: 1.1,
+                    }}
+                    transition={{
+                      duration: 0.4,
+                    }}
+                    loading="lazy"
+                    src={sandal}
+                    alt=""
+                    height={180}
+                  />
+                </div>
+                <div className="card--detail">
+                  <div className="text">VERSACE</div>
+                  <div className="title">FENDANCE SANDALS</div>
+                  <div className="price">
+                    <span>MRP</span> ₹87,950.00
+                  </div>
+                </div>
+              </motion.div>
+              <motion.div
+                whileInView={() => {
+                  setIsInView(true);
+                }}
+                initial={{ rotateY: "90deg" }}
+                animate={
+                  isInView && {
+                    y: 0,
+                    rotateY: "0deg",
+                    transition: {
+                      duration: 1,
+                    },
+                  }
+                }
+                className="card"
+              >
+                <div className="d-flex justify-content-between card-like">
+                  <div></div>
+                  <img loading="lazy" src={postLike} alt="" />
+                </div>
+                <div className="product--image" style={{ overflow: "hidden" }}>
+                  <motion.img
+                    whileHover={{
+                      scale: 1.1,
+                    }}
+                    transition={{
+                      duration: 0.4,
+                    }}
+                    loading="lazy"
+                    src={lipstick}
+                    alt=""
+                  />
+                </div>
+                <div className="card--detail">
+                  <div className="text">M.A.C.</div>
+                  <div className="title">deep brown lipstick</div>
+                  <div className="price">
+                    <span>MRP</span> ₹87,950.00
+                  </div>
+                </div>
+              </motion.div>
+              <motion.div
+                whileInView={() => {
+                  setIsInView(true);
+                }}
+                initial={{ rotateY: "90deg" }}
+                animate={
+                  isInView && {
+                    y: 0,
+                    rotateY: "0deg",
+                    transition: {
+                      duration: 1,
+                    },
+                  }
+                }
+                className="card"
+              >
+                <div className="d-flex justify-content-between card-like">
+                  <div className=""></div>
+                  <img loading="lazy" src={postLike} alt="" />
+                </div>
+                <div className="product--image" style={{ overflow: "hidden" }}>
+                  <motion.img
+                    whileHover={{
+                      scale: 1.1,
+                    }}
+                    transition={{
+                      duration: 0.4,
+                    }}
+                    loading="lazy"
+                    src={ring}
+                    alt=""
+                  />
+                </div>
+                <div className="card--detail">
+                  <div className="text">BVLGARI</div>
+                  <div className="title">SERPENTI VIPER BRACELET</div>
+                  <div className="price">
+                    <span>MRP</span> ₹87,950.00
+                  </div>
+                </div>
+              </motion.div>
+              <motion.div
+                whileInView={() => {
+                  setIsInView(true);
+                }}
+                initial={{ rotateY: "90deg" }}
+                animate={
+                  isInView && {
+                    y: 0,
+                    rotateY: "0deg",
+                    transition: {
+                      duration: 1,
+                    },
+                  }
+                }
+                className="card"
+              >
+                <div className="d-flex justify-content-between card-like">
+                  <div className="label">NEW!</div>
+                  <img loading="lazy" src={postLike} alt="" />
+                </div>
+                <div className="product--image" style={{ overflow: "hidden" }}>
+                  <motion.img
+                    whileHover={{
+                      scale: 1.1,
+                    }}
+                    transition={{
+                      duration: 0.4,
+                    }}
+                    loading="lazy"
+                    src={makeupbox}
+                    alt=""
+                  />
+                </div>
+                <div className="card--detail">
+                  <div className="text">M.A.C.</div>
+                  <div className="title">EYE SHADOW X 9: BURGUNDY</div>
+                  <div className="price">
+                    <span>MRP</span> ₹87,950.00
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+            <motion.div
+              whileInView={() => {
+                setIsInView(true);
+              }}
+              initial={{ y: "30vh", opacity: 0 }}
+              animate={
+                isInView && {
+                  y: 0,
+                  opacity: 1,
+                  transition: {
+                    duration: 0,
+                  },
+                }
+              }
+              className="insta--card"
+            >
+              <img loading="lazy" src={instapost} alt="" height={650} />
+            </motion.div>
           </div>
+        </section>
+        <YouMayLike />
+        <ReletedServices />
+        <div className="last--text d-flex justify-content-center">
+          <div>thinking of buying for an occassion?</div>
+          <img loading="lazy" src={rentItText} alt="" />
         </div>
-      </section>
-      <YouMayLike />
-      <ReletedServices />
-      <div className="last--text d-flex justify-content-center">
-        <div>thinking of buying for an occassion?</div>
-        <img loading="lazy" src={rentItText} alt="" />
-      </div>
+      </motion.div>
     </ProductSectionWrapper>
   );
 };

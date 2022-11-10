@@ -11,6 +11,7 @@ import sampleimage1 from "../../assets/images/product-section/sampleimage1.svg";
 import sampleimage2 from "../../assets/images/product-section/sampleimage2.svg";
 import count from "../../assets/images/product-section/count.svg";
 import productLogo from "../../assets/images/product-section/product-logo.svg";
+import { motion } from "framer-motion";
 
 const ProductSelectionCommonWrapper = styled.div`
   .product-main-container {
@@ -269,15 +270,22 @@ const ProductSelectionCommon = () => {
     <ProductSelectionCommonWrapper>
       <section className="product-main-container">
         <div className="d-flex">
-          <img src={backarrow} alt="" />
+          <img loading="lazy" src={backarrow} alt="" />
           <div className="go-back-text">Go Back</div>
         </div>
         <div className="breadcumb-section d-flex justify-content-between">
-          <div>
+          <motion.div
+            initial={{ x: "-100vw", opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.9 }}
+          >
             SHOP / CLOTHING / WOMEN / DRESSES /{" "}
             <span>VERSACE BAROCCO GODDESS SLASH SILK DRESS</span>
-          </div>
-          <div
+          </motion.div>
+          <motion.div
+            initial={{ x: "100vw", opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.9 }}
             className="menu-icon"
             onClick={() => setMenuOpenModal(!menuOpenModal)}
           >
@@ -286,17 +294,21 @@ const ProductSelectionCommon = () => {
               onClick={(e) => e.stopPropagation()}
             />
             {menuOpenModal ? (
-              <img src={MenuIcon} loading="lazy" alt="menu" height={100} />
+              <img loading="lazy" src={MenuIcon} alt="menu" height={100} />
             ) : (
-              <img src={MenuIcon} loading="lazy" alt="menu" height={100} />
+              <img loading="lazy" src={MenuIcon} alt="menu" height={100} />
             )}
-          </div>
+          </motion.div>
         </div>
         <div className="product--container d-flex justify-content-between">
-          <div>
+          <motion.div
+            initial={{ x: "-100vw", opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1.2 }}
+          >
             <div className="detail1 position-relative">
               <div className="position-absolute product-logo">
-                <img src={productLogo} alt="" />
+                <img loading="lazy" src={productLogo} alt="" />
               </div>
               <div className="detail-sub1">VERSACE</div>
               <div className="detail-sub2">
@@ -314,6 +326,7 @@ const ProductSelectionCommon = () => {
                 <div>size</div>
                 {selectedState === "!size" ? (
                   <img
+                    loading="lazy"
                     src={backarrow}
                     alt=""
                     className="cur-pointer rotate-90"
@@ -321,6 +334,7 @@ const ProductSelectionCommon = () => {
                   />
                 ) : (
                   <img
+                    loading="lazy"
                     src={backarrow}
                     alt=""
                     className="cur-pointer"
@@ -348,6 +362,7 @@ const ProductSelectionCommon = () => {
                 <div>color</div>
                 {selectedState === "!color" ? (
                   <img
+                    loading="lazy"
                     src={backarrow}
                     alt=""
                     className="cur-pointer rotate-90"
@@ -355,6 +370,7 @@ const ProductSelectionCommon = () => {
                   />
                 ) : (
                   <img
+                    loading="lazy"
                     src={backarrow}
                     alt=""
                     className="cur-pointer"
@@ -375,8 +391,8 @@ const ProductSelectionCommon = () => {
               )}
             </div>
             <div className="icon--container d-flex">
-              <img src={like} alt="" height={20} />
-              <img src={share} alt="" height={20} />
+              <img loading="lazy" src={like} alt="" height={20} />
+              <img loading="lazy" src={share} alt="" height={20} />
             </div>
             <div className="pin-code--section">
               <div className="text">ENTER PIN CODE</div>
@@ -384,7 +400,7 @@ const ProductSelectionCommon = () => {
                 <div className="input--section d-flex">
                   <input placeholder="201012" />
                   <div className="submit--section">
-                    <img src={checkicon} alt="" />
+                    <img loading="lazy" src={checkicon} alt="" />
                   </div>
                 </div>
                 <div className="position-relative delivary-status">
@@ -393,18 +409,34 @@ const ProductSelectionCommon = () => {
                 </div>
               </div>
             </div>
-          </div>
-          <div className="center--container position-relative">
-            <img src={productSample} alt="" height={600} width={400} />
+          </motion.div>
+          <motion.div
+            initial={{ y: "100vh", opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1.2 }}
+            className="center--container position-relative"
+          >
+            <img
+              loading="lazy"
+              src={productSample}
+              alt=""
+              height={600}
+              width={400}
+            />
             <div className="price--item-section">
               <div className="price--title">₹3,56,367.34</div>
               <div className="quantity--title">Quantity</div>
               <div className="count--machine">
-                <img src={count} alt="" />
+                <img loading="lazy" src={count} alt="" />
               </div>
             </div>
-          </div>
-          <div className="section--right-container">
+          </motion.div>
+          <motion.div
+            initial={{ x: "100vw", opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1.2 }}
+            className="section--right-container"
+          >
             <div className="section--right">
               <div className="title">how it feels</div>
               <div className="description">
@@ -413,23 +445,23 @@ const ProductSelectionCommon = () => {
                 Dictum turpis lobortis{" "}
               </div>
               <div className="d-flex sampleimg1 justify-content-between">
-                <img src={sampleimage1} alt="" height={80} />
-                <img src={sampleimage1} alt="" height={80} />
-                <img src={sampleimage1} alt="" height={80} />
-                <img src={sampleimage1} alt="" height={80} />
+                <img loading="lazy" src={sampleimage1} alt="" height={80} />
+                <img loading="lazy" src={sampleimage1} alt="" height={80} />
+                <img loading="lazy" src={sampleimage1} alt="" height={80} />
+                <img loading="lazy" src={sampleimage1} alt="" height={80} />
               </div>
               <div className="d-flex sampleimg2 justify-content-between">
-                <img src={sampleimage2} alt="" height={50} />
-                <img src={sampleimage2} alt="" height={50} />
-                <img src={sampleimage2} alt="" height={50} />
-                <img src={sampleimage2} alt="" height={50} />
+                <img loading="lazy" src={sampleimage2} alt="" height={50} />
+                <img loading="lazy" src={sampleimage2} alt="" height={50} />
+                <img loading="lazy" src={sampleimage2} alt="" height={50} />
+                <img loading="lazy" src={sampleimage2} alt="" height={50} />
               </div>
             </div>
             <div className="button--container">ADD TO CART</div>
             <div className="code--text">
               50% off use code <span>FIRST50</span>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
     </ProductSelectionCommonWrapper>
