@@ -5,8 +5,10 @@ import Banner2 from "../../assets/images/brand-product/banner2.svg";
 import FooterImage from "../../assets/images/product/footer.svg";
 import Filters from "../../commonComponents/Filters";
 import { motion } from "framer-motion";
-import TopProduct from "../brand/TopProduct";
-import AnimatedTextWord from "../../commonComponents/Animation/FlipAnimation";
+const TopProduct = React.lazy(() => import("../brand/TopProduct"));
+const AnimatedTextWord = React.lazy(() =>
+  import("../../commonComponents/Animation/FlipAnimation")
+);
 
 const BrandProductWrapper = styled.div`
   background: #fcf9f2;

@@ -54,6 +54,7 @@ export default function StudioProductMaterial() {
       >
         {pathname === "/studio-material" && (
           <img
+            loading="lazy"
             src={Polygon}
             alt="polygon-left"
             className="polygon-left"
@@ -81,7 +82,7 @@ export default function StudioProductMaterial() {
             </div>
           </div>
           <div className="studio-material-body">
-            <img src={Video} alt="video" loading="lazy" />
+            <img loading="lazy" src={Video} alt="video" loading="lazy" />
           </div>
         </div>
         {pathname === "/studio-material" && (
