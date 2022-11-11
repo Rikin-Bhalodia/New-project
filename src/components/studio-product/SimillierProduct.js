@@ -157,31 +157,6 @@ const SimillerProductWrapper = styled.div`
     height: 550px;
   }
 `;
-// const svgVariants = {
-//   hidden: {
-//     rotate: "-180deg",
-//   },
-//   visible: {
-//     rotate: 0,
-//     transition: {
-//       duration: 1,
-//     },
-//   },
-// };
-// const pathVariants = {
-//   hidden: {
-//     pathLength: 0,
-//     opacity: 0,
-//   },
-//   visible: {
-//     opacity: 1,
-//     pathLength: 1,
-//     transition: {
-//       duration: 5,
-//       ease: "easeInOut",
-//     },
-//   },
-// };
 
 const SimillerProduct = () => {
   const [isInView, setIsInView] = useState(false);
