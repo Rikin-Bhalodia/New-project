@@ -62,7 +62,8 @@ const ServiceLuxuryGiftingWrapper = styled.div`
     text-align: center;
   }
   .icon-name {
-    padding-top: 5px;
+    padding-top: 10px;
+    font-size: 40px;
   }
   .gifts-by-recipient {
     font-family: "Coral Blush";
@@ -74,7 +75,8 @@ const ServiceLuxuryGiftingWrapper = styled.div`
   .gifts {
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;
+    column-gap: 250px;
+    row-gap: 30px;
     justify-content: space-between;
     text-align: center;
     font-family: "Beatlys";
@@ -82,7 +84,7 @@ const ServiceLuxuryGiftingWrapper = styled.div`
     font-weight: 400;
     font-size: 80px;
     color: #665e2f;
-    margin-top: 40px;
+    margin: 40px 100px 0 100px;
   }
   .que {
     font-family: "Arial";
@@ -115,10 +117,11 @@ const HalfWrapper = styled.div`
     width: 48%;
   }
   .occation-gifts {
-    margin: 50px 150px 0px 150px;
+    margin: 50px 250px 0px 250px;
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;
+    row-gap: 30px;
+    column-gap: 250px;
     justify-content: space-between;
     text-align: center;
     font-family: "Beatlys";
@@ -159,8 +162,15 @@ const ServiceLuxuryGifting = () => {
           <div className="gifts">
             {GiftsByClients.map((ele) => {
               return (
-                <div className="">
-                  <img src={ele.img} alt="img" height={400} />
+                <div
+                  className=""
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    columnGap: "200px",
+                  }}
+                >
+                  <img src={ele.img} alt="img" height={250} />
                   <div className="icon-name">{ele.name}</div>
                 </div>
               );
@@ -182,7 +192,7 @@ const ServiceLuxuryGifting = () => {
           {OccasionGifts.map((ele) => {
             return (
               <div className="">
-                <img src={ele.img} alt="img" height={400} />
+                <img src={ele.img} alt="img" height={250} />
                 <div className="icon-name">{ele.name}</div>
               </div>
             );

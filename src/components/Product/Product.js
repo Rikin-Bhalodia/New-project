@@ -57,7 +57,7 @@ const images = [
   {
     img: Product1,
     id: 1,
-    height: 280,
+    height: 310,
     width: 200,
     class: "product-image",
     price: "₹1900",
@@ -73,7 +73,7 @@ const images = [
   {
     img: Product3,
     id: 3,
-    height: 280,
+    height: 310,
     width: 200,
     class: "product-image",
     price: "₹1900",
@@ -81,7 +81,7 @@ const images = [
   {
     img: Product3,
     id: 4,
-    height: 280,
+    height: 310,
     class: "product-image",
     price: "₹1900",
     width: 200,
@@ -97,7 +97,7 @@ const images = [
   {
     img: Product5,
     id: 6,
-    height: 280,
+    height: 310,
 
     class: "product-image",
     price: "₹1900",
@@ -123,7 +123,7 @@ const images = [
   {
     img: Product1,
     id: 9,
-    height: 280,
+    height: 310,
     width: 200,
     class: "product-image",
     price: "₹1900",
@@ -131,7 +131,7 @@ const images = [
   {
     img: Product3,
     id: 10,
-    height: 280,
+    height: 310,
 
     class: "product-image",
     price: "₹1900",
@@ -141,7 +141,7 @@ const images = [
   {
     img: Product5,
     id: 11,
-    height: 280,
+    height: 310,
     width: 200,
     class: "product-image",
     price: "₹1900",

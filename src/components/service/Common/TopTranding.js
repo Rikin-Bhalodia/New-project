@@ -4,8 +4,8 @@ import { TopTrandingSlider } from "../../../slider";
 
 const TopTrandingWrapper = styled.div`
   width: 100%;
-  height: 850px;
-  margin-top: 70px;
+  height: 700px;
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -14,7 +14,7 @@ const TopTrandingWrapper = styled.div`
     font-family: "Coral Blush";
     font-style: normal;
     font-weight: 400;
-    font-size: 70px;
+    font-size: 55px;
     text-align: center;
     text-transform: uppercase;
   }

@@ -152,7 +152,7 @@ function App() {
         <Route path="/service-celebration" element={<ServiceCelebration />} />
         <Route path="/nft-metaverse" element={<NFTMetaVerse />} />
       </Routes>
-      {(pathname !== "/sub-menu1" || pathname !== "/sub-menu2") && <Footer />}
+      {pathname !== "/sub-menu1" && pathname !== "/sub-menu2" && <Footer />}
       {/* </ScrollContainer> */}
     </div>
   );

@@ -71,7 +71,11 @@ const ShoppingListCard = () => {
   const location = useLocation();
   return (
     <ShoppingListCardWrapper
-      style={location.pathname ? { padding: "0 200px 0 200px" } : {}}
+      style={
+        location.pathname === "/nft-metaverse"
+          ? { padding: "0 200px 0 200px" }
+          : { margin: "50px 0 0 0" }
+      }
     >
       {[1, 2, 3, 4, 5, 6].map((_, i) => {
         return (

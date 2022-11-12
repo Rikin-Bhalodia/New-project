@@ -36,25 +36,25 @@ const ProductSectionWrapper = styled.div`
     margin: 40px 73px 0 73px;
   }
   .text-svg {
-    margin-bottom: 57px;
+    margin-bottom: 10px;
   }
   .complete-bottom--container {
     border: 1px solid #000000;
     border-radius: 37px;
-    padding: 40px;
+    padding: 20px 100px;
   }
   .cards--section {
     display: grid;
     grid-template-columns: auto auto;
-    gap: 30px;
+    column-gap: 50px;
   }
   .cards--section .card {
     border: none;
     background: #ffffff;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 25px;
-    width: 257px;
-    height: 300px;
+    width: 240px;
+    height: 260px;
   }
   .card .card-like {
     margin-right: 20px;
@@ -169,7 +169,13 @@ const ProductSection = () => {
         <AboutProduct />
         <section className="complete-look-section">
           <div className="text-svg">
-            <img loading="lazy" src={completeLookText} alt="" />
+            <img
+              loading="lazy"
+              src={completeLookText}
+              alt=""
+              width={400}
+              height={100}
+            />
           </div>
           <div className="complete-bottom--container d-flex justify-content-between">
             <div className="cards--section d-grid">
@@ -355,7 +361,7 @@ const ProductSection = () => {
               }
               className="insta--card"
             >
-              <img loading="lazy" src={instapost} alt="" height={650} />
+              <img loading="lazy" src={instapost} alt="" height={530} />
             </motion.div>
           </div>
         </section>

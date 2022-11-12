@@ -5,12 +5,16 @@ import styled from "styled-components";
 import submenu from "../../assets/sub-cat-menu-1.svg";
 
 const SubMenu1Wrapper = styled.div`
+  text-transform: uppercase;
+
   .head {
     display: flex;
     justify-content: space-around;
     margin-top: 100px;
     align-items: center;
     margin-bottom: 20px;
+    color: #665e2f;
+    font-weight: 400;
   }
   .center {
     border: 1px solid black;
@@ -35,12 +39,14 @@ const SubMenu1Wrapper = styled.div`
   .body h6 {
     color: white;
     font-size: 18px;
+    padding-top: 15px;
   }
   .body p {
     color: white;
     font-size: 12px;
     font-weight: 400;
     margin-bottom: 10px;
+    padding-top: 10px;
   }
   .body h5 {
     color: white;
@@ -52,7 +58,6 @@ const SubMenu1Wrapper = styled.div`
   .footer h4 {
     font-size: 25px;
     color: white;
-    text-transform: uppercase;
   }
   .footer p {
     color: white;
@@ -156,10 +161,10 @@ export default function SubMenu1() {
             </div>
           </div>
         </div>
-        <div className="footer">
+        {/* <div className="footer">
           <h4>all designer & Brand</h4>
           <p>A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</p>
-        </div>
+        </div> */}
       </div>
     </SubMenu1Wrapper>
   );
