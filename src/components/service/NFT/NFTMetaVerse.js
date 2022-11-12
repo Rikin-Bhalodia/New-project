@@ -221,6 +221,7 @@ const NFTMetaVerseWrapper = styled.div`
     flex-wrap: wrap;
     width: 100%;
     margin: 50px 0;
+    row-gap: 40px;
   }
 `;
 
