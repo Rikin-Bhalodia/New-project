@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import CenterLeft from "../../assets/images/studio/center-left.svg";
-import CenterRight from "../../assets/images/studio/center-right.svg";
-import CenterImage from "../../assets/images/studio/center-image.svg";
+
 import MenuIcon from "../../assets/images/studio/menu.svg";
 import { motion, useScroll, useTransform } from "framer-motion";
 import BannerImage from "../../assets/images/studio/banner.svg";
+import CommonContent from "./commonContent";
 
 const Atilier = React.lazy(() => import("../../atilier"));
 const Menu = React.lazy(() => import("../Menu"));
@@ -174,7 +173,6 @@ const StudioBannerWrapper = styled.div`
 `;
 
 const StudioBanner = () => {
-  const [isInView, setIsInView] = useState(false);
   const [menuOpenModal, setMenuOpenModal] = useState(false);
   let { scrollYProgress } = useScroll();
   let y = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
@@ -219,7 +217,7 @@ const StudioBanner = () => {
             </div>
           </div>
         </section>
-        <section className="studio-s2">
+        {/* <section className="studio-s2">
           <div className="row" id="bannerSliderProduct">
             <motion.div
               whileInView={() => {
@@ -349,7 +347,8 @@ const StudioBanner = () => {
               </div>
             </motion.div>
           </div>
-        </section>
+        </section> */}
+        <CommonContent />
       </StudioBannerWrapper>
     </>
   );

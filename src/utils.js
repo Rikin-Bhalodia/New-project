@@ -111,26 +111,31 @@ export const studio2Images = [
     img: CenterLeft,
     content: "MOST EXPENSIVE PRODUCTS",
     css: "col-md-2 level1 wow fadeInUp",
+    width: 50,
   },
   {
     img: CenterLeft,
     content: "MOST EXPENSIVE PRODUCTS",
     css: "col-md-2 level3 wow fadeInUp",
+    width: 50,
   },
   {
     img: CenterImage,
     content: "MOST EXPENSIVE PRODUCTS",
     css: "col-md-4 level5 wow fadeInUp",
+    width: 100,
   },
   {
     img: CenterRight,
     content: "MOST EXPENSIVE PRODUCTS",
     css: "col-md-2 level4 wow fadeInUp",
+    width: 50,
   },
   {
     img: CenterRight,
     content: "MOST EXPENSIVE PRODUCTS",
     css: "col-md-2 level2 wow fadeInUp",
+    width: 50,
   },
 ];
 

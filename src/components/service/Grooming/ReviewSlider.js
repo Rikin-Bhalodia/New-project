@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Pagination, Navigation, Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
+import { studio2Images } from "../../../utils";
 
 export function ReviewSlider({ color, background, des, border }) {
   return (
@@ -104,6 +105,48 @@ export function BlankBackgroundSlider() {
               // border: border || "",
             }}
           ></SwiperSlide>
+        );
+      })}
+    </Swiper>
+  );
+}
+
+export function CelebrateWithUsSlider() {
+  return (
+    <Swiper
+      effect={"coverflow"}
+      slidesPerView={4}
+      spaceBetween={50}
+      grabCursor={true}
+      centeredSlides={true}
+      coverflowEffect={{
+        modifier: 1,
+        scale: 0.5,
+      }}
+      className="mySwiper"
+      autoplay={{
+        delay: 1500,
+        disableOnInteraction: false,
+      }}
+      loop={true}
+      loopFillGroupWithBlank={true}
+      speed={2500}
+      modules={[Autoplay, Pagination, Navigation]}
+    >
+      {studio2Images.map(({ img, content, width }) => {
+        return (
+          <SwiperSlide
+            style={{
+              height: "300px",
+              width: `${width}`,
+              background: `url(${img})`,
+              backgroundPosition: "center",
+              borderRadius: "40px",
+              backgroundRepeat: "no-repeat",
+            }}
+          >
+            <div>{content}</div>
+          </SwiperSlide>
         );
       })}
     </Swiper>
