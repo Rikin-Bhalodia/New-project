@@ -59,13 +59,7 @@ const YellowBarContent = ({ requiredPersonalAssistance }) => {
         {PersonalAssitance.map((value) => {
           return (
             <div className="icon">
-              <img
-                src={value.img}
-                alt="img"
-                height={40}
-                width={60}
-                loading="lazy"
-              />
+              {value.img}
               <div className="icon-name">{value.name}</div>
             </div>
           );

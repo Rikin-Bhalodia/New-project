@@ -3,11 +3,13 @@ import styled from "styled-components";
 import ShopingCard from "../../../assets/images/service/valentine-gift/shoping-card.svg";
 import Heart from "../../../assets/images/service/valentine-gift/heart.svg";
 import FillHeart from "../../../assets/images/service/valentine-gift/fill-heart.svg";
+import { useLocation } from "react-router-dom";
 
 const ShoppingListCardWrapper = styled.div`
-  margin: 50px 100px;
+  margin-top: 50px 100px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   width: 100%;
   gap: 100px;
   .card {
@@ -66,11 +68,21 @@ const ShoppingListCardWrapper = styled.div`
 
 const ShoppingListCard = () => {
   const [fillHeart, setFillHeart] = useState(false);
+  const location = useLocation();
   return (
-    <ShoppingListCardWrapper>
-      {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((_, i) => {
+    <ShoppingListCardWrapper
+      style={location.pathname ? { padding: "0 200px 0 200px" } : {}}
+    >
+      {[1, 2, 3, 4, 5, 6].map((_, i) => {
         return (
-          <div className="card">
+          <div
+            className="card"
+            style={
+              location.pathname === "/nft-metaverse"
+                ? { height: "350px", width: "280px" }
+                : {}
+            }
+          >
             <div className="top-part">
               <div className="new-tag">NEW!</div>
               {fillHeart === i ? (
@@ -91,7 +103,11 @@ const ShoppingListCard = () => {
                 />
               )}
             </div>
-            <img src={ShopingCard} alt="shoping-card" height={250} />
+            <img
+              src={ShopingCard}
+              alt="shoping-card"
+              height={location.pathname === "/nft-metaverse" ? 150 : 250}
+            />
             <div className="product-name">MOSCHINO</div>
             <div className="des">White Quilted Large Tote</div>
             <div className="mrp">MRP ₹87,950.00</div>

@@ -44,17 +44,17 @@ import HouseWarming from "./assets/images/service/occasion-gifts/house-warming.s
 import Valentine from "./assets/images/service/occasion-gifts/valentine.svg";
 import Thankyou from "./assets/images/service/occasion-gifts/thankyou.svg";
 
-import AssiBeauty from "./assets/images/service/personal-assitance/beauty.svg";
-import Culture from "./assets/images/service/personal-assitance/culture.svg";
-import Design from "./assets/images/service/personal-assitance/design.svg";
-import FineDine from "./assets/images/service/personal-assitance/finedine.svg";
-import LifeStyle from "./assets/images/service/personal-assitance/lifestyle.svg";
-import Nfts from "./assets/images/service/personal-assitance/nfts.svg";
-import Parties from "./assets/images/service/personal-assitance/parties.svg";
-import AssiPets from "./assets/images/service/personal-assitance/pets.svg";
-import Sale from "./assets/images/service/personal-assitance/sale.svg";
-import Transpotation from "./assets/images/service/personal-assitance/transpotation.svg";
-import Travel from "./assets/images/service/personal-assitance/travel.svg";
+import AssiBeauty from "./commonComponents/ImgComponents/AssiBeauty";
+import Culture from "./commonComponents/ImgComponents/Culture";
+import Design from "./commonComponents/ImgComponents/Design";
+import FineDine from "./commonComponents/ImgComponents/FineDine";
+import LifeStyle from "./commonComponents/ImgComponents/LifeStyle";
+import Nfts from "./commonComponents/ImgComponents/Nfts";
+import Parties from "./commonComponents/ImgComponents/Parties";
+import AssiPets from "./commonComponents/ImgComponents/AssiPets";
+import Sale from "./commonComponents/ImgComponents/Sale";
+import Transpotation from "./commonComponents/ImgComponents/Transpotation";
+import Travel from "./commonComponents/ImgComponents/Travel";
 
 import Top from "./assets/images/service/valentine-gift/top.svg";
 import Bottom from "./assets/images/service/valentine-gift/bottom.svg";
@@ -102,6 +102,14 @@ import Collectibles from "./assets/images/nfts/collectibles.svg";
 import Meme from "./assets/images/nfts/meme.svg";
 import FashionNft from "./assets/images/nfts/fashion.svg";
 import Misc from "./assets/images/nfts/misc.svg";
+
+import Gucci from "./assets/images/nfts/gucci.svg";
+import SelfRidges from "./assets/images/nfts/selfridges.svg";
+import Burberry from "./assets/images/nfts/burberry.svg";
+import Coachella from "./assets/images/nfts/coachella.svg";
+import Adidas from "./assets/images/nfts/adidas.svg";
+import Dolce from "./assets/images/nfts/dolce.svg";
+import Mac from "./assets/images/nfts/mac.svg";
 
 export const images = [studio1, studio2, studio3];
 export const avenues = [avenue, avenue1, avenue2];
@@ -180,17 +188,17 @@ export const OccasionGifts = [
 ];
 
 export const PersonalAssitance = [
-  { img: Travel, name: "Travel & Leisure" },
-  { img: Transpotation, name: "Transportation" },
-  { img: FineDine, name: "Fine Dine" },
-  { img: AssiBeauty, name: "Beauty & Wellness" },
-  { img: AssiPets, name: "Pets" },
-  { img: Sale, name: "Real Estate" },
-  { img: LifeStyle, name: "Lifestyle Management" },
-  { img: Culture, name: "Culture" },
-  { img: Parties, name: "Parties" },
-  { img: Design, name: "Design Consultation" },
-  { img: Nfts, name: "NFT & Metaverse" },
+  { img: <Travel />, name: "Travel & Leisure" },
+  { img: <Transpotation />, name: "Transportation" },
+  { img: <FineDine />, name: "Fine Dine" },
+  { img: <AssiBeauty />, name: "Beauty & Wellness" },
+  { img: <AssiPets />, name: "Pets" },
+  { img: <Sale />, name: "Real Estate" },
+  { img: <LifeStyle />, name: "Lifestyle Management" },
+  { img: <Culture />, name: "Culture" },
+  { img: <Parties />, name: "Parties" },
+  { img: <Design />, name: "Design Consultation" },
+  { img: <Nfts />, name: "NFT & Metaverse" },
 ];
 
 export const valentineGiftsIcons = [
@@ -299,4 +307,14 @@ export const NftIcons = [
   { img: Meme, name: "Memes" },
   { img: FashionNft, name: "Virtual Fashion" },
   { img: Misc, name: "Misc" },
+];
+
+export const CompanyLogo = [
+  { img: Gucci, width: "25%" },
+  { img: SelfRidges, width: "25%" },
+  { img: Burberry, width: "25%" },
+  { img: Coachella, width: "25%" },
+  { img: Adidas, width: "25%" },
+  { img: Dolce, width: "50%" },
+  { img: Mac, width: "25%" },
 ];

@@ -30,6 +30,7 @@ const ServiceYellowBarWrapper = styled.div`
     text-transform: uppercase;
     position: relative;
     z-index: 9;
+    color: #000;
   }
   .note {
     position: absolute;

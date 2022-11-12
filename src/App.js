@@ -74,6 +74,9 @@ const SellNFTs = React.lazy(() => import("./components/service/NFT/SellNFTs"));
 const ServiceCelebration = React.lazy(() =>
   import("./components/service/Celebration")
 );
+const NFTMetaVerse = React.lazy(() =>
+  import("./components/service/NFT/NFTMetaVerse")
+);
 
 function App() {
   const { pathname } = useLocation();
@@ -147,6 +150,7 @@ function App() {
         <Route path="/buy-nfts" element={<BuyNFTs />} />
         <Route path="/sell-your-nfts" element={<SellNFTs />} />
         <Route path="/service-celebration" element={<ServiceCelebration />} />
+        <Route path="/nft-metaverse" element={<NFTMetaVerse />} />
       </Routes>
       {(pathname !== "/sub-menu1" || pathname !== "/sub-menu2") && <Footer />}
       {/* </ScrollContainer> */}

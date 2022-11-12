@@ -10,18 +10,32 @@ import N from "../../assets/images/studio/royclan/N.svg";
 import L from "../../assets/images/studio/royclan/L.svg";
 import C from "../../assets/images/studio/royclan/C.svg";
 import Leaf from "../../assets/images/studio/royclan/leaf.svg";
+import { useLocation } from "react-router-dom";
 
 const FooterWrapper = styled.div``;
 
 const Footer = () => {
+  const location = useLocation();
   return (
     <FooterWrapper>
       <footer
         className="c-footer-w minHeightSec minBannerHeight d-flex align-items-center"
-        style={{ backgroundColor: "#fff", position: "relative" }}
+        style={
+          location.pathname === "/nft-metaverse"
+            ? { backgroundColor: " #1E1E1E", position: "relative" }
+            : { position: "relative" }
+        }
       >
         <div className="container">
-          <h5>GET IN TOUCH</h5>
+          <h5
+            style={
+              location.pathname === "/nft-metaverse"
+                ? { color: "white" }
+                : { color: "black" }
+            }
+          >
+            GET IN TOUCH
+          </h5>
           <div className="footer-in">
             <div className="c-footer-box">
               <h2>
