@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Video from "../../assets/images/studio-material/video.svg";
 import Polygon from "../../assets/images/polygon-left.svg";
@@ -45,12 +45,22 @@ const StudioProductMaterialWrapper = styled.div`
 
 export default function StudioProductMaterial() {
   const { pathname } = useLocation();
+  const [isInView, setIsInView] = useState(false);
   return (
     <StudioProductMaterialWrapper>
       <motion.div
-        initial={{ y: "200vh" }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.6 }}
+        whileInView={() => {
+          setIsInView(true);
+        }}
+        initial={{ y: "60vh" }}
+        animate={
+          isInView && {
+            y: 0,
+            transition: {
+              duration: 0.6,
+            },
+          }
+        }
       >
         {pathname === "/studio-material" && (
           <img
@@ -58,7 +68,6 @@ export default function StudioProductMaterial() {
             src={Polygon}
             alt="polygon-left"
             className="polygon-left"
-            loading="lazy"
           />
         )}
         <div className="container-fluid">
@@ -69,9 +78,18 @@ export default function StudioProductMaterial() {
               </div>
               <div className="product-head">
                 <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
                   initial={{ x: "-100vw" }}
-                  animate={{ x: 0 }}
-                  transition={{ duration: 0.7 }}
+                  animate={
+                    isInView && {
+                      x: 0,
+                      transition: {
+                        duration: 0.7,
+                      },
+                    }
+                  }
                 >
                   STUDIO / VERSACE BAG / LEATHER
                 </motion.p>
@@ -82,7 +100,7 @@ export default function StudioProductMaterial() {
             </div>
           </div>
           <div className="studio-material-body">
-            <img loading="lazy" src={Video} alt="video" loading="lazy" />
+            <img loading="lazy" src={Video} alt="video" />
           </div>
         </div>
         {pathname === "/studio-material" && (
