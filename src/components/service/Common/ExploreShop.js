@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Photo from "../../../assets/images/service/pets/photo.svg";
 import PhotoBack from "../../../assets/images/service/pets/photo-back.svg";
+import AnimatedTextWord from "../../../commonComponents/Animation/FlipAnimation";
 
 const ExploreShopWrapper = styled.div`
   background: #a75b41;
@@ -21,6 +22,8 @@ const ExploreShopWrapper = styled.div`
     font-size: 34px;
     color: white;
     padding-top: 100px;
+    display: flex;
+    justify-content: center;
   }
   .card-label {
     color: white;
@@ -47,7 +50,9 @@ const ExploreShop = () => {
   return (
     <ExploreShopWrapper>
       <img src={PhotoBack} alt="photo" className="back" />
-      <div className="explore-shop">EXPLORE SHOP</div>
+      <div className="explore-shop">
+        <AnimatedTextWord text="EXPLORE SHOP" />
+      </div>
       <div className="cards">
         {[1, 2, 3, 4, 5, 6, 7, 8].map((_) => {
           return (

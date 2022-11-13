@@ -1,5 +1,6 @@
 import React, { Suspense } from "react";
 import styled from "styled-components";
+import AnimatedTextWord from "../../../commonComponents/Animation/FlipAnimation";
 const ProductSelectionCommon = React.lazy(() =>
   import("../../../commonComponents/ProductSelectionCommon")
 );
@@ -66,7 +67,9 @@ const LuxuryProduct = () => {
         <div>
           <div className="gift">Not sure what to gift? </div>
           <div className="card">
-            <div className="buy-gift">buy a gift card</div>
+            <div className="buy-gift">
+              <AnimatedTextWord text="buy a gift card" />
+            </div>
             <div className="desc">and give them freedom to choose</div>
           </div>
         </div>

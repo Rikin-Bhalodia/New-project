@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import LeftFilter from "../../assets/images/aboutpage/left-filter.svg";
 import RightFilter from "../../assets/images/aboutpage/right-filter.svg";
+import AnimatedTextWord from "../Animation/FlipAnimation";
 
 const ServiceYellowBarWrapper = styled.div`
   background: #ffe600;
@@ -50,15 +51,21 @@ const ServiceYellowBar = ({ content, note }) => {
   return (
     <ServiceYellowBarWrapper>
       <img
+        loading="lazy"
         src={LeftFilter}
         alt="left"
         className="image"
         width={600}
         height={180}
       />
-      <div className="content-head">{content}</div>
-      <div className="note">{note}</div>
+      <div className="content-head">
+        <AnimatedTextWord text={content} />
+      </div>
+      <div className="note">
+        <AnimatedTextWord text={note} />
+      </div>
       <img
+        loading="lazy"
         src={RightFilter}
         alt="right"
         className="image2"

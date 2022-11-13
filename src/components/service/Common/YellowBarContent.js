@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import ServiceYellowBar from "../../../commonComponents/ServiceYellowBar";
 import { PersonalAssitance } from "../../../utils";
+const ServiceYellowBar = React.lazy(() =>
+  import("../../../commonComponents/ServiceYellowBar")
+);
 
 const YellowBarContentWrapper = styled.div`
   margin-top: 100px;
