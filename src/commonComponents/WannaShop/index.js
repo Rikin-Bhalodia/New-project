@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import LeftFilter from "../../assets/images/product/left-filter.svg";
 import RightFilter from "../../assets/images/product/right-filter.svg";
+import AnimatedTextWord from "../Animation/FlipAnimation";
 import SearchFilters from "./SearchFilters";
 
 const WannaShopWrapper = styled.div`
@@ -331,7 +332,9 @@ const WannaShop = () => {
   return (
     <WannaShopWrapper>
       <div className="middle-part">
-        <div className="heading">I WANNA SHOP</div>
+        <div className="heading">
+          <AnimatedTextWord text="I WANNA SHOP" />
+        </div>
         <div className={searchBackground && "search-part"}>
           <div className={searchBackground && "search-box2"}>
             {searchBackground && <div className="head">search</div>}

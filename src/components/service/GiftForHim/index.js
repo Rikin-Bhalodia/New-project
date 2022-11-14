@@ -3,9 +3,11 @@ import styled from "styled-components";
 import GoBackpart from "../Common/gobachpart";
 import Price from "../../../assets/images/service/gift-for-him/price.svg";
 import YellowBarContent from "../Common/YellowBarContent";
+import { motion } from "framer-motion";
 import DownArrow from "../../../assets/images/product/down-arrow.svg";
 import Search from "../../../assets/images/service/gift-for-him/seach-icon.svg";
 import Filters from "../../../commonComponents/Filters";
+import AnimatedTextWord from "../../../commonComponents/Animation/FlipAnimation";
 
 const GiftForHimWrapper = styled.div`
   margin: 100px 150px 0px 150px;
@@ -43,12 +45,12 @@ const GiftForHimWrapper = styled.div`
     row-gap: 15px;
   }
   .products {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
     width: 100%;
-    column-gap: 180px;
-    row-gap: 50px;
-    margin: 80px 50px;
+    gap: 50px;
+    margin: 80px 0;
   }
 `;
 
@@ -112,36 +114,82 @@ const FiltersName = [
 ];
 
 const GiftForHim = () => {
+  const [isInView, setIsInView] = useState(false);
   return (
     <>
-      <GiftForHimWrapper>
-        <GoBackpart />
-        <div className="heading">GIFTS FOR HIM</div>
-        <Filters FiltersName={FiltersName} />
-        <div className="products">
-          {[1, 1, 11, 1, 11, 1, 1, 1, 1].map((_) => {
-            return (
-              <div className="product">
-                <img src={Price} alt="price" height={250} />
-                <div className="price">Price</div>
-                <button>ADD TO CART</button>
-              </div>
-            );
-          })}
-        </div>
-      </GiftForHimWrapper>
-      <FullScreenWrapper>
-        <div className="load-more">
-          <div className="line"></div>
-          <div className="text">
-            <div>LOAD</div>
-            <div className="plus">+</div>
-            <div>MORE</div>
+      <motion.div
+        initial={{ y: "200vh" }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <GiftForHimWrapper>
+          <GoBackpart />
+          <div className="heading">
+            <AnimatedTextWord text="GIFTS FOR HIM" />
           </div>
-          <div className="line"></div>
-        </div>
-        <YellowBarContent requiredPersonalAssistance={true} />
-      </FullScreenWrapper>
+          <Filters FiltersName={FiltersName} />
+          <motion.div className="products">
+            {[1, 1, 1, 1, 1, 1, 1, 1, 1].map((_) => {
+              return (
+                <div className="product">
+                  <motion.img
+                    whileHover={{
+                      scale: 1.1,
+                    }}
+                    transition={{
+                      duration: 0.4,
+                    }}
+                    whileInView={() => {
+                      setIsInView(true);
+                    }}
+                    initial={{ rotateX: "90deg" }}
+                    animate={
+                      isInView && {
+                        rotateX: 0,
+                        transition: {
+                          duration: 0.5,
+                        },
+                      }
+                    }
+                    src={Price}
+                    alt="price"
+                    height={250}
+                  />
+                  <div className="price">Price</div>
+                  <motion.button
+                    whileInView={() => {
+                      setIsInView(true);
+                    }}
+                    initial={{ rotateY: "-90deg" }}
+                    animate={
+                      isInView && {
+                        rotateY: 0,
+                        transition: {
+                          duration: 1,
+                        },
+                      }
+                    }
+                  >
+                    ADD TO CART
+                  </motion.button>
+                </div>
+              );
+            })}
+          </motion.div>
+        </GiftForHimWrapper>
+        <FullScreenWrapper>
+          <div className="load-more">
+            <div className="line"></div>
+            <div className="text">
+              <div>LOAD</div>
+              <div className="plus">+</div>
+              <div>MORE</div>
+            </div>
+            <div className="line"></div>
+          </div>
+          <YellowBarContent requiredPersonalAssistance={true} />
+        </FullScreenWrapper>
+      </motion.div>
     </>
   );
 };

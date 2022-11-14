@@ -1,18 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
-
+import { motion } from "framer-motion";
 const MiddlePartWrapper = styled.div`
-  .right-middle {
-    position: absolute;
-    right: 0;
-  }
+  padding-top: 50px;
   .middle-part {
     width: 100%;
     display: flex;
     text-align: center;
+    position: relative;
+    .left-middle {
+      position: absolute;
+      left: 0;
+    }
+    .right-middle {
+      position: absolute;
+      right: 0;
+    }
   }
   .new-head {
-    width: 83%;
+    width: 100%;
     font-family: "Coral Blush";
     font-style: normal;
     font-weight: 400;
@@ -40,22 +46,103 @@ const MiddlePart = ({
   third,
   Text,
 }) => {
+  const [isInView, setIsInView] = useState(false);
   return (
     <MiddlePartWrapper>
       <div className="middle-part">
-        <img loading="lazy" src={LeftMiddle} alt="left-middle" height={450} />
+        <motion.img
+          loading="lazy"
+          src={LeftMiddle}
+          alt="left-middle"
+          height={450}
+          className="left-middle"
+          whileInView={() => {
+            setIsInView(true);
+          }}
+          initial={{ x: "-60vw", opacity: 0 }}
+          animate={
+            isInView && {
+              x: 0,
+              opacity: 1,
+              transition: {
+                duration: 1.4,
+              },
+            }
+          }
+        />
         <div className="new-head">
-          <span>{first}</span>
-          <span>{second}</span>
-          <span>{third}</span>
+          <motion.span
+            whileInView={() => {
+              setIsInView(true);
+            }}
+            initial={{ y: "40vh", opacity: 0 }}
+            animate={
+              isInView && {
+                y: 0,
+                opacity: 1,
+                transition: {
+                  duration: 1,
+                },
+              }
+            }
+          >
+            {first}
+          </motion.span>
+          <motion.span
+            whileInView={() => {
+              setIsInView(true);
+            }}
+            initial={{ y: "45vh", opacity: 0 }}
+            animate={
+              isInView && {
+                y: 0,
+                opacity: 1,
+                transition: {
+                  duration: 1.3,
+                },
+              }
+            }
+          >
+            {second}
+          </motion.span>
+          <motion.span
+            whileInView={() => {
+              setIsInView(true);
+            }}
+            initial={{ y: "50vh", opacity: 0 }}
+            animate={
+              isInView && {
+                y: 0,
+                opacity: 1,
+                transition: {
+                  duration: 1.5,
+                },
+              }
+            }
+          >
+            {third}
+          </motion.span>
           <img loading="lazy" src={Text} alt="gift" height={200} />
         </div>
-        <img
+        <motion.img
           loading="lazy"
           src={RightMiddle}
           alt="left-middle"
           height={450}
           className="right-middle"
+          whileInView={() => {
+            setIsInView(true);
+          }}
+          initial={{ x: "60vw", opacity: 0 }}
+          animate={
+            isInView && {
+              x: 0,
+              opacity: 1,
+              transition: {
+                duration: 1.2,
+              },
+            }
+          }
         />
       </div>
       <div className="line">
