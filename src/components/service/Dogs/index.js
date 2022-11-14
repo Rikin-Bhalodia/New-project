@@ -6,6 +6,10 @@ import BackArrow from "../../../assets/images/product/back-arrow.svg";
 import { PetsIcons } from "../../../utils";
 import { ReviewSlider } from "../Grooming/ReviewSlider";
 import { motion } from "framer-motion";
+const AnimatedTextWord = React.lazy(() =>
+  import("../../../commonComponents/Animation/FlipAnimation")
+);
+const TopProduct = React.lazy(() => import("../../brand/TopProduct"));
 const Menu = React.lazy(() => import("../../../commonComponents/Menu"));
 const WannaShop = React.lazy(() =>
   import("../../../commonComponents/WannaShop")
@@ -32,7 +36,8 @@ const DogsWrapper = styled.div`
     height: 500px;
     justify-content: center;
     align-items: center;
-    background: url(${BannerImage});
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+      url(${BannerImage});
   }
   .goback {
     margin-left: 40px;
@@ -78,6 +83,8 @@ const DogsWrapper = styled.div`
     color: #665e2f;
     margin-top: 100px;
     margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
   }
   .button-review {
     background: #a75b41;
@@ -169,6 +176,7 @@ const FiltersName = [
 
 const Dogs = () => {
   const [menuOpenModal, setMenuOpenModal] = useState(false);
+  const [isInView, setIsInView] = useState(false);
 
   return (
     <DogsWrapper>
@@ -179,10 +187,12 @@ const Dogs = () => {
       >
         <div className="heading-part">
           <div className="goback">
-            <img src={BackArrow} alt="back-arrow" />
+            <img src={BackArrow} alt="back-arrow" loading="lazy" />
             <div>Go Back</div>
           </div>
-          <div>DOGS</div>
+          <div>
+            <AnimatedTextWord text="DOGS" />
+          </div>
         </div>
         <div
           className="menu-icon"
@@ -219,7 +229,8 @@ const Dogs = () => {
           <div className="border-line"></div>
         </div>
         <Filters FiltersName={FiltersName} />
-        <ShoppingListCard />
+        <TopProduct />
+        <TopProduct />
         <div className="load-more">
           <div className="load-line"></div>
           <div className="text">
@@ -235,16 +246,33 @@ const Dogs = () => {
             note={"FIND THE RIGHT GIFT FOR THEM!"}
           />
         </div>
-        <div className="review">REVIEWS</div>
-        <ReviewSlider
-          background="transparent"
-          color="#00000"
-          des="#A75A40"
-          border="1px solid #665E2F"
-        />
-        <div className="btn">
-          <button className="button-review">Request the service</button>
-        </div>
+        <motion.div
+          whileInView={() => {
+            setIsInView(true);
+          }}
+          initial={{ y: "60vh" }}
+          animate={
+            isInView && {
+              y: 0,
+              transition: {
+                duration: 0.7,
+              },
+            }
+          }
+        >
+          <div className="review">
+            <AnimatedTextWord text="REVIEWS" />
+          </div>
+          <ReviewSlider
+            background="transparent"
+            color="#00000"
+            des="#A75A40"
+            border="1px solid #665E2F"
+          />
+          <div className="btn">
+            <button className="button-review">Request the service</button>
+          </div>
+        </motion.div>
         <ExploreShop />
         <div className="component-wrapper">
           <YellowBarContent requiredPersonalAssistance={false} />
