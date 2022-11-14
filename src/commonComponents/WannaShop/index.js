@@ -15,7 +15,8 @@ const WannaShopWrapper = styled.div`
 
   .search-part {
     position: relative;
-    top: -80px;
+    display: flex;
+    justify-content: center;
   }
   .search-input {
     border: none;
@@ -28,6 +29,18 @@ const WannaShopWrapper = styled.div`
     padding-bottom: 10px;
     border-bottom: 1px solid #a75b41 !important;
     background: transparent;
+  }
+  .search-box2 {
+    position: absolute;
+    background: #ffffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    height: 400px;
+    width: 380px;
+    padding: 15px;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    color: black;
   }
   .search-box {
     position: absolute;
@@ -113,6 +126,10 @@ const WannaShopWrapper = styled.div`
 
   .filter-part {
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0 20px;
+    max-width: 1100px;
   }
 
   .sort-by {
@@ -193,7 +210,6 @@ const WannaShopWrapper = styled.div`
     font-family: "Arial";
     font-style: normal;
     font-weight: 400;
-
     font-size: 13px;
   }
   .mood {
@@ -224,6 +240,86 @@ const WannaShopWrapper = styled.div`
     font-weight: 400;
     font-size: 80px;
   }
+  @media screen and (max-width: 1000px) {
+    .heading {
+      font-size: 60px;
+    }
+    .search-box2 {
+      right: 10px;
+    }
+    .image {
+      left: -100px;
+    }
+    .image2 {
+      right: -100px;
+    }
+  }
+  @media screen and (max-width: 800px) {
+    .heading {
+      font-size: 48px;
+    }
+    .search-input {
+      width: 280px;
+    }
+    .image {
+      left: -200px;
+    }
+    .image2 {
+      right: -200px;
+    }
+    .filter-section {
+      font-size: 30px;
+    }
+  }
+  @media screen and (max-width: 670px) {
+    .heading {
+      font-size: 36px;
+    }
+    .search-input {
+      width: 200px;
+      font-size: 30px;
+    }
+    .search-box2 {
+      width: 250px;
+      height: 320px;
+    }
+    .search-box {
+      width: 250px;
+      height: 320px;
+    }
+  }
+  @media screen and (max-width: 500px) {
+    .heading {
+      font-size: 28px;
+    }
+    .search-input {
+      width: 150px;
+      font-size: 18px;
+    }
+    .des {
+      font-size: 15px;
+    }
+    .search-box2 {
+      width: 200px;
+      height: 270px;
+      right: 10px;
+    }
+    .filter-section {
+      font-size: 27px;
+    }
+  }
+  @media screen and (max-width: 400px) {
+    .heading {
+      font-size: 24px;
+    }
+    .search-input {
+      width: 120px;
+      font-size: 16px;
+    }
+    .filter-section {
+      font-size: 30px;
+    }
+  }
 `;
 
 const data = ["halter dress", "strapless dress", "versace dress"];
@@ -237,7 +333,7 @@ const WannaShop = () => {
       <div className="middle-part">
         <div className="heading">I WANNA SHOP</div>
         <div className={searchBackground && "search-part"}>
-          <div className={searchBackground && "search-box"}>
+          <div className={searchBackground && "search-box2"}>
             {searchBackground && <div className="head">search</div>}
             <div className="search-logo">
               <input
@@ -296,8 +392,6 @@ const WannaShop = () => {
             css="search-box"
             data={data}
           />
-        </div>
-        <div style={{ display: "flex" }}>
           <span>with a</span>
           <SearchFilters
             type="Price Range"

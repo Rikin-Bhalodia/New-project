@@ -43,7 +43,6 @@ const Header = () => {
   }, []);
   return (
     <Headerwrapper>
-      {" "}
       <motion.section
         initial={{ y: "100vh", opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -55,19 +54,15 @@ const Header = () => {
             <div className="menuleftIcon">
               <ul>
                 <li>
-                  <a href="javascript:void(0)">
-                    <span>
-                      <input placeholder="Search Items" className="search" />
-                      <img src={Search} alt="search" className="search-icon" />
-                    </span>
-                  </a>
+                  <span>
+                    <input placeholder="Search Items" className="search" />
+                    <img src={Search} alt="search" className="search-icon" />
+                  </span>
                 </li>
                 <li>
-                  <a href="javascript:void(0)">
-                    <span>
-                      <img src={Mic} className="mic-icon" alt="" />
-                    </span>
-                  </a>
+                  <span>
+                    <img src={Mic} className="mic-icon" alt="" />
+                  </span>
                 </li>
               </ul>
             </div>
@@ -81,29 +76,24 @@ const Header = () => {
             <div className="menuleftIcon text-right">
               <ul>
                 <li>
-                  <a href="javascript:void(0)">
-                    <span>
-                      <img
-                        src={Profile}
-                        className="img-fluid smallHeaderIcon"
-                        alt=""
-                      />
-                    </span>
-                  </a>
+                  <span>
+                    <img
+                      src={Profile}
+                      className="img-fluid smallHeaderIcon"
+                      alt=""
+                    />
+                  </span>
                 </li>
                 <li>
-                  <a href="javascript:void(0)">
-                    <span>
-                      <img
-                        src={Heart}
-                        className="img-fluid smallHeaderIcon"
-                        alt=""
-                      />
-                    </span>
-                  </a>
+                  <span>
+                    <img
+                      src={Heart}
+                      className="img-fluid smallHeaderIcon"
+                      alt=""
+                    />
+                  </span>
                 </li>
                 <li>
-                  {/* <a href=""> */}
                   <span onClick={showModal}>
                     <img
                       src={Cart}
@@ -111,13 +101,11 @@ const Header = () => {
                       alt=""
                     />
                   </span>
-                  {/* </a> */}
                 </li>
               </ul>
             </div>
           </div>
         </div>
-        {/* </section> */}
         <Modal
           title="Basic Modal"
           open={isModalOpen}

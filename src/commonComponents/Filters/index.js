@@ -54,7 +54,7 @@ const FiltersWrapper = styled.div`
     display: flex;
     width: 100%;
     justify-content: space-between;
-    padding: 0 70px;
+    padding: 0 50px 0 70px;
   }
   .mood {
     border: 1px solid #d0d0d0;
@@ -116,8 +116,8 @@ const FiltersWrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
     position: relative;
-    width: 700px;
     float: right;
+    justify-content: center;
   }
   .range {
     display: flex;
@@ -160,6 +160,30 @@ const FiltersWrapper = styled.div`
   .sort-by-drop {
     position: relative;
   }
+  @media screen and (max-width: 670px) {
+    .filter {
+      padding: 20px;
+    }
+    .drop-down-right {
+      justify-content: end;
+      margin: 0;
+    }
+    .drop-down {
+      width: 150px;
+    }
+  }
+  @media screen and (max-width: 550px) {
+    .drop-down {
+      width: 110px;
+    }
+    .sort-by {
+      font-size: 12px;
+    }
+    .mood {
+      height: 40px;
+      font-size: 12px;
+    }
+  }
 `;
 
 const options = [
@@ -172,6 +196,7 @@ const options = [
 const Filters = ({ FiltersName }) => {
   const [id, setId] = useState("");
   const [flag, setFlag] = useState(false);
+
   return (
     <FiltersWrapper>
       <div className="filter">

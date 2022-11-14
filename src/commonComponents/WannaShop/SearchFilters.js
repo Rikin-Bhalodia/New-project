@@ -7,6 +7,7 @@ const SearchFiltersWrapper = styled.div`
     width: 210px !important;
     z-index: 9999;
     margin-left: 15px;
+    position: relative;
     color: white;
     ::placeholder {
       color: white;
@@ -22,7 +23,7 @@ const SearchFiltersWrapper = styled.div`
     border: none;
     color: #a75b41;
     z-index: 99;
-    font-size: 33px !important;
+    font-size: 33px;
   }
   .contents {
     margin-top: 20px;
@@ -80,6 +81,23 @@ const SearchFiltersWrapper = styled.div`
     display: flex;
     flex-direction: column;
     color: black;
+  }
+  @media screen and (max-width: 800px) {
+    .search-input-brand {
+      font-size: 31px;
+      width: 280px;
+    }
+  }
+  @media screen and (max-width: 670px) {
+    .search-input-brand {
+      font-size: 31px;
+      width: 200px;
+    }
+  }
+  @media screen and (max-width: 500px) {
+    .search-input-brand {
+      font-size: 28px;
+    }
   }
 `;
 
