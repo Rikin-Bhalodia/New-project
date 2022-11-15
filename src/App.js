@@ -78,11 +78,11 @@ const NFTMetaVerse = React.lazy(() =>
   import("./components/service/NFT/NFTMetaVerse")
 );
 const CheckoutForm = React.lazy(() =>
-  import("./components/checkout-flow/CheckoutForm.js")
-)
+  import("./components/checkout-flow/checkoutForm")
+);
 const CheckoutCard = React.lazy(() =>
   import("./components/checkout-flow/CheckoutCard")
-)
+);
 
 function App() {
   const { pathname } = useLocation();

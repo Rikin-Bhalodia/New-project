@@ -7,10 +7,10 @@ import GPay from "../../assets/images/payment-card-images/GooglePayImage.svg";
 import PPal from "../../assets/images/payment-card-images/Paypal.svg";
 import Paytm from "../../assets/images/payment-card-images/PaytmImage.svg";
 import Phonepe from "../../assets/images/payment-card-images/Phonepe.svg";
-import Polygon from "../../assets/images/polygon-right.svg"
+import Polygon from "../../assets/images/polygon-right.svg";
 
-const CheckoutCardWrapper = styled  .div`
- position: relative;
+const CheckoutCardWrapper = styled.div`
+  position: relative;
   margin: auto;
   .polygon-left {
     position: absolute;
@@ -46,9 +46,9 @@ const CheckoutCardWrapper = styled  .div`
     margin: 70px 150px 0px 150px;
   }
   .checkout-contents {
-     margin: 150px 0px 70px 0px;  
+    margin: 150px 0px 70px 0px;
   }
-    .checkout-card {
+  .checkout-card {
     display: flex;
     margin-top: 73.68px;
     font-family: "Mulish";
@@ -97,8 +97,8 @@ const CheckoutCardWrapper = styled  .div`
   .checkout-form-group {
     margin-bottom: 15px;
   }
-  .checkout-checkbox-input{
-      margin-left: 20px;
+  .checkout-checkbox-input {
+    margin-left: 20px;
   }
   .checkout-form-group input {
     font-family: "Coral Blush";
@@ -140,7 +140,7 @@ const CheckoutCard = () => {
   return (
     <>
       <CheckoutCardWrapper>
-      <img
+        <img
           src={Polygon}
           alt="triangle-lr"
           className="polygon-left"

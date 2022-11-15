@@ -18,13 +18,22 @@ const StudioWrapper = styled.div`
     display: flex;
     text-transform: uppercase;
     align-items: center;
-    height: 56px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
     font-size: 16px;
     font-weight: 700;
     width: 100%;
+    margin-bottom: 30px;
   }
   .item {
     padding-right: 30px;
+  }
+  .sliderInerDetials {
+    color: #a65a40;
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-transform: uppercase;
   }
 
   .blog-grid {
@@ -32,6 +41,84 @@ const StudioWrapper = styled.div`
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     padding: 0 30px;
+  }
+
+  @media screen and (max-width: 1000px) {
+    .studio-s3 h2 {
+      font-size: 5rem;
+    }
+    .studio-s4 h2 {
+      font-size: 4rem;
+    }
+    .studioBlogMenu {
+      gap: 20px;
+    }
+    .blog-box {
+      width: 350px;
+      height: 300px;
+    }
+    .explore-more a h3 {
+      font-size: 3.5rem !important;
+    }
+  }
+  @media screen and (max-width: 800px) {
+    .studio-s3 h2 {
+      font-size: 4rem;
+    }
+    .studio-s4 h2 {
+      font-size: 4rem;
+    }
+    .sliderInerDetials {
+      font-size: 24px;
+    }
+    .explore-more a h3 {
+      font-size: 3rem !important;
+    }
+  }
+  @media screen and (max-width: 670px) {
+    .studio-s3 h2 {
+      font-size: 3rem;
+    }
+    .studio-s4 h2 {
+      font-size: 4rem;
+    }
+    .studioBlogMenu {
+      font-size: 14px;
+    }
+    .explore-more a h3 {
+      font-size: 2.5rem !important;
+    }
+  }
+  @media screen and (max-width: 500px) {
+    .studio-s3 h2 {
+      font-size: 2.3rem;
+    }
+    .studio-s4 h2 {
+      font-size: 4rem;
+    }
+    .studioBlogMenu {
+      font-size: 13px;
+    }
+    .sliderInerDetials {
+      font-size: 20px;
+    }
+    .explore-more a h3 {
+      font-size: 2rem !important;
+    }
+  }
+  @media screen and (max-width: 400px) {
+    .studio-s3 h2 {
+      font-size: 2rem;
+    }
+    .studio-s4 h2 {
+      font-size: 4rem;
+    }
+    .studioBlogMenu {
+      font-size: 12px;
+    }
+    .sliderInerDetials {
+      font-size: 18px;
+    }
   }
 `;
 
@@ -135,26 +222,22 @@ const Studio = () => {
             </h2>
 
             <div className="studioBlogMenu">
-              <div className="list-unstyled d-flex mb-5 " id="blogSlider">
-                <div className="item">lifestyle</div>
-                <div className="item">jewellery</div>
-                <div className="item">beauty</div>
-                <div className="item">vacation</div>
-                <div className="item">new in</div>
-                <div className="item">lifestyle</div>
-                <div className="item">jewellery</div>
-                <div className="item">beauty</div>
-                <div className="item">vacation</div>
-              </div>
+              {/* <div className="list-unstyled d-flex mb-5 "> */}
+              <div className="item">lifestyle</div>
+              <div className="item">jewellery</div>
+              <div className="item">beauty</div>
+              <div className="item">vacation</div>
+              <div className="item">new in</div>
+              <div className="item">lifestyle</div>
+              <div className="item">jewellery</div>
+              <div className="item">beauty</div>
+              <div className="item">vacation</div>
+              {/* </div> */}
             </div>
             <div className="blogDetailsMenu">
               <div>
                 <div>
-                  <div className="sliderInerDetials">
-                    <h3 className=" brwonColor font-22 mainColor  wow fadeIn">
-                      15 second videos
-                    </h3>
-                  </div>
+                  <div className="sliderInerDetials">15 second videos</div>
                   <Slider />
                 </div>
                 <div className="viewmore  wow fadeIn">
@@ -163,11 +246,7 @@ const Studio = () => {
               </div>
               <div>
                 <div>
-                  <div className="sliderInerDetials">
-                    <h3 className=" brwonColor font-22 mainColor  wow fadeInUp">
-                      60 second videos
-                    </h3>
-                  </div>
+                  <div className="sliderInerDetials">60 second videos</div>
                   <Slider />
                 </div>
                 <div className="viewmore  wow fadeInUp">
@@ -176,11 +255,7 @@ const Studio = () => {
               </div>
               <div>
                 <div>
-                  <div className="sliderInerDetials">
-                    <h3 className=" brwonColor font-22  wow fadeInUp mainColor">
-                      behind the scenes
-                    </h3>
-                  </div>
+                  <div className="sliderInerDetials">behind the scenes</div>
                   <Slider />
                 </div>
                 <div className="viewmore  wow fadeInUp">
@@ -204,17 +279,15 @@ const Studio = () => {
             </h2>
 
             <div className="studioBlogMenu">
-              <div className="list-unstyled d-flex mb-5 " id="blogSlider">
-                <div className="item">lifestyle</div>
-                <div className="item">jewellery</div>
-                <div className="item">beauty</div>
-                <div className="item">vacation</div>
-                <div className="item">new in</div>
-                <div className="item">lifestyle</div>
-                <div className="item">jewellery</div>
-                <div className="item">beauty</div>
-                <div className="item">vacation</div>
-              </div>
+              <div className="item">lifestyle</div>
+              <div className="item">jewellery</div>
+              <div className="item">beauty</div>
+              <div className="item">vacation</div>
+              <div className="item">new in</div>
+              <div className="item">lifestyle</div>
+              <div className="item">jewellery</div>
+              <div className="item">beauty</div>
+              <div className="item">vacation</div>
             </div>
           </div>
           <div className="blog-grid">

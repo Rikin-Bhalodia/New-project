@@ -89,7 +89,6 @@ export default function StudioProduct() {
 
   return (
     <>
-      {/* <Header /> */}
       <StudioProductWrapper>
         <img
           src={Polygon}
