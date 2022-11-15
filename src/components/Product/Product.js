@@ -9,7 +9,6 @@ import styled from "styled-components";
 import Filters from "../../commonComponents/Filters";
 
 const ProductPoPWrapper = styled.div`
-  margin-top: 100px;
   .goback {
     margin-left: 40px;
     display: flex;
@@ -51,6 +50,11 @@ const ProductPoPWrapper = styled.div`
     margin-bottom: 15px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
+  @media screen and (max-width: 1000px) {
+    .heading {
+      font-size: 60;
+    }
+  }
 `;
 
 const images = [
@@ -58,7 +62,7 @@ const images = [
     img: Product1,
     id: 1,
     height: 310,
-    width: 200,
+    width: "25%",
     class: "product-image",
     price: "₹1900",
   },
@@ -66,7 +70,7 @@ const images = [
     img: Product2,
     id: 2,
     height: 450,
-    width: 300,
+    width: "50%",
     class: "product-image",
     price: "₹1900",
   },
@@ -74,7 +78,7 @@ const images = [
     img: Product3,
     id: 3,
     height: 310,
-    width: 200,
+    width: "25%",
     class: "product-image",
     price: "₹1900",
   },
@@ -84,13 +88,13 @@ const images = [
     height: 310,
     class: "product-image",
     price: "₹1900",
-    width: 200,
+    width: "25%",
   },
   {
     img: Product4,
     id: 5,
     height: 450,
-    width: 300,
+    width: "50%",
     class: "product-image",
     price: "₹1900",
   },
@@ -102,13 +106,13 @@ const images = [
     class: "product-image",
     price: "₹1900",
 
-    width: 200,
+    width: "25%",
   },
   {
     img: Product2,
     id: 7,
     height: 450,
-    width: 300,
+    width: "50%",
     class: "product-image1",
     price: "₹1900",
   },
@@ -116,7 +120,7 @@ const images = [
     img: Product4,
     id: 8,
     height: 450,
-    width: 300,
+    width: "50%",
     class: "product-image1",
     price: "₹1900",
   },
@@ -124,7 +128,7 @@ const images = [
     img: Product1,
     id: 9,
     height: 310,
-    width: 200,
+    width: "33.33%",
     class: "product-image",
     price: "₹1900",
   },
@@ -136,13 +140,13 @@ const images = [
     class: "product-image",
     price: "₹1900",
 
-    width: 200,
+    width: "33.33%",
   },
   {
     img: Product5,
     id: 11,
     height: 310,
-    width: 200,
+    width: "33.33%",
     class: "product-image",
     price: "₹1900",
   },
@@ -180,24 +184,45 @@ const ProductPoP = () => {
       <div className="product">
         {images.map((ele) => {
           return (
-            <>
+            <div
+              style={{
+                width: ele.width,
+                height: "fit-content",
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
               <img
                 loading="lazy"
                 src={ele.img}
                 alt="img"
-                className={ele.class}
                 height={ele.height}
-                width={ele.width}
+                className={ele.class}
                 onClick={() => handleClick(ele.id)}
                 style={
                   productId
                     ? productId === ele.id
-                      ? { opacity: 1 }
-                      : { opacity: 0.5 }
-                    : { opacity: 1 }
+                      ? {
+                          opacity: 1,
+                          width: "70%",
+                          maxWidth: "350px",
+                          height: "100%",
+                        }
+                      : {
+                          opacity: 0.5,
+                          width: "70%",
+                          maxWidth: "350px",
+                          height: "100%",
+                        }
+                    : {
+                        opacity: 1,
+                        width: "70%",
+                        maxWidth: "350px",
+                        height: "100%",
+                      }
                 }
               />
-            </>
+            </div>
           );
         })}
       </div>

@@ -1,15 +1,21 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Menu from "../../../commonComponents/Menu";
-import WannaShop from "../../../commonComponents/WannaShop";
 import MenuIcon from "../../../assets/images/studio/menu.svg";
 import BackArrow from "../../../assets/images/product/back-arrow.svg";
 import BannerImage from "../../../assets/images/nfts/banner.svg";
-import TopProduct from "../../brand/TopProduct";
 import { ReviewSlider } from "../Grooming/ReviewSlider";
-import YellowBarContent from "../Common/YellowBarContent";
-import Filters from "../../../commonComponents/Filters";
 import { NftIcons } from "../../../utils";
+import { motion } from "framer-motion";
+const Menu = React.lazy(() => import("../../../commonComponents/Menu"));
+const TopProduct = React.lazy(() => import("../../brand/TopProduct"));
+const YellowBarContent = React.lazy(() => import("../Common/YellowBarContent"));
+const Filters = React.lazy(() => import("../../../commonComponents/Filters"));
+const AnimatedTextWord = React.lazy(() =>
+  import("../../../commonComponents/Animation/FlipAnimation")
+);
+const WannaShop = React.lazy(() =>
+  import("../../../commonComponents/WannaShop")
+);
 
 const BuyNFTsWrapper = styled.div`
   width: 100%;
@@ -27,6 +33,8 @@ const BuyNFTsWrapper = styled.div`
     align-items: center;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.43), rgba(0, 0, 0, 0.43)),
       url(${BannerImage});
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   .goback {
     margin-left: 40px;
@@ -125,64 +133,83 @@ const BuyNFTs = () => {
   const [menuOpenModal, setMenuOpenModal] = useState(false);
   return (
     <BuyNFTsWrapper>
-      <div className="heading-part">
-        <div className="goback">
-          <img src={BackArrow} alt="back-arrow" />
-          <div>Go Back</div>
-        </div>
-        <div>BUY NFT</div>
-      </div>
-      <div
-        className="menu-icon"
-        onClick={() => setMenuOpenModal(!menuOpenModal)}
+      <motion.div
+        initial={{ y: "200vh" }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.6 }}
       >
-        <Menu
-          menuOpenModal={menuOpenModal}
-          onClick={(e) => e.stopPropagation()}
-        />
-        {menuOpenModal ? (
-          <img loading="lazy" src={MenuIcon} alt="menu" height={45} />
-        ) : (
-          <img loading="lazy" src={MenuIcon} alt="menu" height={45} />
-        )}
-      </div>
-      <WannaShop />
-      <div className="icons">
-        {NftIcons.map(({ img, name }) => {
-          return (
-            <div className="icon">
-              <img loading="lazy" src={img} alt="icon" height={40} width={60} />
-              <div className="icon-name">{name}</div>
-            </div>
-          );
-        })}
-      </div>
-      <div className="line">
-        <div className="border-line"></div>
-      </div>
-      <Filters FiltersName={FiltersName} />
-      <TopProduct />
-      <TopProduct />
-      <TopProduct />
-      <TopProduct />
-      <div className="load-more">
-        <div className="line2"></div>
-        <div className="text1">
-          <div>LOAD</div>
-          <div className="plus1">+</div>
-          <div>MORE</div>
+        <div className="heading-part">
+          <motion.div
+            initial={{ x: "-100vw" }}
+            animate={{ x: 0 }}
+            transition={{ duration: 2, type: "spring", damping: 7 }}
+            className="goback"
+          >
+            <img src={BackArrow} alt="back-arrow" />
+            <div>Go Back</div>
+          </motion.div>
+          <div>
+            <AnimatedTextWord text="BUY NFT" />
+          </div>
         </div>
-        <div className="line2"></div>
-      </div>
-      <div className="slider-review">
-        <ReviewSlider
-          background="transparent"
-          color="#00000"
-          des="#A75A40"
-          border="1px solid #665E2F"
-        />
-      </div>
-      <YellowBarContent requiredPersonalAssistance={true} />
+        <div
+          className="menu-icon"
+          onClick={() => setMenuOpenModal(!menuOpenModal)}
+        >
+          <Menu
+            menuOpenModal={menuOpenModal}
+            onClick={(e) => e.stopPropagation()}
+          />
+          {menuOpenModal ? (
+            <img loading="lazy" src={MenuIcon} alt="menu" height={45} />
+          ) : (
+            <img loading="lazy" src={MenuIcon} alt="menu" height={45} />
+          )}
+        </div>
+        <WannaShop />
+        <div className="icons">
+          {NftIcons.map(({ img, name }) => {
+            return (
+              <div className="icon">
+                <img
+                  loading="lazy"
+                  src={img}
+                  alt="icon"
+                  height={40}
+                  width={60}
+                />
+                <div className="icon-name">{name}</div>
+              </div>
+            );
+          })}
+        </div>
+        <div className="line">
+          <div className="border-line"></div>
+        </div>
+        <Filters FiltersName={FiltersName} />
+        <TopProduct />
+        <TopProduct />
+        <TopProduct />
+        <TopProduct />
+        <div className="load-more">
+          <div className="line2"></div>
+          <div className="text1">
+            <div>LOAD</div>
+            <div className="plus1">+</div>
+            <div>MORE</div>
+          </div>
+          <div className="line2"></div>
+        </div>
+        <div className="slider-review">
+          <ReviewSlider
+            background="transparent"
+            color="#00000"
+            des="#A75A40"
+            border="1px solid #665E2F"
+          />
+        </div>
+        <YellowBarContent requiredPersonalAssistance={true} />
+      </motion.div>
     </BuyNFTsWrapper>
   );
 };

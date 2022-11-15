@@ -1,14 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import studioInner5 from "../../assets/images/img/studioInner-1.jpg";
-import studioInner1 from "../../assets/images/img/studioInner-1.jpg";
-import studioInner2 from "../../assets/images/img/studioInner-2.jpg";
 import studioInner3 from "../../assets/images/img/studioInner-3.jpg";
-import studioInner4 from "../../assets/images/img/studioInner-4.jpg";
-import Menu from "../../commonComponents/Menu";
-import MenuIcon from "../../assets/images/studio/menu.svg";
-import img1 from "../../assets/images/shop-hover/img1.svg";
-import img2 from "../../assets/images/shop-hover/img2.svg";
 import { motion } from "framer-motion";
 
 const ServiceHoverWrapper = styled.div`
@@ -16,7 +9,6 @@ const ServiceHoverWrapper = styled.div`
     display: flex;
     justify-content: center;
     text-align: center;
-    /* padding: 100px 0; */
     width: 100vw;
     position: relative;
   }

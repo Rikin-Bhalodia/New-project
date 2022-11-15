@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import SellFast from "../../assets/images/nfts/sell-fast.svg";
 import EarnMore from "../../assets/images/nfts/earn-more.svg";
 import Chat from "../../assets/images/nfts/chat.svg";
+import AnimatedTextWord from "../Animation/FlipAnimation";
+import { motion } from "framer-motion";
 
 const BenefitsWrapper = styled.div`
   .category {
@@ -22,6 +24,8 @@ const BenefitsWrapper = styled.div`
     font-weight: 400;
     font-size: 50px;
     margin-top: 20px;
+    display: flex;
+    justify-content: center;
   }
   .titles {
     font-family: "Mulish";
@@ -40,16 +44,51 @@ const BenefitsWrapper = styled.div`
 `;
 
 const Benefits = () => {
+  const [isInView, setIsInView] = useState(false);
   return (
     <BenefitsWrapper>
-      <div className="benefits">BENEFITS</div>
+      <div className="benefits">
+        <AnimatedTextWord text="BENEFITS" />
+      </div>
       <div className="category">
         <div className="container">
           <img src={SellFast} alt="sell-fast" height={120} />
-          <div className="titles">SELL FAST</div>
-          <div className="details">
+          <motion.div
+            whileInView={() => {
+              setIsInView(true);
+            }}
+            initial={{ rotateX: "90deg", y: "10vh" }}
+            animate={
+              isInView && {
+                rotateX: 0,
+                y: 0,
+                transition: {
+                  duration: 1.2,
+                },
+              }
+            }
+            className="titles"
+          >
+            SELL FAST
+          </motion.div>
+          <motion.div
+            whileInView={() => {
+              setIsInView(true);
+            }}
+            initial={{ rotateX: "90deg", y: "10vh" }}
+            animate={
+              isInView && {
+                rotateX: 0,
+                y: 0,
+                transition: {
+                  duration: 1.2,
+                },
+              }
+            }
+            className="details"
+          >
             Most of the products sell within 30 days
-          </div>
+          </motion.div>
         </div>
         <div className="container">
           <img
@@ -58,11 +97,60 @@ const Benefits = () => {
             height={90}
             style={{ margin: "15px" }}
           />
-          <div className="titles">EARN MORE</div>
-          <div className="details">
+          <motion.div
+            whileInView={() => {
+              setIsInView(true);
+            }}
+            initial={{ rotateX: "90deg", y: "10vh" }}
+            animate={
+              isInView && {
+                rotateX: 0,
+                y: 0,
+                transition: {
+                  duration: 1.2,
+                },
+              }
+            }
+            className="titles"
+          >
+            EARN MORE
+          </motion.div>
+          <motion.div
+            whileInView={() => {
+              setIsInView(true);
+            }}
+            initial={{ rotateX: "90deg", y: "10vh" }}
+            animate={
+              isInView && {
+                rotateX: 0,
+                y: 0,
+                transition: {
+                  duration: 1.2,
+                },
+              }
+            }
+            className="details"
+          >
             Earn upto 75% of the buying price, 3x more than{" "}
-          </div>
-          <div className="details">other resllers</div>
+          </motion.div>
+          <motion.div
+            whileInView={() => {
+              setIsInView(true);
+            }}
+            initial={{ rotateX: "90deg", y: "10vh" }}
+            animate={
+              isInView && {
+                rotateX: 0,
+                y: 0,
+                transition: {
+                  duration: 1.2,
+                },
+              }
+            }
+            className="details"
+          >
+            other resllers
+          </motion.div>
         </div>
         <div className="container">
           <img
@@ -71,11 +159,61 @@ const Benefits = () => {
             height={90}
             style={{ margin: "15px" }}
           />
-          <div className="titles">WE MAKE IT EASY</div>
-          <div className="details">
+          <motion.div
+            whileInView={() => {
+              setIsInView(true);
+            }}
+            initial={{ rotateX: "90deg", y: "10vh" }}
+            animate={
+              isInView && {
+                rotateX: 0,
+                y: 0,
+                transition: {
+                  duration: 1.2,
+                },
+              }
+            }
+            className="titles"
+          >
+            WE MAKE IT EASY
+          </motion.div>
+          <motion.div
+            whileInView={() => {
+              setIsInView(true);
+            }}
+            initial={{ rotateX: "90deg", y: "10vh" }}
+            animate={
+              isInView && {
+                rotateX: 0,
+                y: 0,
+                transition: {
+                  duration: 1.2,
+                },
+              }
+            }
+            className="details"
+          >
             We are here to help you earn through yor luxury
-          </div>
-          <div className="details"> products </div>
+          </motion.div>
+          <motion.div
+            whileInView={() => {
+              setIsInView(true);
+            }}
+            initial={{ rotateX: "90deg", y: "10vh" }}
+            animate={
+              isInView && {
+                rotateX: 0,
+                y: 0,
+                transition: {
+                  duration: 1.2,
+                },
+              }
+            }
+            className="details"
+          >
+            {" "}
+            products{" "}
+          </motion.div>
         </div>
       </div>
     </BenefitsWrapper>

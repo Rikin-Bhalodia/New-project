@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Sell from "../../assets/images/nfts/sell.svg";
+import AnimatedTextWord from "../Animation/FlipAnimation";
+import { motion } from "framer-motion";
 
 const WhyWithUsWrapper = styled.div`
   width: 100%;
@@ -17,6 +19,8 @@ const WhyWithUsWrapper = styled.div`
   .why {
     font-size: 100px;
     text-align: right;
+    display: flex;
+    justify-content: flex-end;
   }
   .withus {
     font-size: 40px;
@@ -37,16 +41,50 @@ const WhyWithUsWrapper = styled.div`
   }
 `;
 const WhyWithUs = () => {
+  const [isInView, setIsInView] = useState(false);
+
   return (
     <>
       <WhyWithUsWrapper>
         <div className="whywithus">
-          <div className="why">WHY</div>
-          <div className="withus">WITH US</div>
+          <div className="why">
+            <AnimatedTextWord text="WHY" />
+          </div>
+          <motion.div
+            whileInView={() => {
+              setIsInView(true);
+            }}
+            initial={{ x: "-50vw" }}
+            animate={
+              isInView && {
+                x: 0,
+                transition: {
+                  duration: 1,
+                },
+              }
+            }
+            className="withus"
+          >
+            WITH US
+          </motion.div>
         </div>
         <div className="sell-part">
           <img src={Sell} alt="sell" height={170} />
-          <div className="content-para">
+          <motion.div
+            whileInView={() => {
+              setIsInView(true);
+            }}
+            initial={{ x: "50vw" }}
+            animate={
+              isInView && {
+                x: 0,
+                transition: {
+                  duration: 1,
+                },
+              }
+            }
+            className="content-para"
+          >
             <div>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -64,7 +102,7 @@ const WhyWithUs = () => {
               habitasse platea dictumst quisque sagittis. Nunc aliquet bibendum
               enim facilisis gravida neque convallis a.
             </div>
-          </div>
+          </motion.div>
         </div>
       </WhyWithUsWrapper>
       <div className="line">
