@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Star from "../../assets/images/nfts/star.svg";
 import Upload from "../../assets/images/nfts/upload.svg";
+import { motion } from "framer-motion";
 
 const FromWrapper = styled.div`
   .form-inputs {
@@ -199,13 +200,31 @@ const Fields = [
   },
 ];
 const From = () => {
+  const [isInView, setIsInView] = useState(false);
+
   return (
     <FromWrapper>
-      <div className="fields-marked">
+      <motion.div
+        whileInView={() => {
+          setIsInView(true);
+        }}
+        initial={{ x: "-60vw" }}
+        animate={
+          isInView && {
+            x: 0,
+            transition: {
+              duration: 3,
+              type: "spring",
+              damping: 8,
+            },
+          }
+        }
+        className="fields-marked"
+      >
         Fields marked with
         <img src={Star} alt="star" />
         compulsory to fill.
-      </div>
+      </motion.div>
       <div className="form-inputs">
         {Fields.map(({ img, placeholder, type, width }) => {
           return (
@@ -277,9 +296,24 @@ const From = () => {
           );
         })}
       </div>
-      <div className="button-wrapper">
+      <motion.div
+        whileInView={() => {
+          setIsInView(true);
+        }}
+        initial={{ y: "50vh", opacity: 0 }}
+        animate={
+          isInView && {
+            y: 0,
+            opacity: 1,
+            transition: {
+              duration: 0.7,
+            },
+          }
+        }
+        className="button-wrapper"
+      >
         <div className="add-item">ADD ITEM</div>
-      </div>
+      </motion.div>
     </FromWrapper>
   );
 };
