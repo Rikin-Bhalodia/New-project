@@ -78,7 +78,10 @@ const NFTMetaVerse = React.lazy(() =>
   import("./components/service/NFT/NFTMetaVerse")
 );
 const CheckoutForm = React.lazy(() =>
-  import("./components/checkout-flow/checkoutForm.js")
+  import("./components/checkout-flow/CheckoutForm.js")
+)
+const CheckoutCard = React.lazy(() =>
+  import("./components/checkout-flow/CheckoutCard")
 )
 
 function App() {
@@ -155,6 +158,7 @@ function App() {
         <Route path="/service-celebration" element={<ServiceCelebration />} />
         <Route path="/nft-metaverse" element={<NFTMetaVerse />} />
         <Route path="/checkout-form" element={<CheckoutForm />} />
+        <Route path="/checkout-card" element={<CheckoutCard />} />
       </Routes>
       {pathname !== "/sub-menu1" && pathname !== "/sub-menu2" && <Footer />}
       {/* </ScrollContainer> */}

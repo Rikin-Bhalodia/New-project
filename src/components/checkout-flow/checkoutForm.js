@@ -159,7 +159,7 @@ const FormWrapper = styled.div`
   `;
 
 
-const checkoutForm = () => {
+const CheckoutForm = () => {
   return (
     <>
       <FormWrapper>
@@ -259,4 +259,4 @@ const checkoutForm = () => {
   );
 };
 
-export default checkoutForm;
+export default CheckoutForm;
