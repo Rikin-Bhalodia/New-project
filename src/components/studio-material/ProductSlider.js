@@ -37,6 +37,32 @@ const ProductImgSliderWrapper = styled.div`
       }
     }
   }
+  @media (max-width: 1000px) {
+    padding: 0;
+    .slider-box {
+      img {
+        width: 180px;
+        height: 180px;
+      }
+      .details {
+        h4 {
+          font-size: 18px;
+        }
+        p {
+          font-size: 12px;
+          padding: 15px 0 20px;
+        }
+      }
+    }
+  }
+  @media (max-width: 550px) {
+    .slider-box {
+      img {
+        width: 150px;
+        height: 150px;
+      }
+    }
+  }
 `;
 
 export default function ProductImgSlider() {
@@ -59,8 +85,32 @@ export default function ProductImgSlider() {
         }
       >
         <Swiper
-          slidesPerView={3}
-          spaceBetween={30}
+          breakpoints={{
+            260: {
+              slidesPerView: 1,
+              spaceBetween: 10,
+            },
+            450: {
+              slidesPerView: 1.5,
+              spaceBetween: 10,
+            },
+            550: {
+              slidesPerView: 2,
+              spaceBetween: 15,
+            },
+            700: {
+              slidesPerView: 2.5,
+              spaceBetween: 20,
+            },
+            1075: {
+              slidesPerView: 3,
+              spaceBetween: 20,
+            },
+            1500: {
+              slidesPerView: 4,
+              spaceBetween: 30,
+            },
+          }}
           className="mySwiper"
           style={{ height: "100%" }}
           autoplay={{

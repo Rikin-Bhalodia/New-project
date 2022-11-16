@@ -1,7 +1,7 @@
-import { useMediaQuery } from "react-responsive";
+import React from "react";
 
-export const isDesktopOrLaptop = useMediaQuery({
-  query: "(min-width: 1224px)",
-});
-export const isBigScreen = useMediaQuery({ query: "(min-width: 1824px)" });
-export const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1000px)" });
+const index = () => {
+  return <div>index</div>;
+};
+
+export default index;

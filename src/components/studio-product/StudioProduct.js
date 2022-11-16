@@ -4,6 +4,7 @@ import Video from "../../assets/images/studio-product/video.svg";
 import Polygon from "../../assets/images/polygon-left.svg";
 // import Header from "../../commonComponents/Header";
 import { motion } from "framer-motion";
+import { useMediaQuery } from "react-responsive";
 import Menu from "../../commonComponents/Menu";
 import MenuIcon from "../../assets/images/product-section/menuIcon.svg";
 
@@ -13,13 +14,13 @@ const WatchMoreSlider = React.lazy(() => import("./WatchMoreSlider"));
 
 const StudioProductWrapper = styled.div`
   position: relative;
-  margin-top: 60px;
   .polygon-left {
     position: absolute;
     height: 1000px;
     z-index: -1;
   }
   .studio-product-head {
+    margin-top: 60px;
     display: flex;
     position: relative;
     height: 170px;
@@ -82,10 +83,39 @@ const StudioProductWrapper = styled.div`
       }
     }
   }
+  @media screen and (max-width: 800px) {
+    /* background: url(${Video});
+    height: 545px;
+    background-size: cover;
+    width: 100%; */
+    .studio-product-body {
+      flex-direction: column;
+    }
+    .studio-product-head {
+      margin: 0;
+      .leftside-area {
+        padding: 0px 0 0 20px;
+        margin-top: 40px;
+        .goback-link {
+          a {
+            color: #ffffff;
+          }
+        }
+        .product-head {
+          p {
+            color: #ffffff;
+          }
+        }
+      }
+    }
+  }
 `;
 
 export default function StudioProduct() {
   const [menuOpenModal, setMenuOpenModal] = useState(false);
+  const isResponsive = useMediaQuery({ query: "(max-width: 800px)" });
+
+  console.log(isResponsive, "isResponsive");
 
   return (
     <>
@@ -97,7 +127,7 @@ export default function StudioProduct() {
           loading="lazy"
         />
         <motion.div
-          className="container-fluid px-5"
+          className={` ${isResponsive ? "" : "container-fluid px-5"}`}
           initial={{ y: "200vh" }}
           animate={{ y: 0 }}
           transition={{ duration: 0.6 }}
@@ -116,54 +146,63 @@ export default function StudioProduct() {
                 <p>STUDIO / CHANEL’S MOST EXPENSIVE PRODUCTS</p>
               </motion.div>
             </div>
-            <div className="rightside-area">
-              <div className="homePageButtonSection">
-                <div
-                  className="menu-icon"
-                  onClick={() => setMenuOpenModal(!menuOpenModal)}
-                >
-                  <Menu
-                    menuOpenModal={menuOpenModal}
-                    onClick={(e) => e.stopPropagation()}
-                  />
-                  {menuOpenModal ? (
-                    <img
-                      src={MenuIcon}
-                      loading="lazy"
-                      alt="menu"
-                      height={100}
+            {!isResponsive && (
+              <div className="rightside-area">
+                <div className="homePageButtonSection">
+                  <div
+                    className="menu-icon"
+                    onClick={() => setMenuOpenModal(!menuOpenModal)}
+                  >
+                    <Menu
+                      menuOpenModal={menuOpenModal}
+                      onClick={(e) => e.stopPropagation()}
                     />
-                  ) : (
-                    <img
-                      src={MenuIcon}
-                      loading="lazy"
-                      alt="menu"
-                      height={100}
-                    />
-                  )}
+                    {menuOpenModal ? (
+                      <img
+                        src={MenuIcon}
+                        loading="lazy"
+                        alt="menu"
+                        height={100}
+                      />
+                    ) : (
+                      <img
+                        src={MenuIcon}
+                        loading="lazy"
+                        alt="menu"
+                        height={100}
+                      />
+                    )}
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+          {!isResponsive && (
+            <div className="studio-product-body">
+              <div className="studio-product-video">
+                <img
+                  src={Video}
+                  alt="videoImg"
+                  width={"500px"}
+                  loading="lazy"
+                />
+              </div>
+              <div className="box-area">
+                <div className="product-box">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                    occaecat cupidatat non proident, sunt in culpa qui officia
+                    deserunt mollit anim id est laboru
+                  </p>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="studio-product-body">
-            <div className="studio-product-video">
-              <img src={Video} alt="videoImg" width={"500px"} loading="lazy" />
-            </div>
-            <div className="box-area">
-              <div className="product-box">
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum
-                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                  cupidatat non proident, sunt in culpa qui officia deserunt
-                  mollit anim id est laboru
-                </p>
-              </div>
-            </div>
-          </div>
+          )}
         </motion.div>
       </StudioProductWrapper>
       <SimillerProduct />

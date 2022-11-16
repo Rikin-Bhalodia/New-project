@@ -49,6 +49,38 @@ const ReletedServicesWrapper = styled.div`
     text-align: center;
     color: #a79586;
   }
+  @media (max-width: 1000px) {
+    .related-service {
+      width: 550px;
+    }
+  }
+  @media (max-width: 800px) {
+    .related-service {
+      width: 450px;
+    }
+    .para {
+      font-size: 16px;
+    }
+    p {
+      font-size: 14px;
+    }
+  }
+  @media (max-width: 670px) {
+    .related-service {
+      width: 350px;
+    }
+  }
+  @media (max-width: 500px) {
+    .related-service {
+      width: 310px;
+    }
+    .para {
+      font-size: 14px;
+    }
+    p {
+      font-size: 12px;
+    }
+  }
 `;
 
 export default function ReletedServices() {
@@ -57,7 +89,12 @@ export default function ReletedServices() {
   return (
     <ReletedServicesWrapper>
       <div className="head">
-        <img src={Releted} alt="releted-head" loading="lazy" />
+        <img
+          src={Releted}
+          alt="releted-head"
+          loading="lazy"
+          className="related-service"
+        />
       </div>
       <motion.div
         whileInView={() => {
@@ -74,8 +111,32 @@ export default function ReletedServices() {
         }
       >
         <Swiper
-          slidesPerView={5}
-          spaceBetween={50}
+          breakpoints={{
+            260: {
+              slidesPerView: 1,
+              spaceBetween: 10,
+            },
+            450: {
+              slidesPerView: 2,
+              spaceBetween: 10,
+            },
+            550: {
+              slidesPerView: 2.5,
+              spaceBetween: 15,
+            },
+            700: {
+              slidesPerView: 3,
+              spaceBetween: 20,
+            },
+            1075: {
+              slidesPerView: 4,
+              spaceBetween: 20,
+            },
+            1500: {
+              slidesPerView: 4.5,
+              spaceBetween: 30,
+            },
+          }}
           className="mySwiper"
           style={{ height: "" }}
           autoplay={{
