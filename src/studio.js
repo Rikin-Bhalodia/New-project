@@ -42,6 +42,22 @@ const StudioWrapper = styled.div`
     gap: 30px;
     padding: 0 30px;
   }
+  .image-1 {
+    width: 100% !important;
+    img {
+      width: 100% !important;
+    }
+  }
+  .info-1 {
+    h3 {
+      font-size: 30px;
+      padding: 5px 0;
+    }
+    p {
+      font-size: 16px;
+      text-align: justify;
+    }
+  }
 
   @media screen and (max-width: 1000px) {
     .studio-s3 h2 {
@@ -53,12 +69,30 @@ const StudioWrapper = styled.div`
     .studioBlogMenu {
       gap: 20px;
     }
-    .blog-box {
+    /* .blog-box {
       width: 350px;
       height: 300px;
-    }
+    } */
     .explore-more a h3 {
       font-size: 3.5rem !important;
+    }
+    .blog-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+    .image-1 {
+      width: 100% !important;
+      img {
+        width: 100% !important;
+      }
+    }
+    .info-1 {
+      h3 {
+        font-size: 24px;
+      }
+      p {
+        font-size: 14px;
+      }
     }
   }
   @media screen and (max-width: 800px) {
@@ -104,6 +138,24 @@ const StudioWrapper = styled.div`
     }
     .explore-more a h3 {
       font-size: 2rem !important;
+    }
+    .blog-grid {
+      gap: 10px;
+      padding: 0 10px;
+    }
+    .info-1 {
+      h3 {
+        font-size: 16px;
+      }
+      p {
+        font-size: 11px;
+      }
+    }
+    .studioBlogMenu {
+      gap: 15px;
+    }
+    .item {
+      padding-right: 10px;
     }
   }
   @media screen and (max-width: 400px) {
