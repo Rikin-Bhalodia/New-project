@@ -22,6 +22,7 @@ const WatchMoreSliderWrapper = styled.div`
     }
   }
   @media (max-width: 670px) {
+    padding: 0 20px;
     .watch-more {
       width: 250px;
     }
@@ -33,14 +34,14 @@ const WatchMoreSliderWrapper = styled.div`
   }
 `;
 
-export default function WatchMoreSlider() {
+export default function WatchMoreSlider({ slideImage }) {
   const [isInView, setIsInView] = useState(false);
 
   return (
     <WatchMoreSliderWrapper>
       <div className="head">
         <img
-          src={WatchMore}
+          src={slideImage || WatchMore}
           alt="watch-head"
           loading="lazy"
           className="watch-more"

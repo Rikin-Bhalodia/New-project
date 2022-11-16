@@ -3,17 +3,16 @@ import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper";
 import { sliderImage } from "../../utils";
-import PImg from "../../assets/images/studio-material/product-img.svg";
-import StudioProduct from "../../assets/images/studio-product/similar-product.svg";
+import EImg from "../../assets/images/studio-material/editor-img.svg";
+import Title from "../../assets/images/studio-material/eiditors-text.svg";
 
 import { motion } from "framer-motion";
 
-const ProductImgSliderWrapper = styled.div`
+const EditorsPackSliderWrapper = styled.div`
   padding: 0px 50px;
   .head {
     padding: 50px 0;
   }
-
   .slider-box {
     display: flex;
     align-items: center;
@@ -41,7 +40,6 @@ const ProductImgSliderWrapper = styled.div`
     }
   }
   @media (max-width: 1000px) {
-    padding: 0;
     .slider-box {
       img {
         width: 180px;
@@ -87,14 +85,14 @@ const ProductImgSliderWrapper = styled.div`
   }
 `;
 
-export default function ProductImgSlider() {
+export default function EditorsPackSlider() {
   const [isInView, setIsInView] = useState(false);
 
   return (
-    <ProductImgSliderWrapper>
+    <EditorsPackSliderWrapper>
       <div className="head">
         <img
-          src={StudioProduct}
+          src={Title}
           alt="watch-head"
           loading="lazy"
           className="watch-more"
@@ -156,17 +154,15 @@ export default function ProductImgSlider() {
             return (
               <SwiperSlide style={{ background: "inherit" }}>
                 <div className="slider-box">
-                  <motion.div
-                    style={{ overflow: "hidden", borderRadius: "50%" }}
-                  >
+                  <motion.div style={{ overflow: "hidden" }}>
                     <motion.img
                       whileHover={{
                         scale: 1.1,
                       }}
                       transition={{
-                        duration: 0.4,
+                        duration: 0.6,
                       }}
-                      src={PImg}
+                      src={EImg}
                       alt="PImg"
                       loading="lazy"
                     />
@@ -184,6 +180,6 @@ export default function ProductImgSlider() {
           })}
         </Swiper>
       </motion.div>
-    </ProductImgSliderWrapper>
+    </EditorsPackSliderWrapper>
   );
 }
