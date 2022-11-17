@@ -84,15 +84,21 @@ const StudioProductWrapper = styled.div`
     }
   }
   @media screen and (max-width: 800px) {
-    /* background: url(${Video});
-    height: 545px;
-    background-size: cover;
-    width: 100%; */
     .studio-product-body {
       flex-direction: column;
+      .box-area {
+        .product-box {
+          width: 100%;
+          height: 400px;
+          border-radius: 0px;
+          position: relative;
+          top: -6px;
+        }
+      }
     }
     .studio-product-head {
       margin: 0;
+      position: absolute;
       .leftside-area {
         padding: 0px 0 0 20px;
         margin-top: 40px;
@@ -103,7 +109,7 @@ const StudioProductWrapper = styled.div`
         }
         .product-head {
           p {
-            color: #ffffff;
+            display: none;
           }
         }
       }
@@ -177,32 +183,27 @@ export default function StudioProduct() {
               </div>
             )}
           </div>
-          {!isResponsive && (
-            <div className="studio-product-body">
-              <div className="studio-product-video">
-                <img
-                  src={Video}
-                  alt="videoImg"
-                  width={"500px"}
-                  loading="lazy"
-                />
-              </div>
-              <div className="box-area">
-                <div className="product-box">
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                    occaecat cupidatat non proident, sunt in culpa qui officia
-                    deserunt mollit anim id est laboru
-                  </p>
-                </div>
+          {/* {!isResponsive && ( */}
+          <div className="studio-product-body">
+            <div className="studio-product-video">
+              <img src={Video} alt="videoImg" loading="lazy" />
+            </div>
+            <div className="box-area">
+              <div className="product-box">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                  irure dolor in reprehenderit in voluptate velit esse cillum
+                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                  cupidatat non proident, sunt in culpa qui officia deserunt
+                  mollit anim id est laboru
+                </p>
               </div>
             </div>
-          )}
+          </div>
+          {/* )} */}
         </motion.div>
       </StudioProductWrapper>
       <SimillerProduct />
