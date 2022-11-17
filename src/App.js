@@ -95,6 +95,18 @@ const CookiesPopUp = React.lazy(() =>
 const CookiesThankYou = React.lazy(() =>
   import("./components/PopUp-Letter/ThanksCookies.js")
 )
+const ProfilePageOrders = React.lazy(() =>
+  import("./components/ProfilePages/Orders.js")
+)
+const ProfilePageLogin = React.lazy(() =>
+  import("./components/ProfilePages/Login.js")
+)
+const ProfilePageSignUp = React.lazy(() =>
+  import("./components/ProfilePages/SignUp.js")
+)
+const SideBar = React.lazy(() =>
+  import("./commonComponents/SidebarOfProfilePage/index.js")
+)
 
 function App() {
   const { pathname } = useLocation();
@@ -175,6 +187,10 @@ function App() {
         <Route path="/thanksletter-popup" element={<ThanksLettter />} />
         <Route path="/cookies-popup" element={<CookiesPopUp />} />
         <Route path="/cookies-thankyou-popup" element={<CookiesThankYou />} />
+        <Route path="/profilepage-order" element={<ProfilePageOrders />} />
+        <Route path="/profilepage-login" element={<ProfilePageLogin />} />
+        <Route path="/profilepage-signup" element={<ProfilePageSignUp />} />
+        <Route path="/sidebar" element={<SideBar />} />
       </Routes>
       {pathname !== "/sub-menu1" && pathname !== "/sub-menu2" && <Footer />}
       {/* </ScrollContainer> */}
