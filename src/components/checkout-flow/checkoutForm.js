@@ -12,7 +12,7 @@ const FormWrapper = styled.div`
     left: 0;
     top: 100px;
   }
-  .goback a{
+  .goback a {
     color: black;
     border-bottom: 2px solid black;
   }
@@ -21,7 +21,7 @@ const FormWrapper = styled.div`
     text-align: center;
     margin-top: 160px;
   }
-  .checkout-header{
+  .checkout-header {
     color: #665e2f;
     font-family: "Coral Blush";
     font-style: normal;
@@ -47,7 +47,7 @@ const FormWrapper = styled.div`
     display: flex;
     justify-content: space-between;
   }
-  .checkout-control{
+  .checkout-control {
     position: relative;
   }
   .checkout-control input {
@@ -69,12 +69,12 @@ const FormWrapper = styled.div`
     width: 690px;
   }
   input {
-    border: 1px solid #665E2F;
-    color: #665E2F;
+    border: 1px solid #665e2f;
+    color: #665e2f;
   }
   .checkout-classes input {
     height: 60px;
-    width:690px;
+    width: 690px;
     font-family: "Coral Blush";
     font-style: normal;
     font-weight: 400;
@@ -102,62 +102,61 @@ const FormWrapper = styled.div`
     padding-left: 10px;
     margin-top: 20px;
   }
-  .checkout-form-state{
+  .checkout-form-state {
     display: flex;
     position: relative;
     justify-content: space-between;
     margin-top: 20px;
   }
-  .checkout-form-state input{
+  .checkout-form-state input {
     height: 60px;
     width: 430px;
     padding-left: 10px;
   }
-  .checkout-form-state select{
+  .checkout-form-state select {
     height: 60px;
     width: 430px;
     padding-left: 10px;
   }
-  .checkout-form-country{
+  .checkout-form-country {
     margin-top: 20px;
     position: relative;
   }
-  .checkout-form-country select{
+  .checkout-form-country select {
     width: 100%;
     height: 60px;
     padding-left: 10px;
   }
-  .checkout-form-footer{
+  .checkout-form-footer {
     display: flex;
     margin-top: 50px;
     color: black;
     padding-bottom: 50px;
   }
-  .checkout-form-ship{
+  .checkout-form-ship {
     margin-left: 20px;
   }
-  .checkout-star{
+  .checkout-star {
     position: absolute;
     right: 5px;
     top: 5px;
   }
-  .checkout-postcode{
+  .checkout-postcode {
     display: flex;
     justify-content: space-between;
   }
-  .checkout-allemails{
+  .checkout-allemails {
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
   }
-  .checkout-allcontacts input{
+  .checkout-allcontacts input {
     height: 60px;
   }
-  .checkout-allcontacts{
+  .checkout-allcontacts {
     position: relative;
   }
-  `;
-
+`;
 
 const CheckoutForm = () => {
   return (
@@ -176,34 +175,34 @@ const CheckoutForm = () => {
             <div className="checkout-pointer">
               <div className="checkout-control">
                 <input type="text" placeholder="FIRST NAME" />
-                <img src={Star}  alt="STAR" className="checkout-star" />
+                <img src={Star} alt="STAR" className="checkout-star" />
               </div>
               <div className="checkout-control">
                 <input type="text" placeholder="MIDDLE NAME" />
               </div>
               <div className="checkout-control">
                 <input type="text" placeholder="LAST NAME" />
-                <img src={Star}  alt="STAR" className="checkout-star" />
+                <img src={Star} alt="STAR" className="checkout-star" />
               </div>
             </div>
             {/* email-view */}
             <div className="checkout-allemails">
               <div className="checkout-classes">
-                 <input
-                type="email"
-                className="checkout-email"
-                placeholder="Email Address"
+                <input
+                  type="email"
+                  className="checkout-email"
+                  placeholder="Email Address"
                 />
-               <img src={Star}  alt="STAR" className="checkout-star" />
+                <img src={Star} alt="STAR" className="checkout-star" />
               </div>
-            <div className="checkout-allcontacts">
-              <input
-                type="number"
-                className="checkout-contact"
-                placeholder="CONTACT"
+              <div className="checkout-allcontacts">
+                <input
+                  type="number"
+                  className="checkout-contact"
+                  placeholder="CONTACT"
                 />
-              <img src={Star}  alt="STAR" className="checkout-star" />
-             </div>
+                <img src={Star} alt="STAR" className="checkout-star" />
+              </div>
             </div>
             {/* address-view */}
             <div className="checkout-span">
@@ -212,7 +211,7 @@ const CheckoutForm = () => {
                 className="checkout-address"
                 placeholder="ADDRESS"
               />
-              <img src={Star}  alt="STAR" className="checkout-star" />
+              <img src={Star} alt="STAR" className="checkout-star" />
             </div>
             <div className="checkout-form-apartment">
               <input
@@ -222,20 +221,24 @@ const CheckoutForm = () => {
               />
             </div>
             <div className="checkout-postcode">
-               <div className="checkout-form-state">
-                  <select name="STATE" id="STATE" className="checkout-state">
-                <option value="0">STATE</option>
-                <option value="1">INDIA</option>
-                <option value="2">UNITED STATES</option>
-                <option value="3">UNITED KINGDOM</option>
-                <option value="4">AUSTRALIA</option>
-                <option value="5">NEW ZEALAND</option>
-              </select>
-                  <img src={Star}  alt="STAR" className="checkout-star" />
-               </div>
-               <div className="checkout-form-state">
-                  <input type="text" className="checkout-postcode" placeholder="POSTCODE" />
-               </div>
+              <div className="checkout-form-state">
+                <select name="STATE" id="STATE" className="checkout-state">
+                  <option value="0">STATE</option>
+                  <option value="1">INDIA</option>
+                  <option value="2">UNITED STATES</option>
+                  <option value="3">UNITED KINGDOM</option>
+                  <option value="4">AUSTRALIA</option>
+                  <option value="5">NEW ZEALAND</option>
+                </select>
+                <img src={Star} alt="STAR" className="checkout-star" />
+              </div>
+              <div className="checkout-form-state">
+                <input
+                  type="text"
+                  className="checkout-postcode"
+                  placeholder="POSTCODE"
+                />
+              </div>
             </div>
             <div className="checkout-form-country">
               <select name="COUNTRY" id="COUNTRY">
@@ -246,7 +249,7 @@ const CheckoutForm = () => {
                 <option value="4">AUSTRALIA</option>
                 <option value="5">NEW ZEALAND</option>
               </select>
-              <img src={Star}  alt="STAR" className="checkout-star" />
+              <img src={Star} alt="STAR" className="checkout-star" />
             </div>
             <div className="checkout-form-footer">
               <input type="checkbox" />

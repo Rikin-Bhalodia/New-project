@@ -6,6 +6,7 @@ import productHead from "../../assets/images/studio-product/product-head.svg";
 import SP from "../../assets/images/studio-product/s-p.svg";
 import Polygon from "../../assets/images/polygon-right.svg";
 import { motion } from "framer-motion";
+import ProductImgSlider from "../studio-material/ProductSlider";
 
 const SimillerProductWrapper = styled.div`
   display: flex;
@@ -104,6 +105,7 @@ const SimillerProductWrapper = styled.div`
     }
   }
   .simillier-rightpart {
+    display: block;
     .simillier-head {
       margin-bottom: 40px;
     }
@@ -156,178 +158,240 @@ const SimillerProductWrapper = styled.div`
   .bigProductImg {
     height: 550px;
   }
+  .similar-product-slider {
+    display: none;
+  }
+  @media (max-width: 1100px) {
+    padding: 0 0 0 40px;
+    .sp {
+      width: 300px;
+    }
+  }
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    align-items: center;
+    .bigProductImg {
+      height: 450px;
+    }
+    .productHeadImg {
+      width: 400px;
+    }
+    .simillier-leftpart {
+      gap: 10px;
+      .simillier-btn {
+        gap: 20px;
+      }
+    }
+    .simillier-rightpart {
+      display: none;
+    }
+    .similar-product-slider {
+      display: block;
+    }
+  }
+  @media (max-width: 500px) {
+    padding: 0;
+
+    .bigProductImg {
+      height: 380px;
+    }
+    .productHeadImg {
+      width: 340px;
+    }
+    .simillier-leftpart {
+      .simillier-btn {
+        .btn-top {
+          .btn1 {
+            padding: 0.5rem 2rem;
+          }
+          .btn2 {
+            padding: 0.5rem 2rem;
+          }
+          .btn-bottom {
+            .btn3 {
+              padding: 0.5rem 2rem;
+            }
+          }
+        }
+      }
+    }
+  }
 `;
 
 const SimillerProduct = () => {
   const [isInView, setIsInView] = useState(false);
 
   return (
-    <SimillerProductWrapper>
-      <img
-        src={Polygon}
-        alt="triangle-rl"
-        className="polygon-right"
-        loading="lazy"
-      />
-      <motion.div
-        className="simillier-leftpart"
-        whileInView={() => {
-          setIsInView(true);
-        }}
-        initial={{ y: "60vh" }}
-        animate={
-          isInView && {
-            y: 0,
-            transition: {
-              duration: 0.7,
-            },
+    <>
+      <SimillerProductWrapper>
+        <img
+          src={Polygon}
+          alt="triangle-rl"
+          className="polygon-right"
+          loading="lazy"
+        />
+
+        <motion.div
+          className="simillier-leftpart"
+          whileInView={() => {
+            setIsInView(true);
+          }}
+          initial={{ y: "60vh" }}
+          animate={
+            isInView && {
+              y: 0,
+              transition: {
+                duration: 0.7,
+              },
+            }
           }
-        }
-      >
-        <div className="simillier-img">
-          <div>
+        >
+          <div className="simillier-img">
+            <div>
+              <img
+                src={productHead}
+                alt="productHeadImg"
+                className="productHeadImg"
+                loading="lazy"
+              />
+            </div>
             <img
-              src={productHead}
-              alt="productHeadImg"
-              className="productHeadImg"
+              src={bigProduct}
+              alt=""
+              className="bigProductImg"
               loading="lazy"
             />
+            <p>₹ 1890</p>
           </div>
-          <img
-            src={bigProduct}
-            alt=""
-            className="bigProductImg"
-            loading="lazy"
-          />
-          <p>₹ 1890</p>
-        </div>
-        <div className="simillier-btn">
-          <div className="btn-top">
-            <a href="/" className="btn1">
-              ADD TO CART
-            </a>
-            <p>or</p>
-            <a href="" className="btn2">
-              RENT IT
-            </a>
+          <div className="simillier-btn">
+            <div className="btn-top">
+              <a href="/" className="btn1">
+                ADD TO CART
+              </a>
+              <p>or</p>
+              <a href="" className="btn2">
+                RENT IT
+              </a>
+            </div>
+            <div className="btn-bottom">
+              <a href="" className="btn3">
+                KNOW MORE
+              </a>
+            </div>
           </div>
-          <div className="btn-bottom">
-            <a href="" className="btn3">
-              KNOW MORE
-            </a>
+        </motion.div>
+        <div className="simillier-rightpart">
+          <div className="simillier-head">
+            <img src={SP} alt="sp-1" loading="lazy" className="sp" />
+          </div>
+          <div className="simillier-body">
+            <motion.div
+              className="product-box"
+              initial={{ x: "50vw" }}
+              whileInView={() => {
+                setIsInView(true);
+              }}
+              animate={
+                isInView && {
+                  x: 0,
+                  transition: {
+                    duration: 1,
+                  },
+                }
+              }
+            >
+              <div className="right-img">
+                <motion.img
+                  src={smallProduct}
+                  alt="smallProduct1"
+                  loading="lazy"
+                  whileHover={{
+                    scale: 1.1,
+                  }}
+                  transition={{
+                    duration: 0.4,
+                  }}
+                />
+              </div>
+              <div className="right-data">
+                <h5>product 1</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <h6>Rs. 1890</h6>
+              </div>
+            </motion.div>
+            <motion.div
+              className="product-box"
+              initial={{ x: "50vw" }}
+              whileInView={() => {
+                setIsInView(true);
+              }}
+              animate={
+                isInView && {
+                  x: 0,
+                  transition: {
+                    duration: 1.2,
+                  },
+                }
+              }
+            >
+              <div className="right-img">
+                <motion.img
+                  src={smallProduct}
+                  loading="lazy"
+                  alt="smallProduct1"
+                  whileHover={{
+                    scale: 1.1,
+                  }}
+                  transition={{
+                    duration: 0.4,
+                  }}
+                />
+              </div>
+              <div className="right-data">
+                <h5>product 1</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <h6>Rs. 1890</h6>
+              </div>
+            </motion.div>
+            <motion.div
+              className="product-box"
+              whileInView={() => {
+                setIsInView(true);
+              }}
+              initial={{ x: "50vw" }}
+              animate={
+                isInView && {
+                  x: 0,
+                  transition: {
+                    duration: 1.4,
+                  },
+                }
+              }
+            >
+              <div className="right-img">
+                <motion.img
+                  src={smallProduct}
+                  loading="lazy"
+                  alt="smallProduct1"
+                  whileHover={{
+                    scale: 1.1,
+                  }}
+                  transition={{
+                    duration: 0.4,
+                  }}
+                />
+              </div>
+              <div className="right-data">
+                <h5>product 1</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <h6>Rs. 1890</h6>
+              </div>
+            </motion.div>
           </div>
         </div>
-      </motion.div>
-      <div className="simillier-rightpart">
-        <div className="simillier-head">
-          <img src={SP} alt="sp-1" loading="lazy" />
-        </div>
-        <div className="simillier-body">
-          <motion.div
-            className="product-box"
-            initial={{ x: "50vw" }}
-            whileInView={() => {
-              setIsInView(true);
-            }}
-            animate={
-              isInView && {
-                x: 0,
-                transition: {
-                  duration: 1,
-                },
-              }
-            }
-          >
-            <div className="right-img">
-              <motion.img
-                src={smallProduct}
-                alt="smallProduct1"
-                loading="lazy"
-                whileHover={{
-                  scale: 1.1,
-                }}
-                transition={{
-                  duration: 0.4,
-                }}
-              />
-            </div>
-            <div className="right-data">
-              <h5>product 1</h5>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              <h6>Rs. 1890</h6>
-            </div>
-          </motion.div>
-          <motion.div
-            className="product-box"
-            initial={{ x: "50vw" }}
-            whileInView={() => {
-              setIsInView(true);
-            }}
-            animate={
-              isInView && {
-                x: 0,
-                transition: {
-                  duration: 1.2,
-                },
-              }
-            }
-          >
-            <div className="right-img">
-              <motion.img
-                src={smallProduct}
-                loading="lazy"
-                alt="smallProduct1"
-                whileHover={{
-                  scale: 1.1,
-                }}
-                transition={{
-                  duration: 0.4,
-                }}
-              />
-            </div>
-            <div className="right-data">
-              <h5>product 1</h5>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              <h6>Rs. 1890</h6>
-            </div>
-          </motion.div>
-          <motion.div
-            className="product-box"
-            whileInView={() => {
-              setIsInView(true);
-            }}
-            initial={{ x: "50vw" }}
-            animate={
-              isInView && {
-                x: 0,
-                transition: {
-                  duration: 1.4,
-                },
-              }
-            }
-          >
-            <div className="right-img">
-              <motion.img
-                src={smallProduct}
-                loading="lazy"
-                alt="smallProduct1"
-                whileHover={{
-                  scale: 1.1,
-                }}
-                transition={{
-                  duration: 0.4,
-                }}
-              />
-            </div>
-            <div className="right-data">
-              <h5>product 1</h5>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              <h6>Rs. 1890</h6>
-            </div>
-          </motion.div>
-        </div>
-      </div>
-    </SimillerProductWrapper>
+      </SimillerProductWrapper>
+      <ProductImgSlider />
+    </>
   );
 };
 

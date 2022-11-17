@@ -3,12 +3,30 @@ import CenterLeft from "../../assets/images/studio/center-left.svg";
 import CenterRight from "../../assets/images/studio/center-right.svg";
 import CenterImage from "../../assets/images/studio/center-image.svg";
 import { motion } from "framer-motion";
+import styled from "styled-components";
+
+const CommonContentWrapper = styled.div`
+  .center-left {
+    height: 200px;
+  }
+  @media screen and (max-width: 1000px) {
+    .center-left {
+      height: 200px;
+    }
+    .center-right {
+      height: 200px;
+    }
+    .center-image {
+      height: 400px;
+    }
+  }
+`;
 
 const CommonContent = () => {
   const [isInView, setIsInView] = useState(false);
 
   return (
-    <div>
+    <CommonContentWrapper>
       <section className="studio-s2">
         <div className="row" id="bannerSliderProduct">
           <motion.div
@@ -27,7 +45,12 @@ const CommonContent = () => {
             className="col-md-2 level1 wow fadeInUp"
           >
             <div className="image">
-              <img src={CenterLeft} loading="lazy" alt="studiob-01" />
+              <img
+                src={CenterLeft}
+                loading="lazy"
+                alt="studiob-01"
+                className="center-left"
+              />
             </div>
           </motion.div>
           <motion.div
@@ -46,7 +69,12 @@ const CommonContent = () => {
             className="col-md-2 level3 wow fadeInUp"
           >
             <div className="image">
-              <img src={CenterLeft} loading="lazy" alt="studiob-02" />
+              <img
+                src={CenterLeft}
+                loading="lazy"
+                alt="studiob-02"
+                className="center-left-near"
+              />
               <h4>hello World</h4>
             </div>
           </motion.div>
@@ -66,7 +94,12 @@ const CommonContent = () => {
             className="col-md-4 level5 wow fadeInUp"
           >
             <div className="image">
-              <img src={CenterImage} loading="lazy" alt="studiob-03" />
+              <img
+                src={CenterImage}
+                loading="lazy"
+                alt="studiob-03"
+                className="center-image"
+              />
               <div className="info">
                 <span className="mt-5">
                   <svg
@@ -115,7 +148,12 @@ const CommonContent = () => {
             className="col-md-2 level4 wow fadeInUp"
           >
             <div className="image">
-              <img src={CenterRight} loading="lazy" alt="studiob-4" />
+              <img
+                src={CenterRight}
+                loading="lazy"
+                alt="studiob-4"
+                className="center-right-near"
+              />
               <h4>hello World</h4>
             </div>
           </motion.div>
@@ -135,12 +173,17 @@ const CommonContent = () => {
             className="col-md-2 level2 wow fadeInUp"
           >
             <div className="image">
-              <img src={CenterRight} loading="lazy" alt="studiob-05" />
+              <img
+                src={CenterRight}
+                loading="lazy"
+                alt="studiob-05"
+                className="center-right"
+              />
             </div>
           </motion.div>
         </div>
       </section>
-    </div>
+    </CommonContentWrapper>
   );
 };
 

@@ -78,22 +78,10 @@ const NFTMetaVerse = React.lazy(() =>
   import("./components/service/NFT/NFTMetaVerse")
 );
 const CheckoutForm = React.lazy(() =>
-  import("./components/checkout-flow/CheckoutForm.js")
-)
+  import("./components/checkout-flow/checkoutForm")
+);
 const CheckoutCard = React.lazy(() =>
   import("./components/checkout-flow/CheckoutCard")
-)
-const NewsLettter = React.lazy(() =>
-  import("./components/PopUp-Letter/Newsletter.js")
-)
-const ThanksLettter = React.lazy(() =>
-  import("./components/PopUp-Letter/ThanksLetter")
-)
-const CookiesPopUp = React.lazy(() =>
-  import("./components/PopUp-Letter/CookiePopUp")
-)
-const CookiesThankYou = React.lazy(() =>
-  import("./components/PopUp-Letter/ThanksCookies")
 )
 
 function App() {

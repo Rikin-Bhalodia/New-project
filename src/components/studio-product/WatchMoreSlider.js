@@ -11,15 +11,41 @@ const WatchMoreSliderWrapper = styled.div`
   .head {
     padding: 50px 0;
   }
+  @media (max-width: 1000px) {
+    .watch-more {
+      width: 400px;
+    }
+  }
+  @media (max-width: 800px) {
+    .watch-more {
+      width: 300px;
+    }
+  }
+  @media (max-width: 670px) {
+    padding: 0 20px;
+    .watch-more {
+      width: 250px;
+    }
+  }
+  @media (max-width: 500px) {
+    .watch-more {
+      width: 210px;
+    }
+  }
 `;
 
-export default function WatchMoreSlider() {
+export default function WatchMoreSlider({ slideImage }) {
   const [isInView, setIsInView] = useState(false);
 
   return (
     <WatchMoreSliderWrapper>
       <div className="head">
-        <img src={WatchMore} alt="watch-head" loading="lazy" />
+        <img
+          src={slideImage || WatchMore}
+          alt="watch-head"
+          loading="lazy"
+          className="watch-more"
+        />
       </div>
       <motion.div
         whileInView={() => {
@@ -36,8 +62,32 @@ export default function WatchMoreSlider() {
         }
       >
         <Swiper
-          slidesPerView={4.5}
-          spaceBetween={30}
+          breakpoints={{
+            260: {
+              slidesPerView: 1,
+              spaceBetween: 10,
+            },
+            450: {
+              slidesPerView: 2,
+              spaceBetween: 10,
+            },
+            550: {
+              slidesPerView: 2.5,
+              spaceBetween: 15,
+            },
+            700: {
+              slidesPerView: 3,
+              spaceBetween: 20,
+            },
+            1075: {
+              slidesPerView: 4,
+              spaceBetween: 20,
+            },
+            1500: {
+              slidesPerView: 4.5,
+              spaceBetween: 30,
+            },
+          }}
           className="mySwiper"
           style={{ height: "150px" }}
           autoplay={{

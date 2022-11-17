@@ -27,8 +27,32 @@ export default function Slider() {
       }
     >
       <Swiper
-        slidesPerView={4}
-        spaceBetween={30}
+        breakpoints={{
+          260: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+          360: {
+            slidesPerView: 2,
+            spaceBetween: 10,
+          },
+          450: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          700: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
+          1075: {
+            slidesPerView: 4,
+            spaceBetween: 20,
+          },
+          1500: {
+            slidesPerView: 5,
+            spaceBetween: 30,
+          },
+        }}
         className="mySwiper"
         style={{ height: "150px" }}
         autoplay={{

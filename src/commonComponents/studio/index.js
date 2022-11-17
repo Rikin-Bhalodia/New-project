@@ -166,9 +166,55 @@ const StudioBannerWrapper = styled.div`
     font-size: 75px;
     line-height: 112px !important;
   }
+  .para {
+    max-width: 400px;
+    margin: 30px auto;
+    text-align: center;
+    color: #fff;
+    font-size: 1.2rem;
+  }
 
   .cube.flip div {
     opacity: 1;
+  }
+  @media screen and (max-width: 1000px) {
+    .data {
+      font-size: 70px !important;
+    }
+  }
+  @media screen and (max-width: 800px) {
+    .data {
+      font-size: 60px !important;
+    }
+    .para {
+      font-size: 1rem;
+      margin: 20px auto;
+    }
+  }
+  @media screen and (max-width: 670px) {
+    .data {
+      font-size: 55px !important;
+    }
+  }
+  @media screen and (max-width: 500px) {
+    .data {
+      font-size: 50px !important;
+    }
+    .para {
+      font-size: 0.81rem;
+      margin: 10px auto;
+      padding: 0 15px;
+    }
+  }
+  @media screen and (max-width: 400px) {
+    .data {
+      font-size: 40px !important;
+    }
+    .para {
+      margin: 0 auto;
+      font-size: 0.7rem;
+      padding: 0 20px;
+    }
   }
 `;
 
@@ -193,9 +239,10 @@ const StudioBanner = () => {
               <AnimatedTextWord text="OPULENCE" />
               <AnimatedTextWord text="GRANDEUR" />
             </motion.h1>
-
-            <Atilier />
-            <p>
+            <div className="atiliers">
+              <Atilier />
+            </div>
+            <p className="para">
               Lorem Ipsum has been the industry's standard dummy text ever since
               the 1500s, when an unknown printer took a galley of type and
               scrambled it to make a type specimen book. It has survived not

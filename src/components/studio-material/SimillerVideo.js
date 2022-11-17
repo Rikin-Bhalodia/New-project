@@ -7,6 +7,12 @@ import EImg from "../../assets/images/studio-material/editor-img.svg";
 import Polygon from "../../assets/images/polygon-right.svg";
 import Polygon2 from "../../assets/images/polygon-left.svg";
 import { motion } from "framer-motion";
+import WatchMoreSlider from "../studio-product/WatchMoreSlider";
+import { useMediaQuery } from "react-responsive";
+import EditorsPackSlider from "./EditorsPack";
+import MenuIcon from "../../assets/images/studio/menu.svg";
+import Menu from "../../commonComponents/Menu";
+
 const SimillerVideoWrapper = styled.div`
   padding: 100px 100px;
   position: relative;
@@ -88,93 +94,160 @@ const SimillerVideoWrapper = styled.div`
       }
     }
   }
+  .menu-icon {
+    display: none;
+  }
+  @media (max-width: 1000px) {
+    padding: 0;
+    .simillier-video-area {
+      .left-side-area {
+        display: none;
+      }
+      .right-side-area {
+        width: 100%;
+        text-align: center;
+        .head-box {
+          .box {
+            border-radius: 0;
+            h5 {
+              padding-top: 60px;
+              font-size: 20px;
+            }
+            p {
+              font-size: 18px;
+            }
+          }
+        }
+      }
+    }
+    .menu-width {
+      width: 100%;
+      position: absolute;
+    }
+    .menu-icon {
+      display: flex;
+      margin: auto;
+    }
+  }
 `;
 
 export default function SimillerVideo() {
   const [isInView, setIsInView] = useState(false);
+  const [menuOpenModal, setMenuOpenModal] = useState(false);
+
+  const isResponsive = useMediaQuery({ query: "(max-width: 1000px)" });
+
+  console.log(isResponsive, "isResponsive");
   return (
-    <SimillerVideoWrapper>
-      <img loading="lazy" src={Polygon} alt="" className="polygon-right" />
-      <div className="container-fluid">
-        <div className="simillier-video-area">
-          <div className="left-side-area">
-            <div className="head">
-              <img loading="lazy" src={VideoHead} alt="" />
-            </div>
-            <div className="body">
-              {[1, 2, 3, 4, 5, 6].map((_) => {
-                return (
-                  <div className="video-box">
-                    <img loading="lazy" src={Video} alt="" />
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-          <div className="right-side-area">
-            <div className="head-box">
-              <div className="box">
-                <h5>ABOUT THE MATERIAL</h5>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum
-                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                  cupidatat.
-                </p>
+    <>
+      <SimillerVideoWrapper>
+        <img loading="lazy" src={Polygon} alt="" className="polygon-right" />
+        <div className={isResponsive ? " " : "container-fluid"}>
+          <div className="simillier-video-area">
+            <div className="left-side-area">
+              <div className="head">
+                <img loading="lazy" src={VideoHead} alt="" />
+              </div>
+              <div className="body">
+                {[1, 2, 3, 4, 5, 6].map((_) => {
+                  return (
+                    <div className="video-box">
+                      <img loading="lazy" src={Video} alt="" />
+                    </div>
+                  );
+                })}
               </div>
             </div>
-            <div className="title">
-              <img loading="lazy" src={Title} alt="Title" />
+            <div className="menu-width">
+              <div
+                className="menu-icon"
+                onClick={() => setMenuOpenModal(!menuOpenModal)}
+              >
+                <Menu
+                  menuOpenModal={menuOpenModal}
+                  onClick={(e) => e.stopPropagation()}
+                />
+                {menuOpenModal ? (
+                  <img src={MenuIcon} loading="lazy" alt="menu" height={45} />
+                ) : (
+                  <img src={MenuIcon} loading="lazy" alt="menu" height={45} />
+                )}
+              </div>
             </div>
-            <motion.div
-              initial={{ x: "40vw" }}
-              whileInView={() => {
-                setIsInView(true);
-              }}
-              animate={
-                isInView && {
-                  x: 0,
-                  transition: {
-                    duration: 1,
-                  },
-                }
-              }
-            >
-              {[1, 2, 3, 4, 5].map((_) => {
-                return (
-                  <div className="editor-box">
-                    <motion.div
-                      style={{ overflow: "hidden", borderRadius: "25px" }}
-                    >
-                      <motion.img
-                        whileHover={{
-                          scale: 1.1,
-                        }}
-                        transition={{
-                          duration: 0.4,
-                        }}
-                        loading="lazy"
-                        src={EImg}
-                        alt="EImg"
-                      />
-                    </motion.div>
-                    <div className="details">
-                      <h5>
-                        Sustainable Perfume: “Synthetic” Is Not a Dirty Word
-                      </h5>
-                      <p>Editor’s Pick</p>
-                    </div>
+            <div className="right-side-area">
+              <div className="head-box">
+                <div className="box">
+                  <h5>ABOUT THE MATERIAL</h5>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                    occaecat cupidatat.
+                  </p>
+                </div>
+              </div>
+              {!isResponsive && (
+                <>
+                  <div className="title">
+                    <img loading="lazy" src={Title} alt="Title" />
                   </div>
-                );
-              })}
-            </motion.div>
+                  <motion.div
+                    initial={{ x: "40vw" }}
+                    whileInView={() => {
+                      setIsInView(true);
+                    }}
+                    animate={
+                      isInView && {
+                        x: 0,
+                        transition: {
+                          duration: 1,
+                        },
+                      }
+                    }
+                  >
+                    {[1, 2, 3, 4, 5].map((_) => {
+                      return (
+                        <div className="editor-box">
+                          <motion.div
+                            style={{ overflow: "hidden", borderRadius: "25px" }}
+                          >
+                            <motion.img
+                              whileHover={{
+                                scale: 1.1,
+                              }}
+                              transition={{
+                                duration: 0.4,
+                              }}
+                              loading="lazy"
+                              src={EImg}
+                              alt="EImg"
+                            />
+                          </motion.div>
+                          <div className="details">
+                            <h5>
+                              Sustainable Perfume: “Synthetic” Is Not a Dirty
+                              Word
+                            </h5>
+                            <p>Editor’s Pick</p>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </motion.div>
+                </>
+              )}
+            </div>
           </div>
         </div>
+        <img loading="lazy" src={Polygon2} alt="" className="polygon-left" />
+      </SimillerVideoWrapper>
+      <div style={isResponsive ? { display: "block" } : { display: "none" }}>
+        <WatchMoreSlider slideImage={VideoHead} />
+        <EditorsPackSlider />
       </div>
-      <img loading="lazy" src={Polygon2} alt="" className="polygon-left" />
-    </SimillerVideoWrapper>
+    </>
   );
 }
