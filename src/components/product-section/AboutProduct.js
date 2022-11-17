@@ -41,9 +41,10 @@ const AboutProductWrapper = styled.div`
     letter-spacing: 0.092px;
   }
   .product-details {
-    gap: 94px;
+    gap: 90px;
     margin-bottom: 82px;
     margin-left: 103px;
+    justify-content: center;
   }
   .product-details .product-title {
     font-family: "Arial";
@@ -66,6 +67,161 @@ const AboutProductWrapper = styled.div`
     background: #000000;
     width: 100%;
   }
+  @media (max-width: 1200px) {
+    .about--text {
+      margin-top: 0px;
+    }
+    .about-product-text {
+      width: 550px;
+    }
+    .about-below--container {
+      padding: 0 40px 40px;
+    }
+    .product-details {
+      padding: 30px 50px 50px;
+      margin: 0;
+    }
+  }
+  @media (max-width: 1000px) {
+    .about-product-text {
+      width: 500px;
+    }
+    .about-below--container .text1,
+    .about-below--container .text3 {
+      font-size: 16px;
+      line-height: 20px;
+    }
+    .about-below--container {
+      padding: 0 40px 40px;
+    }
+    .product-details {
+      padding: 30px 50px 50px;
+      margin: 0;
+      gap: 70px;
+    }
+    .about-below--container .text2 {
+      font-size: 16px;
+    }
+    .about-below--container ul li {
+      font-size: 16px;
+    }
+  }
+  @media (max-width: 800px) {
+    .about-product-text {
+      width: 450px;
+    }
+    .product-details {
+      padding: 30px 50px 50px;
+      margin: 0;
+      gap: 50px;
+      .product-title {
+        font-size: 16px;
+      }
+      .product-detail {
+        font-size: 16px;
+      }
+    }
+  }
+  @media (max-width: 600px) {
+    .about--text {
+      margin-bottom: 50px;
+    }
+    .about-product-text {
+      width: 400px;
+    }
+    .about-below--container .text1,
+    .about-below--container .text3 {
+      font-size: 14px;
+      line-height: 18px;
+    }
+    .about-below--container {
+      padding: 0 30px 30px;
+    }
+    .product-details {
+      padding: 20px 25px 30px;
+      margin: 0;
+      gap: 30px;
+      flex-wrap: wrap;
+      .product-title {
+        font-size: 14px;
+      }
+      .product-detail {
+        font-size: 14px;
+      }
+    }
+    .about-below--container .text2 {
+      font-size: 14px;
+    }
+    .about-below--container ul li {
+      font-size: 14px;
+    }
+  }
+  @media (max-width: 500px) {
+    .about--text {
+      margin-bottom: 40px;
+      margin-top: 20px;
+    }
+    .about-product-text {
+      width: 300px;
+    }
+    .about-below--container .text1,
+    .about-below--container .text3 {
+      font-size: 13px;
+      line-height: 16px;
+    }
+    .about-below--container {
+      padding: 0 20px 20px;
+    }
+    .product-details {
+      padding: 15px 20px 25px;
+      margin: 0;
+      gap: 15px;
+      .product-title {
+        font-size: 13px;
+      }
+      .product-detail {
+        font-size: 13px;
+      }
+    }
+    .about-below--container .text2 {
+      font-size: 13px;
+    }
+    .about-below--container ul li {
+      font-size: 13px;
+    }
+  }
+  @media (max-width: 400px) {
+    .about--text {
+      margin-bottom: 30px;
+    }
+    .about-product-text {
+      width: 250px;
+    }
+    .about-below--container .text1,
+    .about-below--container .text3 {
+      font-size: 12px;
+    }
+    .about-below--container {
+      padding: 0 15px 15px;
+    }
+    .product-details {
+      padding: 10px 10px 15px;
+      margin: 0;
+      gap: 20px;
+      .product-title {
+        font-size: 12px;
+      }
+      .product-detail {
+        font-size: 12px;
+      }
+    }
+    .about-below--container .text2 {
+      font-size: 12px;
+    }
+    .about-below--container ul li {
+      font-size: 12px;
+    }
+  }
 `;
 const AboutProduct = () => {
   const [isInView, setIsInView] = useState(false);
@@ -74,7 +230,12 @@ const AboutProduct = () => {
       <section className="about-product--container">
         <div className="about--text d-flex">
           <div className="blank-line"></div>
-          <img loading="lazy" src={AboutProductText} alt="" />
+          <img
+            loading="lazy"
+            src={AboutProductText}
+            alt=""
+            className="about-product-text"
+          />
           <div className="blank-line"></div>
         </div>
         <div className="about-below--container">

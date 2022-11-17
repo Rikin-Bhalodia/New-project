@@ -12,10 +12,11 @@ import sampleimage2 from "../../assets/images/product-section/sampleimage2.svg";
 import count from "../../assets/images/product-section/count.svg";
 import productLogo from "../../assets/images/product-section/product-logo.svg";
 import { motion } from "framer-motion";
+import { useMediaQuery } from "react-responsive";
 
 const ProductSelectionCommonWrapper = styled.div`
   .product-main-container {
-    padding: 100px 60px;
+    padding: 100px 40px;
   }
   .go-back-text {
     font-family: "Arial";
@@ -260,11 +261,266 @@ const ProductSelectionCommonWrapper = styled.div`
     margin: 0 !important;
     top: -80px !important;
   }
+  .product-selection-image {
+    display: flex;
+    justify-content: center;
+    .price--item-section {
+      position: absolute;
+      left: 15%;
+      background: #fff;
+    }
+  }
+  .product--logo {
+    position: absolute;
+    left: 25%;
+    top: 8%;
+  }
+
+  @media (max-width: 800px) {
+    .section--right {
+      width: 300px;
+      padding: 20px 20px;
+      .title {
+        font-size: 25px;
+      }
+      .description {
+        font-size: 13px;
+      }
+    }
+    .button--container {
+      padding: 15px 20px;
+      font-size: 25px;
+    }
+    .code--text {
+      font-size: 17px;
+    }
+    .detail-sub2 {
+      font-size: 18px;
+    }
+    .size-title div {
+      font-size: 15px;
+    }
+    .pin-code--section .text {
+      font-size: 15px;
+    }
+    .breadcumb-section span {
+      font-size: 15px;
+    }
+    .go-back-text {
+      font-size: 18px;
+    }
+    .product-selection-image {
+      .price--item-section {
+        left: 10%;
+      }
+    }
+  }
+  @media (max-width: 680px) {
+    .product-main-container {
+      padding: 50px 30px;
+    }
+    .section--right {
+      width: 250px;
+      padding: 10px 10px;
+      .title {
+        font-size: 23px;
+      }
+      .description {
+        font-size: 12px;
+      }
+    }
+    .button--container {
+      padding: 15px 10px;
+      font-size: 20px;
+    }
+    .code--text {
+      font-size: 15px;
+    }
+    .detail-sub2 {
+      font-size: 17px;
+    }
+    .size-title div {
+      font-size: 14px;
+    }
+    .pin-code--section .text {
+      font-size: 14px;
+    }
+    .breadcumb-section span {
+      font-size: 14px;
+    }
+    .go-back-text {
+      font-size: 17px;
+    }
+    .product-selection-image {
+      .price--item-section {
+        left: 0%;
+      }
+    }
+    .sample-images {
+      height: 60px;
+    }
+    .sample-images1 {
+      height: 40px;
+    }
+    .product--logo {
+      left: 15%;
+    }
+    .detail-sub3 {
+      max-width: 230px;
+    }
+    .product--container {
+      width: 100%;
+      gap: 10px;
+    }
+    .left-side-part {
+      width: 50%;
+    }
+  }
+  @media (max-width: 550px) {
+    .detail-sub2 {
+      font-size: 14px;
+    }
+    .detail-sub3 {
+      padding: 10px 0;
+    }
+    .section--right {
+      width: 220px;
+    }
+    .size--div {
+      padding: 10px 0;
+    }
+    .size-guide {
+      font-size: 12px;
+      padding-bottom: 15px;
+    }
+    .input--section {
+      width: 200px;
+    }
+    .submit--section img {
+      padding: 19px 3px 15px 9px;
+    }
+    .pin-code--section div input {
+      padding: 0 20px;
+    }
+    .delivary-status .date {
+      line-height: 18px;
+      font-size: 12px;
+    }
+    .button--container {
+      padding: 10px 8px;
+      font-size: 16px;
+    }
+    .product-sample {
+      width: 350px;
+      height: 500px;
+    }
+    .product--logo {
+      left: 10%;
+    }
+    .price--item-section {
+      width: 160px;
+      backdrop-filter: unset;
+    }
+    .price--title {
+      font-size: 18px;
+      padding-top: 20px;
+    }
+    .count--machine {
+      margin-bottom: 20px;
+    }
+    .paths {
+      font-size: 14px;
+    }
+  }
+  @media (max-width: 460px) {
+    .product-main-container {
+      padding: 30px 10px;
+    }
+    .detail-sub2 {
+      font-size: 12px;
+    }
+    .detail-sub3 {
+      padding: 10px 0;
+      font-size: 11px;
+    }
+    .section--right {
+      width: 165px;
+    }
+    .size--div {
+      padding: 10px 0;
+      gap: 5px;
+    }
+    .size-guide {
+      font-size: 10px;
+      padding-bottom: 12px;
+    }
+    .input--section {
+      width: 170px;
+    }
+    .submit--section img {
+      padding: 19px 3px 15px 9px;
+    }
+    .pin-code--section div input {
+      padding: 0 15px;
+      width: 130px;
+    }
+    .delivary-status .date {
+      line-height: 16px;
+      font-size: 11px;
+    }
+    .button--container {
+      padding: 10px 8px;
+      font-size: 15px;
+    }
+    .product-sample {
+      width: 300px;
+      height: 430px;
+    }
+    .product--logo {
+      left: 0;
+      top: 6%;
+    }
+    .price--item-section {
+      width: 140px;
+      backdrop-filter: unset;
+    }
+    .price--title {
+      font-size: 16px;
+      padding-top: 16px;
+    }
+    .count--machine {
+      margin-bottom: 16px;
+    }
+    .section--right .title {
+      font-size: 18px;
+      padding-bottom: 0;
+    }
+    .section--right .description {
+      font-size: 10px;
+      padding-bottom: 10px;
+    }
+    .sampleimg1 {
+      padding-bottom: 10px;
+    }
+    .sampleimg2 {
+      padding-bottom: 10px;
+    }
+    .sample-images {
+      height: 50px;
+    }
+    .sample-images1 {
+      width: 30px;
+    }
+    .paths {
+      font-size: 12px;
+    }
+  }
 `;
 
 const ProductSelectionCommon = () => {
   const [selectedState, setSelectedState] = useState("");
   const [menuOpenModal, setMenuOpenModal] = useState(false);
+  const isResponsive = useMediaQuery({ query: "(max-width: 1000px)" });
 
   return (
     <ProductSelectionCommonWrapper>
@@ -278,8 +534,9 @@ const ProductSelectionCommon = () => {
             initial={{ x: "-100vw", opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.9 }}
+            className="paths"
           >
-            SHOP / CLOTHING / WOMEN / DRESSES /{" "}
+            SHOP / CLOTHING / WOMEN / DRESSES /
             <span>VERSACE BAROCCO GODDESS SLASH SILK DRESS</span>
           </motion.div>
           <motion.div
@@ -300,16 +557,48 @@ const ProductSelectionCommon = () => {
             )}
           </motion.div>
         </div>
+        {isResponsive && (
+          <>
+            <div className="product--logo">
+              <img loading="lazy" src={productLogo} alt="" />
+            </div>
+            <motion.div
+              initial={{ y: "100vh", opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 1.2 }}
+              className="product-selection-image"
+            >
+              <img
+                loading="lazy"
+                src={productSample}
+                alt=""
+                height={600}
+                width={400}
+                className="product-sample"
+              />
+              <div className="price--item-section">
+                <div className="price--title">₹3,56,367.34</div>
+                <div className="quantity--title">Quantity</div>
+                <div className="count--machine">
+                  <img loading="lazy" src={count} alt="" />
+                </div>
+              </div>
+            </motion.div>
+          </>
+        )}
         <div className="product--container d-flex justify-content-between">
           <motion.div
             initial={{ x: "-100vw", opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 1.2 }}
+            className="left-side-part"
           >
             <div className="detail1 position-relative">
-              <div className="position-absolute product-logo">
-                <img loading="lazy" src={productLogo} alt="" />
-              </div>
+              {!isResponsive && (
+                <div className="position-absolute product-logo">
+                  <img loading="lazy" src={productLogo} alt="" />
+                </div>
+              )}
               <div className="detail-sub1">VERSACE</div>
               <div className="detail-sub2">
                 BAROCCO GODDESS SLASH SILK DRESS
@@ -410,27 +699,29 @@ const ProductSelectionCommon = () => {
               </div>
             </div>
           </motion.div>
-          <motion.div
-            initial={{ y: "100vh", opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 1.2 }}
-            className="center--container position-relative"
-          >
-            <img
-              loading="lazy"
-              src={productSample}
-              alt=""
-              height={600}
-              width={400}
-            />
-            <div className="price--item-section">
-              <div className="price--title">₹3,56,367.34</div>
-              <div className="quantity--title">Quantity</div>
-              <div className="count--machine">
-                <img loading="lazy" src={count} alt="" />
+          {!isResponsive && (
+            <motion.div
+              initial={{ y: "100vh", opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 1.2 }}
+              className="center--container position-relative "
+            >
+              <img
+                loading="lazy"
+                src={productSample}
+                alt=""
+                height={600}
+                width={400}
+              />
+              <div className="price--item-section">
+                <div className="price--title">₹3,56,367.34</div>
+                <div className="quantity--title">Quantity</div>
+                <div className="count--machine">
+                  <img loading="lazy" src={count} alt="" />
+                </div>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          )}
           <motion.div
             initial={{ x: "100vw", opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
@@ -445,16 +736,64 @@ const ProductSelectionCommon = () => {
                 Dictum turpis lobortis{" "}
               </div>
               <div className="d-flex sampleimg1 justify-content-between">
-                <img loading="lazy" src={sampleimage1} alt="" height={80} />
-                <img loading="lazy" src={sampleimage1} alt="" height={80} />
-                <img loading="lazy" src={sampleimage1} alt="" height={80} />
-                <img loading="lazy" src={sampleimage1} alt="" height={80} />
+                <img
+                  loading="lazy"
+                  src={sampleimage1}
+                  alt=""
+                  height={80}
+                  className="sample-images"
+                />
+                <img
+                  loading="lazy"
+                  src={sampleimage1}
+                  alt=""
+                  height={80}
+                  className="sample-images"
+                />
+                <img
+                  loading="lazy"
+                  src={sampleimage1}
+                  alt=""
+                  height={80}
+                  className="sample-images"
+                />
+                <img
+                  loading="lazy"
+                  src={sampleimage1}
+                  alt=""
+                  height={80}
+                  className="sample-images"
+                />
               </div>
               <div className="d-flex sampleimg2 justify-content-between">
-                <img loading="lazy" src={sampleimage2} alt="" height={50} />
-                <img loading="lazy" src={sampleimage2} alt="" height={50} />
-                <img loading="lazy" src={sampleimage2} alt="" height={50} />
-                <img loading="lazy" src={sampleimage2} alt="" height={50} />
+                <img
+                  loading="lazy"
+                  src={sampleimage2}
+                  alt=""
+                  height={50}
+                  className="sample-images1"
+                />
+                <img
+                  loading="lazy"
+                  src={sampleimage2}
+                  alt=""
+                  height={50}
+                  className="sample-images1"
+                />
+                <img
+                  loading="lazy"
+                  src={sampleimage2}
+                  alt=""
+                  height={50}
+                  className="sample-images1"
+                />
+                <img
+                  loading="lazy"
+                  src={sampleimage2}
+                  alt=""
+                  height={50}
+                  className="sample-images1"
+                />
               </div>
             </div>
             <div className="button--container">ADD TO CART</div>
