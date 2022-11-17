@@ -10,7 +10,7 @@ import Phonepe from "../../assets/images/payment-card-images/Phonepe.svg";
 import Polygon from "../../assets/images/polygon-right.svg";
 
 const CheckoutCardWrapper = styled.div`
-  position: relative;
+ position: relative;
   margin: auto;
   .polygon-left {
     position: absolute;

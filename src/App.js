@@ -82,7 +82,19 @@ const CheckoutForm = React.lazy(() =>
 );
 const CheckoutCard = React.lazy(() =>
   import("./components/checkout-flow/CheckoutCard")
-);
+)
+const NewsLetter = React.lazy(() =>
+  import("./components/PopUp-Letter/Newsletter.js")
+)
+const ThanksLettter = React.lazy(() =>
+  import("./components/PopUp-Letter/ThanksLetter.js")
+)
+const CookiesPopUp = React.lazy(() =>
+  import("./components/PopUp-Letter/CookiePopUp.js")
+)
+const CookiesThankYou = React.lazy(() =>
+  import("./components/PopUp-Letter/ThanksCookies.js")
+)
 
 function App() {
   const { pathname } = useLocation();
@@ -159,6 +171,10 @@ function App() {
         <Route path="/nft-metaverse" element={<NFTMetaVerse />} />
         <Route path="/checkout-form" element={<CheckoutForm />} />
         <Route path="/checkout-card" element={<CheckoutCard />} />
+        <Route path="/newsletter-popup" element={<NewsLetter />} />
+        <Route path="/thanksletter-popup" element={<ThanksLettter />} />
+        <Route path="/cookies-popup" element={<CookiesPopUp />} />
+        <Route path="/cookies-thankyou-popup" element={<CookiesThankYou />} />
       </Routes>
       {pathname !== "/sub-menu1" && pathname !== "/sub-menu2" && <Footer />}
       {/* </ScrollContainer> */}
