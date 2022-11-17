@@ -9,7 +9,7 @@ import Paytm from "../../assets/images/payment-card-images/PaytmImage.svg";
 import Phonepe from "../../assets/images/payment-card-images/Phonepe.svg";
 import Polygon from "../../assets/images/polygon-right.svg"
 
-const CheckoutCardWrapper = styled  .div`
+const CheckoutCardWrapper = styled.div`
  position: relative;
   margin: auto;
   .polygon-left {
