@@ -8,6 +8,7 @@ import "antd/dist/antd.css";
 import { Route, Routes, useLocation } from "react-router-dom";
 import ScrollContainer from "./commonComponents/SmoothScrollingComponent";
 import PetsProductSelection from "./components/service/Pets/PetsProductSelection";
+import MobileHeader from "./commonComponents/Header/MobileHeader";
 
 const Home = React.lazy(() => import("./components/index/Home"));
 const Studio = React.lazy(() => import("./studio"));
@@ -82,31 +83,31 @@ const CheckoutForm = React.lazy(() =>
 );
 const CheckoutCard = React.lazy(() =>
   import("./components/checkout-flow/CheckoutCard")
-)
+);
 const NewsLetter = React.lazy(() =>
   import("./components/PopUp-Letter/Newsletter.js")
-)
+);
 const ThanksLettter = React.lazy(() =>
   import("./components/PopUp-Letter/ThanksLetter.js")
-)
+);
 const CookiesPopUp = React.lazy(() =>
   import("./components/PopUp-Letter/CookiePopUp.js")
-)
+);
 const CookiesThankYou = React.lazy(() =>
   import("./components/PopUp-Letter/ThanksCookies.js")
-)
+);
 const ProfilePageOrders = React.lazy(() =>
   import("./components/ProfilePages/Orders.js")
-)
+);
 const ProfilePageLogin = React.lazy(() =>
   import("./components/ProfilePages/Login.js")
-)
+);
 const ProfilePageSignUp = React.lazy(() =>
   import("./components/ProfilePages/SignUp.js")
-)
+);
 const SideBar = React.lazy(() =>
   import("./commonComponents/SidebarOfProfilePage/index.js")
-)
+);
 
 function App() {
   const { pathname } = useLocation();
@@ -123,11 +124,13 @@ function App() {
         <Route path="/studio-product" element={<StudioProduct />} />
         <Route path="/studio-material" element={<StudioProductMaterial />} />
         <Route path="/studio-sec-video" element={<StudioSecVideo />} />
+
         <Route path="/product" element={<Product />} />
-        <Route path="/shop-hover" element={<ShopHover />} />
-        <Route path="/service-hover" element={<ServiceHover />} />
         <Route path="/sub-menu1" element={<SubMenu1 />} />
         <Route path="/sub-menu2" element={<SubMenu2 />} />
+
+        <Route path="/shop-hover" element={<ShopHover />} />
+        <Route path="/service-hover" element={<ServiceHover />} />
         <Route path="/product-selection" element={<ProductSection />} />
         <Route path="/gift-product-selection" element={<ProductSection />} />
         <Route path="/brand" element={<Brand />} />
@@ -181,6 +184,7 @@ function App() {
         <Route path="/sell-your-nfts" element={<SellNFTs />} />
         <Route path="/service-celebration" element={<ServiceCelebration />} />
         <Route path="/nft-metaverse" element={<NFTMetaVerse />} />
+
         <Route path="/checkout-form" element={<CheckoutForm />} />
         <Route path="/checkout-card" element={<CheckoutCard />} />
         <Route path="/newsletter-popup" element={<NewsLetter />} />
@@ -191,6 +195,8 @@ function App() {
         <Route path="/profilepage-login" element={<ProfilePageLogin />} />
         <Route path="/profilepage-signup" element={<ProfilePageSignUp />} />
         <Route path="/sidebar" element={<SideBar />} />
+
+        {/* <Route path="/MH" element={<MobileHeader />} /> */}
       </Routes>
       {pathname !== "/sub-menu1" && pathname !== "/sub-menu2" && <Footer />}
       {/* </ScrollContainer> */}

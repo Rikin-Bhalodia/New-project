@@ -18,7 +18,8 @@ import Cash from "../../../assets/images/nfts/cash.svg";
 import Price from "../../../assets/images/nfts/price-icon.svg";
 import ShoppingListCard from "../ShopingListCard";
 import { CompanyLogo } from "../../../utils";
-
+import AnimatedTextWord from "../../../commonComponents/Animation/FlipAnimation";
+import { motion } from "framer-motion";
 const NFTMetaVerseWrapper = styled.div`
   width: 100%;
   background: black;
@@ -38,6 +39,8 @@ const NFTMetaVerseWrapper = styled.div`
     align-items: center;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
       url(${BannerImage});
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   .goback {
     margin-left: 40px;
@@ -101,7 +104,7 @@ const NFTMetaVerseWrapper = styled.div`
     margin-top: 50px;
   }
   .heading-nft-part {
-    width: 45%;
+    width: 55%;
   }
   .about {
     margin-left: 30%;
@@ -199,6 +202,9 @@ const NFTMetaVerseWrapper = styled.div`
     font-size: 80px;
     text-align: center;
     padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .nft-collection {
     background: #fff;
@@ -227,165 +233,310 @@ const NFTMetaVerseWrapper = styled.div`
 
 const NFTMetaVerse = () => {
   const [menuOpenModal, setMenuOpenModal] = useState(false);
+  const [isInView, setIsInView] = useState(false);
 
   return (
     <>
       <NFTMetaVerseWrapper>
-        <div className="heading-part">
-          <div className="goback">
-            <img src={BackArrow} alt="back-arrow" />
-            <div>Go Back</div>
-          </div>
-          <div>SELL YOUR NFT</div>
-        </div>
-        <div
-          className="menu-icon"
-          onClick={() => setMenuOpenModal(!menuOpenModal)}
+        <motion.div
+          initial={{ y: "200vh" }}
+          animate={{ y: 0 }}
+          transition={{ duration: 0.6 }}
         >
-          <Menu
-            menuOpenModal={menuOpenModal}
-            onClick={(e) => e.stopPropagation()}
-          />
-          {menuOpenModal ? (
-            <img loading="lazy" src={MenuIcon} alt="menu" height={45} />
-          ) : (
-            <img loading="lazy" src={MenuIcon} alt="menu" height={45} />
-          )}
-        </div>
-        <div className="content-metaverse">
-          <img
-            src={Insta}
-            alt="insta"
-            loading="lazy"
-            height={250}
-            className="insta"
-          />
-          <div className="metaverse">METAVERSE</div>
-          <img
-            src={Facebook}
-            alt="facebook"
-            loading="lazy"
-            height={250}
-            className="facebook"
-          />
-        </div>
-        <div className="des-meta">IS THE NEW UNIVERSE</div>
-        <div className="des-para-meta">
-          <div>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco
-          </div>
-          <div>
-            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-            dolor in reprehenderit in voluptate velit esse cillum dolore eu
-            fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est
-            laborum.
-          </div>
-        </div>
-        <div className="lines">
-          <div className="border-lines"></div>
-        </div>
-        <div className="nft-part">
-          <div className="heading-nft-part">
-            <img src={About} alt="about" className="about" />
-            <div className="nft">NFT</div>
-          </div>
-          <div className="des-nft-part">
-            <div className="icons-nft">
-              <img src={Hammer} alt="about" />
-              <img src={Cat} alt="about" />
-              <img src={Heart} alt="about" />
-            </div>
-            <div className="des-para-nft">
-              <div>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco
-              </div>
-              <div>
-                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est
-                laborum.
-              </div>
+          <div className="heading-part">
+            <motion.div
+              initial={{ x: "-100vw", opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 1.5 }}
+              className="goback"
+            >
+              <img src={BackArrow} alt="back-arrow" />
+              <div>Go Back</div>
+            </motion.div>
+            <div>
+              <AnimatedTextWord text="SELL YOUR NFT" />
             </div>
           </div>
-        </div>
-        <div className="lines">
-          <div className="border-lines"></div>
-        </div>
-        <div className="metaverse-part">
-          <div className="desc-meta">
+          <div
+            className="menu-icon"
+            onClick={() => setMenuOpenModal(!menuOpenModal)}
+          >
+            <Menu
+              menuOpenModal={menuOpenModal}
+              onClick={(e) => e.stopPropagation()}
+            />
+            {menuOpenModal ? (
+              <img loading="lazy" src={MenuIcon} alt="menu" height={45} />
+            ) : (
+              <img loading="lazy" src={MenuIcon} alt="menu" height={45} />
+            )}
+          </div>
+          <div className="content-metaverse">
             <img
-              src={Earth}
-              alt="about"
-              className="earth"
-              height={90}
-              width={130}
+              src={Insta}
+              alt="insta"
+              loading="lazy"
+              height={250}
+              className="insta"
+            />
+            <div className="metaverse">
+              <AnimatedTextWord text="METAVERSE" />
+            </div>
+            <img
+              src={Facebook}
+              alt="facebook"
+              loading="lazy"
+              height={250}
+              className="facebook"
             />
           </div>
-          <div className="heading-meta-part">
-            <img
-              src={About}
-              alt="about"
-              className="meta-about"
-              height={70}
-              width={120}
-            />
-            <div className="meta">METAVERSE</div>
+          <motion.div
+            whileInView={() => {
+              setIsInView(true);
+            }}
+            initial={{ y: "40vh" }}
+            animate={
+              isInView && {
+                y: 0,
+                transition: {
+                  duration: 0.5,
+                },
+              }
+            }
+            className="des-meta"
+          >
+            IS THE NEW UNIVERSE
+          </motion.div>
+          <div className="des-para-meta">
+            <motion.div
+              whileInView={() => {
+                setIsInView(true);
+              }}
+              initial={{ y: "40vh" }}
+              animate={
+                isInView && {
+                  y: 0,
+                  transition: {
+                    duration: 0.7,
+                  },
+                }
+              }
+            >
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco
+            </motion.div>
+            <motion.div
+              whileInView={() => {
+                setIsInView(true);
+              }}
+              initial={{ y: "40vh" }}
+              animate={
+                isInView && {
+                  y: 0,
+                  transition: {
+                    duration: 0.9,
+                  },
+                }
+              }
+            >
+              laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+              dolor in reprehenderit in voluptate velit esse cillum dolore eu
+              fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+              proident, sunt in culpa qui officia deserunt mollit anim id est
+              laborum.
+            </motion.div>
           </div>
-        </div>
-        <div className="des-metas">
-          <div>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco
+          <div className="lines">
+            <div className="border-lines"></div>
           </div>
-          <div>
-            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-            dolor in reprehenderit in voluptate velit esse cillum dolore eu
-            fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est
-            laborum.
-          </div>
-        </div>
-        <div className="lines">
-          <div className="border-lines"></div>
-        </div>
-        <div className="buttons">
-          <div style={{ position: "relative" }}>
-            <img src={Buy} alt="buy" height={130} />
-            <img src={Price} alt="price" className="price" />
-            <div className="para-content">Buy amazing collections of NFT</div>
-          </div>
-          <div>
-            <img src={Cash} alt="price" className="cash" />
-            <img src={Sell} alt="sell" height={130} />
-            <div className="para-content-right">
-              Put up your NFT Collections on Sale!
+          <div className="nft-part">
+            <div className="heading-nft-part">
+              <img src={About} alt="about" className="about" />
+              <div className="nft">
+                <AnimatedTextWord text="NFT" />
+              </div>
+            </div>
+            <div className="des-nft-part">
+              <div className="icons-nft">
+                <img src={Hammer} alt="about" />
+                <img src={Cat} alt="about" />
+                <img src={Heart} alt="about" />
+              </div>
+              <div className="des-para-nft">
+                <motion.div
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ x: "40vw" }}
+                  animate={
+                    isInView && {
+                      x: 0,
+                      transition: {
+                        duration: 0.5,
+                      },
+                    }
+                  }
+                >
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                </motion.div>
+                <motion.div
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ x: "40vw" }}
+                  animate={
+                    isInView && {
+                      x: 0,
+                      transition: {
+                        duration: 0.7,
+                      },
+                    }
+                  }
+                >
+                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                  irure dolor in reprehenderit in voluptate velit esse cillum
+                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                  cupidatat non proident, sunt in culpa qui officia deserunt
+                  mollit anim id est laborum.
+                </motion.div>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="brand-nfts">
-          <div>LUXE BRAND NFTS</div>
-          <ShoppingListCard />
-        </div>
-        <div className="nft-collection">
-          <div>NFT COLLECTIONS</div>
-          <div className="para-des">
-            Brands which have entered the metaverse
+          <div className="lines">
+            <div className="border-lines"></div>
           </div>
-          <div className="company-logo">
-            {CompanyLogo.map(({ img, width }) => {
-              return <img src={img} alt="img" width={width} height={150} />;
-            })}
+          <div className="metaverse-part">
+            <div className="desc-meta">
+              <img
+                src={Earth}
+                alt="about"
+                className="earth"
+                height={90}
+                width={130}
+              />
+            </div>
+            <div className="heading-meta-part">
+              <img
+                src={About}
+                alt="about"
+                className="meta-about"
+                height={70}
+                width={120}
+              />
+              <div className="meta">
+                <AnimatedTextWord text="METAVERSE" />
+              </div>
+            </div>
           </div>
-          <div className="para-des">and many more!</div>
-        </div>
-        <YellowBarContent requiredPersonalAssistance={true} />
+          <div className="des-metas">
+            <motion.div
+              whileInView={() => {
+                setIsInView(true);
+              }}
+              initial={{ x: "-40vw" }}
+              animate={
+                isInView && {
+                  x: 0,
+                  transition: {
+                    duration: 0.7,
+                  },
+                }
+              }
+            >
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco
+            </motion.div>
+            <motion.div
+              whileInView={() => {
+                setIsInView(true);
+              }}
+              initial={{ x: "-40vw" }}
+              animate={
+                isInView && {
+                  x: 0,
+                  transition: {
+                    duration: 0.7,
+                  },
+                }
+              }
+            >
+              laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+              dolor in reprehenderit in voluptate velit esse cillum dolore eu
+              fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+              proident, sunt in culpa qui officia deserunt mollit anim id est
+              laborum.
+            </motion.div>
+          </div>
+          <div className="lines">
+            <div className="border-lines"></div>
+          </div>
+          <div className="buttons">
+            <motion.div
+              whileInView={() => {
+                setIsInView(true);
+              }}
+              initial={{ x: "-50vw" }}
+              animate={
+                isInView && {
+                  x: 0,
+                  transition: {
+                    duration: 0.7,
+                  },
+                }
+              }
+              style={{ position: "relative" }}
+            >
+              <img src={Buy} alt="buy" height={130} />
+              <img src={Price} alt="price" className="price" />
+              <div className="para-content">Buy amazing collections of NFT</div>
+            </motion.div>
+            <motion.div
+              whileInView={() => {
+                setIsInView(true);
+              }}
+              initial={{ x: "50vw" }}
+              animate={
+                isInView && {
+                  x: 0,
+                  transition: {
+                    duration: 0.7,
+                  },
+                }
+              }
+            >
+              <img src={Cash} alt="price" className="cash" />
+              <img src={Sell} alt="sell" height={130} />
+              <div className="para-content-right">
+                Put up your NFT Collections on Sale!
+              </div>
+            </motion.div>
+          </div>
+          <div className="brand-nfts">
+            <div>
+              <AnimatedTextWord text="LUXE BRAND NFTS" />
+            </div>
+            <ShoppingListCard />
+          </div>
+          <div className="nft-collection">
+            <div>
+              <AnimatedTextWord text="NFT COLLECTIONS" />
+            </div>
+            <div className="para-des">
+              Brands which have entered the metaverse
+            </div>
+            <div className="company-logo">
+              {CompanyLogo.map(({ img, width }) => {
+                return <img src={img} alt="img" width={width} height={150} />;
+              })}
+            </div>
+            <div className="para-des">and many more!</div>
+          </div>
+          <YellowBarContent requiredPersonalAssistance={true} />
+        </motion.div>
       </NFTMetaVerseWrapper>
     </>
   );

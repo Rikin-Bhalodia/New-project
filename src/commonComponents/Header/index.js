@@ -190,7 +190,7 @@ const Header = () => {
             </div>
 
             <div className="logoImage text-center">
-              <a href="#">
+              <a href="">
                 <img src={MainLogo} className="main-logo" />
               </a>
             </div>

@@ -1,19 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import TopTrandingImage from "../../../assets/images/service/pets/top-tranding.svg";
 import styled from "styled-components";
 import { useLocation } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const TopTrandingCardWrapper = styled.div`
-  width: fit-content;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 40px;
+  .flip-card {
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 40px;
+  }
   .tranding-image {
     border-radius: 40px 40px 0 0;
-    height: 250px;
+    height: 230px;
     width: 430px;
+    object-fit: cover;
   }
   .names {
     color: #a79586;
@@ -75,33 +79,51 @@ const TopTrandingCardWrapper = styled.div`
   }
 `;
 const TopTrandingCard = () => {
+  const [isInView, setIsInView] = useState(false);
   const location = useLocation();
   return (
     <TopTrandingCardWrapper>
-      <img
-        src={TopTrandingImage}
-        loading="lazy"
-        alt="image"
-        className="tranding-image"
-      />
-      <div className="names">
-        <div className="goa-name">Goa, India</div>
-        <div className="destination-name">leela palace, goa</div>
-        <div className="des">
-          <div className="purpose">
-            <div>luxury stay in goa with daily breakfast and dinner</div>
-            <div className="date">travel until 31 march 2023</div>
-            <div>2, 3, 4, 6 nights from</div>
-            <div>including taxes and fees</div>
-            {location.pathname !== "/service-travel-destination" ||
-              (location.pathname !== "/service-travel-stays" && (
-                <button className="btn">KNOW MORE</button>
-              ))}
-          </div>
+      <motion.div
+        whileInView={() => {
+          setIsInView(true);
+        }}
+        initial={{ rotateY: "90deg" }}
+        animate={
+          isInView && {
+            y: 0,
+            rotateY: "0deg",
+            transition: {
+              duration: 1,
+            },
+          }
+        }
+        className="flip-card"
+      >
+        <img
+          src={TopTrandingImage}
+          loading="lazy"
+          alt="image"
+          className="tranding-image"
+        />
+        <div className="names">
+          <div className="goa-name">Goa, India</div>
+          <div className="destination-name">leela palace, goa</div>
+          <div className="des">
+            <div className="purpose">
+              <div>luxury stay in goa with daily breakfast and dinner</div>
+              <div className="date">travel until 31 march 2023</div>
+              <div>2, 3, 4, 6 nights from</div>
+              <div>including taxes and fees</div>
+              {location.pathname !== "/service-travel-destination" ||
+                (location.pathname !== "/service-travel-stays" && (
+                  <button className="btn">KNOW MORE</button>
+                ))}
+            </div>
 
-          <div className="request">Request To Book</div>
+            <div className="request">Request To Book</div>
+          </div>
         </div>
-      </div>
+      </motion.div>
     </TopTrandingCardWrapper>
   );
 };

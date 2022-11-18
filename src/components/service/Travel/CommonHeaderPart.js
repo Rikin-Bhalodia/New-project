@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import GoBackpart from "../Common/gobachpart";
 import BannerImage from "../../../assets/images/service/travel/banner.svg";
 import GetWay from "../../../assets/images/service/travel/getway.svg";
-
+import { motion } from "framer-motion";
+import GoBackpart from "../Common/gobachpart";
 import Menu from "../../../commonComponents/Menu";
 import MenuIcon from "../../../assets/images/studio/menu.svg";
+import AnimatedTextWord from "../../../commonComponents/Animation/FlipAnimation";
 
 const CommonHeaderPartWrapper = styled.div`
   .heading-part {
@@ -46,8 +47,12 @@ const CommonHeaderPart = () => {
 
   return (
     <CommonHeaderPartWrapper>
-      {" "}
-      <div className="heading-part">
+      <motion.div
+        initial={{ y: "200vh" }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="heading-part"
+      >
         <div className="goback-part">
           <GoBackpart />
         </div>
@@ -66,10 +71,12 @@ const CommonHeaderPart = () => {
           )}
         </div>
         <div className="middle-name">
-          <div className="name">READY TO</div>
+          <div className="name">
+            <AnimatedTextWord text="READY TO" />
+          </div>
           <img src={GetWay} alt="getway" height={200} />
         </div>
-      </div>
+      </motion.div>
     </CommonHeaderPartWrapper>
   );
 };
