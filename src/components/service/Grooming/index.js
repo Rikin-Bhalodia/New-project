@@ -78,6 +78,84 @@ const GroomingWrapper = styled.div`
   .btn {
     width: 100%;
   }
+  @media (max-width: 1200px) {
+    .blank-slider {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+    .text {
+      width: 400px;
+      top: 0;
+      margin-top: 30px;
+      display: flex;
+      align-self: center;
+    }
+  }
+  @media (max-width: 1100px) {
+    .button-review {
+      width: 350px;
+      font-size: 28px;
+    }
+    .desss {
+      padding: 50px 150px;
+    }
+  }
+
+  @media (max-width: 1000px) {
+    .heading-part {
+      font-size: 90px;
+    }
+
+    .button-review {
+      width: 320px;
+      font-size: 26px;
+    }
+    .desss {
+      padding: 20px 100px;
+    }
+  }
+  @media (max-width: 800px) {
+    .heading-part {
+      font-size: 80px;
+    }
+
+    .button-review {
+      width: 290px;
+      font-size: 24px;
+      height: 70px;
+      margin-top: 50px;
+    }
+    .desss {
+      padding: 20px 70px;
+      font-size: 18px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .button-review {
+      width: 260px;
+      font-size: 20px;
+    }
+    .desss {
+      padding: 10px 50px;
+      font-size: 16px;
+    }
+  }
+  @media (max-width: 500px) {
+    .heading-part {
+      font-size: 70px;
+    }
+
+    .button-review {
+      width: 240px;
+      font-size: 18px;
+    }
+    .desss {
+      padding: 0px 20px;
+      font-size: 13px;
+    }
+  }
 `;
 
 const Grooming = () => {
@@ -141,8 +219,10 @@ const Grooming = () => {
           venenatis lectus magna fringilla urna porttitor rhoncus. A
           pellentesque sit amet porttitor eget dolor.
         </motion.div>
-        <img src={Text} alt="text" loading="lazy" className="text" />
-        <BlankSlider />
+        <div className="blank-slider">
+          <img src={Text} alt="text" loading="lazy" className="text" />
+          <BlankSlider />
+        </div>
         <motion.div
           whileInView={() => {
             setIsInView(true);

@@ -7,6 +7,7 @@ import aboutlogo from "./assets/images/img/about-logo.png";
 import { studio2Images, sliderImage, avenues } from "./utils";
 import { motion } from "framer-motion";
 import TopTrandingCard from "./components/service/Common/TopTrandingCard";
+import { useMediaQuery } from "react-responsive";
 
 export default function Slider() {
   const [isInView, setIsInView] = useState(false);
@@ -306,6 +307,7 @@ export function TopTrandingSlider() {
 
 export function BlankSlider() {
   const [isInView, setIsInView] = useState(false);
+  const isResponsive = useMediaQuery({ query: "(max-width: 1200px)" });
 
   return (
     <motion.div
@@ -317,16 +319,42 @@ export function BlankSlider() {
         isInView && {
           y: 0,
           transition: {
-            duration: 0.3,
+            duration: 0.9,
           },
         }
       }
     >
       <Swiper
-        slidesPerView={4.9}
+        breakpoints={{
+          260: {
+            slidesPerView: 1.5,
+            spaceBetween: 10,
+          },
+          360: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          500: {
+            slidesPerView: 3,
+            spaceBetween: 40,
+          },
+          700: {
+            slidesPerView: 3.5,
+            spaceBetween: 60,
+          },
+          1075: {
+            slidesPerView: 4,
+          },
+          1500: {
+            slidesPerView: 4.9,
+          },
+        }}
         className="mySwiper"
         centeredSlides={true}
-        style={{ height: "200px", margin: "0 0 0 30%" }}
+        style={
+          ({ height: "200px" },
+          isResponsive ? { margin: " 30px 0 0 0" } : { margin: "0 0 0 30%" })
+        }
         autoplay={{
           delay: 1500,
           disableOnInteraction: false,
@@ -338,7 +366,7 @@ export function BlankSlider() {
       >
         {[1, 2, , 4, , 56, , 7].map((_) => {
           return (
-            <SwiperSlide style={{ width: "250px", height: "200px" }}>
+            <SwiperSlide style={{ width: "200px", height: "200px" }}>
               <div
                 style={{
                   background: "#D9D9D9",
