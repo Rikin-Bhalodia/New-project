@@ -7,6 +7,8 @@ import RightMiddle from "../../../assets/images/service/pets/right-middle.svg";
 import LuxuryLife from "../../../assets/images/service/pets/luxury-life.svg";
 import { ExploreMoreIcons, PetsIcons } from "../../../utils";
 import { motion } from "framer-motion";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination, Navigation } from "swiper";
 const MiddlePart = React.lazy(() => import("../MiddlePart"));
 const WannaShop = React.lazy(() =>
   import("../../../commonComponents/WannaShop")
@@ -25,7 +27,7 @@ const PetsWrapper = styled.div`
   .heading-part {
     font-family: "Coral Blush";
     font-style: normal;
-    width: 100vw;
+    width: 100%;
     font-weight: 400;
     font-size: 110px;
     display: flex;
@@ -95,10 +97,89 @@ const PetsWrapper = styled.div`
     display: flex;
     justify-content: center;
   }
+  @media (max-width: 1300px) {
+    .explore-more-icons {
+      display: none;
+    }
+  }
+  @media (max-width: 1000px) {
+    .heading-part {
+      font-size: 90px;
+    }
+    .icons {
+      margin-top: 80px;
+    }
+    .explore-mores {
+      font-size: 60px;
+    }
+  }
+  @media (max-width: 800px) {
+    .heading-part {
+      font-size: 80px;
+    }
+    .icons {
+      margin-top: 70px;
+      column-gap: 10px;
+    }
+    .pets-icon {
+      height: 35px;
+      width: 50px;
+    }
+    .icon-name {
+      font-size: 12px;
+    }
+    .explore-mores {
+      font-size: 50px;
+      margin-top: 40px;
+    }
+  }
+  @media (max-width: 700px) {
+    .pets-icon {
+      height: 35px;
+      width: 40px;
+    }
+    .icon-name {
+      font-size: 10px;
+    }
+  }
+  @media (max-width: 600px) {
+    .pets-icon {
+      height: 30px;
+      width: 30px;
+    }
+    .icon-name {
+      font-size: 8px;
+    }
+    .explore-mores {
+      font-size: 45px;
+      margin-top: 30px;
+    }
+  }
+  @media (max-width: 500px) {
+    .heading-part {
+      font-size: 70px;
+    }
+    .icons {
+      margin-top: 40px;
+      column-gap: 8px;
+    }
+    .pets-icon {
+      height: 22px;
+      width: 22px;
+    }
+    .icon-name {
+      font-size: 7px;
+    }
+    .explore-mores {
+      font-size: 40px;
+      margin-top: 20px;
+    }
+  }
 `;
 const Pets = () => {
   const [menuOpenModal, setMenuOpenModal] = useState(false);
   const [isInView, setIsInView] = useState(false);
+
   return (
     <PetsWrapper>
       <motion.div
@@ -142,6 +223,7 @@ const Pets = () => {
                   alt="img"
                   height={40}
                   width={60}
+                  className="pets-icon"
                 />
                 <div className="icon-name">{data.name}</div>
               </div>
@@ -154,44 +236,82 @@ const Pets = () => {
         <div className="explore-mores">
           <AnimatedTextWord text="EXPLORE MORE" />
         </div>
-        <motion.div
-          whileInView={() => {
-            setIsInView(true);
+        <Swiper
+          breakpoints={{
+            260: {
+              slidesPerView: 1,
+              spaceBetween: 10,
+            },
+            450: {
+              slidesPerView: 1.5,
+              spaceBetween: 60,
+            },
+            700: {
+              slidesPerView: 3,
+              spaceBetween: 80,
+            },
+            1075: {
+              slidesPerView: 4,
+              spaceBetween: 120,
+            },
+            1500: {
+              slidesPerView: 5,
+              spaceBetween: 130,
+            },
           }}
-          initial={{ y: "30vh" }}
-          animate={
-            isInView && {
-              y: 0,
-              transition: {
-                duration: 0.4,
-              },
-            }
-          }
-          className="explore-more-icons"
+          className="mySwiper"
+          style={{ height: "300px", margin: "50px 0 0 0 " }}
+          autoplay={{
+            delay: 1500,
+            disableOnInteraction: false,
+          }}
+          loop={true}
+          loopFillGroupWithBlank={true}
+          speed={2500}
+          modules={[Autoplay, Pagination, Navigation]}
         >
-          {ExploreMoreIcons.map((data) => {
-            return (
-              <motion.div
-                whileHover={{
-                  scale: 1.1,
-                }}
-                transition={{
+          <motion.div
+            whileInView={() => {
+              setIsInView(true);
+            }}
+            initial={{ y: "30vh" }}
+            animate={
+              isInView && {
+                y: 0,
+                transition: {
                   duration: 0.4,
-                }}
-                style={{
-                  backgroundImage: `url(${data.img})`,
-                  backgroundSize: "auto",
-                  objectFit: "cover",
-                  borderRadius: "50%",
-                }}
-              >
-                <div className="image-name">
-                  <AnimatedTextWord text={data.name} />
-                </div>
-              </motion.div>
-            );
-          })}
-        </motion.div>
+                },
+              }
+            }
+            className="explore-more-icons"
+          >
+            {ExploreMoreIcons.map((data) => {
+              return (
+                <SwiperSlide>
+                  <motion.div
+                    whileHover={{
+                      scale: 1.1,
+                    }}
+                    transition={{
+                      duration: 0.4,
+                    }}
+                    style={{
+                      backgroundImage: `url(${data.img})`,
+                      backgroundSize: "auto",
+                      objectFit: "cover",
+                      borderRadius: "50%",
+                    }}
+                    className="explore-more-icon"
+                  >
+                    <div className="image-name">
+                      <AnimatedTextWord text={data.name} />
+                    </div>
+                  </motion.div>
+                </SwiperSlide>
+              );
+            })}
+          </motion.div>
+        </Swiper>
         <motion.div
           whileInView={() => {
             setIsInView(true);

@@ -249,8 +249,32 @@ export function StudioS2() {
 export function TopTrandingSlider() {
   return (
     <Swiper
-      slidesPerView={2.6}
-      spaceBetween={100}
+      breakpoints={{
+        260: {
+          slidesPerView: 1,
+          spaceBetween: 10,
+        },
+        360: {
+          slidesPerView: 1.2,
+          spaceBetween: 20,
+        },
+        500: {
+          slidesPerView: 1.5,
+          spaceBetween: 40,
+        },
+        700: {
+          slidesPerView: 2,
+          spaceBetween: 60,
+        },
+        1075: {
+          slidesPerView: 2.1,
+          spaceBetween: 80,
+        },
+        1500: {
+          slidesPerView: 2.6,
+          spaceBetween: 100,
+        },
+      }}
       className="mySwiper"
       style={{ margin: "50px 0 0 0" }}
       autoplay={{

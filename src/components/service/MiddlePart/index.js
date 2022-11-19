@@ -26,6 +26,8 @@ const MiddlePartWrapper = styled.div`
     display: flex;
     flex-direction: column;
     text-align: center;
+    justify-content: center;
+    align-items: center;
   }
   .line {
     width: 100%;
@@ -36,6 +38,66 @@ const MiddlePartWrapper = styled.div`
   .border-line {
     width: 90%;
     border-bottom: 1px solid rgba(0, 0, 0, 0.27);
+  }
+  @media (max-width: 1000px) {
+    .left-middle {
+      height: 400px;
+    }
+    .right-middle {
+      height: 400px;
+    }
+    .new-head {
+      font-size: 50px;
+    }
+    .luxuxry-life {
+      width: 300px;
+    }
+  }
+  @media (max-width: 700px) {
+    .left-middle {
+      height: 370px;
+    }
+    .right-middle {
+      height: 370px;
+    }
+    .new-head {
+      font-size: 40px;
+    }
+    .luxuxry-life {
+      width: 250px;
+    }
+  }
+  @media (max-width: 550px) {
+    .left-middle {
+      height: 340px;
+      width: 80px;
+    }
+    .right-middle {
+      height: 340px;
+      width: 80px;
+    }
+    .new-head {
+      font-size: 35px;
+    }
+    .luxuxry-life {
+      width: 230px;
+    }
+  }
+  @media (max-width: 450px) {
+    .left-middle {
+      height: 300px;
+      width: 70px;
+    }
+    .right-middle {
+      height: 300px;
+      width: 70px;
+    }
+    .new-head {
+      font-size: 28px;
+    }
+    .luxuxry-life {
+      width: 210px;
+    }
   }
 `;
 const MiddlePart = ({
@@ -122,7 +184,13 @@ const MiddlePart = ({
           >
             {third}
           </motion.span>
-          <img loading="lazy" src={Text} alt="gift" height={200} />
+          <img
+            loading="lazy"
+            src={Text}
+            alt="gift"
+            height={200}
+            className="luxuxry-life"
+          />
         </div>
         <motion.img
           loading="lazy"

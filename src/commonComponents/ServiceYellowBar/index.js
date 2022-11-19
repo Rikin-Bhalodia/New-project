@@ -45,6 +45,92 @@ const ServiceYellowBarWrapper = styled.div`
     text-transform: uppercase;
     z-index: 9;
   }
+  @media (max-width: 1200px) {
+    .image {
+      left: -10%;
+    }
+    .image2 {
+      right: -10%;
+    }
+  }
+  @media (max-width: 1000px) {
+    .image {
+      left: -25%;
+    }
+    .image2 {
+      right: -25%;
+    }
+    .content-head {
+      font-size: 48px;
+    }
+  }
+  @media (max-width: 1000px) {
+    .image {
+      left: -30%;
+      height: 160px;
+    }
+    .image2 {
+      right: -30%;
+      height: 160px;
+    }
+    .content-head {
+      font-size: 42px;
+    }
+  }
+  @media (max-width: 800px) {
+    height: 150px;
+    .image {
+      left: -40%;
+      height: 150px;
+    }
+    .image2 {
+      right: -40%;
+      height: 150px;
+    }
+    .content-head {
+      font-size: 36px;
+    }
+    .note {
+      font-size: 11px;
+      right: 80px;
+    }
+  }
+  @media (max-width: 600px) {
+    height: 130px;
+    .image {
+      left: -65%;
+      height: 130px;
+    }
+    .image2 {
+      right: -65%;
+      height: 130px;
+    }
+    .content-head {
+      font-size: 30px;
+    }
+    .note {
+      font-size: 10px;
+      right: 50px;
+    }
+  }
+  @media (max-width: 450px) {
+    height: 110px;
+    .image {
+      left: -85%;
+      height: 110px;
+    }
+    .image2 {
+      right: -85%;
+      height: 110px;
+    }
+    .content-head {
+      font-size: 25px;
+    }
+    .note {
+      font-size: 8px;
+      right: 20px;
+    }
+  }
 `;
 
 const ServiceYellowBar = ({ content, note }) => {

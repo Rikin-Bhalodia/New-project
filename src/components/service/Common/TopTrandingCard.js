@@ -70,12 +70,98 @@ const TopTrandingCardWrapper = styled.div`
     background: #a75b41;
     height: 40px;
     width: 150px;
-    /* margin: 10px 0 0 5px; */
     font-family: "Mulish";
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     color: white;
+  }
+  @media (max-width: 1200px) {
+    .tranding-image {
+      height: 220px;
+      width: 400px;
+    }
+    .names {
+      width: 400px;
+    }
+    .request {
+      height: 90px;
+    }
+  }
+  @media (max-width: 1000px) {
+    .tranding-image {
+      width: 370px;
+    }
+    .names {
+      width: 370px;
+    }
+    .request {
+      height: 90px;
+    }
+    .names {
+      width: 370px;
+    }
+    .goa-name {
+      font-size: 16px;
+    }
+    .destination-name {
+      font-size: 20px;
+    }
+    .purpose {
+      font-size: 14px;
+    }
+  }
+  @media (max-width: 800px) {
+    .tranding-image {
+      height: 200px;
+      width: 340px;
+    }
+    .names {
+      width: 340px;
+    }
+    .request {
+      height: 80px;
+      width: 100px;
+      font-size: 14px;
+    }
+    .names {
+      width: 340px;
+    }
+    .goa-name {
+      font-size: 15px;
+    }
+    .destination-name {
+      font-size: 18px;
+    }
+    .purpose {
+      font-size: 13px;
+    }
+  }
+  @media (max-width: 600px) {
+    .tranding-image {
+      height: 180px;
+      width: 300px;
+    }
+    .names {
+      width: 300px;
+    }
+    .request {
+      height: 80px;
+      width: 100px;
+      font-size: 14px;
+    }
+    .names {
+      width: 300px;
+    }
+    .goa-name {
+      font-size: 15px;
+    }
+    .destination-name {
+      font-size: 18px;
+    }
+    .purpose {
+      font-size: 13px;
+    }
   }
 `;
 const TopTrandingCard = () => {
