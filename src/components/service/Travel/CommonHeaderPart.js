@@ -7,6 +7,7 @@ import GoBackpart from "../Common/gobachpart";
 import Menu from "../../../commonComponents/Menu";
 import MenuIcon from "../../../assets/images/studio/menu.svg";
 import AnimatedTextWord from "../../../commonComponents/Animation/FlipAnimation";
+import { useMediaQuery } from "react-responsive";
 
 const CommonHeaderPartWrapper = styled.div`
   .heading-part {
@@ -40,10 +41,53 @@ const CommonHeaderPartWrapper = styled.div`
   .name {
     padding-right: 200px;
   }
+  @media (max-width: 1000px) {
+    .middle-name {
+      margin-top: 70px;
+    }
+    .name {
+      padding-right: 0px;
+    }
+    .getway {
+      width: 500px;
+      position: relative;
+      top: -30px;
+    }
+  }
+  @media (max-width: 800px) {
+    .middle-name {
+      font-size: 65px;
+    }
+    .getway {
+      width: 450px;
+    }
+  }
+  @media (max-width: 600px) {
+    .getway {
+      width: 400px;
+    }
+  }
+  @media (max-width: 450px) {
+    .middle-name {
+      font-size: 60px;
+    }
+    .getway {
+      width: 350px;
+    }
+  }
+  @media (max-width: 400px) {
+    .middle-name {
+      font-size: 55px;
+    }
+    .getway {
+      width: 300px;
+    }
+  }
 `;
 
 const CommonHeaderPart = () => {
   const [menuOpenModal, setMenuOpenModal] = useState(false);
+  const isResponsive = useMediaQuery({ query: "(max-width: 800px)" });
 
   return (
     <CommonHeaderPartWrapper>
@@ -74,7 +118,7 @@ const CommonHeaderPart = () => {
           <div className="name">
             <AnimatedTextWord text="READY TO" />
           </div>
-          <img src={GetWay} alt="getway" height={200} />
+          <img src={GetWay} alt="getway" height={200} className="getway" />
         </div>
       </motion.div>
     </CommonHeaderPartWrapper>
