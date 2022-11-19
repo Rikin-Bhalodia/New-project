@@ -25,6 +25,38 @@ const ServiceTravelWrapper = styled.div`
     gap: 100px;
     margin: 40px 100px;
   }
+  @media (max-width: 1200px) {
+    .title {
+      padding-top: 80px;
+      font-size: 70px;
+    }
+    .cards {
+      margin: 40px 50px;
+      gap: 50px;
+
+      justify-content: center;
+    }
+  }
+  @media (max-width: 1000px) {
+    .title {
+      padding-top: 60px;
+      font-size: 60px;
+    }
+    .cards {
+      margin: 30px 10px;
+      gap: 40px;
+    }
+  }
+  @media (max-width: 1000px) {
+    .title {
+      padding-top: 50px;
+      font-size: 55px;
+    }
+    .cards {
+      margin: 20px 10px;
+      gap: 60px;
+    }
+  }
 `;
 
 const ServiceTravelCategory = ({ name }) => {

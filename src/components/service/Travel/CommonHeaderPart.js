@@ -41,6 +41,17 @@ const CommonHeaderPartWrapper = styled.div`
   .name {
     padding-right: 200px;
   }
+  .menu-width {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+  .res {
+    position: absolute;
+    bottom: 0px;
+    right: unset;
+    top: unset;
+  }
   @media (max-width: 1000px) {
     .middle-name {
       margin-top: 70px;
@@ -100,8 +111,17 @@ const CommonHeaderPart = () => {
         <div className="goback-part">
           <GoBackpart />
         </div>
+
+        <div className="middle-name">
+          <div className="name">
+            <AnimatedTextWord text="READY TO" />
+          </div>
+          <img src={GetWay} alt="getway" height={200} className="getway" />
+        </div>
+      </motion.div>
+      <div className="menu-width">
         <div
-          className="menu-icon"
+          className={isResponsive ? "menu-icon res" : "menu-icon"}
           onClick={() => setMenuOpenModal(!menuOpenModal)}
         >
           <Menu
@@ -114,13 +134,7 @@ const CommonHeaderPart = () => {
             <img loading="lazy" src={MenuIcon} alt="menu" height={45} />
           )}
         </div>
-        <div className="middle-name">
-          <div className="name">
-            <AnimatedTextWord text="READY TO" />
-          </div>
-          <img src={GetWay} alt="getway" height={200} className="getway" />
-        </div>
-      </motion.div>
+      </div>
     </CommonHeaderPartWrapper>
   );
 };
