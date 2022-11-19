@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Cards } from "../../../utils";
 import InspireImage from "../../../assets/images/service/travel/inspire.svg";
-
+import AnimatedTextWord from "../../../commonComponents/Animation/FlipAnimation";
+import { motion } from "framer-motion";
 const InspireWrapper = styled.div`
   background: #665e2f;
   z-index: 99;
@@ -16,6 +17,7 @@ const InspireWrapper = styled.div`
     justify-content: center;
     column-gap: 50px;
     position: relative;
+    z-index: 1;
   }
   .single-card {
     position: relative;
@@ -25,11 +27,16 @@ const InspireWrapper = styled.div`
     font-size: 15px;
     display: flex;
     color: white;
+    overflow: hidden;
+    height: 250px;
+    width: 250px;
+    border-radius: 17px;
+    object-fit: cover;
   }
   .content {
     position: absolute;
     z-index: 99;
-    bottom: 8px;
+    bottom: 0px;
     width: 100%;
     background: rgba(0, 0, 0, 0.5);
     border-radius: 0px 0px 17px 17px;
@@ -76,20 +83,47 @@ const InspireWrapper = styled.div`
 `;
 
 const Inspire = () => {
+  const [isInView, setIsInView] = useState(false);
   return (
     <InspireWrapper>
-      <div className="insipre">INSPIRE</div>
-      <div className="cards">
+      <div className="insipre">
+        <AnimatedTextWord text="INSPIRE" />
+      </div>
+      <motion.div
+        whileInView={() => {
+          setIsInView(true);
+        }}
+        initial={{ y: "40vh" }}
+        animate={
+          isInView && {
+            y: 0,
+            transition: {
+              duration: 0.5,
+            },
+          }
+        }
+        className="cards"
+      >
         {Cards.map(({ img, content, time }) => {
           return (
             <div className="single-card">
-              <img src={img} alt="img" height={250} width={250} />
+              <motion.img
+                whileHover={{
+                  scale: 1.1,
+                }}
+                transition={{
+                  duration: 0.4,
+                }}
+                src={img}
+                alt="img"
+                loading="lazy"
+              />
               <div className="time">{time}</div>
               <div className="content">{content}</div>
             </div>
           );
         })}
-      </div>
+      </motion.div>
       <img src={InspireImage} alt="inspire" className="inspire" />
       <button className="articles">READ MORE ARTICLES</button>
     </InspireWrapper>

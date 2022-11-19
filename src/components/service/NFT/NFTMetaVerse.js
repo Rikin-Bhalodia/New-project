@@ -271,43 +271,26 @@ const NFTMetaVerse = () => {
               <img loading="lazy" src={MenuIcon} alt="menu" height={45} />
             )}
           </div>
-          <div className="content-metaverse">
-            <img
-              src={Insta}
-              alt="insta"
-              loading="lazy"
-              height={250}
-              className="insta"
-            />
-            <div className="metaverse">
-              <AnimatedTextWord text="METAVERSE" />
+          <div className="metaverse-part-1">
+            <div className="content-metaverse">
+              <img
+                src={Insta}
+                alt="insta"
+                loading="lazy"
+                height={250}
+                className="insta"
+              />
+              <div className="metaverse">
+                <AnimatedTextWord text="METAVERSE" />
+              </div>
+              <img
+                src={Facebook}
+                alt="facebook"
+                loading="lazy"
+                height={250}
+                className="facebook"
+              />
             </div>
-            <img
-              src={Facebook}
-              alt="facebook"
-              loading="lazy"
-              height={250}
-              className="facebook"
-            />
-          </div>
-          <motion.div
-            whileInView={() => {
-              setIsInView(true);
-            }}
-            initial={{ y: "40vh" }}
-            animate={
-              isInView && {
-                y: 0,
-                transition: {
-                  duration: 0.5,
-                },
-              }
-            }
-            className="des-meta"
-          >
-            IS THE NEW UNIVERSE
-          </motion.div>
-          <div className="des-para-meta">
             <motion.div
               whileInView={() => {
                 setIsInView(true);
@@ -317,35 +300,56 @@ const NFTMetaVerse = () => {
                 isInView && {
                   y: 0,
                   transition: {
-                    duration: 0.7,
+                    duration: 0.5,
                   },
                 }
               }
+              className="des-meta"
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco
+              IS THE NEW UNIVERSE
             </motion.div>
-            <motion.div
-              whileInView={() => {
-                setIsInView(true);
-              }}
-              initial={{ y: "40vh" }}
-              animate={
-                isInView && {
-                  y: 0,
-                  transition: {
-                    duration: 0.9,
-                  },
+            <div className="des-para-meta">
+              <motion.div
+                whileInView={() => {
+                  setIsInView(true);
+                }}
+                initial={{ y: "40vh" }}
+                animate={
+                  isInView && {
+                    y: 0,
+                    transition: {
+                      duration: 0.7,
+                    },
+                  }
                 }
-              }
-            >
-              laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-              dolor in reprehenderit in voluptate velit esse cillum dolore eu
-              fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-              proident, sunt in culpa qui officia deserunt mollit anim id est
-              laborum.
-            </motion.div>
+                className="metaverse-para"
+              >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco
+              </motion.div>
+              <motion.div
+                whileInView={() => {
+                  setIsInView(true);
+                }}
+                initial={{ y: "40vh" }}
+                animate={
+                  isInView && {
+                    y: 0,
+                    transition: {
+                      duration: 0.9,
+                    },
+                  }
+                }
+                className="metaverse-para"
+              >
+                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est
+                laborum.
+              </motion.div>
+            </div>
           </div>
           <div className="lines">
             <div className="border-lines"></div>
@@ -377,6 +381,7 @@ const NFTMetaVerse = () => {
                       },
                     }
                   }
+                  className="nft-para"
                 >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -395,6 +400,7 @@ const NFTMetaVerse = () => {
                       },
                     }
                   }
+                  className="nft-para"
                 >
                   laboris nisi ut aliquip ex ea commodo consequat. Duis aute
                   irure dolor in reprehenderit in voluptate velit esse cillum
