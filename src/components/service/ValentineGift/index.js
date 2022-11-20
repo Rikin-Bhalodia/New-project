@@ -93,7 +93,7 @@ const ValentineGift = () => {
       <motion.div
         initial={{ y: "200vh" }}
         animate={{ y: 0 }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 1 }}
       >
         <div className="heading-part">
           <AnimatedTextWord text="VALENTINE GIFTS" />
