@@ -225,9 +225,11 @@ const NFTMetaVerseWrapper = styled.div`
   .company-logo {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     width: 100%;
     margin: 50px 0;
     row-gap: 40px;
+    gap: 50px;
   }
 `;
 
@@ -536,7 +538,7 @@ const NFTMetaVerse = () => {
             </div>
             <div className="company-logo">
               {CompanyLogo.map(({ img, width }) => {
-                return <img src={img} alt="img" width={width} height={150} />;
+                return <img src={img} alt="img" width={width} height={120} />;
               })}
             </div>
             <div className="para-des">and many more!</div>

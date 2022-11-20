@@ -310,11 +310,11 @@ export const NftIcons = [
 ];
 
 export const CompanyLogo = [
-  { img: Gucci, width: "25%" },
-  { img: SelfRidges, width: "25%" },
-  { img: Burberry, width: "25%" },
-  { img: Coachella, width: "25%" },
-  { img: Adidas, width: "25%" },
-  { img: Dolce, width: "50%" },
-  { img: Mac, width: "25%" },
+  { img: Gucci, width: "20%" },
+  { img: SelfRidges, width: "20%" },
+  { img: Burberry, width: "20%" },
+  { img: Coachella, width: "20%" },
+  { img: Adidas, width: "20%" },
+  { img: Dolce, width: "40%" },
+  { img: Mac, width: "20%" },
 ];
