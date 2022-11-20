@@ -104,6 +104,12 @@ const ProfilePageLogin = React.lazy(() =>
 const ProfilePageSignUp = React.lazy(() =>
   import("./components/ProfilePages/SignUp.js")
 )
+const TermsAndConditions = React.lazy(() =>
+  import("./components/ProfilePages/T&C")
+)
+const PersonalAssistance = React.lazy(() =>
+  import("./components/ProfilePages/PersonalAssistance")
+)
 const SideBar = React.lazy(() =>
   import("./commonComponents/SidebarOfProfilePage/index.js")
 )
@@ -190,6 +196,8 @@ function App() {
         <Route path="/profilepage-order" element={<ProfilePageOrders />} />
         <Route path="/profilepage-login" element={<ProfilePageLogin />} />
         <Route path="/profilepage-signup" element={<ProfilePageSignUp />} />
+        <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+        <Route path="/personal-assistance" element={<PersonalAssistance />} />
         <Route path="/sidebar" element={<SideBar />} />
       </Routes>
       {pathname !== "/sub-menu1" && pathname !== "/sub-menu2" && <Footer />}
