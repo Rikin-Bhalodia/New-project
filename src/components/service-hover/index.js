@@ -25,7 +25,6 @@ const ServiceHoverWrapper = styled.div`
     display: none;
   }
   .menu-list div {
-    border-bottom: 1px solid #fff;
     position: relative;
     display: flex;
     justify-content: center;
@@ -53,9 +52,8 @@ const ServiceHoverWrapper = styled.div`
     background: #fff;
   }
   .leftImg {
-    position: absolute;
-    left: 50px;
-    top: 20%;
+    position: absolute !important;
+    left: 0px;
     img {
       width: 270px;
       height: 350px;
@@ -63,9 +61,8 @@ const ServiceHoverWrapper = styled.div`
     }
   }
   .rightImg {
-    position: absolute;
-    right: 50px;
-    top: 20%;
+    position: absolute !important;
+    right: 0px;
     img {
       width: 270px;
       height: 350px;
@@ -74,8 +71,55 @@ const ServiceHoverWrapper = styled.div`
   }
 `;
 
+const menuData = [
+  {
+    name: "BEAUTY & WELLNESS",
+    duration: 1,
+  },
+  {
+    name: "Culture",
+    duration: 1.2,
+  },
+  {
+    name: "DESIGN CONSULTATION",
+    duration: 1.4,
+  },
+  {
+    name: "Fine Dine",
+    duration: 1.6,
+  },
+  {
+    name: "Lifestyle Management",
+    duration: 1.8,
+  },
+  {
+    name: "NFT & METAVERSE",
+    duration: 2,
+  },
+  {
+    name: "Pets",
+    duration: 2.2,
+  },
+  {
+    name: "Private Parties, Kitty Parties, Weddings & Celebration ",
+    duration: 2.4,
+  },
+  {
+    name: "Real Estate",
+    duration: 2.6,
+  },
+  {
+    name: "Transportation",
+    duration: 2.8,
+  },
+  {
+    name: "TRAVEL & LEISURE",
+    duration: 3,
+  },
+];
+
 export default function ServiceHover() {
-  const [menuOpenModal, setMenuOpenModal] = useState(false);
+  const [showImage, setShowImage] = useState(false);
 
   return (
     <ServiceHoverWrapper>
@@ -88,90 +132,35 @@ export default function ServiceHover() {
         <div className="hover-show-img">
           <div className="grid">
             <div className="menu-list">
-              <motion.div
-                initial={{ y: "30vh", opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 1 }}
-              >
-                <h3>BEAUTY & WELLNESS</h3>
-              </motion.div>
-              <motion.div
-                initial={{ y: "30vh", opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 1.2 }}
-              >
-                <h3>Culture</h3>
-              </motion.div>
-              <motion.div
-                initial={{ y: "30vh", opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 1.4 }}
-              >
-                <h3>DESIGN CONSULTATION</h3>
-              </motion.div>
-              <motion.div
-                initial={{ y: "30vh", opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 1.6 }}
-              >
-                <h3>Fine Dine</h3>
-              </motion.div>
-              <motion.div
-                initial={{ y: "30vh", opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 1.8 }}
-              >
-                <h3>Lifestyle Management</h3>
-              </motion.div>
-              <motion.div
-                initial={{ y: "30vh", opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 2 }}
-              >
-                <h3>NFT & METAVERSE</h3>
-              </motion.div>
-              <motion.div
-                initial={{ y: "30vh", opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 2.2 }}
-              >
-                <h3>Pets</h3>
-              </motion.div>
-              <motion.div
-                initial={{ y: "30vh", opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 2.4 }}
-              >
-                <h3>Private Parties, Kitty Parties, Weddings & Celebration </h3>
-              </motion.div>
-              <motion.div
-                initial={{ y: "30vh", opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 2.6 }}
-              >
-                <h3>Real Estate</h3>
-              </motion.div>
-              <motion.div
-                initial={{ y: "30vh", opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 2.8 }}
-              >
-                <h3>Transportation</h3>
-              </motion.div>
-              <motion.div
-                initial={{ y: "30vh", opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 3 }}
-              >
-                <h3>TRAVEL & LEISURE</h3>
-              </motion.div>
+              {menuData.map(({ name, duration }, i) => {
+                return (
+                  <div className="shop-hover-category">
+                    {showImage === i && (
+                      <div className="leftImg">
+                        <img src={studioInner3} alt="" loading="lazy" />
+                      </div>
+                    )}
+
+                    <motion.div
+                      initial={{ y: "30vh", opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{ duration: duration }}
+                      onMouseEnter={() => setShowImage(i)}
+                      onMouseLeave={() => {
+                        setShowImage("");
+                      }}
+                    >
+                      <h3>{name}</h3>
+                    </motion.div>
+                    {showImage === i && (
+                      <div className="rightImg">
+                        <img src={studioInner5} alt="" loading="lazy" />
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
             </div>
-          </div>
-          <div className="leftImg">
-            <img src={studioInner3} alt="" loading="lazy" />
-          </div>
-          <div className="rightImg">
-            <img src={studioInner5} alt="" loading="lazy" />
           </div>
         </div>
       </motion.section>

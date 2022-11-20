@@ -1,14 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import studioInner5 from "../../assets/images/img/studioInner-1.jpg";
-import studioInner1 from "../../assets/images/img/studioInner-1.jpg";
-import studioInner2 from "../../assets/images/img/studioInner-2.jpg";
 import studioInner3 from "../../assets/images/img/studioInner-3.jpg";
-import studioInner4 from "../../assets/images/img/studioInner-4.jpg";
-import Menu from "../../commonComponents/Menu";
-import MenuIcon from "../../assets/images/studio/menu.svg";
-import img1 from "../../assets/images/shop-hover/img1.svg";
-import img2 from "../../assets/images/shop-hover/img2.svg";
 import { motion } from "framer-motion";
 
 const ShopHoverWrapper = styled.div`
@@ -16,7 +9,6 @@ const ShopHoverWrapper = styled.div`
     display: flex;
     justify-content: center;
     text-align: center;
-    /* padding: 100px 0; */
     width: 100vw;
     position: relative;
   }
@@ -33,7 +25,7 @@ const ShopHoverWrapper = styled.div`
     display: none;
   }
   .menu-list div {
-    border-bottom: 1px solid #fff;
+    /* border-bottom: 1px solid #fff; */
     position: relative;
     display: flex;
     justify-content: center;
@@ -61,9 +53,8 @@ const ShopHoverWrapper = styled.div`
     background: #fff;
   }
   .leftImg {
-    position: absolute;
-    left: 50px;
-    top: 20%;
+    position: absolute !important;
+    left: 0px;
     img {
       width: 270px;
       height: 350px;
@@ -71,19 +62,85 @@ const ShopHoverWrapper = styled.div`
     }
   }
   .rightImg {
-    position: absolute;
-    right: 50px;
-    top: 20%;
+    position: absolute !important;
+    right: 0px;
+    top: 0;
     img {
       width: 270px;
       height: 350px;
       object-fit: cover;
     }
   }
+  .shop-hover-category {
+    display: flex;
+  }
 `;
 
+const menuData = [
+  {
+    name: "ACCESSORIES",
+    duration: 1,
+  },
+  {
+    name: "BEAUTY & FREGRANCE",
+    duration: 1.2,
+  },
+  {
+    name: "Fashion",
+    duration: 1.4,
+  },
+  {
+    name: "Foods & Drinks (FMCG)",
+    duration: 1.6,
+  },
+  {
+    name: "Footwear",
+    duration: 1.8,
+  },
+  {
+    name: "Fragrance",
+    duration: 2,
+  },
+  {
+    name: "Handbags & Travel Bags",
+    duration: 2.2,
+  },
+  {
+    name: "HOME",
+    duration: 2.4,
+  },
+  {
+    name: "Jewelry",
+    duration: 2.6,
+  },
+  {
+    name: "Luxury Games",
+    duration: 2.8,
+  },
+  {
+    name: "Kids",
+    duration: 3,
+  },
+  {
+    name: "Luxury Gifting",
+    duration: 3.2,
+  },
+  {
+    name: "Pets (Shop)",
+    duration: 3.4,
+  },
+  {
+    name: "Sports",
+    duration: 3.6,
+  },
+  {
+    name: "Tech & Electronics",
+    duration: 3.8,
+  },
+];
+
 export default function ShopHover() {
-  const [menuOpenModal, setMenuOpenModal] = useState(false);
+  const [showImage, setShowImage] = useState(false);
 
   return (
     <ShopHoverWrapper>
@@ -96,125 +153,35 @@ export default function ShopHover() {
         <div className="hover-show-img">
           <div className="grid">
             <div className="menu-list">
-              <motion.div
-                initial={{ y: "30vh", opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 1 }}
-              >
-                <h3>ACCESSORIES</h3>
-              </motion.div>
-              <motion.div
-                initial={{ y: "30vh", opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 1.2 }}
-              >
-                <h3>BEAUTY & FREGRANCE</h3>
-              </motion.div>
-              <motion.div
-                initial={{ y: "30vh", opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 1.4 }}
-              >
-                <h3>Fashion</h3>
-              </motion.div>
-              <motion.div
-                initial={{ y: "30vh", opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 1.6 }}
-              >
-                <h3>Foods & Drinks (FMCG)</h3>
-              </motion.div>
-              <motion.div
-                initial={{ y: "30vh", opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 1.8 }}
-              >
-                <h3>Footwear</h3>
-              </motion.div>
-              <motion.div
-                initial={{ y: "30vh", opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 2 }}
-              >
-                <h3>Fragrance</h3>
-              </motion.div>
-              <motion.div
-                initial={{ y: "30vh", opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 2.2 }}
-              >
-                <h3>Handbags & Travel Bags</h3>
-              </motion.div>
-              <motion.div
-                initial={{ y: "30vh", opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 2.4 }}
-              >
-                <h3>HOME</h3>
-              </motion.div>
-              <motion.div
-                initial={{ y: "30vh", opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 2.6 }}
-              >
-                <h3>Jewelry</h3>
-              </motion.div>
-              <motion.div
-                initial={{ y: "30vh", opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 2.8 }}
-              >
-                <h3>Luxury Games</h3>
-              </motion.div>
-              <motion.div
-                initial={{ y: "30vh", opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 3 }}
-              >
-                <h3>Kids</h3>
-              </motion.div>
-              <motion.div
-                initial={{ y: "30vh", opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 3.2 }}
-              >
-                <h3>Luxury Games</h3>
-              </motion.div>
-              <motion.div
-                initial={{ y: "30vh", opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 3.4 }}
-              >
-                <h3>Luxury Gifting</h3>
-              </motion.div>
-              <motion.div
-                initial={{ y: "30vh", opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 3.6 }}
-              >
-                <h3>Pets (Shop)</h3>
-              </motion.div>
-              <motion.div
-                initial={{ y: "30vh", opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 3.8 }}
-              >
-                <h3>Sports</h3>
-              </motion.div>
-              <motion.div
-                initial={{ y: "30vh", opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 4 }}
-              >
-                <h3>Tech & Electronics</h3>
-              </motion.div>
+              {menuData.map(({ name, duration }, i) => {
+                return (
+                  <div className="shop-hover-category">
+                    {showImage === i && (
+                      <div className="leftImg">
+                        <img src={studioInner3} alt="" loading="lazy" />
+                      </div>
+                    )}
+
+                    <motion.div
+                      initial={{ y: "30vh", opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{ duration: duration }}
+                      onMouseEnter={() => setShowImage(i)}
+                      onMouseLeave={() => {
+                        setShowImage("");
+                      }}
+                    >
+                      <h3>{name}</h3>
+                    </motion.div>
+                    {showImage === i && (
+                      <div className="rightImg">
+                        <img src={studioInner5} alt="" loading="lazy" />
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
             </div>
-          </div>
-          <div className="leftImg">
-            <img src={studioInner3} alt="" loading="lazy" />
-          </div>
-          <div className="rightImg">
-            <img src={studioInner5} alt="" loading="lazy" />
           </div>
         </div>
       </motion.section>
