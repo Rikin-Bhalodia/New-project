@@ -68,7 +68,6 @@ const ServiceLuxuryGiftingWrapper = styled.div`
   }
   .icon-name {
     padding-top: 10px;
-    font-size: 40px;
   }
   .gifts-by-recipient {
     font-family: "Coral Blush";
