@@ -26,7 +26,7 @@ const TopTrandingCardWrapper = styled.div`
     width: 430px;
     background: #fcf9f2;
     height: fit-content;
-    padding: 0 15px;
+    padding: 15px 15px;
     border: 1px solid #665e2f;
     box-shadow: 12px 12px 55px rgba(0, 0, 0, 0.25);
     border-radius: 0 0 40px 40px;

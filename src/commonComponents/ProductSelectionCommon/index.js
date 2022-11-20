@@ -167,9 +167,9 @@ const ProductSelectionCommonWrapper = styled.div`
     padding-bottom: 20px;
   }
   .section--right {
-    max-width: 368px;
+    max-width: 300px;
     border: 1px solid #000000;
-    padding: 34px 24px 27px 24px;
+    padding: 10px;
   }
   .section--right .title {
     font-family: "Coral Blush";
@@ -520,7 +520,7 @@ const ProductSelectionCommonWrapper = styled.div`
 const ProductSelectionCommon = () => {
   const [selectedState, setSelectedState] = useState("");
   const [menuOpenModal, setMenuOpenModal] = useState(false);
-  const isResponsive = useMediaQuery({ query: "(max-width: 1000px)" });
+  const isResponsive = useMediaQuery({ query: "(max-width: 1100px)" });
 
   return (
     <ProductSelectionCommonWrapper>
@@ -711,7 +711,7 @@ const ProductSelectionCommon = () => {
                 src={productSample}
                 alt=""
                 height={600}
-                width={400}
+                width={420}
               />
               <div className="price--item-section">
                 <div className="price--title">₹3,56,367.34</div>
