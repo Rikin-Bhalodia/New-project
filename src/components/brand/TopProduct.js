@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import ProductImg from "../../assets/images/brand/productImg.svg";
 import { motion } from "framer-motion";
+import { useMediaQuery } from "react-responsive";
 const TopProductWrapper = styled.div`
   .grid {
     display: grid;
@@ -74,14 +75,121 @@ const TopProductWrapper = styled.div`
       }
     }
   }
+  @media (max-width: 1100px) {
+    margin: 30px 30px;
+    .product-image {
+      height: 200px;
+    }
+    .grid {
+      display: flex;
+      justify-content: center;
+      .body .cad {
+        gap: 0;
+        .cad-head .new {
+          padding: 5px 15px;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+  @media (max-width: 800px) {
+    .product-image {
+      height: 150px;
+    }
+    .grid {
+      margin: 50px 50px;
+      justify-content: space-between;
+      .body .cad {
+        gap: 0;
+        .cad-head .new {
+          padding: 5px 10px;
+          font-size: 14px;
+        }
+        .cad-footer h6 {
+          font-size: 12px;
+          padding: 5px 15px;
+        }
+      }
+    }
+  }
+  @media (max-width: 650px) {
+    .product-image {
+      height: 120px;
+      width: 150px;
+    }
+    .grid {
+      margin: 30px 0;
+      .body .cad {
+        padding: 10px 30px;
+        .cad-head .new {
+          padding: 5px 6px;
+          font-size: 12px;
+        }
+        .cad-footer h6 {
+          font-size: 12px;
+          padding: 5px 15px;
+        }
+      }
+    }
+  }
+  @media (max-width: 500px) {
+    .product-image {
+      height: 100px;
+      width: 120px;
+    }
+    .grid {
+      margin: 20px 0;
+      .body .cad {
+        padding: 10px 30px;
+        .cad-head .new {
+          font-size: 10px;
+        }
+        .cad-footer h6 {
+          font-size: 10px;
+        }
+      }
+    }
+  }
+  @media (max-width: 450px) {
+    .product-image {
+      height: 90px;
+      width: 100px;
+    }
+    .grid {
+      .body .cad {
+        padding: 10px 30px;
+      }
+    }
+  }
+  @media (max-width: 400px) {
+    .product-image {
+      height: 80px;
+      width: 80px;
+    }
+    .grid {
+      .body .cad {
+        padding: 10px 10px;
+        .cad-head {
+          .new {
+            left: -10px;
+          }
+        }
+        .cad-footer h6 {
+          font-size: 9px;
+        }
+      }
+    }
+  }
 `;
 
 const TopProduct = () => {
   const [isInView, setIsInView] = useState(false);
+  const isResponsive = useMediaQuery({ query: "(max-width: 800px)" });
+
   return (
     <TopProductWrapper>
       <motion.div className="grid">
-        {[1, 2, 3].map((_) => {
+        {(isResponsive ? [1, 2] : [1, 2, 3]).map((_) => {
           return (
             <div className="body">
               <motion.div
@@ -117,6 +225,7 @@ const TopProduct = () => {
                     loading="lazy"
                     src={ProductImg}
                     alt=""
+                    className="product-image"
                   />
                 </div>
                 <div className="cad-footer">

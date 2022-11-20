@@ -41,7 +41,8 @@ const ProductSectionWrapper = styled.div`
   .complete-bottom--container {
     border: 1px solid #000000;
     border-radius: 37px;
-    padding: 20px 100px;
+    padding: 20px 90px;
+    height: fit-content;
   }
   .cards--section {
     display: grid;
@@ -154,6 +155,119 @@ const ProductSectionWrapper = styled.div`
     transform: rotate(270deg) !important;
     margin-bottom: 25px;
   }
+  @media (max-width: 1200px) {
+    .complete-bottom--container {
+      padding: 20px 50px;
+    }
+    .insta-post {
+    }
+  }
+  @media (max-width: 1100px) {
+    .complete-bottom--container {
+      padding: 20px 10px;
+    }
+    .cards--section {
+      gap: 20px;
+    }
+  }
+  @media (max-width: 1000px) {
+    .complete-bottom--container {
+      flex-direction: column-reverse;
+      justify-content: center;
+      align-items: center;
+      row-gap: 30px;
+    }
+    .cards--section {
+      gap: 50px;
+    }
+    .card {
+    }
+  }
+  @media (max-width: 670px) {
+    .complete-look-section {
+      margin: 40px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .complete-bottom--container {
+      row-gap: 30px;
+    }
+    .cards--section {
+      gap: 30px;
+      .card {
+        width: 200px;
+      }
+      .title {
+        font-size: 12px;
+      }
+      .price {
+        font-size: 10px;
+      }
+    }
+  }
+  @media (max-width: 600px) {
+    .complete-bottom--container {
+      row-gap: 20px;
+    }
+    .cards--section {
+      gap: 15px;
+      .card {
+        width: 170px;
+        height: 250px;
+      }
+      .title {
+        font-size: 11px;
+      }
+    }
+    .product--image {
+      .card-image {
+        width: 150px;
+      }
+    }
+    .complete-look-text {
+      width: 350px;
+    }
+  }
+  @media (max-width: 450px) {
+    .complete-look-section {
+      margin: 30px 20px;
+    }
+    .complete-bottom--container {
+      row-gap: 20px;
+    }
+    .cards--section {
+      gap: 10px;
+      .card {
+        width: 150px;
+        height: 230px;
+      }
+    }
+    .insta-post {
+      width: fit-content;
+      height: 450px;
+    }
+    .complete-look-text {
+      width: 300px;
+    }
+  }
+  @media (max-width: 400px) {
+    .complete-bottom--container {
+      row-gap: 15px;
+    }
+    .cards--section {
+      gap: 10px;
+      .card {
+        width: 130px;
+        .product--image {
+          height: 150px;
+          .card-image {
+            width: 120px;
+          }
+        }
+      }
+    }
+  }
 `;
 
 const ProductSection = () => {
@@ -175,6 +289,7 @@ const ProductSection = () => {
               alt=""
               width={400}
               height={100}
+              className="complete-look-text"
             />
           </div>
           <div className="complete-bottom--container d-flex justify-content-between">
@@ -211,6 +326,7 @@ const ProductSection = () => {
                     src={sandal}
                     alt=""
                     height={180}
+                    className="card-image"
                   />
                 </div>
                 <div className="card--detail">
@@ -252,6 +368,7 @@ const ProductSection = () => {
                     loading="lazy"
                     src={lipstick}
                     alt=""
+                    className="card-image"
                   />
                 </div>
                 <div className="card--detail">
@@ -293,6 +410,7 @@ const ProductSection = () => {
                     loading="lazy"
                     src={ring}
                     alt=""
+                    className="card-image"
                   />
                 </div>
                 <div className="card--detail">
@@ -334,6 +452,7 @@ const ProductSection = () => {
                     loading="lazy"
                     src={makeupbox}
                     alt=""
+                    className="card-image"
                   />
                 </div>
                 <div className="card--detail">
@@ -361,7 +480,13 @@ const ProductSection = () => {
               }
               className="insta--card"
             >
-              <img loading="lazy" src={instapost} alt="" height={530} />
+              <img
+                loading="lazy"
+                src={instapost}
+                alt=""
+                height={530}
+                className="insta-post"
+              />
             </motion.div>
           </div>
         </section>

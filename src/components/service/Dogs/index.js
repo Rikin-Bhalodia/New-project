@@ -105,13 +105,14 @@ const DogsWrapper = styled.div`
   }
   .load-more {
     display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     margin-top: 120px;
   }
   .load-line {
     border-bottom: 2px solid #000000;
     width: 40%;
-    margin-bottom: 35px;
   }
   .text {
     width: 20%;
@@ -122,6 +123,7 @@ const DogsWrapper = styled.div`
     font-size: 30px;
     justify-content: space-around;
     margin: 0px 10px;
+    align-items: center;
   }
   .plus {
     height: 60px;
@@ -134,10 +136,149 @@ const DogsWrapper = styled.div`
     font-size: 50px;
     font-weight: 700;
     position: relative;
-    top: -5px;
   }
   .yellow-bar {
     margin-top: 50px;
+  }
+  @media (max-width: 1100px) {
+    .plus {
+      height: 50px;
+      width: 50px;
+      font-size: 42px;
+    }
+    .text {
+      font-size: 26px;
+    }
+    .button-review {
+      width: 350px;
+      font-size: 28px;
+    }
+  }
+
+  @media (max-width: 1000px) {
+    .heading-part {
+      font-size: 90px;
+    }
+    .icons {
+      margin-top: 80px;
+    }
+    .plus {
+      height: 40px;
+      width: 40px;
+      font-size: 35px;
+      margin: 0 10px;
+    }
+    .text {
+      font-size: 23px;
+    }
+    .review {
+      margin-top: 80px;
+      font-size: 38px;
+    }
+    .button-review {
+      width: 320px;
+      font-size: 26px;
+    }
+  }
+  @media (max-width: 800px) {
+    .heading-part {
+      font-size: 80px;
+    }
+    .icons {
+      margin-top: 70px;
+      column-gap: 10px;
+    }
+    .pets-icon {
+      height: 35px;
+      width: 50px;
+    }
+    .icon-name {
+      font-size: 12px;
+    }
+    .text {
+      width: 26%;
+    }
+    .load-line {
+      width: 37%;
+    }
+    .review {
+      margin-top: 60px;
+      font-size: 34px;
+    }
+    .button-review {
+      width: 290px;
+      font-size: 24px;
+      height: 70px;
+      margin-top: 50px;
+    }
+  }
+  @media (max-width: 700px) {
+    .pets-icon {
+      height: 35px;
+      width: 40px;
+    }
+    .icon-name {
+      font-size: 10px;
+    }
+    .text {
+      width: 30%;
+    }
+    .load-line {
+      width: 35%;
+    }
+  }
+  @media (max-width: 600px) {
+    .pets-icon {
+      height: 30px;
+      width: 30px;
+    }
+    .icon-name {
+      font-size: 8px;
+    }
+    .text {
+      width: 40%;
+    }
+    .load-line {
+      width: 30%;
+    }
+    .change-style {
+      font-size: 16px;
+    }
+    .review {
+      margin-top: 40px;
+      font-size: 30px;
+    }
+    .button-review {
+      width: 260px;
+      font-size: 20px;
+    }
+  }
+  @media (max-width: 500px) {
+    .heading-part {
+      font-size: 70px;
+    }
+    .icons {
+      margin-top: 40px;
+      column-gap: 8px;
+    }
+    .pets-icon {
+      height: 22px;
+      width: 22px;
+    }
+    .icon-name {
+      font-size: 7px;
+    }
+    .text {
+      width: 46%;
+      font-size: 20px;
+    }
+    .load-line {
+      width: 27%;
+    }
+    .button-review {
+      width: 240px;
+      font-size: 18px;
+    }
   }
 `;
 
@@ -219,6 +360,7 @@ const Dogs = () => {
                   alt="icon"
                   height={40}
                   width={60}
+                  className="pets-icon"
                 />
                 <div className="icon-name">{data.name}</div>
               </div>

@@ -7,6 +7,7 @@ import PImg from "../../assets/images/studio-material/product-img.svg";
 import StudioProduct from "../../assets/images/studio-product/similar-product.svg";
 
 import { motion } from "framer-motion";
+import { useLocation } from "react-router-dom";
 
 const ProductImgSliderWrapper = styled.div`
   padding: 0px 50px;
@@ -41,7 +42,7 @@ const ProductImgSliderWrapper = styled.div`
     }
   }
   @media (max-width: 1000px) {
-    padding: 0;
+    padding: 0 50px;
     .slider-box {
       img {
         width: 180px;
@@ -87,14 +88,15 @@ const ProductImgSliderWrapper = styled.div`
   }
 `;
 
-export default function ProductImgSlider() {
+export default function ProductImgSlider({ image }) {
   const [isInView, setIsInView] = useState(false);
+  const location = useLocation();
 
   return (
     <ProductImgSliderWrapper>
       <div className="head">
         <img
-          src={StudioProduct}
+          src={image || StudioProduct}
           alt="watch-head"
           loading="lazy"
           className="watch-more"
@@ -171,13 +173,15 @@ export default function ProductImgSlider() {
                       loading="lazy"
                     />
                   </motion.div>
-                  <div className="details">
-                    <h4>Product 1</h4>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    </p>
-                    <h4>Rs. 1890</h4>
-                  </div>
+                  {location.pathname !== "/product-selection" && (
+                    <div className="details">
+                      <h4>Product 1</h4>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      </p>
+                      <h4>Rs. 1890</h4>
+                    </div>
+                  )}
                 </div>
               </SwiperSlide>
             );

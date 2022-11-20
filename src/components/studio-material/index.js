@@ -41,6 +41,25 @@ const StudioProductMaterialWrapper = styled.div`
       width: 100%;
     }
   }
+  @media (max-width: 1000px) {
+    .studio-material-head {
+      margin: 0 !important;
+    }
+    .studio-material-body {
+      width: 100%;
+      position: absolute;
+      height: 400px !important;
+      top: 0;
+      img {
+        width: 100%;
+        height: 400px;
+      }
+    }
+    .material-wrapper {
+      margin: 0;
+      padding: 0;
+    }
+  }
 `;
 
 export default function StudioProductMaterial() {
@@ -70,7 +89,7 @@ export default function StudioProductMaterial() {
             className="polygon-left"
           />
         )}
-        <div className="container-fluid">
+        <div className="container-fluid material-wrapper">
           <div className="studio-material-head mt-5">
             <div className="leftside-area">
               <div className="goback-link">

@@ -32,10 +32,8 @@ const BrandProductWrapper = styled.div`
       width: 100%;
     }
     .img {
-      position: relative;
+      background: #000000;
       .inside-data {
-        position: absolute;
-        top: 0;
         .body {
           display: flex;
           align-items: center;
@@ -66,8 +64,6 @@ const BrandProductWrapper = styled.div`
           }
         }
         .footer {
-          position: absolute;
-          bottom: -100px;
           width: 98vw;
         }
       }
@@ -143,6 +139,66 @@ const BrandProductWrapper = styled.div`
       }
     }
   }
+  .filter {
+    padding: 0 50px 20px 70px;
+  }
+  @media (max-width: 1200px) {
+    .banner-section .img .inside-data {
+      .body {
+        padding-top: 30px;
+        h3 {
+          font-size: 90px;
+        }
+      }
+    }
+    .filter {
+      padding: 0 50px 30px 70px;
+    }
+  }
+  @media (max-width: 1000px) {
+    .banner-section .img .inside-data {
+      .body {
+        padding-top: 20px;
+        h3 {
+          font-size: 70px;
+        }
+      }
+    }
+  }
+  @media (max-width: 1000px) {
+    .banner-section .img .inside-data {
+      .body {
+        padding-top: 0px;
+        h3 {
+          font-size: 50px;
+        }
+      }
+    }
+  }
+  @media (max-width: 800px) {
+    .banner-section .img .inside-data {
+      .body {
+        h3 {
+          font-size: 40px;
+        }
+      }
+    }
+  }
+  @media (max-width: 500px) {
+    .banner-section .img .inside-data {
+      .body {
+        h3 {
+          font-size: 30px;
+        }
+        a {
+          font-size: 16px;
+        }
+      }
+    }
+    .filter {
+      padding: 0 10px 30px 10px;
+    }
+  }
 `;
 const FiltersName = [
   { name: "COLLECTION NAME", option: ["Dry Food", "Wet Food"] },
@@ -173,7 +229,7 @@ const BrandProduct = () => {
         <div className="banner-section">
           <img loading="lazy" src={Banner1} alt="" className="banner" />
           <div className="img">
-            <img loading="lazy" src={Banner2} alt="" className="banner" />
+            {/* <img loading="lazy" src={Banner2} alt="" className="banner" /> */}
             <div className="inside-data">
               <div className="body">
                 <a href="">Go Back</a>

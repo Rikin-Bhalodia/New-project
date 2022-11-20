@@ -1,6 +1,9 @@
-import React from "react";
+import { AnimateSharedLayout } from "framer-motion";
+import React, { useState } from "react";
 import styled from "styled-components";
+import AnimatedTextWord from "../../../commonComponents/Animation/FlipAnimation";
 import { EventNearAndTopThings, Feelings } from "../../../utils";
+import { motion } from "framer-motion";
 
 const EventNearWrapper = styled.div`
   .event-near {
@@ -55,23 +58,66 @@ const EventNearWrapper = styled.div`
 `;
 
 const EventNear = ({ isRequiredTopThings }) => {
+  const [isInView, setIsInView] = useState(false);
   return (
     <EventNearWrapper>
-      <div className="inspire-head">Events near the date</div>
-      <div className="event-near">
+      <div className="inspire-head">
+        <AnimatedTextWord text="Events near the date" />
+      </div>
+      <motion.div
+        whileInView={() => {
+          setIsInView(true);
+        }}
+        initial={{ y: "40vh" }}
+        animate={
+          isInView && {
+            y: 0,
+            transition: {
+              duration: 0.5,
+            },
+          }
+        }
+        className="event-near"
+      >
         {EventNearAndTopThings.map(({ img, name }) => {
           return (
             <div className="single-event">
-              <img src={img} alt="image123" height={200} />
+              <motion.img
+                whileHover={{
+                  scale: 1.1,
+                }}
+                transition={{
+                  duration: 0.4,
+                }}
+                src={img}
+                alt="image123"
+                height={200}
+              />
               <div>{name}</div>
             </div>
           );
         })}
-      </div>
+      </motion.div>
       {isRequiredTopThings && (
         <>
-          <div className="inspire-head">top things to do</div>
-          <div className="feelings">
+          <div className="inspire-head">
+            <AnimatedTextWord text="top things to do" />
+          </div>
+          <motion.div
+            whileInView={() => {
+              setIsInView(true);
+            }}
+            initial={{ y: "40vh" }}
+            animate={
+              isInView && {
+                y: 0,
+                transition: {
+                  duration: 0.5,
+                },
+              }
+            }
+            className="feelings"
+          >
             {Feelings.slice(0, 4).map((feeling) => {
               return (
                 <div className="wrapper">
@@ -80,7 +126,7 @@ const EventNear = ({ isRequiredTopThings }) => {
                 </div>
               );
             })}
-          </div>
+          </motion.div>
         </>
       )}
     </EventNearWrapper>

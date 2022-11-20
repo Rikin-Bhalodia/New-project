@@ -20,6 +20,25 @@ const TopTrandingWrapper = styled.div`
     text-align: center;
     text-transform: uppercase;
   }
+  @media (max-width: 1000px) {
+    height: 600px;
+    .top {
+      font-size: 45px;
+    }
+  }
+  @media (max-width: 600px) {
+    height: 550px;
+  }
+  @media (max-width: 500px) {
+    .top {
+      font-size: 40px;
+    }
+  }
+  @media (max-width: 375px) {
+    .top {
+      font-size: 36px;
+    }
+  }
 `;
 const TopTranding = ({ name, isRequiredBackground }) => {
   const [isInView, setIsInView] = useState(false);

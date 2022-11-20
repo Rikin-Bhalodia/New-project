@@ -10,6 +10,7 @@ import Ranttxt from "../../assets/images/brand/ranttxt.svg";
 import Topproduct from "../../assets/images/brand/top-product.svg";
 import { motion } from "framer-motion";
 import AnimatedTextWord from "../../commonComponents/Animation/FlipAnimation";
+import MenuIcon from "../../assets/images/studio/menu.svg";
 const Menu = React.lazy(() => import("../../commonComponents/Menu"));
 const ProductPoP = React.lazy(() => import("../Product/Product"));
 const TopProduct = React.lazy(() => import("./TopProduct"));
@@ -19,26 +20,22 @@ const BrandWrapper = styled.div`
   padding: 0 0 50px;
   .brand-section {
     .img1 {
-      /* height: 100vh; */
       width: 100vw;
       object-fit: cover;
       position: relative;
     }
     .fendi-section {
-      position: relative;
+      padding: 50px 30px;
+      background: #000000;
       .img2 {
         height: 100vh;
         width: 100vw;
         object-fit: cover;
       }
       .fendi-area {
-        position: absolute;
-        z-index: 100;
-        top: 30px;
         display: flex;
-        gap: 50px;
+        gap: 20px;
         .left-area {
-          padding-left: 50px;
           h2 {
             font-weight: 400;
             font-size: 90px;
@@ -70,8 +67,9 @@ const BrandWrapper = styled.div`
           }
         }
         .right-area {
+          display: flex;
+          align-items: center;
           img {
-            width: 550px;
             height: 560px;
           }
         }
@@ -96,10 +94,220 @@ const BrandWrapper = styled.div`
       text-transform: capitalize;
     }
   }
+  .think {
+    width: 100%;
+  }
+  .menu-icon {
+    display: none;
+  }
+  @media (max-width: 1000px) {
+    .menu-width {
+      width: 100%;
+      position: absolute;
+      z-index: 9;
+    }
+    .menu-icon {
+      display: flex;
+      margin: auto;
+    }
+    .fendi-section {
+      display: flex;
+      padding-right: 50px;
+    }
+    .brand-section .fendi-section .fendi-area .left-area {
+      p {
+        font-size: 14px;
+      }
+      h2 {
+        font-size: 70px;
+      }
+    }
+    .most-loved-product {
+      width: 700px;
+    }
+    .think-section h4 {
+      font-size: 30px;
+    }
+    .rent-it {
+      width: 200px;
+    }
+  }
+  @media (max-width: 850px) {
+    .brand-section .fendi-section .fendi-area {
+      .left-area {
+        p {
+          font-size: 12px;
+        }
+        h2 {
+          font-size: 60px;
+        }
+        .imgs .fimg {
+          height: 200px;
+        }
+      }
+      .right-area img {
+        height: 460px;
+      }
+    }
+    .most-loved-product {
+      width: 600px;
+    }
+    .think {
+      background: #ffe600;
+    }
+    .think-section {
+      border: none;
+      h4 {
+        font-size: 20px;
+        text-transform: uppercase;
+      }
+    }
+    .rent-it {
+      width: 150px;
+    }
+  }
+  @media (max-width: 700px) {
+    .fendi-area {
+      width: 100%;
+    }
+    .brand-section .fendi-section .fendi-area {
+      .left-area {
+        width: 50%;
+
+        p {
+          font-size: 11px;
+        }
+        h2 {
+          font-size: 55px;
+        }
+        .imgs .fimg {
+          height: 150px;
+        }
+      }
+      .right-area {
+        width: 50%;
+        img {
+          height: 430px;
+        }
+      }
+    }
+    .most-loved-product {
+      width: 500px;
+    }
+    .think-section {
+      padding: 0;
+      h4 {
+        font-size: 15px;
+      }
+    }
+    .rent-it {
+      width: 110px;
+    }
+  }
+  @media (max-width: 600px) {
+    .brand-section .fendi-section .fendi-area {
+      .left-area {
+        p {
+          font-size: 10px;
+        }
+        h2 {
+          font-size: 45px;
+        }
+        .imgs .fimg {
+          height: 120px;
+        }
+      }
+      .right-area {
+        img {
+          height: 380px;
+        }
+      }
+    }
+    .most-loved-product {
+      width: 400px;
+    }
+    .think-section {
+      h4 {
+        font-size: 13px;
+      }
+    }
+    .rent-it {
+      width: 100px;
+    }
+  }
+  @media (max-width: 500px) {
+    .brand-section .fendi-section .fendi-area {
+      .left-area {
+        p {
+          font-size: 10px;
+        }
+        h2 {
+          font-size: 40px;
+        }
+        .imgs {
+          margin-top: 10px;
+          .fimg {
+            height: 90px;
+            padding-right: 15px;
+          }
+        }
+      }
+      .right-area {
+        img {
+          height: 320px;
+        }
+      }
+    }
+    .most-loved-product {
+      width: 300px;
+    }
+    .think-section {
+      h4 {
+        font-size: 10px;
+      }
+    }
+    .rent-it {
+      width: 55px;
+    }
+  }
+  @media (max-width: 380px) {
+    .brand-section .fendi-section .fendi-area {
+      .left-area {
+        p {
+          font-size: 9px;
+        }
+        h2 {
+          font-size: 30px;
+        }
+        .imgs {
+          margin-top: 5px;
+          .fimg {
+            height: 70px;
+            padding-right: 10px;
+          }
+        }
+      }
+      .right-area {
+        img {
+          height: 280px;
+        }
+      }
+    }
+    .think-section {
+      h4 {
+        font-size: 9px;
+      }
+    }
+    .rent-it {
+      width: 40px;
+    }
+  }
 `;
 
 const Brand = () => {
   const [isInView, setIsInView] = useState(false);
+  const [menuOpenModal, setMenuOpenModal] = useState(false);
+
   return (
     <BrandWrapper>
       <Header />
@@ -110,11 +318,23 @@ const Brand = () => {
         className="brand-section"
       >
         <img loading="lazy" src={BrandBanner} alt="" className="img1" />
-        <div className="menu-box">
-          <Menu />
+        <div className="menu-width">
+          <div
+            className="menu-icon"
+            onClick={() => setMenuOpenModal(!menuOpenModal)}
+          >
+            <Menu
+              menuOpenModal={menuOpenModal}
+              onClick={(e) => e.stopPropagation()}
+            />
+            {menuOpenModal ? (
+              <img src={MenuIcon} loading="lazy" alt="menu" height={45} />
+            ) : (
+              <img src={MenuIcon} loading="lazy" alt="menu" height={45} />
+            )}
+          </div>
         </div>
         <div className="fendi-section">
-          <img loading="lazy" src={FendiBanner} alt="" className="img2" />
           <div className="fendi-area">
             <motion.div
               initial={{ x: "-50vw" }}
@@ -191,15 +411,22 @@ const Brand = () => {
         </div>
       </motion.div>
       <div className="love-product text-center">
-        <img loading="lazy" src={Loved} alt="" />
+        <img loading="lazy" src={Loved} alt="" className="most-loved-product" />
       </div>
       <ProductPoP />
-      <div className="think-section">
-        <h4>thinking of buying for an occassion?</h4>
-        <img loading="lazy" src={Ranttxt} alt="" />
+      <div className="think">
+        <div className="think-section">
+          <h4>thinking of buying for an occassion?</h4>
+          <img loading="lazy" src={Ranttxt} alt="" className="rent-it" />
+        </div>
       </div>
       <div className="head text-center">
-        <img loading="lazy" src={Topproduct} alt="" />
+        <img
+          loading="lazy"
+          src={Topproduct}
+          alt=""
+          className="most-loved-product"
+        />
       </div>
       <TopProduct />
       <TopProduct />

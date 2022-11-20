@@ -7,6 +7,10 @@ import LeftFilter from "../../../assets/images/aboutpage/left-filter.svg";
 import RightFilter from "../../../assets/images/aboutpage/right-filter.svg";
 import { Feelings } from "../../../utils";
 import YellowBarContent from "../Common/YellowBarContent";
+import { useMediaQuery } from "react-responsive";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { motion } from "framer-motion";
+import { Autoplay, Pagination, Navigation } from "swiper";
 
 const ServiceTravelWrapper = styled.div`
   width: 100%;
@@ -112,9 +116,148 @@ const ServiceTravelWrapper = styled.div`
     flex-direction: column;
     text-align: center;
   }
+  @media (max-width: 1200px) {
+    .name {
+      padding: 0;
+    }
+    .content-head {
+      font-size: 38px;
+    }
+    .para {
+      font-size: 16px;
+    }
+    .get-assistance {
+      font-size: 18px;
+    }
+    .image {
+      left: -10%;
+    }
+    .image2 {
+      right: -10%;
+    }
+    .background {
+      width: 220px;
+      height: 220px;
+    }
+    .feelings {
+      margin: 70px 100px 0 100px;
+    }
+  }
+  @media (max-width: 1100px) {
+    .feelings {
+      margin: 100px 70px 0 70px;
+    }
+  }
+  @media (max-width: 1000px) {
+    .image {
+      width: 400px;
+      left: -15%;
+    }
+    .image2 {
+      width: 400px;
+      right: -15%;
+    }
+    .content-head {
+      font-size: 34px;
+    }
+    .para {
+      font-size: 14px;
+    }
+    .get-assistance {
+      font-size: 16px;
+    }
+    .background {
+      width: 200px;
+      height: 200px;
+    }
+    .btn {
+      margin-top: 20px !important;
+    }
+  }
+  @media (max-width: 800px) {
+    .image {
+      width: 350px;
+      left: -20%;
+    }
+    .image2 {
+      right: -20%;
+      width: 350px;
+    }
+    .content-head {
+      font-size: 30px;
+    }
+    .para {
+      font-size: 13px;
+    }
+    .get-assistance {
+      font-size: 14px;
+    }
+    .manage-radio-btn {
+      gap: 150px;
+    }
+  }
+  @media (max-width: 600px) {
+    .image {
+      width: 300px;
+    }
+    .image2 {
+      width: 300px;
+    }
+    .content-head {
+      font-size: 28px;
+    }
+    .get-assistance {
+      font-size: 13px;
+    }
+    .manage-radio-btn {
+      gap: 100px;
+    }
+  }
+  @media (max-width: 450px) {
+    .image {
+      left: -35%;
+    }
+    .image2 {
+      right: -35%;
+    }
+    .content-head {
+      font-size: 26px;
+    }
+    .get-assistance {
+      font-size: 12px;
+    }
+    .para {
+      font-size: 12px;
+    }
+    .manage-radio-btn {
+      gap: 70px;
+    }
+  }
+  @media (max-width: 400px) {
+    .image {
+      left: -45%;
+    }
+    .image2 {
+      right: -45%;
+    }
+    .content-head {
+      font-size: 22px;
+    }
+    .get-assistance {
+      font-size: 11px;
+    }
+    .para {
+      font-size: 11px;
+    }
+    .manage-radio-btn {
+      gap: 40px;
+    }
+  }
 `;
 
 const ServiceTravel = () => {
+  const isResponsive = useMediaQuery({ query: "(max-width: 1000px)" });
+
   return (
     <>
       <ServiceTravelWrapper>
@@ -124,7 +267,6 @@ const ServiceTravel = () => {
           <RadioButton key="internatinal" name="INTERNATIONAL" />
         </div>
         <TopTranding name="trending places" isRequiredBackground={false} />
-        <button className="btn">KNOW MORE</button>
         <div className="yellow-bar">
           <img
             src={LeftFilter}
@@ -148,16 +290,70 @@ const ServiceTravel = () => {
           <RadioButton key="mood" name="MOOD" />
           <RadioButton key="activity" name="ACTIVITY" />
         </div>
-        <div className="feelings">
-          {Feelings.map((feeling) => {
-            return (
-              <div className="wrapper">
-                <div className="background"></div>
-                <div className="feeling">{feeling}</div>
-              </div>
-            );
-          })}
-        </div>
+        {isResponsive ? (
+          <Swiper
+            breakpoints={{
+              400: {
+                slidesPerView: 1,
+                spaceBetween: 10,
+              },
+              550: {
+                slidesPerView: 2,
+                spaceBetween: 30,
+              },
+              700: {
+                slidesPerView: 3,
+                spaceBetween: 60,
+              },
+              900: {
+                slidesPerView: 4,
+                spaceBetween: 60,
+              },
+            }}
+            className="mySwiper"
+            style={{ height: "300px", padding: "0 0 0 40px" }}
+            autoplay={{
+              delay: 1500,
+              disableOnInteraction: false,
+            }}
+            loop={true}
+            loopFillGroupWithBlank={true}
+            speed={2500}
+            modules={[Autoplay, Pagination, Navigation]}
+          >
+            {Feelings.map((feeling) => {
+              return (
+                <SwiperSlide style={{ background: "transparent" }}>
+                  <motion.div
+                    whileHover={{
+                      scale: 1.1,
+                    }}
+                    transition={{
+                      duration: 0.4,
+                    }}
+                  >
+                    <div className="wrapper">
+                      <div className="background"></div>
+                      <div className="feeling">{feeling}</div>
+                    </div>
+                  </motion.div>
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
+        ) : (
+          <div className="feelings">
+            {Feelings.map((feeling) => {
+              return (
+                <div className="wrapper">
+                  <div className="background"></div>
+                  <div className="feeling">{feeling}</div>
+                </div>
+              );
+            })}
+          </div>
+        )}
+
         <button className="btn" style={{ marginTop: "70px" }}>
           ENQUIRE NOW
         </button>

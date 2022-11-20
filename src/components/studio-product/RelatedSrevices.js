@@ -55,6 +55,8 @@ const ReletedServicesWrapper = styled.div`
     }
   }
   @media (max-width: 800px) {
+    padding: 0px 50px 0px;
+
     .related-service {
       width: 450px;
     }

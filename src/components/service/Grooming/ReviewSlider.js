@@ -5,12 +5,31 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import { studio2Images } from "../../../utils";
+import { useMediaQuery } from "react-responsive";
 
 export function ReviewSlider({ color, background, des, border }) {
+  const isResponsive = useMediaQuery({ query: "(max-width: 750px)" });
+
   return (
     <Swiper
+      breakpoints={{
+        260: {
+          slidesPerView: 1,
+          spaceBetween: 10,
+        },
+        455: {
+          slidesPerView: 1.5,
+        },
+        700: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        1075: {
+          slidesPerView: 2,
+          spaceBetween: 140,
+        },
+      }}
       effect={"coverflow"}
-      slidesPerView={2}
       grabCursor={true}
       centeredSlides={true}
       coverflowEffect={{
@@ -18,6 +37,7 @@ export function ReviewSlider({ color, background, des, border }) {
         modifier: 1,
       }}
       className="mySwiper"
+      style={{ padding: "0 20px" }}
       autoplay={{
         delay: 1500,
         disableOnInteraction: false,
@@ -47,14 +67,15 @@ export function ReviewSlider({ color, background, des, border }) {
                 fontFamily: "Mulish",
                 fontStyle: "normal",
                 fontWeight: "400",
-                fontSize: "20px",
-                padding: "0 150px",
+                fontSize: isResponsive ? "16px" : "20px",
+                padding: "0 30px",
               }}
+              className="change-style"
             >
               <div
                 style={{
-                  height: "100px",
-                  width: "100px",
+                  height: isResponsive ? "80px" : "100px",
+                  width: isResponsive ? "80px" : "100px",
                   background: "#FCF9F2",
                   border: "3px solid #665E2F",
                   borderRadius: "50%",

@@ -15,13 +15,14 @@ import { useLocation } from "react-router-dom";
 import AnimatedTextWord from "../Animation/FlipAnimation";
 
 const FooterWrapper = styled.div`
-  padding-bottom: 50px;
+  padding: 50px 0px;
   position: relative;
   .get {
     p {
       font-size: 15px;
       font-weight: 500;
       margin-bottom: 0 !important;
+      position: absolute;
     }
   }
   .with-us1 {
@@ -29,7 +30,7 @@ const FooterWrapper = styled.div`
     font-style: normal;
     font-weight: 400;
     font-size: 100px;
-    line-height: 122px;
+    /* line-height: 122px; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -46,6 +47,9 @@ const FooterWrapper = styled.div`
     bottom: 0;
     right: 0;
   }
+  .c-footer-info-other {
+    margin-top: 30px;
+  }
   @media (max-width: 1000px) {
     .f_logo {
       width: 600px;
@@ -59,6 +63,7 @@ const FooterWrapper = styled.div`
     }
   }
   @media (max-width: 700px) {
+    padding: 20px 0px;
     .f_logo {
       width: 450px;
     }
@@ -68,6 +73,20 @@ const FooterWrapper = styled.div`
     .connect-img {
       left: -50px;
       width: 300px;
+    }
+    .c-footer-info-other {
+      margin-top: 20px;
+    }
+    .c-footer-info-other ul li a:after {
+      content: " ";
+      display: block;
+      position: absolute;
+      top: 4px;
+      left: -9px;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background-color: #a75b41;
     }
   }
   @media (max-width: 400px) {
@@ -85,6 +104,7 @@ const FooterWrapper = styled.div`
     .connect-img {
       left: -40px;
       width: 200px;
+      top: 30px;
     }
     .c-footer-info li {
       margin-bottom: 15px;
@@ -279,10 +299,10 @@ const Footer = () => {
                 <li>
                   <a href="tel:+91 9876543210">CALL +91 9876543210</a>
                 </li>
-                <li>
+                <li className="mb-0">
                   FIND US AT :<span>ABC StressT 981 Building Delhi-110088</span>
                 </li>
-                <li>
+                <li className="mb-0">
                   MAIL US AT :{" "}
                   <span>
                     <a href="#">abcd@royclan.com </a>

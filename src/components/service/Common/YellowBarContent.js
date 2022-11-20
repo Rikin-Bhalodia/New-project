@@ -43,6 +43,63 @@ const YellowBarContentWrapper = styled.div`
     width: 90%;
     border-bottom: 1px solid rgba(0, 0, 0, 0.27);
   }
+  @media (max-width: 1000px) {
+    .icons {
+      margin-top: 80px;
+    }
+    .explore-mores {
+      font-size: 60px;
+    }
+  }
+  @media (max-width: 800px) {
+    .icons {
+      margin-top: 70px;
+      column-gap: 10px;
+    }
+    .pets-icon {
+      height: 35px;
+      width: 50px;
+    }
+    .icon-name {
+      font-size: 12px;
+    }
+  }
+  @media (max-width: 700px) {
+    .pets-icon {
+      height: 35px;
+      width: 40px;
+    }
+    .icon-name {
+      font-size: 10px;
+    }
+  }
+  @media (max-width: 600px) {
+    .pets-icon {
+      height: 30px;
+      width: 30px;
+    }
+    .icon-name {
+      font-size: 8px;
+    }
+  }
+  @media (max-width: 500px) {
+    .pets-icon {
+      height: 22px;
+      width: 22px;
+    }
+    .icon-name {
+      font-size: 7px;
+    }
+  }
+  @media (max-width: 400px) {
+    .pets-icon {
+      height: 20px;
+      width: 20px;
+    }
+    .icon-name {
+      font-size: 6px;
+    }
+  }
 `;
 
 const YellowBarContent = ({ requiredPersonalAssistance }) => {

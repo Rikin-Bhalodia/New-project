@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { TopTrandingSlider } from "../../../slider";
 import EditIcon from "../../../assets/images/service/travel/edit.svg";
 import BackImage from "../../../assets/images/service/travel/backImage.svg";
+import AnimatedTextWord from "../../../commonComponents/Animation/FlipAnimation";
 
 const TopTrandingDiffBackgroundWrapper = styled.div`
   width: 100%;
@@ -36,7 +37,9 @@ const TopTrandingDiffBackground = ({ name }) => {
   return (
     <TopTrandingDiffBackgroundWrapper>
       <div className="top">
-        <div>{name}</div>
+        <div>
+          <AnimatedTextWord text={name} />
+        </div>
         <div style={{ display: "flex", columnGap: "20px" }}>
           <div
             style={{
@@ -49,7 +52,12 @@ const TopTrandingDiffBackground = ({ name }) => {
           <img src={EditIcon} alt="edit-icon" />
         </div>
       </div>
-      <img src={BackImage} alt="BackImage" className="back-image" />
+      <img
+        src={BackImage}
+        alt="BackImage"
+        className="back-image"
+        loading="lazy"
+      />
       <TopTrandingSlider />
     </TopTrandingDiffBackgroundWrapper>
   );
