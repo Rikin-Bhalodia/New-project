@@ -136,7 +136,7 @@ export default function StudioProduct() {
           className={` ${isResponsive ? "" : "container-fluid px-5"}`}
           initial={{ y: "200vh" }}
           animate={{ y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 1 }}
         >
           <div className="studio-product-head">
             <div className="leftside-area">

@@ -249,7 +249,7 @@ const AboutProduct = () => {
                 x: 0,
                 opacity: 1,
                 transition: {
-                  duration: 0.9,
+                  duration: 1.3,
                 },
               }
             }
@@ -267,7 +267,7 @@ const AboutProduct = () => {
                 x: 0,
                 opacity: 1,
                 transition: {
-                  duration: 0.9,
+                  duration: 1.3,
                 },
               }
             }
@@ -287,7 +287,7 @@ const AboutProduct = () => {
                 x: 0,
                 opacity: 1,
                 transition: {
-                  duration: 0.9,
+                  duration: 1.3,
                 },
               }
             }
@@ -305,7 +305,7 @@ const AboutProduct = () => {
                 x: 0,
                 opacity: 1,
                 transition: {
-                  duration: 0.9,
+                  duration: 1.3,
                 },
               }
             }
@@ -330,7 +330,7 @@ const AboutProduct = () => {
                 opacity: 1,
                 transition: {
                   duration: 0.7,
-                  delay: 0.3,
+                  delay: 0.4,
                 },
               }
             }
@@ -349,7 +349,7 @@ const AboutProduct = () => {
                 opacity: 1,
                 transition: {
                   duration: 0.7,
-                  delay: 0.5,
+                  delay: 0.6,
                 },
               }
             }
@@ -368,7 +368,7 @@ const AboutProduct = () => {
                 opacity: 1,
                 transition: {
                   duration: 0.7,
-                  delay: 0.7,
+                  delay: 0.8,
                 },
               }
             }
@@ -387,7 +387,7 @@ const AboutProduct = () => {
                 opacity: 1,
                 transition: {
                   duration: 0.7,
-                  delay: 0.9,
+                  delay: 1,
                 },
               }
             }
@@ -406,7 +406,7 @@ const AboutProduct = () => {
                 opacity: 1,
                 transition: {
                   duration: 0.7,
-                  delay: 1.1,
+                  delay: 1.2,
                 },
               }
             }

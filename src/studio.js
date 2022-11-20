@@ -1,6 +1,6 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import BannerImage from "./assets/images/studio/banner.svg";
+import BannerImage from "./assets/images/studio/banner.png";
 import useWindowSize from "./components/useWindowSize";
 import gsap from "gsap";
 import { motion } from "framer-motion";
@@ -44,6 +44,7 @@ const StudioWrapper = styled.div`
   }
   .image-1 {
     width: 100% !important;
+    overflow: hidden;
     img {
       width: 100% !important;
     }
@@ -255,7 +256,7 @@ const Studio = () => {
       <motion.div
         initial={{ y: "200vh" }}
         animate={{ y: 0 }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 1 }}
         ref={wrapper}
       >
         <StudioBanner />
@@ -361,7 +362,17 @@ const Studio = () => {
                   className="blog-box"
                 >
                   <div className="image-1">
-                    <img src={FirstImage} loading="lazy" alt="first-image" />
+                    <motion.img
+                      whileHover={{
+                        scale: 1.1,
+                      }}
+                      transition={{
+                        duration: 0.4,
+                      }}
+                      src={FirstImage}
+                      loading="lazy"
+                      alt="first-image"
+                    />
                   </div>
                   <div className="info-1">
                     <h3>LOREM IPSUM SET</h3>

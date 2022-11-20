@@ -36,7 +36,8 @@ const PetsWrapper = styled.div`
     height: 500px;
     justify-content: center;
     align-items: center;
-    background: url(${BannerImage});
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+      url(${BannerImage});
   }
   .icons {
     display: flex;

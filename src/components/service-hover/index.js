@@ -82,7 +82,7 @@ export default function ServiceHover() {
       <motion.section
         initial={{ y: "200vh" }}
         animate={{ y: 0 }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 1 }}
         className="homeBanner overflow-hidden minHeightSec minBannerHeight "
       >
         <div className="hover-show-img">

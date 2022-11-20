@@ -39,7 +39,7 @@ const AnimatedTextWord = ({ text }) => {
                 damping: 12,
                 stiffness: 100,
                 delay: 1,
-                duration: 2,
+                duration: 1,
               },
             }
           }
