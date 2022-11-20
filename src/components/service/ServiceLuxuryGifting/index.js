@@ -86,7 +86,7 @@ const ServiceLuxuryGiftingWrapper = styled.div`
     font-family: "Beatlys";
     font-style: normal;
     font-weight: 400;
-    font-size: 80px;
+    font-size: 40px;
     color: #665e2f;
     margin: 40px 100px 0 100px;
   }
