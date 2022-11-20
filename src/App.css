@@ -485,7 +485,7 @@ footer {
   bottom: 156px;
   left: 0;
   right: 0;
-  max-width: 600px;
+  /* max-width: 600px; */
   margin: 0 auto;
 }
 
@@ -495,7 +495,7 @@ footer {
   bottom: 156px;
   left: 0;
   right: 0;
-  max-width: 600px;
+  /* max-width: 600px; */
   margin: 0 auto;
 }
 
@@ -505,7 +505,7 @@ footer {
   bottom: 156px;
   left: 0;
   right: 0;
-  max-width: 600px;
+  /* max-width: 600px; */
   margin: 0 auto;
 }
 
@@ -515,7 +515,7 @@ footer {
   bottom: 156px;
   left: 0;
   right: 0;
-  max-width: 600px;
+  /* max-width: 600px; */
   margin: 0 auto;
 }
 
@@ -535,7 +535,7 @@ footer {
   bottom: 156px;
   left: 0;
   right: 0;
-  max-width: 600px;
+  /* max-width: 600px; */
   margin: 0 auto;
 }
 
@@ -544,7 +544,7 @@ footer {
   bottom: 156px;
   left: 0;
   right: 0;
-  max-width: 600px;
+  /* max-width: 600px; */
   margin: 0 auto;
 }
 
@@ -587,7 +587,7 @@ footer {
 }
 
 .minWidth600 {
-  min-width: 600px;
+  /* min-width: 600px; */
 }
 
 /* top menu header */

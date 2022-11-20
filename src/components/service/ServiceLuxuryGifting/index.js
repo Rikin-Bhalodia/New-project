@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Luxury from "../../../assets/images/service/luxury.svg";
 import Left from "../../../assets/images/service/left.svg";
@@ -139,6 +139,7 @@ const HalfWrapper = styled.div`
 `;
 
 const ServiceLuxuryGifting = () => {
+  const [isInView, setIsInView] = useState(false);
   return (
     <>
       <motion.div
@@ -216,6 +217,18 @@ const ServiceLuxuryGifting = () => {
                     }}
                   >
                     <motion.img
+                      whileInView={() => {
+                        setIsInView(true);
+                      }}
+                      initial={{ rotateX: ele.animation }}
+                      animate={
+                        isInView && {
+                          rotateX: 0,
+                          transition: {
+                            duration: 0.5,
+                          },
+                        }
+                      }
                       whileHover={{
                         scale: 1.1,
                       }}

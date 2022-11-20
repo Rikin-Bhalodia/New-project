@@ -43,7 +43,7 @@ const SimillerVideoWrapper = styled.div`
   .simillier-video-area {
     display: flex;
     justify-content: space-between;
-    gap: 200px;
+    gap: 170px;
     .right-side-area {
       border-bottom: 3px solid #a75b41;
       .head-box {
@@ -195,7 +195,7 @@ export default function SimillerVideo() {
                     <img loading="lazy" src={Title} alt="Title" />
                   </div>
                   <motion.div
-                    initial={{ x: "40vw" }}
+                    initial={{ x: "30vw" }}
                     whileInView={() => {
                       setIsInView(true);
                     }}
@@ -211,7 +211,7 @@ export default function SimillerVideo() {
                     {[1, 2, 3, 4, 5].map((_) => {
                       return (
                         <div className="editor-box">
-                          <motion.div
+                          <div
                             style={{ overflow: "hidden", borderRadius: "25px" }}
                           >
                             <motion.img
@@ -225,7 +225,7 @@ export default function SimillerVideo() {
                               src={EImg}
                               alt="EImg"
                             />
-                          </motion.div>
+                          </div>
                           <div className="details">
                             <h5>
                               Sustainable Perfume: “Synthetic” Is Not a Dirty

@@ -168,10 +168,10 @@ export const ServiceLuxuryGiftingPage = [
 ];
 
 export const GiftsByClients = [
-  { img: ForHim, name: "FOR HIM" },
-  { img: ForHer, name: "FOR HER" },
-  { img: ForThem, name: "FOR THEM" },
-  { img: ForKids, name: "FOR KIDS" },
+  { img: ForHim, name: "FOR HIM", animation: "deg90" },
+  { img: ForHer, name: "FOR HER", animation: "deg90" },
+  { img: ForThem, name: "FOR THEM", animation: "deg90" },
+  { img: ForKids, name: "FOR KIDS", animation: "deg90" },
 ];
 
 export const OccasionGifts = [

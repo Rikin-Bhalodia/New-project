@@ -76,7 +76,7 @@ export default function StudioProductMaterial() {
           isInView && {
             y: 0,
             transition: {
-              duration: 0.6,
+              duration: 0.8,
             },
           }
         }
@@ -105,7 +105,7 @@ export default function StudioProductMaterial() {
                     isInView && {
                       x: 0,
                       transition: {
-                        duration: 0.7,
+                        duration: 1.3,
                       },
                     }
                   }
