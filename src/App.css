@@ -4695,3 +4695,20 @@ c-service-w {
   top: 54px;
   right: -211px;
 }
+
+
+
+.partitions .otp-input {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: none;
+  outline: none;
+  background: #C4C4C4;
+  width: 2.8em !important;
+  height: 3.0em;
+}
+.partitions{
+   margin-left: 55px;
+     width: 2.5em;
+ }
