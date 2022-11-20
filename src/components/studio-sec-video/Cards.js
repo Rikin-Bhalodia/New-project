@@ -59,7 +59,19 @@ const Card = () => {
             {[1, 2, 3].map((_) => {
               return (
                 <div className="card">
-                  <img loading="lazy" src={DummyVideoImage} alt="dummy-image" />
+                  <div style={{ overflow: "hidden" }}>
+                    <motion.img
+                      whileHover={{
+                        scale: 1.1,
+                      }}
+                      transition={{
+                        duration: 0.4,
+                      }}
+                      loading="lazy"
+                      src={DummyVideoImage}
+                      alt="dummy-image"
+                    />
+                  </div>
                   <div className="title">Charles Jeffrey Loverboy</div>
                   <div className="sub-title">SPRING 2023 READY-TO-WEAR</div>
                   <div className="des">

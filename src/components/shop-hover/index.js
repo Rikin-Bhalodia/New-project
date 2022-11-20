@@ -15,7 +15,7 @@ const ShopHoverWrapper = styled.div`
   .menu-list {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
     width: 90vw;
     height: 100vh;
     overflow: auto;
@@ -147,7 +147,7 @@ export default function ShopHover() {
       <motion.section
         initial={{ y: "200vh" }}
         animate={{ y: 0 }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 1 }}
         className="homeBanner overflow-hidden minHeightSec minBannerHeight "
       >
         <div className="hover-show-img">

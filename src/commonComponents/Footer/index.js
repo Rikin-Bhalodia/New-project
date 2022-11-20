@@ -17,6 +17,7 @@ import AnimatedTextWord from "../Animation/FlipAnimation";
 const FooterWrapper = styled.div`
   padding: 50px 0px;
   position: relative;
+  background: white;
   .get {
     p {
       font-size: 15px;

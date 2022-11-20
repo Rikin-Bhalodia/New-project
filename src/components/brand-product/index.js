@@ -224,7 +224,7 @@ const BrandProduct = () => {
       <motion.div
         initial={{ y: "200vh" }}
         animate={{ y: 0 }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 1 }}
       >
         <div className="banner-section">
           <img loading="lazy" src={Banner1} alt="" className="banner" />

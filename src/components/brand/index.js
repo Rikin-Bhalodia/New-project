@@ -314,7 +314,7 @@ const Brand = () => {
       <motion.div
         initial={{ y: "200vh" }}
         animate={{ y: 0 }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 1 }}
         className="brand-section"
       >
         <img loading="lazy" src={BrandBanner} alt="" className="img1" />
@@ -337,15 +337,16 @@ const Brand = () => {
         <div className="fendi-section">
           <div className="fendi-area">
             <motion.div
-              initial={{ x: "-50vw" }}
+              initial={{ x: "-50vw", width: "70%" }}
               whileInView={() => {
                 setIsInView(true);
               }}
               animate={
                 isInView && {
                   x: 0,
+                  width: "70%",
                   transition: {
-                    duration: 1,
+                    duration: 1.5,
                   },
                 }
               }
@@ -371,22 +372,81 @@ const Brand = () => {
               </p>
               <div className="imgs">
                 <div className="d-flex" style={{ overflow: "hidden" }}>
-                  {[1, 2, 3].map((_) => {
-                    return (
-                      <motion.img
-                        loading="lazy"
-                        src={FImg}
-                        alt=""
-                        className="fimg"
-                        whileHover={{
-                          scale: 1.1,
-                        }}
-                        transition={{
-                          duration: 0.4,
-                        }}
-                      />
-                    );
-                  })}
+                  <motion.img
+                    loading="lazy"
+                    src={FImg}
+                    alt=""
+                    className="fimg"
+                    whileHover={{
+                      scale: 1.1,
+                    }}
+                    transition={{
+                      duration: 0.4,
+                    }}
+                    initial={{ x: "-50vw" }}
+                    whileInView={() => {
+                      setIsInView(true);
+                    }}
+                    animate={
+                      isInView && {
+                        x: 0,
+                        transition: {
+                          duration: 2.6,
+                          ease: "easeInOut",
+                        },
+                      }
+                    }
+                  />
+                  <motion.img
+                    loading="lazy"
+                    src={FImg}
+                    alt=""
+                    className="fimg"
+                    whileHover={{
+                      scale: 1.1,
+                    }}
+                    transition={{
+                      duration: 0.4,
+                    }}
+                    initial={{ x: "-50vw" }}
+                    whileInView={() => {
+                      setIsInView(true);
+                    }}
+                    animate={
+                      isInView && {
+                        x: 0,
+                        transition: {
+                          duration: 2.3,
+                          ease: "easeInOut",
+                        },
+                      }
+                    }
+                  />
+                  <motion.img
+                    loading="lazy"
+                    src={FImg}
+                    alt=""
+                    className="fimg"
+                    whileHover={{
+                      scale: 1.1,
+                    }}
+                    transition={{
+                      duration: 0.4,
+                    }}
+                    initial={{ x: "-50vw" }}
+                    whileInView={() => {
+                      setIsInView(true);
+                    }}
+                    animate={
+                      isInView && {
+                        x: 0,
+                        transition: {
+                          duration: 2,
+                          ease: "easeInOut",
+                        },
+                      }
+                    }
+                  />
                 </div>
               </div>
             </motion.div>
@@ -399,7 +459,7 @@ const Brand = () => {
                 isInView && {
                   x: 0,
                   transition: {
-                    duration: 1,
+                    duration: 1.5,
                   },
                 }
               }

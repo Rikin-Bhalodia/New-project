@@ -533,7 +533,7 @@ const ProductSelectionCommon = () => {
           <motion.div
             initial={{ x: "-100vw", opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.9 }}
+            transition={{ duration: 1.5 }}
             className="paths"
           >
             SHOP / CLOTHING / WOMEN / DRESSES /
@@ -542,7 +542,7 @@ const ProductSelectionCommon = () => {
           <motion.div
             initial={{ x: "100vw", opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.9 }}
+            transition={{ duration: 1.5 }}
             className="menu-icon"
             onClick={() => setMenuOpenModal(!menuOpenModal)}
           >
@@ -565,7 +565,7 @@ const ProductSelectionCommon = () => {
             <motion.div
               initial={{ y: "100vh", opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 1.2 }}
+              transition={{ duration: 1.6 }}
               className="product-selection-image"
             >
               <img
@@ -590,7 +590,7 @@ const ProductSelectionCommon = () => {
           <motion.div
             initial={{ x: "-100vw", opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 1.2 }}
+            transition={{ duration: 1.6 }}
             className="left-side-part"
           >
             <div className="detail1 position-relative">
@@ -703,7 +703,7 @@ const ProductSelectionCommon = () => {
             <motion.div
               initial={{ y: "100vh", opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 1.2 }}
+              transition={{ duration: 1.6 }}
               className="center--container position-relative "
             >
               <img
@@ -725,7 +725,7 @@ const ProductSelectionCommon = () => {
           <motion.div
             initial={{ x: "100vw", opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 1.2 }}
+            transition={{ duration: 1.6 }}
             className="section--right-container"
           >
             <div className="section--right">

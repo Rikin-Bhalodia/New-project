@@ -8,6 +8,7 @@ import DownArrow from "../../../assets/images/product/down-arrow.svg";
 import Search from "../../../assets/images/service/gift-for-him/seach-icon.svg";
 import Filters from "../../../commonComponents/Filters";
 import AnimatedTextWord from "../../../commonComponents/Animation/FlipAnimation";
+import Product from "./Product";
 
 const GiftForHimWrapper = styled.div`
   margin: 100px 150px 0px 150px;
@@ -18,39 +19,6 @@ const GiftForHimWrapper = styled.div`
     font-size: 70px;
     text-align: center;
     padding-top: 40px;
-  }
-  button {
-    background: #ffffff;
-    border: 1px solid #a75b41;
-    border-radius: 0px 79px 79px 0px;
-    color: #a75b41;
-    width: 220px;
-    font-family: "Arial";
-    font-style: normal;
-    font-weight: 700;
-    height: 50px;
-    font-size: 20px;
-  }
-  .price {
-    letter-spacing: -0.408px;
-    font-family: "Mulish";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 18px;
-  }
-  .product {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    row-gap: 15px;
-  }
-  .products {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    justify-content: space-between;
-    width: 100%;
-    gap: 50px;
-    margin: 80px 0;
   }
 `;
 
@@ -120,7 +88,7 @@ const GiftForHim = () => {
       <motion.div
         initial={{ y: "200vh" }}
         animate={{ y: 0 }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 1 }}
       >
         <GiftForHimWrapper>
           <GoBackpart />
@@ -128,54 +96,9 @@ const GiftForHim = () => {
             <AnimatedTextWord text="GIFTS FOR HIM" />
           </div>
           <Filters FiltersName={FiltersName} />
-          <motion.div className="products">
-            {[1, 1, 1, 1, 1, 1, 1, 1, 1].map((_) => {
-              return (
-                <div className="product">
-                  <motion.img
-                    whileHover={{
-                      scale: 1.1,
-                    }}
-                    transition={{
-                      duration: 0.4,
-                    }}
-                    whileInView={() => {
-                      setIsInView(true);
-                    }}
-                    initial={{ rotateX: "90deg" }}
-                    animate={
-                      isInView && {
-                        rotateX: 0,
-                        transition: {
-                          duration: 0.5,
-                        },
-                      }
-                    }
-                    src={Price}
-                    alt="price"
-                    height={250}
-                  />
-                  <div className="price">Price</div>
-                  <motion.button
-                    whileInView={() => {
-                      setIsInView(true);
-                    }}
-                    initial={{ rotateY: "-90deg" }}
-                    animate={
-                      isInView && {
-                        rotateY: 0,
-                        transition: {
-                          duration: 1,
-                        },
-                      }
-                    }
-                  >
-                    ADD TO CART
-                  </motion.button>
-                </div>
-              );
-            })}
-          </motion.div>
+          <Product />
+          <Product />
+          <Product />
         </GiftForHimWrapper>
         <FullScreenWrapper>
           <div className="load-more">

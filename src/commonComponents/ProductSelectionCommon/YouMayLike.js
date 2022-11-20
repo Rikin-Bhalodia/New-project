@@ -80,22 +80,22 @@ const YouMayLike = () => {
             className="images-you-may-like"
           />
         </div>
-        <motion.div
-          whileInView={() => {
-            setIsInView(true);
-          }}
-          initial={{ y: "20vh" }}
-          animate={
-            isInView && {
-              y: 0,
-              transition: {
-                duration: 0.3,
-              },
+        <div className="d-flex justify-content-between">
+          <motion.div
+            whileInView={() => {
+              setIsInView(true);
+            }}
+            initial={{ x: "-40vw" }}
+            animate={
+              isInView && {
+                x: 0,
+                transition: {
+                  duration: 2,
+                },
+              }
             }
-          }
-          className="d-flex justify-content-between"
-        >
-          <div style={{ overflow: "hidden", borderRadius: "50%" }}>
+            style={{ overflow: "hidden", borderRadius: "50%" }}
+          >
             <motion.img
               whileHover={{
                 scale: 1.1,
@@ -108,8 +108,50 @@ const YouMayLike = () => {
               alt=""
               className="images"
             />
-          </div>
-          <div style={{ overflow: "hidden", borderRadius: "50%" }}>
+          </motion.div>
+          <motion.div
+            whileInView={() => {
+              setIsInView(true);
+            }}
+            initial={{ x: "-40vw" }}
+            animate={
+              isInView && {
+                x: 0,
+                transition: {
+                  duration: 1.7,
+                },
+              }
+            }
+            style={{ overflow: "hidden", borderRadius: "50%" }}
+          >
+            <motion.img
+              whileHover={{
+                scale: 1.1,
+              }}
+              transition={{
+                duration: 1,
+              }}
+              loading="lazy"
+              src={likeProduct1}
+              alt=""
+              className="images"
+            />
+          </motion.div>
+          <motion.div
+            whileInView={() => {
+              setIsInView(true);
+            }}
+            initial={{ x: "-40vw" }}
+            animate={
+              isInView && {
+                x: 0,
+                transition: {
+                  duration: 1.5,
+                },
+              }
+            }
+            style={{ overflow: "hidden", borderRadius: "50%" }}
+          >
             <motion.img
               whileHover={{
                 scale: 1.1,
@@ -122,8 +164,22 @@ const YouMayLike = () => {
               alt=""
               className="images"
             />
-          </div>
-          <div style={{ overflow: "hidden", borderRadius: "50%" }}>
+          </motion.div>
+          <motion.div
+            whileInView={() => {
+              setIsInView(true);
+            }}
+            initial={{ x: "40vw" }}
+            animate={
+              isInView && {
+                x: 0,
+                transition: {
+                  duration: 1.5,
+                },
+              }
+            }
+            style={{ overflow: "hidden", borderRadius: "50%" }}
+          >
             <motion.img
               whileHover={{
                 scale: 1.1,
@@ -136,8 +192,22 @@ const YouMayLike = () => {
               alt=""
               className="images"
             />
-          </div>
-          <div style={{ overflow: "hidden", borderRadius: "50%" }}>
+          </motion.div>
+          <motion.div
+            whileInView={() => {
+              setIsInView(true);
+            }}
+            initial={{ x: "40vw" }}
+            animate={
+              isInView && {
+                x: 0,
+                transition: {
+                  duration: 1.7,
+                },
+              }
+            }
+            style={{ overflow: "hidden", borderRadius: "50%" }}
+          >
             <motion.img
               whileHover={{
                 scale: 1.1,
@@ -150,8 +220,22 @@ const YouMayLike = () => {
               alt=""
               className="images"
             />
-          </div>
-          <div style={{ overflow: "hidden", borderRadius: "50%" }}>
+          </motion.div>
+          <motion.div
+            whileInView={() => {
+              setIsInView(true);
+            }}
+            initial={{ x: "40vw" }}
+            animate={
+              isInView && {
+                x: 0,
+                transition: {
+                  duration: 2,
+                },
+              }
+            }
+            style={{ overflow: "hidden", borderRadius: "50%" }}
+          >
             <motion.img
               whileHover={{
                 scale: 1.1,
@@ -164,22 +248,8 @@ const YouMayLike = () => {
               alt=""
               className="images"
             />
-          </div>
-          <div style={{ overflow: "hidden", borderRadius: "50%" }}>
-            <motion.img
-              whileHover={{
-                scale: 1.1,
-              }}
-              transition={{
-                duration: 0.4,
-              }}
-              loading="lazy"
-              src={likeProduct1}
-              alt=""
-              className="images"
-            />
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </section>
       {isResponsive && <ProductImgSlider image={youMayLike} />}
     </YouMayLikeWrapper>

@@ -18,13 +18,14 @@ const ExploreShopWrapper = styled.div`
     position: absolute;
     height: 700px;
     width: 100%;
+    z-index: 1;
   }
   .explore-shop {
     text-align: center;
     font-family: "Coral Blush";
     font-style: normal;
     font-weight: 400;
-    font-size: 34px;
+    font-size: 50px;
     color: white;
     padding-top: 100px;
     display: flex;
@@ -37,6 +38,10 @@ const ExploreShopWrapper = styled.div`
     height: 100px;
     width: 200px;
     justify-content: space-between;
+    img {
+      width: 100px;
+      object-fit: cover;
+    }
   }
   .label-name {
     padding-top: 10px;
@@ -45,9 +50,10 @@ const ExploreShopWrapper = styled.div`
   .cards {
     display: flex;
     flex-wrap: wrap;
-    gap: 100px;
-    padding: 100px;
+    gap: 70px;
+    padding: 70px;
     justify-content: center;
+    z-index: 10;
   }
   @media (max-width: 1300px) {
     .cards {

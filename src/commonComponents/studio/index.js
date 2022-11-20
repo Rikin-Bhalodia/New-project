@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import MenuIcon from "../../assets/images/studio/menu.svg";
 import { motion, useScroll, useTransform } from "framer-motion";
-import BannerImage from "../../assets/images/studio/banner.svg";
+import BannerImage from "../../assets/images/studio/banner.png";
 import CommonContent from "./commonContent";
 
 const Atilier = React.lazy(() => import("../../atilier"));
@@ -228,7 +228,7 @@ const StudioBanner = () => {
         <motion.div
           initial={{ y: "200vh" }}
           animate={{ y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 1 }}
           className="mainImage"
         ></motion.div>
         <section className="studio-s1">

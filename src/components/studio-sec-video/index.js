@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import Card from "./Cards";
+const Card = React.lazy(() => import("./Cards"));
 const AnimatedTextWord = React.lazy(() =>
   import("../../commonComponents/Animation/FlipAnimation")
 );

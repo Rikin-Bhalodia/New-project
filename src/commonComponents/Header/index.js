@@ -151,7 +151,7 @@ const Header = () => {
       <motion.section
         initial={{ y: "100vh", opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.3 }}
+        transition={{ duration: 0.6 }}
         className={`topHeaderPart ${scrollHeader ? "scroll-effect" : ""}`}
       >
         <div className="container">

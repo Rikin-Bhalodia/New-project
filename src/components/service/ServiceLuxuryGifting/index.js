@@ -144,7 +144,7 @@ const ServiceLuxuryGifting = () => {
       <motion.div
         initial={{ y: "200vh" }}
         animate={{ y: 0 }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 1 }}
       >
         <ServiceLuxuryGiftingWrapper>
           <GoBackpart />

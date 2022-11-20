@@ -104,7 +104,20 @@ const ProfilePageLogin = React.lazy(() =>
 );
 const ProfilePageSignUp = React.lazy(() =>
   import("./components/ProfilePages/SignUp.js")
-);
+)
+const TermsAndConditions = React.lazy(() =>
+  import("./components/ProfilePages/T&C")
+)
+const PersonalAssistance = React.lazy(() =>
+  import("./components/ProfilePages/PersonalAssistance.js")
+)
+const PersonalAssistanceInfo = React.lazy(() =>
+  import("./components/PersonalAssists/Info.js")
+)
+const AssistForm = React.lazy(() =>
+  import("./components/PersonalAssists/AssistForm.js")
+)
+
 const SideBar = React.lazy(() =>
   import("./commonComponents/SidebarOfProfilePage/index.js")
 );
@@ -194,6 +207,10 @@ function App() {
         <Route path="/profilepage-order" element={<ProfilePageOrders />} />
         <Route path="/profilepage-login" element={<ProfilePageLogin />} />
         <Route path="/profilepage-signup" element={<ProfilePageSignUp />} />
+        <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+        <Route path="/personal-assistance" element={<PersonalAssistance />} />
+        <Route path="/assistance-info" element={<PersonalAssistanceInfo />} />
+        <Route path="/assist-form" element={<AssistForm/>} />
         <Route path="/sidebar" element={<SideBar />} />
 
         {/* <Route path="/MH" element={<MobileHeader />} /> */}
