@@ -105,6 +105,13 @@ const ProfilePageLogin = React.lazy(() =>
 const ProfilePageSignUp = React.lazy(() =>
   import("./components/ProfilePages/SignUp.js")
 )
+const TermsAndConditions = React.lazy(() =>
+  import("./components/ProfilePages/T&C")
+)
+const PersonalAssistance = React.lazy(() =>
+  import("./components/ProfilePages/PersonalAssistance.js")
+)
+
 const SideBar = React.lazy(() =>
   import("./commonComponents/SidebarOfProfilePage/index.js")
 );
