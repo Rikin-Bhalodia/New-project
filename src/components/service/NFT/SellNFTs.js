@@ -106,7 +106,7 @@ const SellNFTs = () => {
           <motion.div
             initial={{ x: "-100vw" }}
             animate={{ x: 0 }}
-            transition={{ duration: 2, type: "spring", damping: 7 }}
+            transition={{ duration: 2 }}
             className="goback"
           >
             <img src={BackArrow} alt="back-arrow" />
@@ -143,8 +143,6 @@ const SellNFTs = () => {
               x: 0,
               transition: {
                 duration: 3,
-                type: "spring",
-                damping: 8,
               },
             }
           }

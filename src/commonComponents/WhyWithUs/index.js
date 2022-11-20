@@ -26,6 +26,9 @@ const WhyWithUsWrapper = styled.div`
     font-size: 40px;
     text-align: right;
     padding-right: 30px;
+    position: relative;
+    top: -47px;
+    left: 75px;
   }
   .sell-part {
     width: 60%;

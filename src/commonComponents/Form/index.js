@@ -214,8 +214,6 @@ const From = () => {
             x: 0,
             transition: {
               duration: 3,
-              type: "spring",
-              damping: 8,
             },
           }
         }
