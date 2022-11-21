@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import BackArrow from "../../assets/images/product/back-arrow.svg";
+import Polygon from "../../assets/images/polygon-right.svg";
 import Visa from "../../assets/images/payment-card-images/VisaImage.svg";
 import Rupay from "../../assets/images/payment-card-images/RupayImage.svg";
 import GPay from "../../assets/images/payment-card-images/GooglePayImage.svg";
 import PPal from "../../assets/images/payment-card-images/Paypal.svg";
 import Paytm from "../../assets/images/payment-card-images/PaytmImage.svg";
 import Phonepe from "../../assets/images/payment-card-images/Phonepe.svg";
-import Polygon from "../../assets/images/polygon-right.svg";
 
 const CheckoutCardWrapper = styled.div`
  position: relative;
@@ -133,6 +133,7 @@ const CheckoutCardWrapper = styled.div`
     height: 60px;
     margin-bottom: 15px;
   }
+ 
 `;
 
 const CheckoutCard = () => {

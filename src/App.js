@@ -84,6 +84,9 @@ const CheckoutForm = React.lazy(() =>
 const CheckoutCard = React.lazy(() =>
   import("./components/checkout-flow/CheckoutCard")
 );
+const CheckoutFinal = React.lazy(() =>
+  import("./components/checkout-flow/CheckoutFinal")
+);
 const NewsLetter = React.lazy(() =>
   import("./components/PopUp-Letter/Newsletter.js")
 );
@@ -123,9 +126,6 @@ const DesktopDetails = React.lazy(() =>
 const Preferances = React.lazy(() =>
   import("./components/ProfilePages/Prefrences.js")
 )
-// const Product = React.lazy(() =>
-//   import("./components/ProfilePages/Prefrences.js")
-// )
 const RecentlyViewed = React.lazy(() =>
   import("./components/ProfilePages/RViewed")
 )
@@ -212,6 +212,7 @@ function App() {
 
         <Route path="/checkout-form" element={<CheckoutForm />} />
         <Route path="/checkout-card" element={<CheckoutCard />} />
+        <Route path="/checkout-final" element={<CheckoutFinal />} />
         <Route path="/newsletter-popup" element={<NewsLetter />} />
         <Route path="/thanksletter-popup" element={<ThanksLettter />} />
         <Route path="/cookies-popup" element={<CookiesPopUp />} />
