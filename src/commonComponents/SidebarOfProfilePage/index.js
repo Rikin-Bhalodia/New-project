@@ -74,9 +74,15 @@ const index = () => {
                 ORDER
               </Link>
               <Link className="sidebar-link" to="/profilepage-view">
-                INSURANCE VIEW
+                RECENTLY VIEWED
               </Link>
-              <Link className="sidebar-link" to="/profilepage-preferences">
+              <Link className="sidebar-link" to="/profilepage-points">
+                LOYALTY POINTS
+              </Link>
+              <Link className="sidebar-link" to="/profilepage-coupons">
+                COUPONS
+              </Link>
+              <Link className="sidebar-link" to="/profilepage-preferance">
                 PREFERENCES
               </Link>
               <Link className="sidebar-link" to="/profilepage-wallet">

@@ -117,6 +117,18 @@ const PersonalAssistanceInfo = React.lazy(() =>
 const AssistForm = React.lazy(() =>
   import("./components/PersonalAssists/AssistForm.js")
 )
+const DesktopDetails = React.lazy(() =>
+  import("./components/ProfilePages/Address.js")
+)
+const Preferances = React.lazy(() =>
+  import("./components/ProfilePages/Prefrences.js")
+)
+// const Product = React.lazy(() =>
+//   import("./components/ProfilePages/Prefrences.js")
+// )
+const RecentlyViewed = React.lazy(() =>
+  import("./components/ProfilePages/RViewed")
+)
 
 const SideBar = React.lazy(() =>
   import("./commonComponents/SidebarOfProfilePage/index.js")
@@ -205,6 +217,9 @@ function App() {
         <Route path="/cookies-popup" element={<CookiesPopUp />} />
         <Route path="/cookies-thankyou-popup" element={<CookiesThankYou />} />
         <Route path="/profilepage-order" element={<ProfilePageOrders />} />
+        <Route path="/profilepage-address" element={<DesktopDetails/>} />
+        <Route path="/profilepage-preferance" element={<Preferances/>} />
+        <Route path="/profilepage-view" element={<RecentlyViewed/>} />
         <Route path="/profilepage-login" element={<ProfilePageLogin />} />
         <Route path="/profilepage-signup" element={<ProfilePageSignUp />} />
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
