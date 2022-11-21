@@ -73,7 +73,8 @@ const TheLeelaPalaceWrapper = styled.div`
     font-style: normal;
     font-weight: 400;
     font-size: 50px;
-    margin-right: 60px;
+    text-align: left;
+    margin-left: 20px;
   }
   .description {
     margin: 0 100px 0 40px;
@@ -85,7 +86,7 @@ const TheLeelaPalaceWrapper = styled.div`
     align-items: center;
     box-shadow: -38px 40px 250px rgba(0, 0, 0, 0.25);
     position: relative;
-    top: -200px;
+    margin-top: -200px;
     z-index: 999;
     background: #fff;
   }
@@ -172,14 +173,14 @@ const TheLeelaPalaceWrapper = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 200px 0 150px;
+    padding: 0 60px;
     margin-top: 70px;
   }
   .left-image {
     position: absolute;
     left: 0;
-    top: -50px;
-    height: 400px;
+    top: 0px;
+    height: 100%;
   }
   .benefits {
     font-family: "Coral Blush";
@@ -195,13 +196,13 @@ const TheLeelaPalaceWrapper = styled.div`
   .right-image {
     position: absolute;
     right: 0;
-    top: -50px;
-    height: 400px;
+    top: 0;
+    height: 100%;
   }
   ul {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 25px;
     font-family: "Arial";
     font-style: normal;
     font-weight: 700;
@@ -267,6 +268,272 @@ const TheLeelaPalaceWrapper = styled.div`
     width: 230px;
     height: 70px;
   }
+  .name {
+    font-size: 22px;
+  }
+  .home-rooms {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .date {
+    display: flex;
+    gap: 15px;
+    margin: 30px 0 0 20px;
+  }
+
+  @media (max-width: 1300px) {
+    .part2 {
+      gap: 0;
+    }
+  }
+  @media (max-width: 1200px) {
+    .the-leela-place {
+      font-size: 70px;
+    }
+    .buttons {
+      margin-top: 35px;
+    }
+    .heading-vip {
+      font-size: 40px;
+    }
+    .description {
+      margin: 0 50px 0 30px;
+      font-size: 15px;
+    }
+    .para {
+      font-size: 18px;
+    }
+    .wrapper {
+      column-gap: 20px;
+      row-gap: 20px;
+      margin: 20px 0 0 20px;
+      width: 50%;
+    }
+    .vips {
+      width: 380px;
+      height: 380px;
+    }
+  }
+  @media (max-width: 1100px) {
+    .the-leela-place {
+      font-size: 60px;
+    }
+    .buttons {
+      margin-top: 25px;
+    }
+    .heading-vip {
+      font-size: 35px;
+    }
+    .description {
+      margin: 0 40px 0 20px;
+    }
+    .para {
+      font-size: 17px;
+    }
+    .wrapper {
+      column-gap: 20px;
+    }
+    .name {
+      font-size: 20px;
+    }
+  }
+  @media (max-width: 1000px) {
+    .the-leela-place {
+      font-size: 55px;
+    }
+    .buttons {
+      margin-top: 20px;
+    }
+    .heading-vip {
+      font-size: 30px;
+    }
+    .description {
+      margin: 0 40px 0 40px;
+    }
+    .para {
+      font-size: 16px;
+      padding: 20px;
+    }
+    .wrapper {
+      column-gap: 20px;
+      margin: 20px 0 20px 20px;
+    }
+    .dates {
+      margin-left: 20px;
+    }
+    .name {
+      font-size: 18px;
+    }
+    .content-part {
+      width: 100%;
+      margin-left: 0;
+      text-align: center;
+    }
+    .vips {
+      width: 100%;
+      left: 0;
+      text-align: unset;
+      height: fit-content;
+      padding: 20px;
+    }
+    .back {
+      height: 100%;
+    }
+    .part2 {
+      width: 100%;
+      flex-direction: column;
+      margin: 30px 0 0 0;
+    }
+  }
+  @media (max-width: 850px) {
+    .benefits-royclan {
+      flex-direction: column;
+      height: fit-content;
+    }
+  }
+  @media (max-width: 800px) {
+    .the-leela-place {
+      font-size: 45px;
+    }
+    .buttons {
+      gap: 30px;
+    }
+    .button {
+      padding: 8px 15px;
+      font-size: 16px;
+    }
+    .heading-vip {
+      font-size: 26px;
+    }
+    .para {
+      font-size: 15px;
+      padding: 10px 20px 20px 20px;
+    }
+    .dates {
+      margin-left: 20px;
+    }
+    .date {
+      margin: 10px 0 0 20px;
+    }
+    .name {
+      font-size: 17px;
+    }
+  }
+  @media (max-width: 700px) {
+    .buttons {
+      gap: 20px;
+    }
+    .button {
+      font-size: 14px;
+    }
+    .name {
+      font-size: 16px;
+    }
+    .description {
+      font-size: 14px;
+      font-weight: 600;
+    }
+  }
+  @media (max-width: 600px) {
+    .buttons {
+      gap: 10px;
+    }
+    .button {
+      font-size: 13px;
+    }
+    .name {
+      font-size: 15px;
+    }
+    .description {
+      font-size: 13px;
+      gap: 15px;
+      font-weight: 600;
+    }
+    .parts {
+      width: 90%;
+    }
+    .the-leela-place {
+      font-size: 40px;
+    }
+    .delhi {
+      font-size: 22px;
+      padding-top: 20px;
+    }
+    .para {
+      font-size: 14px;
+    }
+    .benefits {
+      font-size: 30px;
+    }
+    .text-image {
+      width: 250px;
+    }
+    ul {
+      gap: 15px;
+      font-size: 12px;
+    }
+    .right-image {
+      width: 250px;
+    }
+    .left-image {
+      width: 250px;
+    }
+  }
+  @media (max-width: 500px) {
+    .button {
+      font-size: 10px;
+      padding: 5px 10px;
+    }
+    .name {
+      font-size: 12px;
+    }
+    .description {
+      font-size: 11px;
+      gap: 10px;
+    }
+    .wrapper {
+      width: 100%;
+      margin: 20px 0;
+      padding: 0 10px;
+    }
+    .the-leela-place {
+      font-size: 30px;
+    }
+    .delhi {
+      font-size: 18px;
+    }
+    .para {
+      font-size: 12px;
+      padding: 0 10px 10px 10px;
+    }
+    .heading-vip {
+      font-size: 20px;
+    }
+    .vips {
+      padding: 10px;
+    }
+  }
+  @media (max-width: 450px) {
+    .right-image {
+      width: 200px;
+    }
+    .left-image {
+      width: 200px;
+    }
+    .benefits {
+      font-size: 25px;
+    }
+    .text-image {
+      width: 200px;
+    }
+    ul {
+      gap: 10px;
+      font-size: 11px;
+    }
+  }
 `;
 const TheLeelaPalace = () => {
   const [menuOpenModal, setMenuOpenModal] = useState(false);
@@ -315,7 +582,7 @@ const TheLeelaPalace = () => {
                 eu neque. Nunc, urna morbi venenatis sed pellentesque
                 condimentum cursus. Arcu ac in tempor sollicitudin nec iaculis.
               </div>
-              <div style={{ display: "flex", gap: "15px", marginTop: "30px" }}>
+              <div className="date">
                 <div className="dates">1/07/2022</div>
                 <img
                   src={EditIcon}
@@ -332,13 +599,8 @@ const TheLeelaPalace = () => {
                   { name: "exterior", value: "2000 sq ft" },
                 ].map(({ name, value }) => {
                   return (
-                    <div
-                      style={{
-                        textAlign: "center",
-                        padding: "20px 30px 0 0px",
-                      }}
-                    >
-                      <div style={{ fontSize: "22px" }}>{name}</div>
+                    <div className="home-rooms">
+                      <div className="name">{name}</div>
                       <div>{value}</div>
                     </div>
                   );

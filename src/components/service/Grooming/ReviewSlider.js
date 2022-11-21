@@ -99,13 +99,30 @@ export function BlankBackgroundSlider() {
   return (
     <Swiper
       effect={"coverflow"}
-      slidesPerView={2}
+      breakpoints={{
+        260: {
+          slidesPerView: 1,
+          spaceBetween: 10,
+        },
+        455: {
+          slidesPerView: 1.5,
+        },
+        700: {
+          slidesPerView: 2,
+          spaceBetween: 50,
+        },
+        1075: {
+          slidesPerView: 2,
+          spaceBetween: 140,
+        },
+      }}
       grabCursor={true}
       centeredSlides={true}
       coverflowEffect={{
         scale: 0.5,
         modifier: 1,
       }}
+      style={{ padding: "0 20px", margin: "50px 0 0 0" }}
       className="mySwiper"
       autoplay={{
         delay: 1500,
