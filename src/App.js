@@ -84,6 +84,9 @@ const CheckoutForm = React.lazy(() =>
 const CheckoutCard = React.lazy(() =>
   import("./components/checkout-flow/CheckoutCard")
 );
+const CheckoutFinal = React.lazy(() =>
+  import("./components/checkout-flow/CheckoutFinal")
+);
 const NewsLetter = React.lazy(() =>
   import("./components/PopUp-Letter/Newsletter.js")
 );
@@ -116,6 +119,15 @@ const PersonalAssistanceInfo = React.lazy(() =>
 )
 const AssistForm = React.lazy(() =>
   import("./components/PersonalAssists/AssistForm.js")
+)
+const DesktopDetails = React.lazy(() =>
+  import("./components/ProfilePages/Address.js")
+)
+const Preferances = React.lazy(() =>
+  import("./components/ProfilePages/Prefrences.js")
+)
+const RecentlyViewed = React.lazy(() =>
+  import("./components/ProfilePages/RViewed")
 )
 
 const SideBar = React.lazy(() =>
@@ -200,11 +212,15 @@ function App() {
 
         <Route path="/checkout-form" element={<CheckoutForm />} />
         <Route path="/checkout-card" element={<CheckoutCard />} />
+        <Route path="/checkout-final" element={<CheckoutFinal />} />
         <Route path="/newsletter-popup" element={<NewsLetter />} />
         <Route path="/thanksletter-popup" element={<ThanksLettter />} />
         <Route path="/cookies-popup" element={<CookiesPopUp />} />
         <Route path="/cookies-thankyou-popup" element={<CookiesThankYou />} />
         <Route path="/profilepage-order" element={<ProfilePageOrders />} />
+        <Route path="/profilepage-address" element={<DesktopDetails/>} />
+        <Route path="/profilepage-preferance" element={<Preferances/>} />
+        <Route path="/profilepage-view" element={<RecentlyViewed/>} />
         <Route path="/profilepage-login" element={<ProfilePageLogin />} />
         <Route path="/profilepage-signup" element={<ProfilePageSignUp />} />
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
