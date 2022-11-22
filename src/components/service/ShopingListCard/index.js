@@ -4,6 +4,7 @@ import ShopingCard from "../../../assets/images/service/valentine-gift/shoping-c
 import Heart from "../../../assets/images/service/valentine-gift/heart.svg";
 import FillHeart from "../../../assets/images/service/valentine-gift/fill-heart.svg";
 import { useLocation } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const ShoppingListCardWrapper = styled.div`
   margin-top: 50px 100px;
@@ -11,13 +12,14 @@ const ShoppingListCardWrapper = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
-  gap: 100px;
+  gap: 50px;
   .card {
     background: #ffffff;
     box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.25);
     border-radius: 25px;
     width: 360px;
     height: 450px;
+    margin-bottom: 50px;
   }
   .new-tag {
     background: #a75b41;
@@ -69,6 +71,8 @@ const ShoppingListCardWrapper = styled.div`
 const ShoppingListCard = () => {
   const [fillHeart, setFillHeart] = useState(false);
   const location = useLocation();
+  const [isInView, setIsInView] = useState(false);
+
   return (
     <ShoppingListCardWrapper
       style={
@@ -77,9 +81,22 @@ const ShoppingListCard = () => {
           : { margin: "50px 0 0 0" }
       }
     >
-      {[1, 2, 3, 4, 5, 6].map((_, i) => {
+      {[1, 2, 3].map((_, i) => {
         return (
-          <div
+          <motion.div
+            whileInView={() => {
+              setIsInView(true);
+            }}
+            initial={{ rotateY: "90deg" }}
+            animate={
+              isInView && {
+                y: 0,
+                rotateY: "0deg",
+                transition: {
+                  duration: 1,
+                },
+              }
+            }
             className="card"
             style={
               location.pathname === "/nft-metaverse"
@@ -107,7 +124,13 @@ const ShoppingListCard = () => {
                 />
               )}
             </div>
-            <img
+            <motion.img
+              whileHover={{
+                scale: 1.1,
+              }}
+              transition={{
+                duration: 0.4,
+              }}
               src={ShopingCard}
               alt="shoping-card"
               height={location.pathname === "/nft-metaverse" ? 150 : 250}
@@ -115,7 +138,7 @@ const ShoppingListCard = () => {
             <div className="product-name">MOSCHINO</div>
             <div className="des">White Quilted Large Tote</div>
             <div className="mrp">MRP ₹87,950.00</div>
-          </div>
+          </motion.div>
         );
       })}
     </ShoppingListCardWrapper>

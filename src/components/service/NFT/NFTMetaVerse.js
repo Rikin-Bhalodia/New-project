@@ -20,6 +20,7 @@ import ShoppingListCard from "../ShopingListCard";
 import { CompanyLogo } from "../../../utils";
 import AnimatedTextWord from "../../../commonComponents/Animation/FlipAnimation";
 import { motion } from "framer-motion";
+
 const NFTMetaVerseWrapper = styled.div`
   width: 100%;
   background: black;
@@ -320,7 +321,7 @@ const NFTMetaVerse = () => {
                   isInView && {
                     y: 0,
                     transition: {
-                      duration: 0.7,
+                      duration: 1,
                     },
                   }
                 }
@@ -339,7 +340,7 @@ const NFTMetaVerse = () => {
                   isInView && {
                     y: 0,
                     transition: {
-                      duration: 0.9,
+                      duration: 1.2,
                     },
                   }
                 }
@@ -353,9 +354,11 @@ const NFTMetaVerse = () => {
               </motion.div>
             </div>
           </div>
+
           <div className="lines">
             <div className="border-lines"></div>
           </div>
+
           <div className="nft-part">
             <div className="heading-nft-part">
               <img src={About} alt="about" className="about" />
@@ -374,7 +377,7 @@ const NFTMetaVerse = () => {
                   whileInView={() => {
                     setIsInView(true);
                   }}
-                  initial={{ x: "40vw" }}
+                  initial={{ x: "30vw" }}
                   animate={
                     isInView && {
                       x: 0,
@@ -383,17 +386,19 @@ const NFTMetaVerse = () => {
                       },
                     }
                   }
-                  className="nft-para"
                 >
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  <div className="nft-para">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco
+                  </div>
                 </motion.div>
                 <motion.div
                   whileInView={() => {
                     setIsInView(true);
                   }}
-                  initial={{ x: "40vw" }}
+                  initial={{ x: "30vw" }}
                   animate={
                     isInView && {
                       x: 0,
@@ -413,9 +418,11 @@ const NFTMetaVerse = () => {
               </div>
             </div>
           </div>
+
           <div className="lines">
             <div className="border-lines"></div>
           </div>
+
           <div className="metaverse-part">
             <div className="desc-meta">
               <img
@@ -511,7 +518,7 @@ const NFTMetaVerse = () => {
                 isInView && {
                   x: 0,
                   transition: {
-                    duration: 0.7,
+                    duration: 1,
                   },
                 }
               }
@@ -528,9 +535,10 @@ const NFTMetaVerse = () => {
               <AnimatedTextWord text="LUXE BRAND NFTS" />
             </div>
             <ShoppingListCard />
+            <ShoppingListCard />
           </div>
           <div className="nft-collection">
-            <div>
+            <div className="d-flex justify-content-center">
               <AnimatedTextWord text="NFT COLLECTIONS" />
             </div>
             <div className="para-des">
@@ -538,7 +546,7 @@ const NFTMetaVerse = () => {
             </div>
             <div className="company-logo">
               {CompanyLogo.map(({ img, width }) => {
-                return <img src={img} alt="img" width={width} height={120} />;
+                return <img src={img} alt="img" width={width} height={100} />;
               })}
             </div>
             <div className="para-des">and many more!</div>

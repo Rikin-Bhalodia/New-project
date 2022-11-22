@@ -29,23 +29,25 @@ const SimillerVideoWrapper = styled.div`
     left: 0;
     top: 500px;
   }
-  .video-box {
-    padding-bottom: 20px;
-  }
-  .body {
-    padding-left: 30px;
-  }
-  .left-side-area {
-    .head {
-      padding-bottom: 30px;
-    }
-  }
+
   .simillier-video-area {
     display: flex;
     justify-content: space-between;
     gap: 170px;
+    .left-side-area {
+      .head {
+        padding-bottom: 30px;
+      }
+      .body {
+        padding-left: 30px;
+        .video-box {
+          padding-bottom: 20px;
+        }
+      }
+    }
     .right-side-area {
       border-bottom: 3px solid #a75b41;
+      width: 450px;
       .head-box {
         .box {
           background: #a75b41;
@@ -133,6 +135,7 @@ const SimillerVideoWrapper = styled.div`
 
 export default function SimillerVideo() {
   const [isInView, setIsInView] = useState(false);
+
   const [menuOpenModal, setMenuOpenModal] = useState(false);
 
   const isResponsive = useMediaQuery({ query: "(max-width: 1000px)" });
@@ -158,7 +161,7 @@ export default function SimillerVideo() {
                 })}
               </div>
             </div>
-            <div className="menu-width">
+            {/* <div className="menu-width">
               <div
                 className="menu-icon"
                 onClick={() => setMenuOpenModal(!menuOpenModal)}
@@ -173,7 +176,7 @@ export default function SimillerVideo() {
                   <img src={MenuIcon} loading="lazy" alt="menu" height={45} />
                 )}
               </div>
-            </div>
+            </div> */}
             <div className="right-side-area">
               <div className="head-box">
                 <div className="box">

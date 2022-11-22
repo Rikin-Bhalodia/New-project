@@ -20,6 +20,7 @@ const StudioProductMaterialWrapper = styled.div`
     height: 170px;
     align-items: center;
     justify-content: space-between;
+    padding: 0 40px;
     .leftside-area {
       .goback-link {
         a {
@@ -37,6 +38,7 @@ const StudioProductMaterialWrapper = styled.div`
     }
   }
   .studio-material-body {
+    padding: 0 40px;
     img {
       width: 100%;
     }

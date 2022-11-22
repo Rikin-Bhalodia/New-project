@@ -40,7 +40,6 @@ const ShopHoverWrapper = styled.div`
     position: relative;
     top: 24px;
     background: #fff;
-    width: 100%;
     background: none;
     width: max-content;
     padding: 0 10px;
@@ -158,7 +157,7 @@ export default function ShopHover() {
                   <div className="shop-hover-category">
                     {showImage === i && (
                       <div className="leftImg">
-                        <img src={studioInner3} alt="" loading="lazy" />
+                        <motion.img src={studioInner3} alt="" loading="lazy" />
                       </div>
                     )}
 
@@ -175,7 +174,7 @@ export default function ShopHover() {
                     </motion.div>
                     {showImage === i && (
                       <div className="rightImg">
-                        <img src={studioInner5} alt="" loading="lazy" />
+                        <motion.img src={studioInner5} alt="" loading="lazy" />
                       </div>
                     )}
                   </div>
