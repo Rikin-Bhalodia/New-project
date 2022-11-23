@@ -58,6 +58,8 @@ const ShopHoverWrapper = styled.div`
       width: 270px;
       height: 350px;
       object-fit: cover;
+      transform: rotate(-90deg);
+      transition: all 0.3s ease-in-out 0s;
     }
   }
   .rightImg {
@@ -173,7 +175,11 @@ export default function ShopHover() {
                       <h3>{name}</h3>
                     </motion.div>
                     {showImage === i && (
-                      <div className="rightImg">
+                      <div
+                        className={
+                          showImage === i ? "rightImg imghover" : "rightImg"
+                        }
+                      >
                         <motion.img src={studioInner5} alt="" loading="lazy" />
                       </div>
                     )}

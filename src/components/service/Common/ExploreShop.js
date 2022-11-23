@@ -14,22 +14,24 @@ const ExploreShopWrapper = styled.div`
   margin-top: 80px;
   height: 600px;
   position: relative;
+  z-index: 11;
   .back {
     position: absolute;
     height: 700px;
     width: 100%;
-    z-index: 1;
+    z-index: -1;
   }
   .explore-shop {
     text-align: center;
     font-family: "Coral Blush";
     font-style: normal;
     font-weight: 400;
-    font-size: 50px;
+    font-size: 55px;
     color: white;
     padding-top: 100px;
     display: flex;
     justify-content: center;
+    z-index: 2;
   }
   .card-label {
     color: white;
@@ -89,6 +91,49 @@ const ExploreShopWrapper = styled.div`
     }
   }
 `;
+
+const explore = [
+  {
+    x: "-40vw",
+    y: 0,
+    duration: 1.4,
+  },
+  {
+    x: "-40vw",
+    y: 0,
+    duration: 1,
+  },
+  {
+    x: "40vw",
+    y: 0,
+    duration: 1,
+  },
+  {
+    x: "40vw",
+    y: 0,
+    duration: 1.4,
+  },
+  {
+    x: "-40vw",
+    y: 0,
+    duration: 1.4,
+  },
+  {
+    x: "-40vw",
+    y: 0,
+    duration: 1,
+  },
+  {
+    x: "40vw",
+    y: 0,
+    duration: 1,
+  },
+  {
+    x: "40vw",
+    y: 0,
+    duration: 1.4,
+  },
+];
 
 const ExploreShop = () => {
   const isResponsive = useMediaQuery({ query: "(max-width: 800px)" });
@@ -150,12 +195,27 @@ const ExploreShop = () => {
         </Swiper>
       ) : (
         <div className="cards">
-          {[1, 2, 3, 4, 5, 6, 7, 8].map((_) => {
+          {explore.map(({ duration, x, y }) => {
             return (
-              <div className="card-label">
+              <motion.div
+                whileInView={() => {
+                  setIsInView(true);
+                }}
+                initial={{ y: y, x: x }}
+                animate={
+                  isInView && {
+                    y: 0,
+                    x: 0,
+                    transition: {
+                      duration: duration,
+                    },
+                  }
+                }
+                className="card-label"
+              >
                 <div className="label-name">FOOD</div>
                 <img src={Photo} alt="photo" loading="lazy" />
-              </div>
+              </motion.div>
             );
           })}
         </div>

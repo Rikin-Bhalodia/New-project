@@ -7,19 +7,13 @@ import Menu from "../../../commonComponents/Menu";
 import YellowBarContent from "../Common/YellowBarContent";
 import Insta from "../../../assets/images/nfts/insta.svg";
 import Facebook from "../../../assets/images/nfts/facebook.svg";
-import About from "../../../assets/images/nfts/about.svg";
-import Hammer from "../../../assets/images/nfts/hammer.svg";
-import Cat from "../../../assets/images/nfts/cat.svg";
-import Heart from "../../../assets/images/nfts/heart.svg";
-import Earth from "../../../assets/images/nfts/earth.svg";
-import Buy from "../../../assets/images/nfts/buy.svg";
-import Sell from "../../../assets/images/nfts/sell-nft.svg";
-import Cash from "../../../assets/images/nfts/cash.svg";
-import Price from "../../../assets/images/nfts/price-icon.svg";
 import ShoppingListCard from "../ShopingListCard";
 import { CompanyLogo } from "../../../utils";
 import AnimatedTextWord from "../../../commonComponents/Animation/FlipAnimation";
 import { motion } from "framer-motion";
+const AboutNft = React.lazy(() => import("./AboutNft"));
+const AboutMetaverse = React.lazy(() => import("./AboutMetaverse"));
+const BuySell = React.lazy(() => import("./BuySell"));
 
 const NFTMetaVerseWrapper = styled.div`
   width: 100%;
@@ -298,7 +292,7 @@ const NFTMetaVerse = () => {
               whileInView={() => {
                 setIsInView(true);
               }}
-              initial={{ y: "40vh" }}
+              initial={{ y: "20vh" }}
               animate={
                 isInView && {
                   y: 0,
@@ -316,7 +310,7 @@ const NFTMetaVerse = () => {
                 whileInView={() => {
                   setIsInView(true);
                 }}
-                initial={{ y: "40vh" }}
+                initial={{ y: "20vh" }}
                 animate={
                   isInView && {
                     y: 0,
@@ -335,7 +329,7 @@ const NFTMetaVerse = () => {
                 whileInView={() => {
                   setIsInView(true);
                 }}
-                initial={{ y: "40vh" }}
+                initial={{ y: "20vh" }}
                 animate={
                   isInView && {
                     y: 0,
@@ -359,177 +353,19 @@ const NFTMetaVerse = () => {
             <div className="border-lines"></div>
           </div>
 
-          <div className="nft-part">
-            <div className="heading-nft-part">
-              <img src={About} alt="about" className="about" />
-              <div className="nft">
-                <AnimatedTextWord text="NFT" />
-              </div>
-            </div>
-            <div className="des-nft-part">
-              <div className="icons-nft">
-                <img src={Hammer} alt="about" />
-                <img src={Cat} alt="about" />
-                <img src={Heart} alt="about" />
-              </div>
-              <div className="des-para-nft">
-                <motion.div
-                  whileInView={() => {
-                    setIsInView(true);
-                  }}
-                  initial={{ x: "30vw" }}
-                  animate={
-                    isInView && {
-                      x: 0,
-                      transition: {
-                        duration: 0.5,
-                      },
-                    }
-                  }
-                >
-                  <div className="nft-para">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco
-                  </div>
-                </motion.div>
-                <motion.div
-                  whileInView={() => {
-                    setIsInView(true);
-                  }}
-                  initial={{ x: "30vw" }}
-                  animate={
-                    isInView && {
-                      x: 0,
-                      transition: {
-                        duration: 0.7,
-                      },
-                    }
-                  }
-                  className="nft-para"
-                >
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum
-                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                  cupidatat non proident, sunt in culpa qui officia deserunt
-                  mollit anim id est laborum.
-                </motion.div>
-              </div>
-            </div>
-          </div>
+          <AboutNft />
 
           <div className="lines">
             <div className="border-lines"></div>
           </div>
 
-          <div className="metaverse-part">
-            <div className="desc-meta">
-              <img
-                src={Earth}
-                alt="about"
-                className="earth"
-                height={90}
-                width={130}
-              />
-            </div>
-            <div className="heading-meta-part">
-              <img
-                src={About}
-                alt="about"
-                className="meta-about"
-                height={70}
-                width={120}
-              />
-              <div className="meta">
-                <AnimatedTextWord text="METAVERSE" />
-              </div>
-            </div>
-          </div>
-          <div className="des-metas">
-            <motion.div
-              whileInView={() => {
-                setIsInView(true);
-              }}
-              initial={{ x: "-40vw" }}
-              animate={
-                isInView && {
-                  x: 0,
-                  transition: {
-                    duration: 0.7,
-                  },
-                }
-              }
-            >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco
-            </motion.div>
-            <motion.div
-              whileInView={() => {
-                setIsInView(true);
-              }}
-              initial={{ x: "-40vw" }}
-              animate={
-                isInView && {
-                  x: 0,
-                  transition: {
-                    duration: 0.7,
-                  },
-                }
-              }
-            >
-              laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-              dolor in reprehenderit in voluptate velit esse cillum dolore eu
-              fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-              proident, sunt in culpa qui officia deserunt mollit anim id est
-              laborum.
-            </motion.div>
-          </div>
+          <AboutMetaverse />
+
           <div className="lines">
             <div className="border-lines"></div>
           </div>
-          <div className="buttons">
-            <motion.div
-              whileInView={() => {
-                setIsInView(true);
-              }}
-              initial={{ x: "-50vw" }}
-              animate={
-                isInView && {
-                  x: 0,
-                  transition: {
-                    duration: 0.7,
-                  },
-                }
-              }
-              style={{ position: "relative" }}
-            >
-              <img src={Buy} alt="buy" height={130} />
-              <img src={Price} alt="price" className="price" />
-              <div className="para-content">Buy amazing collections of NFT</div>
-            </motion.div>
-            <motion.div
-              whileInView={() => {
-                setIsInView(true);
-              }}
-              initial={{ x: "50vw" }}
-              animate={
-                isInView && {
-                  x: 0,
-                  transition: {
-                    duration: 1,
-                  },
-                }
-              }
-            >
-              <img src={Cash} alt="price" className="cash" />
-              <img src={Sell} alt="sell" height={130} />
-              <div className="para-content-right">
-                Put up your NFT Collections on Sale!
-              </div>
-            </motion.div>
-          </div>
+          <BuySell />
+
           <div className="brand-nfts">
             <div>
               <AnimatedTextWord text="LUXE BRAND NFTS" />

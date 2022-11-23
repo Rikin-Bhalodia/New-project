@@ -175,7 +175,7 @@ export const GiftsByClients = [
 ];
 
 export const OccasionGifts = [
-  { img: Anniversary, name: "Anniversary gifts" },
+  { img: Anniversary, name: "Anniversary gifts", x: "40vw", duration: 1 },
   { img: Birthday, name: "Birthday gifts" },
   { img: Festive, name: "Festive gifts" },
   { img: HouseWarming, name: "HouseWarming gifts" },

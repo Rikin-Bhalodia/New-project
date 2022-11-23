@@ -22,7 +22,7 @@ const MiddlePartWrapper = styled.div`
     font-family: "Coral Blush";
     font-style: normal;
     font-weight: 400;
-    font-size: 60px;
+    font-size: 70px;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -116,7 +116,7 @@ const MiddlePart = ({
           loading="lazy"
           src={LeftMiddle}
           alt="left-middle"
-          height={450}
+          height={500}
           className="left-middle"
           whileInView={() => {
             setIsInView(true);
@@ -196,7 +196,7 @@ const MiddlePart = ({
           loading="lazy"
           src={RightMiddle}
           alt="left-middle"
-          height={450}
+          height={500}
           className="right-middle"
           whileInView={() => {
             setIsInView(true);
