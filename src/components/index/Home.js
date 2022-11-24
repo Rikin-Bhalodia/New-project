@@ -9,10 +9,8 @@ import Membership from "./../../assets/images/img/watch-bg.jpg";
 import Rent from "./../../assets/images/img/rent-bg.jpg";
 import ExploreNow from "../../assets/images/homepage/explorenow.svg";
 import styled from "styled-components";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
 import MenuIcon from "../../assets/images/studio/menu.svg";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 const AnimatedTextWord = React.lazy(() =>
   import("../../commonComponents/Animation/FlipAnimation")
 );
@@ -183,23 +181,12 @@ export default function Home() {
   const [menuOpenModal, setMenuOpenModal] = useState(false);
   const [isInView, setIsInView] = useState(false);
   const wrapper = useRef();
-  gsap.registerPlugin(ScrollTrigger);
-
-  // useLayoutEffect(() => {
-  //   let smoother = ScrollTrigger.create({
-  //     smooth: 3, // how long (in seconds) it takes to "catch up" to the native scroll position
-  //     effects: true, // looks for data-speed and data-lag attributes on elements
-  //   });
-  //   return () => {
-  //     smoother.kill();
-  //   };
-  // }, []);
 
   return (
     <HomeWrapper>
       <motion.div>
-        <div id="smooth-wrapper">
-          <div id="smooth-content" ref={wrapper}>
+        <div>
+          <div ref={wrapper}>
             {/* <!-- home page banner part --> */}
             <section className="homeBanner overflow-hidden minHeightSec minBannerHeight ">
               <div className="">

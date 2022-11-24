@@ -6,11 +6,14 @@ import "swiper/css/bundle";
 import "antd/dist/antd.variable.min.css";
 import "antd/dist/antd.css";
 import { Route, Routes, useLocation } from "react-router-dom";
-import ScrollContainer from "./commonComponents/SmoothScrollingComponent";
 import PetsProductSelection from "./components/service/Pets/PetsProductSelection";
 import MobileHeader from "./commonComponents/Header/MobileHeader";
 import { gsap } from "gsap";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+import { useLayoutEffect } from "react";
+import { Fragment } from "react";
 
 const Home = React.lazy(() => import("./components/index/Home"));
 const Studio = React.lazy(() => import("./studio"));
@@ -139,103 +142,143 @@ const SideBar = React.lazy(() =>
 function App() {
   const { pathname } = useLocation();
   // const scrollIntertia = 70;
-  gsap.registerPlugin(ScrollSmoother);
+  gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+
+  useLayoutEffect(() => {
+    let smoother = ScrollSmoother.create({
+      smooth: 3, // how long (in seconds) it takes to "catch up" to the native scroll position
+      effects: true, // looks for data-speed and data-lag attributes on elements
+    });
+    return () => {
+      smoother.kill();
+    };
+  }, []);
 
   return (
     <div className="App">
       {pathname !== "/studio" && <Header />}
-      {/* <ScrollContainer scrollIntertia={scrollIntertia}> */}
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/studio" element={<Studio />} />
-        <Route path="/studio-product" element={<StudioProduct />} />
-        <Route path="/studio-material" element={<StudioProductMaterial />} />
-        <Route path="/studio-sec-video" element={<StudioSecVideo />} />
+      <Fragment id="smooth-wrapper">
+        <div id="smooth-content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/studio" element={<Studio />} />
+            <Route path="/studio-product" element={<StudioProduct />} />
+            <Route
+              path="/studio-material"
+              element={<StudioProductMaterial />}
+            />
+            <Route path="/studio-sec-video" element={<StudioSecVideo />} />
 
-        <Route path="/product" element={<Product />} />
-        <Route path="/sub-menu1" element={<SubMenu1 />} />
-        <Route path="/sub-menu2" element={<SubMenu2 />} />
+            <Route path="/product" element={<Product />} />
+            <Route path="/sub-menu1" element={<SubMenu1 />} />
+            <Route path="/sub-menu2" element={<SubMenu2 />} />
 
-        <Route path="/shop-hover" element={<ShopHover />} />
-        <Route path="/service-hover" element={<ServiceHover />} />
-        <Route path="/product-selection" element={<ProductSection />} />
-        <Route path="/gift-product-selection" element={<ProductSection />} />
-        <Route path="/brand" element={<Brand />} />
-        <Route path="/brand-product" element={<BrandProduct />} />
-        <Route path="/brand-product-sec" element={<BrandProductSection />} />
-        <Route path="/brand-product-lan" element={<BrandProductLanding />} />
-        <Route
-          path="/service-luxury-gifting"
-          element={<ServiceLuxuryGifting />}
-        />
-        <Route path="/gift-for-him" element={<GiftForHim />} />
-        <Route path="/luxury-forhim-product" element={<LuxuryProduct />} />
-        <Route path="/valentine-gift" element={<ValentineGift />} />
-        <Route path="/pets" element={<Pets />} />
-        <Route path="/grooming" element={<Grooming />} />
-        <Route path="/dogs" element={<Dogs />} />
-        <Route
-          path="/pets-product-selection"
-          element={<PetsProductSelection />}
-        />
-        <Route
-          path="/service-travel-destination"
-          element={<ServiceTravelCategory name="DESTINATIONS" />}
-        />
-        <Route
-          path="/service-travel-stays"
-          element={<ServiceTravelCategory name="STAYS" />}
-        />
-        <Route path="/service-travel" element={<ServiceTravel />} />
-        <Route
-          path="/service-travel-celebration-destination"
-          element={<TravelDestination />}
-        />
-        <Route
-          path="/service-travel-celebration-udaipur"
-          element={<CelebrationUdaipur />}
-        />
-        <Route
-          path="/service-travel-celebration"
-          element={<TravelCelebration />}
-        />
-        <Route
-          path="/service-travel-the-leela-place"
-          element={<TheLeelaPalace />}
-        />
-        <Route
-          path="/nft-product-selection"
-          element={<NFTProductSelection />}
-        />
-        <Route path="/buy-nfts" element={<BuyNFTs />} />
-        <Route path="/sell-your-nfts" element={<SellNFTs />} />
-        <Route path="/service-celebration" element={<ServiceCelebration />} />
-        <Route path="/nft-metaverse" element={<NFTMetaVerse />} />
+            <Route path="/shop-hover" element={<ShopHover />} />
+            <Route path="/service-hover" element={<ServiceHover />} />
+            <Route path="/product-selection" element={<ProductSection />} />
+            <Route
+              path="/gift-product-selection"
+              element={<ProductSection />}
+            />
+            <Route path="/brand" element={<Brand />} />
+            <Route path="/brand-product" element={<BrandProduct />} />
+            <Route
+              path="/brand-product-sec"
+              element={<BrandProductSection />}
+            />
+            <Route
+              path="/brand-product-lan"
+              element={<BrandProductLanding />}
+            />
+            <Route
+              path="/service-luxury-gifting"
+              element={<ServiceLuxuryGifting />}
+            />
+            <Route path="/gift-for-him" element={<GiftForHim />} />
+            <Route path="/luxury-forhim-product" element={<LuxuryProduct />} />
+            <Route path="/valentine-gift" element={<ValentineGift />} />
+            <Route path="/pets" element={<Pets />} />
+            <Route path="/grooming" element={<Grooming />} />
+            <Route path="/dogs" element={<Dogs />} />
+            <Route
+              path="/pets-product-selection"
+              element={<PetsProductSelection />}
+            />
+            <Route
+              path="/service-travel-destination"
+              element={<ServiceTravelCategory name="DESTINATIONS" />}
+            />
+            <Route
+              path="/service-travel-stays"
+              element={<ServiceTravelCategory name="STAYS" />}
+            />
+            <Route path="/service-travel" element={<ServiceTravel />} />
+            <Route
+              path="/service-travel-celebration-destination"
+              element={<TravelDestination />}
+            />
+            <Route
+              path="/service-travel-celebration-udaipur"
+              element={<CelebrationUdaipur />}
+            />
+            <Route
+              path="/service-travel-celebration"
+              element={<TravelCelebration />}
+            />
+            <Route
+              path="/service-travel-the-leela-place"
+              element={<TheLeelaPalace />}
+            />
+            <Route
+              path="/nft-product-selection"
+              element={<NFTProductSelection />}
+            />
+            <Route path="/buy-nfts" element={<BuyNFTs />} />
+            <Route path="/sell-your-nfts" element={<SellNFTs />} />
+            <Route
+              path="/service-celebration"
+              element={<ServiceCelebration />}
+            />
+            <Route path="/nft-metaverse" element={<NFTMetaVerse />} />
 
-        <Route path="/checkout-form" element={<CheckoutForm />} />
-        <Route path="/checkout-card" element={<CheckoutCard />} />
-        <Route path="/checkout-final" element={<CheckoutFinal />} />
-        <Route path="/newsletter-popup" element={<NewsLetter />} />
-        <Route path="/thanksletter-popup" element={<ThanksLettter />} />
-        <Route path="/cookies-popup" element={<CookiesPopUp />} />
-        <Route path="/cookies-thankyou-popup" element={<CookiesThankYou />} />
-        <Route path="/profilepage-order" element={<ProfilePageOrders />} />
-        <Route path="/profilepage-address" element={<DesktopDetails />} />
-        <Route path="/profilepage-preferance" element={<Preferances />} />
-        <Route path="/profilepage-view" element={<RecentlyViewed />} />
-        <Route path="/profilepage-login" element={<ProfilePageLogin />} />
-        <Route path="/profilepage-signup" element={<ProfilePageSignUp />} />
-        <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
-        <Route path="/personal-assistance" element={<PersonalAssistance />} />
-        <Route path="/assistance-info" element={<PersonalAssistanceInfo />} />
-        <Route path="/assist-form" element={<AssistForm />} />
-        <Route path="/sidebar" element={<SideBar />} />
+            <Route path="/checkout-form" element={<CheckoutForm />} />
+            <Route path="/checkout-card" element={<CheckoutCard />} />
+            <Route path="/checkout-final" element={<CheckoutFinal />} />
+            <Route path="/newsletter-popup" element={<NewsLetter />} />
+            <Route path="/thanksletter-popup" element={<ThanksLettter />} />
+            <Route path="/cookies-popup" element={<CookiesPopUp />} />
+            <Route
+              path="/cookies-thankyou-popup"
+              element={<CookiesThankYou />}
+            />
+            <Route path="/profilepage-order" element={<ProfilePageOrders />} />
+            <Route path="/profilepage-address" element={<DesktopDetails />} />
+            <Route path="/profilepage-preferance" element={<Preferances />} />
+            <Route path="/profilepage-view" element={<RecentlyViewed />} />
+            <Route path="/profilepage-login" element={<ProfilePageLogin />} />
+            <Route path="/profilepage-signup" element={<ProfilePageSignUp />} />
+            <Route
+              path="/terms-and-conditions"
+              element={<TermsAndConditions />}
+            />
+            <Route
+              path="/personal-assistance"
+              element={<PersonalAssistance />}
+            />
+            <Route
+              path="/assistance-info"
+              element={<PersonalAssistanceInfo />}
+            />
+            <Route path="/assist-form" element={<AssistForm />} />
+            <Route path="/sidebar" element={<SideBar />} />
 
-        {/* <Route path="/MH" element={<MobileHeader />} /> */}
-      </Routes>
+            {/* <Route path="/MH" element={<MobileHeader />} /> */}
+          </Routes>
+        </div>
+      </Fragment>
+
       {pathname !== "/sub-menu1" && pathname !== "/sub-menu2" && <Footer />}
-      {/* </ScrollContainer> */}
     </div>
   );
 }
