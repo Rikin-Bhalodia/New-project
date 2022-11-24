@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Header from "../../commonComponents/Header";
 import BrandBanner from "../../assets/images/brand/banner.svg";
-import FendiBanner from "../../assets/images/brand/fendi-banner.svg";
 import Fendi from "../../assets/images/brand/fendi.svg";
 import FImg from "../../assets/images/brand/f-small.svg";
 import Loved from "../../assets/images/brand/text-love.svg";

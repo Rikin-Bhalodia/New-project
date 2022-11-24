@@ -173,7 +173,11 @@ export default function ShopHover() {
                       <h3>{name}</h3>
                     </motion.div>
                     {showImage === i && (
-                      <div className="rightImg">
+                      <div
+                        className={
+                          showImage === i ? "rightImg imghover" : "rightImg"
+                        }
+                      >
                         <motion.img src={studioInner5} alt="" loading="lazy" />
                       </div>
                     )}

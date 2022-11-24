@@ -267,7 +267,21 @@ const ServiceLuxuryGifting = () => {
           <div className="occation-gifts">
             {OccasionGifts.map((ele) => {
               return (
-                <div className="">
+                <motion.div
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ x: ele.x }}
+                  animate={
+                    isInView && {
+                      x: 0,
+                      transition: {
+                        duration: ele.duration,
+                      },
+                    }
+                  }
+                  className=""
+                >
                   <motion.img
                     whileHover={{
                       scale: 1.1,
@@ -281,7 +295,7 @@ const ServiceLuxuryGifting = () => {
                     height={250}
                   />
                   <div className="icon-name">{ele.name}</div>
-                </div>
+                </motion.div>
               );
             })}
           </div>

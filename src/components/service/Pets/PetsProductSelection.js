@@ -1,11 +1,11 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useState } from "react";
 import styled from "styled-components";
 import AboutProduct from "../../product-section/AboutProduct";
 import { ReviewSlider } from "../Grooming/ReviewSlider";
 import Text from "../../../assets/images/service/pets-product-selection/text.svg";
 import Image1 from "../../../assets/images/service/pets-product-selection/image1.svg";
 import Image2 from "../../../assets/images/service/pets-product-selection/image2.svg";
-
+import { motion } from "framer-motion";
 const ProductSelectionCommon = React.lazy(() =>
   import("../../../commonComponents/ProductSelectionCommon")
 );
@@ -161,6 +161,7 @@ const PetsProductSelectionWrapper = styled.div`
 `;
 
 const PetsProductSelection = () => {
+  const [isInView, setIsInView] = useState(false);
   return (
     <PetsProductSelectionWrapper>
       <Suspense fallback="Loading...">
@@ -169,31 +170,111 @@ const PetsProductSelection = () => {
           <img src={Text} alt="text" loading="lazy" className="text-img" />
           <div className="products">
             <div className="image-section">
-              <img
+              <motion.img
+                whileHover={{
+                  scale: 1.1,
+                }}
+                transition={{
+                  duration: 0.4,
+                }}
+                whileInView={() => {
+                  setIsInView(true);
+                }}
+                initial={{ x: "-30vw" }}
+                animate={
+                  isInView && {
+                    x: 0,
+                    transition: {
+                      duration: 1.4,
+                    },
+                  }
+                }
                 src={Image1}
                 alt="cart-product"
                 loading="lazy"
                 className="images"
               />
-              <div className="plus-icon">+</div>
-              <img
+              <motion.div
+                whileInView={() => {
+                  setIsInView(true);
+                }}
+                initial={{ x: "-30vw" }}
+                animate={
+                  isInView && {
+                    x: 0,
+                    transition: {
+                      duration: 1.2,
+                    },
+                  }
+                }
+                className="plus-icon"
+              >
+                +
+              </motion.div>
+              <motion.img
+                whileHover={{
+                  scale: 1.1,
+                }}
+                transition={{
+                  duration: 0.4,
+                }}
+                whileInView={() => {
+                  setIsInView(true);
+                }}
+                initial={{ x: "-30vw" }}
+                animate={
+                  isInView && {
+                    x: 0,
+                    transition: {
+                      duration: 1,
+                    },
+                  }
+                }
                 src={Image2}
                 alt="cart-product"
                 loading="lazy"
                 className="images"
               />
             </div>
-            <div className="prices">
+            <motion.div
+              whileInView={() => {
+                setIsInView(true);
+              }}
+              initial={{ x: "-30vw" }}
+              animate={
+                isInView && {
+                  x: 0,
+                  transition: {
+                    duration: 0.8,
+                  },
+                }
+              }
+              className="prices"
+            >
               <div className="total">
                 <div className="total-price">TOTAL PRICE:</div>
                 <div className="mrp">₹1,725.00</div>
                 <div className="discount-mrp">₹1,638.75</div>
               </div>
               <div className="btn">ADD TO CART</div>
-            </div>
+            </motion.div>
           </div>
           <div className="input-checkbox">
-            <div className="checkbox-fruit">
+            <motion.div
+              whileInView={() => {
+                setIsInView(true);
+              }}
+              initial={{ y: "40vh" }}
+              animate={
+                isInView && {
+                  y: 0,
+                  transition: {
+                    duration: 1,
+                  },
+                }
+              }
+              className="checkbox-fruit"
+            >
               <input
                 type="checkbox"
                 id="fruit"
@@ -212,8 +293,22 @@ const PetsProductSelection = () => {
                 <span className="mrp">₹990.00</span>
                 <span className="discount">₹940.50</span>
               </label>
-            </div>
-            <div className="checkbox-fruit">
+            </motion.div>
+            <motion.div
+              whileInView={() => {
+                setIsInView(true);
+              }}
+              initial={{ y: "40vh" }}
+              animate={
+                isInView && {
+                  y: 0,
+                  transition: {
+                    duration: 1,
+                  },
+                }
+              }
+              className="checkbox-fruit"
+            >
               <input
                 type="checkbox"
                 id="food"
@@ -232,7 +327,7 @@ const PetsProductSelection = () => {
                 <span className="mrp">₹735.00</span>
                 <span className="discount">₹698.25</span>
               </label>
-            </div>
+            </motion.div>
           </div>
         </div>
 
