@@ -132,6 +132,32 @@ const SimillerVideoWrapper = styled.div`
     }
   }
 `;
+const video = [
+  {
+    x: "-30vw",
+    duration: "0.8",
+  },
+  {
+    x: "-30vw",
+    duration: "1",
+  },
+  {
+    x: "-30vw",
+    duration: "1.2",
+  },
+  {
+    x: "-30vw",
+    duration: "1.4",
+  },
+  {
+    x: "-30vw",
+    duration: "1.6",
+  },
+  {
+    x: "-30vw",
+    duration: "1.8",
+  },
+];
 
 export default function SimillerVideo() {
   const [isInView, setIsInView] = useState(false);
@@ -152,10 +178,26 @@ export default function SimillerVideo() {
                 <img loading="lazy" src={VideoHead} alt="" />
               </div>
               <div className="body">
-                {[1, 2, 3, 4, 5, 6].map((_) => {
+                {video.map((ele) => {
                   return (
                     <div className="video-box">
-                      <img loading="lazy" src={Video} alt="" />
+                      <motion.img
+                        whileInView={() => {
+                          setIsInView(true);
+                        }}
+                        initial={{ x: ele.x }}
+                        animate={
+                          isInView && {
+                            x: 0,
+                            transition: {
+                              duration: ele.duration,
+                            },
+                          }
+                        }
+                        // loading="lazy"
+                        src={Video}
+                        alt=""
+                      />
                     </div>
                   );
                 })}

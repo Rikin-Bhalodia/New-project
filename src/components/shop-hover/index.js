@@ -58,8 +58,6 @@ const ShopHoverWrapper = styled.div`
       width: 270px;
       height: 350px;
       object-fit: cover;
-      transform: rotate(-90deg);
-      transition: all 0.3s ease-in-out 0s;
     }
   }
   .rightImg {

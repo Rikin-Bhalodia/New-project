@@ -135,6 +135,10 @@ const ProductSelectionCommonWrapper = styled.div`
     border: 1px solid #000000;
     width: 217px;
   }
+  .delivary-status {
+    margin-top: 20px;
+    margin-left: 10px;
+  }
   .pin-code--section div input:focus {
     outline: none;
   }

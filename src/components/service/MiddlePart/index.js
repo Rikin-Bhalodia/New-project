@@ -121,13 +121,13 @@ const MiddlePart = ({
           whileInView={() => {
             setIsInView(true);
           }}
-          initial={{ x: "-60vw", opacity: 0 }}
+          initial={{ y: "40vh", opacity: 0 }}
           animate={
             isInView && {
-              x: 0,
+              y: 0,
               opacity: 1,
               transition: {
-                duration: 1.4,
+                duration: 1,
               },
             }
           }
@@ -201,13 +201,13 @@ const MiddlePart = ({
           whileInView={() => {
             setIsInView(true);
           }}
-          initial={{ x: "60vw", opacity: 0 }}
+          initial={{ y: "40vh", opacity: 0 }}
           animate={
             isInView && {
-              x: 0,
+              y: 0,
               opacity: 1,
               transition: {
-                duration: 1.2,
+                duration: 1,
               },
             }
           }
