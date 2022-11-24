@@ -9,6 +9,8 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import ScrollContainer from "./commonComponents/SmoothScrollingComponent";
 import PetsProductSelection from "./components/service/Pets/PetsProductSelection";
 import MobileHeader from "./commonComponents/Header/MobileHeader";
+import { gsap } from "gsap";
+import { ScrollSmoother } from "gsap/ScrollSmoother";
 
 const Home = React.lazy(() => import("./components/index/Home"));
 const Studio = React.lazy(() => import("./studio"));
@@ -107,28 +109,28 @@ const ProfilePageLogin = React.lazy(() =>
 );
 const ProfilePageSignUp = React.lazy(() =>
   import("./components/ProfilePages/SignUp.js")
-)
+);
 const TermsAndConditions = React.lazy(() =>
   import("./components/ProfilePages/T&C")
-)
+);
 const PersonalAssistance = React.lazy(() =>
   import("./components/ProfilePages/PersonalAssistance.js")
-)
+);
 const PersonalAssistanceInfo = React.lazy(() =>
   import("./components/PersonalAssists/Info.js")
-)
+);
 const AssistForm = React.lazy(() =>
   import("./components/PersonalAssists/AssistForm.js")
-)
+);
 const DesktopDetails = React.lazy(() =>
   import("./components/ProfilePages/Address.js")
-)
+);
 const Preferances = React.lazy(() =>
   import("./components/ProfilePages/Prefrences.js")
-)
+);
 const RecentlyViewed = React.lazy(() =>
   import("./components/ProfilePages/RViewed")
-)
+);
 
 const SideBar = React.lazy(() =>
   import("./commonComponents/SidebarOfProfilePage/index.js")
@@ -137,6 +139,7 @@ const SideBar = React.lazy(() =>
 function App() {
   const { pathname } = useLocation();
   // const scrollIntertia = 70;
+  gsap.registerPlugin(ScrollSmoother);
 
   return (
     <div className="App">
@@ -218,15 +221,15 @@ function App() {
         <Route path="/cookies-popup" element={<CookiesPopUp />} />
         <Route path="/cookies-thankyou-popup" element={<CookiesThankYou />} />
         <Route path="/profilepage-order" element={<ProfilePageOrders />} />
-        <Route path="/profilepage-address" element={<DesktopDetails/>} />
-        <Route path="/profilepage-preferance" element={<Preferances/>} />
-        <Route path="/profilepage-view" element={<RecentlyViewed/>} />
+        <Route path="/profilepage-address" element={<DesktopDetails />} />
+        <Route path="/profilepage-preferance" element={<Preferances />} />
+        <Route path="/profilepage-view" element={<RecentlyViewed />} />
         <Route path="/profilepage-login" element={<ProfilePageLogin />} />
         <Route path="/profilepage-signup" element={<ProfilePageSignUp />} />
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
         <Route path="/personal-assistance" element={<PersonalAssistance />} />
         <Route path="/assistance-info" element={<PersonalAssistanceInfo />} />
-        <Route path="/assist-form" element={<AssistForm/>} />
+        <Route path="/assist-form" element={<AssistForm />} />
         <Route path="/sidebar" element={<SideBar />} />
 
         {/* <Route path="/MH" element={<MobileHeader />} /> */}
