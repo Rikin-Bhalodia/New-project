@@ -11,6 +11,8 @@ import Profile from "../../assets/images/studio/header/profile.svg";
 import productCartImg from "../../assets/images/product-section/modal-img1.svg";
 import modalText from "../../assets/images/product-section/modal--text.svg";
 import { motion } from "framer-motion";
+import { useMediaQuery } from "react-responsive";
+import { useLocation } from "react-router-dom";
 
 const Headerwrapper = styled.div`
   .sinkHeader {
@@ -122,6 +124,7 @@ const Headerwrapper = styled.div`
 const Header = () => {
   const [scrollHeader, setScrollHeader] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { pathname } = useLocation();
 
   const showModal = () => {
     setIsModalOpen(true);
@@ -136,20 +139,20 @@ const Header = () => {
   useEffect(() => {
     const handleScroll = () => {
       setScrollHeader(window.scrollY > 0);
-      // setTransitionText(window.scrollY === 0 || window.scrollY > 0);
-      // setTransitionForLuxury(window.scrollY > 1600);
-      // setTransitionForBlogs(window.scrollY > 2800);
-      // setTransitionForMore(window.scrollY > 3900);
     };
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
   return (
     <Headerwrapper>
       <motion.section
         className={`topHeaderPart ${scrollHeader ? "scroll-effect" : ""}`}
+        style={
+          pathname === "/product-selection" ? { background: "#A75B41" } : {}
+        }
       >
         <div className="container">
           <div className="row align-items-center justify-content-between p20">

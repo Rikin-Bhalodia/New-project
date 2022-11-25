@@ -10,6 +10,7 @@ import lipstick from "../../assets/images/product-section/lipstick.svg";
 import makeupbox from "../../assets/images/product-section/makeupbox.svg";
 import instapost from "../../assets/images/product-section/instapost.svg";
 import { motion } from "framer-motion";
+import { useMediaQuery } from "react-responsive";
 
 const ReletedServices = React.lazy(() =>
   import("../studio-product/RelatedSrevices")
@@ -237,7 +238,7 @@ const ProductSectionWrapper = styled.div`
         height: 250px;
       }
       .title {
-        font-size: 11px;
+        font-size: 10px;
       }
     }
     .product--image {
@@ -265,10 +266,17 @@ const ProductSectionWrapper = styled.div`
       row-gap: 20px;
     }
     .cards--section {
-      gap: 10px;
+      gap: 25px;
       .card {
-        width: 150px;
-        height: 230px;
+        width: 120px;
+        height: 190px;
+        .product--image {
+          height: 150px;
+          .card-image {
+            height: fit-content;
+            width: 85px;
+          }
+        }
       }
     }
     .insta-post {
@@ -279,11 +287,12 @@ const ProductSectionWrapper = styled.div`
       width: 300px;
     }
     .last--text {
+      padding: 10px 10px;
       div {
-        font-size: 20px;
+        font-size: 14px;
       }
       img {
-        width: 130px;
+        width: 85px;
       }
     }
   }
@@ -291,32 +300,21 @@ const ProductSectionWrapper = styled.div`
     .complete-bottom--container {
       row-gap: 15px;
     }
-    .cards--section {
-      gap: 10px;
-      .card {
-        width: 130px;
-        .product--image {
-          height: 150px;
-          .card-image {
-            width: 120px;
-          }
-        }
-      }
-    }
-    .last--text {
+    /* .last--text {
       div {
         font-size: 20px;
       }
       img {
         width: 120px;
       }
-    }
+    } */
   }
 `;
 
 const ProductSection = () => {
   const [isInView, setIsInView] = useState(false);
   const [desView, setDesView] = useState(false);
+  const isResponsive = useMediaQuery({ query: "(max-width: 800px)" });
 
   return (
     <ProductSectionWrapper>
@@ -538,7 +536,10 @@ const ProductSection = () => {
         </section>
         <YouMayLike />
         <ReletedServices />
-        <div className="last--text d-flex justify-content-center">
+        <div
+          className="last--text d-flex justify-content-center"
+          style={isResponsive ? { background: "#FFE600" } : {}}
+        >
           <div>thinking of buying for an occassion?</div>
           <img loading="lazy" src={rentItText} alt="" />
         </div>

@@ -311,11 +311,14 @@ const ProductSelectionCommonWrapper = styled.div`
     .left-side-part {
       width: 50%;
     }
+    .section--right-container {
+      width: 50%;
+    }
   }
   @media (max-width: 800px) {
     .section--right {
       width: 300px;
-      padding: 20px 20px;
+      padding: 10px 10px;
       .title {
         font-size: 25px;
       }
@@ -324,8 +327,9 @@ const ProductSelectionCommonWrapper = styled.div`
       }
     }
     .button--container {
-      padding: 15px 20px;
-      font-size: 25px;
+      padding: 10px 20px;
+      font-size: 20px;
+      margin-top: 15px;
     }
     .code--text {
       font-size: 17px;
@@ -336,14 +340,20 @@ const ProductSelectionCommonWrapper = styled.div`
     .size-title div {
       font-size: 15px;
     }
-    .pin-code--section .text {
-      font-size: 15px;
+    .pin-code--section {
+      margin-top: 15px;
+      .text {
+        font-size: 15px;
+      }
     }
     .breadcumb-section span {
       font-size: 15px;
     }
     .go-back-text {
       font-size: 18px;
+    }
+    .pin-section {
+      flex-direction: column;
     }
   }
   @media (max-width: 680px) {
@@ -729,21 +739,23 @@ const ProductSelectionCommon = () => {
               <img loading="lazy" src={like} alt="" height={20} />
               <img loading="lazy" src={share} alt="" height={20} />
             </div>
-            <div className="pin-code--section">
-              <div className="text">ENTER PIN CODE</div>
-              <div className="d-flex">
-                <div className="input--section d-flex">
-                  <input placeholder="201012" />
-                  <div className="submit--section">
-                    <img loading="lazy" src={checkicon} alt="" />
+            {!isResponsive && (
+              <div className="pin-code--section">
+                <div className="text">ENTER PIN CODE</div>
+                <div className="d-flex">
+                  <div className="input--section d-flex">
+                    <input placeholder="201012" />
+                    <div className="submit--section">
+                      <img loading="lazy" src={checkicon} alt="" />
+                    </div>
+                  </div>
+                  <div className="position-relative delivary-status">
+                    <div className="text">ESTIMATED DELIVERY</div>
+                    <div className="date">16 July - 19 July</div>
                   </div>
                 </div>
-                <div className="position-relative delivary-status">
-                  <div className="text">ESTIMATED DELIVERY</div>
-                  <div className="date">16 July - 19 July</div>
-                </div>
               </div>
-            </div>
+            )}
           </motion.div>
           {!isResponsive && (
             <motion.div
@@ -847,6 +859,23 @@ const ProductSelectionCommon = () => {
             <div className="code--text">
               50% off use code <span>FIRST50</span>
             </div>
+            {isResponsive && (
+              <div className="pin-code--section">
+                <div className="text">ENTER PIN CODE</div>
+                <div className="d-flex pin-section">
+                  <div className="input--section d-flex">
+                    <input placeholder="201012" />
+                    <div className="submit--section">
+                      <img loading="lazy" src={checkicon} alt="" />
+                    </div>
+                  </div>
+                  <div className="position-relative delivary-status">
+                    <div className="text">ESTIMATED DELIVERY</div>
+                    <div className="date">16 July - 19 July</div>
+                  </div>
+                </div>
+              </div>
+            )}
           </motion.div>
         </div>
       </section>

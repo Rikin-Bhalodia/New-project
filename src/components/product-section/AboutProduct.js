@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 const AboutProductWrapper = styled.div`
   .about--text {
     margin-top: 100px;
-    margin-bottom: 50px;
     text-align: center;
   }
   .about-product--container {
@@ -67,9 +66,24 @@ const AboutProductWrapper = styled.div`
     background: #000000;
     width: 100%;
   }
+  .open-product-details {
+    border-radius: 50%;
+    font-size: 40px;
+    display: flex;
+    height: 50px;
+    width: 50px;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    padding-bottom: 9px;
+    margin: auto;
+    border: 1px solid black;
+    margin-bottom: 40px;
+    cursor: pointer;
+  }
   @media (max-width: 1200px) {
     .about--text {
-      margin-top: 0px;
+      margin-top: 50px;
     }
     .about-product-text {
       width: 550px;
@@ -121,10 +135,13 @@ const AboutProductWrapper = styled.div`
         font-size: 16px;
       }
     }
+    .about--text {
+      margin-top: 40px;
+    }
   }
   @media (max-width: 600px) {
     .about--text {
-      margin-bottom: 50px;
+      margin-top: 30px;
     }
     .about-product-text {
       width: 400px;
@@ -159,10 +176,6 @@ const AboutProductWrapper = styled.div`
     }
   }
   @media (max-width: 500px) {
-    .about--text {
-      margin-bottom: 40px;
-      margin-top: 20px;
-    }
     .about-product-text {
       width: 300px;
     }
@@ -193,9 +206,6 @@ const AboutProductWrapper = styled.div`
     }
   }
   @media (max-width: 400px) {
-    .about--text {
-      margin-bottom: 30px;
-    }
     .about-product-text {
       width: 250px;
     }
@@ -226,7 +236,6 @@ const AboutProductWrapper = styled.div`
   }
 `;
 const AboutProduct = ({ desView, setDesView }) => {
-  const [isInView, setIsInView] = useState(false);
   return (
     <AboutProductWrapper>
       <section className="about-product--container">
@@ -237,20 +246,22 @@ const AboutProduct = ({ desView, setDesView }) => {
             src={AboutProductText}
             alt=""
             className="about-product-text"
-            onClick={() => setDesView(!desView)}
           />
           <div className="blank-line"></div>
+        </div>
+        <div
+          className="open-product-details"
+          onClick={() => setDesView(!desView)}
+        >
+          {desView ? "-" : "+"}
         </div>
         {desView && (
           <>
             <div className="about-below--container">
               <motion.div
-                whileInView={() => {
-                  setIsInView(true);
-                }}
                 initial={{ x: "-100vh", opacity: 0 }}
                 animate={
-                  isInView && {
+                  desView && {
                     x: 0,
                     opacity: 1,
                     transition: {
@@ -263,12 +274,9 @@ const AboutProduct = ({ desView, setDesView }) => {
                 Bottega Senatore - When The Quality Talks Itself
               </motion.div>
               <motion.div
-                whileInView={() => {
-                  setIsInView(true);
-                }}
                 initial={{ x: "100vh", opacity: 0 }}
                 animate={
-                  isInView && {
+                  desView && {
                     x: 0,
                     opacity: 1,
                     transition: {
@@ -283,12 +291,9 @@ const AboutProduct = ({ desView, setDesView }) => {
                 group of Italian Footwear Artisan Masters.
               </motion.div>
               <motion.div
-                whileInView={() => {
-                  setIsInView(true);
-                }}
                 initial={{ x: "-100vh", opacity: 0 }}
                 animate={
-                  isInView && {
+                  desView && {
                     x: 0,
                     opacity: 1,
                     transition: {
@@ -301,12 +306,9 @@ const AboutProduct = ({ desView, setDesView }) => {
                 Rubirio - High Quality Italian Brief Case
               </motion.div>
               <motion.ul
-                whileInView={() => {
-                  setIsInView(true);
-                }}
                 initial={{ x: "100vh", opacity: 0 }}
                 animate={
-                  isInView && {
+                  desView && {
                     x: 0,
                     opacity: 1,
                     transition: {
@@ -325,12 +327,9 @@ const AboutProduct = ({ desView, setDesView }) => {
             </div>
             <div className="d-flex product-details">
               <motion.div
-                whileInView={() => {
-                  setIsInView(true);
-                }}
                 initial={{ y: "20vh", opacity: 0 }}
                 animate={
-                  isInView && {
+                  desView && {
                     y: 0,
                     opacity: 1,
                     transition: {
@@ -344,12 +343,9 @@ const AboutProduct = ({ desView, setDesView }) => {
                 <div className="product-detail">Tumbled leather</div>
               </motion.div>
               <motion.div
-                whileInView={() => {
-                  setIsInView(true);
-                }}
                 initial={{ y: "20vh", opacity: 0 }}
                 animate={
-                  isInView && {
+                  desView && {
                     y: 0,
                     opacity: 1,
                     transition: {
@@ -363,12 +359,9 @@ const AboutProduct = ({ desView, setDesView }) => {
                 <div className="product-detail">Lavender</div>
               </motion.div>
               <motion.div
-                whileInView={() => {
-                  setIsInView(true);
-                }}
                 initial={{ y: "20vh", opacity: 0 }}
                 animate={
-                  isInView && {
+                  desView && {
                     y: 0,
                     opacity: 1,
                     transition: {
@@ -382,12 +375,9 @@ const AboutProduct = ({ desView, setDesView }) => {
                 <div className="product-detail">Leather</div>
               </motion.div>
               <motion.div
-                whileInView={() => {
-                  setIsInView(true);
-                }}
                 initial={{ y: "20vh", opacity: 0 }}
                 animate={
-                  isInView && {
+                  desView && {
                     y: 0,
                     opacity: 1,
                     transition: {
@@ -401,12 +391,9 @@ const AboutProduct = ({ desView, setDesView }) => {
                 <div className="product-detail">RUBIRIODBG2</div>
               </motion.div>
               <motion.div
-                whileInView={() => {
-                  setIsInView(true);
-                }}
                 initial={{ y: "20vh", opacity: 0 }}
                 animate={
-                  isInView && {
+                  desView && {
                     y: 0,
                     opacity: 1,
                     transition: {
