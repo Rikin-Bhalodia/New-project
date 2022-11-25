@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 const ReletedServicesWrapper = styled.div`
-  padding: 0px 50px 100px;
+  padding: 0px 10px 100px;
   .head {
     padding: 50px 0;
   }
@@ -54,8 +54,6 @@ const ReletedServicesWrapper = styled.div`
     }
   }
   @media (max-width: 800px) {
-    padding: 0px 50px 0px;
-
     .related-service {
       width: 450px;
     }
@@ -115,23 +113,23 @@ export default function ReletedServices() {
           breakpoints={{
             260: {
               slidesPerView: 1,
-              spaceBetween: 10,
+              spaceBetween: 30,
             },
             450: {
               slidesPerView: 2,
-              spaceBetween: 10,
+              spaceBetween: 20,
             },
             550: {
               slidesPerView: 2.5,
-              spaceBetween: 15,
+              spaceBetween: 25,
             },
             700: {
               slidesPerView: 3,
-              spaceBetween: 20,
+              spaceBetween: 30,
             },
             1075: {
               slidesPerView: 4,
-              spaceBetween: 20,
+              spaceBetween: 30,
             },
             1500: {
               slidesPerView: 4.5,
@@ -139,7 +137,7 @@ export default function ReletedServices() {
             },
           }}
           className="mySwiper"
-          style={{ height: "" }}
+          style={{ height: "", padding: "0 20px" }}
           autoplay={{
             delay: 1000,
             disableOnInteraction: false,
