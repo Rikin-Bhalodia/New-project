@@ -8,13 +8,17 @@ const AnimatedTextWord = React.lazy(() =>
   import("../../commonComponents/Animation/FlipAnimation")
 );
 
-const RantResaleWrapper = styled.div``;
+const RantResaleWrapper = styled.div`
+  .height {
+    height: 85vh !important;
+  }
+`;
 
 export default function RantResale() {
   const [isInView, setIsInView] = useState(false);
   return (
     <RantResaleWrapper>
-      <section className="c-rent-w minHeightSec minBannerHeight d-flex align-items-center rent-resale">
+      <section className="c-rent-w height minHeightSec minBannerHeight d-flex align-items-center rent-resale">
         <div className="container-fluid">
           <div className="row">
             <div className="col-md-5">
@@ -38,7 +42,10 @@ export default function RantResale() {
                   </span>
                 </div>
               </div>
-              <div className="c-rent-img-1 wow fadeIn" data-wow-delay="0.5s">
+              <div
+                className="c-rent-img-1 wow fadeIn text-center"
+                data-wow-delay="0.5s"
+              >
                 <motion.img
                   whileInView={() => {
                     setIsInView(true);
@@ -60,7 +67,10 @@ export default function RantResale() {
               </div>
             </div>
             <div className="col-md-7 ml-auto mt-4">
-              <div className="c-rent-img-2 wow fadeIn " data-wow-delay="1.5s">
+              <div
+                className="c-rent-img-2 wow fadeIn text-center "
+                data-wow-delay="1.5s"
+              >
                 <motion.img
                   whileInView={() => {
                     setIsInView(true);

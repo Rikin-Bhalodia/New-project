@@ -2917,6 +2917,7 @@ h2.f-heading-m {
 .c-drive-con {
   max-width: 100%;
   position: relative;
+  padding: 0 90px;
 }
 
 .c-drive-con h4 {
@@ -2948,7 +2949,7 @@ h2.f-heading-m {
 
 .c-drive-con .roundBtn {
   position: absolute;
-  right: 0px;
+  right: 115px;
   top: 50px;
 }
 
@@ -2998,6 +2999,8 @@ c-service-w {
 .c-rent-hading {
   display: flex;
   align-items: center;
+  justify-content: center;
+  gap: 20px;
   margin-bottom: 50px;
 }
 
@@ -3013,7 +3016,7 @@ c-service-w {
 }
 
 .c-rent-img-1 img {
-  height: 350px;
+  height: 300px;
   object-fit: cover;
   border-radius: 100px 0 0 0;
   max-width: 100%;
@@ -3021,8 +3024,8 @@ c-service-w {
 }
 
 .c-rent-img-2 img {
-  height: 350px;
-  width: 100%;
+  height: 300px;
+  width: 85%;
   object-fit: cover;
   border-radius: 0 100px 0 0;
   max-width: 100%;
@@ -3058,10 +3061,15 @@ c-service-w {
 .live-tv-in {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
 }
-
+.live-tv-in img{
+  width: 200px;
+}
 .live-tv-box img {
-  width: 100%;
+  width: 300px;
   height: auto;
 }
 
@@ -3071,8 +3079,8 @@ c-service-w {
 
 .live-tv-box .roundBtn {
   position: absolute;
-  bottom: -60px;
-  right: -20px;
+  bottom: -45px;
+  right: -25px;
 }
 
 .c-secian-w {
@@ -3110,13 +3118,13 @@ c-service-w {
 
 .c-secian-box img {
   width: 100%;
-  height: 200px;
+  height: 160px;
   object-fit: cover;
   overflow: hidden;
 }
 
 .c-secian-con {
-  margin-top: 60px;
+  margin-top: 40px;
 }
 
 .c-secian-box h3 {

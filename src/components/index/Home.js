@@ -4,7 +4,8 @@ import studioInner1 from "./../../assets/images/img/studioInner-1.jpg";
 import studioInner2 from "./../../assets/images/img/studioInner-2.jpg";
 import studioInner3 from "./../../assets/images/img/studioInner-3.jpg";
 import studioInner4 from "./../../assets/images/img/studioInner-4.jpg";
-import liveTv from "./../../assets/images/img/live-tv.png";
+import liveTv from "./../../assets/images/homepage/live_tv.svg";
+import TvHead from "./../../assets/images/homepage/live_tv_head.svg";
 import Membership from "./../../assets/images/img/watch-bg.jpg";
 import Rent from "./../../assets/images/img/rent-bg.jpg";
 import ExploreNow from "../../assets/images/homepage/explorenow.svg";
@@ -56,7 +57,7 @@ const HomeWrapper = styled.div`
     font-family: "Coral Blush";
     letter-spacing: 8px;
     font-style: normal;
-    font-size: 110px;
+    font-size: 90px;
     display: flex;
     justify-content: center;
   }
@@ -67,7 +68,7 @@ const HomeWrapper = styled.div`
     font-family: "Coral Blush";
     letter-spacing: 3px;
     font-style: normal;
-    font-size: 90px;
+    font-size: 70px;
     color: #a65a40;
   }
   .first-image {
@@ -100,8 +101,8 @@ const HomeWrapper = styled.div`
     font-family: "Coral Blush";
     letter-spacing: 4px;
     font-style: normal;
-    font-size: 80px;
-    line-height: 100px;
+    font-size: 50px;
+    line-height: 80px;
   }
   .about {
     /* flex-direction: column; */
@@ -163,15 +164,18 @@ const HomeWrapper = styled.div`
     }
   }
   .c-drive-img img {
-    height: 300px;
+    height: 250px;
     object-fit: cover;
-    width: 100%;
+    width: 300px;
   }
   .content {
     font-size: 46px;
   }
   .shadowText {
     font-family: Beatlys;
+  }
+  #tv-image {
+    width: 350px;
   }
 `;
 
@@ -460,6 +464,8 @@ export default function Home() {
                   </div>
                   <div className="col-md-7 mx-auto">
                     <div className="live-tv-in">
+                      <img src={TvHead} alt="" />
+
                       <div className="live-tv-box" id="live-tv">
                         <img
                           id="tv-image"

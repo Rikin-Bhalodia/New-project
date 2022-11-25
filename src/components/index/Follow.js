@@ -13,15 +13,19 @@ const AnimatedTextWord = React.lazy(() =>
   import("../../commonComponents/Animation/FlipAnimation")
 );
 
-const FollowWrapper = styled.div``;
+const FollowWrapper = styled.div`
+  .mx-50 {
+    /* margin: 0 100px; */
+  }
+`;
 
 export default function Follow() {
   const [isInView, setIsInView] = useState(false);
 
   return (
     <FollowWrapper>
-      <section className="paddingSec minHeightSec minBannerHeight d-flex align-items-center followSec ">
-        <div className="container-fluid">
+      <section className="paddingSec mx-50 minHeightSec  minBannerHeight d-flex align-items-center followSec ">
+        <div className="container">
           <motion.div
             whileInView={() => {
               setIsInView(true);

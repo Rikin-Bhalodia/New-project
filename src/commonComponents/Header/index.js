@@ -28,7 +28,7 @@ const Headerwrapper = styled.div`
     z-index: 1;
     transition: all 0.4s linear;
     padding: 10px 0;
-    border-bottom: 0.5px solid white;
+    /* border-bottom: 0.5px solid white; */
   }
 
   .menuleftIcon ul li {

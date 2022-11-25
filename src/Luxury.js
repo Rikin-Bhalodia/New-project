@@ -34,7 +34,7 @@ function Luxury() {
         width: "300px",
         position: "absolute",
         left: "100px",
-        top: "-160px",
+        top: "-135px",
       }}
     >
       <path

@@ -80,7 +80,7 @@ export default function StudioImg() {
             </div>
           </div>
           <div className="c-drive-img">
-            <div className="row mt-4">
+            <div className="row mt-4 mx-5">
               <motion.div
                 whileInView={() => {
                   setIsInView(true);
@@ -90,7 +90,7 @@ export default function StudioImg() {
                   isInView && {
                     x: 0,
                     transition: {
-                      duration: 1.3,
+                      duration: 2,
                     },
                   }
                 }
@@ -117,7 +117,7 @@ export default function StudioImg() {
                   isInView && {
                     x: 0,
                     transition: {
-                      duration: 1,
+                      duration: 1.7,
                     },
                   }
                 }
@@ -144,7 +144,7 @@ export default function StudioImg() {
                   isInView && {
                     x: 0,
                     transition: {
-                      duration: 0.7,
+                      duration: 1.4,
                     },
                   }
                 }

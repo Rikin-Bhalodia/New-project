@@ -11,7 +11,14 @@ import { motion } from "framer-motion";
 const AnimatedTextWord = React.lazy(() =>
   import("../../commonComponents/Animation/FlipAnimation")
 );
-const SeasonWrapper = styled.div``;
+const SeasonWrapper = styled.div`
+  .mx-100 {
+    margin: 0 100px;
+  }
+  .c-secian-img {
+    overflow: hidden;
+  }
+`;
 
 export default function Season() {
   const [isInView, setIsInView] = useState(false);
@@ -55,11 +62,21 @@ export default function Season() {
                 }
               }
             >
-              <div className="row">
+              <div className="row mx-100">
                 <div className="col-md-4 wow fadeInUp">
                   <div className="c-secian-box">
                     <div className="c-secian-img innerContainer">
-                      <img loading="lazy" alt="img" src={secain1} />
+                      <motion.img
+                        whileHover={{
+                          scale: 1.1,
+                        }}
+                        transition={{
+                          duration: 0.4,
+                        }}
+                        loading="lazy"
+                        alt="img"
+                        src={secain1}
+                      />
                     </div>
                     <h3>GUCCI</h3>
                     {/* <a href="/"></a> */}
@@ -68,7 +85,17 @@ export default function Season() {
                 <div className="col-md-4 wow fadeInUp">
                   <div className="c-secian-box">
                     <div className="c-secian-img innerContainer">
-                      <img loading="lazy" alt="img" src={secain2} />
+                      <motion.img
+                        whileHover={{
+                          scale: 1.1,
+                        }}
+                        transition={{
+                          duration: 0.4,
+                        }}
+                        loading="lazy"
+                        alt="img"
+                        src={secain2}
+                      />
                     </div>
                     <h3>louis vuitton</h3>
                     {/* <a href="/"></a> */}
@@ -77,7 +104,17 @@ export default function Season() {
                 <div className="col-md-4 wow fadeInUp">
                   <div className="c-secian-box">
                     <div className="c-secian-img innerContainer">
-                      <img loading="lazy" alt="img" src={secain3} />
+                      <motion.img
+                        whileHover={{
+                          scale: 1.1,
+                        }}
+                        transition={{
+                          duration: 0.4,
+                        }}
+                        loading="lazy"
+                        alt="img"
+                        src={secain3}
+                      />
                     </div>
                     <h3>CHANEL</h3>
                     {/* <a href="/"></a> */}
@@ -99,11 +136,21 @@ export default function Season() {
                 }
               }
             >
-              <div className="row">
+              <div className="row mx-100">
                 <div className="col-md-4 wow fadeInUp">
                   <div className="c-secian-box">
                     <div className="c-secian-img innerContainer">
-                      <img loading="lazy" alt="img" src={secain4} />
+                      <motion.img
+                        whileHover={{
+                          scale: 1.1,
+                        }}
+                        transition={{
+                          duration: 0.4,
+                        }}
+                        loading="lazy"
+                        alt="img"
+                        src={secain4}
+                      />
                     </div>
                     <h3>CHRISTIAN DIOR</h3>
                     {/* <a href="/"></a> */}
@@ -112,7 +159,17 @@ export default function Season() {
                 <div className="col-md-4 wow fadeInUp">
                   <div className="c-secian-box">
                     <div className="c-secian-img innerContainer">
-                      <img loading="lazy" alt="img" src={secain5} />
+                      <motion.img
+                        whileHover={{
+                          scale: 1.1,
+                        }}
+                        transition={{
+                          duration: 0.4,
+                        }}
+                        loading="lazy"
+                        alt="img"
+                        src={secain5}
+                      />
                     </div>
                     <h3>VERSACE</h3>
                     {/* <a href="/"></a> */}
@@ -121,7 +178,17 @@ export default function Season() {
                 <div className="col-md-4 wow fadeInUp">
                   <div className="c-secian-box">
                     <div className="c-secian-img innerContainer">
-                      <img loading="lazy" alt="img" src={secain6} />
+                      <motion.img
+                        whileHover={{
+                          scale: 1.1,
+                        }}
+                        transition={{
+                          duration: 0.4,
+                        }}
+                        loading="lazy"
+                        alt="img"
+                        src={secain6}
+                      />
                     </div>
                     <h3>SAINT LAURENT</h3>
                     {/* <a href="/"></a> */}

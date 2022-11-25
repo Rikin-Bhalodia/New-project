@@ -1,12 +1,32 @@
 import React from "react";
 import styled from "styled-components";
-import Avenue from "../../avenue";
-import Service from "../../service";
+// import Avenue from "../../avenue";
+// import Service from "../../service";
+import Avenue from "../../assets/images/homepage/avenue.svg";
+import Service from "../../assets/images/homepage/services.svg";
 import { RentSlider, ServiceSlider } from "../../slider";
 import ShopNow from "../../assets/images/homepage/dark-shownow.svg";
 import ExploreNow from "../../assets/images/homepage/explorenow.svg";
 
-const AvenuSliderWrapper = styled.div``;
+const AvenuSliderWrapper = styled.div`
+  .swiper.swiper-initialized.swiper-horizontal.swiper-pointer-events.swiper-backface-hidden.mySwiper {
+    height: 250px;
+  }
+  .avenue_service {
+    width: 250px;
+  }
+  .headerAvenueSec {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 20px;
+  }
+  .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+`;
 export default function AvenuSlider() {
   return (
     <AvenuSliderWrapper>
@@ -16,11 +36,12 @@ export default function AvenuSlider() {
       >
         <div className="container-fluid px-5">
           <div className="row">
-            <div className="col-md-5">
+            <div className="col-md-5 center">
               <div className="headerAvenueSec">
                 <h2 className="brwonColor font-100 ParisienneFont wow text-center">
                   <span className="">
-                    <Avenue />
+                    {/* <Avenue /> */}
+                    <img src={Avenue} alt="" className="avenue_service" />
                   </span>
                 </h2>
                 <div className="roundBtn">
@@ -46,22 +67,25 @@ export default function AvenuSlider() {
             <div className="col-md-7">
               <ServiceSlider />
             </div>
-            <div className="col-md-5 text-center">
-              <span className="relative">
-                <Service />
-              </span>
-              <div className="roundBtn rightDestinationbtn text-right">
-                <span
-                  id="roundText8"
-                  className="btnText strong colorYellow font-13 letterSpacingmedium"
-                >
-                  <img
-                    src={ShopNow}
-                    alt="explore-now"
-                    className="rent-now"
-                    loading="lazy"
-                  />
+            <div className="col-md-5 center">
+              <div className="headerAvenueSec">
+                <span className="relative">
+                  {/* <Service /> */}
+                  <img src={Service} alt="" className="avenue_service" />
                 </span>
+                <div className="roundBtn rightDestinationbtn text-right">
+                  <span
+                    id="roundText8"
+                    className="btnText strong colorYellow font-13 letterSpacingmedium"
+                  >
+                    <img
+                      src={ShopNow}
+                      alt="explore-now"
+                      className="rent-now"
+                      loading="lazy"
+                    />
+                  </span>
+                </div>
               </div>
             </div>
           </div>

@@ -96,7 +96,7 @@ export function ServiceSlider() {
       slidesPerView={3}
       spaceBetween={100}
       className="mySwiper"
-      style={{ height: "300px" }}
+      style={{ height: "250px" }}
       autoplay={{
         delay: 1500,
         disableOnInteraction: false,
@@ -131,7 +131,7 @@ export function RentSlider() {
       slidesPerView={3}
       spaceBetween={100}
       className="mySwiper"
-      style={{ height: "300px" }}
+      style={{ height: "250px" }}
       autoplay={{
         delay: 1500,
         disableOnInteraction: false,
