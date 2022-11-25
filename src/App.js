@@ -156,7 +156,7 @@ function App() {
 
   return (
     <div className="App">
-      {pathname !== "/studio" && <Header />}
+      <Header />
       <Fragment id="smooth-wrapper">
         <div id="smooth-content">
           <Routes>
@@ -275,10 +275,10 @@ function App() {
 
             {/* <Route path="/MH" element={<MobileHeader />} /> */}
           </Routes>
+
+          {pathname !== "/sub-menu1" && pathname !== "/sub-menu2" && <Footer />}
         </div>
       </Fragment>
-
-      {pathname !== "/sub-menu1" && pathname !== "/sub-menu2" && <Footer />}
     </div>
   );
 }

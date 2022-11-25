@@ -252,7 +252,6 @@ const Studio = () => {
 
   return (
     <StudioWrapper>
-      <Header />
       <motion.div
         initial={{ y: "200vh" }}
         animate={{ y: 0 }}

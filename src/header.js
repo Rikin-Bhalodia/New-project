@@ -25,7 +25,7 @@ const HeaderWrapper = styled.div`
     position: relative;
     right: 25px;
     height: 15px;
-    top: 2px;
+    top: -3px;
     opacity: 0.5;
   }
   .mic {

@@ -107,12 +107,7 @@ const HomeWrapper = styled.div`
     /* flex-direction: column; */
     justify-content: space-between;
   }
-  .about-title {
-    font-family: "Coral Blush";
-    letter-spacing: 8px;
-    font-style: normal;
-    font-size: 100px;
-  }
+
   .scroll-effect {
     background: rgb(102 94 47);
     position: fixed;
@@ -175,6 +170,9 @@ const HomeWrapper = styled.div`
   .content {
     font-size: 46px;
   }
+  .shadowText {
+    font-family: Beatlys;
+  }
 `;
 
 export default function Home() {
@@ -184,7 +182,20 @@ export default function Home() {
 
   return (
     <HomeWrapper>
-      <motion.div>
+      <motion.div
+      // whileInView={() => {
+      //   setIsInView(true);
+      // }}
+      // initial={{ y: "90vh" }}
+      // animate={
+      //   isInView && {
+      //     y: 0,
+      //     transition: {
+      //       duration: 1,
+      //     },
+      //   }
+      // }
+      >
         <div>
           <div ref={wrapper}>
             {/* <!-- home page banner part --> */}
@@ -209,9 +220,9 @@ export default function Home() {
                                 </div>
                               </div>
                               <motion.a
-                                initial={{ y: "20vh", opacity: 0 }}
+                                initial={{ y: "35vh", opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
-                                transition={{ duration: 0.6 }}
+                                transition={{ duration: 1.4 }}
                                 href="/avenue"
                                 className="menuLink coralFont wow fadeInUp"
                                 data-wow-delay=".1s"
@@ -247,9 +258,9 @@ export default function Home() {
                                 </div>
                               </div>
                               <motion.a
-                                initial={{ y: "20vh", opacity: 0 }}
+                                initial={{ y: "35vh", opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
-                                transition={{ duration: 0.8 }}
+                                transition={{ duration: 1.6 }}
                                 href="/avenue"
                                 className="menuLink coralFont wow fadeInUp"
                                 data-wow-delay=".1s"
@@ -285,9 +296,9 @@ export default function Home() {
                                 </div>
                               </div>
                               <motion.a
-                                initial={{ y: "20vh", opacity: 0 }}
+                                initial={{ y: "35vh", opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
-                                transition={{ duration: 1 }}
+                                transition={{ duration: 1.8 }}
                                 href="/rent"
                                 className="menuLink coralFont wow fadeInUp"
                                 data-wow-delay=".2s"
@@ -324,9 +335,9 @@ export default function Home() {
                                 </div>
                               </div>
                               <motion.a
-                                initial={{ y: "20vh", opacity: 0 }}
+                                initial={{ y: "35vh", opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
-                                transition={{ duration: 1.2 }}
+                                transition={{ duration: 2 }}
                                 href="/liveShop"
                                 className="menuLink coralFont wow fadeInUp"
                                 data-wow-delay=".3s"

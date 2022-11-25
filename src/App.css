@@ -601,7 +601,7 @@ footer {
 }
 
 .bannerSection .bannerMenus {
-  margin: 90px 0;
+  margin: 40px 0;
 }
 
 .bannerSection .bannerMenus .menuItem {
@@ -614,7 +614,7 @@ footer {
 }
 
 .bannerSection .bannerMenus .menuItem + .menuItem {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .bannerSection .bannerMenus .menuItem .leftSideImg {
@@ -676,6 +676,7 @@ footer {
   color: white;
   text-transform: uppercase;
   letter-spacing: 3px;
+  font-family: "coralSerif", sans-serif;
 }
 
 .bannerSection .bannerMenus .menuItem .menuLink:hover {
@@ -749,7 +750,7 @@ footer {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: -10px;
+  bottom: -25px;
   font-family: Beatlys, Normal;
 }
 
@@ -2739,7 +2740,7 @@ footer {
 }
 
 .c-about-w {
-  padding: 60px 0;
+  padding: 0px 0 60px;
 }
 
 .c-about-w h4 {
@@ -2855,8 +2856,8 @@ h2.f-heading-m {
   color: #fff;
   color: #fff;
   margin-top: 10px;
-  font-size: 35px;
-  line-height: 50px;
+  font-size: 30px;
+  line-height: 40px;
   width: 500px;
 }
 

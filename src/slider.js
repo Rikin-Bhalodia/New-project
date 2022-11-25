@@ -164,7 +164,7 @@ export function MainSlider() {
     <Swiper
       slidesPerView={1}
       className="mySwiper"
-      style={{ height: "400px", borderRadius: "30px" }}
+      style={{ height: "300px", borderRadius: "30px" }}
       // autoplay={{
       //   delay: 1500,
       //   disableOnInteraction: false,
