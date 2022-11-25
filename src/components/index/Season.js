@@ -8,7 +8,6 @@ import secain5 from "./../../assets/images/img/secain-5.jpg";
 import secain6 from "./../../assets/images/img/secain-6.jpg";
 import DarkExploreNow from "../../assets/images/homepage/DarkExploreNow.png";
 import { motion } from "framer-motion";
-import { ParallaxProvider, ParallaxBanner } from "react-scroll-parallax";
 const AnimatedTextWord = React.lazy(() =>
   import("../../commonComponents/Animation/FlipAnimation")
 );
