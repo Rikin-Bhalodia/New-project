@@ -289,10 +289,10 @@ const ProductSectionWrapper = styled.div`
     .last--text {
       padding: 10px 10px;
       div {
-        font-size: 14px;
+        font-size: 12px;
       }
       img {
-        width: 85px;
+        width: 70px;
       }
     }
   }
@@ -300,14 +300,6 @@ const ProductSectionWrapper = styled.div`
     .complete-bottom--container {
       row-gap: 15px;
     }
-    /* .last--text {
-      div {
-        font-size: 20px;
-      }
-      img {
-        width: 120px;
-      }
-    } */
   }
 `;
 

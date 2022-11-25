@@ -516,7 +516,7 @@ const ProductSelectionCommonWrapper = styled.div`
       width: 170px;
     }
     .submit--section img {
-      padding: 19px 3px 15px 9px;
+      padding: 19px 3px 15px 13px;
     }
     .pin-code--section div input {
       padding: 0 15px;
@@ -534,7 +534,7 @@ const ProductSelectionCommonWrapper = styled.div`
       height: 430px;
     }
     .product--logo {
-      top: 4.5%;
+      top: 5.5%;
     }
     .price--item-section {
       width: 140px;
