@@ -15,8 +15,9 @@ import { motion } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
 
 const ProductSelectionCommonWrapper = styled.div`
+  margin-top: 60px;
   .product-main-container {
-    padding: 100px 40px;
+    padding: 30px 40px;
   }
   .go-back-text {
     font-family: "Arial";
@@ -62,12 +63,11 @@ const ProductSelectionCommonWrapper = styled.div`
     line-height: 30px;
     letter-spacing: 0.092px;
     text-transform: uppercase;
-    width: 320px;
   }
   .detail-sub3 {
     padding-top: 18px;
     padding-bottom: 20px;
-    max-width: 264px;
+    max-width: 380px;
     font-family: "Arial";
     font-weight: 400;
     font-size: 13px;
@@ -76,8 +76,8 @@ const ProductSelectionCommonWrapper = styled.div`
     letter-spacing: 0.092px;
   }
   .size-container {
-    padding-top: 20px;
-    max-width: 264px;
+    padding-top: 15px;
+    max-width: 380px;
   }
   .size-title div {
     font-family: "Arial";
@@ -135,10 +135,6 @@ const ProductSelectionCommonWrapper = styled.div`
     border: 1px solid #000000;
     width: 217px;
   }
-  .delivary-status {
-    margin-top: 20px;
-    margin-left: 10px;
-  }
   .pin-code--section div input:focus {
     outline: none;
   }
@@ -165,41 +161,45 @@ const ProductSelectionCommonWrapper = styled.div`
     padding: 19px 19px 15px 21px;
   }
   .section--right-container {
-    align-self: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 28%;
   }
   .sampleimg1 {
     padding-bottom: 20px;
   }
   .section--right {
-    max-width: 300px;
+    max-width: 260px;
     border: 1px solid #000000;
     padding: 10px;
   }
   .section--right .title {
     font-family: "Coral Blush";
     font-weight: 400;
-    font-size: 30px;
+    font-size: 26px;
     line-height: 40px;
-    padding-bottom: 15px;
+    padding-bottom: 10px;
     text-transform: uppercase;
     text-align-last: center;
   }
   .section--right .description {
     font-family: "Arial";
     font-weight: 400;
-    font-size: 15px;
+    font-size: 13px;
     line-height: 17px;
     text-align: center;
-    padding-bottom: 20px;
+    padding-bottom: 15px;
   }
   .button--container {
     font-family: "Arial";
     font-weight: 700;
-    font-size: 30px;
+    font-size: 26px;
     line-height: 22px;
     align-items: center;
     text-align: center;
-    padding: 17px 30px;
+    padding: 15px 30px;
     cursor: pointer;
     margin-top: 40px;
     color: #a75b41;
@@ -279,10 +279,39 @@ const ProductSelectionCommonWrapper = styled.div`
     left: 20%;
     top: 6%;
   }
-
-  @media (max-width: 1100px) {
+  .sample-images {
+    height: 60px;
+  }
+  .sample-images1 {
+    height: 40px;
+  }
+  .center--container {
+    width: 35%;
+  }
+  .left-side-part {
+    width: 37%;
   }
 
+  @media (max-width: 1300px) {
+    .desktop-product-sample {
+      width: 420px;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .desktop-product-sample {
+      width: 400px;
+    }
+  }
+  @media (max-width: 1100px) {
+    .product--container {
+      width: 100%;
+      gap: 20px;
+    }
+    .left-side-part {
+      width: 50%;
+    }
+  }
   @media (max-width: 800px) {
     .section--right {
       width: 300px;
@@ -369,13 +398,6 @@ const ProductSelectionCommonWrapper = styled.div`
     }
     .detail-sub3 {
       max-width: 230px;
-    }
-    .product--container {
-      width: 100%;
-      gap: 10px;
-    }
-    .left-side-part {
-      width: 50%;
     }
     .product-selection-image {
       flex-direction: column;
@@ -467,7 +489,7 @@ const ProductSelectionCommonWrapper = styled.div`
     }
     .detail-sub3 {
       padding: 10px 0;
-      font-size: 11px;
+      font-size: 12px;
     }
     .section--right {
       width: 165px;
@@ -520,7 +542,7 @@ const ProductSelectionCommonWrapper = styled.div`
       padding-bottom: 0;
     }
     .section--right .description {
-      font-size: 10px;
+      font-size: 12px;
       padding-bottom: 10px;
     }
     .sampleimg1 {
@@ -544,7 +566,7 @@ const ProductSelectionCommonWrapper = styled.div`
 const ProductSelectionCommon = () => {
   const [selectedState, setSelectedState] = useState("");
   const [menuOpenModal, setMenuOpenModal] = useState(false);
-  const isResponsive = useMediaQuery({ query: "(max-width: 1100px)" });
+  const isResponsive = useMediaQuery({ query: "(max-width: 1150px)" });
 
   return (
     <ProductSelectionCommonWrapper>
@@ -735,7 +757,8 @@ const ProductSelectionCommon = () => {
                 src={productSample}
                 alt=""
                 height={600}
-                width={420}
+                width={435}
+                className="desktop-product-sample"
               />
               <div className="price--item-section">
                 <div className="price--title">₹3,56,367.34</div>

@@ -124,9 +124,7 @@ const ProductSectionWrapper = styled.div`
     letter-spacing: -0.408px;
     color: #000000;
   }
-  .insta--card {
-    /* margin: 20px 80px 40px; */
-  }
+
   .delivary-status {
     right: -35px;
     top: 18px;
@@ -228,6 +226,7 @@ const ProductSectionWrapper = styled.div`
     }
   }
   @media (max-width: 600px) {
+    margin-top: 80px;
     .complete-bottom--container {
       row-gap: 20px;
     }
