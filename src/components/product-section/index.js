@@ -155,6 +155,7 @@ const ProductSectionWrapper = styled.div`
     transform: rotate(270deg) !important;
     margin-bottom: 25px;
   }
+
   @media (max-width: 1200px) {
     .complete-bottom--container {
       padding: 20px 50px;
@@ -183,6 +184,18 @@ const ProductSectionWrapper = styled.div`
     .card {
     }
   }
+  @media (max-width: 800px) {
+    .last--text {
+      margin-top: 40px;
+      padding: 0 20px;
+      div {
+        font-size: 30px;
+      }
+      img {
+        width: 200px;
+      }
+    }
+  }
   @media (max-width: 670px) {
     .complete-look-section {
       margin: 40px 40px;
@@ -203,6 +216,14 @@ const ProductSectionWrapper = styled.div`
       }
       .price {
         font-size: 10px;
+      }
+    }
+    .last--text {
+      div {
+        font-size: 26px;
+      }
+      img {
+        width: 170px;
       }
     }
   }
@@ -228,6 +249,14 @@ const ProductSectionWrapper = styled.div`
     .complete-look-text {
       width: 350px;
     }
+    .last--text {
+      div {
+        font-size: 22px;
+      }
+      img {
+        width: 150px;
+      }
+    }
   }
   @media (max-width: 450px) {
     .complete-look-section {
@@ -250,6 +279,14 @@ const ProductSectionWrapper = styled.div`
     .complete-look-text {
       width: 300px;
     }
+    .last--text {
+      div {
+        font-size: 20px;
+      }
+      img {
+        width: 130px;
+      }
+    }
   }
   @media (max-width: 400px) {
     .complete-bottom--container {
@@ -267,11 +304,21 @@ const ProductSectionWrapper = styled.div`
         }
       }
     }
+    .last--text {
+      div {
+        font-size: 20px;
+      }
+      img {
+        width: 120px;
+      }
+    }
   }
 `;
 
 const ProductSection = () => {
   const [isInView, setIsInView] = useState(false);
+  const [desView, setDesView] = useState(false);
+
   return (
     <ProductSectionWrapper>
       <motion.div
@@ -280,7 +327,7 @@ const ProductSection = () => {
         transition={{ duration: 1 }}
       >
         <ProductSelectionCommon />
-        <AboutProduct />
+        <AboutProduct desView={desView} setDesView={setDesView} />
         <section className="complete-look-section">
           <div className="text-svg">
             <img

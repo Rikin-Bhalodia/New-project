@@ -48,18 +48,28 @@ const StudioProductMaterialWrapper = styled.div`
       margin: 0 !important;
     }
     .studio-material-body {
+      padding: 0;
       width: 100%;
       position: absolute;
       height: 400px !important;
       top: 0;
       img {
-        width: 100%;
+        width: 100vw;
         height: 400px;
+        object-fit: cover;
       }
     }
     .material-wrapper {
       margin: 0;
       padding: 0;
+    }
+  }
+  @media (max-width: 600px) {
+    .studio-material-body {
+      height: 100vh;
+      img {
+        height: 100vh;
+      }
     }
   }
 `;

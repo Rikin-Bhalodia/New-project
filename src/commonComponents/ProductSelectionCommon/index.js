@@ -276,8 +276,11 @@ const ProductSelectionCommonWrapper = styled.div`
   }
   .product--logo {
     position: absolute;
-    left: 25%;
-    top: 8%;
+    left: 20%;
+    top: 6%;
+  }
+
+  @media (max-width: 1100px) {
   }
 
   @media (max-width: 800px) {
@@ -313,11 +316,6 @@ const ProductSelectionCommonWrapper = styled.div`
     .go-back-text {
       font-size: 18px;
     }
-    .product-selection-image {
-      .price--item-section {
-        left: 10%;
-      }
-    }
   }
   @media (max-width: 680px) {
     .product-main-container {
@@ -325,7 +323,7 @@ const ProductSelectionCommonWrapper = styled.div`
     }
     .section--right {
       width: 250px;
-      padding: 10px 10px;
+      padding: 5px 10px;
       .title {
         font-size: 23px;
       }
@@ -367,7 +365,7 @@ const ProductSelectionCommonWrapper = styled.div`
       height: 40px;
     }
     .product--logo {
-      left: 15%;
+      left: 10%;
     }
     .detail-sub3 {
       max-width: 230px;
@@ -378,6 +376,21 @@ const ProductSelectionCommonWrapper = styled.div`
     }
     .left-side-part {
       width: 50%;
+    }
+    .product-selection-image {
+      flex-direction: column;
+      align-items: center;
+
+      .price--item-section {
+        position: relative;
+        left: unset;
+        top: -30px;
+        width: 160px;
+        backdrop-filter: unset;
+      }
+    }
+    .product--container {
+      margin-top: 20px;
     }
   }
   @media (max-width: 550px) {
@@ -415,16 +428,10 @@ const ProductSelectionCommonWrapper = styled.div`
       font-size: 16px;
     }
     .product-sample {
-      width: 350px;
+      width: 90%;
       height: 500px;
     }
-    .product--logo {
-      left: 10%;
-    }
-    .price--item-section {
-      width: 160px;
-      backdrop-filter: unset;
-    }
+
     .price--title {
       font-size: 18px;
       padding-top: 20px;
@@ -434,6 +441,21 @@ const ProductSelectionCommonWrapper = styled.div`
     }
     .paths {
       font-size: 14px;
+    }
+    .product-selection-image {
+      .price--item-section {
+        top: 10px;
+      }
+    }
+    .product--logo {
+      left: 20px;
+    }
+    .product--container {
+      margin-top: 40px;
+    }
+    .size--div div {
+      width: 25px;
+      height: 25px;
     }
   }
   @media (max-width: 460px) {
@@ -477,12 +499,10 @@ const ProductSelectionCommonWrapper = styled.div`
       font-size: 15px;
     }
     .product-sample {
-      width: 300px;
       height: 430px;
     }
     .product--logo {
-      left: 0;
-      top: 6%;
+      top: 4.5%;
     }
     .price--item-section {
       width: 140px;

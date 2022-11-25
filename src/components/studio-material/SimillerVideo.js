@@ -101,6 +101,7 @@ const SimillerVideoWrapper = styled.div`
   }
   @media (max-width: 1000px) {
     padding: 0;
+    margin-top: 230px;
     .simillier-video-area {
       .left-side-area {
         display: none;
@@ -130,6 +131,9 @@ const SimillerVideoWrapper = styled.div`
       display: flex;
       margin: auto;
     }
+  }
+  @media (max-width: 600px) {
+    margin-top: 100%;
   }
 `;
 const video = [
@@ -203,7 +207,7 @@ export default function SimillerVideo() {
                 })}
               </div>
             </div>
-            {/* <div className="menu-width">
+            <div className="menu-width">
               <div
                 className="menu-icon"
                 onClick={() => setMenuOpenModal(!menuOpenModal)}
@@ -218,7 +222,7 @@ export default function SimillerVideo() {
                   <img src={MenuIcon} loading="lazy" alt="menu" height={45} />
                 )}
               </div>
-            </div> */}
+            </div>
             <div className="right-side-area">
               <div className="head-box">
                 <div className="box">

@@ -29,7 +29,6 @@ const ReletedServicesWrapper = styled.div`
 
   .para {
     position: absolute;
-    background: rgba(0, 0, 0, 0.3);
     width: 100%;
     top: 157px;
     padding: 10px 0;
@@ -153,7 +152,7 @@ export default function ReletedServices() {
         >
           {sliderImage.map((image) => {
             return (
-              <SwiperSlide style={{ background: "#fefaf1" }}>
+              <SwiperSlide style={{ background: "" }}>
                 <div className="slider-box">
                   <div className="img-box">
                     <motion.img

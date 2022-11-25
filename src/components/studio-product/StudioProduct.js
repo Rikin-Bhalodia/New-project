@@ -83,9 +83,15 @@ const StudioProductWrapper = styled.div`
       }
     }
   }
-  @media screen and (max-width: 800px) {
+
+  @media screen and (max-width: 820px) {
     .studio-product-body {
       flex-direction: column;
+      .studio-product-video {
+        img {
+          height: 100vh;
+        }
+      }
       .box-area {
         .product-box {
           width: 100%;
@@ -119,9 +125,7 @@ const StudioProductWrapper = styled.div`
 
 export default function StudioProduct() {
   const [menuOpenModal, setMenuOpenModal] = useState(false);
-  const isResponsive = useMediaQuery({ query: "(max-width: 800px)" });
-
-  console.log(isResponsive, "isResponsive");
+  const isResponsive = useMediaQuery({ query: "(max-width: 820px)" });
 
   return (
     <>

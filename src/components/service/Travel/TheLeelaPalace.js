@@ -173,7 +173,7 @@ const TheLeelaPalaceWrapper = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 60px;
+    padding: 0 250px;
     margin-top: 70px;
   }
   .left-image {
@@ -392,6 +392,7 @@ const TheLeelaPalaceWrapper = styled.div`
     .benefits-royclan {
       flex-direction: column;
       height: fit-content;
+      padding: 0 60px;
     }
   }
   @media (max-width: 800px) {
