@@ -17,7 +17,7 @@ const StudioProductMaterialWrapper = styled.div`
   .studio-material-head {
     display: flex;
     position: relative;
-    height: 170px;
+    height: 120px;
     align-items: center;
     justify-content: space-between;
     padding: 0 40px;
@@ -32,7 +32,7 @@ const StudioProductMaterialWrapper = styled.div`
       .product-head {
         p {
           font-size: 18px;
-          margin: 30px 0 10px;
+          margin: 10px 0;
         }
       }
     }

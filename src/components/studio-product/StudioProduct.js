@@ -58,6 +58,7 @@ const StudioProductWrapper = styled.div`
     gap: 50px;
     height: 100%;
     .studio-product-video {
+      width: 100%;
       img {
         width: 750px;
         height: 450px;

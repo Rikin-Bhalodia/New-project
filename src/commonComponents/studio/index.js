@@ -191,10 +191,16 @@ const StudioBannerWrapper = styled.div`
       font-size: 1rem;
       margin: 20px auto;
     }
+    .Atilier {
+      width: 350px !important;
+    }
   }
   @media screen and (max-width: 670px) {
     .data {
       font-size: 55px !important;
+    }
+    .Atilier {
+      width: 300px !important;
     }
   }
   @media screen and (max-width: 500px) {
@@ -205,6 +211,9 @@ const StudioBannerWrapper = styled.div`
       font-size: 0.81rem;
       margin: 10px auto;
       padding: 0 15px;
+    }
+    .Atilier {
+      width: 250px !important;
     }
   }
   @media screen and (max-width: 400px) {

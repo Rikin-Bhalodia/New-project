@@ -95,6 +95,9 @@ const StudioWrapper = styled.div`
         font-size: 14px;
       }
     }
+    .studio-s3 {
+      padding-left: 0px !important;
+    }
   }
   @media screen and (max-width: 800px) {
     .studio-s3 h2 {
@@ -172,6 +175,9 @@ const StudioWrapper = styled.div`
     .sliderInerDetials {
       font-size: 18px;
     }
+  }
+  .studio-s3 {
+    padding-left: 90px;
   }
 `;
 

@@ -73,21 +73,24 @@ const SimillerVideoWrapper = styled.div`
         display: flex;
         align-items: center;
         gap: 30px;
-        padding-bottom: 40px;
+        padding-bottom: 20px;
+        img {
+          width: 200px;
+        }
         .details {
           width: 30%;
           h5 {
             font-weight: 700;
-            font-size: 18px;
-            line-height: 25px;
+            font-size: 17px;
+            line-height: 23px;
             display: flex;
             align-items: center;
             color: #000000;
           }
           p {
             font-weight: 400;
-            font-size: 14px;
-            line-height: 25px;
+            font-size: 13px;
+            line-height: 20px;
             display: flex;
             align-items: center;
             color: #c6c6c6;
