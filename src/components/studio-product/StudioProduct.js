@@ -68,10 +68,10 @@ const StudioProductWrapper = styled.div`
     .box-area {
       .product-box {
         width: 364px;
-        height: 400px;
+        height: fit-content;
         background: #a75b41;
         border-radius: 44px;
-        padding: 0 30px;
+        padding: 40px 30px 30px;
         p {
           font-weight: 400;
           font-size: 17px;
@@ -81,6 +81,7 @@ const StudioProductWrapper = styled.div`
           text-align: center;
           color: #ffffff;
           height: 100%;
+          text-align: justify;
         }
       }
     }
@@ -96,8 +97,8 @@ const StudioProductWrapper = styled.div`
       .box-area {
         .product-box {
           width: 250px;
-          height: 400px;
-          padding: 0 20px;
+          /* height: 400px; */
+          /* padding: 0 20px; */
           p {
             font-size: 15px;
             line-height: 20px;
@@ -119,7 +120,7 @@ const StudioProductWrapper = styled.div`
       .box-area {
         .product-box {
           width: 100%;
-          height: 400px;
+          /* height: 400px; */
           border-radius: 0px;
           position: relative;
           top: -6px;

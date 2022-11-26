@@ -173,7 +173,7 @@ const SimillerProductWrapper = styled.div`
       height: 450px;
     }
     .productHeadImg {
-      width: 400px;
+      width: 360px;
     }
     .simillier-leftpart {
       gap: 10px;
@@ -190,12 +190,13 @@ const SimillerProductWrapper = styled.div`
   }
   @media (max-width: 500px) {
     padding: 0;
+    margin: 80px 0 20px;
 
     .bigProductImg {
       height: 380px;
     }
     .productHeadImg {
-      width: 340px;
+      width: 310px;
     }
     .simillier-leftpart {
       .simillier-btn {
@@ -235,7 +236,7 @@ const SimillerProduct = () => {
           whileInView={() => {
             setIsInView(true);
           }}
-          initial={{ y: "60vh" }}
+          initial={{ y: "40vh" }}
           animate={
             isInView && {
               y: 0,
