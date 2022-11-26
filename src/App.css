@@ -3963,15 +3963,10 @@ c-service-w {
   align-items: center;
 }
 @media (max-width:700px){
-  .studio-s1 .sc {
-    margin-top: 4.5rem;
-  }
   .menu-icon {
     top:40px !important;
   }
-  .studio-s1 {
-    min-height: 100%;
-  }
+
 }
 .sc h1 {
   margin-top: 4rem;
@@ -4072,7 +4067,11 @@ c-service-w {
 .studio-s4 {
   padding-top: 6rem;
 }
-
+@media (max-width:767px){
+  .studio-s4 {
+    padding-top: 2.5rem;
+  }
+}
 .studio-s4 .blogs h3 {
   font-size: 2.2rem;
   padding: 1rem 0;
@@ -4104,6 +4103,11 @@ c-service-w {
 .explore-more {
   padding: 5rem 0;
   border-bottom: 1px solid var(--grey-color);
+}
+@media(max-width:767px){
+  .explore-more {
+    padding: 3rem 0;
+  }
 }
 .explore-more h3 {
   display: inline-block;

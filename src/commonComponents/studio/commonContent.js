@@ -149,7 +149,7 @@ const CommonContentWrapper = styled.div`
   }
   .studio_s2 .level5 {
     overflow: hidden;
-    height: 280px;
+    height: 300px;
     width: 300px;
     border-radius: 25px;
     margin-top: 10%;
@@ -356,7 +356,21 @@ const CommonContent = () => {
       </section>
       <section className="studio_s2">
         <div className="row">
-          <div className="col-12 level5 p_30 wow fadeInUp">
+          <motion.div
+            whileInView={() => {
+              setIsInView(true);
+            }}
+            initial={{ y: "20vh" }}
+            animate={
+              isInView && {
+                y: 0,
+                transition: {
+                  duration: 0.5,
+                },
+              }
+            }
+            className="col-12 level5 p_30 wow fadeInUp"
+          >
             <div className="image5">
               <div className="details">
                 <span className="img">
@@ -389,8 +403,22 @@ const CommonContent = () => {
                 </a>
               </div>
             </div>
-          </div>
-          <div className="col-12 p_30">
+          </motion.div>
+          <motion.div
+            whileInView={() => {
+              setIsInView(true);
+            }}
+            initial={{ y: "20vh" }}
+            animate={
+              isInView && {
+                y: 0,
+                transition: {
+                  duration: 0.5,
+                },
+              }
+            }
+            className="col-12 p_30"
+          >
             <Swiper
               breakpoints={{
                 250: {
@@ -403,7 +431,7 @@ const CommonContent = () => {
                 },
               }}
               className="mySwiper"
-              style={{ height: "180px" }}
+              style={{ height: "200px" }}
               autoplay={{
                 delay: 1500,
                 disableOnInteraction: false,
@@ -428,7 +456,7 @@ const CommonContent = () => {
                 );
               })}
             </Swiper>
-          </div>
+          </motion.div>
         </div>
       </section>
     </CommonContentWrapper>

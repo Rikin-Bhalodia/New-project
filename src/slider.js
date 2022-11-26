@@ -93,9 +93,29 @@ export default function Slider() {
 export function ServiceSlider() {
   return (
     <Swiper
-      slidesPerView={3}
-      spaceBetween={100}
-      className="mySwiper"
+      breakpoints={{
+        260: {
+          slidesPerView: 2,
+          spaceBetween: 30,
+        },
+        600: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
+        767: {
+          slidesPerView: 2,
+          spaceBetween: 50,
+        },
+        900: {
+          slidesPerView: 3,
+          spaceBetween: 50,
+        },
+        1000: {
+          slidesPerView: 3,
+          spaceBetween: 100,
+        },
+      }}
+      className="mySwiper round"
       style={{ height: "250px" }}
       autoplay={{
         delay: 1500,
@@ -116,6 +136,7 @@ export function ServiceSlider() {
               alt="image"
               height="100px"
               width="100px"
+              className="radius"
               style={{ borderRadius: "40px" }}
             />
           </SwiperSlide>
@@ -128,9 +149,29 @@ export function ServiceSlider() {
 export function RentSlider() {
   return (
     <Swiper
-      slidesPerView={3}
-      spaceBetween={100}
-      className="mySwiper"
+      breakpoints={{
+        260: {
+          slidesPerView: 2,
+          spaceBetween: 30,
+        },
+        600: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
+        767: {
+          slidesPerView: 2,
+          spaceBetween: 50,
+        },
+        900: {
+          slidesPerView: 3,
+          spaceBetween: 50,
+        },
+        1000: {
+          slidesPerView: 3,
+          spaceBetween: 100,
+        },
+      }}
+      className="mySwiper round"
       style={{ height: "250px" }}
       autoplay={{
         delay: 1500,
@@ -150,6 +191,7 @@ export function RentSlider() {
               alt="image"
               height="100px"
               width="100px"
+              className="radius"
               style={{ borderRadius: "40px" }}
             />
           </SwiperSlide>

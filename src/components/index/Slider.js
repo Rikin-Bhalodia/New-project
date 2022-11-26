@@ -26,6 +26,34 @@ const AvenuSliderWrapper = styled.div`
     justify-content: center;
     align-items: center;
   }
+  @media (max-width: 767px) {
+    .center {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    .right {
+      justify-content: flex-end !important;
+    }
+    .flx-col-rev {
+      flex-direction: column-reverse;
+    }
+    .swiper-slide img {
+      border-radius: 50%;
+    }
+    .roundBtn {
+      display: none;
+    }
+    .round {
+      height: 200px !important;
+    }
+    .round img.radius {
+      border-radius: 50% !important;
+    }
+    .avenue_service {
+      width: 170px;
+    }
+  }
 `;
 export default function AvenuSlider() {
   return (
@@ -34,7 +62,7 @@ export default function AvenuSlider() {
         className="paddingSec minHeightSec d-flex align-items-center c-service-w pt-5 pb-3 "
         id="avenue"
       >
-        <div className="container-fluid px-5">
+        <div className="container-fluid">
           <div className="row">
             <div className="col-md-5 center">
               <div className="headerAvenueSec">
@@ -63,11 +91,11 @@ export default function AvenuSlider() {
               <RentSlider />
             </div>
           </div>
-          <div className="row mt-4">
+          <div className="row mt-4 flx-col-rev">
             <div className="col-md-7">
               <ServiceSlider />
             </div>
-            <div className="col-md-5 center">
+            <div className="col-md-5 center right">
               <div className="headerAvenueSec">
                 <span className="relative">
                   {/* <Service /> */}
