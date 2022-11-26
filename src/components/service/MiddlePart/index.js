@@ -13,11 +13,12 @@ const MiddlePartWrapper = styled.div`
       left: 0;
     }
     .right-middle {
-      position: unset;
+      position: absolute;
       right: 0;
     }
   }
   .new-head {
+    width: 100%;
     font-family: "Coral Blush";
     font-style: normal;
     font-weight: 400;
@@ -69,8 +70,6 @@ const MiddlePartWrapper = styled.div`
   @media (max-width: 550px) {
     padding-top: 0;
     .left-middle {
-      height: 340px;
-      width: 80px;
       display: none;
     }
     .right-middle {
@@ -79,6 +78,7 @@ const MiddlePartWrapper = styled.div`
     }
     .new-head {
       font-size: 35px;
+      width: auto;
     }
     .luxuxry-life {
       width: 230px;

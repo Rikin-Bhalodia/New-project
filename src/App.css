@@ -4582,7 +4582,7 @@ c-service-w {
   border: 7px solid white;
   margin: auto;
   position: relative;
-  top: -40px;
+  top: -40px !important;
 }
 @media (max-width:700px){
   .menu-icon {
