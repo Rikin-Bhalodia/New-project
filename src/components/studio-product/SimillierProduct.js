@@ -17,7 +17,7 @@ const SimillerProductWrapper = styled.div`
   position: relative;
   .polygon-right {
     position: absolute;
-    height: 1000px;
+    height: 700px;
     z-index: -1;
     right: 0;
   }
@@ -26,14 +26,13 @@ const SimillerProductWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 40px;
     .simillier-img {
       position: relative;
 
       div {
         position: absolute;
-        top: -57px;
-        left: -36px;
+        top: -40px;
+        left: -20px;
       }
       p {
         font-size: 25px;
@@ -57,7 +56,7 @@ const SimillerProductWrapper = styled.div`
           background: #ffffff;
           border: 1px solid #a75b41;
           border-radius: 79px;
-          padding: 0.7rem 3rem;
+          padding: 0.6rem 2.5rem;
           text-transform: uppercase;
           font-weight: 700;
           color: #a75b41;
@@ -73,7 +72,7 @@ const SimillerProductWrapper = styled.div`
         .btn2 {
           background: #a75b41;
           border-radius: 46px;
-          padding: 0.7rem 3rem;
+          padding: 0.6rem 2.5rem;
           text-transform: uppercase;
           text-align: center;
           color: #ffffff;
@@ -89,7 +88,7 @@ const SimillerProductWrapper = styled.div`
         .btn3 {
           background: #665e2f;
           border-radius: 46px;
-          padding: 0.7rem 3rem;
+          padding: 0.6rem 2.5rem;
           text-transform: uppercase;
           text-align: center;
           color: #ffffff;
@@ -153,10 +152,10 @@ const SimillerProductWrapper = styled.div`
     }
   }
   .productHeadImg {
-    width: 465px;
+    width: 400px;
   }
   .bigProductImg {
-    height: 550px;
+    height: 500px;
   }
   .similar-product-slider {
     display: none;

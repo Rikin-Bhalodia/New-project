@@ -3948,7 +3948,7 @@ c-service-w {
   align-items: flex-start;
   justify-content: center;
   min-height: 100vh;
-  height: 200vh;
+  /* height: 200vh; */
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: center right;
@@ -3970,7 +3970,7 @@ c-service-w {
 
 .sc p {
   max-width: 400px;
-  margin: 3rem auto;
+  margin: 1rem auto 2rem;
   text-align: center;
   color: #fff;
   font-size: 1.2rem;
