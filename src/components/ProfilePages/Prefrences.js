@@ -38,6 +38,23 @@ const PrefrencesWrapper = styled.div`
     height: 130px;
     width: 150px;
   }
+  @media (max-width:1000px){
+    display: flex;
+    flex-direction: column;
+    .preferenceContent{
+      margin-top: 30px;
+    }
+    .preferance{
+      font-size: 30px;
+    }
+    .preferance2{
+      font-size: 20px;
+    }
+    .images img{
+      height: 150px;
+      width: 170px;
+    }
+  }
 `;
 
 const Prefrences = () => {

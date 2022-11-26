@@ -1,11 +1,14 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
+import SuccessImage from "../../assets/images/PopUpImages/PersonalAsssistSuccess/Success.svg";
+import ThanksImage from "../../assets/images/PopUpImages/PersonalAsssistSuccess/Thanks.svg";
+import CircleImage from "../../assets/images/PopUpImages/ThanksLetterPopUps/circle.svg";
 import leafImage from "../../assets/images/PopUpImages/ThanksLetterPopUps/leafImage.svg";
-import ThanksLetterImage from "../../assets/images/PopUpImages/ThanksLetterPopUps/CookiesPopUp.png";
-import CookiesImage from "../../assets/images/PopUpImages/Cookies/Screenshot (65).png";
+import CheckMarkImage from "../../assets/images/PopUpImages/ThanksLetterPopUps/checkmark.svg";
+import CrossImage from "../../assets/images/PopUpImages/ThanksLetterPopUps/CrossImage.svg";
 
-const CookieWrapper = styled.div`
-  main {
+const SuccessWrapper =styled.div`
+   main {
     background: rgba(0, 0, 0, 0.53);
     width: 100%;
     height: 700px;
@@ -31,10 +34,16 @@ const CookieWrapper = styled.div`
     position: absolute;
   }
   .popup-image {
-    width: 444px;
+    width: 304px;
     position: absolute;
-    top: 206px;
-    right: 16px;
+    top: 187px;
+    right: 90px;
+  }
+  .popup-image2 {
+    width: 350px;
+    position: absolute;
+    top: 280px;
+    right: 50px;
   }
   .popup-bar {
     top: 58px;
@@ -51,56 +60,61 @@ const CookieWrapper = styled.div`
   .popup-agree {
     background: #a75b41;
     border-radius: 46px;
+    width: 50px;
     border: none;
-    width: 148px;
+    width: 130px;
     height: 35px;
     color: #fff;
-    margin-top: 370px;
-    margin-left: 166px;
+    position: absolute;
+    top: 350px;
+    left: 182px;
   }
   .popup-pages-allpopups {
     display: flex;
     position: absolute;
-    top: 425px;
-    right: 198px;
+    top: 410px;
+    right: 205px;
     font-size: 11px;
   }
-`;
+`
 
-const CookiePopUp = () => {
+const personalAssistSuccess = () => {
   return (
     <>
-      <CookieWrapper>
-        <main>
+    <SuccessWrapper>
+    <main>
           <div className="popup-content">
             <div className="popup-header">
-              <img src={CookiesImage} className="popup-bar" alt="" />
+              <img src={CircleImage} className="popup-bar" alt="" />
+              <img src={CheckMarkImage} className="popup-center" alt="" />
             </div>
             <div className="background-popup">
               <img src={leafImage} alt="" className="popup-back" />
-              <img src={ThanksLetterImage} alt="" className="popup-image" />
+              <img src={SuccessImage} alt="" className="popup-image" />
+              <img src={ThanksImage} alt="" className="popup-image2" />
             </div>
             <div className="popup-button">
-              <button className="popup-agree">mmm... Sweet</button>
+              <button className="popup-agree">SHOP HERE...</button>
             </div>
             <div className="popup-pages-allpopups">
+              <img src={CrossImage} alt="" />
               <a
                 className="popup-close"
                 href="/"
                 style={{
-                  color: "#A75B41",
+                  color: "black",
                   borderBottom: "1px solid black",
                   marginLeft: "10px",
                 }}
               >
-                Nope,I am on diet
+                CLOSE
               </a>
             </div>
           </div>
         </main>
-      </CookieWrapper>
+    </SuccessWrapper>
     </>
-  );
-};
+  )
+}
 
-export default CookiePopUp;
+export default personalAssistSuccess

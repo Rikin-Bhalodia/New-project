@@ -4,9 +4,10 @@ import styled from "styled-components";
 import MenuIcon from "../../assets/images/studio/menu.svg";
 import { motion, useScroll, useTransform } from "framer-motion";
 import BannerImage from "../../assets/images/studio/banner.png";
+import Atilier from "../../assets/images/studio/Atilier.svg";
 import CommonContent from "./commonContent";
 
-const Atilier = React.lazy(() => import("../../atilier"));
+// const Atilier = React.lazy(() => import("../../atilier"));
 const Menu = React.lazy(() => import("../Menu"));
 const AnimatedTextWord = React.lazy(() => import("../Animation/FlipAnimation"));
 
@@ -24,9 +25,9 @@ const StudioBannerWrapper = styled.div`
     align-items: flex-start;
     justify-content: center;
     min-height: 100vh;
-    height: 200vh;
+    height: 1000px;
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     background-position: center right;
     position: fixed;
     width: 100%;
@@ -92,7 +93,7 @@ const StudioBannerWrapper = styled.div`
     font-weight: 400;
     position: relative;
     letter-spacing: 3px !important;
-    font-size: 90px !important;
+    font-size: 80px !important;
     display: contents;
   }
   .atilier {
@@ -216,6 +217,13 @@ const StudioBannerWrapper = styled.div`
       padding: 0 20px;
     }
   }
+  .Atilier {
+    width: 450px;
+  }
+  .menu-icon {
+    top: 0 !important;
+    z-index: 1001;
+  }
 `;
 
 const StudioBanner = () => {
@@ -225,12 +233,7 @@ const StudioBanner = () => {
   return (
     <>
       <StudioBannerWrapper>
-        <motion.div
-          initial={{ y: "200vh" }}
-          animate={{ y: 0 }}
-          transition={{ duration: 1 }}
-          className="mainImage"
-        ></motion.div>
+        <div className="mainImage"></div>
         <section className="studio-s1">
           <div className="sc">
             <p className="text-light">STUDIO</p>
@@ -240,7 +243,8 @@ const StudioBanner = () => {
               <AnimatedTextWord text="GRANDEUR" />
             </motion.h1>
             <div className="atiliers">
-              <Atilier />
+              {/* <Atilier /> */}
+              <img src={Atilier} alt="" className="Atilier" />
             </div>
             <p className="para">
               Lorem Ipsum has been the industry's standard dummy text ever since

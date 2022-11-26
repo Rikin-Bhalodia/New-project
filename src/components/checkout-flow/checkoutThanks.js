@@ -1,10 +1,13 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
+import SuccessImage from "../../assets/images/PopUpImages/checkout/Success.svg";
+import ThanksImage from "../../assets/images/PopUpImages/checkout/Thanks.svg";
+import CircleImage from "../../assets/images/PopUpImages/ThanksLetterPopUps/circle.svg";
 import leafImage from "../../assets/images/PopUpImages/ThanksLetterPopUps/leafImage.svg";
-import ThanksLetterImage from "../../assets/images/PopUpImages/ThanksLetterPopUps/CookiesPopUp.png";
-import CookiesImage from "../../assets/images/PopUpImages/Cookies/Screenshot (65).png";
+import CheckMarkImage from "../../assets/images/PopUpImages/ThanksLetterPopUps/checkmark.svg";
+import CrossImage from "../../assets/images/PopUpImages/ThanksLetterPopUps/CrossImage.svg";
 
-const CookieWrapper = styled.div`
+const CheckoutThanksWrapper = styled.div`
   main {
     background: rgba(0, 0, 0, 0.53);
     width: 100%;
@@ -24,17 +27,23 @@ const CookieWrapper = styled.div`
     box-shadow: 38px 35px 85px rgba(0, 0, 0, 0.25);
   }
   .popup-back {
-    width: 403px;
-    top: 112px;
+    width: 407px;
+    top: 105px;
     left: 35px;
     opacity: 0.95;
     position: absolute;
   }
   .popup-image {
-    width: 444px;
+    width: 446px;
     position: absolute;
-    top: 206px;
-    right: 16px;
+    top: 208px;
+    right: 14px;
+  }
+  .popup-image2 {
+    width: 262px;
+    position: absolute;
+    top: 250px;
+    right: 100px;
   }
   .popup-bar {
     top: 58px;
@@ -51,56 +60,61 @@ const CookieWrapper = styled.div`
   .popup-agree {
     background: #a75b41;
     border-radius: 46px;
+    width: 50px;
     border: none;
-    width: 148px;
+    width: 130px;
     height: 35px;
     color: #fff;
-    margin-top: 370px;
-    margin-left: 166px;
+    position: absolute;
+    top: 360px;
+    left: 182px;
   }
   .popup-pages-allpopups {
     display: flex;
     position: absolute;
-    top: 425px;
-    right: 198px;
+    top: 420px;
+    right: 205px;
     font-size: 11px;
   }
-`;
+`
 
-const CookiePopUp = () => {
+const checkoutThanks = () => {
   return (
     <>
-      <CookieWrapper>
-        <main>
+    <CheckoutThanksWrapper>
+    <main>
           <div className="popup-content">
             <div className="popup-header">
-              <img src={CookiesImage} className="popup-bar" alt="" />
+              <img src={CircleImage} className="popup-bar" alt="" />
+              <img src={CheckMarkImage} className="popup-center" alt="" />
             </div>
             <div className="background-popup">
               <img src={leafImage} alt="" className="popup-back" />
-              <img src={ThanksLetterImage} alt="" className="popup-image" />
+              <img src={SuccessImage} alt="" className="popup-image" />
+              <img src={ThanksImage} alt="" className="popup-image2" />
             </div>
             <div className="popup-button">
-              <button className="popup-agree">mmm... Sweet</button>
+              <button className="popup-agree">SHOP HERE...</button>
             </div>
             <div className="popup-pages-allpopups">
+              <img src={CrossImage} alt="" />
               <a
                 className="popup-close"
                 href="/"
                 style={{
-                  color: "#A75B41",
+                  color: "black",
                   borderBottom: "1px solid black",
                   marginLeft: "10px",
                 }}
               >
-                Nope,I am on diet
+                CLOSE
               </a>
             </div>
           </div>
         </main>
-      </CookieWrapper>
+    </CheckoutThanksWrapper>
     </>
-  );
-};
+  )
+}
 
-export default CookiePopUp;
+export default checkoutThanks

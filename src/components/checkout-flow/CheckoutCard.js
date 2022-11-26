@@ -43,7 +43,7 @@ const CheckoutCardWrapper = styled.div`
     font-size: 50px;
   }
   .checkout-content {
-    margin: 70px 150px 0px 150px;
+    padding: 70px 150px 0px 150px;
   }
   .checkout-contents {
     margin: 150px 0px 70px 0px;
@@ -133,7 +133,29 @@ const CheckoutCardWrapper = styled.div`
     height: 60px;
     margin-bottom: 15px;
   }
- 
+  @media (max-width: 576px){
+     .checkout-content{
+      padding: 10px;
+     }
+     .goback{
+      position: absolute;
+      right: 35px;
+      top: -22px;
+      left: -36px;
+     }
+     .checkout-card-rs{
+      margin-left: 200px;
+     }
+     .checkout-form-group input{
+      width: 88%;
+     }
+     .form.control{
+      width: 89px;
+     }
+     .forms-submissions{
+      width: 515px;
+     }
+  }
 `;
 
 const CheckoutCard = () => {

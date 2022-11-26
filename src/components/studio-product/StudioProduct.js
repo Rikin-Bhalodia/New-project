@@ -16,28 +16,28 @@ const StudioProductWrapper = styled.div`
   position: relative;
   .polygon-left {
     position: absolute;
-    height: 1000px;
+    height: 600px;
     z-index: -1;
   }
   .studio-product-head {
     margin-top: 60px;
     display: flex;
     position: relative;
-    height: 170px;
+    height: 120px;
     align-items: center;
     justify-content: space-between;
     .leftside-area {
       .goback-link {
         a {
-          font-size: 20px;
+          font-size: 17px;
           text-decoration: underline;
           color: #000;
         }
       }
       .product-head {
         p {
-          font-size: 18px;
-          margin: 30px 0 10px;
+          font-size: 17px;
+          margin: 10px 0;
         }
       }
     }
@@ -55,11 +55,12 @@ const StudioProductWrapper = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    gap: 50px;
     height: 100%;
     .studio-product-video {
       img {
-        width: 100%;
-        height: 550px;
+        width: 750px;
+        height: 450px;
         object-fit: cover;
       }
     }
@@ -72,7 +73,7 @@ const StudioProductWrapper = styled.div`
         padding: 0 30px;
         p {
           font-weight: 400;
-          font-size: 18px;
+          font-size: 17px;
           line-height: 26px;
           display: flex;
           align-items: center;
@@ -83,10 +84,32 @@ const StudioProductWrapper = styled.div`
       }
     }
   }
+  @media screen and (max-width: 1270px) {
+    .studio-product-body {
+      gap: 30px;
+      .studio-product-video {
+        img {
+          width: 100%;
+        }
+      }
+      .box-area {
+        .product-box {
+          width: 250px;
+          height: 400px;
+          padding: 0 20px;
+          p {
+            font-size: 15px;
+            line-height: 20px;
+          }
+        }
+      }
+    }
+  }
 
   @media screen and (max-width: 820px) {
     .studio-product-body {
       flex-direction: column;
+      gap: 0px;
       .studio-product-video {
         img {
           height: 100vh;
@@ -99,6 +122,10 @@ const StudioProductWrapper = styled.div`
           border-radius: 0px;
           position: relative;
           top: -6px;
+          p {
+            font-size: 17px;
+            line-height: 26px;
+          }
         }
       }
     }
@@ -136,28 +163,28 @@ export default function StudioProduct() {
           className="polygon-left"
           loading="lazy"
         />
-        <motion.div
-          className={` ${isResponsive ? "" : "container-fluid px-5"}`}
-          initial={{ y: "200vh" }}
-          animate={{ y: 0 }}
-          transition={{ duration: 1 }}
-        >
+        <div className={` ${isResponsive ? "" : "container-fluid px-5"}`}>
           <div className="studio-product-head">
-            <div className="leftside-area">
+            <motion.div
+              initial={{ x: "-60vw" }}
+              animate={{ x: 0 }}
+              transition={{ duration: 1 }}
+              className="leftside-area"
+            >
               <div className="goback-link">
                 <a href="/">Go Back</a>
               </div>
-              <motion.div
-                className="product-head"
-                initial={{ x: "-100vw" }}
-                animate={{ x: 0 }}
-                transition={{ duration: 0.7 }}
-              >
+              <div className="product-head">
                 <p>STUDIO / CHANEL’S MOST EXPENSIVE PRODUCTS</p>
-              </motion.div>
-            </div>
+              </div>
+            </motion.div>
             {!isResponsive && (
-              <div className="rightside-area">
+              <motion.div
+                initial={{ x: "60vw" }}
+                animate={{ x: 0 }}
+                transition={{ duration: 1 }}
+                className="rightside-area"
+              >
                 <div className="homePageButtonSection">
                   <div
                     className="menu-icon"
@@ -184,15 +211,25 @@ export default function StudioProduct() {
                     )}
                   </div>
                 </div>
-              </div>
+              </motion.div>
             )}
           </div>
           {/* {!isResponsive && ( */}
           <div className="studio-product-body">
-            <div className="studio-product-video">
+            <motion.div
+              initial={{ x: "-60vw" }}
+              animate={{ x: 0 }}
+              transition={{ duration: 1 }}
+              className="studio-product-video"
+            >
               <img src={Video} alt="videoImg" loading="lazy" />
-            </div>
-            <div className="box-area">
+            </motion.div>
+            <motion.div
+              initial={{ x: "60vw" }}
+              animate={{ x: 0 }}
+              transition={{ duration: 1 }}
+              className="box-area"
+            >
               <div className="product-box">
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
@@ -205,10 +242,10 @@ export default function StudioProduct() {
                   mollit anim id est laboru
                 </p>
               </div>
-            </div>
+            </motion.div>
           </div>
           {/* )} */}
-        </motion.div>
+        </div>
       </StudioProductWrapper>
       <SimillerProduct />
       <WatchMoreSlider />

@@ -37,6 +37,19 @@ const RecentlyViewedWrapper = styled.div`
     font-size: 17px;
     color: #a65a40;
   }
+  @media (max-width:1000px){
+    display: flex;
+    flex-direction: column;
+    .Viewer{
+      margin-top: 30px;
+    }
+    .Viewer-header{
+      font-size: 25px;
+    }
+    .footer{
+      font-size: 20px;
+    }
+  }
 `;
 
 const RViewed = () => {

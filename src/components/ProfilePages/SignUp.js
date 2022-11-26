@@ -12,21 +12,19 @@ const SignUpWrapper = styled.div`
     background-image: url(${Login});
   }
   .leftbar {
-    width: 50%;
     align-items: center;
     justify-content: center;
     display: flex;
+    padding: 20px;
     flex-direction: column;
   }
-  .leftbar-content{
-    margin-top: 105px;
-  }
+  
   .input-one {
     display: flex;
     gap: 15px;
   }
   .input-one input {
-    width: 220px;
+    width: 100%;
     height: 50px;
     border: none;
     font-family: "Coral Blush";
@@ -84,6 +82,8 @@ const SignUpWrapper = styled.div`
     justify-content: center;
     display: flex;
     flex-direction: column;
+    background: rgba(167, 149, 134, 0.3);
+    backdrop-filter: blur(2px);
   }
   .accounts{
     font-size: 25px;
@@ -109,13 +109,27 @@ const SignUpWrapper = styled.div`
   }
   .page-footer{
     display: flex;
+    justify-content: center;
     margin-top: 30px;
-    margin-left: 115px;
     color: #665e2f;
 }
 .link-signup{
     margin-right: 30px;
     color: #665e2f;
+  }
+  @media (max-width: 576px){
+    
+  }
+  @media (max-width: 1000px){
+       .leftbar{
+          padding: 10px;
+       }
+       .page-footer{
+        font-size: 20px;
+       }
+       .rightbar{
+        padding-bottom: 150px;
+       }
   }
 `;
 

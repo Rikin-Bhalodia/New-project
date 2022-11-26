@@ -40,7 +40,7 @@ const StudioWrapper = styled.div`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
-    padding: 0 30px;
+    /* padding: 0 30px; */
   }
   .image-1 {
     width: 100% !important;
@@ -252,12 +252,7 @@ const Studio = () => {
 
   return (
     <StudioWrapper>
-      <motion.div
-        initial={{ y: "200vh" }}
-        animate={{ y: 0 }}
-        transition={{ duration: 1 }}
-        ref={wrapper}
-      >
+      <div ref={wrapper}>
         <StudioBanner />
         <section className="studio-s3">
           <div className="container-fluid">
@@ -318,7 +313,7 @@ const Studio = () => {
           </div>
         </section>
         <section className="studio-s4">
-          <div className="container-fluid">
+          <div className="container">
             <h2
               className="f-heading-m explore"
               style={{
@@ -341,49 +336,50 @@ const Studio = () => {
               <div className="item">beauty</div>
               <div className="item">vacation</div>
             </div>
-          </div>
-          <div className="blog-grid">
-            {[1, 2, 3, 4, 5, 6].map((_) => {
-              return (
-                <motion.div
-                  initial={{ y: "50vh" }}
-                  whileInView={() => {
-                    setIsInView(true);
-                  }}
-                  animate={
-                    isInView && {
-                      y: 0,
-                      transition: {
-                        duration: 1,
-                      },
+            <div className="blog-grid">
+              {[1, 2, 3, 4, 5, 6].map((_) => {
+                return (
+                  <motion.div
+                    initial={{ y: "50vh" }}
+                    whileInView={() => {
+                      setIsInView(true);
+                    }}
+                    animate={
+                      isInView && {
+                        y: 0,
+                        transition: {
+                          duration: 1,
+                        },
+                      }
                     }
-                  }
-                  className="blog-box"
-                >
-                  <div className="image-1">
-                    <motion.img
-                      whileHover={{
-                        scale: 1.1,
-                      }}
-                      transition={{
-                        duration: 0.4,
-                      }}
-                      src={FirstImage}
-                      loading="lazy"
-                      alt="first-image"
-                    />
-                  </div>
-                  <div className="info-1">
-                    <h3>LOREM IPSUM SET</h3>
-                    <p>
-                      Lorem Ipsum has been the industry's standard dummy text
-                      ever... <a href="#">Read More</a>
-                    </p>
-                  </div>
-                </motion.div>
-              );
-            })}
+                    className="blog-box"
+                  >
+                    <div className="image-1">
+                      <motion.img
+                        whileHover={{
+                          scale: 1.1,
+                        }}
+                        transition={{
+                          duration: 0.4,
+                        }}
+                        src={FirstImage}
+                        loading="lazy"
+                        alt="first-image"
+                      />
+                    </div>
+                    <div className="info-1">
+                      <h3>LOREM IPSUM SET</h3>
+                      <p>
+                        Lorem Ipsum has been the industry's standard dummy text
+                        ever... <a href="#">Read More</a>
+                      </p>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
           </div>
+
           {/* <div className="container-fluid blogs">
             <div className="row">
               <div className="col-md-4 wow fadeInUp">
@@ -476,7 +472,7 @@ const Studio = () => {
             </a>
           </div>
         </section>
-      </motion.div>
+      </div>
     </StudioWrapper>
   );
 };

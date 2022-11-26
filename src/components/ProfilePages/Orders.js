@@ -88,6 +88,42 @@ const DesktopWrapper = styled.div`
     border-radius: 50%;
     background: #fff;
   }
+  @media (max-width:1000px){
+    display: flex;
+    flex-direction: column;
+    .desktop-one{
+      padding: 20px;
+      gap: 70px;
+    }
+    .desktop-content{
+      margin-top: 30px;
+    }
+    .desktop-fp{
+      height: 40px;
+      font-size: 25px;
+    }
+    .desktop-two{
+      padding: 20px;
+      gap: 70px;
+    }
+    .desktop-three{
+      padding: 20px;
+      gap: 95px;
+    }
+    .desktop-four{
+      padding: 20px;
+      gap: 95px;
+    }
+    .empty-circle{
+      width: 90px;
+    }
+    .desktop-button{
+      padding-right: 50px;
+    }
+    .desktop-header{
+      padding-left: 30px;
+    }
+  }
 `;
 
 const Orders = () => {
@@ -106,13 +142,6 @@ const Orders = () => {
           <div className="desktop-bar">
             <div className="desktop-header">
               <h4>SHOWING</h4>
-              {/* <select name="ALL-ORDERS" className="desktop-select" id="">
-                <option value="">DELIVERED</option>
-                <option value="">PENDING</option>
-                <option value="">RETURNED</option>
-                <option value="">LAST 6 MONTHS</option>
-                <option value="">LAST YEAR</option>
-              </select> */}
               <Select
                 placeholder="ALL ORDERS"
                 style={{ width: "70%", marginLeft: "10px" }}

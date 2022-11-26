@@ -32,7 +32,7 @@ const AssistFormWrapper = styled.div`
     gap: 30px;
   }
   .InputOne input {
-    width: 340px;
+    width: 100%;
     height: 55px;
     letter-spacing: 5px;
     border: none;
@@ -47,7 +47,7 @@ const AssistFormWrapper = styled.div`
     margin-top: 30px;
   }
   .InputTwo input {
-    width: 710px;
+    width: 100%;
     height: 55px;
     letter-spacing: 5px;
     border: none;
@@ -64,7 +64,7 @@ const AssistFormWrapper = styled.div`
     gap: 30px;
   }
   .InputThree input {
-    width: 340px;
+    width: 100%;
     height: 55px;
     letter-spacing: 5px;
     border: none;
@@ -90,6 +90,26 @@ const AssistFormWrapper = styled.div`
     color: #fcf9f2;
     border: none;
     border-radius: 20px;
+  }
+  @media (max-width: 576px){
+    .FormContent{
+      width: 100%;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+  @media (max-width: 1000px){
+    .FormContent{
+      width: 100%;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
   }
 `;
 
