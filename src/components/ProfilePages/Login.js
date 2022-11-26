@@ -12,7 +12,6 @@ const ProfileWrapper = styled.div`
     background-image: url(${Login});
   }
   .leftbar {
-    height: 50%;
     width: 50%;
     align-items: center;
     justify-content: center;
@@ -20,7 +19,6 @@ const ProfileWrapper = styled.div`
     flex-direction: column;
   }
   .leftbar-content {
-    margin-top: 415px;
   }
   .login-account {
     font-family: "Coral Blush";
@@ -41,25 +39,24 @@ const ProfileWrapper = styled.div`
     border: none;
   }
   .rightbar {
+    padding: 20px;
     width: 50%;
+    display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
+    text-align: center;
     background: rgba(167, 149, 134, 0.3);
     backdrop-filter: blur(2px);
   }
   .rightbar-content{
-    display: flex;
     font-family: 'Coral Blush';
     font-style: normal;
     font-weight: 400;
     color: #665E2F;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 295px;
   }
   .rightbar-content input{
-    width: 485px;
+    width: 100%;
     height: 45px;
     margin-bottom: 20px;
     border: none;
@@ -78,12 +75,40 @@ const ProfileWrapper = styled.div`
   }
   .page-footer{
     display: flex;
+    justify-content: center;
     margin-top: 30px;
     color: #665e2f;
 }
 .link-signup{
     margin-right: 30px;
     color: #665e2f;
+  }
+  @media (max-width: 576px){
+   .login-account{
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+   }
+   .signup-button{
+    width: 100%;
+    padding: 20px;
+   }
+   .rightbar-content input{
+      font-size: 10px;
+      letter-spacing: 1px;
+     }
+     .rightbar{
+      padding: 10px;
+     }
+  }
+  @media (max-width: 1000px){
+     .rightbar-content input{
+      font-size: 18px;
+      letter-spacing: 1px;
+     }
+     .page-footer{
+      font-size: 20px;
+     }
   }
 `;
 

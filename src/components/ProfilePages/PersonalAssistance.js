@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Login from "../../assets/images/ProfilePage/Rectangle178.png";
-import MenuImage from '../../assets/images/ProfilePage/menu.png'
+import MenuImage from "../../assets/images/ProfilePage/menu.png";
 
 const AssistanceWrapper = styled.div`
   .assistance-page {
@@ -61,14 +61,57 @@ const AssistanceWrapper = styled.div`
     font-weight: 400;
     font-size: 20px;
   }
-  .assistance-footer{
+  .assistance-footer {
     margin-top: 120px;
     text-align: center;
   }
-  .image-footer{
+  .image-footer {
     height: 70px;
     width: 70px;
     border-radius: 50%;
+  }
+  @media (max-width: 576px) {
+    .text-topbar {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      margin-top: 0;
+      margin-left: 0;
+      align-self: center;
+      margin: 0px 20px;
+      height: 265px;
+    }
+    .classical-text{
+      font-size: 30px;
+    }
+    .normal-text{
+      font-size: 28px;
+      margin-top: 4px;
+    }
+    .button-bottom{
+      width: 200px;
+    }
+    .footer-button{
+      margin-left: 37px;
+      display: flex;
+      gap: 35px;
+    }
+    .text-top-page{
+      display: flex;
+      gap: 10px;
+      margin-left: 35px;
+    }
+  }
+  @media (max-width: 1000px) {
+    .text-topbar {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      margin-top: 0;
+      margin-left: 0;
+      align-self: center;
+      margin: 0px 20px;
+    }
   }
 `;
 
@@ -86,9 +129,9 @@ const PersonalAssistance = () => {
               <button className="button-bottom">KNOW MORE</button>
               <button className="button-bottom">NO THANKS</button>
             </div>
-          <div className="assistance-footer">
-            <img src={MenuImage} alt="" className="image-footer" />
-          </div>
+            <div className="assistance-footer">
+              <img src={MenuImage} alt="" className="image-footer" />
+            </div>
           </div>
         </div>
       </AssistanceWrapper>

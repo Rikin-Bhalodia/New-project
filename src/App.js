@@ -133,7 +133,13 @@ const Preferances = React.lazy(() =>
 );
 const RecentlyViewed = React.lazy(() =>
   import("./components/ProfilePages/RViewed")
-);
+)
+const PersonalSuccess = React.lazy(() =>
+  import("./components/PersonalAssists/personalAssistSuccess.js")
+)
+const CheckoutSuccess = React.lazy(() =>
+  import("./components/checkout-flow/checkoutThanks")
+)
 
 const SideBar = React.lazy(() =>
   import("./commonComponents/SidebarOfProfilePage/index.js")
@@ -242,36 +248,26 @@ function App() {
             />
             <Route path="/nft-metaverse" element={<NFTMetaVerse />} />
 
-            <Route path="/checkout-form" element={<CheckoutForm />} />
-            <Route path="/checkout-card" element={<CheckoutCard />} />
-            <Route path="/checkout-final" element={<CheckoutFinal />} />
-            <Route path="/newsletter-popup" element={<NewsLetter />} />
-            <Route path="/thanksletter-popup" element={<ThanksLettter />} />
-            <Route path="/cookies-popup" element={<CookiesPopUp />} />
-            <Route
-              path="/cookies-thankyou-popup"
-              element={<CookiesThankYou />}
-            />
-            <Route path="/profilepage-order" element={<ProfilePageOrders />} />
-            <Route path="/profilepage-address" element={<DesktopDetails />} />
-            <Route path="/profilepage-preferance" element={<Preferances />} />
-            <Route path="/profilepage-view" element={<RecentlyViewed />} />
-            <Route path="/profilepage-login" element={<ProfilePageLogin />} />
-            <Route path="/profilepage-signup" element={<ProfilePageSignUp />} />
-            <Route
-              path="/terms-and-conditions"
-              element={<TermsAndConditions />}
-            />
-            <Route
-              path="/personal-assistance"
-              element={<PersonalAssistance />}
-            />
-            <Route
-              path="/assistance-info"
-              element={<PersonalAssistanceInfo />}
-            />
-            <Route path="/assist-form" element={<AssistForm />} />
-            <Route path="/sidebar" element={<SideBar />} />
+        <Route path="/checkout-form" element={<CheckoutForm />} />
+        <Route path="/checkout-card" element={<CheckoutCard />} />
+        <Route path="/checkout-final" element={<CheckoutFinal />} />
+        <Route path="/checkout-thanks" element={<CheckoutSuccess />} />
+        <Route path="/newsletter-popup" element={<NewsLetter />} />
+        <Route path="/thanksletter-popup" element={<ThanksLettter />} />
+        <Route path="/cookies-popup" element={<CookiesPopUp />} />
+        <Route path="/cookies-thankyou-popup" element={<CookiesThankYou />} />
+        <Route path="/profilepage-order" element={<ProfilePageOrders />} />
+        <Route path="/profilepage-address" element={<DesktopDetails/>} />
+        <Route path="/profilepage-preferance" element={<Preferances/>} />
+        <Route path="/profilepage-view" element={<RecentlyViewed/>} />
+        <Route path="/profilepage-login" element={<ProfilePageLogin />} />
+        <Route path="/profilepage-signup" element={<ProfilePageSignUp />} />
+        <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+        <Route path="/personal-assistance" element={<PersonalAssistance />} />
+        <Route path="/success-popup" element={<PersonalSuccess />} />
+        <Route path="/assistance-info" element={<PersonalAssistanceInfo />} />
+        <Route path="/assist-form" element={<AssistForm/>} />
+        <Route path="/sidebar" element={<SideBar />} />
 
             {/* <Route path="/MH" element={<MobileHeader />} /> */}
           </Routes>

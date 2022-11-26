@@ -144,6 +144,37 @@ const FinalWrapper = styled.div`
     border: 1px solid #a75b41;
     border-radius: 0px 79px 79px 0px;
   }
+  @media (max-width: 576px){
+    .MainData {
+      width: 100%;
+    }
+    .FinalContent{
+      padding: 15px;
+      margin: 0px;
+    }
+    .checkout-form-ship{
+      font-size: 18px;
+    }
+  }
+  @media (max-width: 1000px){
+    .MainData {
+      width: 100%;
+      font-size: 20px;
+    }
+    .FinalContent{
+      padding: 50px;
+      margin: 0px;
+    }
+    .checkout-form-ship{
+      font-size: 22px;
+    }
+    .sub{
+      font-size: 20px;
+    }
+    .total{
+      font-size: 20px;
+    }
+  }
 `;
 
 const CheckoutFinal = () => {

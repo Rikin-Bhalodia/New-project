@@ -62,6 +62,13 @@ padding:15px 0px 0px 20px;
     height: 150px;
     background: rgba(167, 149, 134, 0.22);
   }
+  @media (max-width: 1000px){
+    display: flex;
+    flex-direction: column;
+    .desktop-content{
+      margin-top: 50px;
+    }
+  }
 `;
 
 const Address = () => {
@@ -76,7 +83,7 @@ const Address = () => {
             <div className="addresses">123 HOUSE, ABC STREET, XYZ CITY-110088 </div>
             <div className="addressNumber">098765433221</div>
           </div>
-          <div className="desktop-top2">DEFAULT ADDRESS</div>
+          <div className="desktop-top2">OTHER ADDRESS</div>
           <div className="desktopAddress">
             <div className="address-name">AKANSHA DAGAR</div>
             <div className="addresses">123 HOUSE, ABC STREET, XYZ CITY-110088 </div>

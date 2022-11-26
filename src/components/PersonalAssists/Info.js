@@ -103,6 +103,11 @@ const InfoWrapper = styled.div`
     right: 40px;
     border-radius: 50%;
   }
+  @media (max-width:576px){
+    .InfoLorem{
+      margin-top: 20px;
+    }
+  }
 `;
 
 const InfoAssist = () => {

@@ -51,6 +51,19 @@ const TermsWrapper = styled.div`
     border-radius: 8px;
     border: none;
   }
+  @media(max-width:576px){
+    .terms-content{
+      padding-right: 40px;
+    }
+  }
+  @media(max-width:1000px){
+    .terms-content{
+      padding-right: 40px;
+    }
+    .terms-class{
+      font-size: 35px;
+    }
+  }
 `;
 
 const TermsAndConditions = () => {

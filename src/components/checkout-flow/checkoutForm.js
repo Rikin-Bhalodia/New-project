@@ -29,7 +29,7 @@ const FormWrapper = styled.div`
     font-size: 50px;
   }
   .checkout-content {
-    margin: 100px 150px 0px 120px;
+    padding: 100px 150px 0px 120px;
   }
   .checkout-input {
     background: #fff;
@@ -155,6 +155,97 @@ const FormWrapper = styled.div`
   }
   .checkout-allcontacts {
     position: relative;
+  }
+  @media (max-width: 576px) {
+    .checkout-content {
+      padding: 15px;
+    }
+    .checkout-control input {
+      width: 100%;
+      padding: 0px;
+      font-size: 15px;
+      padding-left: 8px;
+      font-size: 17px;
+    }
+    .checkout-pointer {
+      display: flex;
+      gap: 15px;
+    }
+    .checkout-allcontacts input {
+      width: 100%;
+    }
+    .checkout-classes input {
+      width: 100%;
+    }
+    .checkout-allemails {
+      display: flex;
+      gap: 15px;
+    }
+    .checkout-form-state select {
+      width: 100%;
+    }
+    .checkout-form-state input {
+      width: 100%;
+    }
+    .checkout-postcode {
+      gap: 20px;
+    }
+  }
+  @media (max-width: 992px) {
+    .checkout-content {
+      padding: 25px;
+    }
+    .checkout-control input {
+      width: 100%;
+      padding: 0px;
+      font-size: 15px;
+      padding-left: 8px;
+      font-size: 17px;
+    }
+    .checkout-pointer {
+      display: flex;
+      gap: 15px;
+    }
+    .checkout-allcontacts input {
+      width: 100%;
+    }
+    .checkout-form-country {
+      margin-top: 29px;
+    }
+    .checkout-classes input {
+      width: 100%;
+    }
+    .checkout-allemails {
+      display: flex;
+      gap: 15px;
+    }
+    .checkout-form-state select {
+      width: 100%;
+      margin-top: 3px;
+    }
+    .checkout-form-state {
+      width: 100%;
+    }
+    .checkout-form-state input {
+      width: 100%;
+    }
+    .checkout-postcode {
+      gap: 20px;
+    }
+    .checkout-classes {
+      width: 100%;
+    }
+    .checkout-allcontacts {
+      width: 100%;
+    }
+    .checkout-form-ship {
+      margin-left: 20px;
+      font-size: 25px;
+    }
+    input {
+      height: 30px;
+      width: 30px;
+    }
   }
 `;
 

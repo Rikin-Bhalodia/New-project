@@ -18,7 +18,7 @@ const ThanksWrapper = styled.div`
     height: 480px;
     width: 480px;
     position: relative;
-    top: 50px;
+    top: 100px;
     z-index: 999;
     margin: 0 auto;
     border-radius: 50%;
@@ -58,8 +58,9 @@ const ThanksWrapper = styled.div`
     width: 110px;
     height: 35px;
     color: #fff;
-    margin-top: 370px;
-    margin-left: 180px;
+    position: absolute;
+    top: 370px;
+    left: 192px;
   }
   .popup-pages-allpopups {
     display: flex;
