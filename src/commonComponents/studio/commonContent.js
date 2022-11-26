@@ -149,10 +149,10 @@ const CommonContentWrapper = styled.div`
   }
   .studio_s2 .level5 {
     overflow: hidden;
-    height: 350px;
+    height: 280px;
     width: 300px;
     border-radius: 25px;
-    margin-top: 5%;
+    margin-top: 10%;
   }
   .p_30 {
     padding: 15px 30px;
@@ -403,7 +403,7 @@ const CommonContent = () => {
                 },
               }}
               className="mySwiper"
-              style={{ height: "250px" }}
+              style={{ height: "180px" }}
               autoplay={{
                 delay: 1500,
                 disableOnInteraction: false,

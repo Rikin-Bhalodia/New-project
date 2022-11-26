@@ -195,6 +195,11 @@ const StudioBannerWrapper = styled.div`
       width: 350px !important;
     }
   }
+  @media screen and (max-width: 700px) {
+    .mainImage {
+      height: 100vh;
+    }
+  }
   @media screen and (max-width: 670px) {
     .data {
       font-size: 55px !important;
@@ -230,7 +235,7 @@ const StudioBannerWrapper = styled.div`
     width: 450px;
   }
   .menu-icon {
-    top: 0 !important;
+    top: 0;
     z-index: 1001;
   }
 `;
