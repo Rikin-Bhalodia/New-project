@@ -24,6 +24,13 @@ const RadioButtonWrapper = styled.div`
   .label {
     padding-top: 5px;
   }
+
+  @media (max-width: 550px) {
+    .border-part {
+      padding: 10px;
+      font-size: 15px;
+    }
+  }
 `;
 
 const RadioButton = ({ name, key }) => {

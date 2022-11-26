@@ -82,12 +82,20 @@ const ExploreShopWrapper = styled.div`
     }
   }
   @media (max-width: 500px) {
-    height: 400px;
+    height: 300px;
+    .explore-shop {
+      font-size: 35px;
+      padding-top: 50px;
+    }
     .back {
       height: 450px;
     }
     .card-label {
       font-size: 16px;
+    }
+    .swiper {
+      height: 200px !important;
+      padding: 0 !important;
     }
   }
 `;

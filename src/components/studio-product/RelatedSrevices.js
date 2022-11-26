@@ -113,7 +113,11 @@ export default function ReletedServices() {
           breakpoints={{
             260: {
               slidesPerView: 1,
-              spaceBetween: 30,
+              spaceBetween: 10,
+            },
+            350: {
+              slidesPerView: 1.5,
+              spaceBetween: 15,
             },
             450: {
               slidesPerView: 2,

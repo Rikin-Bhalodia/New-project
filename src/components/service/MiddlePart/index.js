@@ -13,12 +13,11 @@ const MiddlePartWrapper = styled.div`
       left: 0;
     }
     .right-middle {
-      position: absolute;
+      position: unset;
       right: 0;
     }
   }
   .new-head {
-    width: 100%;
     font-family: "Coral Blush";
     font-style: normal;
     font-weight: 400;
@@ -68,9 +67,11 @@ const MiddlePartWrapper = styled.div`
     }
   }
   @media (max-width: 550px) {
+    padding-top: 0;
     .left-middle {
       height: 340px;
       width: 80px;
+      display: none;
     }
     .right-middle {
       height: 340px;
@@ -82,6 +83,9 @@ const MiddlePartWrapper = styled.div`
     .luxuxry-life {
       width: 230px;
     }
+    .line {
+      margin-top: 0;
+    }
   }
   @media (max-width: 450px) {
     .left-middle {
@@ -90,10 +94,11 @@ const MiddlePartWrapper = styled.div`
     }
     .right-middle {
       height: 300px;
-      width: 70px;
+      width: 150px;
     }
     .new-head {
       font-size: 28px;
+      margin-left: 30px;
     }
     .luxuxry-life {
       width: 210px;
@@ -195,7 +200,7 @@ const MiddlePart = ({
         <motion.img
           loading="lazy"
           src={RightMiddle}
-          alt="left-middle"
+          alt="right-middle"
           height={500}
           className="right-middle"
           whileInView={() => {

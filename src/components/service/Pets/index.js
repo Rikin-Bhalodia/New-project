@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import BannerImage from "../../../assets/images/service/pets/banner.svg";
+import mobileBannerImage from "../../../assets/images/service/pets/mobile-banner.svg";
 import MenuIcon from "../../../assets/images/studio/menu.svg";
 import LeftMiddle from "../../../assets/images/service/pets/left-middle.svg";
 import RightMiddle from "../../../assets/images/service/pets/right-middle.svg";
@@ -9,6 +10,7 @@ import { ExploreMoreIcons, PetsIcons } from "../../../utils";
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper";
+import { useMediaQuery } from "react-responsive";
 const MiddlePart = React.lazy(() => import("../MiddlePart"));
 const WannaShop = React.lazy(() =>
   import("../../../commonComponents/WannaShop")
@@ -31,13 +33,30 @@ const PetsWrapper = styled.div`
     font-weight: 400;
     font-size: 110px;
     display: flex;
-    object-fit: cover;
+    background-size: cover;
     color: white;
     height: 500px;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
       url(${BannerImage});
+  }
+  .mb-heading-part {
+    font-family: "Coral Blush";
+    font-style: normal;
+    width: 100%;
+    font-weight: 400;
+    font-size: 70px;
+    display: flex;
+    object-fit: cover;
+    color: white;
+    height: 340px;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url(${mobileBannerImage});
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   .icons {
     display: flex;
@@ -161,8 +180,11 @@ const PetsWrapper = styled.div`
       font-size: 70px;
     }
     .icons {
-      margin-top: 40px;
-      column-gap: 8px;
+      margin-top: 30px;
+      column-gap: 20px;
+      padding: 0 20px;
+      flex-wrap: wrap;
+      row-gap: 10px;
     }
     .pets-icon {
       height: 22px;
@@ -175,11 +197,18 @@ const PetsWrapper = styled.div`
       font-size: 40px;
       margin-top: 20px;
     }
+    .line {
+      margin-top: 30px;
+    }
+    .swiper {
+      margin: 0 !important;
+    }
   }
 `;
 const Pets = () => {
   const [menuOpenModal, setMenuOpenModal] = useState(false);
   const [isInView, setIsInView] = useState(false);
+  const isResponsive = useMediaQuery({ query: "(max-width: 600px)" });
 
   return (
     <PetsWrapper>
@@ -188,7 +217,7 @@ const Pets = () => {
         animate={{ y: 0 }}
         transition={{ duration: 1 }}
       >
-        <div className="heading-part">
+        <div className={`${isResponsive ? "mb-heading-part" : "heading-part"}`}>
           <AnimatedTextWord text="PETS" />
         </div>
         <div
@@ -260,7 +289,7 @@ const Pets = () => {
               spaceBetween: 130,
             },
           }}
-          className="mySwiper"
+          className="S"
           style={{ height: "300px", margin: "50px 0 0 0 " }}
           autoplay={{
             delay: 1500,

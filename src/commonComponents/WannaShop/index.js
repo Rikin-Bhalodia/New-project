@@ -128,6 +128,7 @@ const WannaShopWrapper = styled.div`
   .filter-part {
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     padding: 0 20px;
     max-width: 1100px;
@@ -306,7 +307,7 @@ const WannaShopWrapper = styled.div`
       right: 10px;
     }
     .filter-section {
-      font-size: 27px;
+      font-size: 20px !important;
     }
   }
   @media screen and (max-width: 400px) {

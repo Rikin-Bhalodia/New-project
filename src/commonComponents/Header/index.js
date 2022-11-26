@@ -119,6 +119,11 @@ const Headerwrapper = styled.div`
       padding: 0 20px;
     }
   }
+  @media (max-width: 500px) {
+    .logoImage {
+      margin: 0 auto;
+    }
+  }
 `;
 
 const Header = () => {

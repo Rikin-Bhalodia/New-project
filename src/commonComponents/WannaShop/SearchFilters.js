@@ -96,7 +96,7 @@ const SearchFiltersWrapper = styled.div`
   }
   @media screen and (max-width: 500px) {
     .search-input-brand {
-      font-size: 28px;
+      font-size: 20px;
     }
   }
 `;

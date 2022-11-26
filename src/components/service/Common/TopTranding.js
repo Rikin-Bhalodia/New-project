@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 const TopTrandingWrapper = styled.div`
   width: 100%;
-  height: 700px;
+  height: fit-content;
   margin-top: 50px;
   display: flex;
   flex-direction: column;
@@ -20,14 +20,22 @@ const TopTrandingWrapper = styled.div`
     text-align: center;
     text-transform: uppercase;
   }
+  .btn {
+    background: #a75b41;
+    height: 40px;
+    width: 150px;
+    font-family: "Mulish";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: white;
+  }
   @media (max-width: 1000px) {
     height: 600px;
+    padding-top: 15px;
     .top {
       font-size: 45px;
     }
-  }
-  @media (max-width: 600px) {
-    height: 550px;
   }
   @media (max-width: 500px) {
     .top {

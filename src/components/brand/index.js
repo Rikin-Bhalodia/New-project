@@ -10,6 +10,7 @@ import Topproduct from "../../assets/images/brand/top-product.svg";
 import { motion } from "framer-motion";
 import AnimatedTextWord from "../../commonComponents/Animation/FlipAnimation";
 import MenuIcon from "../../assets/images/studio/menu.svg";
+import { useMediaQuery } from "react-responsive";
 const Menu = React.lazy(() => import("../../commonComponents/Menu"));
 const ProductPoP = React.lazy(() => import("../Product/Product"));
 const TopProduct = React.lazy(() => import("./TopProduct"));
@@ -24,7 +25,7 @@ const BrandWrapper = styled.div`
       position: relative;
     }
     .fendi-section {
-      padding: 50px 30px;
+      padding: 50px 30px 30px;
       background: #000000;
       .img2 {
         height: 100vh;
@@ -33,6 +34,7 @@ const BrandWrapper = styled.div`
       }
       .fendi-area {
         display: flex;
+        align-items: center;
         gap: 20px;
         .left-area {
           h2 {
@@ -108,10 +110,8 @@ const BrandWrapper = styled.div`
     .menu-icon {
       display: flex;
       margin: auto;
-    }
-    .fendi-section {
-      display: flex;
-      padding-right: 50px;
+      width: 83px;
+      height: 83px;
     }
     .brand-section .fendi-section .fendi-area .left-area {
       p {
@@ -132,6 +132,9 @@ const BrandWrapper = styled.div`
     }
   }
   @media (max-width: 850px) {
+    .brand-section .img1 {
+      height: 50vh;
+    }
     .brand-section .fendi-section .fendi-area {
       .left-area {
         p {
@@ -239,6 +242,12 @@ const BrandWrapper = styled.div`
       .left-area {
         p {
           font-size: 10px;
+          text-overflow: ellipsis;
+          -webkit-line-clamp: 5;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          line-height: 14px;
         }
         h2 {
           font-size: 40px;
@@ -257,6 +266,13 @@ const BrandWrapper = styled.div`
         }
       }
     }
+    .imgs {
+      margin-top: 15px;
+      .fimg {
+        width: 100%;
+        height: 200px;
+      }
+    }
     .most-loved-product {
       width: 300px;
     }
@@ -272,9 +288,6 @@ const BrandWrapper = styled.div`
   @media (max-width: 380px) {
     .brand-section .fendi-section .fendi-area {
       .left-area {
-        p {
-          font-size: 9px;
-        }
         h2 {
           font-size: 30px;
         }
@@ -288,7 +301,7 @@ const BrandWrapper = styled.div`
       }
       .right-area {
         img {
-          height: 280px;
+          height: 230px;
         }
       }
     }
@@ -306,6 +319,7 @@ const BrandWrapper = styled.div`
 const Brand = () => {
   const [isInView, setIsInView] = useState(false);
   const [menuOpenModal, setMenuOpenModal] = useState(false);
+  const isResponsive = useMediaQuery({ query: "(max-width: 500px)" });
 
   return (
     <BrandWrapper>
@@ -369,85 +383,87 @@ const Brand = () => {
                 Excepteur sint occaecat cupidatat non proident, sunt in culpa
                 qui officia deserunt mollit anim id est laborum.
               </p>
-              <div className="imgs">
-                <div className="d-flex" style={{ overflow: "hidden" }}>
-                  <motion.img
-                    loading="lazy"
-                    src={FImg}
-                    alt=""
-                    className="fimg"
-                    whileHover={{
-                      scale: 1.1,
-                    }}
-                    transition={{
-                      duration: 0.4,
-                    }}
-                    initial={{ x: "-50vw" }}
-                    whileInView={() => {
-                      setIsInView(true);
-                    }}
-                    animate={
-                      isInView && {
-                        x: 0,
-                        transition: {
-                          duration: 2.6,
-                          ease: "easeInOut",
-                        },
+              {!isResponsive && (
+                <div className="imgs">
+                  <div className="d-flex" style={{ overflow: "hidden" }}>
+                    <motion.img
+                      loading="lazy"
+                      src={FImg}
+                      alt=""
+                      className="fimg"
+                      whileHover={{
+                        scale: 1.1,
+                      }}
+                      transition={{
+                        duration: 0.4,
+                      }}
+                      initial={{ x: "-50vw" }}
+                      whileInView={() => {
+                        setIsInView(true);
+                      }}
+                      animate={
+                        isInView && {
+                          x: 0,
+                          transition: {
+                            duration: 2.6,
+                            ease: "easeInOut",
+                          },
+                        }
                       }
-                    }
-                  />
-                  <motion.img
-                    loading="lazy"
-                    src={FImg}
-                    alt=""
-                    className="fimg"
-                    whileHover={{
-                      scale: 1.1,
-                    }}
-                    transition={{
-                      duration: 0.4,
-                    }}
-                    initial={{ x: "-50vw" }}
-                    whileInView={() => {
-                      setIsInView(true);
-                    }}
-                    animate={
-                      isInView && {
-                        x: 0,
-                        transition: {
-                          duration: 2.3,
-                          ease: "easeInOut",
-                        },
+                    />
+                    <motion.img
+                      loading="lazy"
+                      src={FImg}
+                      alt=""
+                      className="fimg"
+                      whileHover={{
+                        scale: 1.1,
+                      }}
+                      transition={{
+                        duration: 0.4,
+                      }}
+                      initial={{ x: "-50vw" }}
+                      whileInView={() => {
+                        setIsInView(true);
+                      }}
+                      animate={
+                        isInView && {
+                          x: 0,
+                          transition: {
+                            duration: 2.3,
+                            ease: "easeInOut",
+                          },
+                        }
                       }
-                    }
-                  />
-                  <motion.img
-                    loading="lazy"
-                    src={FImg}
-                    alt=""
-                    className="fimg"
-                    whileHover={{
-                      scale: 1.1,
-                    }}
-                    transition={{
-                      duration: 0.4,
-                    }}
-                    initial={{ x: "-50vw" }}
-                    whileInView={() => {
-                      setIsInView(true);
-                    }}
-                    animate={
-                      isInView && {
-                        x: 0,
-                        transition: {
-                          duration: 2,
-                          ease: "easeInOut",
-                        },
+                    />
+                    <motion.img
+                      loading="lazy"
+                      src={FImg}
+                      alt=""
+                      className="fimg"
+                      whileHover={{
+                        scale: 1.1,
+                      }}
+                      transition={{
+                        duration: 0.4,
+                      }}
+                      initial={{ x: "-50vw" }}
+                      whileInView={() => {
+                        setIsInView(true);
+                      }}
+                      animate={
+                        isInView && {
+                          x: 0,
+                          transition: {
+                            duration: 2,
+                            ease: "easeInOut",
+                          },
+                        }
                       }
-                    }
-                  />
+                    />
+                  </div>
                 </div>
-              </div>
+              )}
             </motion.div>
             <motion.div
               initial={{ x: "50vw" }}
@@ -467,6 +483,85 @@ const Brand = () => {
               <img loading="lazy" src={Fendi} alt="Fendi" />
             </motion.div>
           </div>
+          {isResponsive && (
+            <div className="d-flex imgs" style={{ overflow: "hidden" }}>
+              <motion.img
+                loading="lazy"
+                src={FImg}
+                alt=""
+                className="fimg"
+                whileHover={{
+                  scale: 1.1,
+                }}
+                transition={{
+                  duration: 0.4,
+                }}
+                initial={{ x: "-50vw" }}
+                whileInView={() => {
+                  setIsInView(true);
+                }}
+                animate={
+                  isInView && {
+                    x: 0,
+                    transition: {
+                      duration: 2.6,
+                      ease: "easeInOut",
+                    },
+                  }
+                }
+              />
+              <motion.img
+                loading="lazy"
+                src={FImg}
+                alt=""
+                className="fimg"
+                whileHover={{
+                  scale: 1.1,
+                }}
+                transition={{
+                  duration: 0.4,
+                }}
+                initial={{ x: "-50vw" }}
+                whileInView={() => {
+                  setIsInView(true);
+                }}
+                animate={
+                  isInView && {
+                    x: 0,
+                    transition: {
+                      duration: 2.3,
+                      ease: "easeInOut",
+                    },
+                  }
+                }
+              />
+              <motion.img
+                loading="lazy"
+                src={FImg}
+                alt=""
+                className="fimg"
+                whileHover={{
+                  scale: 1.1,
+                }}
+                transition={{
+                  duration: 0.4,
+                }}
+                initial={{ x: "-50vw" }}
+                whileInView={() => {
+                  setIsInView(true);
+                }}
+                animate={
+                  isInView && {
+                    x: 0,
+                    transition: {
+                      duration: 2,
+                      ease: "easeInOut",
+                    },
+                  }
+                }
+              />
+            </div>
+          )}
         </div>
       </motion.div>
       <div className="love-product text-center">

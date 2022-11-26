@@ -44,7 +44,7 @@ const ServiceTravelWrapper = styled.div`
     align-items: center;
     justify-content: center;
     width: 100%;
-    margin-top: 70px;
+    margin-top: 50px;
     flex-direction: column;
   }
   .image {
@@ -250,7 +250,11 @@ const ServiceTravelWrapper = styled.div`
       font-size: 11px;
     }
     .manage-radio-btn {
-      gap: 40px;
+      margin: 50px 0 0;
+      gap: 15px;
+    }
+    .swiper {
+      margin: 30px 0px 0px !important;
     }
   }
 `;

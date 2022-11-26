@@ -6,7 +6,7 @@ const ServiceYellowBar = React.lazy(() =>
 );
 
 const YellowBarContentWrapper = styled.div`
-  margin-top: 100px;
+  margin-top: 60px;
   .border-width {
     display: flex;
     justify-content: center;
@@ -45,7 +45,8 @@ const YellowBarContentWrapper = styled.div`
   }
   @media (max-width: 1000px) {
     .icons {
-      margin-top: 80px;
+      margin: 30px 0;
+      word-break: break-word;
     }
     .explore-mores {
       font-size: 60px;
@@ -53,8 +54,9 @@ const YellowBarContentWrapper = styled.div`
   }
   @media (max-width: 800px) {
     .icons {
-      margin-top: 70px;
       column-gap: 10px;
+      flex-wrap: wrap;
+      row-gap: 15px;
     }
     .pets-icon {
       height: 35px;
@@ -78,26 +80,26 @@ const YellowBarContentWrapper = styled.div`
       height: 30px;
       width: 30px;
     }
-    .icon-name {
-      font-size: 8px;
-    }
   }
   @media (max-width: 500px) {
+    margin-top: 40px;
     .pets-icon {
       height: 22px;
       width: 22px;
     }
+    .line {
+      margin-top: 0 !important;
+    }
     .icon-name {
-      font-size: 7px;
+      font-size: 9px;
     }
   }
   @media (max-width: 400px) {
-    .pets-icon {
-      height: 20px;
-      width: 20px;
-    }
-    .icon-name {
-      font-size: 6px;
+    .icons {
+      padding: 0 10px;
+      row-gap: 10px;
+      column-gap: 6px;
+      margin-top: 20px;
     }
   }
 `;

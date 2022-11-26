@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Banner1 from "../../assets/images/brand-product/banner1.svg";
-import Banner2 from "../../assets/images/brand-product/banner2.svg";
+import BackWhiteArrow from "../../assets/images/product/back-white-arrow.svg";
 import FooterImage from "../../assets/images/product/footer.svg";
 import Filters from "../../commonComponents/Filters";
 import { motion } from "framer-motion";
@@ -30,6 +30,8 @@ const BrandProductWrapper = styled.div`
   .banner-section {
     .banner {
       width: 100%;
+      height: 50vh;
+      object-fit: cover;
     }
     .img {
       background: #000000;
@@ -169,6 +171,7 @@ const BrandProductWrapper = styled.div`
     .banner-section .img .inside-data {
       .body {
         padding-top: 0px;
+        display: block;
         h3 {
           font-size: 50px;
         }
@@ -188,10 +191,17 @@ const BrandProductWrapper = styled.div`
     .banner-section .img .inside-data {
       .body {
         h3 {
-          font-size: 30px;
+          font-size: 50px;
+          line-height: 90px;
+          display: flex;
+          justify-content: center;
+          padding-top: 30px;
         }
         a {
-          font-size: 16px;
+          font-size: 12px;
+          padding-top: 5px;
+          font-style: italic;
+          left: 15px;
         }
       }
     }
@@ -228,10 +238,15 @@ const BrandProduct = () => {
       >
         <div className="banner-section">
           <img loading="lazy" src={Banner1} alt="" className="banner" />
+          <div className="testing"></div>
           <div className="img">
-            {/* <img loading="lazy" src={Banner2} alt="" className="banner" /> */}
             <div className="inside-data">
               <div className="body">
+                <img
+                  src={BackWhiteArrow}
+                  alt="back-white-arrow"
+                  className="pt-2"
+                />
                 <a href="">Go Back</a>
                 <h3>
                   <AnimatedTextWord text="FENDI" />
@@ -254,13 +269,13 @@ const BrandProduct = () => {
           <TopProduct />
           <TopProduct />
         </div>
-        <div>
+        <div className="d-flex justify-content-center">
           <img
             loading="lazy"
             src={FooterImage}
             alt="image"
             className="footer"
-            style={{ width: "98vw" }}
+            style={{ width: "145vw" }}
           />
         </div>
       </motion.div>
