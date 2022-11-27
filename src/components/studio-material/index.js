@@ -3,8 +3,8 @@ import styled from "styled-components";
 import Video from "../../assets/images/studio-material/video.svg";
 import Polygon from "../../assets/images/polygon-left.svg";
 import { useLocation } from "react-router-dom";
-import Menu from "../../commonComponents/Menu";
 import { motion } from "framer-motion";
+import { useMediaQuery } from "react-responsive";
 const SimillerVideo = React.lazy(() => import("./SimillerVideo"));
 const ProductImgSlider = React.lazy(() => import("./ProductSlider"));
 
@@ -46,12 +46,26 @@ const StudioProductMaterialWrapper = styled.div`
   @media (max-width: 1000px) {
     .studio-material-head {
       margin: 0 !important;
+      position: absolute;
+      padding-top: 60px;
+      z-index: 9;
+      color: #fff;
+      .leftside-area {
+        .goback-link {
+          a {
+            color: #fff;
+            font-size: 16px;
+          }
+        }
+        .product-head p {
+          font-size: 16px;
+        }
+      }
     }
     .studio-material-body {
       padding: 0;
       width: 100%;
-      position: absolute;
-      height: 400px !important;
+      position: relative;
       top: 0;
       img {
         width: 100vw;
@@ -125,9 +139,6 @@ export default function StudioProductMaterial() {
                   STUDIO / VERSACE BAG / LEATHER
                 </motion.p>
               </div>
-            </div>
-            <div className="rightside-area">
-              <Menu />
             </div>
           </div>
           <div className="studio-material-body">

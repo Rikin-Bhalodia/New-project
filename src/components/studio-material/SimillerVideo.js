@@ -15,6 +15,8 @@ import Menu from "../../commonComponents/Menu";
 
 const SimillerVideoWrapper = styled.div`
   padding: 100px 100px;
+  display: flex;
+  justify-content: space-between;
   position: relative;
   .polygon-right {
     position: absolute;
@@ -102,10 +104,18 @@ const SimillerVideoWrapper = styled.div`
   .menu-icon {
     display: none;
   }
+  @media (max-width: 1200px) {
+    padding: 60px 20px;
+    .simillier-video-area {
+      gap: 120px;
+    }
+  }
   @media (max-width: 1000px) {
     padding: 0;
-    margin-top: 230px;
     .simillier-video-area {
+      flex-direction: column;
+      position: relative;
+      gap: 0;
       .left-side-area {
         display: none;
       }
@@ -115,11 +125,14 @@ const SimillerVideoWrapper = styled.div`
         .head-box {
           .box {
             border-radius: 0;
+            padding: 30px 30px;
+
             h5 {
-              padding-top: 60px;
+              padding-top: 30px;
               font-size: 20px;
             }
             p {
+              text-align: justify;
               font-size: 18px;
             }
           }
@@ -136,7 +149,9 @@ const SimillerVideoWrapper = styled.div`
     }
   }
   @media (max-width: 600px) {
-    margin-top: 100%;
+    .simillier-video-area {
+      top: -10px;
+    }
   }
 `;
 const video = [
