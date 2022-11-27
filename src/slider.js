@@ -319,7 +319,7 @@ export function TopTrandingSlider() {
         },
       }}
       className="mySwiper"
-      style={{ margin: "40px 0 0 0" }}
+      // style={{ margin: "40px 0 0 0" }}
       autoplay={{
         delay: 1500,
         disableOnInteraction: false,

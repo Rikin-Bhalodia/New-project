@@ -28,7 +28,7 @@ const TopTrandingCardWrapper = styled.div`
     height: fit-content;
     padding: 15px 15px;
     border: 1px solid #665e2f;
-    box-shadow: 12px 12px 55px rgba(0, 0, 0, 0.25);
+    /* box-shadow: 12px 12px 55px rgba(0, 0, 0, 0.25); */
     border-radius: 0 0 40px 40px;
   }
   .goa-name {

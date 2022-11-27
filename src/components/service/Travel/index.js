@@ -193,6 +193,7 @@ const ServiceTravelWrapper = styled.div`
       font-size: 14px;
     }
     .manage-radio-btn {
+      margin: 0px 0 0;
       gap: 150px;
     }
   }
@@ -250,7 +251,6 @@ const ServiceTravelWrapper = styled.div`
       font-size: 11px;
     }
     .manage-radio-btn {
-      margin: 50px 0 0;
       gap: 15px;
     }
     .swiper {

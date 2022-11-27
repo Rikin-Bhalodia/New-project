@@ -16,7 +16,7 @@ const CommonHeaderPartWrapper = styled.div`
     width: 100vw;
     object-fit: cover;
     color: white;
-    height: 90vh;
+    height: 80vh;
     position: relative;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.63), rgba(0, 0, 0, 0.63)),
       url(${BannerImage});
@@ -27,7 +27,7 @@ const CommonHeaderPartWrapper = styled.div`
   .menu-icon {
     position: absolute;
     right: 80px;
-    top: 100px;
+    top: 100px !important;
   }
   .middle-name {
     display: flex;
@@ -48,6 +48,9 @@ const CommonHeaderPartWrapper = styled.div`
   }
 
   @media (max-width: 1000px) {
+    .heading-part {
+      height: 75vh;
+    }
     .middle-name {
       margin-top: 70px;
     }
@@ -110,7 +113,7 @@ const CommonHeaderPartWrapper = styled.div`
 
 const CommonHeaderPart = () => {
   const [menuOpenModal, setMenuOpenModal] = useState(false);
-  const isResponsive = useMediaQuery({ query: "(max-width: 800px)" });
+  const isResponsive = useMediaQuery({ query: "(max-width: 820px)" });
 
   return (
     <CommonHeaderPartWrapper>
