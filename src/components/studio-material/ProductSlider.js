@@ -76,7 +76,7 @@ const ProductImgSliderWrapper = styled.div`
     }
   }
   @media (max-width: 670px) {
-    padding: 0 20px;
+    padding: 0 20px 50px;
     .watch-more {
       width: 250px;
     }
