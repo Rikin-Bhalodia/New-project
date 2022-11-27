@@ -7,6 +7,7 @@ import Search from "../../assets/images/service/gift-for-him/seach-icon.svg";
 const FiltersWrapper = styled.div`
   .drop-down {
     display: flex;
+    position: relative;
     margin-top: 20px;
   }
   .right {
@@ -174,7 +175,7 @@ const FiltersWrapper = styled.div`
   }
   @media screen and (max-width: 550px) {
     .drop-down {
-      width: 110px;
+      width: 104px;
     }
     .sort-by {
       font-size: 12px;
@@ -182,6 +183,16 @@ const FiltersWrapper = styled.div`
     .mood {
       height: 40px;
       font-size: 10px;
+    }
+    .option-box-right {
+      right: 0;
+      width: 300px;
+      height: 260px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .option-box-right {
+      width: 280px;
     }
   }
 `;

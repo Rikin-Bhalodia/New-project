@@ -35,15 +35,16 @@ const ProductPoPWrapper = styled.div`
     width: 100%;
   }
   .product-image1 {
-    width: 50%;
+    width: 70%;
     margin-top: 30px;
   }
   .product-image {
-    width: 33.3%;
+    width: 70%;
     margin-top: 30px;
   }
   .footer {
     margin-top: 50px;
+    scale: 1.5;
   }
   .menu-icon {
     position: relative;
@@ -54,6 +55,11 @@ const ProductPoPWrapper = styled.div`
   @media screen and (max-width: 1000px) {
     .heading {
       font-size: 60;
+    }
+  }
+  @media (max-width: 800px) {
+    .responsive-view {
+      width: 60%;
     }
   }
 `;
@@ -104,8 +110,7 @@ const ProductPoP = () => {
       id: 3,
       height: 310,
       width: isResponsive ? "100%" : "25%",
-
-      class: "product-image",
+      class: "product-image  responsive-view",
       price: "₹1900",
     },
     {
@@ -128,7 +133,7 @@ const ProductPoP = () => {
       img: Product5,
       id: 6,
       height: 310,
-      class: "product-image",
+      class: "product-image  responsive-view",
       price: "₹1900",
       width: isResponsive ? "100%" : "25%",
     },
@@ -153,14 +158,13 @@ const ProductPoP = () => {
       id: 9,
       height: 310,
       width: isResponsive ? "100%" : "33.33%",
-      class: "product-image",
+      class: "product-image responsive-view",
       price: "₹1900",
     },
     {
       img: Product3,
       id: 10,
       height: 310,
-
       class: "product-image",
       price: "₹1900",
       width: isResponsive ? "50%" : "33.33%",
@@ -204,19 +208,16 @@ const ProductPoP = () => {
                     ? productId === ele.id
                       ? {
                           opacity: 1,
-                          width: "70%",
                           maxWidth: "350px",
                           height: "100%",
                         }
                       : {
                           opacity: 0.5,
-                          width: "70%",
                           maxWidth: "350px",
                           height: "100%",
                         }
                     : {
                         opacity: 1,
-                        width: "70%",
                         maxWidth: "350px",
                         height: "100%",
                       }
