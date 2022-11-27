@@ -46,12 +46,7 @@ const CommonHeaderPartWrapper = styled.div`
     width: 100%;
     justify-content: center;
   }
-  .res {
-    position: absolute;
-    bottom: 0px;
-    right: unset;
-    top: unset;
-  }
+
   @media (max-width: 1000px) {
     .middle-name {
       margin-top: 70px;
@@ -66,21 +61,38 @@ const CommonHeaderPartWrapper = styled.div`
     }
   }
   @media (max-width: 800px) {
+    .heading-part {
+      height: 60vh;
+    }
     .middle-name {
       font-size: 65px;
+      margin: 0;
+      padding: 30px 0 0 0;
+      height: 100%;
     }
     .getway {
       width: 450px;
+    }
+    .menu-icon {
+      position: relative;
+      right: unset;
+      top: -40px !important;
     }
   }
   @media (max-width: 600px) {
     .getway {
       width: 400px;
     }
+    .name {
+      font-size: 50px;
+    }
   }
   @media (max-width: 450px) {
     .middle-name {
       font-size: 60px;
+    }
+    .name {
+      font-size: 45px;
     }
     .getway {
       width: 350px;
@@ -108,9 +120,11 @@ const CommonHeaderPart = () => {
         transition={{ duration: 1 }}
         className="heading-part"
       >
-        <div className="goback-part">
-          <GoBackpart />
-        </div>
+        {!isResponsive && (
+          <div className="goback-part">
+            <GoBackpart />
+          </div>
+        )}
 
         <div className="middle-name">
           <div className="name">
@@ -121,7 +135,7 @@ const CommonHeaderPart = () => {
       </motion.div>
       <div className="menu-width">
         <div
-          className={isResponsive ? "menu-icon res" : "menu-icon"}
+          className={"menu-icon"}
           onClick={() => setMenuOpenModal(!menuOpenModal)}
         >
           <Menu
