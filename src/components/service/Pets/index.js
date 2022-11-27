@@ -40,6 +40,8 @@ const PetsWrapper = styled.div`
     align-items: center;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
       url(${BannerImage});
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   .mb-heading-part {
     font-family: "Coral Blush";
