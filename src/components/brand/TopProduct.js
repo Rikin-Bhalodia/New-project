@@ -151,6 +151,8 @@ const TopProductWrapper = styled.div`
     }
   }
   @media (max-width: 450px) {
+    margin: 10px 15px;
+
     .product-image {
       height: 90px;
       width: 100px;

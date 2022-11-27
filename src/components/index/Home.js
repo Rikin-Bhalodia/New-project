@@ -24,7 +24,6 @@ const Season = React.lazy(() => import("./Season"));
 const Follow = React.lazy(() => import("./Follow"));
 
 const HomeWrapper = styled.div`
-  scroll-behavior: smooth;
   .connect-image {
     width: 500px;
     position: relative;
@@ -148,6 +147,50 @@ const HomeWrapper = styled.div`
     position: relative;
     right: 90px;
   }
+  .bannerSection {
+    padding-top: 40px;
+  }
+
+  @media (max-width: 1200px) {
+    .leftSideImg img {
+      width: 290px !important;
+      height: 330px !important;
+    }
+    .rightSideImg img {
+      width: 290px !important;
+      height: 330px !important;
+    }
+  }
+
+  @media (max-width: 1100px) {
+    .leftSideImg img {
+      width: 270px !important;
+      height: 310px !important;
+    }
+    .rightSideImg img {
+      width: 270px !important;
+      height: 310px !important;
+    }
+    .menuLink {
+      font-size: 38px !important;
+    }
+  }
+
+  @media (max-width: 1000px) {
+    .leftSideImg img {
+      width: 250px !important;
+      height: 280px !important;
+    }
+    .rightSideImg img {
+      width: 250px !important;
+      height: 280px !important;
+    }
+    .menuLink {
+      font-size: 34px !important;
+    }
+  }
+  @media (max-width: 850px) {
+  }
 
   @media (max-width: 767px) {
     .studioImg.wow.fadeInLeft {
@@ -209,7 +252,7 @@ export default function Home() {
                   <div className="col-12 px-0">
                     <div className="homePageBanerImageSec position-relative">
                       {/* <!-- <img src="assets/img/home-page.gif" className="img-fluid bannerImage" alt="home Page Banner"> --> */}
-                      <div className="bannerSection paddingSec minBannerHeight d-flex justify-content-center align-items-center">
+                      <div className="bannerSection paddingSec minBannerHeight d-flex  align-items-center">
                         <div className="bannerMenus">
                           <ul>
                             <li className="menuItem">

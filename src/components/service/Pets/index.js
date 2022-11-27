@@ -200,9 +200,9 @@ const PetsWrapper = styled.div`
     .line {
       margin-top: 30px;
     }
-    .swiper {
+    /* .swiper {
       margin: 0 !important;
-    }
+    } */
   }
 `;
 const Pets = () => {
@@ -213,9 +213,9 @@ const Pets = () => {
   return (
     <PetsWrapper>
       <motion.div
-        initial={{ y: "200vh" }}
-        animate={{ y: 0 }}
-        transition={{ duration: 1 }}
+      // initial={{ y: "200vh" }}
+      // animate={{ y: 0 }}
+      // transition={{ duration: 1 }}
       >
         <div className={`${isResponsive ? "mb-heading-part" : "heading-part"}`}>
           <AnimatedTextWord text="PETS" />

@@ -179,10 +179,10 @@ footer {
 }
 
 .minHeightSec {
-  min-height: calc(100vh - 62px);
+  min-height: calc(90vh - 62px);
 }
 .minBannerHeight {
-  min-height: 100vh;
+  min-height: 90vh;
 }
 .backgroundSec {
   background-repeat: no-repeat !important;
@@ -592,8 +592,6 @@ footer {
 
 /* top menu header */
 
-
-
 /*home page banner section*/
 .bannerSection {
   background: var(--light_yellow);
@@ -645,8 +643,8 @@ footer {
 }
 
 .bannerSection .bannerMenus .menuItem .leftSideImg img {
-  width: 325px;
-  height: 380px;
+  width: 310px;
+  height: 350px;
   object-fit: cover;
 }
 
@@ -662,8 +660,8 @@ footer {
 }
 
 .bannerSection .bannerMenus .menuItem .rightSideImg img {
-  width: 325px;
-  height: 380px;
+  width: 310px;
+  height: 350px;
   object-fit: cover;
 }
 
@@ -672,7 +670,7 @@ footer {
 }
 
 .bannerSection .bannerMenus .menuItem .menuLink {
-  font-size: 40px;
+  font-size: 42px;
   color: white;
   text-transform: uppercase;
   letter-spacing: 3px;
@@ -2869,8 +2867,6 @@ h2.f-heading-m {
   position: relative;
 }
 
-
-
 .c-about-con .roundBtn .btnClassDesign {
   background-color: #a75b41;
 }
@@ -3065,7 +3061,7 @@ c-service-w {
   align-items: center;
   gap: 30px;
 }
-.live-tv-in img{
+.live-tv-in img {
   width: 200px;
 }
 .live-tv-box img {
@@ -3252,8 +3248,6 @@ c-service-w {
 .c-footer-info li a {
   color: #a75b41;
 }
-
-
 
 .c-footer-info-other p {
   color: #a75b41;
@@ -3981,7 +3975,6 @@ c-service-w {
   font-size: 1.2rem;
 }
 
-
 .viewmore {
   display: flex;
   width: 100%;
@@ -4515,8 +4508,6 @@ c-service-w {
   margin: 0px;
 }
 
-
-
 .connect-image {
   width: 500px;
   position: relative;
@@ -4658,22 +4649,20 @@ c-service-w {
   font-size: 30px;
   line-height: 34.5px;
 }
-.btn--container{
+.btn--container {
   padding-top: 27px;
   gap: 30px;
 }
-.btn--container div{
+.btn--container div {
   cursor: pointer;
   border: 1px solid #000000;
   border-radius: 0px 20px 20px 0px;
   padding: 14px 37px;
 }
-.ant-modal-close{
+.ant-modal-close {
   top: 54px;
   right: -211px;
 }
-
-
 
 .partitions .otp-input {
   border-top: none;
@@ -4681,11 +4670,11 @@ c-service-w {
   border-left: none;
   border-bottom: none;
   outline: none;
-  background: #C4C4C4;
+  background: #c4c4c4;
   width: 2.8em !important;
-  height: 3.0em;
+  height: 3em;
 }
-.partitions{
-   margin-left: 55px;
-     width: 2.5em;
- }
+.partitions {
+  margin-left: 55px;
+  width: 2.5em;
+}

@@ -245,9 +245,11 @@ const BrandProduct = () => {
                 <img
                   src={BackWhiteArrow}
                   alt="back-white-arrow"
-                  className="pt-2"
+                  className="pt-3 ml-2"
                 />
-                <a href="">Go Back</a>
+                <a href="" className="pt-2 ml-2">
+                  Go Back
+                </a>
                 <h3>
                   <AnimatedTextWord text="FENDI" />
                 </h3>

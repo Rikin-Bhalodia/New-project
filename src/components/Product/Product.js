@@ -7,6 +7,7 @@ import Product5 from "../../assets/images/product/product5.svg";
 import FooterImage from "../../assets/images/product/footer.svg";
 import styled from "styled-components";
 import Filters from "../../commonComponents/Filters";
+import { useMediaQuery } from "react-responsive";
 
 const ProductPoPWrapper = styled.div`
   .goback {
@@ -57,101 +58,6 @@ const ProductPoPWrapper = styled.div`
   }
 `;
 
-const images = [
-  {
-    img: Product1,
-    id: 1,
-    height: 310,
-    width: "25%",
-    class: "product-image",
-    price: "₹1900",
-  },
-  {
-    img: Product2,
-    id: 2,
-    height: 450,
-    width: "50%",
-    class: "product-image",
-    price: "₹1900",
-  },
-  {
-    img: Product3,
-    id: 3,
-    height: 310,
-    width: "25%",
-    class: "product-image",
-    price: "₹1900",
-  },
-  {
-    img: Product3,
-    id: 4,
-    height: 310,
-    class: "product-image",
-    price: "₹1900",
-    width: "25%",
-  },
-  {
-    img: Product4,
-    id: 5,
-    height: 450,
-    width: "50%",
-    class: "product-image",
-    price: "₹1900",
-  },
-  {
-    img: Product5,
-    id: 6,
-    height: 310,
-
-    class: "product-image",
-    price: "₹1900",
-
-    width: "25%",
-  },
-  {
-    img: Product2,
-    id: 7,
-    height: 450,
-    width: "50%",
-    class: "product-image1",
-    price: "₹1900",
-  },
-  {
-    img: Product4,
-    id: 8,
-    height: 450,
-    width: "50%",
-    class: "product-image1",
-    price: "₹1900",
-  },
-  {
-    img: Product1,
-    id: 9,
-    height: 310,
-    width: "33.33%",
-    class: "product-image",
-    price: "₹1900",
-  },
-  {
-    img: Product3,
-    id: 10,
-    height: 310,
-
-    class: "product-image",
-    price: "₹1900",
-
-    width: "33.33%",
-  },
-  {
-    img: Product5,
-    id: 11,
-    height: 310,
-    width: "33.33%",
-    class: "product-image",
-    price: "₹1900",
-  },
-];
-
 const FiltersName = [
   { name: "MOOD", option: ["Dry Food", "Wet Food"] },
   { name: "FRAGRANCE", option: ["Veg", "Non-veg"] },
@@ -174,6 +80,100 @@ const FiltersName = [
 
 const ProductPoP = () => {
   const [productId, setProductId] = useState("");
+  const isResponsive = useMediaQuery({ query: "(max-width: 800px)" });
+
+  const images = [
+    {
+      img: Product1,
+      id: 1,
+      height: 310,
+      width: isResponsive ? "50%" : "25%",
+      class: "product-image",
+      price: "₹1900",
+    },
+    {
+      img: Product2,
+      id: 2,
+      height: 450,
+      width: "50%",
+      class: "product-image",
+      price: "₹1900",
+    },
+    {
+      img: Product3,
+      id: 3,
+      height: 310,
+      width: isResponsive ? "100%" : "25%",
+
+      class: "product-image",
+      price: "₹1900",
+    },
+    {
+      img: Product3,
+      id: 4,
+      height: 310,
+      class: "product-image",
+      price: "₹1900",
+      width: isResponsive ? "50%" : "25%",
+    },
+    {
+      img: Product4,
+      id: 5,
+      height: 450,
+      width: "50%",
+      class: "product-image",
+      price: "₹1900",
+    },
+    {
+      img: Product5,
+      id: 6,
+      height: 310,
+      class: "product-image",
+      price: "₹1900",
+      width: isResponsive ? "100%" : "25%",
+    },
+    {
+      img: Product2,
+      id: 7,
+      height: 450,
+      width: "50%",
+      class: "product-image1",
+      price: "₹1900",
+    },
+    {
+      img: Product4,
+      id: 8,
+      height: 450,
+      width: "50%",
+      class: "product-image1",
+      price: "₹1900",
+    },
+    {
+      img: Product1,
+      id: 9,
+      height: 310,
+      width: isResponsive ? "100%" : "33.33%",
+      class: "product-image",
+      price: "₹1900",
+    },
+    {
+      img: Product3,
+      id: 10,
+      height: 310,
+
+      class: "product-image",
+      price: "₹1900",
+      width: isResponsive ? "50%" : "33.33%",
+    },
+    {
+      img: Product5,
+      id: 11,
+      height: 310,
+      width: isResponsive ? "50%" : "33.33%",
+      class: "product-image",
+      price: "₹1900",
+    },
+  ];
 
   const handleClick = (id) => {
     setProductId(id);

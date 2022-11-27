@@ -49,7 +49,6 @@ const TopTrandingWrapper = styled.div`
   }
 `;
 const TopTranding = ({ name, isRequiredBackground }) => {
-  const [isInView, setIsInView] = useState(false);
   return (
     <TopTrandingWrapper
       style={
