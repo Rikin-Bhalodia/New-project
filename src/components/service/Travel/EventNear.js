@@ -54,6 +54,14 @@ const EventNearWrapper = styled.div`
     display: flex;
     flex-direction: column;
     text-align: center;
+  } 
+  @media screen and (max-width: 450px) {
+    .inspire-head{
+      padding: 20px;
+      font-size: 28px;
+      justify-content: center;
+      display: flex;
+    }
   }
 `;
 
