@@ -137,7 +137,9 @@ const BrandWrapper = styled.div`
     .brand-section .img1 {
       height: 50vh;
     }
-
+    .menu-icon {
+      top: -40px !important;
+    }
     .brand-section .fendi-section .fendi-area {
       .left-area {
         p {
