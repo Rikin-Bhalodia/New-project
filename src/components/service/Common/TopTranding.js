@@ -29,6 +29,7 @@ const TopTrandingWrapper = styled.div`
     font-weight: 400;
     font-size: 16px;
     color: white;
+    margin-bottom: 20px;
   }
   @media (max-width: 1000px) {
     height: 600px;
@@ -39,7 +40,12 @@ const TopTrandingWrapper = styled.div`
   }
   @media (max-width: 500px) {
     .top {
-      font-size: 40px;
+      font-size: 35px;
+      margin-bottom: 15px;
+    }
+    .btn {
+      margin: 0;
+      margin-top: 0px !important;
     }
   }
   @media (max-width: 375px) {
@@ -66,7 +72,7 @@ const TopTranding = ({ name, isRequiredBackground }) => {
         <AnimatedTextWord text={name} />
       </div>
       <TopTrandingSlider />
-      <button className="btn" style={{ marginBottom: "20px" }}>
+      <button className="btn">
         KNOW MORE
       </button>
     </TopTrandingWrapper>

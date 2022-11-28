@@ -231,7 +231,8 @@ const ServiceTravelWrapper = styled.div`
       font-size: 12px;
     }
     .manage-radio-btn {
-      gap: 70px;
+      gap: 25px;
+      margin-top: 20px;
     }
   }
   @media (max-width: 400px) {

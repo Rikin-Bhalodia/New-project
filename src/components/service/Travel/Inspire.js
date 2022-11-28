@@ -80,6 +80,15 @@ const InspireWrapper = styled.div`
     height: 150%;
     top: 0;
   }
+  @media (max-width: 450px) {
+    .insipre {
+      font-size: 36px;
+    }
+    .articles {
+      margin: 35px 0;
+      font-size: 14px;
+    }
+  }
 `;
 
 const Inspire = () => {

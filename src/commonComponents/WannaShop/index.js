@@ -309,6 +309,9 @@ const WannaShopWrapper = styled.div`
     .filter-section {
       font-size: 20px !important;
     }
+    .middle-part {
+      margin-top: 20px;
+    }
   }
   @media screen and (max-width: 400px) {
     .heading {
