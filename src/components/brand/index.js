@@ -25,7 +25,7 @@ const BrandWrapper = styled.div`
       position: relative;
     }
 
-    s .fendi-section {
+    .fendi-section {
       padding: 50px 30px 30px;
       background: #000000;
       .img2 {
@@ -135,11 +135,9 @@ const BrandWrapper = styled.div`
   }
   @media (max-width: 850px) {
     .brand-section .img1 {
-      height: 100vh;
+      height: 50vh;
     }
-    .menu-icon {
-      top: -40px !important;
-    }
+
     .brand-section .fendi-section .fendi-area {
       .left-area {
         p {
