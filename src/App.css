@@ -3960,7 +3960,9 @@ c-service-w {
   .menu-icon {
     top:40px !important;
   }
-
+  .studio-s1 .sc {
+    margin-top: 5rem;
+  }
 }
 .sc h1 {
   margin-top: 4rem;
@@ -4577,7 +4579,7 @@ c-service-w {
   border: 7px solid white;
   margin: auto;
   position: relative;
-  top: -40px !important;
+  top: 0px !important;
 }
 @media (max-width:700px){
   .menu-icon {

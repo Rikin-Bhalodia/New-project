@@ -61,12 +61,12 @@ export default function Follow() {
             whileInView={() => {
               setIsInView(true);
             }}
-            initial={{ y: "35vh" }}
+            initial={{ y: "20vh" }}
             animate={
               isInView && {
                 y: 0,
                 transition: {
-                  duration: 1.3,
+                  duration: 1,
                 },
               }
             }
@@ -135,7 +135,7 @@ export default function Follow() {
             whileInView={() => {
               setIsInView(true);
             }}
-            initial={{ y: "60vh" }}
+            initial={{ y: "30vh" }}
             animate={
               isInView && {
                 y: 0,

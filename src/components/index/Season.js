@@ -11,6 +11,7 @@ import { motion } from "framer-motion";
 const AnimatedTextWord = React.lazy(() =>
   import("../../commonComponents/Animation/FlipAnimation")
 );
+
 const SeasonWrapper = styled.div`
   .mx-100 {
     margin: 0 100px;
@@ -22,10 +23,11 @@ const SeasonWrapper = styled.div`
 
 export default function Season() {
   const [isInView, setIsInView] = useState(false);
+
   return (
     <SeasonWrapper>
       {" "}
-      <section className="c-secian-w minHeightSec minBannerHeight d-flex align-items-center delayed-section">
+      <section className="c-secian-w minHeightSec minBannerHeight d-flex align-items-center">
         <div className="container-fluid">
           <div className="c-secian-heading">
             <div className="roundBtn rightDestinationbtn">
@@ -52,12 +54,12 @@ export default function Season() {
               whileInView={() => {
                 setIsInView(true);
               }}
-              initial={{ y: "35vh" }}
+              initial={{ y: "20vh" }}
               animate={
                 isInView && {
                   y: 0,
                   transition: {
-                    duration: 1.3,
+                    duration: 1,
                   },
                 }
               }
@@ -126,7 +128,7 @@ export default function Season() {
               whileInView={() => {
                 setIsInView(true);
               }}
-              initial={{ y: "70vh" }}
+              initial={{ y: "30vh" }}
               animate={
                 isInView && {
                   y: 0,

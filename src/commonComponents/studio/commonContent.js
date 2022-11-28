@@ -179,15 +179,15 @@ const CommonContentWrapper = styled.div`
     height: 100%;
     gap: 20px;
     .img svg {
-      width: 200px;
+      width: 150px;
     }
     h3 {
-      font-size: 40px;
+      font-size: 33px;
       color: white;
     }
     a {
       color: white;
-      font-size: 20px;
+      font-size: 16px;
     }
   }
 `;

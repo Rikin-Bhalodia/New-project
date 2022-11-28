@@ -24,7 +24,8 @@ const BrandWrapper = styled.div`
       object-fit: cover;
       position: relative;
     }
-    .fendi-section {
+
+    s .fendi-section {
       padding: 50px 30px 30px;
       background: #000000;
       .img2 {
@@ -101,6 +102,7 @@ const BrandWrapper = styled.div`
   .menu-icon {
     display: none;
   }
+
   @media (max-width: 1000px) {
     .menu-width {
       width: 100%;
@@ -133,7 +135,10 @@ const BrandWrapper = styled.div`
   }
   @media (max-width: 850px) {
     .brand-section .img1 {
-      height: 50vh;
+      height: 100vh;
+    }
+    .menu-icon {
+      top: -40px !important;
     }
     .brand-section .fendi-section .fendi-area {
       .left-area {
@@ -323,11 +328,10 @@ const Brand = () => {
 
   return (
     <BrandWrapper>
-      <Header />
       <motion.div
-        initial={{ y: "200vh" }}
-        animate={{ y: 0 }}
-        transition={{ duration: 1 }}
+        // initial={{ y: "200vh" }}
+        // animate={{ y: 0 }}
+        // transition={{ duration: 1 }}
         className="brand-section"
       >
         <img loading="lazy" src={BrandBanner} alt="" className="img1" />
