@@ -54,13 +54,33 @@ const EventNearWrapper = styled.div`
     display: flex;
     flex-direction: column;
     text-align: center;
-  } 
+  }
   @media screen and (max-width: 450px) {
-    .inspire-head{
+    .inspire-head {
       padding: 20px;
       font-size: 28px;
       justify-content: center;
       display: flex;
+    }
+    .feelings, .event-near {
+      gap: 30px;
+    }
+    .feeling {
+      font-size: 18px;
+    }
+    .background {
+      width: 140px;
+      height: 140px;
+    }
+    .inspire-head {
+      font-size: 25px;
+    }
+    .single-event {
+      font-size: 20px;
+    }
+    .concert-img {
+      width: 150px;
+      height: 150px;
     }
   }
 `;
@@ -69,43 +89,6 @@ const EventNear = ({ isRequiredTopThings }) => {
   const [isInView, setIsInView] = useState(false);
   return (
     <EventNearWrapper>
-      <div className="inspire-head">
-        <AnimatedTextWord text="Events near the date" />
-      </div>
-      <motion.div
-        whileInView={() => {
-          setIsInView(true);
-        }}
-        initial={{ y: "40vh" }}
-        animate={
-          isInView && {
-            y: 0,
-            transition: {
-              duration: 0.5,
-            },
-          }
-        }
-        className="event-near"
-      >
-        {EventNearAndTopThings.map(({ img, name }) => {
-          return (
-            <div className="single-event">
-              <motion.img
-                whileHover={{
-                  scale: 1.1,
-                }}
-                transition={{
-                  duration: 0.4,
-                }}
-                src={img}
-                alt="image123"
-                height={200}
-              />
-              <div>{name}</div>
-            </div>
-          );
-        })}
-      </motion.div>
       {isRequiredTopThings && (
         <>
           <div className="inspire-head">
@@ -137,6 +120,44 @@ const EventNear = ({ isRequiredTopThings }) => {
           </motion.div>
         </>
       )}
+      <div className="inspire-head">
+        <AnimatedTextWord text="Events near the date" />
+      </div>
+      <motion.div
+        whileInView={() => {
+          setIsInView(true);
+        }}
+        initial={{ y: "40vh" }}
+        animate={
+          isInView && {
+            y: 0,
+            transition: {
+              duration: 0.5,
+            },
+          }
+        }
+        className="event-near"
+      >
+        {EventNearAndTopThings.map(({ img, name }) => {
+          return (
+            <div className="single-event">
+              <motion.img
+                whileHover={{
+                  scale: 1.1,
+                }}
+                transition={{
+                  duration: 0.4,
+                }}
+                src={img}
+                alt="image123"
+                className="concert-img"
+                height={200}
+              />
+              <div>{name}</div>
+            </div>
+          );
+        })}
+      </motion.div>
     </EventNearWrapper>
   );
 };

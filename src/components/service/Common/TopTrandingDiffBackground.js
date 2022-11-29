@@ -31,6 +31,13 @@ const TopTrandingDiffBackgroundWrapper = styled.div`
     left: 0;
     width: 100vw;
   }
+  @media screen and (max-width: 450px) {
+    height: 600px;
+    .top {
+      padding: 30px 20px;
+      font-size: 32px;
+    }
+  }
 `;
 
 const TopTrandingDiffBackground = ({ name }) => {
