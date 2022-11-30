@@ -9,42 +9,46 @@ const AnimatedTextWord = ({ text }) => {
     hidden: { opacity: 0 },
     visible: (i = 1) => ({
       opacity: 1,
+      transition: { staggerChildren: 0.3, delayChildren: 1 * i },
     }),
   };
 
   return (
     <motion.div
-      style={{
-        overflow: "hidden",
-        display: "flex",
-        // fontSize: "2rem",
-        // margin: "0px 30px",
-      }}
+      style={{ overflow: "hidden", display: "flex"}}
       variants={container}
       initial="hidden"
       animate="visible"
     >
       {letters.map((letter, index) => (
         <motion.span
+          key={index}
           whileInView={() => {
             setIsInView(true);
           }}
-          initial={{ opacity: 0, x: 20 }}
+          initial={{
+            opacity: 0,
+            rotateY: -100,
+            transition: {
+              type: "spring",
+              damping: 12,
+              stiffness: 100,
+            },
+          }}
           animate={
             isInView && {
               opacity: 1,
-              x: 0,
+              rotateY: 0,
               transition: {
                 type: "spring",
                 damping: 12,
                 stiffness: 100,
-                delay: 0.5,
-                duration: 1,
+                duration: 0.1 * index,
+                delay: 0.1 * index
               },
             }
           }
           style={text.style}
-          key={index}
         >
           {letter === " " ? "\u00A0" : letter}
         </motion.span>
@@ -54,21 +58,3 @@ const AnimatedTextWord = ({ text }) => {
 };
 
 export default AnimatedTextWord;
-// <motion.div
-//   style={{ overflow: "hidden", display: "flex", fontSize: "2rem" }}
-//   whileInView={() => {
-//     setIsInView(true);
-//   }}
-//   variants={container}
-//   initial="hidden"
-//   animate="visible"
-// >
-//   {words.map((word, index) => (
-//     <motion.span
-
-//       key={index}
-//     >
-//       {word}
-//     </motion.span>
-//   ))}
-// </motion.div>
