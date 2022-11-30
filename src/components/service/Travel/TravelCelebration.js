@@ -36,7 +36,7 @@ const TravelCelebrationWrapper = styled.div`
   }
   @media (max-width: 800px) {
     .manage-radio-btn {
-      margin: 0px 0 0;
+      margin: 20px 0 0;
       gap: 150px;
     }
   }

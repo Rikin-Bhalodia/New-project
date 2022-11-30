@@ -298,7 +298,7 @@ export function TopTrandingSlider() {
           spaceBetween: 10,
         },
         360: {
-          slidesPerView: 1.2,
+          slidesPerView: 1,
           spaceBetween: 20,
         },
         500: {

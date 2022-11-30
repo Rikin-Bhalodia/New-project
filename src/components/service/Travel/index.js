@@ -170,7 +170,7 @@ const ServiceTravelWrapper = styled.div`
       width: 200px;
       height: 200px;
     }
-    .btn {
+    .mb-btn {
       margin-top: 20px !important;
     }
   }
@@ -193,7 +193,7 @@ const ServiceTravelWrapper = styled.div`
       font-size: 14px;
     }
     .manage-radio-btn {
-      margin: 0px 0 0;
+      margin: 20px 0 0;
       gap: 150px;
     }
   }
@@ -253,9 +253,6 @@ const ServiceTravelWrapper = styled.div`
     }
     .manage-radio-btn {
       gap: 15px;
-    }
-    .swiper {
-      margin: 30px 0px 0px !important;
     }
   }
 `;
@@ -359,7 +356,7 @@ const ServiceTravel = () => {
           </div>
         )}
 
-        <button className="btn" style={{ marginTop: "70px" }}>
+        <button className="btn mb-btn" style={{ marginTop: "70px" }}>
           ENQUIRE NOW
         </button>
         <TopTranding name="UNIQUE STAYS" isRequiredBackground={true} />

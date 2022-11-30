@@ -4,6 +4,10 @@ import { Cards } from "../../../utils";
 import InspireImage from "../../../assets/images/service/travel/inspire.svg";
 import AnimatedTextWord from "../../../commonComponents/Animation/FlipAnimation";
 import { motion } from "framer-motion";
+import { useMediaQuery } from "react-responsive";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination, Navigation } from "swiper";
+
 const InspireWrapper = styled.div`
   background: #665e2f;
   z-index: 99;
@@ -82,7 +86,8 @@ const InspireWrapper = styled.div`
   }
   @media (max-width: 450px) {
     .insipre {
-      font-size: 36px;
+      font-size: 45px;
+      padding: 30px 0;
     }
     .articles {
       margin: 35px 0;
@@ -92,47 +97,103 @@ const InspireWrapper = styled.div`
 `;
 
 const Inspire = () => {
+  const isResponsive = useMediaQuery({ query: "(max-width: 800px)" });
   const [isInView, setIsInView] = useState(false);
   return (
     <InspireWrapper>
       <div className="insipre">
         <AnimatedTextWord text="INSPIRE" />
       </div>
-      <motion.div
-        whileInView={() => {
-          setIsInView(true);
-        }}
-        initial={{ y: "40vh" }}
-        animate={
-          isInView && {
-            y: 0,
-            transition: {
-              duration: 0.5,
+      {isResponsive ? (
+        <Swiper
+          breakpoints={{
+            400: {
+              slidesPerView: 1,
+              spaceBetween: 10,
             },
+            550: {
+              slidesPerView: 2,
+              spaceBetween: 30,
+            },
+            700: {
+              slidesPerView: 3,
+              spaceBetween: 60,
+            },
+            900: {
+              slidesPerView: 4,
+              spaceBetween: 60,
+            },
+          }}
+          className="mySwiper"
+          style={{ height: "260px", padding: "0 0 0 40px" }}
+          autoplay={{
+            delay: 1500,
+            disableOnInteraction: false,
+          }}
+          loop={true}
+          loopFillGroupWithBlank={true}
+          speed={2500}
+          modules={[Autoplay, Pagination, Navigation]}
+        >
+          {Cards.map(({ img, content, time }) => {
+            return (
+              <SwiperSlide style={{ background: "transparent" }}>
+                <div className="single-card">
+                  <motion.img
+                    whileHover={{
+                      scale: 1.1,
+                    }}
+                    transition={{
+                      duration: 0.4,
+                    }}
+                    src={img}
+                    alt="img"
+                    loading="lazy"
+                  />
+                  <div className="time">{time}</div>
+                  <div className="content">{content}</div>
+                </div>
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
+      ) : (
+        <motion.div
+          whileInView={() => {
+            setIsInView(true);
+          }}
+          initial={{ y: "40vh" }}
+          animate={
+            isInView && {
+              y: 0,
+              transition: {
+                duration: 0.5,
+              },
+            }
           }
-        }
-        className="cards"
-      >
-        {Cards.map(({ img, content, time }) => {
-          return (
-            <div className="single-card">
-              <motion.img
-                whileHover={{
-                  scale: 1.1,
-                }}
-                transition={{
-                  duration: 0.4,
-                }}
-                src={img}
-                alt="img"
-                loading="lazy"
-              />
-              <div className="time">{time}</div>
-              <div className="content">{content}</div>
-            </div>
-          );
-        })}
-      </motion.div>
+          className="cards"
+        >
+          {Cards.map(({ img, content, time }) => {
+            return (
+              <div className="single-card">
+                <motion.img
+                  whileHover={{
+                    scale: 1.1,
+                  }}
+                  transition={{
+                    duration: 0.4,
+                  }}
+                  src={img}
+                  alt="img"
+                  loading="lazy"
+                />
+                <div className="time">{time}</div>
+                <div className="content">{content}</div>
+              </div>
+            );
+          })}
+        </motion.div>
+      )}
       <img src={InspireImage} alt="inspire" className="inspire" />
       <button className="articles">READ MORE ARTICLES</button>
     </InspireWrapper>

@@ -41,11 +41,11 @@ const TopTrandingWrapper = styled.div`
   @media (max-width: 500px) {
     .top {
       font-size: 35px;
-      margin-bottom: 15px;
+      margin-bottom: 40px;
     }
     .btn {
       margin: 0;
-      margin-top: 0px !important;
+      margin-bottom: 20px !important;
     }
   }
   @media (max-width: 375px) {

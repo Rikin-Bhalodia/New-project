@@ -57,7 +57,7 @@ const EventNearWrapper = styled.div`
   }
   @media screen and (max-width: 450px) {
     .inspire-head {
-      padding: 20px;
+      padding: 30px;
       font-size: 28px;
       justify-content: center;
       display: flex;
@@ -71,9 +71,6 @@ const EventNearWrapper = styled.div`
     .background {
       width: 140px;
       height: 140px;
-    }
-    .inspire-head {
-      font-size: 25px;
     }
     .single-event {
       font-size: 20px;
