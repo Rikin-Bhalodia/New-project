@@ -7,7 +7,7 @@ import AnimatedTextWord from "../../../commonComponents/Animation/FlipAnimation"
 
 const TopTrandingDiffBackgroundWrapper = styled.div`
   width: 100%;
-  height: 800px;
+  height: 750px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -23,13 +23,20 @@ const TopTrandingDiffBackgroundWrapper = styled.div`
     width: 100%;
     text-transform: uppercase;
     color: white;
-    padding: 30px 0 0 60px;
+    padding: 30px 0 20px 60px;
   }
   .back-image {
     position: absolute;
     height: 900px;
     left: 0;
     width: 100vw;
+  }
+  @media screen and (max-width: 450px) {
+    height: 600px;
+    .top {
+      padding: 30px 20px;
+      font-size: 32px;
+    }
   }
 `;
 

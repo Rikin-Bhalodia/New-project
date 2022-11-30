@@ -106,7 +106,7 @@ const CommonHeaderPartWrapper = styled.div`
       font-size: 55px;
     }
     .getway {
-      width: 300px;
+      width: 280px;
     }
   }
 `;

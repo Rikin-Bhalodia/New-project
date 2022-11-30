@@ -34,6 +34,27 @@ const TravelCelebrationWrapper = styled.div`
     background-size: 100%;
     background-position: center right;
   }
+  @media (max-width: 800px) {
+    .manage-radio-btn {
+      margin: 20px 0 0;
+      gap: 150px;
+    }
+  }
+  @media (max-width: 600px) {
+    .manage-radio-btn {
+      gap: 100px;
+    }
+  }
+  @media (max-width: 450px) {
+    .manage-radio-btn {
+      gap: 25px;
+      margin-top: 20px;
+      justify-content: center;
+    }
+    .place {
+      font-size: 20px;
+    }
+  }
 `;
 const TravelCelebration = () => {
   return (
