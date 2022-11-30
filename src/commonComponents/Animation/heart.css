@@ -1,0 +1,976 @@
+.grad {
+    background-color: #4158d0;
+    background-image: linear-gradient(43deg, #4158d0 0%, #c850c0 46%, #ffcc70 100%);
+}
+.like-btn {
+    transition: 0.2s ease;
+}
+.like-btn:hover {
+    transform: scale(1.1);
+}
+.like-btn:active {
+    transform: scale(0.95);
+}
+.like-btn svg {
+    width: 40%;
+    height: 40%;
+}
+.animations {
+    bottom: 5%;
+    left: -5%;
+    position: absolute;
+  }
+.animations .like {
+    position: absolute;
+    pointer-events: none;
+    width: 40px;
+    height: 40px;
+}
+.animations .like svg {
+    width: 100%;
+    height: 100%;
+}
+.animations .like.t-1 {
+    animation: like-1 1.4s ease 1 both;
+}
+@keyframes like-1 {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(9deg);
+        opacity: 0;
+   }
+    80% {
+        opacity: 0.5;
+   }
+    100% {
+        opacity: 0;
+        transform: translate(0px, -122px) scale(1) rotate(18deg);
+   }
+}
+.animations .like.t-2 {
+    animation: like-2 1.4s ease 1 both;
+}
+@keyframes like-2 {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(9deg);
+        opacity: 0;
+   }
+    80% {
+        opacity: 0.5;
+   }
+    100% {
+        opacity: 0;
+        transform: translate(4px, -101px) scale(1) rotate(15deg);
+   }
+}
+.animations .like.t-3 {
+    animation: like-3 1.4s ease 1 both;
+}
+@keyframes like-3 {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(-16deg);
+        opacity: 0;
+   }
+    80% {
+        opacity: 0.5;
+   }
+    100% {
+        opacity: 0;
+        transform: translate(-14px, -181px) scale(1) rotate(3deg);
+   }
+}
+.animations .like.t-4 {
+    animation: like-4 1.4s ease 1 both;
+}
+@keyframes like-4 {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(11deg);
+        opacity: 0;
+   }
+    80% {
+        opacity: 0.5;
+   }
+    100% {
+        opacity: 0;
+        transform: translate(-7px, -128px) scale(1) rotate(16deg);
+   }
+}
+.animations .like.t-5 {
+    animation: like-5 1.4s ease 1 both;
+}
+@keyframes like-5 {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(6deg);
+        opacity: 0;
+   }
+    80% {
+        opacity: 0.5;
+   }
+    100% {
+        opacity: 0;
+        transform: translate(-8px, -156px) scale(1) rotate(-5deg);
+   }
+}
+.animations .like.t-6 {
+    animation: like-6 1.4s ease 1 both;
+}
+@keyframes like-6 {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(9deg);
+        opacity: 0;
+   }
+    80% {
+        opacity: 0.5;
+   }
+    100% {
+        opacity: 0;
+        transform: translate(2px, -165px) scale(1) rotate(-9deg);
+   }
+}
+.animations .like.t-7 {
+    animation: like-7 1.4s ease 1 both;
+}
+@keyframes like-7 {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(8deg);
+        opacity: 0;
+   }
+    80% {
+        opacity: 0.5;
+   }
+    100% {
+        opacity: 0;
+        transform: translate(3px, -191px) scale(1) rotate(-16deg);
+   }
+}
+.animations .like.t-8 {
+    animation: like-8 1.4s ease 1 both;
+}
+@keyframes like-8 {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(-10deg);
+        opacity: 0;
+   }
+    80% {
+        opacity: 0.5;
+   }
+    100% {
+        opacity: 0;
+        transform: translate(3px, -154px) scale(1) rotate(-14deg);
+   }
+}
+.animations .like.t-9 {
+    animation: like-9 1.4s ease 1 both;
+}
+@keyframes like-9 {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(-14deg);
+        opacity: 0;
+   }
+    80% {
+        opacity: 0.5;
+   }
+    100% {
+        opacity: 0;
+        transform: translate(-12px, -197px) scale(1) rotate(17deg);
+   }
+}
+.animations .like.t-10 {
+    animation: like-10 1.4s ease 1 both;
+}
+@keyframes like-10 {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(-12deg);
+        opacity: 0;
+   }
+    80% {
+        opacity: 0.5;
+   }
+    100% {
+        opacity: 0;
+        transform: translate(0px, -143px) scale(1) rotate(7deg);
+   }
+}
+.animations .like.t-11 {
+    animation: like-11 1.4s ease 1 both;
+}
+@keyframes like-11 {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(10deg);
+        opacity: 0;
+   }
+    80% {
+        opacity: 0.5;
+   }
+    100% {
+        opacity: 0;
+        transform: translate(-14px, -121px) scale(1) rotate(-14deg);
+   }
+}
+.animations .like.t-12 {
+    animation: like-12 1.4s ease 1 both;
+}
+@keyframes like-12 {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(2deg);
+        opacity: 0;
+   }
+    80% {
+        opacity: 0.5;
+   }
+    100% {
+        opacity: 0;
+        transform: translate(-7px, -131px) scale(1) rotate(19deg);
+   }
+}
+.animations .like.t-13 {
+    animation: like-13 1.4s ease 1 both;
+}
+@keyframes like-13 {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(6deg);
+        opacity: 0;
+   }
+    80% {
+        opacity: 0.5;
+   }
+    100% {
+        opacity: 0;
+        transform: translate(-13px, -122px) scale(1) rotate(17deg);
+   }
+}
+.animations .like.t-14 {
+    animation: like-14 1.4s ease 1 both;
+}
+@keyframes like-14 {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(13deg);
+        opacity: 0;
+   }
+    80% {
+        opacity: 0.5;
+   }
+    100% {
+        opacity: 0;
+        transform: translate(5px, -113px) scale(1) rotate(19deg);
+   }
+}
+.animations .like.t-15 {
+    animation: like-15 1.4s ease 1 both;
+}
+@keyframes like-15 {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(6deg);
+        opacity: 0;
+   }
+    80% {
+        opacity: 0.5;
+   }
+    100% {
+        opacity: 0;
+        transform: translate(12px, -183px) scale(1) rotate(12deg);
+   }
+}
+.animations .like.t-16 {
+    animation: like-16 1.4s ease 1 both;
+}
+@keyframes like-16 {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(-13deg);
+        opacity: 0;
+   }
+    80% {
+        opacity: 0.5;
+   }
+    100% {
+        opacity: 0;
+        transform: translate(-6px, -139px) scale(1) rotate(3deg);
+   }
+}
+.animations .like.t-17 {
+    animation: like-17 1.4s ease 1 both;
+}
+@keyframes like-17 {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(4deg);
+        opacity: 0;
+   }
+    80% {
+        opacity: 0.5;
+   }
+    100% {
+        opacity: 0;
+        transform: translate(-12px, -170px) scale(1) rotate(3deg);
+   }
+}
+.animations .like.t-18 {
+    animation: like-18 1.4s ease 1 both;
+}
+@keyframes like-18 {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(20deg);
+        opacity: 0;
+   }
+    80% {
+        opacity: 0.5;
+   }
+    100% {
+        opacity: 0;
+        transform: translate(9px, -188px) scale(1) rotate(5deg);
+   }
+}
+.animations .like.t-19 {
+    animation: like-19 1.4s ease 1 both;
+}
+@keyframes like-19 {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(-11deg);
+        opacity: 0;
+   }
+    80% {
+        opacity: 0.5;
+   }
+    100% {
+        opacity: 0;
+        transform: translate(2px, -159px) scale(1) rotate(7deg);
+   }
+}
+.animations .like.t-20 {
+    animation: like-20 1.4s ease 1 both;
+}
+@keyframes like-20 {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(4deg);
+        opacity: 0;
+   }
+    80% {
+        opacity: 0.5;
+   }
+    100% {
+        opacity: 0;
+        transform: translate(8px, -150px) scale(1) rotate(5deg);
+   }
+}
+.animations .like.t-21 {
+    animation: like-21 1.4s ease 1 both;
+}
+@keyframes like-21 {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(9deg);
+        opacity: 0;
+   }
+    80% {
+        opacity: 0.5;
+   }
+    100% {
+        opacity: 0;
+        transform: translate(-2px, -148px) scale(1) rotate(-18deg);
+   }
+}
+.animations .like.t-22 {
+    animation: like-22 1.4s ease 1 both;
+}
+@keyframes like-22 {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(16deg);
+        opacity: 0;
+   }
+    80% {
+        opacity: 0.5;
+   }
+    100% {
+        opacity: 0;
+        transform: translate(12px, -195px) scale(1) rotate(-1deg);
+   }
+}
+.animations .like.t-23 {
+    animation: like-23 1.4s ease 1 both;
+}
+@keyframes like-23 {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(5deg);
+        opacity: 0;
+   }
+    80% {
+        opacity: 0.5;
+   }
+    100% {
+        opacity: 0;
+        transform: translate(9px, -193px) scale(1) rotate(5deg);
+   }
+}
+.animations .like.t-24 {
+    animation: like-24 1.4s ease 1 both;
+}
+@keyframes like-24 {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(-1deg);
+        opacity: 0;
+   }
+    80% {
+        opacity: 0.5;
+   }
+    100% {
+        opacity: 0;
+        transform: translate(3px, -150px) scale(1) rotate(1deg);
+   }
+}
+.animations .like.t-25 {
+    animation: like-25 1.4s ease 1 both;
+}
+@keyframes like-25 {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(3deg);
+        opacity: 0;
+   }
+    80% {
+        opacity: 0.5;
+   }
+    100% {
+        opacity: 0;
+        transform: translate(15px, -141px) scale(1) rotate(-1deg);
+   }
+}
+.animations .like.t-26 {
+    animation: like-26 1.4s ease 1 both;
+}
+@keyframes like-26 {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(1deg);
+        opacity: 0;
+   }
+    80% {
+        opacity: 0.5;
+   }
+    100% {
+        opacity: 0;
+        transform: translate(14px, -125px) scale(1) rotate(-7deg);
+   }
+}
+.animations .like.t-27 {
+    animation: like-27 1.4s ease 1 both;
+}
+@keyframes like-27 {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(16deg);
+        opacity: 0;
+   }
+    80% {
+        opacity: 0.5;
+   }
+    100% {
+        opacity: 0;
+        transform: translate(-10px, -198px) scale(1) rotate(-5deg);
+   }
+}
+.animations .like.t-28 {
+    animation: like-28 1.4s ease 1 both;
+}
+@keyframes like-28 {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(7deg);
+        opacity: 0;
+   }
+    80% {
+        opacity: 0.5;
+   }
+    100% {
+        opacity: 0;
+        transform: translate(14px, -178px) scale(1) rotate(-11deg);
+   }
+}
+.animations .like.t-29 {
+    animation: like-29 1.4s ease 1 both;
+}
+@keyframes like-29 {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(8deg);
+        opacity: 0;
+   }
+    80% {
+        opacity: 0.5;
+   }
+    100% {
+        opacity: 0;
+        transform: translate(-3px, -134px) scale(1) rotate(17deg);
+   }
+}
+.animations .like.t-30 {
+    animation: like-30 1.4s ease 1 both;
+}
+@keyframes like-30 {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(11deg);
+        opacity: 0;
+   }
+    80% {
+        opacity: 0.5;
+   }
+    100% {
+        opacity: 0;
+        transform: translate(-14px, -129px) scale(1) rotate(-6deg);
+   }
+}
+.animations .like.t-31 {
+    animation: like-31 1.4s ease 1 both;
+}
+@keyframes like-31 {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(-10deg);
+        opacity: 0;
+   }
+    80% {
+        opacity: 0.5;
+   }
+    100% {
+        opacity: 0;
+        transform: translate(-11px, -113px) scale(1) rotate(13deg);
+   }
+}
+.animations .like.t-32 {
+    animation: like-32 1.4s ease 1 both;
+}
+@keyframes like-32 {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(-9deg);
+        opacity: 0;
+   }
+    80% {
+        opacity: 0.5;
+   }
+    100% {
+        opacity: 0;
+        transform: translate(14px, -148px) scale(1) rotate(10deg);
+   }
+}
+.animations .like.t-33 {
+    animation: like-33 1.4s ease 1 both;
+}
+@keyframes like-33 {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(7deg);
+        opacity: 0;
+   }
+    80% {
+        opacity: 0.5;
+   }
+    100% {
+        opacity: 0;
+        transform: translate(-2px, -101px) scale(1) rotate(-13deg);
+   }
+}
+.animations .like.t-34 {
+    animation: like-34 1.4s ease 1 both;
+}
+@keyframes like-34 {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(-6deg);
+        opacity: 0;
+   }
+    80% {
+        opacity: 0.5;
+   }
+    100% {
+        opacity: 0;
+        transform: translate(3px, -115px) scale(1) rotate(-10deg);
+   }
+}
+.animations .like.t-35 {
+    animation: like-35 1.4s ease 1 both;
+}
+@keyframes like-35 {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(-19deg);
+        opacity: 0;
+   }
+    80% {
+        opacity: 0.5;
+   }
+    100% {
+        opacity: 0;
+        transform: translate(10px, -150px) scale(1) rotate(-7deg);
+   }
+}
+.animations .like.t-36 {
+    animation: like-36 1.4s ease 1 both;
+}
+@keyframes like-36 {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(-7deg);
+        opacity: 0;
+   }
+    80% {
+        opacity: 0.5;
+   }
+    100% {
+        opacity: 0;
+        transform: translate(4px, -161px) scale(1) rotate(2deg);
+   }
+}
+.animations .like.t-37 {
+    animation: like-37 1.4s ease 1 both;
+}
+@keyframes like-37 {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(8deg);
+        opacity: 0;
+   }
+    80% {
+        opacity: 0.5;
+   }
+    100% {
+        opacity: 0;
+        transform: translate(-1px, -112px) scale(1) rotate(16deg);
+   }
+}
+.animations .like.t-38 {
+    animation: like-38 1.4s ease 1 both;
+}
+@keyframes like-38 {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(19deg);
+        opacity: 0;
+   }
+    80% {
+        opacity: 0.5;
+   }
+    100% {
+        opacity: 0;
+        transform: translate(9px, -128px) scale(1) rotate(14deg);
+   }
+}
+.animations .like.t-39 {
+    animation: like-39 1.4s ease 1 both;
+}
+@keyframes like-39 {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(1deg);
+        opacity: 0;
+   }
+    80% {
+        opacity: 0.5;
+   }
+    100% {
+        opacity: 0;
+        transform: translate(-9px, -118px) scale(1) rotate(-12deg);
+   }
+}
+.animations .like.t-40 {
+    animation: like-40 1.4s ease 1 both;
+}
+@keyframes like-40 {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(6deg);
+        opacity: 0;
+   }
+    80% {
+        opacity: 0.5;
+   }
+    100% {
+        opacity: 0;
+        transform: translate(-6px, -198px) scale(1) rotate(-5deg);
+   }
+}
+.animations .like.t-41 {
+    animation: like-41 1.4s ease 1 both;
+}
+@keyframes like-41 {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(16deg);
+        opacity: 0;
+   }
+    80% {
+        opacity: 0.5;
+   }
+    100% {
+        opacity: 0;
+        transform: translate(-5px, -164px) scale(1) rotate(4deg);
+   }
+}
+.animations .like.t-42 {
+    animation: like-42 1.4s ease 1 both;
+}
+@keyframes like-42 {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(-2deg);
+        opacity: 0;
+   }
+    80% {
+        opacity: 0.5;
+   }
+    100% {
+        opacity: 0;
+        transform: translate(-6px, -193px) scale(1) rotate(7deg);
+   }
+}
+.animations .like.t-43 {
+    animation: like-43 1.4s ease 1 both;
+}
+@keyframes like-43 {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(13deg);
+        opacity: 0;
+   }
+    80% {
+        opacity: 0.5;
+   }
+    100% {
+        opacity: 0;
+        transform: translate(-11px, -137px) scale(1) rotate(-18deg);
+   }
+}
+.animations .like.t-44 {
+    animation: like-44 1.4s ease 1 both;
+}
+@keyframes like-44 {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(-6deg);
+        opacity: 0;
+   }
+    80% {
+        opacity: 0.5;
+   }
+    100% {
+        opacity: 0;
+        transform: translate(9px, -173px) scale(1) rotate(16deg);
+   }
+}
+.animations .like.t-45 {
+    animation: like-45 1.4s ease 1 both;
+}
+@keyframes like-45 {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(-17deg);
+        opacity: 0;
+   }
+    80% {
+        opacity: 0.5;
+   }
+    100% {
+        opacity: 0;
+        transform: translate(11px, -190px) scale(1) rotate(-5deg);
+   }
+}
+.animations .like.t-46 {
+    animation: like-46 1.4s ease 1 both;
+}
+@keyframes like-46 {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(17deg);
+        opacity: 0;
+   }
+    80% {
+        opacity: 0.5;
+   }
+    100% {
+        opacity: 0;
+        transform: translate(-10px, -183px) scale(1) rotate(3deg);
+   }
+}
+.animations .like.t-47 {
+    animation: like-47 1.4s ease 1 both;
+}
+@keyframes like-47 {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(0deg);
+        opacity: 0;
+   }
+    80% {
+        opacity: 0.5;
+   }
+    100% {
+        opacity: 0;
+        transform: translate(-6px, -137px) scale(1) rotate(10deg);
+   }
+}
+.animations .like.t-48 {
+    animation: like-48 1.4s ease 1 both;
+}
+@keyframes like-48 {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(-18deg);
+        opacity: 0;
+   }
+    80% {
+        opacity: 0.5;
+   }
+    100% {
+        opacity: 0;
+        transform: translate(2px, -153px) scale(1) rotate(16deg);
+   }
+}
+.animations .like.t-49 {
+    animation: like-49 1.4s ease 1 both;
+}
+@keyframes like-49 {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(14deg);
+        opacity: 0;
+   }
+    80% {
+        opacity: 0.5;
+   }
+    100% {
+        opacity: 0;
+        transform: translate(15px, -123px) scale(1) rotate(7deg);
+   }
+}
+.animations .like.t-50 {
+    animation: like-50 1.4s ease 1 both;
+}
+@keyframes like-50 {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(-18deg);
+        opacity: 0;
+   }
+    80% {
+        opacity: 0.5;
+   }
+    100% {
+        opacity: 0;
+        transform: translate(3px, -151px) scale(1) rotate(-5deg);
+   }
+}
+.animations .like.t-51 {
+    animation: like-51 1.4s ease 1 both;
+}
+@keyframes like-51 {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(-4deg);
+        opacity: 0;
+   }
+    80% {
+        opacity: 0.5;
+   }
+    100% {
+        opacity: 0;
+        transform: translate(6px, -184px) scale(1) rotate(-3deg);
+   }
+}
+.animations .like.t-52 {
+    animation: like-52 1.4s ease 1 both;
+}
+@keyframes like-52 {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(19deg);
+        opacity: 0;
+   }
+    80% {
+        opacity: 0.5;
+   }
+    100% {
+        opacity: 0;
+        transform: translate(0px, -191px) scale(1) rotate(-8deg);
+   }
+}
+.animations .like.t-53 {
+    animation: like-53 1.4s ease 1 both;
+}
+@keyframes like-53 {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(-6deg);
+        opacity: 0;
+   }
+    80% {
+        opacity: 0.5;
+   }
+    100% {
+        opacity: 0;
+        transform: translate(8px, -103px) scale(1) rotate(0deg);
+   }
+}
+.animations .like.t-54 {
+    animation: like-54 1.4s ease 1 both;
+}
+@keyframes like-54 {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(18deg);
+        opacity: 0;
+   }
+    80% {
+        opacity: 0.5;
+   }
+    100% {
+        opacity: 0;
+        transform: translate(-6px, -176px) scale(1) rotate(-14deg);
+   }
+}
+.animations .like.t-55 {
+    animation: like-55 1.4s ease 1 both;
+}
+@keyframes like-55 {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(-10deg);
+        opacity: 0;
+   }
+    80% {
+        opacity: 0.5;
+   }
+    100% {
+        opacity: 0;
+        transform: translate(-1px, -165px) scale(1) rotate(-3deg);
+   }
+}
+.animations .like.t-56 {
+    animation: like-56 1.4s ease 1 both;
+}
+@keyframes like-56 {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(0deg);
+        opacity: 0;
+   }
+    80% {
+        opacity: 0.5;
+   }
+    100% {
+        opacity: 0;
+        transform: translate(-6px, -193px) scale(1) rotate(-5deg);
+   }
+}
+.animations .like.t-57 {
+    animation: like-57 1.4s ease 1 both;
+}
+@keyframes like-57 {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(-6deg);
+        opacity: 0;
+   }
+    80% {
+        opacity: 0.5;
+   }
+    100% {
+        opacity: 0;
+        transform: translate(-2px, -187px) scale(1) rotate(-1deg);
+   }
+}
+.animations .like.t-58 {
+    animation: like-58 1.4s ease 1 both;
+}
+@keyframes like-58 {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(13deg);
+        opacity: 0;
+   }
+    80% {
+        opacity: 0.5;
+   }
+    100% {
+        opacity: 0;
+        transform: translate(11px, -116px) scale(1) rotate(7deg);
+   }
+}
+.animations .like.t-59 {
+    animation: like-59 1.4s ease 1 both;
+}
+@keyframes like-59 {
+    0% {
+        transform: translate(0, 0) scale(0) rotate(14deg);
+        opacity: 0;
+   }
+    80% {
+        opacity: 0.5;
+   }
+    100% {
+        opacity: 0;
+        transform: translate(-2px, -197px) scale(1) rotate(-13deg);
+   }
+}

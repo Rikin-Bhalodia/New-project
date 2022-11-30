@@ -12,6 +12,7 @@ import ExploreNow from "../../assets/images/homepage/explorenow.svg";
 import styled from "styled-components";
 import MenuIcon from "../../assets/images/studio/menu.svg";
 import { motion } from "framer-motion";
+import { InstaLike } from "../../commonComponents/Animation/heart";
 const AnimatedTextWord = React.lazy(() =>
   import("../../commonComponents/Animation/FlipAnimation")
 );
@@ -531,6 +532,7 @@ export default function Home() {
                             />
                           </span>
                         </div>
+                        <InstaLike />
                       </div>
                     </div>
                   </div>
