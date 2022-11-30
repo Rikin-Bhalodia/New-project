@@ -14,6 +14,7 @@ import MenuIcon from "../../assets/images/studio/menu.svg";
 import { motion } from "framer-motion";
 import WelcomeMobile from "./WelcomeMobile";
 import DiveInto from "./DiveInto";
+import { InstaLike } from "../../commonComponents/Animation/heart";
 const AnimatedTextWord = React.lazy(() =>
   import("../../commonComponents/Animation/FlipAnimation")
 );
