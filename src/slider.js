@@ -95,8 +95,8 @@ export function ServiceSlider() {
     <Swiper
       breakpoints={{
         260: {
-          slidesPerView: 2,
-          spaceBetween: 30,
+          slidesPerView: 2.5,
+          spaceBetween: 10,
         },
         600: {
           slidesPerView: 3,
@@ -151,8 +151,8 @@ export function RentSlider() {
     <Swiper
       breakpoints={{
         260: {
-          slidesPerView: 2,
-          spaceBetween: 30,
+          slidesPerView: 2.5,
+          spaceBetween: 10,
         },
         600: {
           slidesPerView: 3,

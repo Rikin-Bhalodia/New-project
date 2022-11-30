@@ -596,6 +596,7 @@ footer {
 .bannerSection {
   background: var(--light_yellow);
   flex-direction: column;
+  height: 100vh;
 }
 
 .bannerSection .bannerMenus {
@@ -4585,6 +4586,7 @@ c-service-w {
   .menu-icon {
     height: 80px;
     width: 80px;
+    z-index: 1;
   }
 }
 .menu-icon:hover {
