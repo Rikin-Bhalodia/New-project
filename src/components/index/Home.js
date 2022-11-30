@@ -12,12 +12,8 @@ import ExploreNow from "../../assets/images/homepage/explorenow.svg";
 import styled from "styled-components";
 import MenuIcon from "../../assets/images/studio/menu.svg";
 import { motion } from "framer-motion";
-<<<<<<< Updated upstream
-import { InstaLike } from "../../commonComponents/Animation/heart";
-=======
 import WelcomeMobile from "./WelcomeMobile";
 import DiveInto from "./DiveInto";
->>>>>>> Stashed changes
 const AnimatedTextWord = React.lazy(() =>
   import("../../commonComponents/Animation/FlipAnimation")
 );
