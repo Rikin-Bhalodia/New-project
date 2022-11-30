@@ -53,6 +53,15 @@ const AvenuSliderWrapper = styled.div`
     .avenue_service {
       width: 170px;
     }
+    .swiper.swiper-initialized.swiper-horizontal.swiper-pointer-events.swiper-backface-hidden.mySwiper {
+      height: 200px;
+    }
+  }
+  @media (max-width: 767px) {
+    .swiper-slide img {
+      width: 90%;
+      height: 80%;
+    }
   }
 `;
 export default function AvenuSlider() {
