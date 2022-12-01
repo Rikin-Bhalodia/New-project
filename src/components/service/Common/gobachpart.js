@@ -15,6 +15,10 @@ const GoBackPartWrapper = styled.div`
     font-weight: 700;
     font-size: 14px;
   }
+  @media (max-width: 850px) {
+    color: #fff;
+    padding: 100px 0 0 0 ;
+  }
 `;
 
 const GoBackpart = () => {

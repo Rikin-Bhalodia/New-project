@@ -13,7 +13,7 @@ const ProductWrapper = styled.div`
     font-family: "Arial";
     font-style: normal;
     font-weight: 700;
-    height: 50px;
+    height: 45px;
     font-size: 20px;
   }
   .price {
@@ -32,10 +32,105 @@ const ProductWrapper = styled.div`
   .products {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
     gap: 50px;
-    margin: 80px 0;
+    margin: 60px 0;
+  }
+  .product-image {
+    height: 220px;
+  }
+  @media (max-width: 1100px) {
+    button {
+      width: 200px;
+      height: 45px;
+      font-size: 18px;
+    }
+  }
+  @media (max-width: 1000px) {
+    .product-image {
+      height: 210px;
+    }
+    button {
+      width: 180px;
+      height: 42px;
+      font-size: 17px;
+    }
+  }
+  @media (max-width: 750px) {
+    margin: 0 50px;
+    .product-image {
+      height: 190px;
+    }
+    button {
+      width: 160px;
+      height: 38px;
+      font-size: 16px;
+    }
+    .products {
+      gap: 30px;
+      margin: 60px 0;
+    }
+  }
+  @media (max-width: 650px) {
+    margin: 0 50px;
+    .product-image {
+      height: 160px;
+    }
+    button {
+      width: 140px;
+      height: 36px;
+      font-size: 15px;
+    }
+    .products {
+      gap: 25px;
+      margin: 40px 0;
+      font-size: 18px;
+    }
+  }
+  @media (max-width: 550px) {
+    margin: 0 50px;
+    .product-image {
+      height: 120px;
+    }
+    button {
+      width: 110px;
+      height: 30px;
+      font-size: 13px;
+    }
+    .products {
+      gap: 20px;
+      margin: 30px 0;
+      font-size: 16px;
+    }
+    .price {
+      font-size: 15px;
+    }
+    .product {
+      row-gap: 10px;
+    }
+  }
+  @media (max-width: 450px) {
+    margin: 0 25px;
+    .product-image {
+      height: 90px;
+    }
+    button {
+      width: 80px;
+      height: 25px;
+      font-size: 9px;
+    }
+    .products {
+      column-gap: 30px;
+      margin: 20px 0;
+      font-size: 14px;
+    }
+    .price {
+      font-size: 13px;
+    }
+    .product {
+      row-gap: 7px;
+    }
   }
 `;
 
@@ -68,7 +163,7 @@ const Product = () => {
                 }
                 src={Price}
                 alt="price"
-                height={250}
+                className="product-image"
               />
               <div className="price">Price</div>
               <motion.button

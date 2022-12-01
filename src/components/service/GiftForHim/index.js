@@ -6,19 +6,41 @@ import YellowBarContent from "../Common/YellowBarContent";
 import { motion } from "framer-motion";
 import DownArrow from "../../../assets/images/product/down-arrow.svg";
 import Search from "../../../assets/images/service/gift-for-him/seach-icon.svg";
+import BannerImage from "../../../assets/images/service/gift-for-him/gift-for-him.png";
+
 import Filters from "../../../commonComponents/Filters";
 import AnimatedTextWord from "../../../commonComponents/Animation/FlipAnimation";
 import Product from "./Product";
+import { useMediaQuery } from "react-responsive";
+import { Fragment } from "react";
 
 const GiftForHimWrapper = styled.div`
-  margin: 100px 150px 0px 150px;
+  padding: 100px 150px 0px 150px;
   .heading {
     font-family: "Coral Blush";
     font-style: normal;
     font-weight: 400;
     font-size: 70px;
     text-align: center;
+    display: flex;
+    justify-content: center;
     padding-top: 40px;
+  }
+  .background-pic {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url(${BannerImage});
+    width: 100vw;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: top;
+    height: 50vh;
+  }
+  @media (max-width: 850px) {
+    padding: 0;
+    .heading{
+      color: #fff;
+    }
   }
 `;
 
@@ -83,6 +105,8 @@ const FiltersName = [
 
 const GiftForHim = () => {
   const [isInView, setIsInView] = useState(false);
+  const isResponsive = useMediaQuery({ query: "(max-width: 850px)" });
+
   return (
     <>
       <motion.div
@@ -91,9 +115,11 @@ const GiftForHim = () => {
         transition={{ duration: 1 }}
       >
         <GiftForHimWrapper>
-          <GoBackpart />
-          <div className="heading">
-            <AnimatedTextWord text="GIFTS FOR HIM" />
+          <div className={isResponsive && "background-pic"}>
+            <GoBackpart />
+            <div className="heading">
+              <AnimatedTextWord text="GIFTS FOR HIM" />
+            </div>
           </div>
           <Filters FiltersName={FiltersName} />
           <Product />
