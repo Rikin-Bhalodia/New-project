@@ -39,7 +39,7 @@ export function ReviewSlider({ color, background, des, border }) {
       className="mySwiper"
       style={{ padding: "0 20px" }}
       autoplay={{
-        delay: 1500,
+        delay: 1000,
         disableOnInteraction: false,
       }}
       loop={true}
@@ -140,7 +140,6 @@ export function BlankBackgroundSlider() {
               background: "#D9D9D9",
               height: "300px",
               width: "900px",
-              // border: border || "",
             }}
           ></SwiperSlide>
         );

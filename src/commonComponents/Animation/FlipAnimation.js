@@ -43,8 +43,8 @@ const AnimatedTextWord = ({ text }) => {
                 type: "spring",
                 damping: 12,
                 stiffness: 100,
-                duration: 0.1 * index,
-                delay: 0.1 * index
+                duration: 0.08 * index,
+                delay: 0.08 * index
               },
             }
           }

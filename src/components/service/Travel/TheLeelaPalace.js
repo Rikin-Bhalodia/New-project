@@ -15,6 +15,7 @@ import MenuIcon from "../../../assets/images/studio/menu.svg";
 import { BlankBackgroundSlider } from "../Grooming/ReviewSlider";
 import EventNear from "./EventNear";
 import YellowBarContent from "../Common/YellowBarContent";
+import { useMediaQuery } from "react-responsive";
 
 const TheLeelaPalaceWrapper = styled.div`
   display: flex;
@@ -42,7 +43,7 @@ const TheLeelaPalaceWrapper = styled.div`
   .menu-icon {
     position: absolute;
     right: 150px;
-    top: 35%;
+    top: 35% !important;
   }
   .vips {
     background: #665e2f;
@@ -283,6 +284,9 @@ const TheLeelaPalaceWrapper = styled.div`
     gap: 15px;
     margin: 30px 0 0 20px;
   }
+  .property-images {
+    display: flex;
+  }
 
   @media (max-width: 1300px) {
     .part2 {
@@ -316,6 +320,30 @@ const TheLeelaPalaceWrapper = styled.div`
       width: 380px;
       height: 380px;
     }
+    .head {
+      font-size: 40px;
+      margin-top: 60px;
+    }
+    .contents {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .answer {
+      font-size: 24px;
+    }
+    .title {
+      font-size: 16px;
+    }
+    .item {
+      text-align: center;
+    }
+    .details {
+      text-align: center;
+    }
+    .benefits-royclan {
+      padding: 0 200px;
+    }
   }
   @media (max-width: 1100px) {
     .the-leela-place {
@@ -339,6 +367,9 @@ const TheLeelaPalaceWrapper = styled.div`
     .name {
       font-size: 20px;
     }
+    .benefits-royclan {
+      padding: 0 150px;
+    }
   }
   @media (max-width: 1000px) {
     .the-leela-place {
@@ -359,6 +390,7 @@ const TheLeelaPalaceWrapper = styled.div`
     }
     .wrapper {
       column-gap: 20px;
+      width: 100%;
       margin: 20px 0 20px 20px;
     }
     .dates {
@@ -387,12 +419,52 @@ const TheLeelaPalaceWrapper = styled.div`
       flex-direction: column;
       margin: 30px 0 0 0;
     }
+
+    .property1-image {
+      height: 250px;
+      margin-top: 60px;
+    }
+    .property2-image {
+      height: 160px;
+    }
+    .property-image {
+      height: 350px;
+      margin-top: 120px;
+    }
+    .benefits-royclan {
+      padding: 0 70px;
+    }
   }
   @media (max-width: 850px) {
     .benefits-royclan {
       flex-direction: column;
       height: fit-content;
       padding: 0 60px;
+    }
+    .property-images {
+      display: none;
+    }
+    .details {
+      justify-content: center;
+      width: 100%;
+      align-items: center;
+    }
+    .contents {
+      flex-wrap: wrap;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      column-gap: 100px;
+      padding: 20px 15%;
+    }
+    .head {
+      text-align: center;
+      font-size: 45px;
+      margin-top: 60px;
+    }
+    .item {
+      width: 40%;
     }
   }
   @media (max-width: 800px) {
@@ -422,6 +494,12 @@ const TheLeelaPalaceWrapper = styled.div`
     .name {
       font-size: 17px;
     }
+    .menu-icon {
+      right: 100px;
+      height: 80px;
+      width: 80px;
+      border: 4px solid white;
+    }
   }
   @media (max-width: 700px) {
     .buttons {
@@ -436,6 +514,15 @@ const TheLeelaPalaceWrapper = styled.div`
     .description {
       font-size: 14px;
       font-weight: 600;
+    }
+    .contents {
+      column-gap: 100px;
+      padding: 20px 10%;
+    }
+    .enquire-now {
+      width: 210px;
+      height: 50px;
+      font-size: 16px;
     }
   }
   @media (max-width: 600px) {
@@ -482,6 +569,17 @@ const TheLeelaPalaceWrapper = styled.div`
     .left-image {
       width: 250px;
     }
+    .head {
+      font-size: 40px;
+      margin-top: 40px;
+    }
+    .answer {
+      font-size: 24px;
+    }
+    .contents {
+      column-gap: 30px;
+      padding: 20px 5%;
+    }
   }
   @media (max-width: 500px) {
     .button {
@@ -516,6 +614,28 @@ const TheLeelaPalaceWrapper = styled.div`
     .vips {
       padding: 10px;
     }
+
+    .head {
+      font-size: 35px;
+      margin-top: 30px;
+    }
+    .answer {
+      font-size: 22px;
+    }
+    .enquire-now {
+      width: 200px;
+      height: 50px;
+      font-size: 16px;
+    }
+    .title {
+      font-size: 14px;
+    }
+    .item {
+      width: 45%;
+    }
+    .menu-icon {
+      right: 60px;
+    }
   }
   @media (max-width: 450px) {
     .right-image {
@@ -534,10 +654,33 @@ const TheLeelaPalaceWrapper = styled.div`
       gap: 10px;
       font-size: 11px;
     }
+    .contents {
+      column-gap: 30px;
+      padding: 10px 2%;
+    }
+    .head {
+      font-size: 30px;
+      margin-top: 20px;
+    }
+    .answer {
+      font-size: 17px;
+    }
+    .enquire-now {
+      width: 180px;
+      height: 40px;
+      font-size: 14px;
+    }
+    .item {
+      width: 30%;
+    }
+    .title {
+      font-size: 12px;
+    }
   }
 `;
 const TheLeelaPalace = () => {
   const [menuOpenModal, setMenuOpenModal] = useState(false);
+  const isResponsive = useMediaQuery({ query: "(max-width: 850px)" });
 
   return (
     <>
@@ -634,11 +777,13 @@ const TheLeelaPalace = () => {
           <div>
             <div className="benefits">benefits at</div>
             <img src={Royclan} alt="BenefitsImage" className="text-image" />
-            <img
-              src={BenefitsRightImage}
-              alt="BenefitsImage"
-              className="right-image"
-            />
+            {!isResponsive && (
+              <img
+                src={BenefitsRightImage}
+                alt="BenefitsImage"
+                className="right-image"
+              />
+            )}
           </div>
           <div>
             <ul>
@@ -652,26 +797,26 @@ const TheLeelaPalace = () => {
           <div className="details">
             <div className="head">property details</div>
             <div className="contents">
-              <div>
+              <div className="item">
                 <div className="title">property type</div>
                 <div className="answer">available</div>
               </div>
-              <div>
+              <div className="item">
                 <div className="title">built in</div>
                 <div className="answer">Rs. 1,00,000</div>
               </div>
-              <div>
+              <div className="item">
                 <div className="title">status</div>
                 <div className="answer">available</div>
               </div>
-              <div>
+              <div className="item">
                 <div className="title">property taxes</div>
                 <div className="answer">Rs. 1,00,000</div>
               </div>
               <div className="enquire-now">ENQUIRE NOW</div>
             </div>
           </div>
-          <div style={{ display: "flex" }}>
+          <div className="property-images">
             <img src={Property1} alt="Property1" className="property-image" />
             <div style={{ display: "flex", flexDirection: "column" }}>
               <img

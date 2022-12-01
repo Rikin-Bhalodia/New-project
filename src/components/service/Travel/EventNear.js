@@ -4,6 +4,9 @@ import styled from "styled-components";
 import AnimatedTextWord from "../../../commonComponents/Animation/FlipAnimation";
 import { EventNearAndTopThings, Feelings } from "../../../utils";
 import { motion } from "framer-motion";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination, Navigation } from "swiper";
+import { useMediaQuery } from "react-responsive";
 
 const EventNearWrapper = styled.div`
   .event-near {
@@ -16,6 +19,8 @@ const EventNearWrapper = styled.div`
     display: flex;
     flex-direction: column;
     text-align: center;
+    justify-content: center;
+    align-items: center;
     gap: 15px;
     font-family: "Mulish";
     font-style: normal;
@@ -55,22 +60,10 @@ const EventNearWrapper = styled.div`
     flex-direction: column;
     text-align: center;
   }
-  @media screen and (max-width: 450px) {
+  @media screen and (max-width: 700px) {
     .inspire-head {
       padding: 30px;
-      font-size: 28px;
-      justify-content: center;
-      display: flex;
-    }
-    .feelings, .event-near {
-      gap: 30px;
-    }
-    .feeling {
-      font-size: 18px;
-    }
-    .background {
-      width: 140px;
-      height: 140px;
+      font-size: 24px;
     }
     .single-event {
       font-size: 20px;
@@ -80,10 +73,32 @@ const EventNearWrapper = styled.div`
       height: 150px;
     }
   }
+  @media screen and (max-width: 450px) {
+    .inspire-head {
+      padding: 30px;
+      font-size: 20px;
+    }
+    /* .feelings, .event-near {
+      gap: 30px;
+    }
+    .feeling {
+      font-size: 18px;
+    }
+    .background {
+      width: 140px;
+      height: 140px;
+    }
+    .concert-img {
+      width: 150px;
+      height: 150px;
+    } */
+  }
 `;
 
 const EventNear = ({ isRequiredTopThings }) => {
   const [isInView, setIsInView] = useState(false);
+  const isResponsive = useMediaQuery({ query: "(max-width: 850px)" });
+
   return (
     <EventNearWrapper>
       {isRequiredTopThings && (
@@ -135,25 +150,61 @@ const EventNear = ({ isRequiredTopThings }) => {
         }
         className="event-near"
       >
-        {EventNearAndTopThings.map(({ img, name }) => {
-          return (
-            <div className="single-event">
-              <motion.img
-                whileHover={{
-                  scale: 1.1,
-                }}
-                transition={{
-                  duration: 0.4,
-                }}
-                src={img}
-                alt="image123"
-                className="concert-img"
-                height={200}
-              />
-              <div>{name}</div>
-            </div>
-          );
-        })}
+        <Swiper
+          breakpoints={{
+            260: {
+              slidesPerView: 1,
+              spaceBetween: 10,
+            },
+            360: {
+              slidesPerView: 1.5,
+              spaceBetween: 20,
+            },
+            500: {
+              slidesPerView: 2,
+              spaceBetween: 40,
+            },
+            700: {
+              slidesPerView: 3,
+              spaceBetween: 60,
+            },
+            1075: {
+              slidesPerView: 4,
+              spaceBetween: 60,
+            },
+          }}
+          className="mySwiper"
+          autoplay={{
+            delay: 1500,
+            disableOnInteraction: false,
+          }}
+          loop={true}
+          loopFillGroupWithBlank={true}
+          speed={2500}
+          modules={[Autoplay, Pagination, Navigation]}
+        >
+          {EventNearAndTopThings.map(({ img, name }) => {
+            return (
+              <SwiperSlide>
+                <div className="single-event">
+                  <motion.img
+                    whileHover={{
+                      scale: 1.1,
+                    }}
+                    transition={{
+                      duration: 0.4,
+                    }}
+                    src={img}
+                    alt="image123"
+                    className="concert-img"
+                    style={{ height: "90%", width: "70%" }}
+                  />
+                  <div>{name}</div>
+                </div>
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
       </motion.div>
     </EventNearWrapper>
   );
