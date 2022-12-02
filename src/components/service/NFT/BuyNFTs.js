@@ -107,6 +107,123 @@ const BuyNFTsWrapper = styled.div`
     width: 90%;
     border-bottom: 1px solid rgba(0, 0, 0, 0.27);
   }
+  .menu-icon{
+    top: -40px !important;
+  }
+  @media (max-width: 1000px) {
+    .heading-part {
+      font-size: 90px;
+    }
+    .icons {
+      margin: 30px 0;
+      word-break: break-word;
+    }
+  }
+  @media (max-width: 800px) {
+    .heading-part {
+      font-size: 70px;
+    }
+    .icons {
+      column-gap: 10px;
+      flex-wrap: wrap;
+      row-gap: 15px;
+    }
+
+    .icon-name {
+      font-size: 12px;
+    }
+  }
+  @media (max-width: 700px) {
+    .icon-name {
+      font-size: 10px;
+    }
+  }
+  @media (max-width: 600px) {
+    .heading-part {
+      font-size: 55px;
+      object-fit: cover;
+      background-repeat: no-repeat;
+      height: 50vh;
+    }
+  }
+  @media (max-width: 500px) {
+    .heading-part {
+      font-size: 45px;
+    }
+    .icon-name {
+      font-size: 9px;
+    }
+  }
+  @media (max-width: 450px) {
+    .heading-part {
+      font-size: 35px;
+      height: 42vh;
+    }
+  }
+  @media (max-width: 400px) {
+    .icons {
+      padding: 0 10px;
+      row-gap: 10px;
+      column-gap: 6px;
+      margin-top: 20px;
+    }
+  }
+  @media (max-width: 850px) {
+    .load-more {
+      margin-top: 80px;
+    }
+    .text1 {
+      font-size: 28px;
+      width: 32%;
+    }
+    .line2 {
+      width: 33%;
+    }
+  }
+  @media (max-width: 650px) {
+    .load-more {
+      margin-top: 70px;
+    }
+    .text1 {
+      font-size: 26px;
+      width: 37%;
+    }
+    .line2 {
+      width: 30%;
+    }
+  }
+  @media (max-width: 550px) {
+    .load-more {
+      margin-top: 60px;
+    }
+    .line2 {
+      margin-bottom: 23px;
+      width: 27%;
+
+    }
+    .text1 {
+      font-size: 24px;
+      width: 42%;
+    }
+    .plus1 {
+      height: 45px;
+      width: 45px;
+      border-radius: 50%;
+      font-size: 30px;
+    }
+  }
+  @media (max-width: 450px) {
+    .load-more {
+      margin-top: 40px;
+    }
+    .text1 {
+      font-size: 20px;
+      width: 50%;
+    }
+    .line2 {
+      width: 25%;
+    }
+  }
 `;
 
 const FiltersName = [
