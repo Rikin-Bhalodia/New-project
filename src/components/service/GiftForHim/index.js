@@ -1,18 +1,14 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import GoBackpart from "../Common/gobachpart";
-import Price from "../../../assets/images/service/gift-for-him/price.svg";
 import YellowBarContent from "../Common/YellowBarContent";
 import { motion } from "framer-motion";
-import DownArrow from "../../../assets/images/product/down-arrow.svg";
-import Search from "../../../assets/images/service/gift-for-him/seach-icon.svg";
 import BannerImage from "../../../assets/images/service/gift-for-him/gift-for-him.png";
 
 import Filters from "../../../commonComponents/Filters";
 import AnimatedTextWord from "../../../commonComponents/Animation/FlipAnimation";
 import Product from "./Product";
 import { useMediaQuery } from "react-responsive";
-import { Fragment } from "react";
 
 const GiftForHimWrapper = styled.div`
   padding: 100px 150px 0px 150px;
@@ -34,12 +30,33 @@ const GiftForHimWrapper = styled.div`
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: top;
-    height: 50vh;
+    height: max-content;
   }
   @media (max-width: 850px) {
     padding: 0;
-    .heading{
+    .heading {
       color: #fff;
+      font-size: 60px;
+    }
+    .background-pic {
+      padding-bottom: 70px;
+    }
+  }
+  @media (max-width: 650px) {
+    .heading {
+      font-size: 50px;
+    }
+  }
+  @media (max-width: 550px) {
+    .heading {
+      font-size: 45px;
+    }
+  }
+  @media (max-width: 450px) {
+    .heading {
+      font-size: 40px;
+    }   .background-pic {
+      padding-bottom: 40px;
     }
   }
 `;
@@ -53,8 +70,8 @@ const FullScreenWrapper = styled.div`
   }
   .line {
     border-bottom: 2px solid #000000;
-    width: 40%;
-    margin-bottom: 35px;
+    width: 90%;
+    margin-bottom: 30px;
   }
   .text {
     width: 20%;
@@ -65,6 +82,7 @@ const FullScreenWrapper = styled.div`
     font-size: 30px;
     justify-content: space-around;
     margin: 0px 10px;
+    align-items: center;
   }
   .plus {
     height: 60px;
@@ -78,6 +96,63 @@ const FullScreenWrapper = styled.div`
     font-weight: 700;
     position: relative;
     top: -5px;
+  }
+  @media (max-width: 850px) {
+    .load-more {
+      margin-top: 80px;
+    }
+    .text {
+      font-size: 28px;
+      width: 32%;
+    }
+    .line {
+      width: 33%;
+    }
+  }
+  @media (max-width: 650px) {
+    .load-more {
+      margin-top: 70px;
+    }
+    .text {
+      font-size: 26px;
+      width: 37%;
+    }
+    .line {
+      width: 30%;
+    }
+  }
+  @media (max-width: 550px) {
+    .load-more {
+      margin-top: 60px;
+    }
+    .line {
+      margin-bottom: 23px;
+    }
+    .text {
+      font-size: 24px;
+      width: 42%;
+    }
+    .line {
+      width: 27%;
+    }
+    .plus {
+      height: 45px;
+      width: 45px;
+      border-radius: 50%;
+      font-size: 30px;
+    }
+  }
+  @media (max-width: 450px) {
+    .load-more {
+      margin-top: 40px;
+    }
+    .text {
+      font-size: 20px;
+      width: 50%;
+    }
+    .line {
+      width: 25%;
+    }
   }
 `;
 

@@ -17,7 +17,22 @@ const GoBackPartWrapper = styled.div`
   }
   @media (max-width: 850px) {
     color: #fff;
-    padding: 100px 0 0 0 ;
+    padding: 100px 0 0 0;
+    .des {
+      padding: 20px 10px 0 10px;
+    }
+  }
+  @media (max-width: 650px) {
+    padding: 70px 0 0 0;
+    .des {
+      font-size: 13px;
+    }
+  }
+  @media (max-width: 550px) {
+    padding: 60px 0 0 0;
+    .des {
+      font-size: 12px;
+    }
   }
 `;
 
