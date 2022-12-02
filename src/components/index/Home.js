@@ -5,6 +5,8 @@ import studioInner2 from "./../../assets/images/img/studioInner-2.jpg";
 import studioInner3 from "./../../assets/images/img/studioInner-3.jpg";
 import studioInner4 from "./../../assets/images/img/studioInner-4.jpg";
 import liveTv from "./../../assets/images/homepage/live_tv.svg";
+import liveTvMobile from "./../../assets/images/homepage/live_tv-mobile.svg";
+import ProductReview from "./../../assets/images/homepage/product_review_mobile.svg";
 import TvHead from "./../../assets/images/homepage/live_tv_head.svg";
 import Membership from "./../../assets/images/img/watch-bg.jpg";
 import Rent from "./../../assets/images/img/rent-bg.jpg";
@@ -15,6 +17,7 @@ import { motion } from "framer-motion";
 import WelcomeMobile from "./WelcomeMobile";
 import DiveInto from "./DiveInto";
 import { InstaLike } from "../../commonComponents/Animation/heart";
+import Rent_Resell from "./Rent_Resell";
 const AnimatedTextWord = React.lazy(() =>
   import("../../commonComponents/Animation/FlipAnimation")
 );
@@ -239,6 +242,51 @@ const HomeWrapper = styled.div`
   }
   .menu-icon {
     top: -40px !important;
+  }
+  .livetv_banner_section {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url(${liveTvMobile});
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: cover;
+  }
+  .live_tv_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    p {
+      font-family: "Arial";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 46px;
+      letter-spacing: 3px;
+      color: #ffffff;
+    }
+    h3 {
+      font-family: "Coral Blush";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 60px;
+      line-height: 70px;
+      letter-spacing: 3px;
+      color: #ffffff;
+    }
+    img {
+      width: 200px;
+      margin-bottom: 80px;
+    }
+    a {
+      background: white;
+      padding: 9px 30px;
+      border-radius: 25px;
+      color: black;
+      font-size: 17px;
+      font-weight: 500;
+    }
   }
 `;
 
@@ -526,49 +574,71 @@ export default function Home() {
             </div>
             <AvenuSlider />
             {/* <!-- rent and resale sec --> */}
-            <RentResale />
-            {/* <!-- live tv sec --> */}
-            <section className="c-live-tv minHeightSec minBannerHeight d-flex align-items-center ">
-              <div className="container-fluid">
-                <div className="row">
-                  <div className="col-md-12">
-                    <h2>
-                      <span></span>
-                    </h2>
-                  </div>
-                  <div className="col-md-7 mx-auto">
-                    <div className="live-tv-in">
-                      <img src={TvHead} alt="" />
+            <div className="block">
+              <RentResale />
+            </div>
 
-                      <div className="live-tv-box" id="live-tv">
-                        <img
-                          id="tv-image"
-                          src={liveTv}
-                          alt=""
-                          height="auto"
-                          width="500"
-                          loading="lazy"
-                        />
-                        <div className="roundBtn rightDestinationbtn mt-5">
-                          <span
-                            id="roundText8"
-                            className="btnText strong colorYellow font-13 letterSpacingmedium"
-                          >
-                            <img
-                              src={ExploreNow}
-                              alt="explore-now"
-                              className="explore-now"
-                              loading="lazy"
-                            />
-                          </span>
+            <div className="none">
+              <Rent_Resell />
+            </div>
+
+            {/* <!-- live tv sec --> */}
+            <div className="block">
+              <section className="c-live-tv minHeightSec minBannerHeight d-flex align-items-center ">
+                <div className="container-fluid ">
+                  <div className="row">
+                    <div className="col-md-12">
+                      <h2>
+                        <span></span>
+                      </h2>
+                    </div>
+                    <div className="col-md-7 mx-auto">
+                      <div className="live-tv-in">
+                        <img src={TvHead} alt="" />
+
+                        <div className="live-tv-box" id="live-tv">
+                          <img
+                            id="tv-image"
+                            src={liveTv}
+                            alt=""
+                            height="auto"
+                            width="500"
+                            loading="lazy"
+                          />
+                          <div className="roundBtn rightDestinationbtn mt-5">
+                            <span
+                              id="roundText8"
+                              className="btnText strong colorYellow font-13 letterSpacingmedium"
+                            >
+                              <img
+                                src={ExploreNow}
+                                alt="explore-now"
+                                className="explore-now"
+                                loading="lazy"
+                              />
+                            </span>
+                          </div>
+                          <InstaLike />
                         </div>
-                        <InstaLike />
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </section>
+              </section>
+            </div>
+
+            <div className="none">
+              <section className="livetv_banner_section">
+                <div className="live_tv_content">
+                  <p>LIVE TV</p>
+                  <h3>
+                    <AnimatedTextWord text="WATCH" />
+                  </h3>
+                  <img src={ProductReview} alt="" />
+                  <a href="">WATCH LIFESTYLE & FASHION VIDEOS</a>
+                </div>
+              </section>
+            </div>
 
             {/* <!-- season sec --> */}
             <Season />
