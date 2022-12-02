@@ -251,7 +251,7 @@ const YouMayLike = () => {
           </motion.div>
         </div>
       </section>
-      {isResponsive && <ProductImgSlider image={youMayLike} />}
+      {isResponsive && <ProductImgSlider image={youMayLike} isNeededImg={true}/>}
     </YouMayLikeWrapper>
   );
 };

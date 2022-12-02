@@ -14,10 +14,10 @@ const ProductImgSliderWrapper = styled.div`
   .head {
     padding: 50px 0;
   }
-
   .slider-box {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 20px;
     img {
       width: 220px;
@@ -63,6 +63,8 @@ const ProductImgSliderWrapper = styled.div`
     }
   }
   @media (max-width: 550px) {
+    padding: 0px 30px;
+
     .slider-box {
       img {
         width: 150px;
@@ -82,26 +84,29 @@ const ProductImgSliderWrapper = styled.div`
     }
   }
   @media (max-width: 500px) {
+    padding: 0px 20px;
     .watch-more {
       width: 210px;
     }
   }
 `;
 
-export default function ProductImgSlider({ image }) {
+export default function ProductImgSlider({ image, isNeededImg }) {
   const [isInView, setIsInView] = useState(false);
   const location = useLocation();
 
   return (
     <ProductImgSliderWrapper>
-      <div className="head">
-        <img
-          src={image || StudioProduct}
-          alt="watch-head"
-          loading="lazy"
-          className="watch-more"
-        />
-      </div>
+      {isNeededImg && (
+        <div className="head">
+          <img
+            src={image || StudioProduct}
+            alt="watch-head"
+            loading="lazy"
+            className="watch-more"
+          />
+        </div>
+      )}
       <motion.div
         whileInView={() => {
           setIsInView(true);
@@ -122,16 +127,16 @@ export default function ProductImgSlider({ image }) {
               slidesPerView: 1,
               spaceBetween: 10,
             },
-            450: {
-              slidesPerView: 1.5,
+            350: {
+              slidesPerView: 1,
               spaceBetween: 10,
             },
             550: {
-              slidesPerView: 2,
+              slidesPerView: 1.5,
               spaceBetween: 15,
             },
             700: {
-              slidesPerView: 2.5,
+              slidesPerView: 2,
               spaceBetween: 20,
             },
             1075: {
@@ -139,7 +144,7 @@ export default function ProductImgSlider({ image }) {
               spaceBetween: 20,
             },
             1500: {
-              slidesPerView: 4,
+              slidesPerView: 3.5,
               spaceBetween: 30,
             },
           }}

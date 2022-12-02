@@ -390,7 +390,7 @@ const SimillerProduct = () => {
           </div>
         </div>
       </SimillerProductWrapper>
-      <ProductImgSlider />
+      <ProductImgSlider isNeededImg={true}/>
     </>
   );
 };

@@ -148,7 +148,7 @@ export default function StudioProductMaterial() {
         {pathname === "/studio-material" && (
           <>
             <SimillerVideo />
-            <ProductImgSlider />
+            <ProductImgSlider isNeededImg={true}/>
           </>
         )}
       </motion.div>

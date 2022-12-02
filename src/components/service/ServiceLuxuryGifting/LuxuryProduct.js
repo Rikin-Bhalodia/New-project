@@ -52,6 +52,26 @@ const LuxuryProductWrapper = styled.div`
     font-family: "Mulish";
     font-size: 17px;
   }
+  @media (max-width: 800px) {
+    .slider {
+      margin-top: 70px;
+    }
+  }
+  @media (max-width: 600px) {
+    .slider {
+      margin-top: 60px;
+    }
+  }
+  @media (max-width: 500px) {
+    .slider {
+      margin-top: 50px;
+    }
+  }
+  @media (max-width: 450px) {
+    .slider {
+      margin-top: 20px;
+    }
+  }
 `;
 
 const LuxuryProduct = () => {
@@ -61,7 +81,7 @@ const LuxuryProduct = () => {
         <ProductSelectionCommon />
         <div className="slider">
           <div className="head">PAIR IT WITH</div>
-          <ProductImgSlider />
+          <ProductImgSlider isNeededImg={false} />
         </div>
         <YouMayLike />
         <div>
