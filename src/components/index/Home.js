@@ -14,10 +14,12 @@ import ExploreNow from "../../assets/images/homepage/explorenow.svg";
 import styled from "styled-components";
 import MenuIcon from "../../assets/images/studio/menu.svg";
 import { motion } from "framer-motion";
-import WelcomeMobile from "./WelcomeMobile";
-import DiveInto from "./DiveInto";
 import { InstaLike } from "../../commonComponents/Animation/heart";
-import Rent_Resell from "./Rent_Resell";
+import FollowMobile from "./Follow_Mobile";
+const WelcomeMobile = React.lazy(() => import("./WelcomeMobile"));
+const DiveInto = React.lazy(() => import("./DiveInto"));
+const Rent_Resell = React.lazy(() => import("./Rent_Resell"));
+const SeasonMobile = React.lazy(() => import("./Season_Mobile"));
 const AnimatedTextWord = React.lazy(() =>
   import("../../commonComponents/Animation/FlipAnimation")
 );
@@ -641,10 +643,20 @@ export default function Home() {
             </div>
 
             {/* <!-- season sec --> */}
-            <Season />
+            <div className="block">
+              <Season />
+            </div>
+            <div className="none">
+              <SeasonMobile />
+            </div>
 
             {/* <!-- Follow us sec --> */}
-            <Follow />
+            <div className="block">
+              <Follow />
+            </div>
+            <div className="none">
+              <FollowMobile />
+            </div>
 
             {/* <!-- Membership --> */}
             <section className="c-member-w paddingSec d-flex align-items-center membership justify-content-center">
