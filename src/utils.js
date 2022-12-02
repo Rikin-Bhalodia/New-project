@@ -33,14 +33,14 @@ import ForHer from "./assets/images/service/gifts-by-clients/for-her.svg";
 import ForThem from "./assets/images/service/gifts-by-clients/for-them.svg";
 import ForKids from "./assets/images/service/gifts-by-clients/for-kids.svg";
 
-import Anniversary from "./assets/images/service/occasion-gifts/anniversary.svg";
-import Birthday from "./assets/images/service/occasion-gifts/birthday.svg";
+import Anniversary from "./assets/images/service/occasion-gifts/anniversary.png";
+import Birthday from "./assets/images/service/occasion-gifts/birthday.png";
 import Engagement from "./assets/images/service/occasion-gifts/engagement.svg";
-import Fatherday from "./assets/images/service/occasion-gifts/fatherday.svg";
+import Fatherday from "./assets/images/service/occasion-gifts/fatherday.png";
 import Motherday from "./assets/images/service/occasion-gifts/motherday.svg";
-import Festive from "./assets/images/service/occasion-gifts/festive.svg";
+import Festive from "./assets/images/service/occasion-gifts/festive.png";
 import Graduation from "./assets/images/service/occasion-gifts/graduation.svg";
-import HouseWarming from "./assets/images/service/occasion-gifts/house-warming.svg";
+import HouseWarming from "./assets/images/service/occasion-gifts/house-warming.png";
 import Valentine from "./assets/images/service/occasion-gifts/valentine.svg";
 import Thankyou from "./assets/images/service/occasion-gifts/thankyou.svg";
 

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Luxury from "../../../assets/images/service/luxury.svg";
-import Left from "../../../assets/images/service/left.svg";
-import Right from "../../../assets/images/service/right.svg";
+import Left from "../../../assets/images/service/left.png";
+import Right from "../../../assets/images/service/right.png";
 import { motion } from "framer-motion";
 import {
   GiftsByClients,
@@ -98,6 +98,52 @@ const ServiceLuxuryGiftingWrapper = styled.div`
     text-align: center;
     padding-top: 70px;
   }
+  @media (max-width: 1200px) {
+    margin: 100px 50px 0;
+    .luxury {
+      top: -10px;
+    }
+    .gifting {
+      font-size: 80px;
+      margin-left: 50px;
+    }
+  }
+  @media (max-width: 1000px) {
+    margin: 80px 20px 0;
+    .luxury {
+      top: 0px;
+    }
+    .gifting {
+      font-size: 70px;
+    }
+    .left{
+      height: 250px;
+    }
+    .right{
+      height: 400px;
+    }
+    .luxury{
+      height: 220px;
+    }
+  }
+  @media (max-width: 850px) {
+    margin: 60px 10px 0;
+  
+    .gifting {
+      font-size: 60px;
+      margin-left: 50px;
+
+    }
+    .left{
+      height: 220px;
+    }
+    .right{
+      height: 370px;
+    }
+    .luxury{
+      height: 200px;
+    }
+  }
 `;
 
 const HalfWrapper = styled.div`
@@ -133,8 +179,6 @@ const HalfWrapper = styled.div`
     font-weight: 400;
     font-size: 30px;
     color: #665e2f;
-  }
-  .gift-text {
   }
 `;
 
