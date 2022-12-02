@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Price from "../../../assets/images/service/gift-for-him/price.svg";
 import { motion } from "framer-motion";
+import { useMediaQuery } from "react-responsive";
 
 const ProductWrapper = styled.div`
   button {
@@ -86,6 +87,7 @@ const ProductWrapper = styled.div`
       gap: 25px;
       margin: 40px 0;
       font-size: 18px;
+      grid-template-columns: repeat(2, 1fr);
     }
   }
   @media (max-width: 550px) {
@@ -99,7 +101,7 @@ const ProductWrapper = styled.div`
       font-size: 13px;
     }
     .products {
-      gap: 20px;
+      column-gap: 40px;
       margin: 30px 0;
       font-size: 16px;
     }
@@ -110,36 +112,16 @@ const ProductWrapper = styled.div`
       row-gap: 10px;
     }
   }
-  @media (max-width: 450px) {
-    margin: 0 25px;
-    .product-image {
-      height: 90px;
-    }
-    button {
-      width: 80px;
-      height: 25px;
-      font-size: 9px;
-    }
-    .products {
-      column-gap: 30px;
-      margin: 20px 0;
-      font-size: 14px;
-    }
-    .price {
-      font-size: 13px;
-    }
-    .product {
-      row-gap: 7px;
-    }
-  }
 `;
 
 const Product = () => {
   const [isInView, setIsInView] = useState(false);
+  const isResponsive = useMediaQuery({ query: "(max-width: 650px)" });
+
   return (
     <ProductWrapper>
       <motion.div className="products">
-        {[1, 1, 1].map((_) => {
+        {(isResponsive ? [1, 1] : [1, 1, 1]).map((_) => {
           return (
             <div className="product">
               <motion.img

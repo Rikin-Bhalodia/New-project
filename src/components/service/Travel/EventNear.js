@@ -72,11 +72,19 @@ const EventNearWrapper = styled.div`
       width: 150px;
       height: 150px;
     }
+    .background {
+      width: 180px;
+      height: 180px;
+    }
   }
   @media screen and (max-width: 450px) {
     .inspire-head {
       padding: 30px;
       font-size: 20px;
+    }
+    .background {
+      width: 170px;
+      height: 170px;
     }
     /* .feelings, .event-near {
       gap: 30px;
@@ -121,14 +129,52 @@ const EventNear = ({ isRequiredTopThings }) => {
             }
             className="feelings"
           >
-            {Feelings.slice(0, 4).map((feeling) => {
-              return (
-                <div className="wrapper">
-                  <div className="background"></div>
-                  <div className="feeling">{feeling}</div>
-                </div>
-              );
-            })}
+            <Swiper
+              breakpoints={{
+                260: {
+                  slidesPerView: 1,
+                  spaceBetween: 10,
+                },
+                385: {
+                  slidesPerView: 1.5,
+                  spaceBetween: 20,
+                },
+                500: {
+                  slidesPerView: 2,
+                  spaceBetween: 40,
+                },
+                700: {
+                  slidesPerView: 3,
+                  spaceBetween: 60,
+                },
+                1075: {
+                  slidesPerView: 4,
+                  spaceBetween: 60,
+                },
+              }}
+              className="mySwiper"
+              autoplay={{
+                delay: 1500,
+                disableOnInteraction: false,
+              }}
+              loop={true}
+              loopFillGroupWithBlank={true}
+              speed={2500}
+              modules={[Autoplay, Pagination, Navigation]}
+            >
+              {(isResponsive ? Feelings : Feelings.slice(0, 4)).map(
+                (feeling) => {
+                  return (
+                    <SwiperSlide>
+                      <div className="wrapper">
+                        <div className="background"></div>
+                        <div className="feeling">{feeling}</div>
+                      </div>
+                    </SwiperSlide>
+                  );
+                }
+              )}
+            </Swiper>
           </motion.div>
         </>
       )}
@@ -156,7 +202,7 @@ const EventNear = ({ isRequiredTopThings }) => {
               slidesPerView: 1,
               spaceBetween: 10,
             },
-            360: {
+            385: {
               slidesPerView: 1.5,
               spaceBetween: 20,
             },

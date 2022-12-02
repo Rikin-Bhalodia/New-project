@@ -31,11 +31,17 @@ const TopTrandingDiffBackgroundWrapper = styled.div`
     left: 0;
     width: 100vw;
   }
+  @media screen and (max-width: 850px) {
+    height: 650px;
+    .top {
+      font-size: 28px;
+    }
+  }
   @media screen and (max-width: 450px) {
-    height: 600px;
+    height: 570px;
     .top {
       padding: 30px 20px;
-      font-size: 32px;
+      font-size: 22px;
     }
   }
 `;
