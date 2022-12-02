@@ -65,34 +65,37 @@ const ValentineGiftWrapper = styled.div`
   .icon-name {
     padding-top: 5px;
   }
-  .menu-icon{
+  .menu-icon {
     top: -40px !important;
   }
   @media (max-width: 1000px) {
     .heading-part {
       font-size: 90px;
     }
+    .icons {
+      margin: 30px 0;
+      word-break: break-word;
+    }
   }
   @media (max-width: 800px) {
     .heading-part {
       font-size: 70px;
     }
-  }
-  /* @media (max-width: 700px) {
-    .pets-icon {
-      height: 35px;
-      width: 40px;
+    .icons {
+      column-gap: 10px;
+      flex-wrap: wrap;
+      row-gap: 15px;
     }
+
+    .icon-name {
+      font-size: 12px;
+    }
+  }
+  @media (max-width: 700px) {
     .icon-name {
       font-size: 10px;
     }
-    .text {
-      width: 30%;
-    }
-    .load-line {
-      width: 35%;
-    }
-  } */
+  }
   @media (max-width: 600px) {
     .heading-part {
       font-size: 55px;
@@ -103,19 +106,28 @@ const ValentineGiftWrapper = styled.div`
       background-size: 100%;
       background-position: bottom;
       height: 50vh;
-
     }
   }
   @media (max-width: 500px) {
     .heading-part {
       font-size: 45px;
     }
+    .icon-name {
+      font-size: 9px;
+    }
   }
   @media (max-width: 450px) {
     .heading-part {
       font-size: 35px;
       height: 42vh;
-
+    }
+  }
+  @media (max-width: 400px) {
+    .icons {
+      padding: 0 10px;
+      row-gap: 10px;
+      column-gap: 6px;
+      margin-top: 20px;
     }
   }
 `;
