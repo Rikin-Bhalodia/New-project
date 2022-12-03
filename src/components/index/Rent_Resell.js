@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import Rent from "./../../assets/images/homepage/rent_mobile.svg";
-import Resell from "./../../assets/images/homepage/resell_mobile.svg";
+import Rent from "./../../assets/images/homepage/rent_mobile.png";
+import Resell from "./../../assets/images/homepage/resell_mobile.png";
 import RentText from "./../../assets/images/homepage/Mobile_rent_text.svg";
 import ResellText from "./../../assets/images/homepage/mobile_resell_text.svg";
-import Right_Img from "./../../assets/images/homepage/Right_Img.svg";
-import Body_Img from "./../../assets/images/homepage/Body_Img.svg";
+import Right_Img from "./../../assets/images/homepage/Right_Img.png";
+import Body_Img from "./../../assets/images/homepage/Body_Img.png";
 import AnimatedTextWord from "../../commonComponents/Animation/FlipAnimation";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper";
