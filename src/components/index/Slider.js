@@ -9,6 +9,8 @@ import ShopNow from "../../assets/images/homepage/dark-shownow.svg";
 import ExploreNow from "../../assets/images/homepage/explorenow.svg";
 
 const AvenuSliderWrapper = styled.div`
+  position: relative;
+  top: -100px;
   .swiper.swiper-initialized.swiper-horizontal.swiper-pointer-events.swiper-backface-hidden.mySwiper {
     height: 250px;
   }

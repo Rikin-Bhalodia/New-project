@@ -16,6 +16,7 @@ import MenuIcon from "../../assets/images/studio/menu.svg";
 import { motion } from "framer-motion";
 import { InstaLike } from "../../commonComponents/Animation/heart";
 import FollowMobile from "./Follow_Mobile";
+import MobileBanner from "./Mobile-banner";
 const WelcomeMobile = React.lazy(() => import("./WelcomeMobile"));
 const DiveInto = React.lazy(() => import("./DiveInto"));
 const Rent_Resell = React.lazy(() => import("./Rent_Resell"));
@@ -244,6 +245,7 @@ const HomeWrapper = styled.div`
   }
   .menu-icon {
     top: -40px !important;
+    z-index: 99;
   }
   .livetv_banner_section {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
@@ -316,7 +318,7 @@ export default function Home() {
         <div>
           <div ref={wrapper}>
             {/* <!-- home page banner part --> */}
-            <section className="homeBanner overflow-hidden minHeightSec minBannerHeight ">
+            <section className="homeBanner overflow-hidden minHeightSec minBannerHeight block">
               <div className="">
                 <div className="row">
                   <div className="col-12 px-0">
@@ -559,6 +561,9 @@ export default function Home() {
                 </div>
               </div>
             </section>
+            <div className="none">
+              <MobileBanner />
+            </div>
             {/* <!-- about --> */}
             <div className="none">
               <WelcomeMobile />

@@ -596,7 +596,7 @@ footer {
 .bannerSection {
   background: var(--light_yellow);
   flex-direction: column;
-  height: 100vh;
+  height: 90vh;
 }
 
 .bannerSection .bannerMenus {

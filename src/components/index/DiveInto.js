@@ -10,6 +10,7 @@ const DiveIntoWrapper = styled.div`
   position: relative;
   height: 80vh;
   padding: 50px 30px;
+  top: -100px;
   .leave {
     position: absolute;
     top: 0;

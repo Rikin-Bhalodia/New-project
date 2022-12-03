@@ -6,7 +6,7 @@ import legance from "../../assets/images/homepage/legancy.svg";
 
 const WelcomeMobileWrapper = styled.div`
   position: relative;
-  top: -80px;
+  top: -100px;
   .banner_img {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
       url(${Banner});
