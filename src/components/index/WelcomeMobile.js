@@ -6,7 +6,7 @@ import legance from "../../assets/images/homepage/legancy.svg";
 
 const WelcomeMobileWrapper = styled.div`
   position: relative;
-  top: -100px;
+  /* top: -100px; */
   .banner_img {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
       url(${Banner});
@@ -68,15 +68,15 @@ const WelcomeMobileWrapper = styled.div`
   @media (max-width: 450px) {
     .welcome_content {
       .flip-text {
-        font-size: 30px;
-        line-height: 50px;
+        font-size: 28px;
+        line-height: 45px;
         letter-spacing: 1.5px;
       }
       img {
-        width: 200px;
+        width: 150px;
       }
       .btn2 {
-        padding: 0.5rem 1.5rem;
+        padding: 0.4rem 1.5rem;
       }
     }
   }

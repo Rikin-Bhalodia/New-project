@@ -27,6 +27,45 @@ const SeasonMobileWrapper = styled.div`
       display: flex;
       flex-direction: column;
       gap: 35px;
+      .slider-box {
+        h5 {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+  @media (max-width: 650px) {
+    .season_section {
+      .season_head {
+        h3 {
+          font-size: 45px;
+          line-height: 55px;
+        }
+      }
+      .season_body {
+        .slider-box {
+          h5 {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 500px) {
+    .season_section {
+      .season_head {
+        h3 {
+          font-size: 35px;
+          line-height: 45px;
+        }
+      }
+      .season_body {
+        .slider-box {
+          h5 {
+            font-size: 15px;
+          }
+        }
+      }
     }
   }
 `;
@@ -45,15 +84,15 @@ export default function SeasonMobile() {
             breakpoints={{
               260: {
                 slidesPerView: 2.5,
-                spaceBetween: 10,
+                spaceBetween: 30,
               },
               400: {
                 slidesPerView: 3,
-                spaceBetween: 10,
+                spaceBetween: 30,
               },
               550: {
-                slidesPerView: 3.5,
-                spaceBetween: 15,
+                slidesPerView: 3,
+                spaceBetween: 30,
               },
             }}
             className="mySwiper"
@@ -95,15 +134,15 @@ export default function SeasonMobile() {
             breakpoints={{
               260: {
                 slidesPerView: 2.5,
-                spaceBetween: 10,
+                spaceBetween: 30,
               },
               400: {
                 slidesPerView: 3,
-                spaceBetween: 10,
+                spaceBetween: 30,
               },
               550: {
-                slidesPerView: 3.5,
-                spaceBetween: 15,
+                slidesPerView: 3,
+                spaceBetween: 30,
               },
             }}
             className="mySwiper"

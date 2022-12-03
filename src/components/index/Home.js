@@ -45,6 +45,20 @@ const HomeWrapper = styled.div`
     left: -400px;
     top: 130px;
   }
+
+  .menu-icon {
+    background: #a65a40;
+    height: 80px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 7px solid white;
+    margin: auto;
+    position: absolute;
+    top: 0px !important;
+  }
   .royclan {
     opacity: 0.1;
     display: flex;
@@ -199,6 +213,12 @@ const HomeWrapper = styled.div`
     }
   }
   @media (max-width: 850px) {
+    .explore-title {
+      font-size: 60px;
+    }
+    .c-member-w a {
+      padding: 12px 25px;
+    }
   }
 
   @media (max-width: 767px) {
@@ -212,7 +232,8 @@ const HomeWrapper = styled.div`
       font-size: 35px;
     }
     .c-member-w a {
-      padding: 12px 25px;
+      padding: 8px 20px;
+      font-size: 11px;
     }
   }
   .c-drive-img img {
@@ -290,6 +311,50 @@ const HomeWrapper = styled.div`
       color: black;
       font-size: 17px;
       font-weight: 500;
+    }
+  }
+  @media (max-width: 650px) {
+    .live_tv_content {
+      p {
+        font-size: 12px;
+        line-height: 26px;
+        letter-spacing: 3px;
+      }
+      h3 {
+        font-size: 50px;
+        line-height: 60px;
+        letter-spacing: 3px;
+      }
+      img {
+        width: 150px;
+        margin-bottom: 50px;
+      }
+      a {
+        padding: 8px 30px;
+        font-size: 15px;
+      }
+    }
+  }
+  @media (max-width: 450px) {
+    .live_tv_content {
+      p {
+        font-size: 11px;
+        line-height: 20px;
+        letter-spacing: 3px;
+      }
+      h3 {
+        font-size: 40px;
+        line-height: 50px;
+        letter-spacing: 3px;
+      }
+      img {
+        width: 120px;
+        margin-bottom: 40px;
+      }
+      a {
+        padding: 8px 30px;
+        font-size: 12px;
+      }
     }
   }
 `;
@@ -561,7 +626,7 @@ export default function Home() {
                 </div>
               </div>
             </section>
-            <div className="none">
+            <div className="none" style={{ position: "relative" }}>
               <MobileBanner />
             </div>
             {/* <!-- about --> */}

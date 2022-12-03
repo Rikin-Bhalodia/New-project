@@ -10,7 +10,7 @@ import ExploreNow from "../../assets/images/homepage/explorenow.svg";
 
 const AvenuSliderWrapper = styled.div`
   position: relative;
-  top: -100px;
+  /* top: -100px; */
   .swiper.swiper-initialized.swiper-horizontal.swiper-pointer-events.swiper-backface-hidden.mySwiper {
     height: 250px;
   }
@@ -65,12 +65,35 @@ const AvenuSliderWrapper = styled.div`
       height: 80%;
     }
   }
+  @media (max-width: 550px) {
+    .swiper-slide img {
+      border-radius: 50%;
+    }
+    .roundBtn {
+      display: none;
+    }
+    .round {
+      height: 200px !important;
+    }
+    .round img.radius {
+      border-radius: 50% !important;
+    }
+    .avenue_service {
+      width: 140px;
+    }
+    .swiper.swiper-initialized.swiper-horizontal.swiper-pointer-events.swiper-backface-hidden.mySwiper {
+      height: 150px;
+    }
+    .paddingSec {
+      padding: 0px;
+    }
+  }
 `;
 export default function AvenuSlider() {
   return (
     <AvenuSliderWrapper>
       <section
-        className="paddingSec minHeightSec d-flex align-items-center c-service-w pt-5 pb-3 "
+        className="paddingSec minHeightSec d-flex align-items-center c-service-w"
         id="avenue"
       >
         <div className="container-fluid">

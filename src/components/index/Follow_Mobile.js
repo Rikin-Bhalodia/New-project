@@ -75,6 +75,229 @@ const FollowMobileWrapper = styled.div`
       }
     }
   }
+  @media (max-width: 767px) {
+    .follow_section {
+      height: 630px;
+      padding: 40px 30px;
+      .follow_grid {
+        .img_ab_1 {
+          img {
+            width: 160px;
+          }
+        }
+        .img_ab_2 {
+          left: 260px;
+          img {
+            width: 250px;
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 700px) {
+    .follow_section {
+      height: 550px;
+      padding: 40px 30px;
+      .follow_grid {
+        .grid_1 {
+          h3 {
+            font-size: 70px;
+            line-height: 80px;
+            margin-left: 30px !important;
+          }
+        }
+        .img_ab_1 {
+          top: 170px;
+          left: 15px;
+          img {
+            width: 140px;
+          }
+        }
+        .img_ab_2 {
+          left: 215px;
+          top: 80px;
+          img {
+            width: 220px;
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 600px) {
+    .follow_section {
+      height: 480px;
+      padding: 30px;
+      .follow_grid {
+        gap: 15px;
+        .grid_1 {
+          h3 {
+            font-size: 60px;
+            line-height: 70px;
+            margin-left: 30px !important;
+          }
+        }
+        .img_ab_1 {
+          top: 150px;
+          left: 15px;
+          img {
+            width: 130px;
+          }
+        }
+        .img_ab_2 {
+          left: 215px;
+          top: 80px;
+          img {
+            width: 200px;
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 570px) {
+    .follow_section {
+      height: 450px;
+      padding: 30px;
+      .follow_grid {
+        gap: 15px;
+        .grid_1 {
+          h3 {
+            font-size: 58px;
+            line-height: 62px;
+          }
+        }
+        .img_ab_1 {
+          top: 130px;
+          left: 15px;
+          img {
+            width: 120px;
+          }
+        }
+        .img_ab_2 {
+          left: 200px;
+          top: 80px;
+          img {
+            width: 170px;
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 520px) {
+    .follow_section {
+      height: 380px;
+      padding: 30px;
+      .follow_grid {
+        gap: 15px;
+        .grid_1 {
+          h3 {
+            font-size: 55px;
+            line-height: 60px;
+          }
+        }
+        .img_ab_1 {
+          top: 120px;
+          left: 15px;
+          img {
+            width: 95px;
+          }
+        }
+        .img_ab_2 {
+          left: 180px;
+          top: 65px;
+          img {
+            width: 150px;
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 470px) {
+    .follow_section {
+      height: 350px;
+      .follow_grid {
+        gap: 15px;
+        .grid_1 {
+          h3 {
+            font-size: 50px;
+            line-height: 55px;
+            margin-left: 20px !important;
+          }
+        }
+        .img_ab_1 {
+          top: 120px;
+          left: 10px;
+          img {
+            width: 80px;
+          }
+        }
+        .img_ab_2 {
+          left: 160px;
+          top: 65px;
+          img {
+            width: 140px;
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 430px) {
+    .follow_section {
+      height: 300px;
+      padding: 20px;
+      .follow_grid {
+        gap: 15px;
+        .grid_1 {
+          h3 {
+            font-size: 45px;
+            line-height: 50px;
+            letter-spacing: 2px;
+          }
+        }
+        .img_ab_1 {
+          top: 100px;
+          img {
+            width: 70px;
+          }
+        }
+        .img_ab_2 {
+          left: 160px;
+          top: 65px;
+          img {
+            width: 120px;
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 390px) {
+    .follow_section {
+      height: 290px;
+      padding: 20px 20px 20px 10px;
+      .follow_grid {
+        gap: 10px;
+        .grid_1 {
+          h3 {
+            font-size: 40px;
+            line-height: 45px;
+            letter-spacing: 2px;
+          }
+        }
+        .img_ab_1 {
+          top: 95px;
+          img {
+            width: 75px;
+          }
+        }
+        .img_ab_2 {
+          left: 130px;
+          top: 50px;
+          img {
+            width: 120px;
+          }
+        }
+      }
+    }
+  }
 `;
 
 export default function FollowMobile() {

@@ -9,7 +9,7 @@ import MenuIcon from "../../assets/images/studio/menu.svg";
 import Menu from "../../commonComponents/Menu";
 
 const MobileBannerWrapper = styled.div`
-  height: 95vh;
+  height: 100vh;
   background: #a69484;
   font-size: 34px;
   color: white;
@@ -45,6 +45,42 @@ const MobileBannerWrapper = styled.div`
     width: 230px;
     border-radius: 20px;
   }
+  .title-name.padding {
+    padding-left: 70px;
+  }
+  @media (max-width: 700px) {
+    font-size: 30px;
+    .leftImg {
+      height: 250px;
+      width: 200px;
+    }
+    .rightImg {
+      height: 250px;
+      width: 200px;
+    }
+  }
+  @media (max-width: 530px) {
+    font-size: 26px;
+    .leftImg {
+      height: 220px;
+      width: 160px;
+    }
+    .rightImg {
+      height: 220px;
+      width: 160px;
+    }
+  }
+  @media (max-width: 450px) {
+    font-size: 22px;
+    .leftImg {
+      height: 190px;
+      width: 130px;
+    }
+    .rightImg {
+      height: 190px;
+      width: 130px;
+    }
+  }
 `;
 
 const menuData = [
@@ -53,24 +89,28 @@ const menuData = [
     duration: 1,
     hoverImgLeft: studioInner1,
     hoverImgRight: studioInner4,
+    css: "",
   },
   {
     name: "AVENUE",
     duration: 1.2,
     hoverImgLeft: studioInner3,
     hoverImgRight: studioInner1,
+    css: "padding",
   },
   {
     name: "RENT& RESELL",
     duration: 1.4,
     hoverImgLeft: studioInner1,
     hoverImgRight: studioInner4,
+    css: "",
   },
   {
     name: "LIVE SHOP",
     duration: 1.8,
     hoverImgLeft: studioInner3,
     hoverImgRight: studioInner1,
+    css: "",
   },
 ];
 const MobileBanner = () => {
@@ -80,47 +120,49 @@ const MobileBanner = () => {
   return (
     <>
       <MobileBannerWrapper>
-        {menuData.map(({ name, duration, hoverImgLeft, hoverImgRight }, i) => {
-          return (
-            <>
-              <div
-                className={
-                  name === "RENT& RESELL"
-                    ? "title-name fix-width"
-                    : "title-name"
-                }
-                onMouseEnter={() => setShowImage(i)}
-                onMouseLeave={() => {
-                  setShowImage("");
-                }}
-              >
-                {name}
-              </div>
-              <div className="hover-images">
-                {showImage === i && (
-                  <div>
-                    <motion.img
-                      src={hoverImgLeft}
-                      alt=""
-                      loading="lazy"
-                      className="leftImg"
-                    />
-                  </div>
-                )}
-                {showImage === i && (
-                  <div>
-                    <motion.img
-                      src={hoverImgRight}
-                      alt=""
-                      loading="lazy"
-                      className="leftImg"
-                    />
-                  </div>
-                )}
-              </div>
-            </>
-          );
-        })}
+        {menuData.map(
+          ({ name, duration, hoverImgLeft, hoverImgRight, css }, i) => {
+            return (
+              <>
+                <div
+                  className={
+                    name === "RENT& RESELL"
+                      ? `title-name fix-width `
+                      : `title-name ${css}`
+                  }
+                  onMouseEnter={() => setShowImage(i)}
+                  onMouseLeave={() => {
+                    setShowImage("");
+                  }}
+                >
+                  {name}
+                </div>
+                <div className="hover-images">
+                  {showImage === i && (
+                    <div>
+                      <motion.img
+                        src={hoverImgLeft}
+                        alt=""
+                        loading="lazy"
+                        className="leftImg"
+                      />
+                    </div>
+                  )}
+                  {showImage === i && (
+                    <div>
+                      <motion.img
+                        src={hoverImgRight}
+                        alt=""
+                        loading="lazy"
+                        className="leftImg"
+                      />
+                    </div>
+                  )}
+                </div>
+              </>
+            );
+          }
+        )}
       </MobileBannerWrapper>
       <div
         className="menu-icon"

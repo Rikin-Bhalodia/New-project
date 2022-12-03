@@ -19,7 +19,7 @@ const Rent_ResellWrapper = styled.div`
     .rent_banner {
       background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
         url(${Rent});
-      height: 70vh;
+      height: 90vh;
       background-repeat: no-repeat;
       background-size: cover;
     }
@@ -63,7 +63,7 @@ const Rent_ResellWrapper = styled.div`
     .resell_banner {
       background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
         url(${Resell});
-      height: 50vh;
+      height: 60vh;
       background-repeat: no-repeat;
       background-size: cover;
     }
@@ -111,6 +111,190 @@ const Rent_ResellWrapper = styled.div`
       }
     }
   }
+  @media (max-width: 650px) {
+    .rent_section {
+      .rent_banner {
+        height: 70vh;
+      }
+      .rent_content {
+        padding: 50px;
+        .head {
+          h3 {
+            font-size: 65px;
+            line-height: 70px;
+          }
+        }
+        .footer {
+          a {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+    .resell_section {
+      .resell_banner {
+        height: 50vh;
+      }
+      .resell_content {
+        padding: 30px 50px;
+        .left {
+          .d_text {
+            h3 {
+              font-size: 65px;
+              line-height: 70px;
+            }
+          }
+          a {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 550px) {
+    .rent_section {
+      .rent_banner {
+        height: 70vh;
+      }
+      .rent_content {
+        padding: 50px;
+        .head {
+          h3 {
+            font-size: 55px;
+            line-height: 60px;
+          }
+          img {
+            width: 170px;
+            margin-top: 20px;
+          }
+        }
+        .footer {
+          a {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+    .resell_section {
+      .resell_banner {
+        height: 45vh;
+      }
+      .resell_content {
+        .left {
+          .d_text {
+            h3 {
+              font-size: 55px;
+              line-height: 60px;
+            }
+            img {
+              width: 120px;
+            }
+          }
+          a {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 500px) {
+    gap: 40px;
+    padding: 40px 0;
+    .rent_section {
+      .rent_banner {
+        height: 60vh;
+      }
+      .rent_content {
+        padding: 40px;
+        .head {
+          h3 {
+            font-size: 45px;
+            line-height: 50px;
+          }
+          img {
+            width: 150px;
+            margin-top: 20px;
+          }
+        }
+        .footer {
+          a {
+            font-size: 12px;
+            line-height: 26px;
+          }
+        }
+      }
+    }
+    .resell_section {
+      .resell_banner {
+        height: 40vh;
+      }
+      .resell_content {
+        .left {
+          .d_text {
+            h3 {
+              font-size: 45px;
+              line-height: 50px;
+            }
+            img {
+              width: 100px;
+            }
+          }
+          a {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 430px) {
+    gap: 30px;
+    padding: 30px 0;
+    .rent_section {
+      .rent_banner {
+        height: 50vh;
+      }
+      .rent_content {
+        padding: 30px;
+        .head {
+          h3 {
+            font-size: 35px;
+            line-height: 40px;
+          }
+          img {
+            width: 130px;
+            margin-top: 20px;
+          }
+        }
+        .footer {
+          a {
+            font-size: 10px;
+          }
+        }
+      }
+    }
+    .resell_section {
+      .resell_banner {
+        height: 35vh;
+      }
+      .resell_content {
+        padding: 30px 40px;
+        .left {
+          .d_text {
+            h3 {
+              font-size: 35px;
+              line-height: 40px;
+            }
+            img {
+              width: 80px;
+            }
+          }
+          a {
+            font-size: 10px;
+          }
+        }
+      }
+    }
+  }
 `;
 
 export default function Rent_Resell() {
@@ -128,13 +312,21 @@ export default function Rent_Resell() {
             <div className="body">
               <Swiper
                 breakpoints={{
-                  300: {
+                  260: {
                     slidesPerView: 2.5,
-                    spaceBetween: 50,
+                    spaceBetween: 30,
+                  },
+                  400: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                  },
+                  550: {
+                    slidesPerView: 3,
+                    spaceBetween: 40,
                   },
                 }}
                 className="mySwiper round"
-                style={{ height: "250px" }}
+                // style={{ height: "250px" }}
                 autoplay={{
                   delay: 1500,
                   disableOnInteraction: false,
