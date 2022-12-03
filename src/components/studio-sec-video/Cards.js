@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import DummyVideoImage from "../../assets/images/studio-material/dummy-video.svg";
+import { useMediaQuery } from "react-responsive";
 
 const CardWrapper = styled.div`
   padding-bottom: 50px;
@@ -9,6 +10,7 @@ const CardWrapper = styled.div`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 50px;
+    padding: 0 20px;
   }
   .card {
     display: flex;
@@ -34,10 +36,86 @@ const CardWrapper = styled.div`
     font-weight: 500;
     font-size: 12px;
   }
+  .dummy-image1 {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  @media (max-width: 820px) {
+    .cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .des {
+      text-overflow: ellipsis;
+      -webkit-line-clamp: 4;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  }
+  @media (max-width: 500px) {
+    .cards {
+      gap: 20px;
+    }
+    .des {
+      -webkit-line-clamp: 3;
+    }
+    .title {
+      font-size: 14px;
+    }
+    .sub-title {
+      font-size: 13px;
+    }
+    .dummy-image {
+      width: 200px;
+      height: 200px;
+    }
+  }
+  @media (max-width: 450px) {
+    .cards {
+      gap: 10px;
+    }
+    .des {
+      -webkit-line-clamp: 3;
+    }
+    .title {
+      font-size: 13px;
+    }
+    .sub-title {
+      font-size: 11px;
+    }
+    .dummy-image {
+      width: 180px;
+      height: 180px;
+    }
+  }
+  @media (max-width: 450px) {
+    .des {
+      -webkit-line-clamp: 2;
+    }
+    .title {
+      font-size: 12px;
+    }
+    .sub-title {
+      font-size: 10px;
+    }
+    .dummy-image {
+      width: 170px;
+      height: 170px;
+    }
+  }
+  @media (max-width: 400px) {
+    .dummy-image {
+      width: 160px;
+      height: 160px;
+    }
+  }
 `;
 
 const Card = () => {
   const [isInView, setIsInView] = useState(false);
+  const isResponsive = useMediaQuery({ query: "(max-width: 820px)" });
+
   return (
     <>
       <CardWrapper>
@@ -56,10 +134,10 @@ const Card = () => {
           }
         >
           <div className="cards">
-            {[1, 2, 3].map((_) => {
+            {(isResponsive ? [1, 2] : [1, 2, 3]).map((_) => {
               return (
                 <div className="card">
-                  <div style={{ overflow: "hidden" }}>
+                  <div style={{ overflow: "hidden" }} className="dummy-image">
                     <motion.img
                       whileHover={{
                         scale: 1.1,
@@ -70,6 +148,7 @@ const Card = () => {
                       loading="lazy"
                       src={DummyVideoImage}
                       alt="dummy-image"
+                      className="dummy-image1"
                     />
                   </div>
                   <div className="title">Charles Jeffrey Loverboy</div>

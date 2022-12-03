@@ -22,7 +22,7 @@ const SecVideoWrapper = styled.div`
     font-style: normal;
     font-weight: 400;
     font-size: 17px;
-    padding: 30px 0px;
+    padding: 30px 0px 20px 20px;
   }
   .name {
     font-family: "Coral Blush";
@@ -31,16 +31,63 @@ const SecVideoWrapper = styled.div`
     font-weight: 400;
     font-size: 45px;
     padding-bottom: 50px;
+    padding-left: 20px;
+  }
+  @media (max-width: 1200px) {
+    .video-type {
+      font-size: 80px;
+    }
+  }
+  @media (max-width: 1000px) {
+    .video-type {
+      font-size: 70px;
+    }
+    .name {
+      font-size: 40px;
+    }
+  }
+  @media (max-width: 850px) {
+    .video-type {
+      font-size: 60px;
+    }
+  }
+  @media (max-width: 600px) {
+    .video-type {
+      font-size: 50px;
+    }
+    .name {
+      font-size: 35px;
+    }
+  }
+  @media (max-width: 500px) {
+    .video-type {
+      font-size: 45px;
+    }
+    .name {
+      font-size: 30px;
+    }
+    .date {
+      padding: 15px 15px;
+    }
+  }
+  @media (max-width: 400px) {
+    .video-type {
+      font-size: 36px;
+    }
+    .name {
+      font-size: 25px;
+    }
   }
 `;
 
 const StudioSecVideo = () => {
   const [isInView, setIsInView] = useState(false);
+
   return (
     <>
       <StudioBanner />
       <SecVideoWrapper>
-        <div className="container">
+        <div className="">
           <div className="video-type">
             <AnimatedTextWord text="15 Second videos" />
           </div>

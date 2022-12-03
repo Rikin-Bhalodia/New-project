@@ -190,6 +190,11 @@ const CommonContentWrapper = styled.div`
       font-size: 16px;
     }
   }
+  @media screen and (max-width: 1000px) {
+    .studio-s2 {
+      padding: 2rem;
+    }
+  }
 `;
 
 const CommonContent = () => {
