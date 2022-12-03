@@ -3,11 +3,17 @@ import styled from "styled-components";
 import { Modal } from "antd";
 
 import Mic from "../../assets/images/studio/header/mic.svg";
+import MicBlack from "../../assets/images/studio/header/mic.svg";
 import Search from "../../assets/images/studio/header/search.svg";
 import MainLogo from "../../assets/images/studio/header/main-logo.svg";
 import Heart from "../../assets/images/studio/header/heart.svg";
 import Cart from "../../assets/images/studio/header/cart.svg";
 import Profile from "../../assets/images/studio/header/profile.svg";
+import SearchBlack from "../../assets/images/studio/header/search-black.svg";
+import MainLogoBlack from "../../assets/images/studio/header/main-logo-black.svg";
+import HeartBlack from "../../assets/images/studio/header/heart-black.svg";
+import CartBlack from "../../assets/images/studio/header/cart-black.svg";
+import ProfileBlack from "../../assets/images/studio/header/profile-black.svg";
 import productCartImg from "../../assets/images/product-section/modal-img1.svg";
 import modalText from "../../assets/images/product-section/modal--text.svg";
 import { motion } from "framer-motion";
@@ -130,6 +136,7 @@ const Header = () => {
   const [scrollHeader, setScrollHeader] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { pathname } = useLocation();
+  // const isResponsive = useMediaQuery({ query: "(max-width: 800px)" });
 
   const showModal = () => {
     setIsModalOpen(true);
@@ -166,19 +173,34 @@ const Header = () => {
                 <li>
                   <span>
                     <input placeholder="Search Items" className="search" />
-                    <img src={Search} alt="search" className="search-icon" />
+                    <img
+                      src={
+                        pathname !== "/sub-menu1" || pathname !== "/sub-menu2"
+                          ? SearchBlack
+                          : Search
+                      }
+                      alt="search"
+                      className="search-icon"
+                    />
                   </span>
                 </li>
                 <li>
                   <span>
-                    <img src={Mic} className="mic-icon" alt="" />
+                    <img
+                      src={
+                        pathname !== "/sub-menu1" || pathname !== "/sub-menu2"
+                          ? MicBlack
+                          : Mic
+                      }
+                      className="mic-icon"
+                      alt=""
+                    />
                   </span>
                 </li>
               </ul>
             </div>
             <div className="search-icon-1 block">
               <a href="#">
-                {/* <i class="fa fa-search" aria-hidden="true"></i> */}
                 <svg
                   width="16"
                   height="15"
@@ -196,13 +218,19 @@ const Header = () => {
 
             <div className="logoImage text-center">
               <a href="">
-                <img src={MainLogo} className="main-logo" />
+                <img
+                  src={
+                    pathname !== "/sub-menu1" || pathname !== "/sub-menu2"
+                      ? MainLogoBlack
+                      : MainLogo
+                  }
+                  className="main-logo"
+                />
               </a>
             </div>
 
             <div className="menu-icon-1 block">
               <a href="#">
-                {/* <i class="fa fa-bars" aria-hidden="true"></i> */}
                 <svg
                   width="20"
                   height="16"
@@ -222,7 +250,11 @@ const Header = () => {
                 <li>
                   <span>
                     <img
-                      src={Profile}
+                      src={
+                        pathname !== "/sub-menu1" || pathname !== "/sub-menu2"
+                          ? ProfileBlack
+                          : Profile
+                      }
                       className="img-fluid smallHeaderIcon"
                       alt=""
                     />
@@ -231,7 +263,11 @@ const Header = () => {
                 <li>
                   <span>
                     <img
-                      src={Heart}
+                      src={
+                        pathname !== "/sub-menu1" || pathname !== "/sub-menu2"
+                          ? HeartBlack
+                          : Heart
+                      }
                       className="img-fluid smallHeaderIcon"
                       alt=""
                     />
@@ -240,7 +276,11 @@ const Header = () => {
                 <li>
                   <span onClick={showModal}>
                     <img
-                      src={Cart}
+                      src={
+                        pathname !== "/sub-menu1" || pathname !== "/sub-menu2"
+                          ? CartBlack
+                          : Cart
+                      }
                       className="img-fluid smallHeaderIcon"
                       alt=""
                     />

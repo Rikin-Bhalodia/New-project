@@ -6,10 +6,9 @@ import submenu from "../../assets/sub-cat-menu-1.svg";
 
 const SubMenu1Wrapper = styled.div`
   text-transform: uppercase;
-
   .head {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-top: 100px;
     align-items: center;
     margin-bottom: 20px;
@@ -22,11 +21,13 @@ const SubMenu1Wrapper = styled.div`
     padding: 20px;
   }
   .body {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    padding: 10px 80px 10px 80px;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 20px 10px 20px;
   }
   .menu-area {
+    height: fit-content;
+    padding-bottom: 100px;
     background-repeat: no-repeat;
     background-image: linear-gradient(
         135.17deg,
@@ -41,6 +42,7 @@ const SubMenu1Wrapper = styled.div`
     font-size: 18px;
     padding-top: 15px;
   }
+
   .body p {
     color: white;
     font-size: 12px;
@@ -63,23 +65,52 @@ const SubMenu1Wrapper = styled.div`
     color: white;
     letter-spacing: 10px;
   }
+  .head1 {
+    display: flex;
+    justify-content: space-between;
+    width: inherit;
+    flex: 1;
+    gap: 10px;
+    flex-wrap: wrap-reverse;
+    padding: 0 10px;
+  }
+  .head2 {
+    display: flex;
+    justify-content: space-between;
+    width: inherit;
+    flex: 1;
+    gap: 10px;
+    padding: 0 10px;
+    flex-wrap: wrap;
+  }
+  @media (max-width: 850px) {
+    .body {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+  }
 `;
 
 export default function SubMenu1() {
   return (
     <SubMenu1Wrapper>
       <div className="head">
-        <div>clothing</div>
-        <div>BAGS</div>
-        <div>FOOTWEAR</div>
-        <div>JEWELLERY</div>
-        <div>kids</div>
+        <div className="head1">
+          <div>clothing</div>
+          <div>BAGS</div>
+          <div>FOOTWEAR</div>
+          <div>JEWELLERY</div>
+          <div>kids</div>
+        </div>
         <div className="center">EXPLORE THE STORE</div>
-        <div>BEAUTY</div>
-        <div>ACCESSORIES</div>
-        <div>FOOD & DRINKS</div>
-        <div>GAMES</div>
-        <div>KIDS</div>
+        <div className="head2">
+          <div>BEAUTY</div>
+          <div>ACCESSORIES</div>
+          <div>FOOD & DRINKS</div>
+          <div>GAMES</div>
+          <div>KIDS</div>
+        </div>
       </div>
       <div className="menu-area">
         <div className="body">
