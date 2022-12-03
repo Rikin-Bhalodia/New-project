@@ -199,6 +199,7 @@ const ValentineGift = () => {
                   alt="img"
                   height={40}
                   width={60}
+                  className="size-icon"
                 />
                 <div className="icon-name">{data.name}</div>
               </div>

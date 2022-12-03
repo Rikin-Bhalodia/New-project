@@ -16,7 +16,7 @@ const GoBackPartWrapper = styled.div`
     font-size: 14px;
   }
   @media (max-width: 850px) {
-    padding: 100px 0 0 0;
+    padding: 80px 0 0 0;
     .des {
       padding: 20px 10px 0 10px;
     }
