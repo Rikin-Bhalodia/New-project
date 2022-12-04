@@ -10,7 +10,7 @@ const AnimatedTextWord = React.lazy(() =>
 
 const RantResaleWrapper = styled.div`
   .height {
-    height: 85vh !important;
+    height: 600px !important;
   }
 `;
 

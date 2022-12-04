@@ -32,7 +32,7 @@ const MobileBannerWrapper = styled.div`
     width: 100%;
     position: absolute;
     justify-content: center;
-    bottom: 150px;
+    bottom: 30px;
     column-gap: 50px;
   }
   .leftImg {
@@ -58,6 +58,9 @@ const MobileBannerWrapper = styled.div`
       height: 250px;
       width: 200px;
     }
+    .hover-images {
+      bottom: 50px;
+    }
   }
   @media (max-width: 530px) {
     font-size: 26px;
@@ -69,6 +72,9 @@ const MobileBannerWrapper = styled.div`
       height: 220px;
       width: 160px;
     }
+    .hover-images {
+      bottom: 100px;
+    }
   }
   @media (max-width: 450px) {
     font-size: 22px;
@@ -79,6 +85,9 @@ const MobileBannerWrapper = styled.div`
     .rightImg {
       height: 190px;
       width: 130px;
+    }
+    .hover-images {
+      bottom: 150px;
     }
   }
   .menu-icon {
@@ -95,6 +104,7 @@ const MobileBannerWrapper = styled.div`
     top: unset !important;
     bottom: -40px !important;
     left: calc(50vw - 40px);
+    z-index: 1;
   }
 `;
 

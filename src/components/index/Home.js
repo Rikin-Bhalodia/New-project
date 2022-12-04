@@ -160,6 +160,23 @@ const HomeWrapper = styled.div`
   .bannerSection {
     padding-top: 40px;
   }
+  .c-drive-con h2 span {
+    font-size: 85px;
+  }
+  .luxury {
+    width: 300px;
+    position: absolute;
+    left: 100px;
+    top: -135px;
+  }
+  .c-drive-img img {
+    height: 280px;
+    object-fit: cover;
+    width: 300px;
+  }
+  .px5 {
+    padding: 0 3rem;
+  }
 
   @media (max-width: 1200px) {
     .leftSideImg img {
@@ -169,6 +186,24 @@ const HomeWrapper = styled.div`
     .rightSideImg img {
       width: 290px !important;
       height: 330px !important;
+    }
+    .c-drive-con h2 span {
+      font-size: 77px;
+    }
+    .studio-title {
+      letter-spacing: 4px;
+      line-height: 77px;
+    }
+    .luxury {
+      width: 250px;
+      top: -120px;
+    }
+    .c-drive-img img {
+      height: 250px;
+      width: 280px;
+    }
+    .px5 {
+      padding: 0 2.5rem;
     }
   }
 
@@ -184,6 +219,28 @@ const HomeWrapper = styled.div`
     .menuLink {
       font-size: 38px !important;
     }
+    .rent-now {
+      width: 80px;
+      margin: 0;
+    }
+    .c-drive-con h2 span {
+      font-size: 71px;
+    }
+    .studio-title {
+      letter-spacing: 3px;
+      line-height: 71px;
+    }
+    .luxury {
+      width: 230px;
+      top: -110px;
+    }
+    .c-drive-img img {
+      height: 220px;
+      width: 250px;
+    }
+    .px5 {
+      padding: 0 2rem;
+    }
   }
 
   @media (max-width: 1000px) {
@@ -197,6 +254,35 @@ const HomeWrapper = styled.div`
     }
     .menuLink {
       font-size: 34px !important;
+    }
+    .c-drive-con h2 span {
+      font-size: 65px;
+    }
+    .studio-title {
+      letter-spacing: 3px;
+      line-height: 65px;
+    }
+    .luxury {
+      width: 210px;
+      top: -100px;
+      left: 90px;
+    }
+    .c-drive-img img {
+      height: 200px;
+      width: 230px;
+    }
+    .px5 {
+      padding: 0 1.5rem;
+    }
+    .membership-title {
+      letter-spacing: 3px;
+      font-size: 60px;
+    }
+    .explore-now {
+      width: 80px;
+    }
+    .explore-title {
+      font-size: 77px;
     }
   }
   @media (max-width: 850px) {
@@ -223,11 +309,7 @@ const HomeWrapper = styled.div`
       font-size: 11px;
     }
   }
-  .c-drive-img img {
-    height: 250px;
-    object-fit: cover;
-    width: 300px;
-  }
+
   .content {
     font-size: 46px;
   }

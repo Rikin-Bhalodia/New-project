@@ -94,7 +94,7 @@ export default function StudioImg() {
                     },
                   }
                 }
-                className="col-sm-4 px-5"
+                className="col-sm-4 px5"
               >
                 <div className="studioImg wow fadeInLeft">
                   <img
@@ -121,7 +121,7 @@ export default function StudioImg() {
                     },
                   }
                 }
-                className="col-sm-4 px-5"
+                className="col-sm-4 px5"
               >
                 <div className="studioImg wow fadeInLeft">
                   <img
@@ -148,7 +148,7 @@ export default function StudioImg() {
                     },
                   }
                 }
-                className="col-sm-4 px-5"
+                className="col-sm-4 px5"
               >
                 <div className="studioImg wow fadeInLeft">
                   <img

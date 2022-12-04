@@ -28,15 +28,7 @@ function Luxury() {
   }, []);
 
   return (
-    <svg
-      viewBox="0 0 319.5 209.33"
-      style={{
-        width: "300px",
-        position: "absolute",
-        left: "100px",
-        top: "-135px",
-      }}
-    >
+    <svg viewBox="0 0 319.5 209.33" className="luxury">
       <path
         className="draw-me"
         fontFamily="Beatlys"
