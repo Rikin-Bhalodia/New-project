@@ -46,19 +46,6 @@ const HomeWrapper = styled.div`
     top: 130px;
   }
 
-  .menu-icon {
-    background: #a65a40;
-    height: 80px;
-    width: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    border: 7px solid white;
-    margin: auto;
-    position: absolute;
-    top: 0px !important;
-  }
   .royclan {
     opacity: 0.1;
     display: flex;
@@ -263,10 +250,6 @@ const HomeWrapper = styled.div`
     .block {
       display: none;
     }
-  }
-  .menu-icon {
-    top: -40px !important;
-    z-index: 99;
   }
   .livetv_banner_section {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),

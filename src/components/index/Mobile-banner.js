@@ -81,6 +81,21 @@ const MobileBannerWrapper = styled.div`
       width: 130px;
     }
   }
+  .menu-icon {
+    background: #a65a40;
+    height: 80px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 7px solid white;
+    margin: auto;
+    position: absolute;
+    top: unset !important;
+    bottom: -40px !important;
+    left: calc(50vw - 40px);
+  }
 `;
 
 const menuData = [
@@ -163,21 +178,21 @@ const MobileBanner = () => {
             );
           }
         )}
+        <div
+          className="menu-icon"
+          onClick={() => setMenuOpenModal(!menuOpenModal)}
+        >
+          <Menu
+            menuOpenModal={menuOpenModal}
+            onClick={(e) => e.stopPropagation()}
+          />
+          {menuOpenModal ? (
+            <img src={MenuIcon} alt="menu" height={45} loading="lazy" />
+          ) : (
+            <img src={MenuIcon} alt="menu" height={45} loading="lazy" />
+          )}
+        </div>
       </MobileBannerWrapper>
-      <div
-        className="menu-icon"
-        onClick={() => setMenuOpenModal(!menuOpenModal)}
-      >
-        <Menu
-          menuOpenModal={menuOpenModal}
-          onClick={(e) => e.stopPropagation()}
-        />
-        {menuOpenModal ? (
-          <img src={MenuIcon} alt="menu" height={45} loading="lazy" />
-        ) : (
-          <img src={MenuIcon} alt="menu" height={45} loading="lazy" />
-        )}
-      </div>
     </>
   );
 };
