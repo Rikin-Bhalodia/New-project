@@ -32,7 +32,7 @@ const MobileBannerWrapper = styled.div`
     width: 100%;
     position: absolute;
     justify-content: center;
-    bottom: 50px;
+    bottom: 150px;
     column-gap: 50px;
   }
   .leftImg {

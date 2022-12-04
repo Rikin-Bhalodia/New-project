@@ -19,6 +19,9 @@ const DiveIntoWrapper = styled.div`
     width: 80%;
   }
   .dive_section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     .dive_head {
       position: relative;
       margin-bottom: 20px;

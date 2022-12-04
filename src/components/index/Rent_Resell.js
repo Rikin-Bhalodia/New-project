@@ -19,7 +19,7 @@ const Rent_ResellWrapper = styled.div`
     .rent_banner {
       background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
         url(${Rent});
-      height: 90vh;
+      height: 500px;
       background-repeat: no-repeat;
       background-size: cover;
     }
@@ -63,7 +63,7 @@ const Rent_ResellWrapper = styled.div`
     .resell_banner {
       background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
         url(${Resell});
-      height: 60vh;
+      height: 320px;
       background-repeat: no-repeat;
       background-size: cover;
     }
@@ -114,7 +114,7 @@ const Rent_ResellWrapper = styled.div`
   @media (max-width: 650px) {
     .rent_section {
       .rent_banner {
-        height: 70vh;
+        height: 400px;
       }
       .rent_content {
         padding: 50px;
@@ -133,7 +133,7 @@ const Rent_ResellWrapper = styled.div`
     }
     .resell_section {
       .resell_banner {
-        height: 50vh;
+        height: 300px;
       }
       .resell_content {
         padding: 30px 50px;
@@ -154,7 +154,6 @@ const Rent_ResellWrapper = styled.div`
   @media (max-width: 550px) {
     .rent_section {
       .rent_banner {
-        height: 70vh;
       }
       .rent_content {
         padding: 50px;
@@ -177,7 +176,7 @@ const Rent_ResellWrapper = styled.div`
     }
     .resell_section {
       .resell_banner {
-        height: 45vh;
+        height: 250px;
       }
       .resell_content {
         .left {
@@ -202,7 +201,7 @@ const Rent_ResellWrapper = styled.div`
     padding: 40px 0;
     .rent_section {
       .rent_banner {
-        height: 60vh;
+        height: 340px;
       }
       .rent_content {
         padding: 40px;
@@ -226,7 +225,7 @@ const Rent_ResellWrapper = styled.div`
     }
     .resell_section {
       .resell_banner {
-        height: 40vh;
+        height: 250px;
       }
       .resell_content {
         .left {
@@ -251,7 +250,7 @@ const Rent_ResellWrapper = styled.div`
     padding: 30px 0;
     .rent_section {
       .rent_banner {
-        height: 50vh;
+        height: 300px;
       }
       .rent_content {
         padding: 30px;
@@ -274,7 +273,7 @@ const Rent_ResellWrapper = styled.div`
     }
     .resell_section {
       .resell_banner {
-        height: 35vh;
+        height: 200px;
       }
       .resell_content {
         padding: 30px 40px;
@@ -314,7 +313,7 @@ export default function Rent_Resell() {
                 breakpoints={{
                   260: {
                     slidesPerView: 2.5,
-                    spaceBetween: 30,
+                    spaceBetween: 20,
                   },
                   400: {
                     slidesPerView: 3,
