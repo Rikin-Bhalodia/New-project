@@ -10,7 +10,7 @@ import aboutSlider from "../../assets/images/img/about-slider.jpg";
 const DiveIntoWrapper = styled.div`
   background: #665e2f;
   position: relative;
-  height: 95vh;
+  height: 520px;
   padding: 50px 30px;
   /* top: -100px; */
   .leave {
@@ -48,13 +48,13 @@ const DiveIntoWrapper = styled.div`
     }
     .dive_body {
       .mySwiper {
-        height: 40vh;
+        height: 225px;
       }
     }
   }
 
   @media (max-width: 630px) {
-    height: 86vh;
+    height: 470px;
     .dive_section {
       .dive_head {
         margin-bottom: 20px;
@@ -75,14 +75,14 @@ const DiveIntoWrapper = styled.div`
       }
       .dive_body {
         .mySwiper {
-          height: 35vh;
+          height: 200px;
         }
       }
     }
   }
   @media (max-width: 550px) {
     padding: 30px;
-    height: 72vh;
+    height: 390px;
     .dive_section {
       .dive_head {
         margin-bottom: 20px;
@@ -103,7 +103,7 @@ const DiveIntoWrapper = styled.div`
       }
       .dive_body {
         .mySwiper {
-          height: 30vh;
+          height: 170px;
         }
       }
     }
@@ -129,7 +129,7 @@ const DiveIntoWrapper = styled.div`
       }
       .dive_body {
         .mySwiper {
-          height: 25vh;
+          height: 170px;
         }
       }
     }
