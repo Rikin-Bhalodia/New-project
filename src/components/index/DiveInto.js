@@ -109,7 +109,7 @@ const DiveIntoWrapper = styled.div`
     }
   }
   @media (max-width: 450px) {
-    height: 60vh;
+    height: 350px;
     .dive_section {
       .dive_head {
         margin-bottom: 10px;
