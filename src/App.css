@@ -671,9 +671,10 @@ footer {
 }
 
 .bannerSection .bannerMenus .menuItem .menuLink {
-  font-size: 42px;
+  font-size: 40px;
   color: white;
   text-transform: uppercase;
+  line-height: 58px;
   letter-spacing: 3px;
   font-family: "coralSerif", sans-serif;
 }

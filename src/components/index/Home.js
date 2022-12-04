@@ -254,6 +254,7 @@ const HomeWrapper = styled.div`
     }
     .menuLink {
       font-size: 34px !important;
+      line-height: 52px !important;
     }
     .c-drive-con h2 span {
       font-size: 65px;
