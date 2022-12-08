@@ -50,7 +50,7 @@ export default function Who() {
             whileInView={() => {
               setIsInView(true);
             }}
-            initial={{ y: "60vh" }}
+            initial={{ y: "50vh" }}
             animate={
               isInView && {
                 y: 0,
@@ -79,7 +79,7 @@ export default function Who() {
               isInView && {
                 x: 0,
                 transition: {
-                  duration: 0.5,
+                  duration: 1.5,
                 },
               }
             }

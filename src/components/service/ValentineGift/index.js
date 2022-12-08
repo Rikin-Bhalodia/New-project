@@ -4,9 +4,9 @@ import BannerImage from "../../../assets/images/service/valentine-gift/banner.sv
 import MenuIcon from "../../../assets/images/studio/menu.svg";
 import { valentineGiftsIcons } from "../../../utils";
 import { motion } from "framer-motion";
-import LeftMiddle from "../../../assets/images/service/valentine-gift/left-middle.svg";
+import LeftMiddle from "../../../assets/images/service/valentine-gift/left-middle.png";
 import ValentineGiftImg from "../../../assets/images/service/valentine-gift/valentine-gift-res.png";
-import RightMiddle from "../../../assets/images/service/valentine-gift/right-middle.svg";
+import RightMiddle from "../../../assets/images/service/valentine-gift/right-middle.png";
 import Gift from "../../../assets/images/service/valentine-gift/gift.svg";
 import TopProduct from "../../brand/TopProduct";
 
@@ -157,11 +157,7 @@ const ValentineGift = () => {
 
   return (
     <ValentineGiftWrapper>
-      <motion.div
-        initial={{ y: "200vh" }}
-        animate={{ y: 0 }}
-        transition={{ duration: 1 }}
-      >
+      <div>
         <div className="heading-part">
           <AnimatedTextWord text="VALENTINE GIFTS" />
         </div>
@@ -213,7 +209,7 @@ const ValentineGift = () => {
         <TopProduct />
         <TopProduct />
         <YellowBarContent requiredPersonalAssistance={false} />
-      </motion.div>
+      </div>
     </ValentineGiftWrapper>
   );
 };

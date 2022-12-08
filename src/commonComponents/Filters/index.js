@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import DownArrow from "../../assets/images/product/down-arrow.svg";
 import Search from "../../assets/images/service/gift-for-him/seach-icon.svg";
+import { motion } from "framer-motion";
 
 const FiltersWrapper = styled.div`
   .drop-down {
@@ -207,13 +208,32 @@ const options = [
 const Filters = ({ FiltersName }) => {
   const [id, setId] = useState("");
   const [flag, setFlag] = useState(false);
+  const [isInView, setIsInView] = useState(false);
 
   return (
     <FiltersWrapper>
       <div className="filter">
         <div className="sort-by-drop">
           <div className="drop-down" onClick={() => setFlag(!flag)}>
-            <div className="sort-by">Sort By</div>
+            <motion.div
+              whileInView={() => {
+                setIsInView(true);
+              }}
+              initial={{ y: "-2vh", rotateX: "-90deg", opacity: 0 }}
+              animate={
+                isInView && {
+                  y: 0,
+                  rotateX: 0,
+                  opacity: 1,
+                  transition: {
+                    duration: 1,
+                  },
+                }
+              }
+              className="sort-by"
+            >
+              Sort By
+            </motion.div>
             <img
               src={DownArrow}
               alt="arrow"
@@ -237,7 +257,21 @@ const Filters = ({ FiltersName }) => {
                   className="drop-down right"
                   onClick={() => setId(id === i ? "" : i)}
                 >
-                  <div
+                  <motion.div
+                    whileInView={() => {
+                      setIsInView(true);
+                    }}
+                    initial={{ y: "-2vh", rotateX: "-90deg", opacity: 0 }}
+                    animate={
+                      isInView && {
+                        y: 0,
+                        rotateX: 0,
+                        opacity: 1,
+                        transition: {
+                          duration: 1,
+                        },
+                      }
+                    }
                     className="mood"
                     style={
                       i === id
@@ -246,7 +280,7 @@ const Filters = ({ FiltersName }) => {
                     }
                   >
                     {data.name}
-                  </div>
+                  </motion.div>
                   <img src={DownArrow} alt="arrow" className="arrow" />
                 </div>
                 {i === id && (

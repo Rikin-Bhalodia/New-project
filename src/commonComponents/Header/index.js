@@ -85,7 +85,7 @@ const Headerwrapper = styled.div`
     position: relative;
     right: 25px;
     height: 15px;
-    top: 2px;
+    top: -2px;
     opacity: 0.5;
   }
   .mic-icon {

@@ -279,7 +279,7 @@ const About = () => {
   return (
     <AboutWrapper>
       <motion.div
-        initial={{ y: "200vh" }}
+        initial={{ y: "100vh" }}
         animate={{ y: 0 }}
         transition={{ duration: 1 }}
       >

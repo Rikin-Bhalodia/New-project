@@ -55,7 +55,8 @@ const GiftForHimWrapper = styled.div`
   @media (max-width: 450px) {
     .heading {
       font-size: 40px;
-    }   .background-pic {
+    }
+    .background-pic {
       padding-bottom: 40px;
     }
   }
@@ -184,11 +185,7 @@ const GiftForHim = () => {
 
   return (
     <>
-      <motion.div
-        initial={{ y: "200vh" }}
-        animate={{ y: 0 }}
-        transition={{ duration: 1 }}
-      >
+      <div>
         <GiftForHimWrapper>
           <div className={isResponsive && "background-pic"}>
             <GoBackpart />
@@ -213,7 +210,7 @@ const GiftForHim = () => {
           </div>
           <YellowBarContent requiredPersonalAssistance={true} />
         </FullScreenWrapper>
-      </motion.div>
+      </div>
     </>
   );
 };

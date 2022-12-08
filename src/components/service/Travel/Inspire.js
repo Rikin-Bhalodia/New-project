@@ -158,24 +158,25 @@ const Inspire = () => {
           })}
         </Swiper>
       ) : (
-        <motion.div
-          whileInView={() => {
-            setIsInView(true);
-          }}
-          initial={{ y: "40vh" }}
-          animate={
-            isInView && {
-              y: 0,
-              transition: {
-                duration: 0.5,
-              },
-            }
-          }
-          className="cards"
-        >
-          {Cards.map(({ img, content, time }) => {
+        <div className="cards">
+          {Cards.map(({ img, content, time, x, duration }) => {
             return (
-              <div className="single-card">
+              <motion.div
+                className="single-card"
+                whileInView={() => {
+                  setIsInView(true);
+                }}
+                initial={{ x: x, opacity: 0 }}
+                animate={
+                  isInView && {
+                    x: 0,
+                    opacity: 1,
+                    transition: {
+                      duration: duration,
+                    },
+                  }
+                }
+              >
                 <motion.img
                   whileHover={{
                     scale: 1.1,
@@ -189,10 +190,10 @@ const Inspire = () => {
                 />
                 <div className="time">{time}</div>
                 <div className="content">{content}</div>
-              </div>
+              </motion.div>
             );
           })}
-        </motion.div>
+        </div>
       )}
       <img src={InspireImage} alt="inspire" className="inspire" />
       <button className="articles">READ MORE ARTICLES</button>

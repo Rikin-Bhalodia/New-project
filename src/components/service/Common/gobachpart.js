@@ -41,22 +41,28 @@ const GoBackPartWrapper = styled.div`
 const GoBackpart = () => {
   return (
     <GoBackPartWrapper>
-      <motion.div
-        initial={{ x: "100vw", opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 1.5 }}
-      >
-        <motion.div className="goback">
+      <div>
+        <div className="goback">
           <img src={BackArrow} alt="back-arrow" />
           <div>Go Back</div>
-        </motion.div>
-        <div className="des">
-          <div>KNOW THE WORLD OF LUXURY</div>
-          <div>
-            ROYCLAN IS THE PLACE WHERE YOU CAN BUY/RENT LUXURY PRODUCTS.
-          </div>
         </div>
-      </motion.div>
+        <div className="des">
+          <motion.div
+            initial={{ y: "-2vh", rotateX: "-90deg", opacity: 0 }}
+            animate={{ y: 0, rotateX: 0, opacity: 1 }}
+            transition={{ duration: 0.8 }}
+          >
+            KNOW THE WORLD OF LUXURY
+          </motion.div>
+          <motion.div
+            initial={{ y: "-2vh", rotateX: "-90deg", opacity: 0 }}
+            animate={{ y: 0, rotateX: 0, opacity: 1 }}
+            transition={{ duration: 0.8 }}
+          >
+            ROYCLAN IS THE PLACE WHERE YOU CAN BUY/RENT LUXURY PRODUCTS.
+          </motion.div>
+        </div>
+      </div>
     </GoBackPartWrapper>
   );
 };

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import BannerImage from "../../../assets/images/service/travel/banner.svg";
+import BannerImage from "../../../assets/images/service/travel/banner.png";
 import GetWay from "../../../assets/images/service/travel/getway.svg";
 import { motion } from "framer-motion";
 import GoBackpart from "../Common/gobachpart";
@@ -18,7 +18,7 @@ const CommonHeaderPartWrapper = styled.div`
     color: white;
     height: 80vh;
     position: relative;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.63), rgba(0, 0, 0, 0.63)),
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
       url(${BannerImage});
   }
   .goback-part {
@@ -35,7 +35,7 @@ const CommonHeaderPartWrapper = styled.div`
     justify-content: center;
     width: 100%;
     align-items: center;
-    margin-top: 80px;
+    margin-top: 50px;
     font-size: 80px;
   }
   .name {
@@ -117,12 +117,7 @@ const CommonHeaderPart = () => {
 
   return (
     <CommonHeaderPartWrapper>
-      <motion.div
-        initial={{ y: "200vh" }}
-        animate={{ y: 0 }}
-        transition={{ duration: 1 }}
-        className="heading-part"
-      >
+      <div className="heading-part">
         {!isResponsive && (
           <div className="goback-part">
             <GoBackpart />
@@ -135,7 +130,7 @@ const CommonHeaderPart = () => {
           </div>
           <img src={GetWay} alt="getway" height={200} className="getway" />
         </div>
-      </motion.div>
+      </div>
       <div className="menu-width">
         <div
           className={"menu-icon"}

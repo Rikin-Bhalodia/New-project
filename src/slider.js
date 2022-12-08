@@ -310,16 +310,16 @@ export function TopTrandingSlider() {
           spaceBetween: 60,
         },
         1075: {
-          slidesPerView: 2.1,
+          slidesPerView: 2.6,
           spaceBetween: 80,
         },
         1500: {
-          slidesPerView: 2.6,
+          slidesPerView: 2.8,
           spaceBetween: 100,
         },
       }}
       className="mySwiper"
-      // style={{ margin: "40px 0 0 0" }}
+      style={{ padding: "50px 0 " }}
       autoplay={{
         delay: 1500,
         disableOnInteraction: false,

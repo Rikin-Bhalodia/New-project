@@ -114,21 +114,7 @@ const EventNear = ({ isRequiredTopThings }) => {
           <div className="inspire-head">
             <AnimatedTextWord text="top things to do" />
           </div>
-          <motion.div
-            whileInView={() => {
-              setIsInView(true);
-            }}
-            initial={{ y: "40vh" }}
-            animate={
-              isInView && {
-                y: 0,
-                transition: {
-                  duration: 0.5,
-                },
-              }
-            }
-            className="feelings"
-          >
+          <div className="feelings">
             <Swiper
               breakpoints={{
                 260: {
@@ -166,16 +152,32 @@ const EventNear = ({ isRequiredTopThings }) => {
                 (feeling) => {
                   return (
                     <SwiperSlide>
-                      <div className="wrapper">
+                      <motion.div
+                        whileInView={() => {
+                          setIsInView(true);
+                        }}
+                        initial={{ y: "20vh", opacity: 0 }}
+                        animate={
+                          isInView && {
+                            y: 0,
+                            opacity: 1,
+                            transition: {
+                              duration: 0.8,
+                              delay: 0.2,
+                            },
+                          }
+                        }
+                        className="wrapper"
+                      >
                         <div className="background"></div>
                         <div className="feeling">{feeling}</div>
-                      </div>
+                      </motion.div>
                     </SwiperSlide>
                   );
                 }
               )}
             </Swiper>
-          </motion.div>
+          </div>
         </>
       )}
       <div className="inspire-head">
@@ -232,7 +234,23 @@ const EventNear = ({ isRequiredTopThings }) => {
           {EventNearAndTopThings.map(({ img, name }) => {
             return (
               <SwiperSlide>
-                <div className="single-event">
+                <motion.div
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "20vh", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      transition: {
+                        duration: 0.8,
+                        delay: 0.2,
+                      },
+                    }
+                  }
+                  className="single-event"
+                >
                   <motion.img
                     whileHover={{
                       scale: 1.1,
@@ -246,7 +264,7 @@ const EventNear = ({ isRequiredTopThings }) => {
                     style={{ height: "90%", width: "70%" }}
                   />
                   <div>{name}</div>
-                </div>
+                </motion.div>
               </SwiperSlide>
             );
           })}

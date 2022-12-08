@@ -149,19 +149,22 @@ const MobileBanner = () => {
           ({ name, duration, hoverImgLeft, hoverImgRight, css }, i) => {
             return (
               <>
-                <div
+                <motion.div
                   className={
                     name === "RENT& RESELL"
                       ? `title-name fix-width `
                       : `title-name ${css}`
                   }
+                  initial={{ y: "35vh", opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: duration }}
                   onMouseEnter={() => setShowImage(i)}
                   onMouseLeave={() => {
                     setShowImage("");
                   }}
                 >
                   {name}
-                </div>
+                </motion.div>
                 <div className="hover-images">
                   {showImage === i && (
                     <div>

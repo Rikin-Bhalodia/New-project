@@ -139,7 +139,8 @@ const Product = () => {
                   isInView && {
                     rotateX: 0,
                     transition: {
-                      duration: 0.5,
+                      duration: 0.7,
+                      delay: 0.4,
                     },
                   }
                 }
@@ -157,7 +158,7 @@ const Product = () => {
                   isInView && {
                     rotateY: 0,
                     transition: {
-                      duration: 1,
+                      duration: 1.3,
                     },
                   }
                 }

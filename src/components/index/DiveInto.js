@@ -153,13 +153,13 @@ export default function DiveInto() {
             slidesPerView={1}
             className="mySwiper"
             style={{ borderRadius: "30px" }}
-            // autoplay={{
-            //   delay: 1500,
-            //   disableOnInteraction: false,
-            // }}
+            autoplay={{
+              delay: 1500,
+              disableOnInteraction: false,
+            }}
             loop={true}
             loopFillGroupWithBlank={true}
-            //   speed={2500}
+            speed={2500}
             modules={[Pagination, Navigation]}
           >
             {[1, 2, 3, 4, 5, 6].map((_) => {

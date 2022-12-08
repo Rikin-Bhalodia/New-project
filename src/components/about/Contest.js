@@ -25,6 +25,11 @@ const ContestWrapper = styled.div`
     width: 364.48px;
     left: -180px;
   }
+  .box {
+    position: relative;
+    left: -200px;
+    gap: 40px;
+  }
 `;
 
 export default function Contest() {
@@ -38,12 +43,12 @@ export default function Contest() {
             whileInView={() => {
               setIsInView(true);
             }}
-            initial={{ x: "100vw" }}
+            initial={{ x: "30vw" }}
             animate={
               isInView && {
                 x: 0,
                 transition: {
-                  duration: 1.5,
+                  duration: 2,
                 },
               }
             }
@@ -52,24 +57,24 @@ export default function Contest() {
             we win the itb uni <br /> young <span>talent contest</span>
           </motion.div>
         </div>
-        <div className="d-flex">
+        <div className="d-flex box">
           <motion.img
             whileInView={() => {
               setIsInView(true);
             }}
-            initial={{ x: "-50vw" }}
+            initial={{ x: "-30vw" }}
             animate={
               isInView && {
                 x: 0,
                 transition: {
-                  duration: 1,
+                  duration: 1.5,
                 },
               }
             }
             loading="lazy"
             src={about_group2}
             alt=""
-            className="contest-image position-relative"
+            className="contest-image "
           />
           <motion.div
             whileInView={() => {
@@ -80,11 +85,11 @@ export default function Contest() {
               isInView && {
                 y: 0,
                 transition: {
-                  duration: 0.5,
+                  duration: 2,
                 },
               }
             }
-            className="contest-description position-relative"
+            className="contest-description "
           >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim

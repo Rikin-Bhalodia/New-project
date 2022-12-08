@@ -255,18 +255,24 @@ export const Cards = [
     img: Image1,
     content: "Read about Selena Gomez’s Rare Beauty!",
     time: "18 June 2022        5:38 AM",
+    x: "-5vw",
+    duration: "1.7",
   },
   {
     img: Image2,
     content:
       "Spring Summer 2023 Paris Men’s Fashion Week : Trending Accessories",
     time: "18 June 2022        5:38 AM",
+    x: "-7vw",
+    duration: "1.5",
   },
   {
     img: Image3,
     content:
       "Spring Summer 2023 Paris Men’s Fashion Week : Trending Accessories",
     time: "18 June 2022        5:38 AM",
+    x: "-9vw",
+    duration: "1.3",
   },
 ];
 
