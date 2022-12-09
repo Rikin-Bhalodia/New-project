@@ -43,16 +43,22 @@ const BrandProductWrapper = styled.div`
           width: 98vw;
           position: relative;
           padding-top: 40px;
-          a {
+          .goback {
             position: absolute;
             left: 50px;
-            font-family: "Arial";
-            font-weight: 400;
-            font-size: 20px;
-            line-height: 23px;
-            text-decoration: underline;
-            color: #ffffff;
+            img {
+              width: 20px;
+            }
+            a {
+              font-family: "Arial";
+              font-weight: 400;
+              font-size: 20px;
+              line-height: 23px;
+              text-decoration: underline;
+              color: #ffffff;
+            }
           }
+
           h3 {
             margin: auto;
             text-align: center;
@@ -231,37 +237,26 @@ const FiltersName = [
 const BrandProduct = () => {
   return (
     <BrandProductWrapper>
-      <motion.div
-        initial={{ y: "200vh" }}
-        animate={{ y: 0 }}
-        transition={{ duration: 1 }}
-      >
+      <div>
         <div className="banner-section">
           <img loading="lazy" src={Banner1} alt="" className="banner" />
           <div className="testing"></div>
           <div className="img">
             <div className="inside-data">
               <div className="body">
-                <img
-                  src={BackWhiteArrow}
-                  alt="back-white-arrow"
-                  className="pt-3 ml-2"
-                />
-                <a href="" className="pt-2 ml-2">
-                  Go Back
-                </a>
+                <div className="goback">
+                  <img src={BackWhiteArrow} alt="back-white-arrow" />
+                  <a href="" className="">
+                    Go Back
+                  </a>
+                </div>
                 <h3>
                   <AnimatedTextWord text="FENDI" />
                 </h3>
               </div>
-              <motion.div
-                initial={{ y: "-60vh", opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.8 }}
-                className="footer"
-              >
+              <div className="footer">
                 <Filters FiltersName={FiltersName} />
-              </motion.div>
+              </div>
             </div>
           </div>
         </div>
@@ -280,7 +275,7 @@ const BrandProduct = () => {
             style={{ width: "145vw" }}
           />
         </div>
-      </motion.div>
+      </div>
     </BrandProductWrapper>
   );
 };

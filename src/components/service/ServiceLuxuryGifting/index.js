@@ -536,11 +536,7 @@ const ServiceLuxuryGifting = () => {
 
   return (
     <>
-      <motion.div
-        initial={{ y: "200vh" }}
-        animate={{ y: 0 }}
-        transition={{ duration: 1 }}
-      >
+      <div>
         <ServiceLuxuryGiftingWrapper>
           {!isResponsive ? (
             <>
@@ -560,24 +556,36 @@ const ServiceLuxuryGifting = () => {
                 </div>
                 <div className="images">
                   <motion.img
-                    initial={{ x: "-100vw", opacity: 0 }}
-                    animate={{ x: 0, opacity: 1, zIndex: 1 }}
-                    transition={{ duration: 1.6 }}
+                    initial={{ y: "40vh", opacity: 0 }}
+                    animate={{ y: 0, opacity: 1, zIndex: 1 }}
+                    transition={{ duration: 1.5 }}
                     loading="lazy"
                     src={Left}
                     alt="left"
                     height={300}
                     className="left"
+                    whileHover={{
+                      scale: 1.1,
+                    }}
+                    // transition={{
+                    //   duration: 0.4,
+                    // }}
                   />
                   <motion.img
-                    initial={{ y: "100vh", opacity: 0 }}
+                    initial={{ y: "40vh", opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 1.2 }}
+                    transition={{ duration: 1 }}
                     loading="lazy"
                     src={Right}
                     alt="right"
                     height={500}
                     className="right"
+                    whileHover={{
+                      scale: 1.1,
+                    }}
+                    // transition={{
+                    //   duration: 0.4,
+                    // }}
                   />
                 </div>
               </div>
@@ -727,7 +735,7 @@ const ServiceLuxuryGifting = () => {
           </div>
           <YellowBarContent requiredPersonalAssistance={true} />
         </HalfWrapper>
-      </motion.div>
+      </div>
     </>
   );
 };

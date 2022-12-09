@@ -259,13 +259,13 @@ const AboutProduct = ({ desView, setDesView }) => {
           <>
             <div className="about-below--container">
               <motion.div
-                initial={{ x: "-100vh", opacity: 0 }}
+                initial={{ y: "40vh", opacity: 0 }}
                 animate={
                   desView && {
-                    x: 0,
+                    y: 0,
                     opacity: 1,
                     transition: {
-                      duration: 1.3,
+                      duration: 1,
                     },
                   }
                 }
@@ -274,13 +274,14 @@ const AboutProduct = ({ desView, setDesView }) => {
                 Bottega Senatore - When The Quality Talks Itself
               </motion.div>
               <motion.div
-                initial={{ x: "100vh", opacity: 0 }}
+                initial={{ y: "40vh", opacity: 0 }}
                 animate={
                   desView && {
-                    x: 0,
+                    y: 0,
                     opacity: 1,
                     transition: {
-                      duration: 1.3,
+                      duration: 1,
+                      delay: 1.3,
                     },
                   }
                 }
@@ -291,13 +292,14 @@ const AboutProduct = ({ desView, setDesView }) => {
                 group of Italian Footwear Artisan Masters.
               </motion.div>
               <motion.div
-                initial={{ x: "-100vh", opacity: 0 }}
+                initial={{ y: "40vh", opacity: 0 }}
                 animate={
                   desView && {
-                    x: 0,
+                    y: 0,
                     opacity: 1,
                     transition: {
-                      duration: 1.3,
+                      duration: 1,
+                      delay: 1.6,
                     },
                   }
                 }
@@ -306,13 +308,14 @@ const AboutProduct = ({ desView, setDesView }) => {
                 Rubirio - High Quality Italian Brief Case
               </motion.div>
               <motion.ul
-                initial={{ x: "100vh", opacity: 0 }}
+                initial={{ y: "40vh", opacity: 0 }}
                 animate={
                   desView && {
-                    x: 0,
+                    y: 0,
                     opacity: 1,
                     transition: {
-                      duration: 1.3,
+                      duration: 1,
+                      delay: 1.9,
                     },
                   }
                 }

@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Header from "../../commonComponents/Header";
 import BrandBanner from "../../assets/images/brand/banner.svg";
-import Fendi from "../../assets/images/brand/fendi.svg";
+import Fendi from "../../assets/images/brand/fendi.png";
 import FImg from "../../assets/images/brand/f-small.svg";
 import Loved from "../../assets/images/brand/text-love.svg";
 import Ranttxt from "../../assets/images/brand/ranttxt.svg";
@@ -328,13 +327,8 @@ const Brand = () => {
 
   return (
     <BrandWrapper>
-      <motion.div
-        // initial={{ y: "200vh" }}
-        // animate={{ y: 0 }}
-        // transition={{ duration: 1 }}
-        className="brand-section"
-      >
-        <img loading="lazy" src={BrandBanner} alt="" className="img1" />
+      <div className="brand-section">
+        <img src={BrandBanner} alt="" className="img1" />
         <div className="menu-width">
           <div
             className="menu-icon"
@@ -353,40 +347,68 @@ const Brand = () => {
         </div>
         <div className="fendi-section">
           <div className="fendi-area">
-            <motion.div
-              initial={{ x: "-50vw", width: "70%" }}
-              whileInView={() => {
-                setIsInView(true);
-              }}
-              animate={
-                isInView && {
-                  x: 0,
-                  width: "70%",
-                  transition: {
-                    duration: 1.5,
-                  },
-                }
-              }
-              className="left-area"
-            >
+            <div className="left-area">
               <h2>
                 <AnimatedTextWord text="FENDI" />
               </h2>
-              <div style={{ marginBottom: "10px" }}>
+              <motion.div
+                initial={{ x: "-50vw", width: "70%" }}
+                whileInView={() => {
+                  setIsInView(true);
+                }}
+                animate={
+                  isInView && {
+                    x: 0,
+                    width: "70%",
+                    transition: {
+                      duration: 1.5,
+                    },
+                  }
+                }
+                style={{ marginBottom: "10px" }}
+              >
                 <a href="#">Visit Official Link</a>
-              </div>
-              <p>
+              </motion.div>
+              <motion.p
+                initial={{ x: "-50vw", width: "70%" }}
+                whileInView={() => {
+                  setIsInView(true);
+                }}
+                animate={
+                  isInView && {
+                    x: 0,
+                    width: "70%",
+                    transition: {
+                      duration: 1.5,
+                    },
+                  }
+                }
+              >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
                 nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
                 in reprehenderit
-              </p>
-              <p>
+              </motion.p>
+              <motion.p
+                initial={{ x: "-50vw", width: "70%" }}
+                whileInView={() => {
+                  setIsInView(true);
+                }}
+                animate={
+                  isInView && {
+                    x: 0,
+                    width: "70%",
+                    transition: {
+                      duration: 1.5,
+                    },
+                  }
+                }
+              >
                 in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                 Excepteur sint occaecat cupidatat non proident, sunt in culpa
                 qui officia deserunt mollit anim id est laborum.
-              </p>
+              </motion.p>
               {!isResponsive && (
                 <div className="imgs">
                   <div className="d-flex" style={{ overflow: "hidden" }}>
@@ -468,7 +490,7 @@ const Brand = () => {
                   </div>
                 </div>
               )}
-            </motion.div>
+            </div>
             <motion.div
               initial={{ x: "50vw" }}
               whileInView={() => {
@@ -567,7 +589,7 @@ const Brand = () => {
             </div>
           )}
         </div>
-      </motion.div>
+      </div>
       <div className="love-product text-center">
         <img loading="lazy" src={Loved} alt="" className="most-loved-product" />
       </div>

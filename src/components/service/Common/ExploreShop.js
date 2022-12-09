@@ -104,7 +104,17 @@ const explore = [
   {
     x: "-40vw",
     y: 0,
-    duration: 1.4,
+    duration: 1.9,
+  },
+  {
+    x: "-40vw",
+    y: 0,
+    duration: 1.6,
+  },
+  {
+    x: "-40vw",
+    y: 0,
+    duration: 1.3,
   },
   {
     x: "-40vw",
@@ -112,34 +122,24 @@ const explore = [
     duration: 1,
   },
   {
-    x: "40vw",
+    x: "-40vw",
     y: 0,
-    duration: 1,
-  },
-  {
-    x: "40vw",
-    y: 0,
-    duration: 1.4,
+    duration: 1.9,
   },
   {
     x: "-40vw",
     y: 0,
-    duration: 1.4,
+    duration: 1.6,
+  },
+  {
+    x: "-40vw",
+    y: 0,
+    duration: 1.3,
   },
   {
     x: "-40vw",
     y: 0,
     duration: 1,
-  },
-  {
-    x: "40vw",
-    y: 0,
-    duration: 1,
-  },
-  {
-    x: "40vw",
-    y: 0,
-    duration: 1.4,
   },
 ];
 

@@ -107,7 +107,7 @@ const BuyNFTsWrapper = styled.div`
     width: 90%;
     border-bottom: 1px solid rgba(0, 0, 0, 0.27);
   }
-  .menu-icon{
+  .menu-icon {
     top: -40px !important;
   }
   @media (max-width: 1000px) {
@@ -199,7 +199,6 @@ const BuyNFTsWrapper = styled.div`
     .line2 {
       margin-bottom: 23px;
       width: 27%;
-
     }
     .text1 {
       font-size: 24px;
@@ -250,21 +249,12 @@ const BuyNFTs = () => {
   const [menuOpenModal, setMenuOpenModal] = useState(false);
   return (
     <BuyNFTsWrapper>
-      <motion.div
-        initial={{ y: "200vh" }}
-        animate={{ y: 0 }}
-        transition={{ duration: 1 }}
-      >
+      <div>
         <div className="heading-part">
-          <motion.div
-            initial={{ x: "-100vw" }}
-            animate={{ x: 0 }}
-            transition={{ duration: 2, type: "spring", damping: 7 }}
-            className="goback"
-          >
+          <div className="goback">
             <img src={BackArrow} alt="back-arrow" />
             <div>Go Back</div>
-          </motion.div>
+          </div>
           <div>
             <AnimatedTextWord text="BUY NFT" />
           </div>
@@ -326,7 +316,7 @@ const BuyNFTs = () => {
           />
         </div>
         <YellowBarContent requiredPersonalAssistance={true} />
-      </motion.div>
+      </div>
     </BuyNFTsWrapper>
   );
 };

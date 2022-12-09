@@ -180,12 +180,12 @@ const PetsProductSelection = () => {
                 whileInView={() => {
                   setIsInView(true);
                 }}
-                initial={{ x: "-30vw" }}
+                initial={{ y: "30vh" }}
                 animate={
                   isInView && {
-                    x: 0,
+                    y: 0,
                     transition: {
-                      duration: 1.4,
+                      duration: 1,
                     },
                   }
                 }
@@ -198,12 +198,12 @@ const PetsProductSelection = () => {
                 whileInView={() => {
                   setIsInView(true);
                 }}
-                initial={{ x: "-30vw" }}
+                initial={{ y: "30vh" }}
                 animate={
                   isInView && {
-                    x: 0,
+                    y: 0,
                     transition: {
-                      duration: 1.2,
+                      duration: 1.3,
                     },
                   }
                 }
@@ -221,12 +221,12 @@ const PetsProductSelection = () => {
                 whileInView={() => {
                   setIsInView(true);
                 }}
-                initial={{ x: "-30vw" }}
+                initial={{ y: "30vh" }}
                 animate={
                   isInView && {
-                    x: 0,
+                    y: 0,
                     transition: {
-                      duration: 1,
+                      duration: 1.3,
                     },
                   }
                 }
@@ -240,12 +240,12 @@ const PetsProductSelection = () => {
               whileInView={() => {
                 setIsInView(true);
               }}
-              initial={{ x: "-30vw" }}
+              initial={{ y: "30vh" }}
               animate={
                 isInView && {
-                  x: 0,
+                  y: 0,
                   transition: {
-                    duration: 0.8,
+                    duration: 1.6,
                   },
                 }
               }

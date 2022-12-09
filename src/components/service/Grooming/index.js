@@ -163,11 +163,7 @@ const Grooming = () => {
   const [isInView, setIsInView] = useState(false);
   return (
     <GroomingWrapper>
-      <motion.div
-        initial={{ y: "200vh" }}
-        animate={{ y: 0 }}
-        transition={{ duration: 1 }}
-      >
+      <div>
         <div className="heading-part">
           <div className="goback">
             <img src={BackArrow} alt="back-arrow" />
@@ -195,7 +191,7 @@ const Grooming = () => {
           whileInView={() => {
             setIsInView(true);
           }}
-          initial={{ y: "60vh" }}
+          initial={{ y: "30vh" }}
           animate={
             isInView && {
               y: 0,
@@ -253,7 +249,7 @@ const Grooming = () => {
         <div className="component-wrapper">
           <YellowBarContent requiredPersonalAssistance={false} />
         </div>
-      </motion.div>
+      </div>
     </GroomingWrapper>
   );
 };

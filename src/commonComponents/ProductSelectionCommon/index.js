@@ -571,6 +571,15 @@ const ProductSelectionCommonWrapper = styled.div`
       font-size: 12px;
     }
   }
+  .arrow {
+    position: absolute;
+    top: 275px;
+    right: 30px;
+    a i {
+      font-size: 20px;
+      color: black;
+    }
+  }
 `;
 
 const ProductSelectionCommon = () => {
@@ -775,6 +784,11 @@ const ProductSelectionCommon = () => {
                 <div className="count--machine">
                   <img loading="lazy" src={count} alt="" />
                 </div>
+              </div>
+              <div class="arrow">
+                <a href="">
+                  <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                </a>
               </div>
             </motion.div>
           )}
