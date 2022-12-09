@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import aboutMainBg from "./../assets/images/aboutpage/aboutmain.svg";
+import aboutMainBg from "./../assets/images/aboutpage/aboutmain.png";
 import storytext from "./../assets/images/aboutpage/storytext.svg";
 // import abouttext from "./../assets/images/aboutpage/abouttext.svg";
 import nexttext from "./../assets/images/aboutpage/nexttext.svg";
@@ -12,7 +12,7 @@ import nexttext from "./../assets/images/aboutpage/nexttext.svg";
 import bg2022_2 from "./../assets/images/aboutpage/2022bg2.svg";
 import buttonArrow from "./../assets/images/aboutpage/buttonArrow.svg";
 
-import mission from "./../assets/images/aboutpage/mission.svg";
+import mission from "./../assets/images/aboutpage/mission.png";
 import LeftFilter from "./../assets/images/aboutpage/left-filter.svg";
 import RightFilter from "./../assets/images/aboutpage/right-filter.svg";
 import { motion } from "framer-motion";

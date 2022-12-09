@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper";
 import { sliderImage } from "../../utils";
-import EImg from "../../assets/images/studio-material/editor-img.svg";
+import EImg from "../../assets/images/studio-material/editor-img.png";
 import Title from "../../assets/images/studio-material/eiditors-text.svg";
 
 import { motion } from "framer-motion";

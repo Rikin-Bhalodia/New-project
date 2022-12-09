@@ -169,12 +169,12 @@ const YouMayLike = () => {
             whileInView={() => {
               setIsInView(true);
             }}
-            initial={{ x: "40vw" }}
+            initial={{ x: "-40vw" }}
             animate={
               isInView && {
                 x: 0,
                 transition: {
-                  duration: 1.5,
+                  duration: 1.3,
                 },
               }
             }
@@ -197,12 +197,12 @@ const YouMayLike = () => {
             whileInView={() => {
               setIsInView(true);
             }}
-            initial={{ x: "40vw" }}
+            initial={{ x: "-40vw" }}
             animate={
               isInView && {
                 x: 0,
                 transition: {
-                  duration: 1.7,
+                  duration: 1.1,
                 },
               }
             }
@@ -225,12 +225,12 @@ const YouMayLike = () => {
             whileInView={() => {
               setIsInView(true);
             }}
-            initial={{ x: "40vw" }}
+            initial={{ x: "-40vw" }}
             animate={
               isInView && {
                 x: 0,
                 transition: {
-                  duration: 2,
+                  duration: 0.9,
                 },
               }
             }
@@ -251,7 +251,9 @@ const YouMayLike = () => {
           </motion.div>
         </div>
       </section>
-      {isResponsive && <ProductImgSlider image={youMayLike} isNeededImg={true}/>}
+      {isResponsive && (
+        <ProductImgSlider image={youMayLike} isNeededImg={true} />
+      )}
     </YouMayLikeWrapper>
   );
 };

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import desktext from "./../../assets/images/aboutpage/desktext.svg";
-import founder from "./../../assets/images/aboutpage/founder.svg";
+import founder from "./../../assets/images/aboutpage/founder.png";
 import { motion } from "framer-motion";
 import AnimatedTextWord from "../../commonComponents/Animation/FlipAnimation";
 

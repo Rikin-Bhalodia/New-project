@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import DummyVideoImage from "../../assets/images/studio-material/dummy-video.svg";
+import DummyVideoImage from "../../assets/images/studio-material/dummy-video.png";
 import { useMediaQuery } from "react-responsive";
 
 const CardWrapper = styled.div`

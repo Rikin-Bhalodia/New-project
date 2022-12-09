@@ -310,11 +310,7 @@ const ProductSection = () => {
 
   return (
     <ProductSectionWrapper>
-      <motion.div
-        initial={{ y: "200vh" }}
-        animate={{ y: 0 }}
-        transition={{ duration: 1 }}
-      >
+      <div>
         <ProductSelectionCommon />
         <AboutProduct desView={desView} setDesView={setDesView} />
         <section className="complete-look-section">
@@ -535,7 +531,7 @@ const ProductSection = () => {
           <div>thinking of buying for an occassion?</div>
           <img loading="lazy" src={rentItText} alt="" />
         </div>
-      </motion.div>
+      </div>
     </ProductSectionWrapper>
   );
 };

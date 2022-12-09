@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Video from "../../assets/images/studio-material/video.svg";
+import Video from "../../assets/images/studio-material/video.png";
 import Polygon from "../../assets/images/polygon-left.svg";
 import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -97,12 +97,12 @@ export default function StudioProductMaterial() {
         whileInView={() => {
           setIsInView(true);
         }}
-        initial={{ y: "60vh" }}
+        initial={{ y: "40vh" }}
         animate={
           isInView && {
             y: 0,
             transition: {
-              duration: 0.8,
+              duration: 1,
             },
           }
         }
@@ -117,29 +117,28 @@ export default function StudioProductMaterial() {
         )}
         <div className="container-fluid material-wrapper">
           <div className="studio-material-head mt-5">
-            <div className="leftside-area">
+            <motion.div
+              whileInView={() => {
+                setIsInView(true);
+              }}
+              initial={{ y: "40vh" }}
+              animate={
+                isInView && {
+                  y: 0,
+                  transition: {
+                    duration: 0.5,
+                  },
+                }
+              }
+              className="leftside-area"
+            >
               <div className="goback-link">
                 <a href="/">Go Back</a>
               </div>
               <div className="product-head">
-                <motion.p
-                  whileInView={() => {
-                    setIsInView(true);
-                  }}
-                  initial={{ x: "-100vw" }}
-                  animate={
-                    isInView && {
-                      x: 0,
-                      transition: {
-                        duration: 1.3,
-                      },
-                    }
-                  }
-                >
-                  STUDIO / VERSACE BAG / LEATHER
-                </motion.p>
+                <p>STUDIO / VERSACE BAG / LEATHER</p>
               </div>
-            </div>
+            </motion.div>
           </div>
           <div className="studio-material-body">
             <img loading="lazy" src={Video} alt="video" />

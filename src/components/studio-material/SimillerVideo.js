@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Video from "../../assets/images/studio-material/s-video.svg";
+import Video from "../../assets/images/studio-material/s-video.png";
 import VideoHead from "../../assets/images/studio-material/video-text.svg";
 import Title from "../../assets/images/studio-material/eiditors-text.svg";
-import EImg from "../../assets/images/studio-material/editor-img.svg";
+import EImg from "../../assets/images/studio-material/editor-img.png";
 import Polygon from "../../assets/images/polygon-right.svg";
 import Polygon2 from "../../assets/images/polygon-left.svg";
 import { motion } from "framer-motion";

@@ -44,7 +44,7 @@ const ProductSelectionCommonWrapper = styled.div`
     border-bottom: 0.5px solid #000000;
   }
   .product-logo {
-    right: -70px;
+    right: -32px;
     top: 67px;
   }
   .detail-sub1 {
@@ -195,11 +195,11 @@ const ProductSelectionCommonWrapper = styled.div`
   .button--container {
     font-family: "Arial";
     font-weight: 700;
-    font-size: 26px;
+    font-size: 20px;
     line-height: 22px;
     align-items: center;
     text-align: center;
-    padding: 15px 30px;
+    padding: 13px 22px;
     cursor: pointer;
     margin-top: 40px;
     color: #a75b41;
@@ -585,20 +585,17 @@ const ProductSelectionCommon = () => {
           <img loading="lazy" src={backarrow} alt="" />
           <div className="go-back-text">Go Back</div>
         </div>
-        <div className="breadcumb-section d-flex justify-content-between">
-          <motion.div
-            initial={{ x: "-100vw", opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 1.5 }}
-            className="paths"
-          >
+        <motion.div
+          initial={{ y: "20vh", opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1 }}
+          className="breadcumb-section d-flex justify-content-between"
+        >
+          <div className="paths">
             SHOP / CLOTHING / WOMEN / DRESSES /
             <span>VERSACE BAROCCO GODDESS SLASH SILK DRESS</span>
-          </motion.div>
-          <motion.div
-            initial={{ x: "100vw", opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 1.5 }}
+          </div>
+          <div
             className="menu-icon"
             onClick={() => setMenuOpenModal(!menuOpenModal)}
           >
@@ -611,17 +608,17 @@ const ProductSelectionCommon = () => {
             ) : (
               <img loading="lazy" src={MenuIcon} alt="menu" height={100} />
             )}
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
         {isResponsive && (
           <>
             <div className="product--logo">
               <img loading="lazy" src={productLogo} alt="" />
             </div>
             <motion.div
-              initial={{ y: "100vh", opacity: 0 }}
+              initial={{ y: "20vh", opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 1.6 }}
+              transition={{ duration: 1 }}
               className="product-selection-image"
             >
               <img
@@ -644,9 +641,9 @@ const ProductSelectionCommon = () => {
         )}
         <div className="product--container d-flex justify-content-between">
           <motion.div
-            initial={{ x: "-100vw", opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 1.6 }}
+            initial={{ y: "20vh", opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1 }}
             className="left-side-part"
           >
             <div className="detail1 position-relative">
@@ -759,9 +756,9 @@ const ProductSelectionCommon = () => {
           </motion.div>
           {!isResponsive && (
             <motion.div
-              initial={{ y: "100vh", opacity: 0 }}
+              initial={{ y: "20vh", opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 1.6 }}
+              transition={{ duration: 1 }}
               className="center--container position-relative "
             >
               <img
@@ -782,9 +779,9 @@ const ProductSelectionCommon = () => {
             </motion.div>
           )}
           <motion.div
-            initial={{ x: "100vw", opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 1.6 }}
+            initial={{ y: "20vh", opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1 }}
             className="section--right-container"
           >
             <div className="section--right">
