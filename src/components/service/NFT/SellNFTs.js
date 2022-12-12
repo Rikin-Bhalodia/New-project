@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import MenuIcon from "../../../assets/images/studio/menu.svg";
 import BackArrow from "../../../assets/images/product/back-arrow.svg";
-import BannerImage from "../../../assets/images/nfts/banner.svg";
+import BannerImage from "../../../assets/images/nfts/banner.png";
 import { NftIcons } from "../../../utils";
 import { motion } from "framer-motion";
 
@@ -97,11 +97,7 @@ const SellNFTs = () => {
   const [isInView, setIsInView] = useState(false);
   return (
     <SellNFTsWrapper>
-      <motion.div
-        initial={{ y: "200vh" }}
-        animate={{ y: 0 }}
-        transition={{ duration: 1 }}
-      >
+      <div>
         <div className="heading-part">
           <motion.div
             initial={{ x: "-100vw" }}
@@ -137,12 +133,12 @@ const SellNFTs = () => {
           whileInView={() => {
             setIsInView(true);
           }}
-          initial={{ x: "-60vw" }}
+          initial={{ rotateX: "-90deg" }}
           animate={
             isInView && {
-              x: 0,
+              rotateX: 0,
               transition: {
-                duration: 3,
+                duration: 1,
               },
             }
           }
@@ -174,7 +170,7 @@ const SellNFTs = () => {
         <Benefits />
         <SellWithUs />
         <YellowBarContent requiredPersonalAssistance={false} />
-      </motion.div>
+      </div>
     </SellNFTsWrapper>
   );
 };

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import MenuIcon from "../../../assets/images/studio/menu.svg";
 import BackArrow from "../../../assets/images/product/back-arrow.svg";
-import BannerImage from "../../../assets/images/nfts/banner.svg";
+import BannerImage from "../../../assets/images/nfts/banner.png";
 import { ReviewSlider } from "../Grooming/ReviewSlider";
 import { NftIcons } from "../../../utils";
 import { motion } from "framer-motion";

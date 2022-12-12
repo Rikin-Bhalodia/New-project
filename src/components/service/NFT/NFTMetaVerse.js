@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import MenuIcon from "../../../assets/images/studio/menu.svg";
 import BackArrow from "../../../assets/images/product/back-arrow.svg";
-import BannerImage from "../../../assets/images/nfts/banner.svg";
+import BannerImage from "../../../assets/images/nfts/banner.png";
 import Menu from "../../../commonComponents/Menu";
 import YellowBarContent from "../Common/YellowBarContent";
 import Insta from "../../../assets/images/nfts/insta.svg";

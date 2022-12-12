@@ -57,12 +57,12 @@ const WhyWithUs = () => {
             whileInView={() => {
               setIsInView(true);
             }}
-            initial={{ x: "-50vw" }}
+            initial={{ y: "15vh" }}
             animate={
               isInView && {
-                x: 0,
+                y: 0,
                 transition: {
-                  duration: 1,
+                  duration: 1.2,
                 },
               }
             }
@@ -77,10 +77,10 @@ const WhyWithUs = () => {
             whileInView={() => {
               setIsInView(true);
             }}
-            initial={{ x: "50vw" }}
+            initial={{ y: "10vh" }}
             animate={
               isInView && {
-                x: 0,
+                y: 0,
                 transition: {
                   duration: 1,
                 },

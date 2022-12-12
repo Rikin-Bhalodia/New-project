@@ -149,54 +149,63 @@ const Fields = [
     img: <img src={Star} alt="star" />,
     type: "text",
     width: "30%",
+    delay: 0,
   },
   {
     placeholder: "MIDDLE NAME",
     img: "",
     type: "text",
     width: "30%",
+    delay: 0.1,
   },
   {
     placeholder: "LAST NAME",
     img: <img src={Star} alt="star" />,
     type: "text",
     width: "30%",
+    delay: 0.2,
   },
   {
     placeholder: "EMAIL ADDRESS",
     img: <img src={Star} alt="star" />,
     type: "text",
     width: "60%",
+    delay: 0.3,
   },
   {
     placeholder: "CATEGORY",
     img: <img src={Star} alt="star" />,
     type: "select",
     width: "30%",
+    delay: 0.4,
   },
   {
     placeholder: "BRAND",
     img: <img src={Star} alt="star" />,
     type: "select",
     width: "30%",
+    delay: 0.5,
   },
   {
     placeholder: "ITEM TYPE",
     img: <img src={Star} alt="star" />,
     type: "select",
     width: "30%",
+    delay: 0.6,
   },
   {
     placeholder: "COST",
     img: <img src={Star} alt="star" />,
     type: "select",
     width: "30%",
+    delay: 0.7,
   },
   {
     placeholder: "UPLOAD ITEM IMAGES (PNG/JPG/SVG)",
     img: <img src={Star} alt="star" />,
     type: "file",
     width: "60%",
+    delay: 0.8,
   },
 ];
 const From = () => {
@@ -208,12 +217,12 @@ const From = () => {
         whileInView={() => {
           setIsInView(true);
         }}
-        initial={{ x: "-60vw" }}
+        initial={{ rotateX: "-90deg" }}
         animate={
           isInView && {
-            x: 0,
+            rotateX: 0,
             transition: {
-              duration: 3,
+              duration: 1,
             },
           }
         }
@@ -224,18 +233,31 @@ const From = () => {
         compulsory to fill.
       </motion.div>
       <div className="form-inputs">
-        {Fields.map(({ img, placeholder, type, width }) => {
+        {Fields.map(({ img, placeholder, type, width, delay }) => {
           return (
             <>
               {type === "text" || type === "file" ? (
                 <>
                   {type === "file" ? (
-                    <div
+                    <motion.div
                       style={{
                         width: width,
                         display: "flex",
                         margin: "0 50px 0 0",
                       }}
+                      whileInView={() => {
+                        setIsInView(true);
+                      }}
+                      initial={{ rotateX: "90deg" }}
+                      animate={
+                        isInView && {
+                          rotateX: 0,
+                          transition: {
+                            duration: 1,
+                            delay: delay,
+                          },
+                        }
+                      }
                     >
                       <>
                         <label
@@ -259,7 +281,7 @@ const From = () => {
                           hidden
                         />
                       </>
-                    </div>
+                    </motion.div>
                   ) : (
                     <div
                       style={{
@@ -269,7 +291,20 @@ const From = () => {
                       }}
                     >
                       <>
-                        <input
+                        <motion.input
+                          whileInView={() => {
+                            setIsInView(true);
+                          }}
+                          initial={{ rotateX: "90deg" }}
+                          animate={
+                            isInView && {
+                              rotateX: 0,
+                              transition: {
+                                duration: 1,
+                                delay: delay,
+                              },
+                            }
+                          }
                           placeholder={placeholder}
                           className="custom-input"
                           id="actual-btn"
@@ -282,11 +317,27 @@ const From = () => {
                 </>
               ) : (
                 <>
-                  <select className="custom-select" style={{ width: width }}>
+                  <motion.select
+                    whileInView={() => {
+                      setIsInView(true);
+                    }}
+                    initial={{ rotateX: "90deg" }}
+                    animate={
+                      isInView && {
+                        rotateX: 0,
+                        transition: {
+                          duration: 1,
+                          delay: delay,
+                        },
+                      }
+                    }
+                    className="custom-select"
+                    style={{ width: width }}
+                  >
                     <option value="0">{placeholder}</option>
                     <option value="1">Audi</option>
                     <option value="2">BMW</option>
-                  </select>
+                  </motion.select>
                   <div className="select-star">{img}</div>
                 </>
               )}
