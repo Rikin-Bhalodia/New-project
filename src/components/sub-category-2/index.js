@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import styled from "styled-components";
 // import Menu from "../../commonComponents/Menu";
 // import MenuIcon from "../../assets/images/studio/menu.svg";
-import submenu from "../../assets/sub-cat-menu-1.svg";
+import submenu from "../../assets/sub-cat-menu-1.png";
+import { motion } from "framer-motion";
 
 const SubMenu2Wrapper = styled.div`
   text-transform: uppercase;
@@ -40,7 +41,7 @@ const SubMenu2Wrapper = styled.div`
   }
   .body h6 {
     color: white;
-    font-size: 18px;
+    font-size: 17px;
     padding: 15px 0;
   }
 
@@ -69,7 +70,7 @@ const SubMenu2Wrapper = styled.div`
   }
   .head1 {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     width: inherit;
     flex: 1;
     gap: 10px;
@@ -78,158 +79,1761 @@ const SubMenu2Wrapper = styled.div`
   }
   .head2 {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     width: inherit;
     flex: 1;
     gap: 10px;
     padding: 0 10px;
     flex-wrap: wrap;
   }
+  .d_flex {
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 767px) {
+    .body h6 {
+      font-size: 15px;
+      padding: 10px 0;
+    }
+
+    .body p {
+      font-size: 10px;
+      margin-bottom: 5px;
+      padding-top: 0px;
+    }
+    .body h5 {
+      font-size: 18px;
+      padding: 5px 0;
+    }
+  }
 `;
 
 export default function SubMenu2() {
   //   const [menuOpenModal, setMenuOpenModal] = useState(false);
-
+  const [isInView, setIsInView] = useState(false);
   return (
     <SubMenu2Wrapper>
       <div className="head">
         <div className="head1">
-          <div>clothing</div>
-          <div>BAGS</div>
-          <div>FOOTWEAR</div>
-          <div>JEWELLERY</div>
-          <div>kids</div>
+          <motion.div
+            whileInView={() => {
+              setIsInView(true);
+            }}
+            initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+            animate={
+              isInView && {
+                y: 0,
+                opacity: 1,
+                rotateX: "0deg",
+                transition: {
+                  duration: 1,
+                },
+              }
+            }
+          >
+            clothing
+          </motion.div>
+          <motion.div
+            whileInView={() => {
+              setIsInView(true);
+            }}
+            initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+            animate={
+              isInView && {
+                y: 0,
+                opacity: 1,
+                rotateX: "0deg",
+                transition: {
+                  duration: 1,
+                },
+              }
+            }
+          >
+            BAGS
+          </motion.div>
+          <motion.div
+            whileInView={() => {
+              setIsInView(true);
+            }}
+            initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+            animate={
+              isInView && {
+                y: 0,
+                opacity: 1,
+                rotateX: "0deg",
+                transition: {
+                  duration: 1,
+                },
+              }
+            }
+          >
+            FOOTWEAR
+          </motion.div>
+          <motion.div
+            whileInView={() => {
+              setIsInView(true);
+            }}
+            initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+            animate={
+              isInView && {
+                y: 0,
+                opacity: 1,
+                rotateX: "0deg",
+                transition: {
+                  duration: 1,
+                },
+              }
+            }
+          >
+            JEWELLERY
+          </motion.div>
+          <motion.div
+            whileInView={() => {
+              setIsInView(true);
+            }}
+            initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+            animate={
+              isInView && {
+                y: 0,
+                opacity: 1,
+                rotateX: "0deg",
+                transition: {
+                  duration: 1,
+                },
+              }
+            }
+          >
+            kids
+          </motion.div>
         </div>
-        <div className="center">EXPLORE THE STORE</div>
+        <motion.div
+          whileInView={() => {
+            setIsInView(true);
+          }}
+          initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+          animate={
+            isInView && {
+              y: 0,
+              opacity: 1,
+              rotateX: "0deg",
+              transition: {
+                duration: 1,
+              },
+            }
+          }
+          className="center"
+        >
+          EXPLORE THE STORE
+        </motion.div>
         <div className="head2">
-          <div>BEAUTY</div>
-          <div>ACCESSORIES</div>
-          <div>FOOD & DRINKS</div>
-          <div>GAMES</div>
-          <div>KIDS</div>
+          <motion.div
+            whileInView={() => {
+              setIsInView(true);
+            }}
+            initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+            animate={
+              isInView && {
+                y: 0,
+                opacity: 1,
+                rotateX: "0deg",
+                transition: {
+                  duration: 1,
+                },
+              }
+            }
+          >
+            BEAUTY
+          </motion.div>
+          <motion.div
+            whileInView={() => {
+              setIsInView(true);
+            }}
+            initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+            animate={
+              isInView && {
+                y: 0,
+                opacity: 1,
+                rotateX: "0deg",
+                transition: {
+                  duration: 1,
+                },
+              }
+            }
+          >
+            ACCESSORIES
+          </motion.div>
+          <motion.div
+            whileInView={() => {
+              setIsInView(true);
+            }}
+            initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+            animate={
+              isInView && {
+                y: 0,
+                opacity: 1,
+                rotateX: "0deg",
+                transition: {
+                  duration: 1,
+                },
+              }
+            }
+          >
+            FOOD & DRINKS
+          </motion.div>
+          <motion.div
+            whileInView={() => {
+              setIsInView(true);
+            }}
+            initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+            animate={
+              isInView && {
+                y: 0,
+                opacity: 1,
+                rotateX: "0deg",
+                transition: {
+                  duration: 1,
+                },
+              }
+            }
+          >
+            GAMES
+          </motion.div>
+          <motion.div
+            whileInView={() => {
+              setIsInView(true);
+            }}
+            initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+            animate={
+              isInView && {
+                y: 0,
+                opacity: 1,
+                rotateX: "0deg",
+                transition: {
+                  duration: 1,
+                },
+              }
+            }
+          >
+            KIDS
+          </motion.div>
         </div>
       </div>
       <div className="menu-area">
         <div className="body">
           <div className="box">
-            <h5>BEAUTY</h5>
-            <div className="">
+            <motion.h5
+              whileInView={() => {
+                setIsInView(true);
+              }}
+              initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+              animate={
+                isInView && {
+                  y: 0,
+                  opacity: 1,
+                  rotateX: "0deg",
+                  transition: {
+                    duration: 1,
+                  },
+                }
+              }
+            >
+              BEAUTY
+            </motion.h5>
+            <div className="d_flex">
               <div className="">
-                <h6>FACE</h6>
-                <p>FOUNDATION</p>
-                <p>BB & CC Creams</p>
-                <p>concealer</p>
-                <p>primer</p>
-                <p>setting sprays</p>
-                <p>highlighter</p>
-                <p>contour</p>
-                <p>color correctors</p>
+                <motion.h6
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  FACE
+                </motion.h6>
+                <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  FOUNDATION
+                </motion.p>
+                <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  BB & CC Creams
+                </motion.p>
+                <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  concealer
+                </motion.p>
+                <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  primer
+                </motion.p>
+                <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  setting sprays
+                </motion.p>
+                <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  highlighter
+                </motion.p>
+                <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  contour
+                </motion.p>
+                <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  color correctors
+                </motion.p>
                 <br />
-                <h6>CHEEK</h6>
-                <p>BRUSHES</p>
-                <p>BRONZERS</p>
-                <p>CHEEK PALETTES </p>
+                <motion.h6
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  CHEEK
+                </motion.h6>
+                <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  BRUSHES
+                </motion.p>
+                <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  BRONZERS
+                </motion.p>
+                <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  CHEEK PALETTES{" "}
+                </motion.p>
               </div>
               <div className="">
-                <h6>EYES</h6>
-                <p>EYE PALETTES</p>
-                <p>MASCARA</p>
-                <p>EYE LINERS</p>
-                <p>EYEBS</p>
-                <p>EYE LASHES</p>
-                <p>EYE SHADOWS</p>
-                <p>SERUMS</p>
+                <motion.h6
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  EYES
+                </motion.h6>
+                <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  EYE PALETTES
+                </motion.p>
+                <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  MASCARA
+                </motion.p>
+                <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  EYE LINERS
+                </motion.p>
+                <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  EYEBS
+                </motion.p>
+                <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  EYE LASHES
+                </motion.p>
+                <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  EYE SHADOWS
+                </motion.p>
+                <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  SERUMS
+                </motion.p>
                 <br />
-                <h6>LIPS</h6>
-                <p>LIPSTICKS</p>
-                <p>LIPGLOSS</p>
-                <p>LIP BALM</p>
-                <p>LIP LINER</p>
-                <p>PLUMPERS</p>
-                <p>LIP CREAMS</p>
+                <motion.h6
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  LIPS
+                </motion.h6>
+                <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  LIPSTICKS
+                </motion.p>
+                <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  LIPGLOSS
+                </motion.p>
+                <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  LIP BALM
+                </motion.p>
+                <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  LIP LINER
+                </motion.p>
+                <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  PLUMPERS
+                </motion.p>
+                <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  LIP CREAMS
+                </motion.p>
               </div>
             </div>
           </div>
           <div className="box">
-            <h5>SKIN</h5>
-            <div className="">
+            <motion.h5
+              whileInView={() => {
+                setIsInView(true);
+              }}
+              initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+              animate={
+                isInView && {
+                  y: 0,
+                  opacity: 1,
+                  rotateX: "0deg",
+                  transition: {
+                    duration: 1,
+                  },
+                }
+              }
+            >
+              SKIN
+            </motion.h5>
+            <div className="d_flex">
               <div className="">
-                <h6>MOISTURIZERS</h6>
-                <p>NIGHTCREAM</p>
-                <p>FACE OILS</p>
-                <p>MISTS</p>
+                <motion.h6
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  MOISTURIZERS
+                </motion.h6>
+                <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  NIGHTCREAM
+                </motion.p>
+                <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  FACE OILS
+                </motion.p>
+                <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  MISTS
+                </motion.p>
                 <br />
-                <h6>CLEANSERS</h6>
-                <p>FACEWASH</p>
-                <p>EXFOLIATING SCRUBS</p>
-                <p>FASK MASKS</p>
-                <p>MAKEUP REMOVER</p>
-                <p>FACE WIPES</p>
-                <h6>TREATMENTS</h6>
-                <p>FACE SERUMS</p>
-                <p>BLEMISH & ACNE</p>
-                <p>FACE PEELS</p>
+                <motion.h6
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  CLEANSERS
+                </motion.h6>
+                <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  FACEWASH
+                </motion.p>
+                <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  EXFOLIATING SCRUBS
+                </motion.p>
+                <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  FASK MASKS
+                </motion.p>
+                <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  MAKEUP REMOVER
+                </motion.p>
+                <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  FACE WIPES
+                </motion.p>
+                <motion.h6
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  TREATMENTS
+                </motion.h6>
+                <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  FACE SERUMS
+                </motion.p>
+                <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  BLEMISH & ACNE
+                </motion.p>
+                <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  FACE PEELS
+                </motion.p>
               </div>
               <div className="">
-                <h6>MASKS</h6>
-                <p>FACE MASKS</p>
-                <p>SHEET MASKS</p>
-                <p>EYE MASKS</p>
+                <motion.h6
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  MASKS
+                </motion.h6>
+                <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  FACE MASKS
+                </motion.p>
+                <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  SHEET MASKS
+                </motion.p>
+                <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  EYE MASKS
+                </motion.p>
                 <br />
-                <h6>EYE CARE</h6>
-                <p>EYE CREAMS</p>
-                <p>EYE MASKS</p>
-                <p>EYE MASKS</p>
+                <motion.h6
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  EYE CARE
+                </motion.h6>
+                <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  EYE CREAMS
+                </motion.p>
+                <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  EYE MASKS
+                </motion.p>
+                <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  EYE MASKS
+                </motion.p>
                 <br />
-                <h6>LIPS</h6>
-                <p>LIP CARE KIT</p>
-                <p>LIP BALMS</p>
-                <p>LIP TREATMENTS</p>
+                <motion.h6
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  LIPS
+                </motion.h6>
+                <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  LIP CARE KIT
+                </motion.p>
+                <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  LIP BALMS
+                </motion.p>
+                <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  LIP TREATMENTS
+                </motion.p>
               </div>
               <div className="">
-                <h6>SUNCARE & SELF-TAN</h6>
+                <motion.h6
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  NAILS
+                </motion.h6>
                 <br />
-                <h6>TOOLS</h6>
-                <p>BRUSHES</p>
-                <p>APPLICATORS</p>
-                <p>ACCESSORIES</p>
+                <motion.h6
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  SUNCARE & <br />
+                  SELF-TAN
+                </motion.h6>
+                <br />
+                <motion.h6
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  TOOLS
+                </motion.h6>
+                <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  BRUSHES
+                </motion.p>
+                <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  APPLICATORS
+                </motion.p>
+                <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  ACCESSORIES
+                </motion.p>
               </div>
             </div>
           </div>
           <div className="box">
-            <h5>HAIR</h5>
-            <div className="">
+            <motion.h5
+              whileInView={() => {
+                setIsInView(true);
+              }}
+              initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+              animate={
+                isInView && {
+                  y: 0,
+                  opacity: 1,
+                  rotateX: "0deg",
+                  transition: {
+                    duration: 1,
+                  },
+                }
+              }
+            >
+              HAIR
+            </motion.h5>
+            <div className="d_flex">
               <div className="">
-                <h6>SHAMPOO</h6>
+                <motion.h6
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  SHAMPOO
+                </motion.h6>
                 <br />
-                <h6>CONDITIONERS</h6>
+                <motion.h6
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  CONDITIONERS
+                </motion.h6>
                 <br />
-                <h6>SCALP SCRUBS</h6>
+                <motion.h6
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  SCALP SCRUBS
+                </motion.h6>
                 <br />
-                <h6>HAIR TREATMENT</h6>
-                <p>BRUSHES</p>
-                <p>HAIR MASKS</p>
-                <p>HAIR OILS</p>
-                <p>HAIR SERUMS</p>
-                <p>SCALP TREATMENTS</p>
-                <p>HAIR SUPPLEMENTS</p>
-                <p>HAIR THINNING & HAIR LOSS</p>
+                <motion.h6
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  HAIR TREATMENT
+                </motion.h6>
+                <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  BRUSHES
+                </motion.p>
+                <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  HAIR MASKS
+                </motion.p>
+                <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  HAIR OILS
+                </motion.p>
+                <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  HAIR SERUMS
+                </motion.p>
+                <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  SCALP TREATMENTS
+                </motion.p>
+                <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  HAIR SUPPLEMENTS
+                </motion.p>
+                <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  HAIR THINNING & HAIR LOSS
+                </motion.p>
               </div>
               <div className="">
-                <h6>STYLING</h6>
-                <p>CREAMS</p>
-                <p>DRY SHAMPOO</p>
-                <p>HEAT PROTECTORS</p>
-                <p>HAIR SPRAYS</p>
-                <p>HAIR DYES</p>
-                <p>ROOT TOUCH-UPS</p>
+                <motion.h6
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  STYLING
+                </motion.h6>
+                <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  CREAMS
+                </motion.p>
+                <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  DRY SHAMPOO
+                </motion.p>
+                <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  HEAT PROTECTORS
+                </motion.p>
+                <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  HAIR SPRAYS
+                </motion.p>
+                <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  HAIR DYES
+                </motion.p>
+                <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      opacity: 1,
+                      rotateX: "0deg",
+                      transition: {
+                        duration: 1,
+                      },
+                    }
+                  }
+                >
+                  ROOT TOUCH-UPS
+                </motion.p>
               </div>
             </div>
           </div>
         </div>
         {/* <div className="footer">
           <h4>all designer & Brand</h4>
-          <p>A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</p>
+          <motion.p whileInView={() => {
+              setIsInView(true);
+            }}
+            initial={{ y: "3vh", rotateX: "-90deg", opacity: 0 }}
+            animate={
+              isInView && {
+                y: 0,
+                opacity: 1,
+                rotateX: "0deg",
+                transition: {
+                  duration: 1,
+                },
+              }
+            }>A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</motion.p>
         </div> */}
       </div>
     </SubMenu2Wrapper>
