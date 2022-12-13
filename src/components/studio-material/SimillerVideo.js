@@ -207,10 +207,11 @@ export default function SimillerVideo() {
                         whileInView={() => {
                           setIsInView(true);
                         }}
-                        initial={{ x: ele.x }}
+                        initial={{ x: ele.x, opacity: 0 }}
                         animate={
                           isInView && {
                             x: 0,
+                            opacity: 1,
                             transition: {
                               duration: ele.duration,
                             },

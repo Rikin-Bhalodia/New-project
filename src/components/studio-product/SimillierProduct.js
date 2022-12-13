@@ -236,12 +236,12 @@ const SimillerProduct = () => {
           whileInView={() => {
             setIsInView(true);
           }}
-          initial={{ y: "40vh" }}
+          initial={{ y: "30vh" }}
           animate={
             isInView && {
               y: 0,
               transition: {
-                duration: 0.7,
+                duration: 1,
               },
             }
           }
@@ -287,7 +287,7 @@ const SimillerProduct = () => {
           <div className="simillier-body">
             <motion.div
               className="product-box"
-              initial={{ x: "50vw" }}
+              initial={{ x: "30vw" }}
               whileInView={() => {
                 setIsInView(true);
               }}
@@ -321,7 +321,7 @@ const SimillerProduct = () => {
             </motion.div>
             <motion.div
               className="product-box"
-              initial={{ x: "50vw" }}
+              initial={{ x: "30vw" }}
               whileInView={() => {
                 setIsInView(true);
               }}
@@ -358,7 +358,7 @@ const SimillerProduct = () => {
               whileInView={() => {
                 setIsInView(true);
               }}
-              initial={{ x: "50vw" }}
+              initial={{ x: "30vw" }}
               animate={
                 isInView && {
                   x: 0,
@@ -390,7 +390,7 @@ const SimillerProduct = () => {
           </div>
         </div>
       </SimillerProductWrapper>
-      <ProductImgSlider isNeededImg={true}/>
+      <ProductImgSlider isNeededImg={true} />
     </>
   );
 };

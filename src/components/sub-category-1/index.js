@@ -39,20 +39,21 @@ const SubMenu1Wrapper = styled.div`
   }
   .body h6 {
     color: white;
-    font-size: 18px;
-    padding-top: 15px;
+    font-size: 17px;
+    padding: 15px 0;
   }
 
   .body p {
     color: white;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 400;
     margin-bottom: 10px;
-    padding-top: 10px;
+    padding-top: 3px;
   }
   .body h5 {
     color: white;
     font-size: 22px;
+    padding: 10px 0;
   }
   .footer {
     padding: 10px 80px 10px 80px;

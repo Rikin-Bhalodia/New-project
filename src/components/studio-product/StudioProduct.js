@@ -168,8 +168,8 @@ export default function StudioProduct() {
         <div className={` ${isResponsive ? "" : "container-fluid px-5"}`}>
           <div className="studio-product-head">
             <motion.div
-              initial={{ x: "-60vw" }}
-              animate={{ x: 0 }}
+              initial={{ y: "30vh" }}
+              animate={{ y: 0 }}
               transition={{ duration: 1 }}
               className="leftside-area"
             >
@@ -182,8 +182,8 @@ export default function StudioProduct() {
             </motion.div>
             {!isResponsive && (
               <motion.div
-                initial={{ x: "60vw" }}
-                animate={{ x: 0 }}
+                initial={{ y: "30vh" }}
+                animate={{ y: 0 }}
                 transition={{ duration: 1 }}
                 className="rightside-area"
               >
@@ -219,16 +219,16 @@ export default function StudioProduct() {
           {/* {!isResponsive && ( */}
           <div className="studio-product-body">
             <motion.div
-              initial={{ x: "-60vw" }}
-              animate={{ x: 0 }}
+              initial={{ y: "30vh" }}
+              animate={{ y: 0 }}
               transition={{ duration: 1 }}
               className="studio-product-video"
             >
               <img src={Video} alt="videoImg" loading="lazy" />
             </motion.div>
             <motion.div
-              initial={{ x: "60vw" }}
-              animate={{ x: 0 }}
+              initial={{ y: "30vh" }}
+              animate={{ y: 0 }}
               transition={{ duration: 1 }}
               className="box-area"
             >

@@ -235,11 +235,7 @@ const NFTMetaVerse = () => {
   return (
     <>
       <NFTMetaVerseWrapper>
-        <motion.div
-          initial={{ y: "200vh" }}
-          animate={{ y: 0 }}
-          transition={{ duration: 1 }}
-        >
+        <motion.div>
           <div className="heading-part">
             <motion.div
               initial={{ x: "-100vw", opacity: 0 }}

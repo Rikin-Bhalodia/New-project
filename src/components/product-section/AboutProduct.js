@@ -259,13 +259,14 @@ const AboutProduct = ({ desView, setDesView }) => {
           <>
             <div className="about-below--container">
               <motion.div
-                initial={{ y: "40vh", opacity: 0 }}
+                initial={{ y: "2vh", rotateX: "-90deg", opacity: 0 }}
                 animate={
                   desView && {
                     y: 0,
+                    rotateX: 0,
                     opacity: 1,
                     transition: {
-                      duration: 1,
+                      duration: 0.8,
                     },
                   }
                 }
@@ -274,14 +275,14 @@ const AboutProduct = ({ desView, setDesView }) => {
                 Bottega Senatore - When The Quality Talks Itself
               </motion.div>
               <motion.div
-                initial={{ y: "40vh", opacity: 0 }}
+                initial={{ y: "2vh", rotateX: "-90deg", opacity: 0 }}
                 animate={
                   desView && {
                     y: 0,
+                    rotateX: 0,
                     opacity: 1,
                     transition: {
-                      duration: 1,
-                      delay: 1.3,
+                      duration: 0.8,
                     },
                   }
                 }
@@ -292,14 +293,14 @@ const AboutProduct = ({ desView, setDesView }) => {
                 group of Italian Footwear Artisan Masters.
               </motion.div>
               <motion.div
-                initial={{ y: "40vh", opacity: 0 }}
+                initial={{ y: "2vh", rotateX: "-90deg", opacity: 0 }}
                 animate={
                   desView && {
                     y: 0,
+                    rotateX: 0,
                     opacity: 1,
                     transition: {
-                      duration: 1,
-                      delay: 1.6,
+                      duration: 0.8,
                     },
                   }
                 }
@@ -308,14 +309,14 @@ const AboutProduct = ({ desView, setDesView }) => {
                 Rubirio - High Quality Italian Brief Case
               </motion.div>
               <motion.ul
-                initial={{ y: "40vh", opacity: 0 }}
+                initial={{ y: "2vh", rotateX: "-90deg", opacity: 0 }}
                 animate={
                   desView && {
                     y: 0,
+                    rotateX: 0,
                     opacity: 1,
                     transition: {
-                      duration: 1,
-                      delay: 1.9,
+                      duration: 0.8,
                     },
                   }
                 }
@@ -330,14 +331,14 @@ const AboutProduct = ({ desView, setDesView }) => {
             </div>
             <div className="d-flex product-details">
               <motion.div
-                initial={{ y: "20vh", opacity: 0 }}
+                initial={{ y: "2vh", rotateX: "-90deg", opacity: 0 }}
                 animate={
                   desView && {
                     y: 0,
+                    rotateX: 0,
                     opacity: 1,
                     transition: {
-                      duration: 0.7,
-                      delay: 0.4,
+                      duration: 0.8,
                     },
                   }
                 }
@@ -346,14 +347,14 @@ const AboutProduct = ({ desView, setDesView }) => {
                 <div className="product-detail">Tumbled leather</div>
               </motion.div>
               <motion.div
-                initial={{ y: "20vh", opacity: 0 }}
+                initial={{ y: "2vh", rotateX: "-90deg", opacity: 0 }}
                 animate={
                   desView && {
                     y: 0,
+                    rotateX: 0,
                     opacity: 1,
                     transition: {
-                      duration: 0.7,
-                      delay: 0.6,
+                      duration: 0.8,
                     },
                   }
                 }
@@ -362,14 +363,14 @@ const AboutProduct = ({ desView, setDesView }) => {
                 <div className="product-detail">Lavender</div>
               </motion.div>
               <motion.div
-                initial={{ y: "20vh", opacity: 0 }}
+                initial={{ y: "2vh", rotateX: "-90deg", opacity: 0 }}
                 animate={
                   desView && {
                     y: 0,
+                    rotateX: 0,
                     opacity: 1,
                     transition: {
-                      duration: 0.7,
-                      delay: 0.8,
+                      duration: 0.8,
                     },
                   }
                 }
@@ -378,14 +379,14 @@ const AboutProduct = ({ desView, setDesView }) => {
                 <div className="product-detail">Leather</div>
               </motion.div>
               <motion.div
-                initial={{ y: "20vh", opacity: 0 }}
+                initial={{ y: "2vh", rotateX: "-90deg", opacity: 0 }}
                 animate={
                   desView && {
                     y: 0,
+                    rotateX: 0,
                     opacity: 1,
                     transition: {
-                      duration: 0.7,
-                      delay: 1,
+                      duration: 0.8,
                     },
                   }
                 }
@@ -394,14 +395,14 @@ const AboutProduct = ({ desView, setDesView }) => {
                 <div className="product-detail">RUBIRIODBG2</div>
               </motion.div>
               <motion.div
-                initial={{ y: "20vh", opacity: 0 }}
+                initial={{ y: "2vh", rotateX: "-90deg", opacity: 0 }}
                 animate={
                   desView && {
                     y: 0,
+                    rotateX: 0,
                     opacity: 1,
                     transition: {
-                      duration: 0.7,
-                      delay: 1.2,
+                      duration: 0.8,
                     },
                   }
                 }

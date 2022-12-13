@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import MenuIcon from "../../../assets/images/studio/menu.svg";
 import BackArrow from "../../../assets/images/product/back-arrow.svg";
-import BannerImage from "../../../assets/images/nfts/celebration.svg";
+import BannerImage from "../../../assets/images/nfts/celebration.png";
 import Plan from "../../../assets/images/nfts/plan.svg";
 import RightBack from "../../../assets/images/nfts/right-back.svg";
 
