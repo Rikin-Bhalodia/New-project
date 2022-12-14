@@ -187,7 +187,7 @@ const EventNear = ({ isRequiredTopThings }) => {
         whileInView={() => {
           setIsInView(true);
         }}
-        initial={{ y: "40vh" }}
+        initial={{ y: "20vh" }}
         animate={
           isInView && {
             y: 0,
@@ -238,14 +238,13 @@ const EventNear = ({ isRequiredTopThings }) => {
                   whileInView={() => {
                     setIsInView(true);
                   }}
-                  initial={{ y: "20vh", opacity: 0 }}
+                  initial={{ y: "10vh", opacity: 0 }}
                   animate={
                     isInView && {
                       y: 0,
                       opacity: 1,
                       transition: {
-                        duration: 0.8,
-                        delay: 0.2,
+                        duration: 1,
                       },
                     }
                   }

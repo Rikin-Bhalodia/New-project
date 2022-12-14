@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import TopTranding from "../Common/TopTranding";
 import CommonHeaderPart from "./CommonHeaderPart";
@@ -11,6 +11,7 @@ import { useMediaQuery } from "react-responsive";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { motion } from "framer-motion";
 import { Autoplay, Pagination, Navigation } from "swiper";
+import AnimatedTextWord from "../../../commonComponents/Animation/FlipAnimation";
 
 const ServiceTravelWrapper = styled.div`
   width: 100%;
@@ -259,7 +260,7 @@ const ServiceTravelWrapper = styled.div`
 
 const ServiceTravel = () => {
   const isResponsive = useMediaQuery({ query: "(max-width: 1000px)" });
-
+  const [isInView, setIsInView] = useState(false);
   return (
     <>
       <ServiceTravelWrapper>
@@ -277,9 +278,31 @@ const ServiceTravel = () => {
             width={600}
             height={180}
           />
-          <div className="content-head">WANT BESPOKE SERVICES?</div>
-          <div className="para">talk to professionals</div>
-          <div className="get-assistance">get personal assistance</div>
+          <div className="content-head">
+            <AnimatedTextWord text="WANT BESPOKE SERVICES?" />
+          </div>
+          <div className="para">
+            <AnimatedTextWord text="talk to professionals" />
+          </div>
+          <motion.div
+            whileInView={() => {
+              setIsInView(true);
+            }}
+            initial={{ y: "2vh", rotateY: "90deg", opacity: 0 }}
+            animate={
+              isInView && {
+                y: 0,
+                rotateY: 0,
+                opacity: 1,
+                transition: {
+                  duration: 1,
+                },
+              }
+            }
+            className="get-assistance"
+          >
+            get personal assistance
+          </motion.div>
           <img
             src={RightFilter}
             alt="right"

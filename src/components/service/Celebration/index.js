@@ -5,10 +5,11 @@ import BackArrow from "../../../assets/images/product/back-arrow.svg";
 import BannerImage from "../../../assets/images/nfts/celebration.png";
 import Plan from "../../../assets/images/nfts/plan.svg";
 import RightBack from "../../../assets/images/nfts/right-back.svg";
-
+import { motion } from "framer-motion";
 import Menu from "../../../commonComponents/Menu";
 import { ExploreMoreSlider } from "../../../slider";
 import YellowBarContent from "../Common/YellowBarContent";
+import AnimatedTextWord from "../../../commonComponents/Animation/FlipAnimation";
 const CelebrateWithUs = React.lazy(() => import("./CelebrateWithUs"));
 
 const CelebrationWrapper = styled.div`
@@ -80,11 +81,29 @@ const CelebrationWrapper = styled.div`
     margin: 0 100px;
     justify-content: end;
   }
+  .flex_box {
+    display: flex;
+    justify-content: end;
+    gap: 20px;
+    align-items: center;
+  }
 `;
+
+const ele = [
+  {
+    delay: 0,
+  },
+  {
+    delay: 0.3,
+  },
+  {
+    delay: 0.6,
+  },
+];
 
 const Celebration = () => {
   const [menuOpenModal, setMenuOpenModal] = useState(false);
-
+  const [isInView, setIsInView] = useState(false);
   return (
     <CelebrationWrapper>
       <div className="heading-part">
@@ -92,7 +111,9 @@ const Celebration = () => {
           <img src={BackArrow} alt="back-arrow" />
           <div>Go Back</div>
         </div>
-        <div>SELL YOUR NFT</div>
+        <div>
+          <AnimatedTextWord text="SELL YOUR NFT" />
+        </div>
       </div>
       <div
         className="menu-icon"
@@ -112,7 +133,9 @@ const Celebration = () => {
       <div className="line">
         <div className="border-line"></div>
       </div>
-      <div className="explore-more-celebration">EXPLORE MORE</div>
+      <div className="explore-more-celebration">
+        <AnimatedTextWord text="EXPLORE MORE" />
+      </div>
       <ExploreMoreSlider />
       <div
         style={{
@@ -126,7 +149,7 @@ const Celebration = () => {
       </div>
       <div className="content-plan">
         <div className="box-content">
-          {[1, 2, 3].map((_) => {
+          {ele.map(({ delay }) => {
             return (
               <div
                 style={{
@@ -136,11 +159,30 @@ const Celebration = () => {
                   alignItems: "center",
                 }}
               >
-                <div className="plan-back"></div>
-                <div style={{ width: "50%" }}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Vestibulum ipsum cursus interdum commodo, senectus dignissim.
-                </div>
+                <motion.div
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ x: "-20vw", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      x: 0,
+                      opacity: 1,
+                      transition: {
+                        duration: 1,
+                        delay: delay,
+                      },
+                    }
+                  }
+                  className="flex_box"
+                >
+                  <div className="plan-back"></div>
+                  <div style={{ width: "50%" }}>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Vestibulum ipsum cursus interdum commodo, senectus
+                    dignissim.
+                  </div>
+                </motion.div>
               </div>
             );
           })}
