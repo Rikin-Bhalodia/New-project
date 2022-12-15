@@ -3,6 +3,7 @@ import styled from "styled-components";
 import about_shoes from "./../../assets/images/aboutpage/aboutpage_shoes.svg";
 import bg2022 from "./../../assets/images/aboutpage/2022bg.svg";
 import { motion } from "framer-motion";
+import AnimatedTextWord from "../../commonComponents/Animation/FlipAnimation";
 
 const LaunchWrapper = styled.div`
   .launch-description {
@@ -21,23 +22,12 @@ export default function Launch() {
   return (
     <LaunchWrapper>
       <div className="launch-container company-container">
-        <motion.div
-          whileInView={() => {
-            setIsInView(true);
-          }}
-          initial={{ x: "-50vw" }}
-          animate={
-            isInView && {
-              x: 0,
-              transition: {
-                duration: 1,
-              },
-            }
-          }
-          className="company-title"
-        >
-          our first <span> big launch</span>
-        </motion.div>
+        <div className="company-title d-flex">
+          <AnimatedTextWord text="our first " />
+          <span className="span">
+            <AnimatedTextWord text="big launch" />
+          </span>
+        </div>
         <div className="d-flex">
           <motion.div
             whileInView={() => {
@@ -48,7 +38,7 @@ export default function Launch() {
               isInView && {
                 y: 0,
                 transition: {
-                  duration: 0.5,
+                  duration: 1,
                 },
               }
             }
@@ -61,23 +51,7 @@ export default function Launch() {
             reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
             pariatur.
           </motion.div>
-          <motion.img
-            whileInView={() => {
-              setIsInView(true);
-            }}
-            initial={{ x: "100vw" }}
-            animate={
-              isInView && {
-                x: 0,
-                transition: {
-                  duration: 1,
-                },
-              }
-            }
-            // loading="lazy"
-            src={about_shoes}
-            alt=""
-          />
+          <motion.img loading="lazy" src={about_shoes} alt="" />
         </div>
       </div>
     </LaunchWrapper>

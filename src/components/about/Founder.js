@@ -12,6 +12,7 @@ const FounderWrapper = styled.div`
   .founder-image {
     left: -218px;
     z-index: 9;
+    border: 10px solid white;
   }
   .founder-text {
     font-family: "Coral Blush";
@@ -24,7 +25,7 @@ const FounderWrapper = styled.div`
     left: 89px;
   }
   .founder-text-container {
-    left: -117px;
+    left: -170px;
   }
   .founder-words {
     font-family: "Mulish";
@@ -52,25 +53,9 @@ export default function Founder() {
   return (
     <FounderWrapper>
       <div className="founder-container position-relative d-flex">
-        <div className="position-absolute founder-back-img" />
+        {/* <div className="position-absolute founder-back-img" /> */}
         <div className="founder-image position-relative">
-          <motion.img
-            whileInView={() => {
-              setIsInView(true);
-            }}
-            initial={{ x: "-50vw" }}
-            animate={
-              isInView && {
-                x: 0,
-                transition: {
-                  duration: 1,
-                },
-              }
-            }
-            loading="lazy"
-            src={founder}
-            alt=""
-          />
+          <img loading="lazy" src={founder} alt="" />
         </div>
         <div className="founder-text-container position-relative ">
           <div className="founder-text">
@@ -86,12 +71,12 @@ export default function Founder() {
             whileInView={() => {
               setIsInView(true);
             }}
-            initial={{ x: "100vw" }}
+            initial={{ y: "30vh" }}
             animate={
               isInView && {
-                x: 0,
+                y: 0,
                 transition: {
-                  duration: 1.5,
+                  duration: 1,
                 },
               }
             }
@@ -108,7 +93,7 @@ export default function Founder() {
               isInView && {
                 y: 0,
                 transition: {
-                  duration: 0.5,
+                  duration: 1,
                 },
               }
             }

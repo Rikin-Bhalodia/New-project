@@ -3,6 +3,7 @@ import styled from "styled-components";
 import about_group2 from "./../../assets/images/aboutpage/aboutpage_people2.svg";
 import bg2021 from "./../../assets/images/aboutpage/2021bg.svg";
 import { motion } from "framer-motion";
+import AnimatedTextWord from "../../commonComponents/Animation/FlipAnimation";
 
 const ContestWrapper = styled.div`
   .contest-container {
@@ -39,38 +40,18 @@ export default function Contest() {
     <ContestWrapper>
       <div className="contest-container">
         <div className="d-flex justify-content-end">
-          <motion.div
-            whileInView={() => {
-              setIsInView(true);
-            }}
-            initial={{ x: "30vw" }}
-            animate={
-              isInView && {
-                x: 0,
-                transition: {
-                  duration: 2,
-                },
-              }
-            }
-            className="contest-title company-title"
-          >
-            we win the itb uni <br /> young <span>talent contest</span>
+          <motion.div className="contest-title company-title">
+            <AnimatedTextWord text="we win the itb uni" />
+            <div className="d-flex">
+              <AnimatedTextWord text="young " />
+              <span className="span">
+                <AnimatedTextWord text="talent contest" />
+              </span>
+            </div>
           </motion.div>
         </div>
         <div className="d-flex box">
-          <motion.img
-            whileInView={() => {
-              setIsInView(true);
-            }}
-            initial={{ x: "-30vw" }}
-            animate={
-              isInView && {
-                x: 0,
-                transition: {
-                  duration: 1.5,
-                },
-              }
-            }
+          <img
             loading="lazy"
             src={about_group2}
             alt=""
@@ -85,7 +66,7 @@ export default function Contest() {
               isInView && {
                 y: 0,
                 transition: {
-                  duration: 2,
+                  duration: 1,
                 },
               }
             }

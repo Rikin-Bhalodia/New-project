@@ -50,12 +50,12 @@ export default function Who() {
             whileInView={() => {
               setIsInView(true);
             }}
-            initial={{ y: "50vh" }}
+            initial={{ y: "30vh" }}
             animate={
               isInView && {
                 y: 0,
                 transition: {
-                  duration: 2,
+                  duration: 1,
                 },
               }
             }
@@ -70,23 +70,7 @@ export default function Who() {
           </motion.div>
         </div>
         <div>
-          <motion.img
-            whileInView={() => {
-              setIsInView(true);
-            }}
-            initial={{ x: "30vh" }}
-            animate={
-              isInView && {
-                x: 0,
-                transition: {
-                  duration: 1.5,
-                },
-              }
-            }
-            loading="lazy"
-            src={about_group1}
-            alt=""
-          />
+          <motion.img loading="lazy" src={about_group1} alt="" />
         </div>
       </div>
     </WhoWrapper>
