@@ -87,9 +87,15 @@ const CelebrationWrapper = styled.div`
     gap: 20px;
     align-items: center;
   }
+  @media (max-width: 550px) {
+    .celebration-title {
+      font-size: 55px;
+    }
+  }
   @media (max-width: 450px) {
-    .heading-part {
-      font-size: 50px;
+    .celebration-title {
+      font-size: 45px;
+      text-align: center;
     }
     .explore-more-celebration {
       font-size: 40px;
@@ -97,12 +103,10 @@ const CelebrationWrapper = styled.div`
     }
     .box-content {
       margin: 0 20px;
+      width: 100%;
     }
-  }
-  @media (max-width: 550px) {
-    .heading-part {
-      font-size: 70px;
-      text-align: center;
+    .right-back {
+      width: 100%;
     }
   }
 `;
@@ -129,7 +133,7 @@ const Celebration = () => {
           <img src={BackArrow} alt="back-arrow" />
           <div>Go Back</div>
         </div>
-        <div>
+        <div className="celebration-title">
           <AnimatedTextWord text="CELEBRATIONS" />
         </div>
       </div>

@@ -15,9 +15,14 @@ const CelebrateWithUsWrapper = styled.div`
     display: flex;
     justify-content: center;
   }
-  @media (max-width: 450px) {
+  @media (max-width: 550px) {
     .celebrate {
       font-size: 40px;
+    }
+  }
+  @media (max-width: 450px) {
+    .celebrate {
+      font-size: 35px;
       padding-bottom: 0;
     }
   }

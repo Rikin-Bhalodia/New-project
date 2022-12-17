@@ -444,8 +444,24 @@ export function ExploreMoreSlider() {
       }
     >
       <Swiper
-        slidesPerView={4.5}
-        spaceBetween={130}
+         breakpoints={{
+          360: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          450: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+          },
+          700: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
+          1075: {
+            slidesPerView: 4,
+            spaceBetween: 50,
+          }
+        }}
         className="mySwiper"
         style={
           isResponsive
