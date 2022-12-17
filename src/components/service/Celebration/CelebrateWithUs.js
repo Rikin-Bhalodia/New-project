@@ -10,7 +10,13 @@ const CelebrateWithUsWrapper = styled.div`
     font-weight: 400;
     font-size: 80px;
     text-align: center;
-    padding-bottom: 80px;
+    padding-bottom: 90px;
+  }
+  @media (max-width: 450px) {
+    .celebrate {
+      font-size: 40px;
+      padding-bottom: 0;
+    }
   }
 `;
 

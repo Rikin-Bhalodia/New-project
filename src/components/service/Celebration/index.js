@@ -76,9 +76,27 @@ const CelebrationWrapper = styled.div`
     width: 40%;
     display: flex;
     flex-direction: column;
-    row-gap: 40px;
+    row-gap: 30px;
     margin: 0 100px;
     justify-content: end;
+  }
+  @media (max-width: 450px) {
+    .heading-part {
+      font-size: 50px;
+    }
+    .explore-more-celebration {
+      font-size: 40px;
+      padding: 30px 0 0 30px;
+    }
+    .box-content {
+      margin: 0 20px;
+    }
+  }
+  @media (max-width: 550px) {
+    .heading-part {
+      font-size: 70px;
+      text-align: center;
+    }
   }
 `;
 
@@ -92,7 +110,7 @@ const Celebration = () => {
           <img src={BackArrow} alt="back-arrow" />
           <div>Go Back</div>
         </div>
-        <div>SELL YOUR NFT</div>
+        <div>CELEBRATIONS</div>
       </div>
       <div
         className="menu-icon"
@@ -131,13 +149,13 @@ const Celebration = () => {
               <div
                 style={{
                   display: "flex",
-                  columnGap: "20px",
-                  justifyContent: "end",
+                  columnGap: "25px",
+                  justifyContent: "space-between",
                   alignItems: "center",
                 }}
               >
                 <div className="plan-back"></div>
-                <div style={{ width: "50%" }}>
+                <div style={{ width: "100%" }}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   Vestibulum ipsum cursus interdum commodo, senectus dignissim.
                 </div>

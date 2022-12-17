@@ -425,12 +425,18 @@ export function BlankSlider() {
 }
 
 export function ExploreMoreSlider() {
+  const isResponsive = useMediaQuery({ query: "(max-width: 450px)" });
+
   return (
     <Swiper
       slidesPerView={4.5}
       spaceBetween={130}
       className="mySwiper"
-      style={{ height: "300px", margin: "50px 0 0 0 " }}
+      style={
+        isResponsive
+          ? { height: "300px", margin: "30px 0 0 0" }
+          : { height: "300px", margin: "50px 0 0 0" }
+      }
       autoplay={{
         delay: 1500,
         disableOnInteraction: false,
