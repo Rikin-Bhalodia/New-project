@@ -53,7 +53,9 @@ const ShopHoverWrapper = styled.div`
   }
   .leftImg {
     position: absolute !important;
-    left: 0px;
+    left: 50px;
+    top: 170px;
+    transform: rotate(-20deg);
     img {
       width: 270px;
       height: 350px;
@@ -62,8 +64,9 @@ const ShopHoverWrapper = styled.div`
   }
   .rightImg {
     position: absolute !important;
-    right: 0px;
-    top: 0;
+    right: 50px;
+    top: 170px;
+    transform: rotate(20deg);
     img {
       width: 270px;
       height: 350px;
@@ -73,117 +76,152 @@ const ShopHoverWrapper = styled.div`
   .shop-hover-category {
     display: flex;
   }
+  .shop-hover-category .menu_hover h3:hover .rightImg {
+    transform: rotate(0deg);
+  }
+  .shop-hover-category .menu_hover h3:hover .leftImg {
+    transform: rotate(90deg);
+  }
 `;
 
 const menuData = [
   {
     name: "ACCESSORIES",
     duration: 1,
+    leftImg: studioInner5,
+    rightImg: studioInner3,
   },
   {
     name: "BEAUTY & FREGRANCE",
     duration: 1.2,
+    leftImg: studioInner3,
+    rightImg: studioInner5,
   },
   {
     name: "Fashion",
     duration: 1.4,
+    leftImg: studioInner5,
+    rightImg: studioInner3,
   },
   {
     name: "Foods & Drinks (FMCG)",
     duration: 1.6,
+    leftImg: studioInner3,
+    rightImg: studioInner5,
   },
   {
     name: "Footwear",
     duration: 1.8,
+    leftImg: studioInner5,
+    rightImg: studioInner3,
   },
   {
     name: "Fragrance",
     duration: 2,
+    leftImg: studioInner3,
+    rightImg: studioInner5,
   },
   {
     name: "Handbags & Travel Bags",
     duration: 2.2,
+    leftImg: studioInner5,
+    rightImg: studioInner3,
   },
   {
     name: "HOME",
     duration: 2.4,
+    leftImg: studioInner3,
+    rightImg: studioInner5,
   },
   {
     name: "Jewelry",
     duration: 2.6,
+    leftImg: studioInner5,
+    rightImg: studioInner3,
   },
   {
     name: "Luxury Games",
     duration: 2.8,
+    leftImg: studioInner3,
+    rightImg: studioInner5,
   },
   {
     name: "Kids",
     duration: 3,
+    leftImg: studioInner5,
+    rightImg: studioInner3,
   },
   {
     name: "Luxury Gifting",
     duration: 3.2,
+    leftImg: studioInner3,
+    rightImg: studioInner5,
   },
   {
     name: "Pets (Shop)",
     duration: 3.4,
+    leftImg: studioInner5,
+    rightImg: studioInner3,
   },
   {
     name: "Sports",
     duration: 3.6,
+    leftImg: studioInner3,
+    rightImg: studioInner5,
   },
   {
     name: "Tech & Electronics",
     duration: 3.8,
+    leftImg: studioInner5,
+    rightImg: studioInner3,
   },
 ];
 
 export default function ShopHover() {
-  const [showImage, setShowImage] = useState(false);
+  const [showImage, setShowImage] = useState({
+    leftImg: "",
+    rightImg: "",
+  });
 
   return (
     <ShopHoverWrapper>
-      <motion.section
-        initial={{ y: "200vh" }}
-        animate={{ y: 0 }}
-        transition={{ duration: 1 }}
-        className="homeBanner overflow-hidden minHeightSec minBannerHeight "
-      >
+      <motion.section className="homeBanner overflow-hidden minHeightSec minBannerHeight ">
         <div className="hover-show-img">
           <div className="grid">
             <div className="menu-list">
-              {menuData.map(({ name, duration }, i) => {
+              {showImage.leftImg && (
+                <div className="leftImg">
+                  <motion.img src={showImage.leftImg} alt="" loading="lazy" />
+                </div>
+              )}
+              {menuData.map(({ name, duration, leftImg, rightImg }, i) => {
                 return (
                   <div className="shop-hover-category">
-                    {showImage === i && (
-                      <div className="leftImg">
-                        <motion.img src={studioInner3} alt="" loading="lazy" />
-                      </div>
-                    )}
-
                     <motion.div
                       initial={{ y: "30vh", opacity: 0 }}
                       animate={{ y: 0, opacity: 1 }}
                       transition={{ duration: duration }}
-                      onMouseEnter={() => setShowImage(i)}
+                      onMouseEnter={() =>
+                        setShowImage({
+                          leftImg,
+                          rightImg,
+                        })
+                      }
                       onMouseLeave={() => {
-                        setShowImage("");
+                        setShowImage(showImage);
                       }}
+                      className="menu_hover"
                     >
                       <h3>{name}</h3>
                     </motion.div>
-                    {showImage === i && (
-                      <div
-                        className={
-                          showImage === i ? "rightImg imghover" : "rightImg"
-                        }
-                      >
-                        <motion.img src={studioInner5} alt="" loading="lazy" />
-                      </div>
-                    )}
                   </div>
                 );
               })}
+              {showImage.rightImg && (
+                <div className="rightImg">
+                  <motion.img src={showImage.rightImg} alt="" loading="lazy" />
+                </div>
+              )}
             </div>
           </div>
         </div>

@@ -8,7 +8,7 @@ import FooterImage from "../../assets/images/product/footer.svg";
 import styled from "styled-components";
 import Filters from "../../commonComponents/Filters";
 import { useMediaQuery } from "react-responsive";
-
+import { motion } from "framer-motion";
 const ProductPoPWrapper = styled.div`
   .goback {
     margin-left: 40px;
@@ -87,7 +87,7 @@ const FiltersName = [
 const ProductPoP = () => {
   const [productId, setProductId] = useState("");
   const isResponsive = useMediaQuery({ query: "(max-width: 800px)" });
-
+  const [isInView, setIsInView] = useState(false);
   const images = [
     {
       img: Product1,
@@ -96,6 +96,7 @@ const ProductPoP = () => {
       width: isResponsive ? "50%" : "25%",
       class: "product-image",
       price: "₹1900",
+      duration: 1,
     },
     {
       img: Product2,
@@ -104,6 +105,7 @@ const ProductPoP = () => {
       width: "50%",
       class: "product-image",
       price: "₹1900",
+      duration: 1,
     },
     {
       img: Product3,
@@ -112,6 +114,7 @@ const ProductPoP = () => {
       width: isResponsive ? "100%" : "25%",
       class: "product-image  responsive-view",
       price: "₹1900",
+      duration: 1,
     },
     {
       img: Product3,
@@ -119,6 +122,7 @@ const ProductPoP = () => {
       height: 310,
       class: "product-image",
       price: "₹1900",
+      duration: 1,
       width: isResponsive ? "50%" : "25%",
     },
     {
@@ -128,6 +132,7 @@ const ProductPoP = () => {
       width: "50%",
       class: "product-image",
       price: "₹1900",
+      duration: 1,
     },
     {
       img: Product5,
@@ -135,6 +140,7 @@ const ProductPoP = () => {
       height: 310,
       class: "product-image  responsive-view",
       price: "₹1900",
+      duration: 1,
       width: isResponsive ? "100%" : "25%",
     },
     {
@@ -144,6 +150,7 @@ const ProductPoP = () => {
       width: "50%",
       class: "product-image1",
       price: "₹1900",
+      duration: 1,
     },
     {
       img: Product4,
@@ -152,6 +159,7 @@ const ProductPoP = () => {
       width: "50%",
       class: "product-image1",
       price: "₹1900",
+      duration: 1,
     },
     {
       img: Product1,
@@ -160,6 +168,7 @@ const ProductPoP = () => {
       width: isResponsive ? "100%" : "33.33%",
       class: "product-image responsive-view",
       price: "₹1900",
+      duration: 1,
     },
     {
       img: Product3,
@@ -167,6 +176,7 @@ const ProductPoP = () => {
       height: 310,
       class: "product-image",
       price: "₹1900",
+      duration: 1,
       width: isResponsive ? "50%" : "33.33%",
     },
     {
@@ -176,6 +186,7 @@ const ProductPoP = () => {
       width: isResponsive ? "50%" : "33.33%",
       class: "product-image",
       price: "₹1900",
+      duration: 1,
     },
   ];
 
@@ -196,9 +207,21 @@ const ProductPoP = () => {
                 justifyContent: "center",
               }}
             >
-              <img
+              <motion.img
                 loading="lazy"
                 src={ele.img}
+                whileInView={() => {
+                  setIsInView(true);
+                }}
+                initial={{ y: "30vh" }}
+                animate={
+                  isInView && {
+                    y: 0,
+                    transition: {
+                      duration: ele.duration,
+                    },
+                  }
+                }
                 alt="img"
                 height={ele.height}
                 className={ele.class}

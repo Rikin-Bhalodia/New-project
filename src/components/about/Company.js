@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import bg2020 from "./../../assets/images/aboutpage/2020bg.svg";
 import { motion } from "framer-motion";
+import AnimatedTextWord from "../../commonComponents/Animation/FlipAnimation";
 
 const CompanyWrapper = styled.div`
   .company-container {
@@ -25,23 +26,15 @@ export default function Company() {
   return (
     <CompanyWrapper>
       <div className="company-container">
-        <motion.div
-          whileInView={() => {
-            setIsInView(true);
-          }}
-          initial={{ x: "100vw" }}
-          animate={
-            isInView && {
-              x: 0,
-              transition: {
-                duration: 1.5,
-              },
-            }
-          }
-          className="company-title"
-        >
-          we created the team <br /> & start <span>the company</span>
-        </motion.div>
+        <div className="company-title">
+          <AnimatedTextWord text="we created the team" />
+          <div className="d-flex">
+            <AnimatedTextWord text="& start " />
+            <span className="span">
+              <AnimatedTextWord text="the company" />
+            </span>
+          </div>
+        </div>
         <motion.div
           whileInView={() => {
             setIsInView(true);
@@ -51,7 +44,7 @@ export default function Company() {
             isInView && {
               y: 0,
               transition: {
-                duration: 0.5,
+                duration: 1,
               },
             }
           }

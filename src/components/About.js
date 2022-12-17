@@ -83,7 +83,7 @@ const AboutWrapper = styled.div`
     line-height: 54px;
     padding-bottom: 40px;
   }
-  .company-title span {
+  .company-title .span {
     color: #a75b41;
   }
 
@@ -251,6 +251,7 @@ const AboutWrapper = styled.div`
 const About = () => {
   const [isInView, setIsInView] = useState(false);
   const [svgInView, setSvgInView] = useState(false);
+  console.log(isInView, "sssssss");
   const svgVariants = {
     hidden: {
       rotate: "-180deg",
@@ -278,32 +279,14 @@ const About = () => {
   };
   return (
     <AboutWrapper>
-      <motion.div
-        initial={{ y: "100vh" }}
-        animate={{ y: 0 }}
-        transition={{ duration: 1 }}
-      >
+      <div>
         <section className="aboutus-header">
           <div className="about-title">
             <AnimatedTextWord text="About" />
             <AnimatedTextWord text="us" />
           </div>
         </section>
-        <motion.section
-          whileInView={() => {
-            setIsInView(true);
-          }}
-          initial={{ x: "60vw" }}
-          animate={
-            isInView && {
-              x: 0,
-              transition: {
-                duration: 0.7,
-              },
-            }
-          }
-          className="aboutus-container"
-        >
+        <section className="aboutus-container">
           <div className="story-container d-flex">
             <div className="aboutstory-text self-center">
               <div>
@@ -323,10 +306,12 @@ const About = () => {
               whileInView={() => {
                 setSvgInView(true);
               }}
-              initial={{ y: "60vh" }}
+              initial={{ opacity: 0, y: "30vh" }}
               animate={
-                isInView && {
+                svgInView && {
                   y: 0,
+                  rotateX: 0,
+                  opacity: 1,
                   transition: {
                     duration: 1,
                   },
@@ -512,7 +497,7 @@ const About = () => {
             </div>
           </section>
           <Founder />
-        </motion.section>
+        </section>
         <section className="mission-container">
           <section className="mission-bg-container">
             <div className="dark-bg position-relative">
@@ -562,7 +547,7 @@ const About = () => {
             />
           </div>
         </section>
-      </motion.div>
+      </div>
     </AboutWrapper>
   );
 };

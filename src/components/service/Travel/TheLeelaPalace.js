@@ -6,16 +6,17 @@ import EditIcon from "../../../assets/images/service/travel/green-edit-icon.svg"
 import BenefitsImage from "../../../assets/images/service/travel/benefits.svg";
 import BenefitsRightImage from "../../../assets/images/service/travel/benefits-right.svg";
 import Royclan from "../../../assets/images/service/travel/royclan.svg";
-import Property1 from "../../../assets/images/service/travel/property1.svg";
-import Property2 from "../../../assets/images/service/travel/property2.svg";
-import Property3 from "../../../assets/images/service/travel/property3.svg";
-
+import Property1 from "../../../assets/images/service/travel/property1.png";
+import Property2 from "../../../assets/images/service/travel/property2.png";
+import Property3 from "../../../assets/images/service/travel/property3.png";
+import { motion } from "framer-motion";
 import Menu from "../../../commonComponents/Menu";
 import MenuIcon from "../../../assets/images/studio/menu.svg";
 import { BlankBackgroundSlider } from "../Grooming/ReviewSlider";
 import EventNear from "./EventNear";
 import YellowBarContent from "../Common/YellowBarContent";
 import { useMediaQuery } from "react-responsive";
+import AnimatedTextWord from "../../../commonComponents/Animation/FlipAnimation";
 
 const TheLeelaPalaceWrapper = styled.div`
   display: flex;
@@ -681,16 +682,26 @@ const TheLeelaPalaceWrapper = styled.div`
 const TheLeelaPalace = () => {
   const [menuOpenModal, setMenuOpenModal] = useState(false);
   const isResponsive = useMediaQuery({ query: "(max-width: 850px)" });
-
+  const [isInView, setIsInView] = useState(false);
   return (
     <>
       <TheLeelaPalaceWrapper>
         <div className="heading-part">
           <div className="des">
-            <div>KNOW THE WORLD OF LUXURY</div>
-            <div>
+            <motion.div
+              initial={{ y: "-2vh", rotateX: "-90deg", opacity: 0 }}
+              animate={{ y: 0, rotateX: 0, opacity: 1 }}
+              transition={{ duration: 0.8 }}
+            >
+              KNOW THE WORLD OF LUXURY
+            </motion.div>
+            <motion.div
+              initial={{ y: "-2vh", rotateX: "-90deg", opacity: 0 }}
+              animate={{ y: 0, rotateX: 0, opacity: 1 }}
+              transition={{ duration: 0.8 }}
+            >
               ROYCLAN IS THE PLACE WHERE YOU CAN BUY/RENT LUXURY PRODUCTS.
-            </div>
+            </motion.div>
           </div>
           <div
             className="menu-icon"
@@ -709,7 +720,9 @@ const TheLeelaPalace = () => {
         </div>
         <div className="parts">
           <div className="delhi">hotel in delhi</div>
-          <div className="the-leela-place">the leela palace</div>
+          <div className="the-leela-place">
+            <AnimatedTextWord text="the leela palace" />
+          </div>
           <div className="buttons">
             <div className="button">celebrate</div>
             <div className="button"> honeymoon</div>
@@ -717,7 +730,22 @@ const TheLeelaPalace = () => {
           </div>
           <div className="part2">
             <div className="content-part">
-              <div className="para">
+              <motion.div
+                whileInView={() => {
+                  setIsInView(true);
+                }}
+                initial={{ y: "10vh", opacity: 0 }}
+                animate={
+                  isInView && {
+                    y: 0,
+                    opacity: 1,
+                    transition: {
+                      duration: 0.7,
+                    },
+                  }
+                }
+                className="para"
+              >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit
                 urna velit adipiscing ultrices eu neque. Nunc, urna morbi
                 venenatis sed pellentesque condimentum cursus. Arcu ac in tempor
@@ -725,7 +753,7 @@ const TheLeelaPalace = () => {
                 consectetur adipiscing elit. Elit urna velit adipiscing ultrices
                 eu neque. Nunc, urna morbi venenatis sed pellentesque
                 condimentum cursus. Arcu ac in tempor sollicitudin nec iaculis.
-              </div>
+              </motion.div>
               <div className="date">
                 <div className="dates">1/07/2022</div>
                 <img
@@ -744,7 +772,9 @@ const TheLeelaPalace = () => {
                 ].map(({ name, value }) => {
                   return (
                     <div className="home-rooms">
-                      <div className="name">{name}</div>
+                      <div className="name">
+                        <AnimatedTextWord text={name} />
+                      </div>
                       <div>{value}</div>
                     </div>
                   );
@@ -753,20 +783,82 @@ const TheLeelaPalace = () => {
             </div>
             <div className="vips">
               <img src={Back} alt="Back" className="back" />
-              <div className="heading-vip">VIP Benefits</div>
+              <div className="heading-vip">
+                <AnimatedTextWord text="VIP Benefits" />
+              </div>
               <ul className="description">
-                <li>
+                <motion.li
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "2vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      rotateX: 0,
+                      opacity: 1,
+                      transition: {
+                        duration: 0.8,
+                      },
+                    }
+                  }
+                >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </li>
-                <li>
+                </motion.li>
+                <motion.li
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "2vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      rotateX: 0,
+                      opacity: 1,
+                      transition: {
+                        duration: 0.8,
+                      },
+                    }
+                  }
+                >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </li>
-                <li>
+                </motion.li>
+                <motion.li
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "2vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      rotateX: 0,
+                      opacity: 1,
+                      transition: {
+                        duration: 0.8,
+                      },
+                    }
+                  }
+                >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </li>
-                <li>
+                </motion.li>
+                <motion.li
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "2vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      rotateX: 0,
+                      opacity: 1,
+                      transition: {
+                        duration: 0.8,
+                      },
+                    }
+                  }
+                >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </li>
+                </motion.li>
               </ul>
             </div>
           </div>
@@ -775,7 +867,9 @@ const TheLeelaPalace = () => {
         <div className="benefits-royclan">
           <img src={BenefitsImage} alt="BenefitsImage" className="left-image" />
           <div>
-            <div className="benefits">benefits at</div>
+            <div className="benefits">
+              <AnimatedTextWord text="benefits at" />
+            </div>
             <img src={Royclan} alt="BenefitsImage" className="text-image" />
             {!isResponsive && (
               <img
@@ -787,15 +881,68 @@ const TheLeelaPalace = () => {
           </div>
           <div>
             <ul>
-              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+              <motion.li
+                whileInView={() => {
+                  setIsInView(true);
+                }}
+                initial={{ y: "2vh", rotateX: "-90deg", opacity: 0 }}
+                animate={
+                  isInView && {
+                    y: 0,
+                    rotateX: 0,
+                    opacity: 1,
+                    transition: {
+                      duration: 0.8,
+                    },
+                  }
+                }
+              >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </motion.li>
+              <motion.li
+                whileInView={() => {
+                  setIsInView(true);
+                }}
+                initial={{ y: "2vh", rotateX: "-90deg", opacity: 0 }}
+                animate={
+                  isInView && {
+                    y: 0,
+                    rotateX: 0,
+                    opacity: 1,
+                    transition: {
+                      duration: 0.8,
+                    },
+                  }
+                }
+              >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </motion.li>
+              <motion.li
+                whileInView={() => {
+                  setIsInView(true);
+                }}
+                initial={{ y: "2vh", rotateX: "-90deg", opacity: 0 }}
+                animate={
+                  isInView && {
+                    y: 0,
+                    rotateX: 0,
+                    opacity: 1,
+                    transition: {
+                      duration: 0.8,
+                    },
+                  }
+                }
+              >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </motion.li>
             </ul>
           </div>
         </div>
         <div className="propety-details">
           <div className="details">
-            <div className="head">property details</div>
+            <div className="head">
+              <AnimatedTextWord text="property details" />
+            </div>
             <div className="contents">
               <div className="item">
                 <div className="title">property type</div>
@@ -817,17 +964,63 @@ const TheLeelaPalace = () => {
             </div>
           </div>
           <div className="property-images">
-            <img src={Property1} alt="Property1" className="property-image" />
+            <motion.img
+              src={Property1}
+              alt="Property1"
+              className="property-image"
+              loading="lazy"
+              whileInView={() => {
+                setIsInView(true);
+              }}
+              initial={{ y: "20vh", opacity: 0 }}
+              animate={
+                isInView && {
+                  y: 0,
+                  opacity: 1,
+                  transition: {
+                    duration: 0.8,
+                  },
+                }
+              }
+            />
             <div style={{ display: "flex", flexDirection: "column" }}>
               <img
                 src={Property2}
                 alt="Property2"
+                loading="lazy"
                 className="property1-image"
+                whileInView={() => {
+                  setIsInView(true);
+                }}
+                initial={{ y: "20vh", opacity: 0 }}
+                animate={
+                  isInView && {
+                    y: 0,
+                    opacity: 1,
+                    transition: {
+                      duration: 0.8,
+                    },
+                  }
+                }
               />
               <img
                 src={Property3}
+                loading="lazy"
                 alt="Property3"
                 className="property2-image"
+                whileInView={() => {
+                  setIsInView(true);
+                }}
+                initial={{ y: "20vh", opacity: 0 }}
+                animate={
+                  isInView && {
+                    y: 0,
+                    opacity: 1,
+                    transition: {
+                      duration: 0.8,
+                    },
+                  }
+                }
               />
             </div>
           </div>

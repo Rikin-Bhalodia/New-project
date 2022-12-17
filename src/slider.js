@@ -426,40 +426,56 @@ export function BlankSlider() {
 
 export function ExploreMoreSlider() {
   const isResponsive = useMediaQuery({ query: "(max-width: 450px)" });
+  const [isInView, setIsInView] = useState(false);
 
   return (
-    <Swiper
-      slidesPerView={4.5}
-      spaceBetween={130}
-      className="mySwiper"
-      style={
-        isResponsive
-          ? { height: "300px", margin: "30px 0 0 0" }
-          : { height: "300px", margin: "50px 0 0 0" }
-      }
-      autoplay={{
-        delay: 1500,
-        disableOnInteraction: false,
+    <motion.div
+      whileInView={() => {
+        setIsInView(true);
       }}
-      loop={true}
-      loopFillGroupWithBlank={true}
-      speed={2500}
-      modules={[Autoplay, Pagination, Navigation]}
+      initial={{ y: "20vh" }}
+      animate={
+        isInView && {
+          y: 0,
+          transition: {
+            duration: 0.9,
+          },
+        }
+      }
     >
-      {avenues.map((img) => {
-        return (
-          <SwiperSlide>
-            <img
-              src={img}
-              loading="lazy"
-              alt="image"
-              height="100px"
-              width="100px"
-              style={{ borderRadius: "40px" }}
-            />
-          </SwiperSlide>
-        );
-      })}
-    </Swiper>
+      <Swiper
+        slidesPerView={4.5}
+        spaceBetween={130}
+        className="mySwiper"
+        style={
+          isResponsive
+            ? { height: "300px", margin: "30px 0 0 0" }
+            : { height: "300px", margin: "50px 0 0 0" }
+        }
+        autoplay={{
+          delay: 1500,
+          disableOnInteraction: false,
+        }}
+        loop={true}
+        loopFillGroupWithBlank={true}
+        speed={2500}
+        modules={[Autoplay, Pagination, Navigation]}
+      >
+        {avenues.map((img) => {
+          return (
+            <SwiperSlide>
+              <img
+                src={img}
+                loading="lazy"
+                alt="image"
+                height="100px"
+                width="100px"
+                style={{ borderRadius: "40px" }}
+              />
+            </SwiperSlide>
+          );
+        })}
+      </Swiper>
+    </motion.div>
   );
 }
