@@ -168,23 +168,23 @@ export const ServiceLuxuryGiftingPage = [
 ];
 
 export const GiftsByClients = [
-  { img: ForHim, name: "FOR HIM", animation: "deg90" },
-  { img: ForHer, name: "FOR HER", animation: "deg90" },
-  { img: ForThem, name: "FOR THEM", animation: "deg90" },
-  { img: ForKids, name: "FOR KIDS", animation: "deg90" },
+  { img: ForHim, name: "FOR HIM", animation: 90 },
+  { img: ForHer, name: "FOR HER", animation: 90 },
+  { img: ForThem, name: "FOR THEM", animation: 90, delay: 0.5 },
+  { img: ForKids, name: "FOR KIDS", animation: 90, delay: 0.5 },
 ];
 
 export const OccasionGifts = [
-  { img: Anniversary, name: "Anniversary gifts", x: "40vw", duration: 1 },
-  { img: Birthday, name: "Birthday gifts" },
-  { img: Festive, name: "Festive gifts" },
-  { img: HouseWarming, name: "HouseWarming gifts" },
-  { img: Thankyou, name: "Thankyou gifts" },
-  { img: Valentine, name: "Valentine gifts" },
-  { img: Engagement, name: "Engagement gifts" },
-  { img: Graduation, name: "Graduation gifts" },
-  { img: Motherday, name: "Motherday gifts" },
-  { img: Fatherday, name: "Fatherday gifts" },
+  { img: Anniversary, name: "Anniversary gifts", animation: 90 },
+  { img: Birthday, name: "Birthday gifts", animation: 90 },
+  { img: Festive, name: "Festive gifts", animation: 90 },
+  { img: HouseWarming, name: "HouseWarming gifts", animation: 90 },
+  { img: Thankyou, name: "Thankyou gifts", animation: 90 },
+  { img: Valentine, name: "Valentine gifts", animation: 90 },
+  { img: Engagement, name: "Engagement gifts", animation: 90 },
+  { img: Graduation, name: "Graduation gifts", animation: 90 },
+  { img: Motherday, name: "Motherday gifts", animation: 90 },
+  { img: Fatherday, name: "Fatherday gifts", animation: 90 },
 ];
 
 export const PersonalAssitance = [

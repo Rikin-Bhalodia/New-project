@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import BackArrow from "../../../assets/images/product/back-arrow.svg";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const GoBackPartWrapper = styled.div`
   .goback {
@@ -39,6 +40,7 @@ const GoBackPartWrapper = styled.div`
 `;
 
 const GoBackpart = () => {
+  const [isInView, setIsInView] = useState(false);
   return (
     <GoBackPartWrapper>
       <div>

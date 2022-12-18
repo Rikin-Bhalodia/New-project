@@ -242,6 +242,7 @@ const StudioBannerWrapper = styled.div`
 
 const StudioBanner = () => {
   const [menuOpenModal, setMenuOpenModal] = useState(false);
+  const [isInView, setIsInView] = useState(false);
   let { scrollYProgress } = useScroll();
   let y = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
   return (
@@ -260,12 +261,28 @@ const StudioBanner = () => {
               {/* <Atilier /> */}
               <img src={Atilier} alt="" className="Atilier" />
             </div>
-            <p className="para">
+            <motion.p
+              whileInView={() => {
+                setIsInView(true);
+              }}
+              initial={{ y: "-2vh", rotateX: "-90deg", opacity: 0 }}
+              animate={
+                isInView && {
+                  y: 0,
+                  rotateX: 0,
+                  opacity: 1,
+                  transition: {
+                    duration: 0.8,
+                  },
+                }
+              }
+              className="para"
+            >
               Lorem Ipsum has been the industry's standard dummy text ever since
               the 1500s, when an unknown printer took a galley of type and
               scrambled it to make a type specimen book. It has survived not
               only five centuries.
-            </p>
+            </motion.p>
             <div
               className="menu-icon"
               onClick={() => setMenuOpenModal(!menuOpenModal)}

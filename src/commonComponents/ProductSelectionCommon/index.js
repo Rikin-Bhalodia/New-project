@@ -580,6 +580,9 @@ const ProductSelectionCommonWrapper = styled.div`
       color: black;
     }
   }
+  .g-10 {
+    gap: 10px;
+  }
 `;
 
 const ProductSelectionCommon = () => {
@@ -748,7 +751,7 @@ const ProductSelectionCommon = () => {
             {!isResponsive && (
               <div className="pin-code--section">
                 <div className="text">ENTER PIN CODE</div>
-                <div className="d-flex">
+                <div className="d-flex align-items-center g-10">
                   <div className="input--section d-flex">
                     <input placeholder="201012" />
                     <div className="submit--section">

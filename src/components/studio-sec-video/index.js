@@ -16,6 +16,7 @@ const SecVideoWrapper = styled.div`
     font-weight: 400;
     text-transform: uppercase;
     font-size: 90px;
+    padding-left: 45px;
   }
   .date {
     font-family: "Arial";

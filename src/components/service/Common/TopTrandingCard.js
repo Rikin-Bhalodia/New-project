@@ -15,15 +15,15 @@ const TopTrandingCardWrapper = styled.div`
   }
   .tranding-image {
     border-radius: 40px 40px 0 0;
-    height: 230px;
-    width: 430px;
+    height: 180px;
+    width: 100%;
     object-fit: cover;
   }
   .names {
     color: #a79586;
     display: flex;
     flex-direction: column;
-    width: 430px;
+    width: 100%;
     background: #fcf9f2;
     height: fit-content;
     padding: 15px 15px;
@@ -32,13 +32,13 @@ const TopTrandingCardWrapper = styled.div`
     border-radius: 0 0 40px 40px;
   }
   .goa-name {
-    font-size: 18px;
+    font-size: 16px;
     text-align: left;
   }
   .destination-name {
     color: #665e2f;
     text-transform: uppercase;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 400;
     text-align: left;
   }
@@ -50,7 +50,7 @@ const TopTrandingCardWrapper = styled.div`
   }
   .purpose {
     width: 100%;
-    font-size: 16px;
+    font-size: 14px;
   }
   .date {
     color: #665e2f;
@@ -73,7 +73,7 @@ const TopTrandingCardWrapper = styled.div`
     font-family: "Mulish";
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 14px;
     color: white;
   }
   @media (max-width: 1200px) {

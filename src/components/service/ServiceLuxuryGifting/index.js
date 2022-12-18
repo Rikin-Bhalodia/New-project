@@ -44,6 +44,12 @@ const ServiceLuxuryGiftingWrapper = styled.div`
     top: 40px;
     padding-left: 90px;
   }
+  .gift-for-him-image {
+    height: 400px;
+  }
+  .for-him-text {
+    font-size: 50px;
+  }
   .images {
     display: flex;
     justify-content: flex-end;
@@ -85,14 +91,14 @@ const ServiceLuxuryGiftingWrapper = styled.div`
     flex-wrap: wrap;
     column-gap: 250px;
     row-gap: 30px;
-    justify-content: space-between;
+    justify-content: center;
     text-align: center;
     font-family: "Beatlys";
     font-style: normal;
     font-weight: 400;
     font-size: 40px;
     color: #665e2f;
-    margin: 40px 100px 0 100px;
+    margin: 40px 0 0;
   }
   .que {
     font-family: "Arial";
@@ -397,18 +403,24 @@ const HalfWrapper = styled.div`
     width: 48%;
   }
   .occation-gifts {
-    margin: 50px 250px 0px 250px;
+    margin: 50px 0 0;
     display: flex;
     flex-wrap: wrap;
     row-gap: 30px;
     column-gap: 250px;
-    justify-content: space-between;
+    justify-content: center;
     text-align: center;
     font-family: "Beatlys";
     font-style: normal;
     font-weight: 400;
     font-size: 30px;
     color: #665e2f;
+  }
+  .gift-for-him-image {
+    height: 400px;
+  }
+  .for-him-text {
+    font-size: 50px;
   }
   @media (max-width: 1100px) {
     .occ {
@@ -638,26 +650,28 @@ const ServiceLuxuryGifting = () => {
             <div className="gifts">
               {GiftsByClients.map((ele) => {
                 return (
-                  <div
+                  <motion.div
                     className=""
                     style={{
                       display: "flex",
                       flexDirection: "column",
+                      overflow: "hidden",
                     }}
-                  >
-                    <motion.img
-                      whileInView={() => {
-                        setIsInView(true);
-                      }}
-                      initial={{ rotateX: ele.animation }}
-                      animate={
-                        isInView && {
-                          rotateX: 0,
-                          transition: {
-                            duration: 0.5,
-                          },
-                        }
+                    whileInView={() => {
+                      setIsInView(true);
+                    }}
+                    initial={{ rotateY: ele.animation }}
+                    animate={
+                      isInView && {
+                        rotateY: 0,
+                        transition: {
+                          duration: 1,
+                          delay: ele.delay,
+                        },
                       }
+                    }
+                  >
+                    <img
                       whileHover={{
                         scale: 1.1,
                       }}
@@ -676,7 +690,7 @@ const ServiceLuxuryGifting = () => {
                     >
                       <AnimatedTextWord text={ele.name} />
                     </div>
-                  </div>
+                  </motion.div>
                 );
               })}
             </div>
@@ -701,16 +715,19 @@ const ServiceLuxuryGifting = () => {
                   whileInView={() => {
                     setIsInView(true);
                   }}
-                  initial={{ x: ele.x }}
+                  initial={{ rotateY: ele.animation }}
                   animate={
                     isInView && {
-                      x: 0,
+                      rotateY: 0,
                       transition: {
-                        duration: ele.duration,
+                        duration: 1,
                       },
                     }
                   }
                   className=""
+                  style={{
+                    overflow: "hidden",
+                  }}
                 >
                   <motion.img
                     whileHover={{
@@ -722,7 +739,7 @@ const ServiceLuxuryGifting = () => {
                     loading="lazy"
                     src={ele.img}
                     alt="img"
-                    height={250}
+                    // height={250}
                     className="gift-for-him-image"
                   />
                   <div className="for-him-text">{ele.name}</div>

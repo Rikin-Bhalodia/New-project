@@ -310,16 +310,16 @@ export function TopTrandingSlider() {
           spaceBetween: 60,
         },
         1075: {
-          slidesPerView: 2.6,
+          slidesPerView: 3,
           spaceBetween: 80,
         },
         1500: {
-          slidesPerView: 2.8,
+          slidesPerView: 3,
           spaceBetween: 100,
         },
       }}
       className="mySwiper"
-      style={{ padding: "50px 0 " }}
+      style={{ padding: "20px " }}
       autoplay={{
         delay: 1500,
         disableOnInteraction: false,
@@ -444,7 +444,7 @@ export function ExploreMoreSlider() {
       }
     >
       <Swiper
-         breakpoints={{
+        breakpoints={{
           360: {
             slidesPerView: 2,
             spaceBetween: 20,
@@ -460,7 +460,7 @@ export function ExploreMoreSlider() {
           1075: {
             slidesPerView: 4,
             spaceBetween: 50,
-          }
+          },
         }}
         className="mySwiper"
         style={

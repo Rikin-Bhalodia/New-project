@@ -17,7 +17,7 @@ const ExploreShopWrapper = styled.div`
   z-index: 11;
   .back {
     position: absolute;
-    height: 700px;
+    height: 600px;
     width: 100%;
     z-index: -1;
   }
@@ -28,7 +28,7 @@ const ExploreShopWrapper = styled.div`
     font-weight: 400;
     font-size: 55px;
     color: white;
-    padding-top: 100px;
+    padding-top: 50px;
     display: flex;
     justify-content: center;
     z-index: 2;
@@ -50,11 +50,11 @@ const ExploreShopWrapper = styled.div`
     padding-left: 10px;
   }
   .cards {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 70px;
     padding: 70px;
-    justify-content: center;
+    justify-items: center;
     z-index: 10;
   }
   @media (max-width: 1300px) {
@@ -65,6 +65,13 @@ const ExploreShopWrapper = styled.div`
   }
   @media (max-width: 1050px) {
     height: 650px;
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .none {
+      display: none;
+    }
   }
   @media (max-width: 800px) {
     height: 450px;
@@ -105,41 +112,49 @@ const explore = [
     x: "-40vw",
     y: 0,
     duration: 1.9,
+    cls: "card-label",
   },
   {
     x: "-40vw",
     y: 0,
     duration: 1.6,
+    cls: "card-label",
   },
   {
     x: "-40vw",
     y: 0,
     duration: 1.3,
+    cls: "card-label",
   },
   {
     x: "-40vw",
     y: 0,
     duration: 1,
+    cls: "card-label none",
   },
   {
     x: "-40vw",
     y: 0,
     duration: 1.9,
+    cls: "card-label",
   },
   {
     x: "-40vw",
     y: 0,
     duration: 1.6,
+    cls: "card-label",
   },
   {
     x: "-40vw",
     y: 0,
     duration: 1.3,
+    cls: "card-label",
   },
   {
     x: "-40vw",
     y: 0,
     duration: 1,
+    cls: "card-label none",
   },
 ];
 
@@ -203,9 +218,10 @@ const ExploreShop = () => {
         </Swiper>
       ) : (
         <div className="cards">
-          {explore.map(({ duration, x, y }) => {
+          {explore.map(({ duration, x, y, cls }) => {
             return (
               <motion.div
+                className={cls}
                 whileInView={() => {
                   setIsInView(true);
                 }}
@@ -219,7 +235,6 @@ const ExploreShop = () => {
                     },
                   }
                 }
-                className="card-label"
               >
                 <div className="label-name">FOOD</div>
                 <img src={Photo} alt="photo" loading="lazy" />

@@ -31,11 +31,13 @@ const ValentineGiftWrapper = styled.div`
     font-size: 110px;
     display: flex;
     color: white;
-    height: 500px;
+    height: 90vh;
     justify-content: center;
     align-items: center;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
       url(${BannerImage});
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
   .line {

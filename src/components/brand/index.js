@@ -25,7 +25,7 @@ const BrandWrapper = styled.div`
     }
 
     .fendi-section {
-      padding: 50px 30px 30px;
+      padding: 50px 80px 50px;
       background: #000000;
       .img2 {
         height: 100vh;
@@ -70,8 +70,11 @@ const BrandWrapper = styled.div`
         .right-area {
           display: flex;
           align-items: center;
+          width: 700px;
+          overflow: hidden;
           img {
             height: 560px;
+            width: inherit;
           }
         }
       }
@@ -505,8 +508,19 @@ const Brand = () => {
                 }
               }
               className="right-area"
+              // style={{ overflow: "hidden" }}
             >
-              <img loading="lazy" src={Fendi} alt="Fendi" />
+              <motion.img
+                whileHover={{
+                  scale: 1.1,
+                }}
+                transition={{
+                  duration: 0.4,
+                }}
+                loading="lazy"
+                src={Fendi}
+                alt="Fendi"
+              />
             </motion.div>
           </div>
           {isResponsive && (

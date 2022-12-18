@@ -35,7 +35,7 @@ const PetsWrapper = styled.div`
     display: flex;
     background-size: cover;
     color: white;
-    height: 500px;
+    height: 90vh;
     justify-content: center;
     align-items: center;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),

@@ -80,7 +80,9 @@ const LuxuryProduct = () => {
       <Suspense fallback="Loading...">
         <ProductSelectionCommon />
         <div className="slider">
-          <div className="head">PAIR IT WITH</div>
+          <div className="head">
+            <AnimatedTextWord text="PAIR IT WITH" />
+          </div>
           <ProductImgSlider isNeededImg={false} />
         </div>
         <YouMayLike />

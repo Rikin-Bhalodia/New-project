@@ -20,9 +20,9 @@ const ServiceTravelWrapper = styled.div`
   }
   .cards {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
-    gap: 100px;
+    gap: 100px 150px;
     margin: 40px 100px;
   }
   @media (max-width: 1200px) {
