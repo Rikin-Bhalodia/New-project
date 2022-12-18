@@ -16,6 +16,7 @@ import {
 import AnimatedTextWord from "../../../commonComponents/Animation/FlipAnimation";
 import { useMediaQuery } from "react-responsive";
 import Menu from "../../../commonComponents/Menu";
+import GiftCommon from "./common_component";
 const ServiceYellowBar = React.lazy(() =>
   import("../../../commonComponents/ServiceYellowBar")
 );
@@ -541,6 +542,12 @@ const HalfWrapper = styled.div`
   }
 `;
 
+const part1 = OccasionGifts.slice(0, 2);
+const part2 = OccasionGifts.slice(2, 4);
+const part3 = OccasionGifts.slice(4, 6);
+const part4 = OccasionGifts.slice(6, 8);
+const part5 = OccasionGifts.slice(8, 10);
+
 const ServiceLuxuryGifting = () => {
   const [isInView, setIsInView] = useState(false);
   const [menuOpenModal, setMenuOpenModal] = useState(false);
@@ -671,19 +678,26 @@ const ServiceLuxuryGifting = () => {
                       }
                     }
                   >
-                    <img
-                      whileHover={{
-                        scale: 1.1,
+                    <div
+                      style={{
+                        overflow: "hidden",
+                        borderRadius: "50%",
                       }}
-                      transition={{
-                        duration: 0.4,
-                      }}
-                      loading="lazy"
-                      src={ele.img}
-                      alt="img"
-                      height={250}
-                      className="gift-for-him-image"
-                    />
+                    >
+                      <img
+                        whileHover={{
+                          scale: 1.1,
+                        }}
+                        transition={{
+                          duration: 0.4,
+                        }}
+                        loading="lazy"
+                        src={ele.img}
+                        alt="img"
+                        // height={250}
+                        className="gift-for-him-image"
+                      />
+                    </div>
                     <div
                       className="for-him-text"
                       style={{ display: "flex", justifyContent: "Center" }}
@@ -708,45 +722,11 @@ const ServiceLuxuryGifting = () => {
               <AnimatedTextWord text="GIFTS BY OCCASION" />
             </div>
           </div>
-          <div className="occation-gifts">
-            {OccasionGifts.map((ele) => {
-              return (
-                <motion.div
-                  whileInView={() => {
-                    setIsInView(true);
-                  }}
-                  initial={{ rotateY: ele.animation }}
-                  animate={
-                    isInView && {
-                      rotateY: 0,
-                      transition: {
-                        duration: 1,
-                      },
-                    }
-                  }
-                  className=""
-                  style={{
-                    overflow: "hidden",
-                  }}
-                >
-                  <motion.img
-                    whileHover={{
-                      scale: 1.1,
-                    }}
-                    transition={{
-                      duration: 0.4,
-                    }}
-                    loading="lazy"
-                    src={ele.img}
-                    alt="img"
-                    // height={250}
-                    className="gift-for-him-image"
-                  />
-                  <div className="for-him-text">{ele.name}</div>
-                </motion.div>
-              );
-            })}
-          </div>
+          <GiftCommon OccasionGifts={part1} />
+          <GiftCommon OccasionGifts={part2} />
+          <GiftCommon OccasionGifts={part3} />
+          <GiftCommon OccasionGifts={part4} />
+          <GiftCommon OccasionGifts={part5} />
           <div className="border-width">
             <div className="border"></div>
           </div>
