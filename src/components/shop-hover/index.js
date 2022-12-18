@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import styled from "styled-components";
 import studioInner5 from "../../assets/images/img/studioInner-1.jpg";
 import studioInner3 from "../../assets/images/img/studioInner-3.jpg";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 
 const ShopHoverWrapper = styled.div`
   .hover-show-img {
@@ -55,32 +56,162 @@ const ShopHoverWrapper = styled.div`
     position: absolute !important;
     left: 50px;
     top: 170px;
-    transform: rotate(-20deg);
-    img {
-      width: 270px;
-      height: 350px;
-      object-fit: cover;
-    }
   }
+  .leftImg img {
+    width: 270px;
+    height: 350px;
+    object-fit: cover;
+    transition: transform 2s;
+    transform: rotate(-35deg);
+    opacity: 0;
+    border-radius: 50%;
+    z-index: 999;
+  }
+
   .rightImg {
     position: absolute !important;
     right: 50px;
     top: 170px;
-    transform: rotate(20deg);
-    img {
-      width: 270px;
-      height: 350px;
-      object-fit: cover;
-    }
+  }
+  .rightImg img {
+    width: 270px;
+    height: 350px;
+    object-fit: cover;
+    transition: transform 2s;
+    transform: rotate(35deg);
+    opacity: 0;
+    border-radius: 50%;
+    z-index: 999;
   }
   .shop-hover-category {
     display: flex;
+    width: 50%;
+    margin: 0 auto;
   }
-  .shop-hover-category .menu_hover h3:hover .rightImg {
-    transform: rotate(0deg);
+  .mystyle {
+    transform: rotate(0deg) !important;
+    opacity: 1 !important;
   }
-  .shop-hover-category .menu_hover h3:hover .leftImg {
-    transform: rotate(90deg);
+  .mystyle1 {
+    transform: rotate(0deg) !important;
+    opacity: 1 !important;
+  }
+
+  @media (max-width: 1080px) {
+    .menu-list div h3 {
+      font-size: 30px;
+      letter-spacing: -0.408px;
+      top: 20px;
+      padding: 0 10px;
+    }
+    .menu-list {
+      gap: 15px;
+      height: 100vh;
+      overflow: auto;
+      padding: 100px 0;
+    }
+    .leftImg img {
+      width: 210px;
+      height: 280px;
+    }
+    .leftImg {
+      left: 30px;
+    }
+    .rightImg img {
+      width: 210px;
+      height: 280px;
+    }
+    .rightImg {
+      right: 30px;
+    }
+  }
+
+  @media (max-width: 850px) {
+    .menu-list div h3 {
+      font-size: 25px;
+      letter-spacing: -0.408px;
+      top: 18px;
+      padding: 0 10px;
+    }
+    .menu-list {
+      gap: 13px;
+      height: 100vh;
+      overflow: auto;
+      padding: 100px 0;
+    }
+    .leftImg img {
+      width: 150px;
+      height: 200px;
+    }
+    .leftImg {
+      left: 20px;
+    }
+    .rightImg img {
+      width: 150px;
+      height: 200px;
+    }
+    .rightImg {
+      right: 20px;
+      top: 120px;
+    }
+  }
+
+  @media (max-width: 650px) {
+    .menu-list div h3 {
+      font-size: 20px;
+      letter-spacing: -0.408px;
+      top: 14px;
+      padding: 0 10px;
+    }
+    .menu-list {
+      gap: 13px;
+      height: 100vh;
+      overflow: auto;
+      padding: 100px 0;
+    }
+    .leftImg img {
+      width: 100px;
+      height: 140px;
+    }
+    .leftImg {
+      left: 30px;
+    }
+    .rightImg img {
+      width: 100px;
+      height: 140px;
+    }
+    .rightImg {
+      right: 30px;
+    }
+  }
+
+  @media (max-width: 530px) {
+    .menu-list div h3 {
+      font-size: 13px;
+      letter-spacing: -0.408px;
+      top: 10px;
+      padding: 0 5px;
+    }
+    .menu-list {
+      gap: 10px;
+      height: 100%;
+      overflow: auto;
+      padding: 80px 0 50px;
+    }
+    .leftImg img {
+      width: 60px;
+      height: 80px;
+    }
+    .leftImg {
+      left: 20px;
+    }
+    .rightImg img {
+      width: 60px;
+      height: 80px;
+    }
+    .rightImg {
+      right: 20px;
+    }
   }
 `;
 
@@ -182,6 +313,20 @@ export default function ShopHover() {
     leftImg: "",
     rightImg: "",
   });
+  const imageRef = useRef(null);
+  const imageRef1 = useRef(null);
+  // console.log(imageRef.current, "llll");
+
+  const fun = () => {
+    imageRef.current.classList?.add("mystyle");
+    imageRef1.current.classList?.add("mystyle1");
+    // console.log("kkk");
+  };
+  const fun1 = () => {
+    imageRef?.current?.classList?.remove("mystyle");
+    imageRef1?.current?.classList?.remove("mystyle1");
+    // console.log("helli");
+  };
 
   return (
     <ShopHoverWrapper>
@@ -189,11 +334,15 @@ export default function ShopHover() {
         <div className="hover-show-img">
           <div className="grid">
             <div className="menu-list">
-              {showImage.leftImg && (
-                <div className="leftImg">
-                  <motion.img src={showImage.leftImg} alt="" loading="lazy" />
-                </div>
-              )}
+              <div className="leftImg">
+                <motion.img
+                  ref={imageRef}
+                  src={showImage.leftImg}
+                  alt=""
+                  id="img"
+                  loading="lazy"
+                />
+              </div>
               {menuData.map(({ name, duration, leftImg, rightImg }, i) => {
                 return (
                   <div className="shop-hover-category">
@@ -201,27 +350,36 @@ export default function ShopHover() {
                       initial={{ y: "30vh", opacity: 0 }}
                       animate={{ y: 0, opacity: 1 }}
                       transition={{ duration: duration }}
-                      onMouseEnter={() =>
-                        setShowImage({
-                          leftImg,
-                          rightImg,
-                        })
-                      }
-                      onMouseLeave={() => {
-                        setShowImage(showImage);
-                      }}
                       className="menu_hover"
                     >
-                      <h3>{name}</h3>
+                      <h3
+                        onMouseEnter={() => {
+                          setShowImage({
+                            leftImg,
+                            rightImg,
+                          });
+                          fun();
+                        }}
+                        onMouseLeave={() => {
+                          setShowImage({});
+                          fun1();
+                        }}
+                      >
+                        {name}
+                      </h3>
                     </motion.div>
                   </div>
                 );
               })}
-              {showImage.rightImg && (
-                <div className="rightImg">
-                  <motion.img src={showImage.rightImg} alt="" loading="lazy" />
-                </div>
-              )}
+              <div className="rightImg">
+                <motion.img
+                  ref={imageRef1}
+                  src={showImage.rightImg}
+                  alt=""
+                  id="img1"
+                  loading="lazy"
+                />
+              </div>
             </div>
           </div>
         </div>

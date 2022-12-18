@@ -184,6 +184,11 @@ footer {
 .minBannerHeight {
   min-height: 90vh;
 }
+@media(max-width:767px){
+  .minBannerHeight {
+    min-height: 100%;
+  }
+}
 .backgroundSec {
   background-repeat: no-repeat !important;
   background-position: right !important;
