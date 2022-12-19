@@ -41,6 +41,7 @@ const Travel = () => {
       variants={svgVariants}
       initial="hidden"
       animate="visible"
+      className="pets-icon"
       whileInView={() => {
         setSvgInView(true);
       }}
