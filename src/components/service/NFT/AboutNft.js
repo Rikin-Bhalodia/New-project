@@ -7,7 +7,31 @@ import About from "../../../assets/images/nfts/about.svg";
 import { motion } from "framer-motion";
 import AnimatedTextWord from "../../../commonComponents/Animation/FlipAnimation";
 
-const AboutNftWrapper = styled.div``;
+const AboutNftWrapper = styled.div`
+  @media (max-width: 1200px) {
+    .nft-icon {
+      height: 60px;
+    }
+  }
+  @media (max-width: 850px) {
+    .nft-icon {
+      height: 45px;
+    }
+  }
+  @media (max-width: 600px) {
+    .nft-icon {
+      height: 40px;
+    }
+    .des-nft-part {
+      width: 100% !important;
+    }
+  }
+  @media (max-width: 450px) {
+    .nft-icon {
+      height: 35px;
+    }
+  }
+`;
 
 export default function AboutNft() {
   const [isInView, setIsInView] = useState(false);
@@ -23,9 +47,9 @@ export default function AboutNft() {
         </div>
         <div className="des-nft-part">
           <div className="icons-nft">
-            <img src={Hammer} alt="about" />
-            <img src={Cat} alt="about" />
-            <img src={Heart} alt="about" />
+            <img src={Hammer} alt="about" className="nft-icon" />
+            <img src={Cat} alt="about" className="nft-icon" />
+            <img src={Heart} alt="about" className="nft-icon" />
           </div>
           <div className="des-para-nft">
             <motion.div

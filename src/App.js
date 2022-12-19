@@ -165,7 +165,7 @@ function App() {
       <Header />
       <Fragment id="smooth-wrapper">
         <div id="smooth-content">
-          <Routes> 
+          <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/studio" element={<Studio />} />

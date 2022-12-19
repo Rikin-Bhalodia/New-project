@@ -109,6 +109,9 @@ const CelebrationWrapper = styled.div`
       width: 100%;
     }
   }
+  .menu-icon {
+    top: -40px !important;
+  }
 `;
 
 const ele = [

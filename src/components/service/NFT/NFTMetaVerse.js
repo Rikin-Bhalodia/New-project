@@ -67,6 +67,9 @@ const NFTMetaVerseWrapper = styled.div`
     font-family: "Arial";
     font-size: 18px;
   }
+  .des-nft-part {
+    width: 55%;
+  }
   .des-para-meta {
     font-family: "Arial";
     font-size: 16px;
@@ -99,7 +102,7 @@ const NFTMetaVerseWrapper = styled.div`
     margin-top: 50px;
   }
   .heading-nft-part {
-    width: 55%;
+    width: 45%;
   }
   .about {
     margin-left: 30%;
@@ -113,7 +116,7 @@ const NFTMetaVerseWrapper = styled.div`
   .des-para-nft {
     font-family: "Arial";
     font-size: 16px;
-    padding: 50px 15% 0 27%;
+    padding: 50px 15% 0 5%;
     margin-top: 20px;
     display: flex;
     flex-direction: column;
@@ -226,6 +229,131 @@ const NFTMetaVerseWrapper = styled.div`
     row-gap: 40px;
     gap: 50px;
   }
+  @media (max-width: 1300px) {
+    .nft {
+      font-size: 100px;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .metaverse {
+      font-size: 70px;
+    }
+    .insta {
+      height: 200px;
+    }
+    .facebook {
+      height: 200px;
+    }
+    .icons-nft {
+      margin-right: 100px;
+    }
+  }
+
+  @media (max-width: 1000px) {
+    .metaverse {
+      font-size: 60px;
+    }
+    .insta {
+      height: 170px;
+    }
+    .facebook {
+      height: 170px;
+    }
+    .des-para-meta {
+      padding: 30px 25%;
+    }
+  }
+
+  @media (max-width: 850px) {
+    .metaverse {
+      font-size: 50px;
+    }
+    .heading-part {
+      height: 450px;
+      background-size: center;
+    }
+    .des-para-meta {
+      padding: 20px 20%;
+    }
+    .des-para-nft {
+      padding: 20px 10% 0 5%;
+      font-size: 14px;
+    }
+    .nft {
+      font-size: 90px;
+    }
+    .icons-nft {
+      margin-right: 50px;
+      gap: 20px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .metaverse {
+      font-size: 40px;
+    }
+    .insta {
+      height: 140px;
+    }
+    .facebook {
+      height: 140px;
+    }
+    .des-para-meta {
+      padding: 20px 10%;
+      font-size: 14px;
+    }
+    .des-para-nft {
+      font-size: 13px;
+    }
+    .about {
+      height: 50px;
+    }
+    .nft {
+      font-size: 70px;
+    }
+    .nft-part {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+    .heading-nft-part {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 450px) {
+    .metaverse {
+      font-size: 35px;
+    }
+    .insta {
+      height: 120px;
+    }
+    .facebook {
+      height: 120px;
+    }
+    .des-para-meta {
+      font-size: 12px;
+    }
+    .nft {
+      font-size: 65px;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .insta {
+      height: 100px;
+    }
+    .facebook {
+      height: 100px;
+    }
+    .metaverse {
+      font-size: 30px;
+    }
+    .nft {
+      font-size: 55px;
+    }
+  }
 `;
 
 const NFTMetaVerse = () => {
@@ -246,8 +374,8 @@ const NFTMetaVerse = () => {
               <img src={BackArrow} alt="back-arrow" />
               <div>Go Back</div>
             </motion.div>
-            <div>
-              <AnimatedTextWord text="SELL YOUR NFT" />
+            <div className="metaverse">
+              <AnimatedTextWord text="NFT & METAVERSE" />
             </div>
           </div>
           <div
