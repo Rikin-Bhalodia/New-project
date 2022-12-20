@@ -8,7 +8,8 @@ import { motion } from "framer-motion";
 
 const BenefitsWrapper = styled.div`
   .category {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     margin-top: 50px;
   }
   .container {
@@ -40,6 +41,20 @@ const BenefitsWrapper = styled.div`
     font-style: normal;
     font-weight: 400;
     font-size: 15px;
+  }
+  @media (max-width: 767px) {
+    .category {
+      grid-template-columns: repeat(2, 1fr);
+      margin-top: 20px;
+    }
+    .benefits {
+      font-size: 35px;
+    }
+  }
+  @media (max-width: 500px) {
+    .category {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 `;
 

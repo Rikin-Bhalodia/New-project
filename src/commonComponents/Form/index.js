@@ -141,6 +141,13 @@ const FromWrapper = styled.div`
     display: flex;
     justify-content: center;
   }
+
+  @media (max-width: 600px) {
+    .fields-marked {
+      font-size: 13px;
+      margin: 30px 30px 0 !important;
+    }
+  }
 `;
 
 const Fields = [

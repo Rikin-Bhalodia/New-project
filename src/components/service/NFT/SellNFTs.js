@@ -90,6 +90,70 @@ const SellNFTsWrapper = styled.div`
     width: 90%;
     border-bottom: 1px solid rgba(0, 0, 0, 0.27);
   }
+  @media (max-width: 1200px) {
+    .heading-part {
+      font-size: 70px;
+    }
+  }
+
+  @media (max-width: 1000px) {
+    .heading-part {
+      font-size: 60px;
+    }
+    .title {
+      font-size: 60px;
+    }
+  }
+
+  @media (max-width: 850px) {
+    .heading-part {
+      font-size: 50px;
+    }
+    .title {
+      font-size: 50px;
+    }
+    .content {
+      font-size: 25px;
+    }
+    .icons {
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 25px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .heading-part {
+      font-size: 45px;
+    }
+    .title {
+      font-size: 40px;
+    }
+    .content {
+      font-size: 21px;
+    }
+  }
+
+  @media (max-width: 450px) {
+    .heading-part {
+      font-size: 40px;
+    }
+    .title {
+      font-size: 35px;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .heading-part {
+      font-size: 35px;
+    }
+    .title {
+      font-size: 30px;
+    }
+    .content {
+      font-size: 18px;
+    }
+  }
 `;
 
 const SellNFTs = () => {
