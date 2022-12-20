@@ -125,9 +125,12 @@ const NFTMetaVerseWrapper = styled.div`
   .metaverse-part {
     width: 100%;
     display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0px 100px;
   }
   .heading-meta-part {
-    width: 60%;
+    /* width: 60%; */
     display: flex;
     flex-direction: column;
     text-align: end;
@@ -135,7 +138,7 @@ const NFTMetaVerseWrapper = styled.div`
     align-items: flex-end;
   }
   .desc-meta {
-    width: 40%;
+    /* width: 40%; */
   }
 
   .meta-about {
@@ -144,12 +147,12 @@ const NFTMetaVerseWrapper = styled.div`
   .meta {
     font-family: "Coral Blush";
     font-size: 130px;
-    margin: -30px 20% 0 0;
+    margin: 0;
   }
-  .earth {
+  /* .earth {
     margin-top: 150px;
     margin-left: 150px;
-  }
+  } */
   .des-metas {
     font-family: "Arial";
     font-size: 16px;
@@ -158,7 +161,7 @@ const NFTMetaVerseWrapper = styled.div`
     flex-direction: column;
     gap: 20px;
     width: 54%;
-    padding-left: 180px;
+    padding: 0 0 0 100px;
     text-align: left;
   }
   .buttons {
@@ -226,9 +229,127 @@ const NFTMetaVerseWrapper = styled.div`
     justify-content: center;
     width: 100%;
     margin: 50px 0;
-    row-gap: 40px;
     gap: 50px;
   }
+
+  @media (max-width: 1200px) {
+    .earth {
+      height: 60px;
+    }
+    .meta {
+      font-size: 90px;
+      margin: 0;
+    }
+    .des-metas {
+      width: 70%;
+    }
+    .metaverse-part {
+      padding: 0px 100px;
+    }
+  }
+  @media (max-width: 850px) {
+    .earth {
+      height: 45px;
+    }
+    .des-metas {
+      width: 100%;
+      padding: 0 100px;
+      text-align: center;
+    }
+    .meta {
+      font-size: 70px;
+    }
+    .meta-about {
+      margin-right: 0;
+    }
+    .metaverse-part {
+      justify-content: center;
+    }
+    .nft-collection,
+    .brand-nfts {
+      font-size: 60px;
+      padding-bottom: 50px;
+    }
+    .company-logo {
+      margin: 40px 0;
+      gap: 40px;
+    }
+  }
+  @media (max-width: 600px) {
+    .earth {
+      height: 40px;
+    }
+    .des-nft-part {
+      width: 100% !important;
+    }
+    .des-metas {
+      padding: 0 50px;
+      font-size: 14px;
+    }
+    .metaverse-part {
+      padding: 0px 50px;
+      flex-direction: column-reverse;
+    }
+    .meta {
+      font-size: 50px;
+    }
+    .meta-about {
+      width: 100px;
+    }
+    .nft-collection,
+    .brand-nfts {
+      font-size: 45px;
+    }
+    .company-logo {
+      margin: 30px 0;
+      gap: 30px;
+    }
+    .nft-collection {
+      padding: 20px 0;
+    }
+  }
+  @media (max-width: 500px) {
+    .earth {
+      height: 40px;
+    }
+    .des-nft-part {
+      width: 100% !important;
+    }
+    .des-metas {
+      padding: 0 50px;
+      font-size: 14px;
+    }
+    .metaverse-part {
+      padding: 0px 50px;
+    }
+    .meta {
+      font-size: 50px;
+    }
+    .meta-about {
+      width: 100px;
+    }
+    .nft-collection,
+    .brand-nfts {
+      font-size: 35px;
+    }
+    .company-logo {
+      margin: 20px 0;
+      gap: 20px;
+    }
+  }
+  @media (max-width: 450px) {
+    .earth {
+      height: 35px;
+    }
+    .des-metas {
+      padding: 0 30px;
+      font-size: 12px;
+    }
+    .metaverse-part {
+      padding: 0px 30px;
+    }
+  }
+
   @media (max-width: 1300px) {
     .nft {
       font-size: 100px;

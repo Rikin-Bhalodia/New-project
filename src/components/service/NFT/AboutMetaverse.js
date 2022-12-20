@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 import About from "../../../assets/images/nfts/about.svg";
 import Earth from "../../../assets/images/nfts/earth.svg";
+
 const AboutMetaverseWrapper = styled.div``;
 
 export default function AboutMetaverse() {

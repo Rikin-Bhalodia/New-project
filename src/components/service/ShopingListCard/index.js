@@ -12,7 +12,7 @@ const ShoppingListCardWrapper = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
-  gap: 50px;
+  column-gap: 50px;
   .card {
     background: #ffffff;
     box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.25);
@@ -77,8 +77,8 @@ const ShoppingListCard = () => {
     <ShoppingListCardWrapper
       style={
         location.pathname === "/nft-metaverse"
-          ? { padding: "0 200px 0 200px" }
-          : { margin: "50px 0 0 0" }
+          ? { padding: "" }
+          : { margin: "" }
       }
     >
       {[1, 2, 3].map((_, i) => {
