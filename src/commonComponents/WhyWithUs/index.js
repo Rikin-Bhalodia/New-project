@@ -42,6 +42,58 @@ const WhyWithUsWrapper = styled.div`
     padding-right: 100px;
     width: 90%;
   }
+  .sell_img {
+    height: 170px;
+  }
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    margin-top: 50px;
+    .sell-part {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
+    .sell_img {
+      height: 130px;
+    }
+    .whywithus {
+      width: 100%;
+    }
+    .why {
+      font-size: 80px;
+      text-align: center;
+      justify-content: center;
+    }
+    .withus {
+      font-size: 30px;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 500px) {
+    margin-top: 30px;
+    .sell_img {
+      height: 100px;
+    }
+    .why {
+      font-size: 70px;
+    }
+    .withus {
+      font-size: 25px;
+      text-align: center;
+      padding-right: 30px;
+      top: -37px;
+      left: 75px;
+    }
+    .content-para {
+      font-size: 14px;
+      margin: 0 30px;
+      width: auto;
+      padding: 0;
+    }
+  }
 `;
 const WhyWithUs = () => {
   const [isInView, setIsInView] = useState(false);
@@ -72,7 +124,7 @@ const WhyWithUs = () => {
           </motion.div>
         </div>
         <div className="sell-part">
-          <img src={Sell} alt="sell" height={170} />
+          <img src={Sell} alt="sell" className="sell_img" />
           <motion.div
             whileInView={() => {
               setIsInView(true);

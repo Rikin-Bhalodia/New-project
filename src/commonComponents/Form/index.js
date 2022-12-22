@@ -141,11 +141,37 @@ const FromWrapper = styled.div`
     display: flex;
     justify-content: center;
   }
-
+  .width {
+    width: 30%;
+  }
+  @media (max-width: 900px) {
+    .width {
+      width: 45%;
+    }
+    .form-inputs {
+      padding: 20px 120px;
+      height: 100%;
+    }
+  }
+  @media (max-width: 767px) {
+    .width {
+      width: 90%;
+    }
+  }
   @media (max-width: 600px) {
     .fields-marked {
       font-size: 13px;
       margin: 30px 30px 0 !important;
+    }
+    .form-inputs {
+      padding: 20px 70px;
+      height: 100%;
+    }
+  }
+  @media (max-width: 600px) {
+    .form-inputs {
+      padding: 20px 30px;
+      height: 100%;
     }
   }
 `;
@@ -155,63 +181,63 @@ const Fields = [
     placeholder: "FIRST NAME",
     img: <img src={Star} alt="star" />,
     type: "text",
-    width: "30%",
+    // width: "30%",
     delay: 0,
   },
   {
     placeholder: "MIDDLE NAME",
     img: "",
     type: "text",
-    width: "30%",
+    // width: "30%",
     delay: 0.1,
   },
   {
     placeholder: "LAST NAME",
     img: <img src={Star} alt="star" />,
     type: "text",
-    width: "30%",
+    // width: "30%",
     delay: 0.2,
   },
   {
     placeholder: "EMAIL ADDRESS",
     img: <img src={Star} alt="star" />,
     type: "text",
-    width: "60%",
+    // width: "60%",
     delay: 0.3,
   },
   {
     placeholder: "CATEGORY",
     img: <img src={Star} alt="star" />,
     type: "select",
-    width: "30%",
+    // width: "30%",
     delay: 0.4,
   },
   {
     placeholder: "BRAND",
     img: <img src={Star} alt="star" />,
     type: "select",
-    width: "30%",
+    // width: "30%",
     delay: 0.5,
   },
   {
     placeholder: "ITEM TYPE",
     img: <img src={Star} alt="star" />,
     type: "select",
-    width: "30%",
+    // width: "30%",
     delay: 0.6,
   },
   {
     placeholder: "COST",
     img: <img src={Star} alt="star" />,
     type: "select",
-    width: "30%",
+    // width: "30%",
     delay: 0.7,
   },
   {
     placeholder: "UPLOAD ITEM IMAGES (PNG/JPG/SVG)",
     img: <img src={Star} alt="star" />,
     type: "file",
-    width: "60%",
+    // width: "60%",
     delay: 0.8,
   },
 ];
@@ -248,9 +274,8 @@ const From = () => {
                   {type === "file" ? (
                     <motion.div
                       style={{
-                        width: width,
+                        // width: width,
                         display: "flex",
-                        margin: "0 50px 0 0",
                       }}
                       whileInView={() => {
                         setIsInView(true);
@@ -292,10 +317,11 @@ const From = () => {
                   ) : (
                     <div
                       style={{
-                        width: width,
+                        // width: width,
                         display: "flex",
-                        margin: "0 10px 0 0",
+                        // margin: "0 10px 0 0",
                       }}
+                      className="width"
                     >
                       <>
                         <motion.input
@@ -338,8 +364,8 @@ const From = () => {
                         },
                       }
                     }
-                    className="custom-select"
-                    style={{ width: width }}
+                    className="custom-select width"
+                    // style={{ width: width }}
                   >
                     <option value="0">{placeholder}</option>
                     <option value="1">Audi</option>

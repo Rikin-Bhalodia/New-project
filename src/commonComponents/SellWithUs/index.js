@@ -42,6 +42,44 @@ const SellWithUsWrapper = styled.div`
     flex-direction: column;
     align-items: center;
   }
+  .right {
+    margin: 150px 0 0 0;
+  }
+  @media (max-width: 1000px) {
+    .sell-with-us {
+      height: 300px;
+      width: 300px;
+      font-size: 45px;
+      padding: 0 70px;
+    }
+  }
+  @media (max-width: 767px) {
+    height: 500px;
+    .sell-with-us {
+      height: 250px;
+      width: 250px;
+      font-size: 40px;
+      padding: 0 60px;
+    }
+  }
+  @media (max-width: 600px) {
+    height: 450px;
+    .sell-with-us {
+      height: 200px;
+      width: 200px;
+      font-size: 35px;
+      padding: 0 50px;
+    }
+  }
+  @media (max-width: 450px) {
+    height: 370px;
+    .sell-with-us {
+      height: 150px;
+      width: 150px;
+      font-size: 25px;
+      padding: 0 40px;
+    }
+  }
 `;
 
 const SellWithUs = () => {
@@ -93,8 +131,7 @@ const SellWithUs = () => {
             },
           }
         }
-        className="sell-with-us"
-        style={{ margin: "150px 70px 0 0" }}
+        className="sell-with-us right"
       >
         <div style={{ textAlign: "center" }}>
           <AnimatedTextWord text="buy" />
