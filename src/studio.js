@@ -25,6 +25,11 @@ const StudioWrapper = styled.div`
     width: 100%;
     margin-bottom: 30px;
   }
+  video.video {
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
+  }
   .item {
     padding-right: 30px;
   }

@@ -710,6 +710,7 @@ footer {
   }
 
   100% {
+    opacity: 1;
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
   }
@@ -737,6 +738,7 @@ footer {
   }
 
   100% {
+    opacity: 1;
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
   }

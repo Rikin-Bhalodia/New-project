@@ -59,9 +59,11 @@ const StudioProductWrapper = styled.div`
     height: 100%;
     .studio-product-video {
       width: 100%;
-      img {
-        width: 750px;
-        height: 450px;
+      width: 100%;
+      height: 450px;
+      video.video {
+        width: inherit;
+        height: inherit;
         object-fit: cover;
       }
     }
@@ -113,8 +115,10 @@ const StudioProductWrapper = styled.div`
       flex-direction: column;
       gap: 0px;
       .studio-product-video {
-        img {
-          height: 100vh;
+        video.video {
+          width: inherit;
+          height: inherit;
+          object-fit: cover;
         }
       }
       .box-area {
@@ -224,7 +228,16 @@ export default function StudioProduct() {
               transition={{ duration: 1 }}
               className="studio-product-video"
             >
-              <img src={Video} alt="videoImg" loading="lazy" />
+              {/* <img src={Video} alt="videoImg" loading="lazy" /> */}
+              <video
+                className="video"
+                controls
+                preload="metadata"
+                poster="//cdn.jsdelivr.net/npm/big-buck-bunny-1080p@0.0.6/poster.jpg"
+                onMouseOver={(event) => event.target.play()}
+                onMouseOut={(event) => event.target.pause()}
+                src="//cdn.jsdelivr.net/npm/big-buck-bunny-1080p@0.0.6/video.mp4"
+              ></video>
             </motion.div>
             <motion.div
               initial={{ y: "30vh" }}

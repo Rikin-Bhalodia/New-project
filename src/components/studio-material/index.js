@@ -39,8 +39,12 @@ const StudioProductMaterialWrapper = styled.div`
   }
   .studio-material-body {
     padding: 0 40px;
-    img {
-      width: 100%;
+    width: -webkit-fill-available;
+    height: 80vh;
+    video.video {
+      width: inherit;
+      height: inherit;
+      object-fit: cover;
     }
   }
   @media (max-width: 1000px) {
@@ -114,7 +118,16 @@ export default function StudioProductMaterial() {
             </motion.div>
           </div>
           <div className="studio-material-body">
-            <img loading="lazy" src={Video} alt="video" />
+            {/* <img loading="lazy" src={Video} alt="video" /> */}
+            <video
+              className="video"
+              controls
+              preload="metadata"
+              poster="//cdn.jsdelivr.net/npm/big-buck-bunny-1080p@0.0.6/poster.jpg"
+              onMouseOver={(event) => event.target.play()}
+              onMouseOut={(event) => event.target.pause()}
+              src="//cdn.jsdelivr.net/npm/big-buck-bunny-1080p@0.0.6/video.mp4"
+            ></video>
           </div>
         </div>
       </motion.div>

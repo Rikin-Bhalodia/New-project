@@ -69,7 +69,7 @@ export default function Slider() {
         {sliderImage.map((image) => {
           return (
             <SwiperSlide style={{ overflow: "hidden" }}>
-              <motion.img
+              {/* <motion.img
                 src={image}
                 loading="lazy"
                 alt="image"
@@ -81,7 +81,15 @@ export default function Slider() {
                 transition={{
                   duration: 0.4,
                 }}
-              />
+              /> */}
+              <video
+                className="video"
+                // preload="metadata"
+                poster="//cdn.jsdelivr.net/npm/big-buck-bunny-1080p@0.0.6/poster.jpg"
+                onMouseOver={(event) => event.target.play()}
+                onMouseOut={(event) => event.target.pause()}
+                src="//cdn.jsdelivr.net/npm/big-buck-bunny-1080p@0.0.6/video.mp4"
+              ></video>
             </SwiperSlide>
           );
         })}

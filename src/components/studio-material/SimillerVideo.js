@@ -12,6 +12,7 @@ import { useMediaQuery } from "react-responsive";
 import EditorsPackSlider from "./EditorsPack";
 import MenuIcon from "../../assets/images/studio/menu.svg";
 import Menu from "../../commonComponents/Menu";
+import AnimatedTextWord from "../../commonComponents/Animation/FlipAnimation";
 
 const SimillerVideoWrapper = styled.div`
   padding: 100px 100px;
@@ -245,8 +246,25 @@ export default function SimillerVideo() {
             <div className="right-side-area">
               <div className="head-box">
                 <div className="box">
-                  <h5>ABOUT THE MATERIAL</h5>
-                  <p>
+                  <h5>
+                    <AnimatedTextWord text="ABOUT THE MATERIAL" />
+                  </h5>
+                  <motion.p
+                    whileInView={() => {
+                      setIsInView(true);
+                    }}
+                    initial={{ y: "-2vh", rotateX: "-90deg", opacity: 0 }}
+                    animate={
+                      isInView && {
+                        y: 0,
+                        rotateX: 0,
+                        opacity: 1,
+                        transition: {
+                          duration: 1,
+                        },
+                      }
+                    }
+                  >
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua. Ut enim ad minim veniam, quis nostrud exercitation
@@ -254,7 +272,7 @@ export default function SimillerVideo() {
                     Duis aute irure dolor in reprehenderit in voluptate velit
                     esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
                     occaecat cupidatat.
-                  </p>
+                  </motion.p>
                 </div>
               </div>
               {!isResponsive && (
