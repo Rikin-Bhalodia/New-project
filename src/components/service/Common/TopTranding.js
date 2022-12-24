@@ -31,6 +31,7 @@ const TopTrandingWrapper = styled.div`
     font-size: 16px;
     color: white;
     margin-bottom: 20px;
+    margin-top: 15px;
   }
   @media (max-width: 1000px) {
     height: 600px;

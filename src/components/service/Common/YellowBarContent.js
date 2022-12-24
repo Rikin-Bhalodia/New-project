@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import RequestNow from "../../../assets/images/img/RequestNow.png";
 import { PersonalAssitance } from "../../../utils";
 const ServiceYellowBar = React.lazy(() =>
   import("../../../commonComponents/ServiceYellowBar")
@@ -34,7 +35,7 @@ const YellowBarContentWrapper = styled.div`
     padding-top: 5px;
   }
   .lines {
-    width: 100% ;
+    width: 100%;
     margin-top: 50px;
     display: flex;
     justify-content: center;
@@ -42,6 +43,35 @@ const YellowBarContentWrapper = styled.div`
   .border-lines {
     width: 90% !important;
     border-bottom: 1px solid rgba(0, 0, 0, 0.27) !important;
+  }
+  .btn_area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    .request_now {
+      background: #fcf9f2;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 50%;
+      height: 100px;
+      width: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .green_circle {
+        background: #665e2f;
+        border-radius: 50%;
+        height: 90px;
+        width: 90px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+          height: 70px;
+          width: 70px;
+        }
+      }
+    }
   }
   @media (max-width: 1000px) {
     .icons {
@@ -64,6 +94,21 @@ const YellowBarContentWrapper = styled.div`
     }
     .icon-name {
       font-size: 12px;
+    }
+    .btn_area {
+      margin: 10px;
+      .request_now {
+        height: 80px;
+        width: 80px;
+        .green_circle {
+          height: 70px;
+          width: 70px;
+          img {
+            height: 50px;
+            width: 50px;
+          }
+        }
+      }
     }
   }
   @media (max-width: 700px) {
@@ -130,6 +175,13 @@ const YellowBarContent = ({ requiredPersonalAssistance }) => {
         content={"REQUEST ANY SERVICES!"}
         note={"PROVIDE THE BEST FOR THEM!"}
       />
+      <div className="btn_area">
+        <div className="request_now">
+          <div className="green_circle">
+            <img src={RequestNow} alt="RequestNow" />
+          </div>
+        </div>
+      </div>
       <div className="lines">
         <div className="border-lines"></div>
       </div>

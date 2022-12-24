@@ -3,20 +3,18 @@ import styled from "styled-components";
 import LeelaBanner from "../../../assets/images/service/travel/leelaBanner.svg";
 import Back from "../../../assets/images/service/travel/back.svg";
 import EditIcon from "../../../assets/images/service/travel/green-edit-icon.svg";
-import BenefitsImage from "../../../assets/images/service/travel/benefits.svg";
-import BenefitsRightImage from "../../../assets/images/service/travel/benefits-right.svg";
-import Royclan from "../../../assets/images/service/travel/royclan.svg";
-import Property1 from "../../../assets/images/service/travel/property1.png";
-import Property2 from "../../../assets/images/service/travel/property2.png";
-import Property3 from "../../../assets/images/service/travel/property3.png";
+import MenuIcon from "../../../assets/images/studio/menu.svg";
 import { motion } from "framer-motion";
 import Menu from "../../../commonComponents/Menu";
-import MenuIcon from "../../../assets/images/studio/menu.svg";
 import { BlankBackgroundSlider } from "../Grooming/ReviewSlider";
-import EventNear from "./EventNear";
-import YellowBarContent from "../Common/YellowBarContent";
 import { useMediaQuery } from "react-responsive";
-import AnimatedTextWord from "../../../commonComponents/Animation/FlipAnimation";
+import Benefits from "./Benefits";
+const YellowBarContent = React.lazy(() => import("../Common/YellowBarContent"));
+const EventNear = React.lazy(() => import("./EventNear"));
+const AnimatedTextWord = React.lazy(() =>
+  import("../../../commonComponents/Animation/FlipAnimation")
+);
+const PropertyDetails = React.lazy(() => import("./PropertyDetails"));
 
 const TheLeelaPalaceWrapper = styled.div`
   display: flex;
@@ -212,17 +210,32 @@ const TheLeelaPalaceWrapper = styled.div`
     color: white;
   }
   .property-image {
-    height: 400px;
-    margin-top: 200px;
+    height: 430px;
+    width: 250px;
+    margin-top: 160px;
     margin-right: 30px;
+    img {
+      width: inherit;
+      height: inherit;
+    }
   }
   .property1-image {
     height: 300px;
+    width: 250px;
     margin-top: 100px;
+    img {
+      width: inherit;
+      height: inherit;
+    }
   }
   .property2-image {
     height: 200px;
-    margin-top: 50px;
+    width: 250px;
+    margin-top: 30px;
+    img {
+      width: inherit;
+      height: inherit;
+    }
   }
   .propety-details {
     display: flex;
@@ -864,167 +877,8 @@ const TheLeelaPalace = () => {
           </div>
         </div>
         <BlankBackgroundSlider />
-        <div className="benefits-royclan">
-          <img src={BenefitsImage} alt="BenefitsImage" className="left-image" />
-          <div>
-            <div className="benefits">
-              <AnimatedTextWord text="benefits at" />
-            </div>
-            <img src={Royclan} alt="BenefitsImage" className="text-image" />
-            {!isResponsive && (
-              <img
-                src={BenefitsRightImage}
-                alt="BenefitsImage"
-                className="right-image"
-              />
-            )}
-          </div>
-          <div>
-            <ul>
-              <motion.li
-                whileInView={() => {
-                  setIsInView(true);
-                }}
-                initial={{ y: "2vh", rotateX: "-90deg", opacity: 0 }}
-                animate={
-                  isInView && {
-                    y: 0,
-                    rotateX: 0,
-                    opacity: 1,
-                    transition: {
-                      duration: 0.8,
-                    },
-                  }
-                }
-              >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </motion.li>
-              <motion.li
-                whileInView={() => {
-                  setIsInView(true);
-                }}
-                initial={{ y: "2vh", rotateX: "-90deg", opacity: 0 }}
-                animate={
-                  isInView && {
-                    y: 0,
-                    rotateX: 0,
-                    opacity: 1,
-                    transition: {
-                      duration: 0.8,
-                    },
-                  }
-                }
-              >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </motion.li>
-              <motion.li
-                whileInView={() => {
-                  setIsInView(true);
-                }}
-                initial={{ y: "2vh", rotateX: "-90deg", opacity: 0 }}
-                animate={
-                  isInView && {
-                    y: 0,
-                    rotateX: 0,
-                    opacity: 1,
-                    transition: {
-                      duration: 0.8,
-                    },
-                  }
-                }
-              >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </motion.li>
-            </ul>
-          </div>
-        </div>
-        <div className="propety-details">
-          <div className="details">
-            <div className="head">
-              <AnimatedTextWord text="property details" />
-            </div>
-            <div className="contents">
-              <div className="item">
-                <div className="title">property type</div>
-                <div className="answer">available</div>
-              </div>
-              <div className="item">
-                <div className="title">built in</div>
-                <div className="answer">Rs. 1,00,000</div>
-              </div>
-              <div className="item">
-                <div className="title">status</div>
-                <div className="answer">available</div>
-              </div>
-              <div className="item">
-                <div className="title">property taxes</div>
-                <div className="answer">Rs. 1,00,000</div>
-              </div>
-              <div className="enquire-now">ENQUIRE NOW</div>
-            </div>
-          </div>
-          <div className="property-images">
-            <motion.img
-              src={Property1}
-              alt="Property1"
-              className="property-image"
-              loading="lazy"
-              whileInView={() => {
-                setIsInView(true);
-              }}
-              initial={{ y: "20vh", opacity: 0 }}
-              animate={
-                isInView && {
-                  y: 0,
-                  opacity: 1,
-                  transition: {
-                    duration: 0.8,
-                  },
-                }
-              }
-            />
-            <div style={{ display: "flex", flexDirection: "column" }}>
-              <img
-                src={Property2}
-                alt="Property2"
-                loading="lazy"
-                className="property1-image"
-                whileInView={() => {
-                  setIsInView(true);
-                }}
-                initial={{ y: "20vh", opacity: 0 }}
-                animate={
-                  isInView && {
-                    y: 0,
-                    opacity: 1,
-                    transition: {
-                      duration: 0.8,
-                    },
-                  }
-                }
-              />
-              <img
-                src={Property3}
-                loading="lazy"
-                alt="Property3"
-                className="property2-image"
-                whileInView={() => {
-                  setIsInView(true);
-                }}
-                initial={{ y: "20vh", opacity: 0 }}
-                animate={
-                  isInView && {
-                    y: 0,
-                    opacity: 1,
-                    transition: {
-                      duration: 0.8,
-                    },
-                  }
-                }
-              />
-            </div>
-          </div>
-        </div>
+        <Benefits />
+        <PropertyDetails />
       </TheLeelaPalaceWrapper>
       <EventNear isRequiredTopThings={false} />
       <YellowBarContent requiredPersonalAssistance={false} />

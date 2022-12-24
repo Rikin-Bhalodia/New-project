@@ -10,11 +10,13 @@ const MiddlePartWrapper = styled.div`
     position: relative;
     .left-middle {
       position: absolute;
-      left: 0;
+      left: 20px;
+      border-radius: 50%;
     }
     .right-middle {
       position: absolute;
-      right: 0;
+      right: 20px;
+      border-radius: 50%;
     }
   }
   .new-head {
@@ -121,7 +123,7 @@ const MiddlePart = ({
           loading="lazy"
           src={LeftMiddle}
           alt="left-middle"
-          height={500}
+          height={470}
           className="left-middle"
           whileInView={() => {
             setIsInView(true);
@@ -193,7 +195,7 @@ const MiddlePart = ({
             loading="lazy"
             src={Text}
             alt="gift"
-            height={200}
+            height={170}
             className="luxuxry-life"
           />
         </div>
@@ -201,7 +203,7 @@ const MiddlePart = ({
           loading="lazy"
           src={RightMiddle}
           alt="right-middle"
-          height={500}
+          height={470}
           className="right-middle"
           whileInView={() => {
             setIsInView(true);

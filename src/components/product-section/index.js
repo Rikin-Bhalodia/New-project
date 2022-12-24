@@ -48,15 +48,15 @@ const ProductSectionWrapper = styled.div`
   .cards--section {
     display: grid;
     grid-template-columns: auto auto;
-    column-gap: 50px;
+    gap: 20px;
   }
   .cards--section .card {
     border: none;
     background: #ffffff;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 25px;
-    width: 240px;
-    height: 260px;
+    width: 190px;
+    height: 200px;
   }
   .card .card-like {
     margin-right: 20px;
@@ -78,7 +78,10 @@ const ProductSectionWrapper = styled.div`
   }
   .card .product--image {
     align-self: center;
-    height: 217px;
+    height: 100px;
+  }
+  .card .product--image img {
+    height: inherit;
   }
   .card--detail {
     align-self: center;
