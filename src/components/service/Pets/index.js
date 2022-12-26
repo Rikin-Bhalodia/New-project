@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import BannerImage from "../../../assets/images/service/pets/banner.svg";
 import mobileBannerImage from "../../../assets/images/service/pets/mobile-banner.svg";
-import MenuIcon from "../../../assets/images/studio/menu.svg";
 import LeftMiddle from "../../../assets/images/service/pets/left-middle.png";
 import RightMiddle from "../../../assets/images/service/pets/right-middle.png";
 import LuxuryLife from "../../../assets/images/service/pets/luxury-life.svg";
@@ -221,20 +220,6 @@ const Pets = () => {
       >
         <div className={`${isResponsive ? "mb-heading-part" : "heading-part"}`}>
           <AnimatedTextWord text="PETS" />
-        </div>
-        <div
-          className="menu-icon"
-          onClick={() => setMenuOpenModal(!menuOpenModal)}
-        >
-          <Menu
-            menuOpenModal={menuOpenModal}
-            onClick={(e) => e.stopPropagation()}
-          />
-          {menuOpenModal ? (
-            <img loading="lazy" src={MenuIcon} alt="menu" height={45} />
-          ) : (
-            <img loading="lazy" src={MenuIcon} alt="menu" height={45} />
-          )}
         </div>
         <MiddlePart
           LeftMiddle={LeftMiddle}

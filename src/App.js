@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { Suspense } from "react";
+import React, { Suspense, useState } from "react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/bundle";
@@ -14,6 +14,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import { useLayoutEffect } from "react";
 import { Fragment } from "react";
+import Draggable from "react-draggable";
+import MenuIcon from "../src/assets/images/studio/menu.svg";
+import Menu from "./commonComponents/Menu";
 
 const Home = React.lazy(() => import("./components/index/Home"));
 const Studio = React.lazy(() => import("./studio"));
@@ -147,6 +150,8 @@ const SideBar = React.lazy(() =>
 
 function App() {
   const { pathname } = useLocation();
+  const [menuOpenModal, setMenuOpenModal] = useState(false);
+
   // const scrollIntertia = 70;
   gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -162,9 +167,30 @@ function App() {
 
   return (
     <div className="App">
+      <Draggable>
+        <div
+          className="menu-icon"
+          onClick={() => setMenuOpenModal(!menuOpenModal)}
+        >
+          <Menu
+            menuOpenModal={menuOpenModal}
+            onClick={(e) => e.stopPropagation()}
+          />
+          {menuOpenModal ? (
+            <img src={MenuIcon} alt="menu" height={45} loading="lazy" />
+          ) : (
+            <img src={MenuIcon} alt="menu" height={45} loading="lazy" />
+          )}
+        </div>
+      </Draggable>
       <Header />
       <Fragment id="smooth-wrapper">
-        <div id="smooth-content">
+        <div
+          id="smooth-content"
+          style={{ width: "100%", position: "relative" }}
+        >
+          {/* <div className="menu-parent"> */}
+          {/* </div> */}
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
@@ -283,7 +309,6 @@ function App() {
 
             <Route path="/MH" element={<MobileHeader />} />
           </Routes>
-
           {pathname !== "/sub-menu1" && pathname !== "/sub-menu2" && <Footer />}
         </div>
       </Fragment>

@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-
-import MenuIcon from "../../assets/images/studio/menu.svg";
 import { motion, useScroll, useTransform } from "framer-motion";
 import BannerImage from "../../assets/images/studio/banner.png";
 import Atilier from "../../assets/images/studio/Atilier.svg";
@@ -283,20 +281,6 @@ const StudioBanner = () => {
               scrambled it to make a type specimen book. It has survived not
               only five centuries.
             </motion.p>
-            <div
-              className="menu-icon"
-              onClick={() => setMenuOpenModal(!menuOpenModal)}
-            >
-              <Menu
-                menuOpenModal={menuOpenModal}
-                onClick={(e) => e.stopPropagation()}
-              />
-              {menuOpenModal ? (
-                <img src={MenuIcon} loading="lazy" alt="menu" height={45} />
-              ) : (
-                <img src={MenuIcon} loading="lazy" alt="menu" height={45} />
-              )}
-            </div>
           </div>
         </section>
         <CommonContent />

@@ -5,8 +5,6 @@ import { useState } from "react";
 import studioInner1 from "./../../assets/images/img/studioInner-1.jpg";
 import studioInner3 from "./../../assets/images/img/studioInner-3.jpg";
 import studioInner4 from "./../../assets/images/img/studioInner-4.jpg";
-import MenuIcon from "../../assets/images/studio/menu.svg";
-import Menu from "../../commonComponents/Menu";
 
 const MobileBannerWrapper = styled.div`
   height: 100vh;
@@ -191,20 +189,6 @@ const MobileBanner = () => {
             );
           }
         )}
-        <div
-          className="menu-icon"
-          onClick={() => setMenuOpenModal(!menuOpenModal)}
-        >
-          <Menu
-            menuOpenModal={menuOpenModal}
-            onClick={(e) => e.stopPropagation()}
-          />
-          {menuOpenModal ? (
-            <img src={MenuIcon} alt="menu" height={45} loading="lazy" />
-          ) : (
-            <img src={MenuIcon} alt="menu" height={45} loading="lazy" />
-          )}
-        </div>
       </MobileBannerWrapper>
     </>
   );

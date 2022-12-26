@@ -2,10 +2,8 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import BannerImage from "../../../assets/images/service/travel/banner.png";
 import GetWay from "../../../assets/images/service/travel/getway.svg";
-import { motion } from "framer-motion";
 import GoBackpart from "../Common/gobachpart";
 import Menu from "../../../commonComponents/Menu";
-import MenuIcon from "../../../assets/images/studio/menu.svg";
 import AnimatedTextWord from "../../../commonComponents/Animation/FlipAnimation";
 import { useMediaQuery } from "react-responsive";
 
@@ -129,22 +127,6 @@ const CommonHeaderPart = () => {
             <AnimatedTextWord text="READY TO" />
           </div>
           <img src={GetWay} alt="getway" height={200} className="getway" />
-        </div>
-      </div>
-      <div className="menu-width">
-        <div
-          className={"menu-icon"}
-          onClick={() => setMenuOpenModal(!menuOpenModal)}
-        >
-          <Menu
-            menuOpenModal={menuOpenModal}
-            onClick={(e) => e.stopPropagation()}
-          />
-          {menuOpenModal ? (
-            <img loading="lazy" src={MenuIcon} alt="menu" height={45} />
-          ) : (
-            <img loading="lazy" src={MenuIcon} alt="menu" height={45} />
-          )}
         </div>
       </div>
     </CommonHeaderPartWrapper>

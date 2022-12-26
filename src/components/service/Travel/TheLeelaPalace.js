@@ -3,7 +3,6 @@ import styled from "styled-components";
 import LeelaBanner from "../../../assets/images/service/travel/leelaBanner.svg";
 import Back from "../../../assets/images/service/travel/back.svg";
 import EditIcon from "../../../assets/images/service/travel/green-edit-icon.svg";
-import MenuIcon from "../../../assets/images/studio/menu.svg";
 import { motion } from "framer-motion";
 import Menu from "../../../commonComponents/Menu";
 import { BlankBackgroundSlider } from "../Grooming/ReviewSlider";
@@ -715,20 +714,6 @@ const TheLeelaPalace = () => {
             >
               ROYCLAN IS THE PLACE WHERE YOU CAN BUY/RENT LUXURY PRODUCTS.
             </motion.div>
-          </div>
-          <div
-            className="menu-icon"
-            onClick={() => setMenuOpenModal(!menuOpenModal)}
-          >
-            <Menu
-              menuOpenModal={menuOpenModal}
-              onClick={(e) => e.stopPropagation()}
-            />
-            {menuOpenModal ? (
-              <img loading="lazy" src={MenuIcon} alt="menu" height={45} />
-            ) : (
-              <img loading="lazy" src={MenuIcon} alt="menu" height={45} />
-            )}
           </div>
         </div>
         <div className="parts">

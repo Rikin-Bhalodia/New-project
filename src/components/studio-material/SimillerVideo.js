@@ -10,8 +10,6 @@ import { motion } from "framer-motion";
 import WatchMoreSlider from "../studio-product/WatchMoreSlider";
 import { useMediaQuery } from "react-responsive";
 import EditorsPackSlider from "./EditorsPack";
-import MenuIcon from "../../assets/images/studio/menu.svg";
-import Menu from "../../commonComponents/Menu";
 import AnimatedTextWord from "../../commonComponents/Animation/FlipAnimation";
 
 const SimillerVideoWrapper = styled.div`
@@ -225,22 +223,6 @@ export default function SimillerVideo() {
                     </div>
                   );
                 })}
-              </div>
-            </div>
-            <div className="menu-width">
-              <div
-                className="menu-icon"
-                onClick={() => setMenuOpenModal(!menuOpenModal)}
-              >
-                <Menu
-                  menuOpenModal={menuOpenModal}
-                  onClick={(e) => e.stopPropagation()}
-                />
-                {menuOpenModal ? (
-                  <img src={MenuIcon} loading="lazy" alt="menu" height={45} />
-                ) : (
-                  <img src={MenuIcon} loading="lazy" alt="menu" height={45} />
-                )}
               </div>
             </div>
             <div className="right-side-area">

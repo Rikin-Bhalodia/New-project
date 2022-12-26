@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import MenuIcon from "../../../assets/images/studio/menu.svg";
 import BackArrow from "../../../assets/images/product/back-arrow.svg";
 import BannerImage from "../../../assets/images/nfts/banner.png";
 import { NftIcons } from "../../../utils";
@@ -175,20 +174,6 @@ const SellNFTs = () => {
           <div>
             <AnimatedTextWord text="SELL YOUR NFT" />
           </div>
-        </div>
-        <div
-          className="menu-icon"
-          onClick={() => setMenuOpenModal(!menuOpenModal)}
-        >
-          <Menu
-            menuOpenModal={menuOpenModal}
-            onClick={(e) => e.stopPropagation()}
-          />
-          {menuOpenModal ? (
-            <img loading="lazy" src={MenuIcon} alt="menu" height={45} />
-          ) : (
-            <img loading="lazy" src={MenuIcon} alt="menu" height={45} />
-          )}
         </div>
         <div className="title">
           <AnimatedTextWord text="I WANNA SELL NFT" />

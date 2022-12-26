@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import BackArrow from "../../assets/images/product/back-arrow.svg";
 import styled from "styled-components";
 import Menu from "../../commonComponents/Menu";
-import MenuIcon from "../../assets/images/studio/menu.svg";
 import ProductPoP from "./Product";
 import WannaShop from "../../commonComponents/WannaShop";
 
@@ -22,20 +21,6 @@ const Product = () => {
       <div className="goback">
         <img src={BackArrow} alt="back-arrow" />
         <div>Go Back</div>
-      </div>
-      <div
-        className="menu-icon"
-        onClick={() => setMenuOpenModal(!menuOpenModal)}
-      >
-        <Menu
-          menuOpenModal={menuOpenModal}
-          onClick={(e) => e.stopPropagation()}
-        />
-        {menuOpenModal ? (
-          <img src={MenuIcon} alt="menu" height={45} />
-        ) : (
-          <img src={MenuIcon} alt="menu" height={45} />
-        )}
       </div>
       <WannaShop />
       <ProductPoP />

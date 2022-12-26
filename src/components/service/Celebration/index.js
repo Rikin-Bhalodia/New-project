@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import MenuIcon from "../../../assets/images/studio/menu.svg";
 import BackArrow from "../../../assets/images/product/back-arrow.svg";
 import BannerImage from "../../../assets/images/nfts/celebration.png";
 import Plan from "../../../assets/images/nfts/plan.svg";
@@ -139,20 +138,6 @@ const Celebration = () => {
         <div className="celebration-title">
           <AnimatedTextWord text="CELEBRATIONS" />
         </div>
-      </div>
-      <div
-        className="menu-icon"
-        onClick={() => setMenuOpenModal(!menuOpenModal)}
-      >
-        <Menu
-          menuOpenModal={menuOpenModal}
-          onClick={(e) => e.stopPropagation()}
-        />
-        {menuOpenModal ? (
-          <img loading="lazy" src={MenuIcon} alt="menu" height={45} />
-        ) : (
-          <img loading="lazy" src={MenuIcon} alt="menu" height={45} />
-        )}
       </div>
       <CelebrateWithUs />
       <div className="line">

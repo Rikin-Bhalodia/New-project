@@ -12,7 +12,6 @@ import Membership from "./../../assets/images/img/watch-bg.jpg";
 import Rent from "./../../assets/images/img/rent-bg.jpg";
 import ExploreNow from "../../assets/images/homepage/explorenow.svg";
 import styled from "styled-components";
-import MenuIcon from "../../assets/images/studio/menu.svg";
 import { motion } from "framer-motion";
 import { InstaLike } from "../../commonComponents/Animation/heart";
 const FollowMobile = React.lazy(() => import("./Follow_Mobile"));
@@ -661,31 +660,6 @@ export default function Home() {
                             loading="lazy"
                           />
                         </video>
-                      </div>
-
-                      <div
-                        className="menu-icon"
-                        onClick={() => setMenuOpenModal(!menuOpenModal)}
-                      >
-                        <Menu
-                          menuOpenModal={menuOpenModal}
-                          onClick={(e) => e.stopPropagation()}
-                        />
-                        {menuOpenModal ? (
-                          <img
-                            src={MenuIcon}
-                            alt="menu"
-                            height={45}
-                            loading="lazy"
-                          />
-                        ) : (
-                          <img
-                            src={MenuIcon}
-                            alt="menu"
-                            height={45}
-                            loading="lazy"
-                          />
-                        )}
                       </div>
                     </div>
                   </div>

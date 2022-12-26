@@ -4600,15 +4600,15 @@ c-service-w {
   align-items: center;
   border-radius: 50%;
   border: 7px solid white;
-  margin: auto;
   position: relative;
-  top: -50px !important;
+  left: calc(50vw - 50px);
 }
 @media (max-width:700px){
   .menu-icon {
     height: 80px;
     width: 80px;
     z-index: 1;
+    left: calc(50vw - 40px);
   }
 }
 .menu-icon:hover {
@@ -4703,4 +4703,12 @@ c-service-w {
 .partitions {
   margin-left: 55px;
   width: 2.5em;
+}
+
+.menu-icon{
+  position: fixed;
+  z-index: 999;
+  /* bottom: 100px; */
+  margin: 0 auto;
+  top:83vh !important;
 }

@@ -8,7 +8,6 @@ import Ranttxt from "../../assets/images/brand/ranttxt.svg";
 import Topproduct from "../../assets/images/brand/top-product.svg";
 import { motion } from "framer-motion";
 import AnimatedTextWord from "../../commonComponents/Animation/FlipAnimation";
-import MenuIcon from "../../assets/images/studio/menu.svg";
 import { useMediaQuery } from "react-responsive";
 const Menu = React.lazy(() => import("../../commonComponents/Menu"));
 const ProductPoP = React.lazy(() => import("../Product/Product"));
@@ -332,22 +331,6 @@ const Brand = () => {
     <BrandWrapper>
       <div className="brand-section">
         <img src={BrandBanner} alt="" className="img1" />
-        <div className="menu-width">
-          <div
-            className="menu-icon"
-            onClick={() => setMenuOpenModal(!menuOpenModal)}
-          >
-            <Menu
-              menuOpenModal={menuOpenModal}
-              onClick={(e) => e.stopPropagation()}
-            />
-            {menuOpenModal ? (
-              <img src={MenuIcon} loading="lazy" alt="menu" height={45} />
-            ) : (
-              <img src={MenuIcon} loading="lazy" alt="menu" height={45} />
-            )}
-          </div>
-        </div>
         <div className="fendi-section">
           <div className="fendi-area">
             <div className="left-area">

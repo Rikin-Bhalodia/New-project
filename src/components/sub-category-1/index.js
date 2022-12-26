@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-// import Menu from "../../commonComponents/Menu";
-// import MenuIcon from "../../assets/images/studio/menu.svg";
 import submenu from "../../assets/sub-cat-menu-1.png";
 import { motion } from "framer-motion";
 const SubMenu1Wrapper = styled.div`

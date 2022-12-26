@@ -3,7 +3,6 @@ import styled from "styled-components";
 import BannerImage from "../../../assets/images/service/grooming/banner.svg";
 import Text from "../../../assets/images/service/grooming/text.svg";
 import BackArrow from "../../../assets/images/product/back-arrow.svg";
-import MenuIcon from "../../../assets/images/studio/menu.svg";
 import { BlankSlider } from "../../../slider";
 import { ReviewSlider } from "./ReviewSlider";
 import { motion } from "framer-motion";
@@ -172,20 +171,6 @@ const Grooming = () => {
           <div>
             <AnimatedTextWord text="GROOMING" />
           </div>
-        </div>
-        <div
-          className="menu-icon"
-          onClick={() => setMenuOpenModal(!menuOpenModal)}
-        >
-          <Menu
-            menuOpenModal={menuOpenModal}
-            onClick={(e) => e.stopPropagation()}
-          />
-          {menuOpenModal ? (
-            <img loading="lazy" src={MenuIcon} alt="menu" height={45} />
-          ) : (
-            <img loading="lazy" src={MenuIcon} alt="menu" height={45} />
-          )}
         </div>
         <motion.div
           whileInView={() => {

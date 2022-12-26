@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import BannerImage from "../../../assets/images/service/valentine-gift/banner.svg";
-import MenuIcon from "../../../assets/images/studio/menu.svg";
 import { valentineGiftsIcons } from "../../../utils";
-import { motion } from "framer-motion";
 import LeftMiddle from "../../../assets/images/service/valentine-gift/left-middle.png";
 import ValentineGiftImg from "../../../assets/images/service/valentine-gift/valentine-gift-res.png";
 import RightMiddle from "../../../assets/images/service/valentine-gift/right-middle.png";
@@ -162,20 +160,6 @@ const ValentineGift = () => {
       <div>
         <div className="heading-part">
           <AnimatedTextWord text="VALENTINE GIFTS" />
-        </div>
-        <div
-          className="menu-icon"
-          onClick={() => setMenuOpenModal(!menuOpenModal)}
-        >
-          <Menu
-            menuOpenModal={menuOpenModal}
-            onClick={(e) => e.stopPropagation()}
-          />
-          {menuOpenModal ? (
-            <img loading="lazy" src={MenuIcon} alt="menu" height={45} />
-          ) : (
-            <img loading="lazy" src={MenuIcon} alt="menu" height={45} />
-          )}
         </div>
         <MiddlePart
           LeftMiddle={LeftMiddle}

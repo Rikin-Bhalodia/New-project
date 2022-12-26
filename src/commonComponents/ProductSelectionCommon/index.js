@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import backarrow from "../../assets/images/product-section/backarrow.svg";
-import MenuIcon from "../../assets/images/product-section/menuIcon.svg";
-import Menu from "../Menu";
 import like from "../../assets/images/product-section/like.svg";
 import share from "../../assets/images/product-section/share.svg";
 import checkicon from "../../assets/images/product-section/checkicon.png";
@@ -606,20 +604,6 @@ const ProductSelectionCommon = () => {
           <div className="paths">
             SHOP / CLOTHING / WOMEN / DRESSES /
             <span>VERSACE BAROCCO GODDESS SLASH SILK DRESS</span>
-          </div>
-          <div
-            className="menu-icon"
-            onClick={() => setMenuOpenModal(!menuOpenModal)}
-          >
-            <Menu
-              menuOpenModal={menuOpenModal}
-              onClick={(e) => e.stopPropagation()}
-            />
-            {menuOpenModal ? (
-              <img loading="lazy" src={MenuIcon} alt="menu" height={100} />
-            ) : (
-              <img loading="lazy" src={MenuIcon} alt="menu" height={100} />
-            )}
           </div>
         </motion.div>
         {isResponsive && (

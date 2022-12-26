@@ -6,7 +6,6 @@ import Polygon from "../../assets/images/polygon-left.svg";
 import { motion } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
 import Menu from "../../commonComponents/Menu";
-import MenuIcon from "../../assets/images/product-section/menuIcon.svg";
 
 const ReletedServices = React.lazy(() => import("./RelatedSrevices"));
 const SimillerProduct = React.lazy(() => import("./SimillierProduct"));
@@ -191,32 +190,7 @@ export default function StudioProduct() {
                 transition={{ duration: 1 }}
                 className="rightside-area"
               >
-                <div className="homePageButtonSection">
-                  <div
-                    className="menu-icon"
-                    onClick={() => setMenuOpenModal(!menuOpenModal)}
-                  >
-                    <Menu
-                      menuOpenModal={menuOpenModal}
-                      onClick={(e) => e.stopPropagation()}
-                    />
-                    {menuOpenModal ? (
-                      <img
-                        src={MenuIcon}
-                        loading="lazy"
-                        alt="menu"
-                        height={100}
-                      />
-                    ) : (
-                      <img
-                        src={MenuIcon}
-                        loading="lazy"
-                        alt="menu"
-                        height={100}
-                      />
-                    )}
-                  </div>
-                </div>
+                <div className="homePageButtonSection"></div>
               </motion.div>
             )}
           </div>

@@ -5,7 +5,6 @@ import Left from "../../../assets/images/service/left.png";
 import Right from "../../../assets/images/service/right.png";
 import ServiceLuxuryGiftingBanner from "../../../assets/images/service/luxury-gifting-banner.png";
 import LuxuryText from "../../../assets/images/service/luxury-text.svg";
-import MenuIcon from "../../../assets/images/studio/menu.svg";
 
 import { motion } from "framer-motion";
 import {
@@ -616,20 +615,6 @@ const ServiceLuxuryGifting = () => {
                 <div className="gifting2">
                   <AnimatedTextWord text="GIFTING" />
                 </div>
-              </div>
-              <div
-                className="menu-icon"
-                onClick={() => setMenuOpenModal(!menuOpenModal)}
-              >
-                <Menu
-                  menuOpenModal={menuOpenModal}
-                  onClick={(e) => e.stopPropagation()}
-                />
-                {menuOpenModal ? (
-                  <img loading="lazy" src={MenuIcon} alt="menu" height={45} />
-                ) : (
-                  <img loading="lazy" src={MenuIcon} alt="menu" height={45} />
-                )}
               </div>
             </>
           )}
