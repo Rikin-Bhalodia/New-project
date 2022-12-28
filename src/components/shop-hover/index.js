@@ -34,7 +34,7 @@ const ShopHoverWrapper = styled.div`
   .menu-list div h3 {
     font-family: "Coral Blush";
     font-weight: 400;
-    font-size: 37px;
+    font-size: 45px;
     letter-spacing: -0.408px;
     color: #000000;
     text-transform: uppercase;
@@ -55,7 +55,7 @@ const ShopHoverWrapper = styled.div`
   .leftImg {
     position: absolute !important;
     left: 50px;
-    top: 170px;
+    top: 190px;
   }
   .leftImg img {
     width: 270px;
@@ -71,7 +71,7 @@ const ShopHoverWrapper = styled.div`
   .rightImg {
     position: absolute !important;
     right: 50px;
-    top: 170px;
+    top: 110px;
   }
   .rightImg img {
     width: 270px;
@@ -97,9 +97,9 @@ const ShopHoverWrapper = styled.div`
     opacity: 1 !important;
   }
 
-  @media (max-width: 1080px) {
+  @media (max-width: 1200px) {
     .menu-list div h3 {
-      font-size: 30px;
+      font-size: 40px;
       letter-spacing: -0.408px;
       top: 20px;
       padding: 0 10px;
@@ -126,7 +126,37 @@ const ShopHoverWrapper = styled.div`
     }
   }
 
-  @media (max-width: 850px) {
+  @media (max-width: 1000px) {
+    .menu-list div h3 {
+      font-size: 30px;
+      letter-spacing: -0.408px;
+      top: 18px;
+      padding: 0 10px;
+    }
+    .menu-list {
+      gap: 13px;
+      height: 100vh;
+      overflow: auto;
+      padding: 100px 0;
+    }
+    .leftImg img {
+      width: 170px;
+      height: 220px;
+    }
+    .leftImg {
+      left: 30px;
+    }
+    .rightImg img {
+      width: 170px;
+      height: 220px;
+    }
+    .rightImg {
+      right: 30px;
+      top: 120px;
+    }
+  }
+
+  @media (max-width: 830px) {
     .menu-list div h3 {
       font-size: 25px;
       letter-spacing: -0.408px;
@@ -186,6 +216,34 @@ const ShopHoverWrapper = styled.div`
   }
 
   @media (max-width: 530px) {
+    .menu-list div h3 {
+      font-size: 15px;
+      letter-spacing: -0.408px;
+      top: 10px;
+      padding: 0 5px;
+    }
+    .menu-list {
+      gap: 10px;
+      height: 100%;
+      overflow: auto;
+      padding: 80px 0 50px;
+    }
+    .leftImg img {
+      width: 70px;
+      height: 90px;
+    }
+    .leftImg {
+      left: 20px;
+    }
+    .rightImg img {
+      width: 70px;
+      height: 90px;
+    }
+    .rightImg {
+      right: 20px;
+    }
+  }
+  @media (max-width: 370px) {
     .menu-list div h3 {
       font-size: 13px;
       letter-spacing: -0.408px;

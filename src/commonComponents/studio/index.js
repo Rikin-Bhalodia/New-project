@@ -81,7 +81,7 @@ const StudioBannerWrapper = styled.div`
     padding-top: 20px;
   }
   .main-logo {
-    height: 40px;
+    height: 35px;
     position: relative;
     right: 90px;
   }

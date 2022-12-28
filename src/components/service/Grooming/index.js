@@ -74,6 +74,11 @@ const GroomingWrapper = styled.div`
     height: 85px;
     margin-top: 80px;
   }
+  .button-review:hover {
+    background: #fff;
+    border: 1px solid #a75b41;
+    color: #a75b41;
+  }
   .btn {
     width: 100%;
   }

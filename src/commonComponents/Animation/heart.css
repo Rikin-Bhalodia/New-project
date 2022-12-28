@@ -33,6 +33,13 @@
 .animations .like.t-1 {
     animation: like-1 1.4s ease 1 both;
 }
+@media (max-width:850px){
+    .animations {
+        bottom: 5%;
+        left: 5%;
+        position: absolute;
+      }
+}
 @keyframes like-1 {
     0% {
         transform: translate(0, 0) scale(0) rotate(9deg);

@@ -236,18 +236,18 @@ export const ExploreMoreIcons = [
 ];
 
 export const Feelings = [
-  "RELAX",
-  "CHILL",
-  "CELEBRATION",
-  "PARTY",
-  "INDULGE",
-  "LEARN",
-  "YATCH",
-  "TREK",
-  "HERITAGE",
-  "CONCERT",
-  "INDULGE",
-  "LEARN",
+  { text: "RELAX", y: "20vh", duration: 1, delay: 0.2 },
+  { text: "CHILL", y: "20vh", duration: 1, delay: 0.4 },
+  { text: "CELEBRATION", y: "20vh", duration: 1, delay: 0.6 },
+  { text: "PARTY", y: "20vh", duration: 1, delay: 0.8 },
+  { text: "INDULGE", y: "20vh", duration: 1, delay: 1 },
+  { text: "LEARN", y: "20vh", duration: 1, delay: 1.2 },
+  { text: "YATCH", y: "20vh", duration: 1, delay: 1.4 },
+  { text: "TREK", y: "20vh", duration: 1, delay: 1.6 },
+  { text: "HERITAGE", y: "20vh", duration: 1, delay: 1.8 },
+  { text: "CONCERT", y: "20vh", duration: 1, delay: 2 },
+  { text: "INDULGE", y: "20vh", duration: 1, delay: 2.2 },
+  { text: "LEARN", y: "20vh", duration: 1, delay: 2.4 },
 ];
 
 export const Cards = [

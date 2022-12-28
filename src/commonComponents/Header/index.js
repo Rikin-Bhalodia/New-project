@@ -94,7 +94,7 @@ const Headerwrapper = styled.div`
     height: 18px;
   }
   .main-logo {
-    height: 40px;
+    height: 35px;
     position: relative;
     right: 90px;
   }

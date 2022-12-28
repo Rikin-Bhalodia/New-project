@@ -152,7 +152,7 @@ const HomeWrapper = styled.div`
     top: 2px;
   }
   .main-logo {
-    height: 40px;
+    height: 35px;
     position: relative;
     right: 90px;
   }
@@ -318,6 +318,16 @@ const HomeWrapper = styled.div`
   }
   #tv-image {
     width: 350px;
+    height: 450px;
+  }
+  #tv-image1 {
+    width: inherit;
+    height: inherit;
+  }
+  video.video {
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
   }
   .none {
     display: none;
@@ -334,12 +344,11 @@ const HomeWrapper = styled.div`
     }
   }
   .livetv_banner_section {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-      url(${liveTvMobile});
     height: 100vh;
     background-size: cover;
     background-repeat: no-repeat;
     object-fit: cover;
+    position: relative;
   }
   .live_tv_content {
     display: flex;
@@ -347,6 +356,10 @@ const HomeWrapper = styled.div`
     justify-content: center;
     align-items: center;
     height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
     p {
       font-family: "Arial";
       font-style: normal;
@@ -709,14 +722,24 @@ export default function Home() {
                         <img src={TvHead} alt="" />
 
                         <div className="live-tv-box" id="live-tv">
-                          <img
+                          {/* <img
                             id="tv-image"
                             src={liveTv}
                             alt=""
                             height="auto"
                             width="500"
                             loading="lazy"
-                          />
+                          /> */}
+                          <video
+                            id="tv-image"
+                            className="video"
+                            // preload="metadata"
+                            loop
+                            poster="//cdn.jsdelivr.net/npm/big-buck-bunny-1080p@0.0.6/poster.jpg"
+                            onMouseOver={(event) => event.target.play()}
+                            onMouseOut={(event) => event.target.pause()}
+                            src="//cdn.jsdelivr.net/npm/big-buck-bunny-1080p@0.0.6/video.mp4"
+                          ></video>
                           <div className="roundBtn rightDestinationbtn mt-5">
                             <span
                               id="roundText8"
@@ -741,6 +764,16 @@ export default function Home() {
 
             <div className="none">
               <section className="livetv_banner_section">
+                <video
+                  id="tv-image1"
+                  className="video"
+                  // preload="metadata"
+                  loop
+                  poster="//cdn.jsdelivr.net/npm/big-buck-bunny-1080p@0.0.6/poster.jpg"
+                  onMouseOver={(event) => event.target.play()}
+                  onMouseOut={(event) => event.target.pause()}
+                  src="//cdn.jsdelivr.net/npm/big-buck-bunny-1080p@0.0.6/video.mp4"
+                ></video>
                 <div className="live_tv_content">
                   <p>LIVE TV</p>
                   <h3>
@@ -749,6 +782,7 @@ export default function Home() {
                   <img src={ProductReview} alt="" />
                   <a href="">WATCH LIFESTYLE & FASHION VIDEOS</a>
                 </div>
+                <InstaLike />
               </section>
             </div>
 

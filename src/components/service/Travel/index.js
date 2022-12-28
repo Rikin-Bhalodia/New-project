@@ -102,6 +102,9 @@ const ServiceTravelWrapper = styled.div`
     font-weight: 600;
     font-size: 22px;
     padding-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .feelings {
     display: flex;
@@ -359,7 +362,7 @@ const ServiceTravel = () => {
                   >
                     <div className="wrapper">
                       <div className="background"></div>
-                      <div className="feeling">{feeling}</div>
+                      <div className="feeling">{feeling.text}</div>
                     </div>
                   </motion.div>
                 </SwiperSlide>
@@ -370,10 +373,27 @@ const ServiceTravel = () => {
           <div className="feelings">
             {Feelings.map((feeling) => {
               return (
-                <div className="wrapper">
+                <motion.div
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: feeling.y }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      transition: {
+                        duration: feeling.duration,
+                        delay: feeling.delay,
+                      },
+                    }
+                  }
+                  className="wrapper"
+                >
                   <div className="background"></div>
-                  <div className="feeling">{feeling}</div>
-                </div>
+                  <div className="feeling">
+                    <AnimatedTextWord text={feeling.text} />
+                  </div>
+                </motion.div>
               );
             })}
           </div>

@@ -29,6 +29,7 @@ const Rent_ResellWrapper = styled.div`
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      gap: 30px;
       .head {
         display: flex;
         justify-content: center;
@@ -98,7 +99,6 @@ const Rent_ResellWrapper = styled.div`
           font-style: normal;
           font-weight: 400;
           font-size: 18px;
-          line-height: 46px;
           text-decoration-line: underline;
           color: #ffffff;
         }
@@ -114,7 +114,7 @@ const Rent_ResellWrapper = styled.div`
   @media (max-width: 650px) {
     .rent_section {
       .rent_banner {
-        height: 400px;
+        height: 425px;
       }
       .rent_content {
         padding: 50px;
@@ -201,7 +201,7 @@ const Rent_ResellWrapper = styled.div`
     padding: 40px 0;
     .rent_section {
       .rent_banner {
-        height: 340px;
+        height: 350px;
       }
       .rent_content {
         padding: 40px;
@@ -250,7 +250,7 @@ const Rent_ResellWrapper = styled.div`
     padding: 30px 0;
     .rent_section {
       .rent_banner {
-        height: 300px;
+        height: 330px;
       }
       .rent_content {
         padding: 30px;
@@ -292,6 +292,20 @@ const Rent_ResellWrapper = styled.div`
           }
         }
       }
+    }
+  }
+
+  .btn2 {
+    padding: 0.5rem 1.5rem;
+  }
+  @media (max-width: 550px) {
+    .btn2 {
+      padding: 0.5rem 1.5rem;
+    }
+  }
+  @media (max-width: 450px) {
+    .btn2 {
+      padding: 0.4rem 1.5rem;
     }
   }
 `;
@@ -353,7 +367,9 @@ export default function Rent_Resell() {
               </Swiper>
             </div>
             <div className="footer">
-              <a href="">Show More</a>
+              <a href="" className="btn2">
+                Show More
+              </a>
             </div>
           </div>
         </div>
@@ -368,7 +384,9 @@ export default function Rent_Resell() {
                 </h3>
                 <img src={ResellText} alt="" />
               </div>
-              <a href="">Know More</a>
+              <a href="" className="btn2">
+                Know More
+              </a>
             </div>
             <div className="right">
               <img src={Right_Img} alt="" />

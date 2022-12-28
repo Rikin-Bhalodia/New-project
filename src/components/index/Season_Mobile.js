@@ -3,7 +3,12 @@ import styled from "styled-components";
 import AnimatedTextWord from "../../commonComponents/Animation/FlipAnimation";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper";
-import PImg from "../../assets/images/studio-material/product-img.svg";
+import season1 from "../../assets/images/homepage/season1.png";
+import season2 from "../../assets/images/homepage/season2.png";
+import season3 from "../../assets/images/homepage/season3.png";
+import season4 from "../../assets/images/homepage/season4.png";
+import season5 from "../../assets/images/homepage/season5.png";
+import season6 from "../../assets/images/homepage/season6.png";
 import { motion } from "framer-motion";
 
 const SeasonMobileWrapper = styled.div`
@@ -33,6 +38,18 @@ const SeasonMobileWrapper = styled.div`
         }
       }
     }
+    .image_parent {
+      overflow: hidden;
+      background: #ffffff;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 50%;
+      margin-bottom: 10px;
+      width: 220px;
+      height: 220px;
+      img {
+        padding: 40px;
+      }
+    }
   }
   @media (max-width: 650px) {
     .season_section {
@@ -47,6 +64,13 @@ const SeasonMobileWrapper = styled.div`
           h5 {
             font-size: 18px;
           }
+        }
+      }
+      .image_parent {
+        width: 170px;
+        height: 170px;
+        img {
+          padding: 30px;
         }
       }
     }
@@ -66,10 +90,36 @@ const SeasonMobileWrapper = styled.div`
           }
         }
       }
+      .image_parent {
+        width: 130px;
+        height: 130px;
+        img {
+          padding: 20px;
+        }
+      }
     }
   }
 `;
-
+const image = [
+  {
+    src: season1,
+  },
+  {
+    src: season2,
+  },
+  {
+    src: season3,
+  },
+  {
+    src: season4,
+  },
+  {
+    src: season5,
+  },
+  {
+    src: season6,
+  },
+];
 export default function SeasonMobile() {
   return (
     <SeasonMobileWrapper>
@@ -106,11 +156,11 @@ export default function SeasonMobile() {
             speed={2500}
             modules={[Autoplay, Pagination, Navigation]}
           >
-            {[1, 2, 3, 4, 5, 6].map((_) => {
+            {image.map((img) => {
               return (
                 <SwiperSlide style={{ background: "inherit" }}>
                   <div className="slider-box">
-                    <motion.div style={{ overflow: "hidden" }}>
+                    <motion.div className="image_parent">
                       <motion.img
                         whileHover={{
                           scale: 1.1,
@@ -118,12 +168,12 @@ export default function SeasonMobile() {
                         transition={{
                           duration: 0.4,
                         }}
-                        src={PImg}
+                        src={img.src}
                         alt="PImg"
                         loading="lazy"
                       />
-                      <h5>Furniture</h5>
                     </motion.div>
+                    <h5>Furniture</h5>
                   </div>
                 </SwiperSlide>
               );
@@ -157,11 +207,11 @@ export default function SeasonMobile() {
             speed={2500}
             modules={[Autoplay, Pagination, Navigation]}
           >
-            {[1, 2, 3, 4, 5, 6].map((_) => {
+            {image.map((img) => {
               return (
                 <SwiperSlide style={{ background: "inherit" }}>
                   <div className="slider-box">
-                    <motion.div style={{ overflow: "hidden" }}>
+                    <motion.div className="image_parent">
                       <motion.img
                         whileHover={{
                           scale: 1.1,
@@ -169,12 +219,12 @@ export default function SeasonMobile() {
                         transition={{
                           duration: 0.4,
                         }}
-                        src={PImg}
+                        src={img.src}
                         alt="PImg"
                         loading="lazy"
                       />
-                      <h5>Furniture</h5>
                     </motion.div>
+                    <h5>Furniture</h5>
                   </div>
                 </SwiperSlide>
               );

@@ -39,7 +39,7 @@ const ProductWrapper = styled.div`
     margin: 60px 0;
   }
   .product-image {
-    height: 220px;
+    height: 250px;
   }
   @media (max-width: 1100px) {
     button {
