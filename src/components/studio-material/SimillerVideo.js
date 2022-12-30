@@ -191,7 +191,12 @@ export default function SimillerVideo() {
   return (
     <>
       <SimillerVideoWrapper>
-        <img loading="lazy" src={Polygon} alt="" className="polygon-right" />
+        <img
+          loading="lazy"
+          src={Polygon}
+          alt=""
+          className="polygon-right non"
+        />
         <div className={isResponsive ? " " : "container-fluid"}>
           <div className="simillier-video-area">
             <div className="left-side-area">
@@ -310,7 +315,12 @@ export default function SimillerVideo() {
             </div>
           </div>
         </div>
-        <img loading="lazy" src={Polygon2} alt="" className="polygon-left" />
+        <img
+          loading="lazy"
+          src={Polygon2}
+          alt=""
+          className="polygon-left non"
+        />
       </SimillerVideoWrapper>
       <div style={isResponsive ? { display: "block" } : { display: "none" }}>
         <WatchMoreSlider slideImage={VideoHead} />

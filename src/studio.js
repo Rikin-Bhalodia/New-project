@@ -66,6 +66,13 @@ const StudioWrapper = styled.div`
   }
 
   @media screen and (max-width: 1000px) {
+    .studioBlogMenu {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .item {
+      text-align: center;
+    }
     .studio-s3 h2 {
       font-size: 5rem;
     }
@@ -150,7 +157,7 @@ const StudioWrapper = styled.div`
     }
     .blog-grid {
       gap: 10px;
-      padding: 0 10px;
+      /* padding: 0 10px; */
     }
     .info-1 {
       h3 {
@@ -293,7 +300,7 @@ const Studio = () => {
               {/* </div> */}
             </div>
             <div className="blogDetailsMenu">
-              <div>
+              <div style={{ paddingBottom: "30px" }}>
                 <div>
                   <div className="sliderInerDetials">15 second videos</div>
                   <Slider />
@@ -302,7 +309,7 @@ const Studio = () => {
                   <a href="#">View More</a>
                 </div>
               </div>
-              <div>
+              <div style={{ paddingBottom: "30px" }}>
                 <div>
                   <div className="sliderInerDetials">60 second videos</div>
                   <Slider />
@@ -311,7 +318,7 @@ const Studio = () => {
                   <a href="#">View More</a>
                 </div>
               </div>
-              <div>
+              <div style={{ paddingBottom: "30px" }}>
                 <div>
                   <div className="sliderInerDetials">behind the scenes</div>
                   <Slider />
@@ -330,7 +337,7 @@ const Studio = () => {
               style={{
                 display: "flex",
                 flexDirection: "column",
-                margin: "2rem 0",
+                padding: "2rem 0",
               }}
             >
               <AnimatedTextWord text="BLOGS" />
@@ -475,7 +482,7 @@ const Studio = () => {
                 style={{
                   display: "flex",
                   flexDirection: "column",
-                  margin: "1rem 0",
+                  padding: "1rem 0",
                 }}
               >
                 <AnimatedTextWord text="EXPLORE MORE" />

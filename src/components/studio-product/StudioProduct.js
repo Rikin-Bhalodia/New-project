@@ -114,6 +114,7 @@ const StudioProductWrapper = styled.div`
       flex-direction: column;
       gap: 0px;
       .studio-product-video {
+        height: 101vh;
         video.video {
           width: inherit;
           height: inherit;
@@ -158,7 +159,7 @@ const StudioProductWrapper = styled.div`
 export default function StudioProduct() {
   const [menuOpenModal, setMenuOpenModal] = useState(false);
   const isResponsive = useMediaQuery({ query: "(max-width: 820px)" });
-
+  const [isInView, setIsInView] = useState(false);
   return (
     <>
       <StudioProductWrapper>
@@ -205,11 +206,13 @@ export default function StudioProduct() {
               {/* <img src={Video} alt="videoImg" loading="lazy" /> */}
               <video
                 className="video"
-                controls
+                autoPlay="autoplay"
+                loop
+                muted
                 preload="metadata"
                 poster="//cdn.jsdelivr.net/npm/big-buck-bunny-1080p@0.0.6/poster.jpg"
-                onMouseOver={(event) => event.target.play()}
-                onMouseOut={(event) => event.target.pause()}
+                // onMouseOver={(event) => event.target.play()}
+                // onMouseOut={(event) => event.target.pause()}
                 src="//cdn.jsdelivr.net/npm/big-buck-bunny-1080p@0.0.6/video.mp4"
               ></video>
             </motion.div>
@@ -220,7 +223,22 @@ export default function StudioProduct() {
               className="box-area"
             >
               <div className="product-box">
-                <p>
+                <motion.p
+                  whileInView={() => {
+                    setIsInView(true);
+                  }}
+                  initial={{ y: "-2vh", rotateX: "-90deg", opacity: 0 }}
+                  animate={
+                    isInView && {
+                      y: 0,
+                      rotateX: 0,
+                      opacity: 1,
+                      transition: {
+                        duration: 0.8,
+                      },
+                    }
+                  }
+                >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                   Ut enim ad minim veniam, quis nostrud exercitation ullamco
@@ -229,7 +247,7 @@ export default function StudioProduct() {
                   dolore eu fugiat nulla pariatur. Excepteur sint occaecat
                   cupidatat non proident, sunt in culpa qui officia deserunt
                   mollit anim id est laboru
-                </p>
+                </motion.p>
               </div>
             </motion.div>
           </div>

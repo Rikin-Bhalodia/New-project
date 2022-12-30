@@ -141,6 +141,7 @@ const CommonContentWrapper = styled.div`
     }
     .studio_s2 {
       display: block !important;
+      padding-bottom: 30px;
     }
   }
   .studio_s2 {

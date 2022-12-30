@@ -11,6 +11,9 @@ const ProductWrapper = styled.div`
     margin-left: 40px;
     display: flex;
   }
+  @media (max-width: 850px) {
+    margin-top: 70px;
+  }
 `;
 
 const Product = () => {

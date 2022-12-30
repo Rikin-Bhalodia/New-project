@@ -31,7 +31,7 @@ const Headerwrapper = styled.div`
     top: 0px;
     left: 0px;
     right: 0px;
-    z-index: 1;
+    z-index: 1111;
     transition: all 0.4s linear;
     padding: 10px 0;
     /* border-bottom: 0.5px solid white; */

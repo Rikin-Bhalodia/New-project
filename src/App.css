@@ -3985,6 +3985,7 @@ c-service-w {
   }
   .studio-s1 .sc {
     margin-top: 5rem;
+    gap:10px;
   }
 }
 .sc h1 {

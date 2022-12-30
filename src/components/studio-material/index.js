@@ -81,10 +81,13 @@ const StudioProductMaterialWrapper = styled.div`
       margin: 0;
       padding: 0;
     }
+    .non {
+      display: none;
+    }
   }
   @media (max-width: 600px) {
     .studio-material-body {
-      height: 100vh;
+      height: 102vh;
       img {
         height: 100vh;
       }
@@ -103,7 +106,7 @@ export default function StudioProductMaterial() {
             // loading="lazy"
             src={Polygon}
             alt="polygon-left"
-            className="polygon-left"
+            className="polygon-left non"
           />
         )}
         <div className="container-fluid material-wrapper">
@@ -121,11 +124,13 @@ export default function StudioProductMaterial() {
             {/* <img loading="lazy" src={Video} alt="video" /> */}
             <video
               className="video"
-              controls
+              autoPlay="autoplay"
+              loop
+              muted
               preload="metadata"
               poster="//cdn.jsdelivr.net/npm/big-buck-bunny-1080p@0.0.6/poster.jpg"
-              onMouseOver={(event) => event.target.play()}
-              onMouseOut={(event) => event.target.pause()}
+              // onMouseOver={(event) => event.target.play()}
+              // onMouseOut={(event) => event.target.pause()}
               src="//cdn.jsdelivr.net/npm/big-buck-bunny-1080p@0.0.6/video.mp4"
             ></video>
           </div>
