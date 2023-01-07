@@ -86,67 +86,6 @@ const ServiceCelebration = React.lazy(() =>
 const NFTMetaVerse = React.lazy(() =>
   import("./components/service/NFT/NFTMetaVerse")
 );
-const CheckoutForm = React.lazy(() =>
-  import("./components/checkout-flow/checkoutForm")
-);
-const CheckoutCard = React.lazy(() =>
-  import("./components/checkout-flow/CheckoutCard")
-);
-const CheckoutFinal = React.lazy(() =>
-  import("./components/checkout-flow/CheckoutFinal")
-);
-const NewsLetter = React.lazy(() =>
-  import("./components/PopUp-Letter/Newsletter.js")
-);
-const ThanksLettter = React.lazy(() =>
-  import("./components/PopUp-Letter/ThanksLetter.js")
-);
-const CookiesPopUp = React.lazy(() =>
-  import("./components/PopUp-Letter/CookiePopUp.js")
-);
-const CookiesThankYou = React.lazy(() =>
-  import("./components/PopUp-Letter/ThanksCookies.js")
-);
-const ProfilePageOrders = React.lazy(() =>
-  import("./components/ProfilePages/Orders.js")
-);
-const ProfilePageLogin = React.lazy(() =>
-  import("./components/ProfilePages/Login.js")
-);
-const ProfilePageSignUp = React.lazy(() =>
-  import("./components/ProfilePages/SignUp.js")
-);
-const TermsAndConditions = React.lazy(() =>
-  import("./components/ProfilePages/T&C")
-);
-const PersonalAssistance = React.lazy(() =>
-  import("./components/ProfilePages/PersonalAssistance.js")
-);
-const PersonalAssistanceInfo = React.lazy(() =>
-  import("./components/PersonalAssists/Info.js")
-);
-const AssistForm = React.lazy(() =>
-  import("./components/PersonalAssists/AssistForm.js")
-);
-const DesktopDetails = React.lazy(() =>
-  import("./components/ProfilePages/Address.js")
-);
-const Preferances = React.lazy(() =>
-  import("./components/ProfilePages/Prefrences.js")
-);
-const RecentlyViewed = React.lazy(() =>
-  import("./components/ProfilePages/RViewed")
-);
-const PersonalSuccess = React.lazy(() =>
-  import("./components/PersonalAssists/personalAssistSuccess.js")
-);
-const CheckoutSuccess = React.lazy(() =>
-  import("./components/checkout-flow/checkoutThanks")
-);
-
-const SideBar = React.lazy(() =>
-  import("./commonComponents/SidebarOfProfilePage/index.js")
-);
 
 function App() {
   const { pathname } = useLocation();
@@ -273,41 +212,6 @@ function App() {
               element={<ServiceCelebration />}
             />
             <Route path="/nft-metaverse" element={<NFTMetaVerse />} />
-
-            <Route path="/checkout-form" element={<CheckoutForm />} />
-            <Route path="/checkout-card" element={<CheckoutCard />} />
-            <Route path="/checkout-final" element={<CheckoutFinal />} />
-            <Route path="/checkout-thanks" element={<CheckoutSuccess />} />
-            <Route path="/newsletter-popup" element={<NewsLetter />} />
-            <Route path="/thanksletter-popup" element={<ThanksLettter />} />
-            <Route path="/cookies-popup" element={<CookiesPopUp />} />
-            <Route
-              path="/cookies-thankyou-popup"
-              element={<CookiesThankYou />}
-            />
-            <Route path="/profilepage-order" element={<ProfilePageOrders />} />
-            <Route path="/profilepage-address" element={<DesktopDetails />} />
-            <Route path="/profilepage-preferance" element={<Preferances />} />
-            <Route path="/profilepage-view" element={<RecentlyViewed />} />
-            <Route path="/profilepage-login" element={<ProfilePageLogin />} />
-            <Route path="/profilepage-signup" element={<ProfilePageSignUp />} />
-            <Route
-              path="/terms-and-conditions"
-              element={<TermsAndConditions />}
-            />
-            <Route
-              path="/personal-assistance"
-              element={<PersonalAssistance />}
-            />
-            <Route path="/success-popup" element={<PersonalSuccess />} />
-            <Route
-              path="/assistance-info"
-              element={<PersonalAssistanceInfo />}
-            />
-            <Route path="/assist-form" element={<AssistForm />} />
-            <Route path="/sidebar" element={<SideBar />} />
-
-            <Route path="/MH" element={<MobileHeader />} />
           </Routes>
           {pathname !== "/sub-menu1" && pathname !== "/sub-menu2" && <Footer />}
         </div>
